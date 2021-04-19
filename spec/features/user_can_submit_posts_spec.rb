@@ -8,4 +8,12 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
   end
+
+  scenario "Posts have 0 likes by default" do
+    visit "/posts"
+    click_link "New post"
+    fill_in "Message", with: "Hello, world!"
+    click_button "Submit"
+    expect(page).to have_content("0 likes")
+  end
 end
