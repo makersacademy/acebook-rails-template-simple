@@ -1,6 +1,11 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
-  <p>0 likes</p>
+  <p><a href="/posts/<%= post.id %>/like">Like</a>
+  <% if post.likes.nil? %>
+    <p>0 likes</p>
+  <% else %>
+    <p><%= post.likes %> likes</p>
+  <% end %>
 <% end %>
 
 <%= link_to new_post_path do %>
