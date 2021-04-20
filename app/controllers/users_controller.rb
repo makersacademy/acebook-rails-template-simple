@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    redirect_to posts_url
+    redirect_to root_url
   end
 
   private
@@ -13,5 +13,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :password)
   end
-  
+
 end
