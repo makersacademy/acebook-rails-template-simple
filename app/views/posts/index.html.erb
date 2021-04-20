@@ -11,3 +11,8 @@
 <%= link_to new_user_path do %>
   Sign Up
 <% end %>
+
+
+<% if @username %>
+<p> Hello, <%= @username %>!</p>
+<% end %>
