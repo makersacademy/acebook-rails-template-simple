@@ -8,7 +8,7 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  describe "POST /users/create" do
+  describe "POST /users/" do
     it "responds with 200" do
       post :create, params: { user: { username: "Sha88", password: "Password88" } }
       expect(response).to redirect_to(posts_url)
@@ -16,7 +16,7 @@ RSpec.describe UsersController, type: :controller do
 
     it "creates a user" do
       post :create, params: { user: { username: "Sha88", password: "Password88" } }
-      expect(Post.find_by(message: "Hello, Sha88!")).to be
+      expect(User.find_by(username: "Sha88")).to be
       # Is this test meant to end like this? 
     end
   end
