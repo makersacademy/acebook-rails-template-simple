@@ -1,13 +1,25 @@
 require 'rails_helper'
 
 RSpec.describe CommentsController, type: :controller do
-  describe "POST /posts/:post_id/comments" do
 
-    it "creates a comment" do
-      post :create, params: { comment: { user: "1", body: "Test", post: "1"} }
-      expect(Comment.find_by(post_id: "1")).to be
+  describe "GET /posts/1/comments" do
+    it "responds with 200" do
+      get :index
+      expect(response).to have_http_status(200)
     end
   end
+
+  # describe "POST post_comments" do
+  #   it "responds with 200" do
+  #     post :create, params: { comment: { user: "1", body: "Test", post: "1"} }
+  #     expect(response).to redirect_to(posts_comments)
+  #   end
+  #
+  #   it "creates a comment" do
+  #     post :create, params: { comment: { user: "1", body: "Test", post: "1"} }
+  #     expect(Comment.find_by(post_id: "1")).to be
+  #   end
+  # end
 end
 
 
@@ -19,4 +31,4 @@ end
 # PATCH  /posts/:post_id/comments/:id(.:format)                                                            comments#update
 # PUT    /posts/:post_id/comments/:id(.:format)                                                            comments#update
 # DELETE /posts/:post_id/comments/:id(.:format)                                                            comments#destroy
-# posts GET    /posts(.:format) 
+# posts GET    /posts(.:format)
