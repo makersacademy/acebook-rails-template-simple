@@ -180,3 +180,35 @@ end
 ```
 {"id":1,"forename":"Bart","surname":"Conure","username":"bartrules","email":"bart@notadomain.com","password":"password1","profilePic":""}
 ```
+
+# Heroku Deploy
+
+- Create a heroku account and connect github, add your repo and deploy.
+
+- Install heroku CLI with command `brew tap heroku/brew && brew install heroku` 
+
+- Rolling back the db `heroku run rake db:rollback STEP=10 -a <your-heroku-app-name>`
+  
+- Then migrate db: `heroku run rake db:migrate -a <your-heroku-app-name>`
+
+- What happens if you don't rollback...
+
+- Can't run db:create on Heroku so use db:rollback instead
+- However Stu says you might...
+- He doesn't sound sure though
+- He may have seen it in a file, like he always does
+- To conclude, he's pretty sure you can.
+
+```
+FATAL:  permission denied for database "postgres"
+DETAIL:  User does not have CONNECT privilege.
+Couldn't create 'dffbq9hdlcsh2l' database. Please check your configuration.
+rake aborted!
+ActiveRecord::NoDatabaseError: FATAL:  permission denied for database "postgres"
+DETAIL:  User does not have CONNECT privilege.
+```
+
+- `heroku run rake db:seed -a <your-heroku-app-name>`
+
+- Will want to add something similar to this in rake: `db:rollback db:migrate db:seed`
+
