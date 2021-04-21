@@ -8,11 +8,13 @@
 
 <br>
 <br>
-<%= link_to new_user_path do %>
-  Sign Up
-<% end %>
 
 
-<% if @username %>
-<p> Hello, <%= @username %>!</p>
+<% if @user %>
+<p> Hello, <%= @user.username %>!</p>
+
+<% else %>
+  <%= link_to new_user_path do %>
+    Sign Up
+  <% end %>
 <% end %>
