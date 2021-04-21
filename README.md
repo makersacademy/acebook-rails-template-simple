@@ -61,11 +61,7 @@ Loading development environment (Rails 6.1.3.1)
 TRANSACTION (0.4ms) BEGIN  
 User Create (4.6ms) INSERT INTO “users” (“created_at”, “updated_at”) VALUES ($1, $2) RETURNING “id” [[“created_at”, “2021-04-21 13:45:27.310037"], [“updated_at”, “2021-04-21 13:45:27.310037"]]  
 TRANSACTION (2.0ms) COMMIT  
-=> true  
-2.6.6 :003 > post = post.new  
-Traceback (most recent call last):  
-1: from (irb):3  
-NoMethodError (undefined method `new’ for nil:NilClass)  
+=> true 
 2.6.6 :004 > post = Post.new  
 => #<Post id: nil, content: nil, user_id: nil, created_at: nil, updated_at: nil>  
 2.6.6 :007 > post = Post.new(content: “Hi”, user_id: 1)  
@@ -90,11 +86,7 @@ TRANSACTION (0.2ms) BEGIN
 User Load (0.5ms) SELECT “users”.* FROM “users” WHERE “users”.“id” = $1 LIMIT $2 [[“id”, 1], [“LIMIT”, 1]]  
 Post Create (0.5ms) INSERT INTO “posts” (“content”, “user_id”, “created_at”, “updated_at”) VALUES ($1, $2, $3, $4) RETURNING “id” [[“content”, “Different”], [“user_id”, 1], [“created_at”, “2021-04-21 13:48:51.524365"], [“updated_at”, “2021-04-21 13:48:51.524365"]]  
 TRANSACTION (0.3ms) COMMIT  
-=> true  
-2.6.6 :012 > post.find(1)  
-Traceback (most recent call last):  
-1: from (irb):12  
-NoMethodError (undefined method `find’ for #<Post:0x00007fb2f906c850>)  
+=> true 
 2.6.6 :013 > Post.find(1)  
 Post Load (0.5ms) SELECT “posts”.* FROM “posts” WHERE “posts”.“id” = $1 LIMIT $2 [[“id”, 1], [“LIMIT”, 1]]  
 => #<Post id: 1, content: “Hi”, user_id: 1, created_at: “2021-04-21 13:47:42.029162000 +0000", updated_at: “2021-04-21 13:47:42.029162000 +0000”>  
@@ -109,7 +101,7 @@ Like Load (0.5ms) SELECT “likes”.* FROM “likes” WHERE “likes”.“id�
 ## Cross-Origin Resource Sharing
 
 - Rails sets up the gemfile automatically, but comments out gemfiles that not everyone is going to need, we need to uncomment the gemfile `cors`
-- the run `bundle`
+- then run `bundle`
 
 ### Active Mode Serializers
 
@@ -125,4 +117,12 @@ class UserSerializer < ActiveModel::Serializer
 end
 ```
 
-- 
+## Controllers 
+
+- Create controllers for the API  with the commands:
+ `bin/rails g controller Users index create update delete --skip-framework-engine`
+
+`bin/rails g controller Posts index create update delete --skip-framework-engine`
+
+`bin/rails g controller Likes index create delete --skip-framework-engine`
+
