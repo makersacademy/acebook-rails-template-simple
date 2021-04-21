@@ -126,3 +126,8 @@ end
 
 `bin/rails g controller Likes index create delete --skip-framework-engine`
 
+# Create database, add tables, add seed data
+
+`rake db:create db:migrate db:seed`
+
+
