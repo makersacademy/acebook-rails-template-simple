@@ -33,6 +33,8 @@ Rails requires a Javascript runtime to work. The easiest way is to install Node 
 
 - We create a new rails setup which is dedicated to be an API and adds the database as PostgreSQL `rails new [backend-app-name] --api -T --database=postgresql`
 
+### Models
+
 - To create our database and tables, firstly the user table: 
 `bin/rails generate model User forename:string surname:string username:string email:string password:string profilePic:string`
 
@@ -117,17 +119,64 @@ class UserSerializer < ActiveModel::Serializer
 end
 ```
 
-## Controllers 
+### Controllers 
 
-- Create controllers for the API  with the commands:
- `bin/rails g controller Users index create update delete --skip-framework-engine`
+- Create controllers for the API with the commands:
+  
+`bin/rails g controller Users index create update delete --skip-framework-engine`
 
 `bin/rails g controller Posts index create update delete --skip-framework-engine`
 
 `bin/rails g controller Likes index create delete --skip-framework-engine`
 
-# Create database, add tables, add seed data
+- We created an index route for API testing.
 
+## Create database, add tables, add seed data
+
+- In `db/seeds.rb` enter some data that will be used to seed the database upon use of `db:seed`:
+
+```
+User.new(forename: "Bart", 
+         surname: "Conure", 
+         username: "bartrules", 
+         email: "bart@notadomain.com", 
+         password: "password1", 
+         profilePic: "").save
+
+Post.new(content: "Wow awesome!",
+         user_id: 1).save
+```
+
+- Using the following command the tables are created and then seeded:
 `rake db:create db:migrate db:seed`
 
+### Return all users at users/index
 
+- Within the Users controller (making use of the already specified routes): 
+
+```
+def index
+  @users = User.all
+  render json: @users
+end
+```
+## Return specific user at user/:id
+
+- Defined a new route in routes.rb:
+
+`get 'users/:id', to: "users#show"`
+
+- Within the Users controller:
+
+```
+def show
+  @user = User.find(params[:id])
+  render json: @user
+end
+```
+
+## Visiting [localhost:3000/users/1](http://localhost:3000/users/1) will return:
+
+```
+{"id":1,"forename":"Bart","surname":"Conure","username":"bartrules","email":"bart@notadomain.com","password":"password1","profilePic":""}
+```
