@@ -1,6 +1,7 @@
 <% @posts.each do |post| %>
   <p class="post"><%= post.message %>
-  Posted by: David
+
+  <br>Posted by: <%= User.find(post.user_id).username %>
   </p>
 <% end %>
 
