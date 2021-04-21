@@ -9,7 +9,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @user = User.find_by_id(session[:user_id])
+    @posts = Post.order('created_at').reverse_order
   end
 
   private
