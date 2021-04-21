@@ -53,7 +53,7 @@ Rails requires a Javascript runtime to work. The easiest way is to install Node 
 
 - You can use rails console via `bin/rails c`:
 
-```
+```bash
 acebook-insert-team-name-here git:(rails-api) ✗ bin/rails c  
 Running via Spring preloader in process 22382  
 Loading development environment (Rails 6.1.3.1)  
@@ -113,7 +113,7 @@ Like Load (0.5ms) SELECT “likes”.* FROM “likes” WHERE “likes”.“id�
 
 - Within the `app/serializers` folder you will find the files, enter the aspects of the tables that you want to be able to return when you recieve API requests, for example:
 
-```
+```ruby
 class UserSerializer < ActiveModel::Serializer
   attributes :id, :forename, :surname, :username, :email, :password, :profilePic
 end
@@ -135,7 +135,7 @@ end
 
 - In `db/seeds.rb` enter some data that will be used to seed the database upon use of `db:seed`:
 
-```
+```ruby
 User.new(forename: "Bart", 
          surname: "Conure", 
          username: "bartrules", 
@@ -154,7 +154,7 @@ Post.new(content: "Wow awesome!",
 
 - Within the Users controller (making use of the already specified routes): 
 
-```
+```ruby
 def index
   @users = User.all
   render json: @users
@@ -168,7 +168,7 @@ end
 
 - Within the Users controller:
 
-```
+```ruby
 def show
   @user = User.find(params[:id])
   render json: @user
@@ -177,7 +177,7 @@ end
 
 ## Visiting [localhost:3000/users/1](http://localhost:3000/users/1) will return:
 
-```
+```json
 {"id":1,"forename":"Bart","surname":"Conure","username":"bartrules","email":"bart@notadomain.com","password":"password1","profilePic":""}
 ```
 
