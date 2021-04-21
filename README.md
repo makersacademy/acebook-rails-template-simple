@@ -17,10 +17,10 @@ First, clone this repository. Then:
 
 If you don't have Node.js installed yet, you might run into this error when running rspec:
 
-```
+```ruby
 ExecJS::RuntimeUnavailable:
   Could not find a JavaScript runtime. See https://github.com/rails/execjs for a list of available runtimes.
- ```
+```
 
 Rails requires a Javascript runtime to work. The easiest way is to install Node by running `brew install node` - and then run `bundle exec rspec` again
 
@@ -199,7 +199,7 @@ end
 - He may have seen it in a file, like he always does
 - To conclude, he's pretty sure you can.
 
-```
+```bash
 FATAL:  permission denied for database "postgres"
 DETAIL:  User does not have CONNECT privilege.
 Couldn't create 'dffbq9hdlcsh2l' database. Please check your configuration.
