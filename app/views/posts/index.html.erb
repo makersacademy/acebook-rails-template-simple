@@ -5,3 +5,16 @@
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
+<br>
+<br>
+
+
+<% if @user %>
+<p> Hello, <%= @user.username %>!</p>
+
+<% else %>
+  <%= link_to new_user_path do %>
+    Sign Up
+  <% end %>
+<% end %>
