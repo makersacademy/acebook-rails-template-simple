@@ -33,7 +33,7 @@ Rails requires a Javascript runtime to work. The easiest way is to install Node 
 
 - We create a new rails setup which is dedicated to be an API and adds the database as PostgreSQL `rails new [backend-app-name] --api -T --database=postgresql`
 
-### Models
+## Models
 
 - To create our database and tables, firstly the user table: 
 `bin/rails generate model User forename:string surname:string username:string email:string password:string profilePic:string`
@@ -105,7 +105,7 @@ Like Load (0.5ms) SELECT “likes”.* FROM “likes” WHERE “likes”.“id�
 - Rails sets up the gemfile automatically, but comments out gemfiles that not everyone is going to need, we need to uncomment the gemfile `cors`
 - then run `bundle`
 
-### Active Mode Serializers
+## Active Mode Serializers
 
 - Limit the data that is returned on a request to the API, add `gem 'active_mode_serializers', '~>0.10.0'` and run `bundle`
 
@@ -119,7 +119,7 @@ class UserSerializer < ActiveModel::Serializer
 end
 ```
 
-### Controllers 
+## Controllers 
 
 - Create controllers for the API with the commands:
   
@@ -150,7 +150,7 @@ Post.new(content: "Wow awesome!",
 - Using the following command the tables are created and then seeded:
 `rake db:create db:migrate db:seed`
 
-### Return all users at users/index
+## Return all users at users/index
 
 - Within the Users controller (making use of the already specified routes): 
 
