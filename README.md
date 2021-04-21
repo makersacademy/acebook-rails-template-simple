@@ -115,4 +115,14 @@ Like Load (0.5ms) SELECT “likes”.* FROM “likes” WHERE “likes”.“id�
 
 - Limit the data that is returned on a request to the API, add `gem 'active_mode_serializers', '~>0.10.0'` and run `bundle`
 
+- Create serializers with the command `bin/rails g serializer user` and do so for each of the tables, user, posts and like. They have to be the singular versions of the names. 
 
+- Within the `app/serializers` folder you will find the files, enter the aspects of the tables that you want to be able to return when you recieve API requests, for example:
+
+```
+class UserSerializer < ActiveModel::Serializer
+  attributes :id, :forename, :surname, :username, :email, :password, :profilePic
+end
+```
+
+- 
