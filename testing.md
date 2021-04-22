@@ -6,9 +6,10 @@ Add rspec-rails to both the :development and :test groups.
 
 ```ruby
 group :development, :test do
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails'
 end
 ```
+- didn't work with rspec-rails 3.5.0
 Add factory_bot_rails, shoulda_matchers, faker and database_cleaner to the :test group.
 
 ```ruby
@@ -36,9 +37,7 @@ Shoulda::Matchers.configure do |config|
   end
 end
 ```
-
 inside `RSpec.configure do |config|`
-
 
 `config.include FactoryBot::Syntax::Methods`
 
@@ -67,7 +66,15 @@ end
 
 - In spec/models/user_spec.rb:
 - type: :model tells Rspec that this is a model spec
-
+- Example of testing Like model
 ```ruby
+require 'rails_helper'
 
+RSpec.describe Like, type: :model do
+  it { should belong_to(:user) }
+  it { should belong_to(:post) }
+end
 ```
+
+## Testing Controllers
+
