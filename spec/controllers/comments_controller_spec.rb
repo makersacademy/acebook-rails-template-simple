@@ -1,17 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe CommentsController, type: :controller do
-  before do
-    # Post.create(message: "Hello, world!")
-    # puts "Is this here?"
-    # puts Post.find_by_id(1)
-  end
+  # before do
+  # end
 
   describe "GET /posts/:post_id/comments" do
     it "responds with 200" do
       user = User.create(username: "test", password: "1234")
       post = Post.create(message: "Hello, world!", user_id: user.id)
-      get post_comments_url(post)
+      get :index, params: { :post_id => post.id }
       expect(response).to have_http_status(200)
     end
   end
