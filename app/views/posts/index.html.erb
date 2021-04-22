@@ -1,3 +1,11 @@
+<% if current_user %>
+  Hello, <%= current_user.username %>!.
+  <%= link_to "Log Out", logout_path %>
+<% else %>
+  <%= link_to "Sign Up", signup_path %> or
+  <%= link_to "Log In", login_path %>
+<% end %>
+
 <% @posts.each do |post| %>
 
   <p class="post"><%= post.message %>
@@ -11,21 +19,11 @@
 
 <% end %>
 
-<br>
-
-<%= link_to new_post_path do %>
-  New post
-<% end %>
-
-<br>
-<br>
-
-
 <% if current_user %>
-<p> Hello, <%= current_user.username %>!</p>
-
-<% else %>
-  <%= link_to new_user_path do %>
-    Sign Up
+  <%= link_to new_post_path do %>
+    New post
   <% end %>
 <% end %>
+
+<br>
+<br>

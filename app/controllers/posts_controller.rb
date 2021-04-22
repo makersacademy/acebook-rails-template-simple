@@ -5,10 +5,11 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    redirect_to posts_url(@post)
+    redirect_to posts_url
   end
 
   def index
+    @user = User.find_by_id(session[:user_id])
     @posts = Post.order('created_at': :desc)
   end
 
