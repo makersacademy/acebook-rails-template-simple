@@ -19,13 +19,3 @@
 
 <br>
 <br>
-
-
-<% if current_user %>
-<p> Hello, <%= current_user.username %>!</p>
-
-<% else %>
-  <%= link_to new_user_path do %>
-    Sign Up
-  <% end %>
-<% end %>
