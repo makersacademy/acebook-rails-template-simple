@@ -79,7 +79,7 @@ RSpec.describe Like, type: :model do
 end
 ```
 
-## Testing Controllers
+## Setting up tests for controllers
 
 - Create a `spec/requests` directory to house the specs for the controller testing.
 
@@ -89,7 +89,8 @@ end
 
 - Run `touch spec/factories/{controller1.rb, controller2.rb, etc}`
 
-- Define the content of each factory, here's an example:
+- Create a factory for each model using Faker to generate fake data, here's an example:
+For more faker generators: https://github.com/faker-ruby/faker#generators
 
 ```ruby 
 # spec/factories/post.rb
@@ -100,6 +101,8 @@ FactoryBot.define do
   end
 end
 ```
+
+## Controller Spec
 
 - Modify the request specs, example: 
 
@@ -121,3 +124,5 @@ RSpec.describe 'Users API', type: :request do
   end
 end
 ```
+
+- Look throughout the repo for more complete examples of testing on each of the route to the contreoller.
