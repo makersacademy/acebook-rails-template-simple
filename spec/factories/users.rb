@@ -1,13 +1,13 @@
-# FactoryBot.define do
-#   factory :user do
-#     forename { Faker::Name.first_name}
-#     surname { Faker::Name.last_name}
-#     username { Faker::Internet.username}
-#     email { Faker::Internet.email}
-#     password { Faker::Internet.password}
-#     profilePic  { Faker::Lorem.word}
-#   end
-# end
+FactoryBot.define do
+  factory :user do
+    forename { Faker::Name.first_name }
+    surname { Faker::Name.last_name }
+    username { Faker::Internet.username }
+    email { Faker::Internet.email }
+    password { Faker::Internet.password }
+    profilePic  { Faker::Lorem.word }
+  end
+end
 
 # # Usage:
 # # Faker::<generator>.unique.exclude(method, arguments, list)

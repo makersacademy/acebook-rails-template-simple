@@ -116,7 +116,7 @@ RSpec.describe 'Users API', type: :request do
 
     it 'returns users' do
       expect(json).not_to_be_empty # expects some response content
-      expect(json.size).to eq(10) # 
+      expect(json.size).to eq(10)
     end
   end
 end
