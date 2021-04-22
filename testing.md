@@ -125,4 +125,5 @@ RSpec.describe 'Users API', type: :request do
 end
 ```
 
-- Look throughout the repo for more complete examples of testing on each of the route to the contreoller.
+- Look at /spec/requests/user_spec.rb for further examples of testing.
+

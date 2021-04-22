@@ -39,7 +39,34 @@ RSpec.describe 'Users API', type: :request do
       end
 
       it 'returns a not found message' do
-        expect(response.body).to match(/User not found/)
+        expect(response.body).to match(/Couldn't find User with 'id'=100/)
+      end
+    end
+  end
+  describe 'POST/users' do
+    let(:valid_attributes) { {forename: 'bob', surname: 'robertson', username: 'bobrocks', email: 'bob@robert.com', password: 'notbob', profilePic: '' } }
+
+    context 'when the request is valid' do
+      before { post '/users', params: valid_attributes }
+
+      it 'creates a user' do
+        expect(json['forename']).to eq('bob')
+      end
+
+      it 'returns status code 201' do
+        expect(response).to have_http_status(201)
+      end
+    end
+
+    context 'when the request is invalid' do
+      before { post '/users', params: { forename: '' } }
+
+      it 'returns status code 422' do
+        expect(response).to have_http_status(422)
+      end
+
+      it 'returns a validation failure message' do
+        expect(response.body).to match(/Validation failed: Forename can't be blank/)
       end
     end
   end
