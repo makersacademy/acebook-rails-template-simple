@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
-    render json: @users
+    json_response(@users)
   end
 
   def create
+    @users = User.create!(user_params)
+    json_response(@users, :created)
   end
 
   def update
@@ -12,9 +14,17 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    render json: @user
+    json_response(@user)
   end
 
   def delete
   end
+  
+  private
+
+  def user_params
+    params.permit(:forename, :surname, :username, :email, :password, :profilePic)
+  end
 end
+
+
