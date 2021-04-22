@@ -1,40 +1,37 @@
 require 'rails_helper'
 
 RSpec.describe CommentsController, type: :controller do
-  # before do
-  # end
+  before do
+    @user = User.create(username: "test", password: "1234")
+    @post = Post.create(message: "Hello, world!", user_id: @user.id)
+  end
 
-  describe "GET /posts/:post_id/comments" do
+  describe "Get /posts/:post_id/comments/new" do
     it "responds with 200" do
-      user = User.create(username: "test", password: "1234")
-      post = Post.create(message: "Hello, world!", user_id: user.id)
-      get :index, params: { :post_id => post.id }
+      get :new, params: { :post_id => @post.id }
       expect(response).to have_http_status(200)
+      expect(response.content_type).to eq "text/html; charset=utf-8"
     end
   end
 
-  # post_comments GET    /posts/:post_id/comments(.:format)                                                                comments#index
+  describe "POST /posts/:post_id/comments" do
+    it "responds with 200" do
+      post :create, params: { post_id: @post.id, comment: { user_id: @user.id, body: "This is a comment!",  post_id: @post.id } }
+      expect(response).to redirect_to(post_comments_path(@post))
+    end
 
-  # describe "POST post_comments" do
-  #   it "responds with 200" do
-  #     post :create, params: { comment: { user: "1", body: "Test", post: "1"} }
-  #     expect(response).to redirect_to(posts_comments)
-  #   end
-  #
-  #   it "creates a comment" do
-  #     post :create, params: { comment: { user: "1", body: "Test", post: "1"} }
-  #     expect(Comment.find_by(post_id: "1")).to be
-  #   end
-  # end
+    it "creates a comment" do
+      post :create, params: { post_id: @post.id, comment: { user_id: @user.id, body: "This is a comment!",  post_id: @post.id } }
+      expect(Comment.find_by(body: "This is a comment!")).to be
+    end
+  end
+
+  describe "GET /posts/:post_id/comments" do
+    it "responds with 200" do
+      get :index, params: { :post_id => @post.id }
+      expect(response).to have_http_status(200)
+      expect(response.content_type).to eq "text/html; charset=utf-8"
+      # expect(response).to render_template(:index) # need gem rails-controller-testing for controller.
+    end
+  end
 end
-
-
-# comments#index
-# POST   /posts/:post_id/comments(.:format)                                                                comments#create
-# new_post_comment GET    /posts/:post_id/comments/new(.:format)                                                            comments#new
-# edit_post_comment GET    /posts/:post_id/comments/:id/edit(.:format)                                                       comments#edit
-# post_comment GET    /posts/:post_id/comments/:id(.:format)                                                            comments#show
-# PATCH  /posts/:post_id/comments/:id(.:format)                                                            comments#update
-# PUT    /posts/:post_id/comments/:id(.:format)                                                            comments#update
-# DELETE /posts/:post_id/comments/:id(.:format)                                                            comments#destroy
-# posts GET    /posts(.:format)
