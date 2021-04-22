@@ -65,8 +65,11 @@ end
 ## Testing models
 
 - In spec/models/user_spec.rb:
+  
 - type: :model tells Rspec that this is a model spec
+  
 - Example of testing Like model
+  
 ```ruby
 require 'rails_helper'
 
@@ -78,3 +81,43 @@ end
 
 ## Testing Controllers
 
+- Create a `spec/requests` directory to house the specs for the controller testing.
+
+- Create a `spec/factories` directory to contain the factories for the fake api requests.
+
+- Run `touch spec/requests/{controller1_spec.rb, controller2_spec.rb, etc}`
+
+- Run `touch spec/factories/{controller1.rb, controller2.rb, etc}`
+
+- Define the content of each factory, here's an example:
+
+```ruby 
+# spec/factories/post.rb
+FactoryBot.define do
+  factory :post do
+    content { Faker::Lorem.word }
+    user_id { Faker::Number.number(10) }
+  end
+end
+```
+
+- Modify the request specs, example: 
+
+```ruby
+require 'rails_helper'
+
+RSpec.describe 'Users API', type: :request do
+  
+  let!(:users) {create_list(:user,10) } # creates the list of users
+  let(:user_id) {users.first.id} # grabs the first one
+
+  describe 'GET/users' do
+    before { get '/users' }
+
+    it 'returns users' do
+      expect(json).not_to_be_empty # expects some response content
+      expect(json.size).to eq(10) # 
+    end
+  end
+end
+```
