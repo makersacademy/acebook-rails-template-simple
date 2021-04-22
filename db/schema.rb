@@ -31,6 +31,5 @@ ActiveRecord::Schema.define(version: 2021_04_21_142849) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
-
   add_foreign_key "posts", "users"
 end
