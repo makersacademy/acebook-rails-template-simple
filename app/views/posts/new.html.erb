@@ -2,8 +2,7 @@
   <%= form.label :message %>
   <%= form.text_field :message %>
 
-  <%= form.label :user_id %>
-  <%= form.text_field :user_id %>
+  <%= form.hidden_field :user_id, :value => current_user.id if current_user %>
 
   <%= form.submit "Submit" %>
 <% end %>
