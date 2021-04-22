@@ -1,9 +1,21 @@
+<p class="post"><%= @post.message %>
+
+<br>Posted by: <%= User.find(@post.user_id).username %>
+</p>
+
+<br>
+<%= link_to root_path do %>
+  Home
+<% end %>
+<br>
+<br>
+
+<%= link_to new_post_comment_path do %>
+    New Comment
+<% end %>
+
 <% @comments.each do |comment| %>
     <p class="comments"><%= comment.body %>
     <br>Posted by: <%= User.find(comment.user_id).username %>
     </p>
 <% end %>
-
-<%= link_to new_post_comment_path do %>
-    New Comment
-  <% end %>
