@@ -7,9 +7,25 @@
 <% end %>
 
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <p class="post"><%= post.message %>
+
+  <br>Posted by: <%= User.find(post.user_id).username %>
+  </p>
 <% end %>
 
 <%= link_to new_post_path do %>
   New post
+<% end %>
+
+<br>
+<br>
+
+
+<% if current_user %>
+<p> Hello, <%= current_user.username %>!</p>
+
+<% else %>
+  <%= link_to new_user_path do %>
+    Sign Up
+  <% end %>
 <% end %>
