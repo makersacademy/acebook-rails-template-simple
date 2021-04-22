@@ -6,7 +6,8 @@ class CommentsController < ApplicationController
   # end
 
   def index
-    @comments = Comment.order('created_at').reverse_order
+    @post = Post.find(params[:post_id])
+    @comments = @post.order('created_at').reverse_order
   end
 
   private
