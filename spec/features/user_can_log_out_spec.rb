@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Logout", type: :feature do
 
-  pending 'Can log out when logged in' do
+  scenario 'Can log out when logged in' do
     visit "/"
     click_link "Sign Up"
     fill_in "Username", with: "Sha88"
