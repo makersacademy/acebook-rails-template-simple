@@ -133,4 +133,7 @@ end
 curl -v GET -H "Content-Type: application/json" http://localhost:3000/users/11
 
 curl -v POST -H "Content-Type: application/json" -d '{"forename":"Sadie","surname":"Smith","username":"ssmith","email":"ssmith@notadomain.com","password":"password1","profilePic":""}' http://localhost:3000/users/
+
+curl -v POST -H "Content-Type: application/json" -d '{"forename":"Sadie","surname":"Smith","username":"ssmith","email":"ssmith@notadomain.com","password":"password1","profilePic":""}' https://acebook--backend.herokuapp.com/users
 ```
+
