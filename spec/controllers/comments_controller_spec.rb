@@ -9,7 +9,8 @@ RSpec.describe CommentsController, type: :controller do
 
   describe "GET /posts/:post_id/comments" do
     it "responds with 200" do
-      post = Post.create(message: "Hello, world!")
+      user = User.create(username: "test", password: "1234")
+      post = Post.create(message: "Hello, world!", user_id: user.id)
       get post_comments_url(post)
       expect(response).to have_http_status(200)
     end
