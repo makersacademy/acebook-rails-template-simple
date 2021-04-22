@@ -1,6 +1,6 @@
 <% @comments.each do |comment| %>
-    <p class="post"><%= post.message %>
-    <br>Posted by: <%= User.find(post.user_id).username %>
+    <p class="comments"><%= comment.body %>
+    <br>Posted by: <%= User.find(comment.user_id).username %>
     </p>
 <% end %>
 
