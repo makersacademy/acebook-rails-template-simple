@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     @comments = @post.comments.order('created_at').reverse_order
   end
 
-  private
+  # private
   # def comment_params
   #   params.require(:comment).permit(:user, :body, :post)
   # end
