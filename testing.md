@@ -108,7 +108,7 @@ require 'rails_helper'
 
 RSpec.describe 'Users API', type: :request do
   
-  let!(:users) {create_list(:user,10) } # creates the list of users
+  let!(:users) {create_list(:user,10) } # creates the list of users and save to database (!)
   let(:user_id) {users.first.id} # grabs the first one
 
   describe 'GET/users' do
