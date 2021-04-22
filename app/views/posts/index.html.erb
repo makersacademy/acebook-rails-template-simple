@@ -1,8 +1,14 @@
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+
+  <p class="post"><%= post.message %>
+
+  <br>Posted by: <%= User.find(post.user_id).username %>
+  </p>
   <p class="comments-link"><%= link_to post_comments_path(post.id) do %>
     Comments
-  <% end %></p>
+  <% end %>
+  </p>
+
 <% end %>
 
 <br>
@@ -15,8 +21,8 @@
 <br>
 
 
-<% if @user %>
-<p> Hello, <%= @user.username %>!</p>
+<% if current_user %>
+<p> Hello, <%= current_user.username %>!</p>
 
 <% else %>
   <%= link_to new_user_path do %>
