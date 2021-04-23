@@ -21,7 +21,6 @@ RSpec.describe 'Sessions API', type: :request do
       end
 
       it 'returns the user' do
-        p json
         expect(json['user']['forename']).to eq('Sadie')
       end
     end
