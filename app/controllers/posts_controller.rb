@@ -4,6 +4,11 @@ class PostsController < ApplicationController
     json_response(@posts)
   end
 
+  def show
+    @post = Post.find(params[:id])
+    json_response(@post)
+  end
+
   def create
   end
 
