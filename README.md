@@ -2,11 +2,6 @@
 
 ## API docs
 
-- The API is hosted at https://acebook--backend.herokuapp.com
-
-- The following endpoints are currently available:
-
-
 | Endpoint        | Functionality            | Deployed         |
 | ----------------| -------------------------|------------------|
 | POST /users     | Create new user          |:heavy_check_mark:|
@@ -15,8 +10,7 @@
 | PUT /user/:id   | Returns all users        |                  |
 | DELETE /user/:id| Destroys the user of :id |                  |
 
-
-
+- The API is hosted at https://acebook--backend.herokuapp.com
 
 ## [Testing README](https://github.com/taran314/acebook-insert-team-name-here/blob/main/testing.md)
 ## [API-setup README](https://github.com/taran314/acebook-insert-team-name-here/blob/main/api-setup.md)
