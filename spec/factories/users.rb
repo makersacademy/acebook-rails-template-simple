@@ -4,7 +4,7 @@ FactoryBot.define do
     surname { Faker::Name.last_name }
     username { Faker::Internet.username }
     email { Faker::Internet.email }
-    password { Faker::Internet.password }
+    password_digest { Faker::Internet.password }
     profilePic  { Faker::Lorem.word }
   end
 end

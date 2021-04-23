@@ -59,7 +59,7 @@ RSpec.describe 'Users API', type: :request do
     end
 
     context 'when the request is invalid' do
-      before { post '/users', params: { forename: '' } }
+      before { post '/users', params: { forename: '', password: 'password1' } }
 
       it 'returns status code 422' do
         expect(response).to have_http_status(422)

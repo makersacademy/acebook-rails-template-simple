@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
   def destroy
     logout!
     render json: {
-      status: 200
+      status: 200,
       logged_out: true
     }
   end

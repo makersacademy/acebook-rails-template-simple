@@ -6,7 +6,7 @@ RSpec.describe 'Posts API', type: :request do
   let!(:posts) { create_list(:post, 10) }
   let(:post_id) { posts.first.id }
 
-  describe 'GET/Posts' do
+  describe 'GET/posts' do
     before { get '/posts'}
 
     it 'returns posts' do
