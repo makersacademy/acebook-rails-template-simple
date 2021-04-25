@@ -1,13 +1,15 @@
 class CommentsController < ApplicationController
-  def new
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.new
-  end
+  # New route not required if not rendering new comment form.
+  # def new
+  #   @post = Post.find(params[:post_id])
+  #   @comment = @post.comments.new
+  # end
 
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
-    redirect_to post_comments_path(@post)
+    redirect_to root_url
+    # redirect_to post_comments_path(@post)
   end
 
   def index

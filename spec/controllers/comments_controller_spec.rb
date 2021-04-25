@@ -5,14 +5,16 @@ RSpec.describe CommentsController, type: :controller do
     @user = User.create(username: "test", password: "1234")
     @post = Post.create(message: "Hello, world!", user_id: @user.id)
   end
+  # No Mocking - to look at
 
-  describe "Get /posts/:post_id/comments/new" do
-    it "responds with 200" do
-      get :new, params: { :post_id => @post.id }
-      expect(response).to have_http_status(200)
-      expect(response.content_type).to eq "text/html; charset=utf-8"
-    end
-  end
+  # removed new rout test no longer required
+  # describe "Get /posts/:post_id/comments/new" do
+  #   it "responds with 200" do
+  #     get :new, params: { :post_id => @post.id }
+  #     expect(response).to have_http_status(200)
+  #     expect(response.content_type).to eq "text/html; charset=utf-8"
+  #   end
+  # end
 
   describe "POST /posts/:post_id/comments" do
     it "responds with 200" do

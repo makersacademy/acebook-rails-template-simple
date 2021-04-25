@@ -12,6 +12,13 @@
 
   <br>Posted by: <%= User.find(post.user_id).username %>
   </p>
+  <div id="comments-div">
+    <%= render post.comments %>
+  </div>
+  <div id="new-comment-form">
+    <%# <%= render partial: 'comments/form', locals: { the_post: post } %> The render of the form is creating issues - it is not passing the variable %>
+  </div>
+
   <p class="comments-link"><%= link_to post_comments_path(post.id) do %>
     Comments
   <% end %>
