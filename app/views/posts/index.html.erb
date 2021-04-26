@@ -8,9 +8,10 @@
 
 <% @posts.each do |post| %>
   <p class="post"><%= post.message %>
-
-  <br>Posted by: <%= User.find(post.user_id).username %>
-  </p>
+  <br> Posted by: <%= User.find(post.user_id).username %>
+  <button type="button">Like</button>
+  <br> 0 Likes
+</p>
 <% end %>
 
 <% if current_user %>
