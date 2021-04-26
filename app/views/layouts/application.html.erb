@@ -8,15 +8,13 @@
     <%= javascript_include_tag 'application' %>
 
   <div class="grid-container">
-    <!-- <a href=""> -->
-      <a href="/"><img src="../assets/images/K.jpg"></a>
+      <a href="/" id='logo-text'><img class="logo" src="k.png">nitter</a>
       <div class="grid-item"></div>
       <div class="grid-item"></div>
       <div class="grid-item"></div>
       <div class="grid-item"></div>
-    <!-- </a> -->
     <a href="">
-      <div class="grid-item">User Photo</div>
+      <div class="grid-item"><%= current_user %>User Photo</div>
     </a>
     <% if current_user %>
       <div class="grid-item"></div>
