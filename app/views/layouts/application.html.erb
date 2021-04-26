@@ -9,7 +9,7 @@
 
   <div class="grid-container">
     <!-- <a href=""> -->
-      <div class="grid-item"><%= link_to "Knitter", root_url %>Home</div>
+      <div class="grid-item"><a><%= link_to "Knitter", root_url %>Home</a></div>
       <div class="grid-item"></div>
       <div class="grid-item"></div>
       <div class="grid-item"></div>
@@ -20,11 +20,11 @@
     </a>
     <% if current_user %>
       <div class="grid-item"></div>
-      <div class="grid-item"><%= link_to "Log Out", logout_path %></div>
+      <div class="grid-item"><a><%= link_to "Log Out", logout_path %></a></div>
     <% else %>
-      <div class="grid-item"><%= link_to "Sign Up", signup_path %></div>
-      <div class="grid-item"><%= link_to "Log In", login_path %></div>
-  <% end %>
+      <div class="grid-item"><a><%= link_to "Sign Up", signup_path %></a></div>
+      <div class="grid-item"><a><%= link_to "Log In", login_path %></a></div>
+    <% end %>
   </div>
 
   </head>

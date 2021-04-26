@@ -30,6 +30,10 @@
      text-decoration: none;
  }
 
+ .grid-container a {
+   text-decoration: none;
+ }
+
 .grid-item :hover {
    font-size: 23px;
 }
