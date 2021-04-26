@@ -8,11 +8,10 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
-    redirect_to root_url
-    # redirect_to post_comments_path(@post)
+    redirect_to root_path
   end
 
-  def index
+  def index # redundant
     @post = Post.find(params[:post_id])
     @comments = @post.comments.order('created_at').reverse_order
   end

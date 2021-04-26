@@ -1,3 +1,5 @@
+<%# redundant page %>
+
 <%= link_to root_path do %>
   Home
 <% end %>
@@ -17,4 +19,4 @@
     </p>
 <% end %>
 
-<%= render 'comments/form' %>
+<%= render partial: 'comments/form', locals: { post: @post } %>

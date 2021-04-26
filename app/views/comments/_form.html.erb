@@ -1,5 +1,5 @@
-<%= form_with model: [ @post, @post.comments.build ], local: true do |form| %>
-  <%= form.text_field :body, id: "comment-entry-box", placeholder: 'Enter your unsolicited advice here...' %>
+<%= form_with model: [ post, post.comments.build ], local: true do |form| %>
+  <%= form.text_field :body, class: "comment-entry-box", placeholder: 'Enter your unsolicited advice here...' %>
 
   <%= form.hidden_field :user_id, :value => current_user.id if current_user %>
 

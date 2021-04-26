@@ -19,7 +19,7 @@ RSpec.describe CommentsController, type: :controller do
   describe "POST /posts/:post_id/comments" do
     it "responds with 200" do
       post :create, params: { post_id: @post.id, comment: { user_id: @user.id, body: "This is a comment!",  post_id: @post.id } }
-      expect(response).to redirect_to(post_comments_path(@post))
+      expect(response).to redirect_to(root_url)
     end
 
     it "creates a comment" do
@@ -28,7 +28,7 @@ RSpec.describe CommentsController, type: :controller do
     end
   end
 
-  describe "GET /posts/:post_id/comments" do
+  describe "GET /posts/:post_id/comments" do # now redundant
     it "responds with 200" do
       get :index, params: { :post_id => @post.id }
       expect(response).to have_http_status(200)

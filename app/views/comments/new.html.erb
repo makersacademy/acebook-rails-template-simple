@@ -1,3 +1,5 @@
+<%# redundant page %>
+
 <%= form_with model: [ @post, @post.comments.build ], local: true do |form| %>
   <%= form.label :body %>
   <%= form.text_field :body, id: "comment-entry-box", placeholder: 'Enter your unsolicited advice here...' %>
