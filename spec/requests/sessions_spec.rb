@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Sessions API', type: :request do
 
-
-  describe 'POST/posts' do
+  describe 'POST/login' do
     let(:valid_attributes) { { forename: 'Sadie', 
                                 surname: 'Smith',
                                 username: 'Ssmith',
