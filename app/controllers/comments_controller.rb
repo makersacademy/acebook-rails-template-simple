@@ -11,10 +11,10 @@ class CommentsController < ApplicationController
     redirect_to root_path
   end
 
-  def index # redundant
-    @post = Post.find(params[:post_id])
-    @comments = @post.comments.order('created_at').reverse_order
-  end
+  # def index # redundant
+  #   @post = Post.find(params[:post_id])
+  #   @comments = @post.comments.order('created_at').reverse_order
+  # end
 
   private
   def comment_params

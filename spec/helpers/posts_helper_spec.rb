@@ -8,7 +8,7 @@ def sign_up(username)
   click_button "Submit"
 end
 
-def post_message(post, username=nil)
+def post_message(post, username = nil)
   sign_up(username) if username
   click_link "New post"
   fill_in "Message", with: post
