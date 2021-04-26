@@ -13,3 +13,12 @@ require 'rails_helper'
 # RSpec.describe CommentsHelper, type: :helper do
 #   pending "add some examples to (or delete) #{__FILE__}"
 # end
+
+def create_three_comments
+  first(".new-comment-form").fill_in "comment[body]", with: "This is my first comment."
+  click_button "Submit"
+  first(".new-comment-form").fill_in "comment[body]", with: "This is my Second comment."
+  click_button "Submit"
+  first(".new-comment-form").fill_in "comment[body]", with: "This is my Third comment."
+  click_button "Submit"
+end
