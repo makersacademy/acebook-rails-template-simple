@@ -25,7 +25,12 @@
   <button type="button" onclick="showComments('comments-<%=post.id%>')">Unsolicited Advice</button>
 
   <div class="comments-div" id="comments-<%=post.id%>">
-    <%= render post.comments.limit(post.comments.count) %>
+    <h6 id="comments-div-hidden" hidden>false</h6>
+    <% counter = 1 %>
+    <% post.comments.each do |comment| %>
+      <%= render partial: 'comments/comment', locals: { comment: comment, counter: counter } %>
+      <% counter += 1 %>
+    <% end %>
   </div>
 
   <% if current_user %>

@@ -12,12 +12,37 @@
 //
 //= require rails-ujs
 //= require_tree .
+showAll = false
 
 function showComments(id) {
-	console.log('SHA IS AWESOME!');
-	if (document.querySelector(`#${id}`).hidden) {
-		document.querySelector(`#${id}`).hidden = false;
-	} else {
-		document.querySelector(`#${id}`).hidden = true;
-	}
+  var div = document.querySelector(`#${id}`)
+  var nodelist = div.getElementsByTagName("p")
+  var showAll = div.getElementsByTagName("h6")[0]
+
+  showAll.innerText = (showAll.innerText === "true" ? "false" : "true");
+
+  for (i = 2; i < nodelist.length; i++) {
+    if (showAll.innerText === "true") {
+      nodelist[i].hidden = false
+    } else {
+      nodelist[i].hidden = true
+    }
+  }
 }
+  // if (showAll) {
+  //   for (i = 2; i < nodelist.length; i++) {
+  //     nodelist[i].hidden = true
+  //   }
+  //   showAll = false
+  // } else {
+  //   for (i = 2; i < nodelist.length; i++) {
+  //     nodelist[i].hidden = false
+  //   }
+  //   showAll = true
+  // }
+
+	// if (document.querySelector(`#${id}`).hidden) {
+	// 	document.querySelector(`#${id}`).hidden = false;
+	// } else {
+	// 	document.querySelector(`#${id}`).hidden = true;
+	// }

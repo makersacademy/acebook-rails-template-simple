@@ -28,12 +28,13 @@ RSpec.describe CommentsController, type: :controller do
     end
   end
 
-  describe "GET /posts/:post_id/comments" do # now redundant
-    it "responds with 200" do
-      get :index, params: { :post_id => @post.id }
-      expect(response).to have_http_status(200)
-      expect(response.content_type).to eq "text/html; charset=utf-8"
-      # expect(response).to render_template(:index) # need gem rails-controller-testing for controller.
-    end
-  end
+  # Redundant - no index page route for comments
+  # describe "GET /posts/:post_id/comments" do # now redundant
+  #   it "responds with 200" do
+  #     get :index, params: { :post_id => @post.id }
+  #     expect(response).to have_http_status(200)
+  #     expect(response.content_type).to eq "text/html; charset=utf-8"
+  #     # expect(response).to render_template(:index) # need gem rails-controller-testing for controller.
+  #   end
+  # end
 end
