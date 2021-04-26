@@ -21,9 +21,12 @@
 
   <br>Posted by: <%= User.find(post.user_id).username %>
   </p>
-  
-  
-  <%= render post.comments.limit(post.comments.count) %>
+
+  <button type="button" onclick="showComments()">Unsolicited Advice</button>
+
+  <div class="comments-div">
+    <%= render post.comments.limit(post.comments.count) %>
+  </div>
 
   <% if current_user %>
     <div class="new-comment-form">
