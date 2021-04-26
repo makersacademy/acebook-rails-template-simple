@@ -13,11 +13,11 @@
 //= require rails-ujs
 //= require_tree .
 
-function showComments() {
-  console.log("SHA IS AWESOME!");
-  if (document.querySelector(".comments-div").hidden) {
-    document.querySelector(".comments-div").hidden = false
-  } else {
-    document.querySelector(".comments-div").hidden = true;
-  }
+function showComments(id) {
+	console.log('SHA IS AWESOME!');
+	if (document.querySelector(`#${id}`).hidden) {
+		document.querySelector(`#${id}`).hidden = false;
+	} else {
+		document.querySelector(`#${id}`).hidden = true;
+	}
 }

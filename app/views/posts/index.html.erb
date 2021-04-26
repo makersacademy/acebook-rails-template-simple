@@ -22,9 +22,9 @@
   <br>Posted by: <%= User.find(post.user_id).username %>
   </p>
 
-  <button type="button" onclick="showComments()">Unsolicited Advice</button>
+  <button type="button" onclick="showComments('comments-<%=post.id%>')">Unsolicited Advice</button>
 
-  <div class="comments-div">
+  <div class="comments-div" id="comments-<%=post.id%>">
     <%= render post.comments.limit(post.comments.count) %>
   </div>
 
