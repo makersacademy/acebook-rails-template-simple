@@ -1,11 +1,4 @@
-<% if counter > 2 %>
-  <p class="comments" hidden>
-    <%= User.find(comment.user_id).username %>'s advice:
-    <%= comment.body %>
-  </p>
-<% else %>
-  <p class="comments" >
-    <%= User.find(comment.user_id).username %>'s advice:
-    <%= comment.body %>
-  </p>
-<% end %>
+<p class="comments" >
+  <%= User.find(comment.user_id).username %>'s advice:
+  <%= comment.body %>
+</p>
