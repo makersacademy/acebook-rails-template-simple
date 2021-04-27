@@ -6,9 +6,29 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
   </head>
 
   <body>
+  <header>
+    <div class="grid-container">
+        <a href="/" id='logo-text'><img class="logo" src="/k.png">nitter</a>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+      <% if current_user %>
+        <a href="">
+        <div class="grid-item">User Photo</div>
+        </a>
+        <div class="username"><%= current_user.username %></div>
+        <div class="grid-item"><a><%= link_to "Log Out", logout_path %></a></div>
+      <% else %>
+        <div class="grid-item"><a><%= link_to "Sign Up", signup_path %></a></div>
+        <div class="grid-item"><a><%= link_to "Log In", login_path %></a></div>
+      <% end %>
+    </div>
+  </header>
     <%= yield %>
   </body>
 </html>
