@@ -15,6 +15,7 @@
 showAll = false
 
 function showComments(id) {
+  var t0 = performance.now()
   var div = document.querySelector(`#${id}`)
   var nodelist = div.getElementsByTagName("p")
   var showAll = div.getElementsByTagName("h6")[0]
@@ -28,6 +29,8 @@ function showComments(id) {
       nodelist[i].hidden = true
     }
   }
+  var t1 = performance.now()
+  console.log(t1 - t0)
 }
   // if (showAll) {
   //   for (i = 2; i < nodelist.length; i++) {
