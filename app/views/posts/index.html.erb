@@ -25,19 +25,20 @@
       <button type="button" class="comments-button" onclick="showComments('comments-<%=post.id%>')">Unsolicited Advice</button>
     </div>
 
-    <div class="comments-div" id="comments-<%=post.id%>">
-      <h6 id="comments-div-hidden" hidden>false</h6>
-      <% counter = 1 %>
-      <% post.comments.each do |comment| %>
-        <%= render partial: 'comments/comment', locals: { comment: comment, counter: counter } %>
-        <% counter += 1 %>
-      <% end %>
-    </div>
+  <button type="button" class="comments-toggle" id="<%= post.id %>">More Unsolicited Advice</button>
 
-    <% if current_user %>
-      <div class="new-comment-form">
-        <%= render partial: 'comments/form', locals: { post: post } %>
-      </div>
-    <% end %>
+  <div class="top-comments" id="top-comments-<%=post.id%>">
+    <%= render post.comments.order('created_at': :desc).limit(2) %>
   </div>
+
+  <div class="all-comments" id="all-comments-<%=post.id%>">
+    <%= render post.comments.order('created_at': :desc) %>
+  </div>
+
+  <% if current_user %>
+    <div class="new-comment-form">
+      <%= render partial: 'comments/form', locals: { post: post } %>
+    </div>
+  <% end %>
+
 <% end %>
