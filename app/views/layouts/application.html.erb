@@ -8,15 +8,17 @@
     <%= javascript_include_tag 'application' %>
 
   <div class="grid-container">
+    <!-- <a href=""> -->
       <a href="/" id='logo-text'><img class="logo" src="k.png">nitter</a>
       <div class="grid-item"></div>
       <div class="grid-item"></div>
       <div class="grid-item"></div>
       <div class="grid-item"></div>
-    <a href="">
-      <div class="grid-item"><%= current_user %>User Photo</div>
-    </a>
+    <!-- </a> -->
     <% if current_user %>
+      <a href="">
+      <div class="grid-item">User Photo</div>
+      </a>
       <div class="grid-item"></div>
       <div class="grid-item"><a><%= link_to "Log Out", logout_path %></a></div>
     <% else %>
