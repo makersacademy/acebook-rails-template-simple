@@ -16,9 +16,9 @@ require 'rails_helper'
 
 def create_three_comments
   first(".new-comment-form").fill_in "comment[body]", with: "This is my first comment."
-  click_button "Submit"
+  click_button "Comment"
   first(".new-comment-form").fill_in "comment[body]", with: "This is my Second comment."
-  click_button "Submit"
+  click_button "Comment"
   first(".new-comment-form").fill_in "comment[body]", with: "This is my Third comment."
-  click_button "Submit"
+  click_button "Comment"
 end

@@ -10,7 +10,7 @@ RSpec.feature "Timeline", type: :feature do
 
     post_message("Today is Sunny!", "David")
 
-    expect(page).to have_content("Posted by: David")
-    expect(first('.post')).to have_content('David')
+    expect(page).to have_content("David")
+    expect(first('.poster')).to have_content('David')
   end
 end

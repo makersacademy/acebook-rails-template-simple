@@ -1,31 +1,31 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jackmccarthy/Documents/Makers/Week_8_9/acebook-Mugshot/app/helpers/application_helper.rb": {
+      "/Users/shacheng/Projects/acebook-Mugshot/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/jackmccarthy/Documents/Makers/Week_8_9/acebook-Mugshot/app/helpers/comments_helper.rb": {
+      "/Users/shacheng/Projects/acebook-Mugshot/app/helpers/comments_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/jackmccarthy/Documents/Makers/Week_8_9/acebook-Mugshot/app/helpers/sessions_helper.rb": {
+      "/Users/shacheng/Projects/acebook-Mugshot/app/helpers/sessions_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/jackmccarthy/Documents/Makers/Week_8_9/acebook-Mugshot/app/helpers/users_helper.rb": {
+      "/Users/shacheng/Projects/acebook-Mugshot/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/jackmccarthy/Documents/Makers/Week_8_9/acebook-Mugshot/app/controllers/comments_controller.rb": {
+      "/Users/shacheng/Projects/acebook-Mugshot/app/controllers/comments_controller.rb": {
         "lines": [
           1,
           null,
@@ -52,22 +52,22 @@
           null
         ]
       },
-      "/Users/jackmccarthy/Documents/Makers/Week_8_9/acebook-Mugshot/app/controllers/application_controller.rb": {
+      "/Users/shacheng/Projects/acebook-Mugshot/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
           1,
           1,
-          134,
-          108,
+          158,
+          120,
           null,
-          26,
+          38,
           null,
           null,
           null
         ]
       },
-      "/Users/jackmccarthy/Documents/Makers/Week_8_9/acebook-Mugshot/app/controllers/posts_controller.rb": {
+      "/Users/shacheng/Projects/acebook-Mugshot/app/controllers/posts_controller.rb": {
         "lines": [
           1,
           1,
@@ -92,7 +92,7 @@
           null
         ]
       },
-      "/Users/jackmccarthy/Documents/Makers/Week_8_9/acebook-Mugshot/app/controllers/sessions_controller.rb": {
+      "/Users/shacheng/Projects/acebook-Mugshot/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
           1,
@@ -116,7 +116,7 @@
           null
         ]
       },
-      "/Users/jackmccarthy/Documents/Makers/Week_8_9/acebook-Mugshot/app/controllers/users_controller.rb": {
+      "/Users/shacheng/Projects/acebook-Mugshot/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
@@ -144,7 +144,7 @@
           null
         ]
       },
-      "/Users/jackmccarthy/Documents/Makers/Week_8_9/acebook-Mugshot/app/models/comment.rb": {
+      "/Users/shacheng/Projects/acebook-Mugshot/app/models/comment.rb": {
         "lines": [
           1,
           1,
@@ -154,14 +154,14 @@
           null
         ]
       },
-      "/Users/jackmccarthy/Documents/Makers/Week_8_9/acebook-Mugshot/app/models/application_record.rb": {
+      "/Users/shacheng/Projects/acebook-Mugshot/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/jackmccarthy/Documents/Makers/Week_8_9/acebook-Mugshot/app/models/post.rb": {
+      "/Users/shacheng/Projects/acebook-Mugshot/app/models/post.rb": {
         "lines": [
           1,
           1,
@@ -169,7 +169,7 @@
           null
         ]
       },
-      "/Users/jackmccarthy/Documents/Makers/Week_8_9/acebook-Mugshot/app/models/user.rb": {
+      "/Users/shacheng/Projects/acebook-Mugshot/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -183,6 +183,6 @@
         ]
       }
     },
-    "timestamp": 1619521266
+    "timestamp": 1619539087
   }
 }
