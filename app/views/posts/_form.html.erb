@@ -1,0 +1,7 @@
+<%= form_with model: [ Post ], local: true, id: "post-form" do |form| %>
+  <%= form.text_field :message, id: "post-message", placeholder: 'Ramble on...', required: true%>
+
+  <%= form.hidden_field :user_id, :value => current_user.id if current_user %>
+
+  <%= form.submit "Submit", id: "post-submit" %>
+<% end %>

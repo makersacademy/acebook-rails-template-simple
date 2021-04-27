@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
-  def new
-    @post = Post.new
-  end
+  # redundant as rendering the new post form in the index
+  # def new
+  #   @post = Post.new
+  # end
 
   def create
     @post = Post.create(post_params)
-    redirect_to posts_url
+    redirect_to posts_path
   end
 
   def index
