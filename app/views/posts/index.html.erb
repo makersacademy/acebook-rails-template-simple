@@ -10,10 +10,20 @@
 <% end %>
 
 <% @posts.each do |post| %>
-  <p class="post"><%= post.message %>
-
-  <br>Posted by: <%= User.find(post.user_id).username %>
-  </p>
+  <div class="post">
+    <% if post.message != nil %>
+      <p id="message"><%= post.message %></p>
+    <% end %>
+    <% if post.image != nil %>
+      <div>
+        <%= image_tag post.image %>
+      </div>
+    <% end %>
+    <br>Posted by: <%= User.find(post.user_id).username %>
+    <div id="post_profile_photo">
+      <%= image_tag User.find(post.user_id).image %>
+    </div>
+  </div>
 <% end %>
 
 <% if current_user %>
