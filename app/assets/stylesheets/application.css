@@ -14,63 +14,85 @@
  *= require_self
  */
 
- body {
-   background-image: url("https://wallpaperaccess.com/full/480027.jpg");
-   margin: 0;
- }
+body {
+	background-image: url('https://wallpaperaccess.com/full/480027.jpg');
+	margin: 0;
+	text-align: center;
+}
 
- @font-face {
-   font-family: stitch;
-   src: url("/fonts/MixStitch.ttf");
- }
+@font-face {
+	font-family: stitch;
+	src: url('/fonts/MixStitch.ttf');
+}
 
- .grid-container {
-   /* position: fixed; */
-   height: 15%;
-   width: 100%;
-   background-color: white;
-   display: grid;
-   border-bottom: 1px solid black;
-   box-shadow: 0 4px 2px -2px gray;
-   font-size: 17px;
-   font-weight: bold;
-   grid-template-columns: repeat(8, 1fr);
-   grid-template-rows: 100px;
-   color: white;
-   align-items: center;
-   justify-items: center;
-   font-family: stitch;
-   text-transform: uppercase;
-   text-decoration: none;
- }
+.grid-container {
+	/* position: fixed; */
+	height: 15%;
+	width: 100%;
+	background-color: white;
+	display: grid;
+	border-bottom: 1px solid black;
+	box-shadow: 0 4px 2px -2px gray;
+	font-size: 17px;
+	font-weight: bold;
+	grid-template-columns: repeat(8, 1fr);
+	grid-template-rows: 100px;
+	color: white;
+	align-items: center;
+	justify-items: center;
+	font-family: stitch;
+	text-transform: uppercase;
+	text-decoration: none;
+}
 
- .grid-container a {
-   text-decoration: none;
-   color:black;
- }
-
-.grid-item :hover {
-   font-size: 23px;
+.grid-container a {
+	text-decoration: none;
+	color: black;
 }
 
 .grid-item :hover {
-    transition: all 0.2s ease-in
+	font-size: 23px;
 }
 
- .logo {
-  width: 45px;
-  height: 45px;
+.grid-item :hover {
+	transition: all 0.2s ease-in;
+}
+
+.logo {
+	width: 45px;
+	height: 45px;
 }
 #logo-text {
-  padding-bottom: 3px;
+	padding-bottom: 3px;
 }
 
 .username {
-  font-family: stitch;
-  color: black;
+	font-family: stitch;
+	color: black;
 }
 
- body {
-   background-image: url("https://wallpaperaccess.com/full/480027.jpg")
- }
+main {
+	display: grid;
+	grid-template-columns: 80% 20%;
+	margin-top: 50px;
+}
 
+.left-container {
+	width: 80%;
+	margin-left: 10%;
+}
+
+.right-container {
+	background-color: white;
+	width: 80%;
+	margin-right: 10%;
+}
+
+.post-div {
+	background-color: white;
+	margin: 20px 0 20px 0;
+	padding: 20px;
+	border: 1px solid #b5651d;
+	box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+}
