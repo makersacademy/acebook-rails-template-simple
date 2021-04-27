@@ -65,6 +65,11 @@
   padding-bottom: 3px;
 }
 
+.username {
+  font-family: stitch;
+  color: black;
+}
+
  body {
    background-image: url("https://wallpaperaccess.com/full/480027.jpg")
  }
