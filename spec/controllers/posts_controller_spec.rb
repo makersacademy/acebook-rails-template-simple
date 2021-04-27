@@ -15,7 +15,7 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it "creates a post" do
-      user = User.create(username: "test", password: "1234")
+      user = User.create(username: "test", password: "1234", image: fixture_file_upload('./spec/fixtures/pikachu.png'))
       # expect(User.find_by(username: "test")).to be
       post :create, params: { post: { message: "Hello, world!", user_id: user.id } }
       expect(Post.find_by(message: "Hello, world!")).to be
