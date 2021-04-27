@@ -11,13 +11,15 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
 //= require_tree .
 
-function showComments(id) {
-	console.log('SHA IS AWESOME!');
-	if (document.querySelector(`#${id}`).hidden) {
-		document.querySelector(`#${id}`).hidden = false;
-	} else {
-		document.querySelector(`#${id}`).hidden = true;
-	}
-}
+// $('.comments-toggle').click((e) => {
+// 	console.log(e.target.id);
+// });
+$(document).ready(() => {
+	$('.comments-toggle').click((e) => {
+		$(`#all-comments-${e.target.id}`).toggle();
+		$(`#top-comments-${e.target.id}`).toggle();
+	});
+});

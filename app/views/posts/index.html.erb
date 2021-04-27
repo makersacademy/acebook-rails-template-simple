@@ -22,10 +22,14 @@
   <br>Posted by: <%= User.find(post.user_id).username %>
   </p>
 
-  <button type="button" onclick="showComments('comments-<%=post.id%>')">Unsolicited Advice</button>
+  <button type="button" class="comments-toggle" id="<%= post.id %>">Unsolicited Advice</button>
 
-  <div class="comments-div" id="comments-<%=post.id%>">
-    <%= render post.comments.limit(post.comments.count) %>
+  <div class="top-comments" id="top-comments-<%=post.id%>">
+    <%= render post.comments.limit(2) %>
+  </div>
+
+  <div class="all-comments" id="all-comments-<%=post.id%>">
+    <%= render post.comments %>
   </div>
 
   <% if current_user %>
