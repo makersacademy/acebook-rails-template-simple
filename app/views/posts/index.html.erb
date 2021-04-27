@@ -25,11 +25,11 @@
   <button type="button" class="comments-toggle" id="<%= post.id %>">Unsolicited Advice</button>
 
   <div class="top-comments" id="top-comments-<%=post.id%>">
-    <%= render post.comments.limit(2) %>
+    <%= render post.comments.order('created_at': :desc).limit(2) %>
   </div>
 
   <div class="all-comments" id="all-comments-<%=post.id%>">
-    <%= render post.comments %>
+    <%= render post.comments.order('created_at': :desc) %>
   </div>
 
   <% if current_user %>
