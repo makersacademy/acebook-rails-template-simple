@@ -9,9 +9,9 @@
 <% @posts.each do |post| %>
   <p class="post"><%= post.message %>
   <br> Posted by: <%= User.find(post.user_id).username %>
-  <button type="button">Like</button>
-  <br> 0 Likes
-</p>
+  <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
+  <%= button_to 'like', post_likes_path(post), method: :post %>
+  </p>
 <% end %>
 
 <% if current_user %>
