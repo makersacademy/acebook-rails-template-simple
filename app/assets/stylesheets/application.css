@@ -13,3 +13,64 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   background-image: url("https://wallpaperaccess.com/full/480027.jpg");
+   margin: 0;
+ }
+
+ @font-face {
+   font-family: stitch;
+   src: url("/fonts/MixStitch.ttf");
+ }
+
+ .grid-container {
+   /* position: fixed; */
+   height: 15%;
+   width: 100%;
+   background-color: white;
+   display: grid;
+   border-bottom: 1px solid black;
+   box-shadow: 0 4px 2px -2px gray;
+   font-size: 17px;
+   font-weight: bold;
+   grid-template-columns: repeat(8, 1fr);
+   grid-template-rows: 100px;
+   color: white;
+   align-items: center;
+   justify-items: center;
+   font-family: stitch;
+   text-transform: uppercase;
+   text-decoration: none;
+ }
+
+ .grid-container a {
+   text-decoration: none;
+   color:black;
+ }
+
+.grid-item :hover {
+   font-size: 23px;
+}
+
+.grid-item :hover {
+    transition: all 0.2s ease-in
+}
+
+ .logo {
+  width: 45px;
+  height: 45px;
+}
+#logo-text {
+  padding-bottom: 3px;
+}
+
+.username {
+  font-family: stitch;
+  color: black;
+}
+
+ body {
+   background-image: url("https://wallpaperaccess.com/full/480027.jpg")
+ }
+

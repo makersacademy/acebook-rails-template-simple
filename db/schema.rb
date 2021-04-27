@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2021_04_22_142803) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+<<<<<<< HEAD
   create_table "comments", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.text "body"
@@ -53,6 +54,8 @@ ActiveRecord::Schema.define(version: 2021_04_22_142803) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+=======
+>>>>>>> styling
   create_table "posts", force: :cascade do |t|
     t.string "message"
     t.datetime "created_at", null: false
@@ -71,7 +74,10 @@ ActiveRecord::Schema.define(version: 2021_04_22_142803) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+<<<<<<< HEAD
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+=======
+>>>>>>> styling
   add_foreign_key "posts", "users"
 end
