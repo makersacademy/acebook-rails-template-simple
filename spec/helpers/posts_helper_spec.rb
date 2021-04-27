@@ -5,6 +5,7 @@ def sign_up(username)
   click_link "Sign Up"
   fill_in "Username", with: username
   fill_in "Password", with: "Password88"
+  attach_file "user_image", "./spec/fixtures/pikachu.png"
   click_button "Submit"
 end
 
