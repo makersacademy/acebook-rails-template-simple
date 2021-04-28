@@ -3,7 +3,6 @@
   <head>
     <title>Acebook</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
@@ -25,6 +24,7 @@
           </a>
           <div class="username"><%= current_user.username %></div>
           <div class="grid-item"><a><%= link_to "Log Out", logout_path %></a></div>
+          <div class="grid-item"><a><%= image_tag current_user.image %></a></div>
         <% else %>
           <div class="grid-item"><a><%= link_to "Sign Up", signup_path %></a></div>
           <div class="grid-item-login">

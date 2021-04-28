@@ -20,7 +20,13 @@
 /node_modules
 /yarn-error.log
 
+/storage
+
+
 .byebug_history
 
 # Ignore coverage files
 /coverage/*
+
+# Ignore all Active Storage
+/storage
