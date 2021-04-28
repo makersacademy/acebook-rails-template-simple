@@ -2,16 +2,14 @@ require 'rails_helper'
 
 RSpec.feature "Like button", type: :feature do
 
-  scenario 'user can only like a post once' do
+  scenario 'user can like and unlike a post' do
     visit "/"
     post_message("Shout out to my homiiiieeees", "Cool Aunt Dodo")
     expect(page).to have_content("0 Likes")
     click_button "Like"
     expect(page).to have_content("1 Like")
     click_button "Like"
-    expect(page).to have_content("1 Like")
-    # expect(page).to have_content("You can't like more than once")
-    # expect a flash message
+    expect(page).to have_content("0 Likes")
   end
 
   scenario 'a post can be liked mulitple times by different users' do
