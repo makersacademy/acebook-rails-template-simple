@@ -13,9 +13,17 @@
       <div class="post-content-author">
         <div class="poster">
           <p><%= User.find(post.user_id).username %></p>
+          <div class="post_profile_photo">
+          <%= image_tag User.find(post.user_id).image %>
+          </div>
         </div>
         <div class="post-content">
           <p class="post"><%= post.message %></p>
+          <% if post.image.attached? %>
+          <div>
+          <%= image_tag post.image %>
+          </div>
+          <% end %>
         </div>
       </div>
       <div class="likes-comment-buttons">
@@ -30,7 +38,6 @@
         <div class="top-comments" id="top-comments-<%=post.id%>">
           <%= render post.comments.order('created_at': :desc).limit(2) %>
         </div>
-
 
         <div class="all-comments" id="all-comments-<%=post.id%>">
           <%= render post.comments.order('created_at': :desc) %>

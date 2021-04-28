@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       session[:expires_at] = Time.current + 12.hours
       redirect_to root_url
     else
-      render :new
+      render :login
     end
 
   end
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :image)
   end
 
 end
