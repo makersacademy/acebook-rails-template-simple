@@ -20,9 +20,9 @@
       </div>
       <div class="likes-comment-buttons">
         <div class="likes">
-          <p>1 C</p>
+          <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
         </div>
-        <button type="submit" class="like-button">Like</button>
+        <%= button_to 'Like', post_likes_path(post), method: :post, class: "like-button" %>
         <button type="button" class="comments-toggle" id="<%= post.id %>">More Unsolicited Advice</button>
       </div>
 
@@ -30,6 +30,7 @@
         <div class="top-comments" id="top-comments-<%=post.id%>">
           <%= render post.comments.order('created_at': :desc).limit(2) %>
         </div>
+
 
         <div class="all-comments" id="all-comments-<%=post.id%>">
           <%= render post.comments.order('created_at': :desc) %>
