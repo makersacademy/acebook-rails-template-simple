@@ -1,0 +1,161 @@
+.post-form-div {
+	background-color: white;
+	margin: 20px 0 20px 0;
+	padding: 10px;
+	border: 1px solid #b5651d;
+	box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	display: grid;
+	grid-template-columns: 20% 80%;
+	vertical-align: middle;
+}
+
+#post-form {
+}
+
+#post-message {
+	font-family: stitch;
+	width: 80%;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 20px 2px;
+	font-size: 16px;
+}
+
+#post-submit {
+	font-family: stitch;
+	border: 0;
+	background: white;
+	padding: 5px 0;
+	width: 17%;
+	font-size: 16px;
+}
+
+#post-submit:hover {
+	background: rgba(0, 0, 0, 0.05);
+	cursor: pointer;
+}
+
+#post-submit:active {
+	transition: 0s;
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.post-div {
+	background-color: white;
+	margin: 20px 0 20px 0;
+	padding: 10px;
+	border: 1px solid #b5651d;
+	box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.post-content-author {
+	display: grid;
+	grid-template-columns: 20% 80%;
+}
+
+.poster {
+}
+
+.post-content {
+	text-align: left;
+}
+
+.likes-comment-buttons {
+	display: grid;
+	grid-template-columns: 20% 40% 40%;
+	vertical-align: middle;
+	border-top: 1px solid rgba(181, 101, 29, 0.3);
+	border-bottom: 1px solid rgba(181, 101, 29, 0.3);
+}
+
+.likes {
+	margin: 0px;
+}
+
+.like-button {
+	font-family: stitch;
+	border: 0;
+	margin: 0 5px;
+	background-color: white;
+}
+
+.like-button:hover {
+	background: rgba(0, 0, 0, 0.05);
+	cursor: pointer;
+}
+
+.like-button:active {
+	transition: 0s;
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.comments-toggle {
+	font-family: stitch;
+	border: 0;
+	background: white;
+	margin: 0 5px;
+}
+
+.comments-toggle:hover {
+	background: rgba(0, 0, 0, 0.05);
+	cursor: pointer;
+}
+
+.comments-toggle:active {
+	transition: 0s;
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.comments-content {
+	margin: 15px 0 5px 0;
+}
+
+.comments {
+	display: grid;
+	grid-template-columns: 20% 80%;
+	margin: 5px;
+}
+
+.commenter {
+}
+
+.comment-body {
+	text-align: left;
+}
+
+.new-comment-form {
+	display: grid;
+	grid-template-columns: 20% 80%;
+}
+
+.comment-form {
+}
+
+.comment-entry-box {
+	font-family: stitch;
+	width: 80%;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 5px 2px;
+}
+
+.comment-submit {
+	font-family: stitch;
+	border: 0;
+	background: white;
+	padding: 5px 0;
+	width: 17%;
+}
+
+.comment-submit:hover {
+	background: rgba(0, 0, 0, 0.05);
+	cursor: pointer;
+}
+
+.comment-submit:active {
+	transition: 0s;
+	background: rgba(0, 0, 0, 0.2);
+}

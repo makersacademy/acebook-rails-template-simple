@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   root 'posts#index'
 
+  resources :users
   resources :posts do
     resources :likes
+    resources :comments, only: [:create]
   end
-  resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
   get 'signup', to: 'users#new', as: 'signup'

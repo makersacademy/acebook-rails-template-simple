@@ -1,0 +1,9 @@
+<div class="comment-form">
+  <%= form_with model: [ post, post.comments.build ], local: true do |form| %>
+    <%= form.text_field :body, class: "comment-entry-box", placeholder: 'Enter your unsolicited advice here...', required: true%>
+
+    <%= form.hidden_field :user_id, :value => current_user.id if current_user %>
+
+    <%= form.submit "Comment", class: "comment-submit" %>
+  <% end %>
+</div>

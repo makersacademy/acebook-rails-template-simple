@@ -6,7 +6,7 @@
   <% end %>
 
   <%= form.label :password %>
-  <%= form.text_field :password %>
+  <%= form.password_field :password %>
   <% @user.errors.full_messages_for(:password).each do |message| %>
     <div><%= message %></div>
     <% break %>
