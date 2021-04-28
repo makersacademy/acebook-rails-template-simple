@@ -1,16 +1,35 @@
-<%= form_for @user do |form| %>
-  <%= form.label :username %>
-  <%= form.text_field :username %>
-  <% @user.errors.full_messages_for(:username).each do |message| %>
-    <div><%= message %></div>
-  <% end %>
+<div class="user-form">
+  <div class="form-title"><h1>Sign Up</h1></div>
+  <%= form_for @user do |form| %>
+    <div class="form-field">
+      <div class="field-label">
+        <%= form.label :username %>
+      </div>
+      <div class="field-input">
+        <%= form.text_field :username %>
+        <div class="alert">
+          <% @user.errors.full_messages_for(:username).each do |message| %>
+            <div><%= message %></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
 
-  <%= form.label :password %>
-  <%= form.password_field :password %>
-  <% @user.errors.full_messages_for(:password).each do |message| %>
-    <div><%= message %></div>
-    <% break %>
+    <div class="form-field">
+      <div class="field-label">
+        <%= form.label :password %>
+      </div>
+      <div class="field-input">
+        <%= form.password_field :password %>
+        <div class="alert">
+          <% @user.errors.full_messages_for(:password).each do |message| %>
+            <div><%= message %></div>
+            <% break %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    
+    <input type="submit" class="form-submit">
   <% end %>
-
-  <%= form.submit "Submit" %>
-<% end %>
+</div>
