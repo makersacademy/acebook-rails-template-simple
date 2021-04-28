@@ -8,8 +8,8 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     # CHANGE TO HEROKU LINK WHEN FRONTEND IS DEPLOYED
-    origins 'http://localhost:3000'
-    
+    origins 'http://localhost:19006'
+
 
     resource '*',
       headers: :any,
