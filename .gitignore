@@ -24,3 +24,6 @@
 
 # Ignore coverage files
 /coverage/*
+
+# Ignore all Active Storage
+/storage
