@@ -11,4 +11,12 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
 //= require_tree .
+
+$(document).ready(() => {
+	$('.comments-toggle').click((e) => {
+		$(`#all-comments-${e.target.id}`).toggle();
+		$(`#top-comments-${e.target.id}`).toggle();
+	});
+});

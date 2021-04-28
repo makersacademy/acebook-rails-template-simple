@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   root 'posts#index'
 
-  resources :posts
   resources :users
+  resources :posts do
+    resources :comments, only: [:create]
+  end
   resources :sessions, only: [:new, :create, :destroy]
 
   get 'signup', to: 'users#new', as: 'signup'
