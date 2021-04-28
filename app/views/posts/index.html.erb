@@ -11,14 +11,13 @@
 
 <% @posts.each do |post| %>
   <div class="post">
-    <% if post.message != nil %>
-      <p id="message"><%= post.message %></p>
+    <p id="message"><%= post.message %></p>
+    <% if post.image.attached? %>
+    <div>
+      <%= image_tag post.image %>
+    </div>
     <% end %>
-    <% if post.image != nil %>
-      <div>
-        <%= image_tag post.image %>
-      </div>
-    <% end %>
+
     <br>Posted by: <%= User.find(post.user_id).username %>
     <div id="post_profile_photo">
       <%= image_tag User.find(post.user_id).image %>
