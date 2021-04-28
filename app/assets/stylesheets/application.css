@@ -80,6 +80,29 @@ header {
 	color: black;
 }
 
+.grid-item-login {
+}
+
+.login-button {
+	font-family: stitch;
+	color: black;
+	font-size: 17px;
+	font-weight: bold;
+	border: none;
+	background-color: white;
+}
+
+.login-button:hover {
+	font-size: 23px;
+	transition: all 0.2s ease-in;
+}
+
+
+.login-form {
+	display: none;
+}
+
+
 main {
 	display: grid;
 	grid-template-columns: 80% 20%;
