@@ -3,10 +3,10 @@ require 'rails_helper'
 def sign_up(username)
   visit "/"
   click_link "Sign Up"
-  fill_in "Username", with: username
-  fill_in "Password", with: "password"
+  fill_in "user_username", with: username
+  fill_in "user_password", with: "password"
   attach_file "user_image", "./spec/fixtures/pikachu.png"
-  click_button "Submit"
+  click_on "user-signup-submit"
 end
 
 def log_out
