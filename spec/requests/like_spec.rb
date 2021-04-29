@@ -46,13 +46,13 @@ RSpec.describe 'Likes API', type: :request do
   end
 
   describe 'POST/likes' do
-    let(:valid_attributes) { {post_id: "1", user_id: '1'} }
+    let(:valid_attributes) { {post_id: "2", user_id: '1'} }
 
     context 'when the request is valid' do
       before { post '/likes', params: valid_attributes }
 
       it 'creates a like' do
-        expect(json['post_id']).to eq(1)
+        expect(json['post_id']).to eq(2)
         expect(json['user_id']).to eq(1)
         expect(json['id']).to eq(2)
       end
@@ -71,6 +71,14 @@ RSpec.describe 'Likes API', type: :request do
 
       it 'returns a validation failure message' do
         # says Post must exist
+        expect(response.body).to match(/Validation failed/)
+      end
+    end
+
+    context 'when a like already exists' do
+      before { post "/likes", params: { post_id: '1', user_id: '1' } }
+
+      it 'prevents a user liking the same post' do
         expect(response.body).to match(/Validation failed/)
       end
     end
