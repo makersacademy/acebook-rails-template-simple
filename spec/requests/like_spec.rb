@@ -86,7 +86,7 @@ RSpec.describe 'Likes API', type: :request do
 
   describe 'DELETE/likes/:id' do
     context 'when the like exists' do
-      before { delete "/likes/#{like_id}" }
+      before { delete "/likes/#{like_id}?user_id=1&post_id=1" }
 
       it 'should return status code 200' do
         expect(response).to have_http_status(200)
@@ -94,11 +94,24 @@ RSpec.describe 'Likes API', type: :request do
     end
 
     context 'after the like has been deleted' do
-      before { delete "/likes/#{like_id}" }
+      before { delete "/likes/#{like_id}?user_id=1&post_id=1" }
       before { get "/likes/#{like_id}" }
       it 'is dropped from the table' do
         expect(response.body).to match(/Couldn't find Like with 'id'=1/)
       end
+    end
+  end
+
+  describe 'GET/likes/post_id/:id' do
+    before { get '/likes/post_id/1'}
+    
+    it 'returns json data of likes' do
+      expect(json).not_to be_empty
+      expect(json.length).to eq 1
+    end
+
+    it 'returns status code 200' do
+      expect(response).to have_http_status 200
     end
   end
 end

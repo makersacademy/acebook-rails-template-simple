@@ -10,13 +10,18 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    @likes = Like.destroy(params[:id])
+    @likes = Like.destroy_by(user_id: params[:user_id], post_id: params[:post_id])
     render json: {status: 200}
   end
 
   def show
     @like = Like.find(params[:id])
     json_response(@like)
+  end
+
+  def post
+    @likes = Like.where(post_id: params[:id])
+    json_response(@likes)
   end
 
   private
