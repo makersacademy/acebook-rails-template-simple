@@ -27,13 +27,13 @@
       </div>
       <div class="likes-comment-buttons">
         <div class="likes">
-          <p>
+          <p id="number_likes_<%= post.id %>">
             <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Approval' : 'Approvals'%>
           </p>
         </div>
         <div class="like-button-div">
         <% if current_user %>
-          <%= button_to "That's nice, sweetie", post_likes_path(post), method: :post, class: "like-button" %>
+          <%= button_to "That's nice, sweetie", post_likes_path(post), remote: true, class: "like-button", id: "like_button_#{post.id}"%>
         <% end %>
         </div>
         <button type="button" class="comments-toggle" id="<%= post.id %>">More Unsolicited Advice</button>
