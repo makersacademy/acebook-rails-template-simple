@@ -21,6 +21,11 @@
 	font-size: 16px;
 }
 
+#post-image {
+	font-family: stitch;
+	font-size: 16px;
+}
+
 #post-submit {
 	font-family: stitch;
 	border: 0;
@@ -58,10 +63,27 @@
 }
 
 .poster {
+	align-self: center;
+}
+
+.post-profile-photo {
+	height: 50px;
+	padding: 5px;
+	border: 1px solid rgba(0,0,0,0.05);
+	border-radius: 25%;
 }
 
 .post-content {
 	text-align: left;
+}
+
+.post-image-div {
+	text-align: center;
+}
+
+.post-image {
+	max-width: 80%;
+	padding: 10px 10px 0 0;
 }
 
 .likes-comment-buttons {
@@ -117,14 +139,30 @@
 .comments {
 	display: grid;
 	grid-template-columns: 20% 80%;
-	margin: 5px;
+	margin: 5px 5px 10px 5px;
 }
 
 .commenter {
+	vertical-align: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.comment-profile-photo {
+	height: 20px;
+	padding: 1px;
+	border: 1px solid rgba(0,0,0,0.05);
+	border-radius: 25%;
+	margin-right: 5px;
 }
 
 .comment-body {
 	text-align: left;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
 .new-comment-form {

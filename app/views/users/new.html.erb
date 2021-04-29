@@ -30,9 +30,18 @@
       </div>
     </div>
 
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-
+    <div class="form-field">
+      <div class="field-label">
+        <%= form.label :image %>
+      </div>
+      <div class="field-input">
+        <%= form.file_field :image %>
+        <% @user.errors.full_messages_for(:image).each do |message| %>
+          <div><%= message %></div>
+          <% break %>
+        <% end %>
+      </div>
+    </div>
 
     <input type="submit" class="form-submit" id="user-signup-submit">
     <%# <%= form.submit "Submit" %>

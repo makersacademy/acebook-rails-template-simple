@@ -1,5 +1,6 @@
 <%= form_with model: [ Post ], local: true, id: "post-form" do |form| %>
   <%= form.text_field :message, id: "post-message", placeholder: 'Ramble on...', required: true%>
+  <%= form.file_field :image, id: "post-image" %>
 
   <%= form.hidden_field :user_id, :value => current_user.id if current_user %>
 

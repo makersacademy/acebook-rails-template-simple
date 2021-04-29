@@ -75,6 +75,13 @@ header {
 	padding-bottom: 3px;
 }
 
+#current-user-image {
+	height: 50px;
+	padding: 5px;
+	border: 1px solid rgba(0,0,0,0.05);
+	border-radius: 25%;
+}
+
 .username {
 	font-family: stitch;
 	color: black;
