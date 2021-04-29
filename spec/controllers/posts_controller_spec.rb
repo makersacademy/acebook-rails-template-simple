@@ -11,8 +11,9 @@ RSpec.describe PostsController, type: :controller do
   describe "POST /" do
     it "responds with 200" do
       post :create, params: { post: { message: "Hello, world!", user_id: 1 } }
-      expect(response).to redirect_to(posts_url)
+      expect(response).to redirect_to(root_url)
     end
+    # through using ajax, as we are instead executing Javascript instead of redirecting to, I am not sure these tests are necessary.
 
     it "creates a post" do
       user = User.create(username: "test", password: "1234", image: fixture_file_upload('./spec/fixtures/pikachu.png'))

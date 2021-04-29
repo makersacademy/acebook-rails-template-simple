@@ -1,5 +1,7 @@
-// document.querySelector("#top-comments-<%=@post.id%>").innerHTML =
-//   `<%= render @post.comments.order('created_at': :desc).limit(2) %>`;
+var newDiv = document.createElement('div');
+newDiv.innerHTML = `<%= render partial: "posts/post", locals: { post: @post } %>`
+
+document.querySelector(".posts").insertBefore(newDiv, document.querySelector(".posts").childNodes[0])
 
 document.querySelector("#post-message").value = ""
 document.querySelector("#post-image").value = ""
