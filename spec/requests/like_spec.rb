@@ -45,14 +45,16 @@ RSpec.describe 'Likes API', type: :request do
     end
 
 end
-xdescribe 'POST/posts' do
-  let(:valid_attributes) { {content: "oh wow 250 characters", user_id: '1'} }
+describe 'POST/likes' do
+  let(:valid_attributes) { {post_id: "1", user_id: '1'} }
 
   context 'when the request is valid' do
-    before { post '/posts', params: valid_attributes }
+    before { post '/likes', params: valid_attributes }
 
-    it 'creates a post' do
-      expect(json['content']).to eq("oh wow 250 characters")
+    it 'creates a like' do
+      expect(json['post_id']).to eq(1)
+      expect(json['user_id']).to eq(1)
+      expect(json['id']).to eq(2)
     end
 
     it 'returns status code 201' do
@@ -60,7 +62,7 @@ xdescribe 'POST/posts' do
     end
   end
 
-  context 'when the request is invalid' do
+  xcontext 'when the request is invalid' do
     before { post '/posts', params: { content: '', user_id: '1' } }
 
     it 'returns status code 422' do

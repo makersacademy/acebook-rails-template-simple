@@ -5,6 +5,8 @@ class LikesController < ApplicationController
   end
 
   def create
+    @likes = Like.create!(like_params)
+    json_response(@likes, :created)
   end
 
   def delete
@@ -13,5 +15,11 @@ class LikesController < ApplicationController
   def show
     @like = Like.find(params[:id])
     json_response(@like)
+  end
+
+  private
+
+  def like_params
+    params.permit(:post_id, :user_id)
   end
 end
