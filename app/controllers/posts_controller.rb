@@ -6,7 +6,10 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    redirect_to posts_path
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.js
+    end
   end
 
   def index
