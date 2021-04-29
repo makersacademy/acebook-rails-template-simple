@@ -10,7 +10,7 @@ RSpec.describe SessionsController, type: :controller do
   end
 
   describe "POST /sessions/" do
-    it "responds with 200" do
+    it "redirects to root on succesful login" do
       User.create(username: "ralph", password: "password", image: fixture_file_upload('./spec/fixtures/pikachu.png'))
       post :create, params: { username: "ralph", password: "password" }
       expect(response).to redirect_to(root_url)
