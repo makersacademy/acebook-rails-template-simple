@@ -9,7 +9,9 @@ class LikesController < ApplicationController
     json_response(@likes, :created)
   end
 
-  def delete
+  def destroy
+    @likes = Like.destroy(params[:id])
+    render json: {status: 200}
   end
 
   def show
