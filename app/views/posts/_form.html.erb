@@ -1,7 +1,8 @@
 <%= form_with model: [ Post ], local: true, id: "post-form" do |form| %>
-  <%= form.text_field :message, id: "post-message", placeholder: 'Ramble on...', required: true%>
-  <%= form.file_field :image, id: "post-image" %>
-
+  <div id="post-input-div">
+    <%= form.text_area :message, id: "post-message", placeholder: 'Ramble on...', required: true%>
+    <%= form.file_field :image, id: "post-image" %>
+  </div>
   <%= form.hidden_field :user_id, :value => current_user.id if current_user %>
 
   <%= form.submit "Submit", id: "post-submit" %>
