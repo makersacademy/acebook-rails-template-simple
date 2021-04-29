@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe CommentsController, type: :controller do
   before do
-    @user = User.create(username: "test", password: "1234")
+    @user = User.create(username: "test", password: "1234", image: fixture_file_upload('./spec/fixtures/pikachu.png'))
     @post = Post.create(message: "Hello, world!", user_id: @user.id)
   end
   # No Mocking - to look at
