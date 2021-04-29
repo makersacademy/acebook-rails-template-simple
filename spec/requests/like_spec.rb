@@ -43,35 +43,36 @@ RSpec.describe 'Likes API', type: :request do
         expect(response.body).to match(/Couldn't find Like with 'id'=100/)
       end
     end
-
-end
-describe 'POST/likes' do
-  let(:valid_attributes) { {post_id: "1", user_id: '1'} }
-
-  context 'when the request is valid' do
-    before { post '/likes', params: valid_attributes }
-
-    it 'creates a like' do
-      expect(json['post_id']).to eq(1)
-      expect(json['user_id']).to eq(1)
-      expect(json['id']).to eq(2)
-    end
-
-    it 'returns status code 201' do
-      expect(response).to have_http_status(201)
-    end
   end
 
-  xcontext 'when the request is invalid' do
-    before { post '/posts', params: { content: '', user_id: '1' } }
+  describe 'POST/likes' do
+    let(:valid_attributes) { {post_id: "1", user_id: '1'} }
 
-    it 'returns status code 422' do
-      expect(response).to have_http_status(422)
+    context 'when the request is valid' do
+      before { post '/likes', params: valid_attributes }
+
+      it 'creates a like' do
+        expect(json['post_id']).to eq(1)
+        expect(json['user_id']).to eq(1)
+        expect(json['id']).to eq(2)
+      end
+
+      it 'returns status code 201' do
+        expect(response).to have_http_status(201)
+      end
     end
 
-    it 'returns a validation failure message' do
-      expect(response.body).to match(/Validation failed: Content can't be blank/)
+    context 'when the request is invalid' do
+      before { post '/likes', params: { post_id: '888888', user_id: '1' } }
+
+      it 'returns status code 422' do
+        expect(response).to have_http_status(422)
+      end
+
+      it 'returns a validation failure message' do
+        # says Post must exist
+        expect(response.body).to match(/Validation failed/)
+      end
     end
   end
-end
 end
