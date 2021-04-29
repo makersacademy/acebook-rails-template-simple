@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       session[:expires_at] = Time.current + 12.hours
       redirect_to root_url
     else
-      render :login
+      render :new
     end
 
   end
