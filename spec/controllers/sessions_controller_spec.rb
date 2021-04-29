@@ -15,6 +15,12 @@ RSpec.describe SessionsController, type: :controller do
       post :create, params: { username: "ralph", password: "password" }
       expect(response).to redirect_to(root_url)
     end
+
+    it "redirects to root on failure" do
+      User.create(username: "ralph", password: "password", image: fixture_file_upload('./spec/fixtures/pikachu.png'))
+      post :create, params: { username: "ralph", password: "failword" }
+      expect(response).to redirect_to(root_url)
+    end
   end
 
 end
