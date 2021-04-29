@@ -1,0 +1,14 @@
+  <div class="alert login-alert"><%= alert %></div>
+  <%= form_with url: sessions_path, local: true do |form| %>
+    <div class="login-with-button">
+      <div class="login-fields">
+        <div class="field-input login-field">
+          <%= form.text_field :username, class: "username-entry", placeholder: "Username", required: true%>
+        </div>
+        <div class="field-input login-field">
+          <%= form.password_field :password, class: "password-entry", placeholder: "Password", required: true%>
+        </div>
+      </div>
+      <input type="submit" value="LOG IN" class="login-form-submit">
+    </div>
+  <% end %>
