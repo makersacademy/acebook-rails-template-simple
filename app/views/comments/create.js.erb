@@ -1,0 +1,7 @@
+document.querySelector("#top-comments-<%=@post.id%>").innerHTML =
+  `<%= render @post.comments.order('created_at': :desc).limit(2) %>`;
+
+document.querySelector("#all-comments-<%=@post.id%>").innerHTML =
+  `<%= render @post.comments.order('created_at': :desc) %>`;
+
+document.querySelector("#comment-entry-box-<%=@post.id%>").value = ""
