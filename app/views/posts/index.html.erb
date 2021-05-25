@@ -13,7 +13,8 @@
     <%end%>
    <%= user.nickname ? user.nickname : user.name %>
   </p>
-  <p><%= post.message %></p> <br>
+  <% adjusted_create_time = (post.created_at.to_time + 1.hours).to_datetime %>
+  <p><%= post.message %><%= "#{adjusted_create_time.strftime(" at %l:pm %A")}" %></p> <br>
   <div>
     <%if post.post_image.attached? %>
       <%= image_tag post.post_image, style: "width: 100px; height: 100px;" %>
