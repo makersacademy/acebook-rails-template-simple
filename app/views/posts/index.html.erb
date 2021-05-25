@@ -13,8 +13,8 @@
     <%end%>
    <%= user.nickname ? user.nickname : user.name %>
   </p>
-  <% adjusted_create_time = (post.created_at.to_time + 1.hours).to_datetime %>
-  <p><%= post.message %><%= "#{adjusted_create_time.strftime(" at %l:pm %A")}" %></p> <br>
+  <% adjusted_post_time = (post.created_at.to_time + 1.hours).to_datetime %>
+  <p><%= post.message %><%= "#{adjusted_post_time.strftime(" at %l:pm %A")}" %></p> <br>
   <div>
     <%if post.post_image.attached? %>
       <%= image_tag post.post_image, style: "width: 100px; height: 100px;" %>
@@ -32,6 +32,8 @@
         <%= image_tag "default-image.jpeg", style: "width: 20px;" %>
       <%end%>
         <%= comment_owner.nickname ? comment_owner.nickname : comment_owner.name %>
+        <% adjusted_comment_time = (comment.created_at.to_time + 1.hours).to_datetime %>
+        <%= "#{adjusted_comment_time.strftime(" at %l:pm %A")}" %>
       <% end %>
     </p>
   <div>
