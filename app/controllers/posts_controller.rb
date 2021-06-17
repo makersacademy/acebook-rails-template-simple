@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    # @user = user.find(para)
     @posts = posts_ordered_by_descending_date
     @user = current_user if logged_in?
   end
