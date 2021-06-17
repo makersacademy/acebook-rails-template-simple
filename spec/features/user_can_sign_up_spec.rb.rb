@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Sign up'' do
+feature 'Sign up' do
   scenario 'user can sign up' do
     visit '/users/new'
     expect(page).to have_content("Email")

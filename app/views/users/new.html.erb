@@ -4,6 +4,9 @@
 <p>This will be a signup page for new users.</p>
 
 <%= form_for @user, class: "signupForm" do |f| %>
+  <%= f.label :profile_picture %>
+  <%= f.file_field :profile_picture %>
+  
   <%= f.label :first_name %>
   <%= f.text_field :firstname, class: "shortInput" %> <br />
 
