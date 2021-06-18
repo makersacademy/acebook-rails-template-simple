@@ -1,8 +1,8 @@
 
 
 <% @posts.each do |post| %>
+  <strong><%= " Posted by: #{User.find(post.user_id).firstname} #{User.find(post.user_id).lastname}" %></strong>
   <p><%= post.message %></p>
-
   <p><%= post.likes %> likes </p>
   <a href="/posts/<%= post.id %>/like">Like</a>
 
