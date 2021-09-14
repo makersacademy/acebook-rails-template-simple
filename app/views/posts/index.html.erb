@@ -1,6 +1,13 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <%= form_with model: @like do |form| %>
+    <%= form.hidden_field :post_id, :value=>post.id%>
+    <%= form.hidden_field :user_id, :value=>11%> 
+    <%= form.submit :value=>"Like"%>
+  <% end %>
 <% end %>
+<%#Hard coded the user ID%>
+
 
 <%= link_to new_post_path do %>
   New post
