@@ -6,7 +6,11 @@ class EightbookController < ApplicationController
 
   def create
     #create a new user after clicking Sign Up! button
-    #redirect to 'posts' page for the user
+    #create a new user obj saving params to instance variables
+    #redirect to 'posts' page 
+    p params[:first_name]
+    p params[:last_name]
+    redirect_to posts_url
   end
   
 end
