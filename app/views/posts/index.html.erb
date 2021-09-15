@@ -1,5 +1,10 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <%= form_for @like do |form| %>
+    <%= form.hidden_field :post_id, :value => "#{post.id}"%>
+    <%= form.hidden_field :user_id, :value => "11"%>
+    <%= form.submit "Like" %>
+  <% end %>
 <% end %>
 
 <%= link_to new_post_path do %>
