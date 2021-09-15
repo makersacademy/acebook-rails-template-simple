@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   root 'posts#index', as: 'home' 
   # (controller/route)
   resources :posts
+  resources :comments
 end

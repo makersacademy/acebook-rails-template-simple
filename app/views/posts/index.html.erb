@@ -1,7 +1,8 @@
 <h1>Welcome to 8Rock</h1>
 
 <h2>feed</h2>
-
+<section style="border:solid 2px green">
+<h2>Create post</h2>
 <%= form_for :post, url: posts_path do |f| %>
   <p>
   <%= f.label :post_content %> <br>
@@ -11,12 +12,16 @@
   <%= f.submit %>
   </p>
 <% end %>
-
+</section>
 
 
 <% @posts.each do |post| %>
-<h5><%= get_time_ago(post.created_at) %></h5>
-<h3><%= post.post_content %></h3>
+<section style="border:solid 1px red">
+<h3>Post</h3>
+<h5>Post id:<%= post.id %></h5>
+<h5>Time ago:<%= get_time_ago(post.created_at) %></h5>
+<h3>Post contents:<%= post.post_content %></h3>
+</section>
 <% end %>
 
 
