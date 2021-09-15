@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @posts = Post.all.reverse
   end
 
   def show
@@ -15,7 +15,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.save
-    redirect_to @post
+    # redirect_to @post
+    redirect_to home_path
+     #:action: "show", id: 1
   end
 
   private def post_params
