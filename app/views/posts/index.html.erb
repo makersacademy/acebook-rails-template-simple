@@ -5,6 +5,7 @@
     <%= form.hidden_field :user_id, :value => "11"%>
     <%= form.submit "Like" %>
   <% end %>
+  <p>Likes: <%= post.likes_count %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
