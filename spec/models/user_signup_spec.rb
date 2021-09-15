@@ -10,8 +10,4 @@ RSpec.describe User, type: :model do
       expect(user.password).to_eq 'test'
     end
   end
-
-
-
-
 end
