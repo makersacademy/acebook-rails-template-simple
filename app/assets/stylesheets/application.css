@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+ nav {
+    background: #DD00BB;
+    padding: 1em;
+    margin: 0;
+ }
+
+ .navbar-link {
+    color: gainsboro;
+    text-decoration: none;
+    border: 1px white dotted;
+    border-radius: 8px;
+    font-size: 1.4em;
+    font-weight: 600;
+    font-family: sans-serif;
+    padding: 0.4em;
+    margin-right: 0.2em;
+ }
