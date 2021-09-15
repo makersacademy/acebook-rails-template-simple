@@ -12,35 +12,28 @@
 
 <%= form_with model: @user do |form| %>
 
-<div class="mb-3">
+
 <%= form.label :first_name %>
-<%= form.text_field :first_name, class: "form-control", placeholder: "Enter your first name"%>
-</div>
+<%= form.text_field :first_name, class: "form-control", placeholder: "First Name"%>
 
-<div class="mb-3">
+<br>
+
 <%= form.label :last_name %>
-<%= form.text_field :last_name, class: "form-control", placeholder: "Enter your last name"%>
-</div>
+<%= form.text_field :last_name, class: "form-control", placeholder: "Last Name"%>
 
+<br>
 
-<div class="mb-3">
 <%= form.label :email %>
-<%= form.text_field :email, class: "form-control", placeholder: "steve@steve.com"%>
-</div>
+<%= form.text_field :email, class: "form-control", placeholder: "Your Email"%>
 
-<div class="mb-3">
+<br>
+
 <%= form.label :password %>
-  <%= form.password_field :password_digest, class: "form-control", placeholder: "Password"%>
-</div>
+<%= form.text_field :password_digest, class: "form-control", placeholder: "Password"%>
 
-<div class="mb-3">
-<%= form.label :password_confirmation %>
-  <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password"%>
-</div>
+<br>
 
+<%= button_to 'Sign Up!', '/eightbook/create' %>
 
-<div class="mb-3">
-<%= form.submit "Sign Up!"%>
-</div>
 <% end %>
 
