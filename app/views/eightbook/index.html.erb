@@ -1,4 +1,4 @@
-<form method='post'> 
+<%# <form method='post'> 
   <input type='text' placeholder='First Name' name='first_name'</input><br>
   <input type='text' placeholder='Last Name' name='last_name'</input><br>
   <input type='email' placeholder='Your Email' name='email'</input><br>
@@ -9,5 +9,38 @@
   <label for='T&Cs'>Click here to agree the <a href="URL TO T&Cs here">T&Cs</a><br><br>
 
   <%= button_to 'Sign Up!', '/eightbook/create' %>
-</form> 
+
+<%= form_with model: @user do |form| %>
+
+<div class="mb-3">
+<%= form.label :first_name %>
+<%= form.text_field :first_name, class: "form-control", placeholder: "Enter your first name"%>
+</div>
+
+<div class="mb-3">
+<%= form.label :last_name %>
+<%= form.text_field :last_name, class: "form-control", placeholder: "Enter your last name"%>
+</div>
+
+
+<div class="mb-3">
+<%= form.label :email %>
+<%= form.text_field :email, class: "form-control", placeholder: "steve@steve.com"%>
+</div>
+
+<div class="mb-3">
+<%= form.label :password %>
+  <%= form.password_field :password_digest, class: "form-control", placeholder: "Password"%>
+</div>
+
+<div class="mb-3">
+<%= form.label :password_confirmation %>
+  <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password"%>
+</div>
+
+
+<div class="mb-3">
+<%= form.submit "Sign Up!"%>
+</div>
+<% end %>
 
