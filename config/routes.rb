@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   resources :posts
   
-  resources :book
-
-  #get '/8book' to: '8book#index'
+  resources :eightbook
 
 end
