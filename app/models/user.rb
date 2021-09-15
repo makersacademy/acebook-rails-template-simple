@@ -1,4 +1,4 @@
-class User < ApplicationRecord
+class User #< ApplicationRecord
   
   attr_reader :first_name, :last_name, :email, :password
 
