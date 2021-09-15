@@ -9,8 +9,14 @@
   </head>
 
   <body>
-  <%= link_to "Posts", posts_url %>
-  <%= link_to "New Post", new_post_url %>
+    <nav> 
+      <%= link_to "Posts", posts_url %>
+      <%= link_to "New Post", new_post_url %>
+      <% if true %>
+        <%= link_to "Log Out", posts_url %>
+      <% end %>
+    </nav>
+  
     <%= yield %>
   </body>
 </html>
