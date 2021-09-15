@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.reverse
+    #@posts = Post.joins("INNER JOIN comments ON posts.id = comments.post_id")
   end
 
   def show
@@ -19,6 +20,7 @@ class PostsController < ApplicationController
     redirect_to home_path
      #:action: "show", id: 1
   end
+  
 
   private def post_params
     params.require(:post).permit(:post_content, :created_at)
