@@ -3,12 +3,25 @@
   <head>
     <title>Acebook</title>
     <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css' %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+ 
+  <div class = "container">
+
+    <nav> 
+      <%= link_to "Posts", posts_url, class: "navbar-link" %>
+      <%= link_to "New Post", new_post_url, class: "navbar-link" %>
+      <% if true %>
+        <%= link_to "Log Out", "#", class: "navbar-link" %>
+      <% end %>
+    </nav>
+  
     <%= yield %>
+  </div>
   </body>
 </html>
