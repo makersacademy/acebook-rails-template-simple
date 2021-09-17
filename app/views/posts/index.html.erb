@@ -21,11 +21,21 @@
 
 
 <% @posts.each do |post| %>
+
   <section style="border:solid 1px red">
     <h3>Post</h3>
     <h5>Post id: <%= post.id %></h5>
     <h5>Time: <%= get_time_ago(post.created_at) %> ago</h5>
     <h3>Post contents: <%= post.post_content %></h3>
+
+  <%= form_for @like do |form| %>
+    <%= form.hidden_field :post_id, :value => "#{post.id}"%>
+    <%= form.hidden_field :user_id, :value => "11"%>
+    <%= form.submit "Like" %>
+  <% end %>
+  <p>Likes: <%= post.likes_count %></p>
+<% end %>
+
 
     <div>
     <h4>Comments</h4>
