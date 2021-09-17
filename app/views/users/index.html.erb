@@ -1,0 +1,25 @@
+
+<%= form_with model: @user, local: true do |form| %>
+  
+<%= form.label :first_name %>
+<%= form.text_field :first_name, class: "form-control", placeholder: "First Name"%>
+<br>
+<%= form.label :last_name %>
+<%= form.text_field :last_name, class: "form-control", placeholder: "Last Name"%>
+<br>
+<%= form.label :email %>
+<%= form.text_field :email, class: "form-control", placeholder: "Your Email"%>
+<br>
+<%= form.label :password %>
+<%= form.password_field :password, class: "form-control", placeholder: "Password"%>
+<br>
+<br>
+<html id="tandc">
+<p> I accept the <a href = "/"> T&C's</a><%= form.check_box :terms , class: "form-control"%> </p>
+</html>
+
+<div class="actions">
+<%= form.submit "Sign Up!" %>
+</div>
+
+<% end %>
