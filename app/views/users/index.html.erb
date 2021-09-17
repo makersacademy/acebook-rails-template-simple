@@ -13,8 +13,8 @@
 <%= form.text_field :password, class: "form-control", placeholder: "Password"%>
 <br>
 <br>
-<p> I accept the <a href = "/"> T&C's</a><%= form.check_box :terms , class: "form-control"%> </p>
+<p> I accept the <a href = "/"> T&C's</a><%= form.check_box :terms , class: "form-control"%> </p
 
-<%= button_to 'Sign Up!', '/eightbook/create' %>
+<%= button_to 'Sign Up!', users_path, method: :post %>
+
 <% end %>
-
