@@ -27,9 +27,10 @@
 
   <%= form_for @like do |form| %>
     <%= form.hidden_field :post_id, :value => "#{post.id}" %>
-    <%= form.hidden_field :user_id, :value => "11" %>
+    <%= form.hidden_field :user_id, :value => "#{session[:user_id]}" %>
     <%= form.submit "Like" %>
   <% end %>
+  <%#session is dependant on sign in being implemented%>
 
   <p>Likes: <%= post.likes_count %></p>
 
@@ -50,7 +51,8 @@
           <%= f.label :comment %> <br>
           <%= f.text_area :comment, required: true %><br>
           <%= f.hidden_field :post_id, required: true, value:"#{post.id}" %> 
-          <%= f.hidden_field :user_id, required: true, value:'1' %> 
+          <%= f.hidden_field :user_id, required: true, value:"#{session[:user_id]} %> 
+          <%#session is dependant on sign in being implemented%>
         </p>
         <p>
           <%= f.submit %>
