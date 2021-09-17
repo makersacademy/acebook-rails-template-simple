@@ -3,61 +3,58 @@
 <h2>feed</h2>
 
 <section style="border:solid 5px purple">
+  <h2>Create post</h2>
 
-<h2>Create post</h2>
+  <%= form_for :post, url: posts_path do |f| %>
+    <p>
+      <%= f.label :message %> <br>
+      <%= f.text_area :message %>
+    </p>
 
-<%= form_for :post, url: posts_path do |f| %>
-  <p>
-    <%= f.label :post_content %> <br>
-    <%= f.text_area :post_content %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+    <p>
+      <%= f.submit %>
+    </p>
+
     <% end %>
 </section>
 
-
-
-
 <% @posts.each do |post| %>
-
   <section style="border:solid 1px red">
     <h3>Post</h3>
     <h5>Post id: <%= post.id %></h5>
     <h5>Time: <%= get_time_ago(post.created_at) %> ago</h5>
-    <h3>Post contents: <%= post.post_content %></h3>
+    <h3>Post contents: <%= post.message %></h3>
 
   <%= form_for @like do |form| %>
-    <%= form.hidden_field :post_id, :value => "#{post.id}"%>
-    <%= form.hidden_field :user_id, :value => "11"%>
+    <%= form.hidden_field :post_id, :value => "#{post.id}" %>
+    <%= form.hidden_field :user_id, :value => "11" %>
     <%= form.submit "Like" %>
   <% end %>
+
   <p>Likes: <%= post.likes_count %></p>
-<% end %>
 
-
-    <div>
+  <div>
     <h4>Comments</h4>
-      <%
-      @comments = Comment.where({post_id: post.id})
-      @comments.each do |comment_object|
-      %>
+      <% @comments = Comment.where({post_id: post.id})
+      @comments.each do |comment_object| %>
+        
         comment: <%= comment_object['comment'] %> 
         user_id: <%= comment_object.user_id %><br />
+      
       <% end %>
+
       <section style="border:solid 5px pink">
       <h2>Add comment</h2>
       <%= form_for :comment, url: comments_path do |f| %>
-      <p>
-        <%= f.label :comment %> <br>
-        <%= f.text_area :comment, required: true %><br>
-        <%= f.hidden_field :post_id, required: true, value:"#{post.id}" %> 
-        <%= f.hidden_field :user_id, required: true, value:'1' %> 
+        <p>
+          <%= f.label :comment %> <br>
+          <%= f.text_area :comment, required: true %><br>
+          <%= f.hidden_field :post_id, required: true, value:"#{post.id}" %> 
+          <%= f.hidden_field :user_id, required: true, value:'1' %> 
         </p>
         <p>
-        <%= f.submit %>
-      </p>
+          <%= f.submit %>
+        </p>
       <% end %>
       </section>
     </div>
