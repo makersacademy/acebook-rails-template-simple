@@ -1,4 +1,4 @@
-class EightbookController < ApplicationController
+class UsersController < ApplicationController
   
   def index
     #show homepage - user sign up

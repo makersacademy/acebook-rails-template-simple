@@ -1,0 +1,20 @@
+
+<%= form_with model: @user do |form| %>
+<%= form.label :first_name %>
+<%= form.text_field :first_name, class: "form-control", placeholder: "First Name"%>
+<br>
+<%= form.label :last_name %>
+<%= form.text_field :last_name, class: "form-control", placeholder: "Last Name"%>
+<br>
+<%= form.label :email %>
+<%= form.text_field :email, class: "form-control", placeholder: "Your Email"%>
+<br>
+<%= form.label :password %>
+<%= form.text_field :password, class: "form-control", placeholder: "Password"%>
+<br>
+<br>
+<p> I accept the <a href = "/"> T&C's</a><%= form.check_box :terms , class: "form-control"%> </p>
+
+<%= button_to 'Sign Up!', '/eightbook/create' %>
+<% end %>
+

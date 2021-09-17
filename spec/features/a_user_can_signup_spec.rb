@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'signup' do
   scenario 'a user can sign up to 8book' do
-    visit('/eightbook')
+    visit('/')
     find_link('T&Cs').visible?
     fill_in('First Name', with: 'John')
     fill_in('Last Name', with: 'Wick')
