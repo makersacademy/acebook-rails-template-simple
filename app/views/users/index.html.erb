@@ -1,5 +1,6 @@
 
-<%= form_with model: @user do |form| %>
+<%= form_with model: @user, local: true do |form| %>
+  
 <%= form.label :first_name %>
 <%= form.text_field :first_name, class: "form-control", placeholder: "First Name"%>
 <br>
@@ -10,11 +11,15 @@
 <%= form.text_field :email, class: "form-control", placeholder: "Your Email"%>
 <br>
 <%= form.label :password %>
-<%= form.text_field :password, class: "form-control", placeholder: "Password"%>
+<%= form.password_field :password, class: "form-control", placeholder: "Password"%>
 <br>
 <br>
-<p> I accept the <a href = "/"> T&C's</a><%= form.check_box :terms , class: "form-control"%> </p
+<html id="tandc">
+<p> I accept the <a href = "/"> T&C's</a><%= form.check_box :terms , class: "form-control"%> </p>
+</html>
 
-<%= button_to 'Sign Up!', users_path, method: :post %>
+<div class="actions">
+<%= form.submit "Sign Up!" %>
+</div>
 
 <% end %>
