@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.save
-    redirect_to home_path
+    redirect_to posts_path
   end
   
   private def post_params
