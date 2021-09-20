@@ -13,6 +13,7 @@
 <%= form.label :password %>
 <%= form.password_field :password, class: "form-control", placeholder: "Password", required: true %>
 <br>
+<%= form.file_field :avatar %>
 <br>
 <html id="tandc">
 <p> I accept the <a href = "/"> T&C's</a><%= form.check_box :terms , class: "form-control", required: true %> </p>

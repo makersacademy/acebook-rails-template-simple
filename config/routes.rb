@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 resources :posts, :users, :likes, :comments
   root 'users#index' #I think this needs to be under resources to work correctly!
   root 'posts#index', as: 'home' 
+  get '/view' => 'users#view'
 end
