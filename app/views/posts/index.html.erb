@@ -1,14 +1,15 @@
 <div class="welcome">
-<h1>Welcome to 8book</h1>
+<h1>Welcome back Tom!</h1>
 </div>
-<section>
+<section class="new-post">
 
-  <h3>Create post</h3>
+  <br>
 
   <%= form_for :post, url: posts_path do |f| %>
     <p>
-      <%= f.label :message %> <br>
-      <%= f.text_area :message %>
+
+      <%= f.text_area :message, cols: 50, rows: 4, placeholder: "What's on your mind...", :class => "new-post-text" %>
+      
     </p>
 
     <p>
@@ -16,7 +17,7 @@
     <%= f.submit "Post", :class => "save-post" %></div>
     <% end %>
     </p>
-</section>
+</section><br><br>
 
 <% @posts.each do |post| %>
   <section>
@@ -60,5 +61,6 @@
       <% end %>
       </section>
     </div>
+    <hr>
   </section>
 <% end %>

@@ -19,16 +19,26 @@
 
  body {
   background: #FFE6E6;
+  text-align: center;
 
  }
 
 .welcome {
 
   text-align: center;
+  width: 90%;
+  margin: auto;
   text-decoration: none;
-  border: 1px;
+  background: #ff6767;
+  color: #FFE6E6;
+  font-size: 1.4em;
+  font-weight: 450;
+  font-family: Verdana, sans-serif;
+  border: 3px;
+  border-style: solid;
   border-color: #FF2626;
-  border-radius: 8px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
   font-size: 1.4em;
   font-weight: 450;
   font-family: Verdana, sans-serif;
@@ -36,16 +46,20 @@
 
 }
 
+
  nav {
     background: #FF2626;
-    padding: 1em;
-    margin: 0;
-    text-align: right;
+    padding-left: 5px;
+    padding: 11px;
+    height: 75px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
  }
 
  .navbar-link {
     color: #680a0a;
     background: #e8aeae;  
+    float: right;
     text-decoration: none;
     border: 1px inset;
     border-radius: 8px;
@@ -53,8 +67,24 @@
     font-weight: 450;
     font-family: Verdana, sans-serif;
     padding: 0.4em;
-    margin-right: 0.2em;
+    margin-right: 0.6em;
  }
+
+ .navbar-logo {
+  color: #ffffff; 
+  float: left;
+  text-decoration: none;
+  font-size: 2.4em;
+  font-weight: 530;
+  font-family: Verdana, sans-serif;
+  padding: -0.2em;
+  margin-left: 1.5em;
+}
+
+.navbar-logo:hover{
+  color: #ffffff; 
+
+}
 
  .navbar-link:hover{
   border: 1px inset;
@@ -118,29 +148,55 @@ background: #680a0a;
 box-shadow: 0 12px 16px 0 #BD1616;  
 }
 
-.post {
-  /* background: #FF2626; */
-  /* padding: 1em; */
-  margin: 0;
-  text-align: left;
+.new-post {
+
+  width: 80%;
+  margin: auto;
+  text-decoration: none;
+  background: #ff9090;
+  color: #680a0a;
+  font-size: 1.4em;
+  font-weight: 450;
+  font-family: Verdana, sans-serif;
+  border: 3px;
+  border-top: 0px;
+  border-style: solid;
+  border-color: #FF2626;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  font-size: 1.4em;
+  font-weight: 450;
+  font-family: Verdana, sans-serif;
+  height: 240px;
+  padding-left: 110px;
+  padding-right: 110px;
+  
+
 }
 
 .save-post {
   color: #FFE6E6;
   background: #FF2626;  
+  margin-top: 40px;
   text-decoration: none;
   border: 1px inset;
   border-radius: 8px;
   font-size: 1.4em;
   font-weight: 450;
   font-family: Verdana, sans-serif;
-  padding: 0.4em;
-  margin-right: 0.2em;
+  float: right;
 }
 
 .save-post:hover{
-border: 1px inset;
-color: #e8aeae;  
-background: #680a0a; 
-box-shadow: 0 12px 16px 0 #BD1616;  
+  border: 1px inset;
+  color: #e8aeae;  
+  background: #680a0a; 
+  box-shadow: 0 12px 16px 0 #BD1616;  
+}
+
+.new-post-text{
+    color: #680a0a;
+    background: #FFE6E6;  
+    resize: none;
+    float: left;
 }
