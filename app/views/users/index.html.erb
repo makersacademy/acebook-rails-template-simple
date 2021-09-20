@@ -13,11 +13,10 @@
 <%= form.label :password %>
 <%= form.password_field :password, class: "form-control", placeholder: "Password"%>
 <br>
+<%= form.check_box :terms, class: "form-control", :class => "form-check-input" %>
+<%= form.label :terms, "Please accept our T&Cs" %>
 <br>
-<html id="tandc">
-<p> I accept the <a href = "/"> T&C's</a><%= form.check_box :terms , class: "form-control"%> </p>
-</html>
-
+<br>
 <div class="actions">
 <%= form.submit "Sign Up!" %>
 </div>
