@@ -24,12 +24,19 @@
     <h5>Time: <%= get_time_ago(post.created_at) %> ago</h5>
     <h3>Post contents: <%= post.message %></h3>
 
-  <%= form_for @like do |form| %>
-    <%= form.hidden_field :post_id, :value => "#{post.id}" %>
-    <%= form.hidden_field :user_id, :value => "11" %>
-    <%= form.submit "Like" %>
+  <% if post.likes.none? { |like| like.user_id == session[:user_id] }%>
+    <%= form_for @like do |form| %>
+      <%= form.hidden_field :post_id, :value => "#{post.id}" %>
+      <%= form.hidden_field :user_id, :value => session[:user_id] %>
+      <%= form.submit "Like" %>
+    <% end %>
+  <% else %>
+    <%= form_for @like, method: :delete do |form| %>
+      <%= form.hidden_field :post_id, :value => "#{post.id}" %>
+      <%= form.hidden_field :user_id, :value => session[:user_id] %>
+      <%= form.submit "unlike" %>
+    <% end %>
   <% end %>
-  <%#session is dependant on sign in being implemented%>
 
   <p>Likes: <%= post.likes_count %></p>
 
