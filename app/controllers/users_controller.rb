@@ -10,8 +10,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.save
-    redirect_to posts_path
+    if @user.save
+      redirect_to posts_path
+    else
+      render :index
+    end
   end
 
   private
