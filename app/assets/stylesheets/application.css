@@ -207,3 +207,19 @@ box-shadow: 0 12px 16px 0 #BD1616;
 .new-post-text:hover::placeholder {
   color: #680a0a;
 }
+
+.posts {
+
+  width: 80%;
+  margin: auto;
+  text-decoration: none;
+  color: #680a0a;
+  font-size: 1.4em;
+  font-weight: 450;
+  font-family: Verdana, sans-serif;
+  font-size: 1.4em;
+  font-weight: 450;
+  font-family: Verdana, sans-serif;
+  text-align: left;
+  
+}
