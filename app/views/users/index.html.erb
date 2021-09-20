@@ -2,20 +2,20 @@
 <%= form_with model: @user, local: true do |form| %>
   
 <%= form.label :first_name %>
-<%= form.text_field :first_name, class: "form-control", placeholder: "First Name"%>
+<%= form.text_field :first_name, class: "form-control", placeholder: "First Name", required: true %>
 <br>
 <%= form.label :last_name %>
-<%= form.text_field :last_name, class: "form-control", placeholder: "Last Name"%>
+<%= form.text_field :last_name, class: "form-control", placeholder: "Last Name", required: true %>
 <br>
 <%= form.label :email %>
-<%= form.text_field :email, class: "form-control", placeholder: "Your Email"%>
+<%= form.text_field :email, class: "form-control", placeholder: "Your Email", required: true %>
 <br>
 <%= form.label :password %>
-<%= form.password_field :password, class: "form-control", placeholder: "Password"%>
+<%= form.password_field :password, class: "form-control", placeholder: "Password", required: true %>
 <br>
 <br>
 <html id="tandc">
-<p> I accept the <a href = "/"> T&C's</a><%= form.check_box :terms , class: "form-control"%> </p>
+<p> I accept the <a href = "/"> T&C's</a><%= form.check_box :terms , class: "form-control", required: true %> </p>
 </html>
 
 <div class="actions">
