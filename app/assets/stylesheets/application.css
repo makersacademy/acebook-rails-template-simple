@@ -22,6 +22,8 @@
 
  }
 
+
+
  nav {
     background: #FF2626;
     padding: 1em;
@@ -30,9 +32,10 @@
  }
 
  .navbar-link {
-    color: gainsboro;
+    color: #680a0a;
+    background: #e8aeae;  
     text-decoration: none;
-    border: 1px white dotted;
+    border: 1px inset;
     border-radius: 8px;
     font-size: 1.4em;
     font-weight: 600;
@@ -42,5 +45,89 @@
  }
 
  .navbar-link:hover{
+  border: 1px inset;
+  color: #e8aeae;  
+  background: #680a0a; 
   box-shadow: 0 12px 16px 0 #BD1616;  
+}
+
+.comment {
+  /* background: #FF2626; */
+  padding: 1em;
+  margin: 0;
+  text-align: left;
+}
+
+.add-comment {
+  color: #680a0a;
+  background: #e8aeae;  
+  text-decoration: none;
+  border: 1px inset;
+  border-radius: 8px;
+  font-size: 1.4em;
+  font-weight: 600;
+  font-family: sans-serif;
+  padding: 0.4em;
+  margin-right: 0.2em;
+}
+
+.add-comment:hover{
+border: 1px inset;
+color: #e8aeae;  
+background: #680a0a; 
+box-shadow: 0 12px 16px 0 #BD1616;  
+}
+
+.like {
+  /* background: #FF2626; */
+  /* padding: 1em; */
+  margin: 0;
+  text-align: left;
+}
+
+.add-like {
+  color: #680a0a;
+  background: #e8aeae;  
+  text-decoration: none;
+  border: 1px inset;
+  border-radius: 8px;
+  font-size: 1.4em;
+  font-weight: 600;
+  font-family: sans-serif;
+  padding: 0.4em;
+  margin-right: 0.2em;
+}
+
+.add-like:hover{
+border: 1px inset;
+color: #e8aeae;  
+background: #680a0a; 
+box-shadow: 0 12px 16px 0 #BD1616;  
+}
+
+.post {
+  /* background: #FF2626; */
+  /* padding: 1em; */
+  margin: 0;
+  text-align: left;
+}
+
+.save-post {
+  color: #680a0a;
+  background: #e8aeae;  
+  text-decoration: none;
+  border: 1px inset;
+  border-radius: 8px;
+  font-size: 1.4em;
+  font-weight: 600;
+  font-family: sans-serif;
+  padding: 0.4em;
+  margin-right: 0.2em;
+}
+
+.save-post:hover{
+border: 1px inset;
+color: #e8aeae;  
+background: #680a0a; 
+box-shadow: 0 12px 16px 0 #BD1616;  
 }

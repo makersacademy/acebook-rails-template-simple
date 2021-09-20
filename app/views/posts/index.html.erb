@@ -12,10 +12,10 @@
     </p>
 
     <p>
-      <%= f.submit %>
-    </p>
-
+    <div class="post">
+    <%= f.submit "Post", :class => "save-post" %></div>
     <% end %>
+    </p>
 </section>
 
 <% @posts.each do |post| %>
@@ -28,7 +28,8 @@
   <%= form_for @like do |form| %>
     <%= form.hidden_field :post_id, :value => "#{post.id}" %>
     <%= form.hidden_field :user_id, :value => "11" %>
-    <%= form.submit "Like" %>
+    <div class="like">
+        <%= form.submit "Like", :class => "add-like" %></div>
   <% end %>
 
   <p>Likes: <%= post.likes_count %></p>
@@ -43,7 +44,7 @@
       
       <% end %>
 
-      <section style="border:solid 5px pink">
+      <section>
       <h2>Add comment</h2>
       <%= form_for :comment, url: comments_path do |f| %>
         <p>
@@ -53,7 +54,8 @@
           <%= f.hidden_field :user_id, required: true, value:'1' %> 
         </p>
         <p>
-          <%= f.submit %>
+        <div class="comment">
+        <%= f.submit "Add comment", :class => "add-comment" %></div>
         </p>
       <% end %>
       </section>
