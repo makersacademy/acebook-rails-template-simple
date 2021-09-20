@@ -24,21 +24,9 @@
     <h5>Time: <%= get_time_ago(post.created_at) %> ago</h5>
     <h3>Post contents: <%= post.message %></h3>
 
-  <% if post.likes.none? { |like| like.user_id == session[:user_id] }%>
-    <%= form_for @like do |form| %>
-      <%= form.hidden_field :post_id, :value => "#{post.id}" %>
-      <%= form.hidden_field :user_id, :value => session[:user_id] %>
-      <%= form.submit "Like" %>
-    <% end %>
-  <% else %>
-    <%= form_for @like, method: :delete do |form| %>
-      <%= form.hidden_field :post_id, :value => "#{post.id}" %>
-      <%= form.hidden_field :user_id, :value => session[:user_id] %>
-      <%= form.submit "Unlike" %>
-    <% end %>
-  <% end %>
+    <%= render partial: "posts/like", locals: { post: post } %>
 
-  <p>Likes: <%= post.likes_count %></p>
+    <p>Likes: <%= post.likes_count %></p>
 
   <div>
     <h4>Comments</h4>
@@ -68,5 +56,5 @@
     </div>
   </section>
 <% end %>
-<%== pagy_nav(@pagy) %>
 
+<%== pagy_nav(@pagy) %>
