@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   end
   
   private def post_params
-    params.require(:post).permit(:message, :created_at)
+    params.require(:post).permit(:message, :avatar, :created_at)
   end
 
 end
