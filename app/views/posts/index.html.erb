@@ -1,10 +1,9 @@
+<div class="welcome">
 <h1>Welcome to 8book</h1>
+</div>
+<section>
 
-<h2>feed</h2>
-
-<section style="border:solid 5px purple">
-
-  <h2>Create post</h2>
+  <h3>Create post</h3>
 
   <%= form_for :post, url: posts_path do |f| %>
     <p>
@@ -20,7 +19,7 @@
 </section>
 
 <% @posts.each do |post| %>
-  <section style="border:solid 1px red">
+  <section>
     <h3>Post</h3>
     <h5>Post id: <%= post.id %></h5>
     <h5>Time: <%= get_time_ago(post.created_at) %> ago</h5>

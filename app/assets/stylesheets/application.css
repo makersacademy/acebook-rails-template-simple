@@ -22,7 +22,19 @@
 
  }
 
+.welcome {
 
+  text-align: center;
+  text-decoration: none;
+  border: 1px;
+  border-color: #FF2626;
+  border-radius: 8px;
+  font-size: 1.4em;
+  font-weight: 450;
+  font-family: Verdana, sans-serif;
+  padding: 0.4em;
+
+}
 
  nav {
     background: #FF2626;
@@ -59,8 +71,8 @@
 }
 
 .add-comment {
-  color: #680a0a;
-  background: #e8aeae;  
+  color: #FFE6E6;
+  background: #FF2626; 
   text-decoration: none;
   border: 1px inset;
   border-radius: 8px;
@@ -87,8 +99,8 @@ box-shadow: 0 12px 16px 0 #BD1616;
 }
 
 .add-like {
-  color: #680a0a;
-  background: #e8aeae;  
+  color: #FFE6E6;
+  background: #FF2626;  
   text-decoration: none;
   border: 1px inset;
   border-radius: 8px;
@@ -114,8 +126,8 @@ box-shadow: 0 12px 16px 0 #BD1616;
 }
 
 .save-post {
-  color: #680a0a;
-  background: #e8aeae;  
+  color: #FFE6E6;
+  background: #FF2626;  
   text-decoration: none;
   border: 1px inset;
   border-radius: 8px;
