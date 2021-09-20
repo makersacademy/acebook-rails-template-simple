@@ -13,11 +13,20 @@
  *= require_tree .
  *= require_self
  */
+ /* Color Palette: #FFE6E6 #FF2626 #BD1616 #000000 - Color Hunt
+ */
+
+
+ body {
+  background: #FFE6E6;
+
+ }
 
  nav {
-    background: #DD00BB;
+    background: #FF2626;
     padding: 1em;
     margin: 0;
+    text-align: right;
  }
 
  .navbar-link {
@@ -31,3 +40,7 @@
     padding: 0.4em;
     margin-right: 0.2em;
  }
+
+ .navbar-link:hover{
+  box-shadow: 0 12px 16px 0 #BD1616;  
+}
