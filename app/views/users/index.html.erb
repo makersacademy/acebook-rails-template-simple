@@ -15,6 +15,12 @@
 <br>
 <%= form.file_field :avatar %>
 <br>
+<%= form.check_box :terms, class: "form-control", :class => "form-check-input" %>
+<%= form.label :terms, "Please accept our T&Cs" %>
+
+<br>
+<br>
+
 <html id="tandc">
 <p> I accept the <a href = "/"> T&C's</a><%= form.check_box :terms , class: "form-control", required: true %> </p>
 </html>
