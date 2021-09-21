@@ -50,8 +50,7 @@
           <%= f.label :comment %> <br>
           <%= f.text_area :comment, required: true %><br>
           <%= f.hidden_field :post_id, required: true, value:"#{post.id}" %> 
-          <%= f.hidden_field :user_id, required: true, value:"1" %> 
-          <%#session is dependant on sign in being implemented%>
+          <%= f.hidden_field :user_id, required: true, value:"#{session[:user_id]}" %> 
         </p>
         <p>
           <%= f.submit %>
@@ -62,4 +61,3 @@
   </section>
 <% end %>
 <%== pagy_nav(@pagy) %>
-
