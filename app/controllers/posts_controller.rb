@@ -1,11 +1,10 @@
 class PostsController < ApplicationController
-
   def new
     @post = Post.new
   end
 
   def index
-    @posts = Post.all.reverse
+    @pagy, @posts = pagy(Post.all.order(created_at: :desc), items: 5)
     @like = Like.new
   end
 
@@ -16,7 +15,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.save
-    redirect_to home_path
+    redirect_to posts_path
   end
   
   private def post_params

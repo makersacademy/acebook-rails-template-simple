@@ -21,13 +21,12 @@
 <% @posts.each do |post| %>
   <section style="border:solid 1px red">
     <h3>Post</h3>
-    <h5>Post id: <%= post.id %></h5>
     <h5>Time: <%= get_time_ago(post.created_at) %> ago</h5>
     <h3>Post contents: <%= post.message %></h3>
 
   <%= form_for @like do |form| %>
     <%= form.hidden_field :post_id, :value => "#{post.id}" %>
-    <%= form.hidden_field :user_id, :value => "#{session[:user_id]}" %>
+    <%= form.hidden_field :user_id, :value => "11" %>
     <%= form.submit "Like" %>
   <% end %>
   <%#session is dependant on sign in being implemented%>
@@ -52,7 +51,6 @@
           <%= f.text_area :comment, required: true %><br>
           <%= f.hidden_field :post_id, required: true, value:"#{post.id}" %> 
           <%= f.hidden_field :user_id, required: true, value:"#{session[:user_id]}" %> 
-          <%#session is dependant on sign in being implemented%>
         </p>
         <p>
           <%= f.submit %>
@@ -62,3 +60,4 @@
     </div>
   </section>
 <% end %>
+<%== pagy_nav(@pagy) %>
