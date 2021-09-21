@@ -11,13 +11,16 @@
 <%= form.text_field :email, class: "form-control", placeholder: "Your Email", required: true %>
 <br>
 <%= form.label :password %>
-<%= form.password_field :password, class: "form-control", placeholder: "Password", required: true, minlength:6, maxlength:40 %>
+<%= form.password_field :password, class: "form-control", placeholder: "Password", required: true %>
 <br>
-<%= form.check_box :terms, class: "form-control", :class => "form-check-input", required: true  %>
+<%= form.check_box :terms, class: "form-control", :class => "form-check-input" %>
 <%= form.label :terms, "Please accept our T&Cs" %>
 <br>
 <br>
 
+<html id="tandc">
+<p> I accept the <a href = "/"> T&C's</a><%= form.check_box :terms , class: "form-control", required: true %> </p>
+</html>
 
 <div class="actions">
 <%= form.submit "Sign Up!" %>
