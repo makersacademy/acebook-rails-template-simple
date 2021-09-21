@@ -26,7 +26,9 @@
 
     <%= render partial: "posts/like", locals: { post: post } %>
 
-    <p>Likes: <%= post.likes_count %></p>
+  <p>Likes: <%= post.likes_count %></p>
+  
+  <%= link_to "Edit", edit_post_path(post.id), class:"editpost" %>
 
   <div>
     <h4>Comments</h4>
