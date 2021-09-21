@@ -1,12 +1,5 @@
 class UsersController < ApplicationController
-  
-  def index
-   
-  end
-
-  def view
-    @users = User.first
-  end
+  def index; end
 
   def new
     @user = User.new
@@ -26,5 +19,4 @@ class UsersController < ApplicationController
   def user_params
     params.permit(:first_name, :last_name, :email, :password, :avatar)
   end
-  
 end

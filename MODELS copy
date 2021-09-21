@@ -1,0 +1,2 @@
+rails generate scaffold Post entry:string
+rails g scaffold User first_name:string{100}:not_null last_name:string{100}:not_null email:string{100}:uniq:index:not_null password_digest:string avatar:string
