@@ -37,7 +37,11 @@
         
         comment: <%= comment_object['comment'] %> 
         user_id: <%= comment_object.user_id %><br />
-      
+        <% commentator = User.find(comment_object.user_id.to_i) %>
+        <% if commentator.avatar.attached? %>
+        user_image: <%= image_tag commentator.avatar %>
+        <% end %>
+        username: <%= commentator.first_name %>
       <% end %>
 
       <section style="border:solid 5px pink">
