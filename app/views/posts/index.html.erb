@@ -32,6 +32,7 @@
   <%#session is dependant on sign in being implemented%>
 
   <p>Likes: <%= post.likes_count %></p>
+  <%= link_to "Edit", edit_post_path(post.id) %>
 
   <div>
     <h4>Comments</h4>
