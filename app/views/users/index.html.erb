@@ -1,26 +1,29 @@
-
+<div class="container text-start signup_form mt-2">
 <%= form_with model: @user, local: true do |form| %>
-  
+
 <%= form.label :first_name %>
-<%= form.text_field :first_name, class: "form-control", placeholder: "First Name", required: true %>
-<br>
+<%= form.text_field :first_name, class: "form-control", placeholder: "Enter your first name", required: true %>
+
 <%= form.label :last_name %>
-<%= form.text_field :last_name, class: "form-control", placeholder: "Last Name", required: true %>
-<br>
+<%= form.text_field :last_name, class: "form-control", placeholder: "Enter your last name", required: true %>
+
 <%= form.label :email %>
-<%= form.text_field :email, class: "form-control", placeholder: "Your Email", required: true %>
-<br>
+<%= form.text_field :email, class: "form-control", placeholder: "Enter your email", required: true %>
+
 <%= form.label :password %>
-<%= form.password_field :password, class: "form-control", placeholder: "Password", required: true %>
+<%= form.password_field :password, class: "form-control", placeholder: "Enter a password", required: true %>
+
+<%= form.label :profile_picture %>
 <br>
 <%= form.file_field :avatar %>
-<br>
+<div class="float-end">
 <%= form.check_box :terms, class: "form-control", :class => "form-check-input" %>
 <%= form.label :terms, "Please accept our T&Cs" %>
-
-<br>
-<br>
-<div class="actions">
-<%= form.submit "Sign Up!" %>
 </div>
+<br>
+<br>
+
+<%= form.submit "Sign Up!", :class => "sign_up btn text-white btn-sm mb-2"  %>
+
 <% end %>
+</div>

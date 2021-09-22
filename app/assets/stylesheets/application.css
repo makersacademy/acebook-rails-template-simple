@@ -216,3 +216,17 @@ nav {
   font-family: Verdana, sans-serif;
   text-align: left;
 }
+.sign_up {
+  color: #f3f2c9;
+  background: #53B8BB;
+  text-decoration: none;
+  border: 1px inset;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  float: right;
+  padding: 0.33rem 1.5rem;
+}
+.signup_form input{
+  margin-bottom: 1rem;
+  
+}
