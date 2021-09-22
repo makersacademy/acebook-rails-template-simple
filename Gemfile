@@ -21,7 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2' 
-gem 'graphicsmagick'
+# gem 'graphicsmagick'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'

@@ -83,8 +83,6 @@ GEM
     ffi (1.15.4)
     globalid (0.5.2)
       activesupport (>= 5.0)
-    graphicsmagick (1.0.6)
-      subexec
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.1)
@@ -190,7 +188,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    subexec (0.2.3)
     thor (1.1.0)
     tilt (2.0.10)
     tzinfo (2.0.4)
@@ -220,7 +217,6 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   date
-  graphicsmagick
   image_processing (~> 1.2)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
