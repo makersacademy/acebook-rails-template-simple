@@ -1,0 +1,12 @@
+<%= form_with url: sign_in_path, local: true do |form| %>
+  
+<%= form.label :email %>
+<%= form.text_field :email, class: "form-control", placeholder: "Email"%>
+<%= form.label :password %>
+<%= form.password_field :password, class: "form-control", placeholder: "Password"%>
+
+<div class="actions">
+<%= form.submit "Sign In!" %>
+</div>
+
+<% end %>
