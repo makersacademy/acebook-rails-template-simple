@@ -3,7 +3,7 @@ require 'rails_helper'
 feature "Likes" do
   before :each do
     visit "/posts"
-    click_link "New post"
+    click_link "New Post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
   end
