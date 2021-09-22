@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 resources :posts, :users, :likes, :comments
   root 'users#index' #I think this needs to be under resources to work correctly!
 
-
   get 'sign_in', to: 'sessions#new'
   post 'sign_in', to: 'sessions#create', as: 'log_in'
   delete 'logout', to: 'sessions#destroy'

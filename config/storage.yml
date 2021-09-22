@@ -1,0 +1,22 @@
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
+
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
+
+  gcs: &gcs
+  service: GCS
+  project: ""
+
+private_gcs:
+  <<: *gcs
+  credentials: <%= Rails.root.join("path/to/private_keyfile.json") %>
+  bucket: ""
+
+public_gcs:
+  <<: *gcs
+  credentials: <%= Rails.root.join("path/to/public_keyfile.json") %>
+  bucket: ""
+  public: true
