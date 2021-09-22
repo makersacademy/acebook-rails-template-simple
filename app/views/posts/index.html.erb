@@ -41,10 +41,11 @@
         <%= comment_object['comment'] %> 
         <%# user_id:  %>
         <%= comment_object.user_id %><br />
-        <% commentator = User.find(comment_object.user_id.to_i) %>
+        <% commentator = User.find(comment_object.user_id) %>
         <% if commentator.avatar.attached? %>
         <%# user_image:  %>
-        <%= image_tag commentator.avatar.resize_to_limit(40, 40) %>
+      
+    <%= image_tag commentator.avatar.variant(resize_to_limit: [75, 75])%>
         <% end %>
         <%# username: %>
         <%= commentator.first_name %>
