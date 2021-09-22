@@ -1,0 +1,201 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ /* Color Palette: #FFE6E6 #FF2626 #BD1616 #000000 - Color Hunt
+ */
+
+ body {
+    background: #E9E9E9;
+    text-align: center;
+   }
+  .welcome {
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    text-decoration: none;
+    background: #055052;
+    color: #F3F2C9;
+    font-size: 1.4em;
+    font-weight: 450;
+    font-family: Verdana, sans-serif;
+    border: 3px;
+    border-style: solid;
+    border-color: #F3F2C9;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-top: none;
+    font-size: 1.4em;
+    font-weight: 450;
+    font-family: Verdana, sans-serif;
+    padding: 0.4em;
+  }
+   nav {
+      background: #003638;
+      padding-left: 5px;
+      padding: 11px;
+      height: 75px;
+      border: 3px;
+      border-style: solid;
+      border-color: #F3F2C9;
+      border-top: none;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+   }
+   .navbar-link {
+      color: #003638;
+      background: #53B8BB;
+      float: right;
+      text-decoration: none;
+      border: 1px inset;
+      border-radius: 8px;
+      font-size: 1.4em;
+      font-weight: 450;
+      font-family: Verdana, sans-serif;
+      padding: 0.4em;
+      margin-right: 0.6em;
+   }
+   .navbar-logo {
+    color: #F3F2C9;
+    float: left;
+    text-decoration: none;
+    font-size: 2.4em;
+    font-weight: 530;
+    font-family: Verdana, sans-serif;
+    padding: -0.2em;
+    margin-left: 1.5em;
+  }
+  .navbar-logo:hover{
+    color: #E9E9E9;
+  }
+   .navbar-link:hover{
+    border: 1px inset;
+    color: #003638;
+    background: #F3F2C9;
+    box-shadow: 0 12px 16px 0 #53B8BB;
+  }
+  .comment {
+    /* background: #FF2626; */
+    padding: 1em;
+    margin: 0;
+    text-align: left;
+  }
+  .add-comment {
+    color: #FFE6E6;
+    background: #FF2626;
+    text-decoration: none;
+    border: 1px inset;
+    border-radius: 8px;
+    font-family: 'Merienda', cursive;
+    font-size: 1.4em;
+    font-weight: 450;
+    font-family: Verdana, sans-serif;
+    padding: 0.4em;
+    margin-right: 0.2em;
+  }
+  .add-comment:hover{
+  border: 1px inset;
+  color: #E8AEAE;
+  background: #680A0A;
+  box-shadow: 0 12px 16px 0 #BD1616;
+  }
+  .like {
+    /* background: #FF2626; */
+    /* padding: 1em; */
+    margin: 0;
+    text-align: left;
+  }
+  .add-like {
+    color: #FFE6E6;
+    background: #FF2626;
+    text-decoration: none;
+    border: 1px inset;
+    border-radius: 8px;
+    font-size: 1.4em;
+    font-weight: 450;
+    font-family: Verdana, sans-serif;
+    padding: 0.4em;
+    margin-right: 0.2em;
+  }
+  .add-like:hover{
+  border: 1px inset;
+  color: #E8AEAE;
+  background: #680A0A;
+  box-shadow: 0 12px 16px 0 #BD1616;
+  }
+  .new-post {
+    width: 80%;
+    margin: auto;
+    text-decoration: none;
+    background: #53b7bb9a;
+    font-size: 1.4em;
+    font-weight: 450;
+    font-family: Verdana, sans-serif;
+    border: 3px;
+    border-top: 0px;
+    border-style: solid;
+    border-color: #F3F2C9;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    font-size: 1.4em;
+    font-weight: 450;
+    font-family: Verdana, sans-serif;
+    height: 240px;
+    padding-left: 110px;
+    padding-right: 110px;
+  }
+  .save-post {
+    color: #F3F2C9;
+    background: #003638;
+    margin-top: 40px;
+    text-decoration: none;
+    border: 1px inset;
+    border-radius: 8px;
+    font-size: 1.4em;
+    font-weight: 450;
+    font-family: Verdana, sans-serif;
+    float: right;
+  }
+  .save-post:hover{
+    border: 1px inset;
+    color: #003638;
+    background: #F3F2C9;
+    box-shadow: 0 12px 16px 0 #003638;
+  }
+  .new-post-text{
+      color: #003638;
+      background: #F3F2C9;
+      resize: none;
+      float: left;
+      outline: none;
+      border: 1px inset;
+      border-radius: 10px;
+  }
+  .new-post-text:hover::placeholder {
+    color: #003638;
+  }
+  .posts {
+    width: 80%;
+    margin: auto;
+    text-decoration: none;
+    color: #680A0A;
+    font-size: 1.4em;
+    font-weight: 450;
+    font-family: Verdana, sans-serif;
+    font-size: 1.4em;
+    font-weight: 450;
+    font-family: Verdana, sans-serif;
+    text-align: left;
+  }
+
