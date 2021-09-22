@@ -1,25 +1,27 @@
-<h1>Welcome to 8book</h1>
+<div class="welcome">
+<h1>Welcome back Tom!</h1>
+</div>
+<section class="new-post">
 
-<h2>feed</h2>
-
-<section style="border:solid 5px purple">
-  <h2>Create post</h2>
+  <br>
 
   <%= form_for :post, url: posts_path do |f| %>
     <p>
-      <%= f.label :message %> <br>
-      <%= f.text_area :message %>
-      <%= f.file_field :avatar %>
+
+      <%= f.text_area :message, cols: 50, rows: 4, placeholder: "What's on your mind...", :class => "new-post-text" %>
+      
     </p>
 
     <p>
-      <%= f.submit %>
-    </p>
-
+    <div class="post">
+    <%= f.submit "Post", :class => "save-post" %></div>
     <% end %>
-</section>
+    </p>
+</section><br><br>
 
+<div class="posts">
 <% @posts.each do |post| %>
+<<<<<<< HEAD
   <section style="border:solid 1px red">
     <h3>Post</h3>
     <h5>Time: <%= get_time_ago(post.created_at) %> ago</h5>
@@ -31,32 +33,49 @@
   <p>Likes: <%= post.likes_count %></p>
   
   <%= link_to "Edit", edit_post_path(post.id), class:"editpost" %>
+=======
+  <section>
+    <h5><%= get_time_ago(post.created_at) %> ago</h5>
+    <h3><%= post.message %></h3>
+</div>
+<div>
+  <%= form_for @like do |form| %>
+    <%= form.hidden_field :post_id, :value => "#{post.id}" %>
+    <%= form.hidden_field :user_id, :value => "11" %>
+    <div class="like">
+        <%= form.submit "Like", :class => "add-like" %></div>
+  <% end %>
 
-  <div>
-    <h4>Comments</h4>
+  <p>Likes: <%= post.likes_count %></p>
+</div>
+<%# add a class here tomorrow and edit the comment field %>
+  <div class=""> 
+>>>>>>> c9def45f844df168cffc564aea661b0df5b7c2b1
+
       <% @comments = Comment.where({post_id: post.id})
       @comments.each do |comment_object| %>
         
-        comment: <%= comment_object['comment'] %> 
-        user_id: <%= comment_object.user_id %><br />
-      
+        <%= comment_object['comment'] %> 
+       <br>
+      </div>
       <% end %>
 
-      <section style="border:solid 5px pink">
-      <h2>Add comment</h2>
+      <section>
       <%= form_for :comment, url: comments_path do |f| %>
         <p>
           <%= f.label :comment %> <br>
-          <%= f.text_area :comment, required: true %><br>
+          <%= f.text_area :comment, required: true, placeholder: "comment on this.." %> <br>
           <%= f.hidden_field :post_id, required: true, value:"#{post.id}" %> 
           <%= f.hidden_field :user_id, required: true, value:"#{session[:user_id]}" %> 
         </p>
         <p>
-          <%= f.submit %>
+        <div class="comment">
+        <%= f.submit "Add comment", :class => "add-comment" %></div>
         </p>
       <% end %>
       </section>
     </div>
+    <hr>
   </section>
 <% end %>
 
