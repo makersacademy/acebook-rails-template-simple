@@ -5,7 +5,7 @@
   <%= form_for :post, url: posts_path do |f| %>
     <%= f.text_area :message, rows: 4, placeholder: "What's on your mind...", :class => "xnew-post-text col-12" %>
     <div class="post coll-3">
-    <%= f.submit "Post", :class => "xsave-post btn btn-primary btn-sm col-12" %>
+    <%= f.submit "Post", :class => "save-post btn btn-sm col-12" %>
     </div>
   <% end %>
 </section>
@@ -13,7 +13,7 @@
 <div class="container">
 <% @posts.each do |post| %>
   <div class="card">
-    <div class="card-header text-right text-muted">
+    <div class="card-header text-right">
       <%= get_time_ago(post.created_at) %> ago
     </div>
     <img src="..." class="card-img-top d-none" alt="...">
@@ -26,7 +26,7 @@
         <%= form.hidden_field :user_id, :value => "1" %>
             <button type="submit" class="d-inline btn text-white btn-light btn-sm">👍</button>
             <div class="d-inline px-2"> <%= post.likes_count %></div>
-            <button type="submit" class="d-inline btn text-white btn-light btn-sm">👎</button>
+            <button type="submit" class="d-none btn text-white btn-light btn-sm">👎</button>
       <% end %>
     </div>
 
@@ -47,7 +47,7 @@
       <%= f.hidden_field :post_id, required: true, value:"#{post.id}" %> 
       <%= f.hidden_field :user_id, required: true, value:'1' %> 
     
-      <%= f.submit "Add comment", :class => "xadd-comment btn text-white btn-primary btn-sm mb-2" %>
+      <%= f.submit "Add comment", :class => "add-comment btn text-white btn-sm mb-2" %>
     
    
   <% end %>
