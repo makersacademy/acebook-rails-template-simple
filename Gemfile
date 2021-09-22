@@ -7,7 +7,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 # This should help with image upload 
-gem "image_processing", ">= 1.2"
 gem "aws-sdk-s3", require: false
 
 
