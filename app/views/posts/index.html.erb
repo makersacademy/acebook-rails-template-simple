@@ -23,7 +23,7 @@
     <div class="card-footer text-end bg-white border-0">
       <%= form_for @like do |form| %>
         <%= form.hidden_field :post_id, :value => "#{post.id}" %>
-        <%= form.hidden_field :user_id, :value => "1" %>
+        <%= form.hidden_field :user_id, required: true, value:"#{session[:user_id]}" %> 
             <button type="submit" class="d-inline btn text-white btn-light btn-sm">👍</button>
             <div class="d-inline px-2"> <%= post.likes_count %></div>
             <button type="submit" class="d-none btn text-white btn-light btn-sm">👎</button>
@@ -45,7 +45,7 @@
     
       <%= f.text_area :comment, required: true, placeholder: "comment on this..", class: "w-100" %> <br>
       <%= f.hidden_field :post_id, required: true, value:"#{post.id}" %> 
-      <%= f.hidden_field :user_id, required: true, value:'1' %> 
+      <%= f.hidden_field :user_id, required: true, value:"#{session[:user_id]}" %> 
     
       <%= f.submit "Add comment", :class => "add-comment btn text-white btn-sm mb-2" %>
     
