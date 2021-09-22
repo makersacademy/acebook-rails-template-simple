@@ -24,7 +24,7 @@
     <h3>Post</h3>
     <h5>Time: <%= get_time_ago(post.created_at) %> ago</h5>
     <h3>Post contents: <%= post.message %></h3>
-    <h3>Image contents:  <%= image_tag post.avatar %></h3>
+    <h3>Image contents:  <%= image_tag (post.avatar) if post.avatar.attached? %></h3>
 
   <%= form_for @like do |form| %>
     <%= form.hidden_field :post_id, :value => "#{post.id}" %>
