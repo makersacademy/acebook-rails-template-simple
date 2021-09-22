@@ -13,12 +13,14 @@
 <%= form.label :password %>
 <%= form.password_field :password, class: "form-control", placeholder: "Password", required: true %>
 <br>
+<%= form.file_field :avatar %>
+<br>
 <%= form.check_box :terms, class: "form-control", :class => "form-check-input" %>
 <%= form.label :terms, "Please accept our T&Cs" %>
+
 <br>
 <br>
 <div class="actions">
 <%= form.submit "Sign Up!" %>
 </div>
-
 <% end %>
