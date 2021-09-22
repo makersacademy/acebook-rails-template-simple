@@ -1,82 +1,60 @@
-<div class="welcome">
-<h1>Welcome back Tom!</h1>
+<div class="xwelcome row mt-2 mb-0">
+<h5>Welcome back Tom!</h5>
 </div>
-<section class="new-post">
-
-  <br>
-
+<section class="row mb-2">
   <%= form_for :post, url: posts_path do |f| %>
-    <p>
-
-      <%= f.text_area :message, cols: 50, rows: 4, placeholder: "What's on your mind...", :class => "new-post-text" %>
-      
-    </p>
-
-    <p>
-    <div class="post">
-    <%= f.submit "Post", :class => "save-post" %></div>
-    <% end %>
-    </p>
-</section><br><br>
-
-<div class="posts">
-<% @posts.each do |post| %>
-<<<<<<< HEAD
-  <section style="border:solid 1px red">
-    <h3>Post</h3>
-    <h5>Time: <%= get_time_ago(post.created_at) %> ago</h5>
-    <h3>Post contents: <%= post.message %></h3>
-    <h3>Image contents:  <%= image_tag (post.avatar) if post.avatar.attached? %></h3>
-
-    <%= render partial: "posts/like", locals: { post: post } %>
-
-  <p>Likes: <%= post.likes_count %></p>
-  
-  <%= link_to "Edit", edit_post_path(post.id), class:"editpost" %>
-=======
-  <section>
-    <h5><%= get_time_ago(post.created_at) %> ago</h5>
-    <h3><%= post.message %></h3>
-</div>
-<div>
-  <%= form_for @like do |form| %>
-    <%= form.hidden_field :post_id, :value => "#{post.id}" %>
-    <%= form.hidden_field :user_id, :value => "11" %>
-    <div class="like">
-        <%= form.submit "Like", :class => "add-like" %></div>
+    <%= f.text_area :message, rows: 4, placeholder: "What's on your mind...", :class => "xnew-post-text col-12" %>
+    <div class="post coll-3">
+    <%= f.submit "Post", :class => "xsave-post btn btn-primary btn-sm col-12" %>
+    </div>
   <% end %>
+</section>
 
-  <p>Likes: <%= post.likes_count %></p>
-</div>
+<div class="container">
+<% @posts.each do |post| %>
+  <div class="card">
+    <div class="card-header text-right text-muted">
+      <%= get_time_ago(post.created_at) %> ago
+    </div>
+    <img src="..." class="card-img-top d-none" alt="...">
+    <div class="card-body pb-0">
+      <div class="card-text text-start"><%= post.message %></div>
+    </div>
+    <div class="card-footer text-end bg-white border-0">
+      <%= form_for @like do |form| %>
+        <%= form.hidden_field :post_id, :value => "#{post.id}" %>
+        <%= form.hidden_field :user_id, :value => "1" %>
+            <button type="submit" class="d-inline btn text-white btn-light btn-sm">👍</button>
+            <div class="d-inline px-2"> <%= post.likes_count %></div>
+            <button type="submit" class="d-inline btn text-white btn-light btn-sm">👎</button>
+      <% end %>
+    </div>
+
+
 <%# add a class here tomorrow and edit the comment field %>
-  <div class=""> 
->>>>>>> c9def45f844df168cffc564aea661b0df5b7c2b1
-
+  <ul class="list-group list-group-flush border-0" style="border-top:0">
       <% @comments = Comment.where({post_id: post.id})
       @comments.each do |comment_object| %>
-        
+        <li class="list-group-item text-start">
         <%= comment_object['comment'] %> 
-       <br>
-      </div>
+        </li>
       <% end %>
-
-      <section>
-      <%= form_for :comment, url: comments_path do |f| %>
-        <p>
-          <%= f.label :comment %> <br>
-          <%= f.text_area :comment, required: true, placeholder: "comment on this.." %> <br>
-          <%= f.hidden_field :post_id, required: true, value:"#{post.id}" %> 
-          <%= f.hidden_field :user_id, required: true, value:"#{session[:user_id]}" %> 
-        </p>
-        <p>
-        <div class="comment">
-        <%= f.submit "Add comment", :class => "add-comment" %></div>
-        </p>
-      <% end %>
-      </section>
-    </div>
-    <hr>
-  </section>
+  </ul>
+  <div class="card-body mt-0 pt-0 pb-0 text-end">
+  <%= form_for :comment, url: comments_path do |f| %>
+    
+      <%= f.text_area :comment, required: true, placeholder: "comment on this..", class: "w-100" %> <br>
+      <%= f.hidden_field :post_id, required: true, value:"#{post.id}" %> 
+      <%= f.hidden_field :user_id, required: true, value:'1' %> 
+    
+      <%= f.submit "Add comment", :class => "xadd-comment btn text-white btn-primary btn-sm mb-2" %>
+    
+   
+  <% end %>
+  </div>
+ 
+  </div>
+  <hr>
 <% end %>
+</div>
 
-<%== pagy_nav(@pagy) %>
