@@ -55,11 +55,6 @@ textarea:hover {
   font-size: 1.4em;
   font-weight: 450;
   font-family: Verdana, sans-serif;
-  /* border: 3px;
-  border-style: solid;
-  border-color: #f3f2c9;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px; */
   border-top: none;
   font-size: 1rem;
   font-family: Verdana, sans-serif;
@@ -103,7 +98,6 @@ nav {
   box-shadow: 0 12px 16px 0 #53b8bb;
 }
 .comment {
-  /* background: #FF2626; */
   padding: 1em;
   margin: 0;
   text-align: left;
@@ -124,8 +118,6 @@ nav {
   box-shadow: 0 5px 6px 0 #53B8BB;
 }
 .like {
-  /* background: #FF2626; */
-  /* padding: 1em; */
   margin: 0;
   text-align: left;
 }
