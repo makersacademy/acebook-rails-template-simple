@@ -1,17 +1,19 @@
-<div class="xwelcome row mt-2 mb-0">
+<div class="welcome">
   <h5>Welcome back Tom!</h5>
 </div>
 
-<section class="row mb-2 new-post-container">
+<section class="new-post">
   <%= form_for :post, url: posts_path do |f| %>
-    <%= f.text_area :message, rows: 4, placeholder: "What's on your mind...", :class => "xnew-post-text col-12" %>
+    <%= f.text_area :message, rows:4, placeholder: "What's on your mind...", :class => "new-post-body" %>
     <div class="post coll-3">
-      <%= f.file_field :avatar %>
+      <%= f.file_field :avatar, :class => "new-post-file-uploader"%>
       <%= f.submit "Post", :class => "save-post btn btn-sm col-12" %>
     </div>
   <% end %>
 </section>
-<div>
+
+
+<div class=> 
   <% @posts.each do |post| %>
     <div class="post-container">
       <div class="card">
@@ -51,7 +53,7 @@
       <section>
         <div class="mt-0 pt-0 pb-0 text-end">
           <%= form_for :comment, url: comments_path do |f| %>
-            <%= f.text_area :comment, required: true, maxlength:500, placeholder: "comment on this..", class: "w-100" %><br>
+            <%= f.text_area :comment, required: true, maxlength:500, placeholder: "Comment on this..", class: "comment-body" %><br>
             <%= f.hidden_field :post_id, required: true, value:"#{post.id}" %> 
             <%= f.hidden_field :user_id, required: true, value:"#{session[:user_id]}" %> 
             <%= f.submit "Add comment", :class => "add-comment btn text-white btn-sm mb-2"%>
