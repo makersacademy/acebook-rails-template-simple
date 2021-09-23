@@ -14,9 +14,9 @@
       <%= link_to "Home", posts_url, class: "btn btn-md text-white" %>
       <% link_to "New Post", new_post_url, class: "navbar-link" %>
       <% if @user == true %>
-        <%= link_to "Log Out", root_path, class: "btn btn-danger btn-md text-white" %>
-        <% else %>
-        <%= link_to "Log In", "#", class: "btn btn-danger btn-md text-white" %>
+      <%= link_to "Log Out", logout_path, class: "btn btn-danger btn-md text-white"%> 
+      <% else %> 
+      <%= link_to "Log In", sign_in_path, class: "btn btn-success btn-md text-white"%>
       <% end %>
     </nav>
     <%= yield %>
