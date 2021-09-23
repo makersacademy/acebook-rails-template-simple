@@ -11,7 +11,7 @@
   <div class = "container">
     <nav class="text-right">
      <%= link_to "8BOOK", posts_url, class: "btn btn-light btn-md float-start" %>
-      <%= link_to "Home", posts_url, class: "btn btn-secondary btn-md text-white" %>
+      <%= link_to "Home", posts_url, class: "btn btn-md text-white" %>
       <% link_to "New Post", new_post_url, class: "navbar-link" %>
       <% if session[:user_id] %>
           <%= link_to "Log Out", logout_path, method: :delete,  class: "btn btn-danger btn-md text-white" %>
