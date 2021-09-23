@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <ul class="list-group list-group-flush border-0">
+    <ul class="list-group">
       <% @comments = Comment.where({post_id: post.id}) %>
       <% @comments.each do |comment_object| %>
         <li class="list-group-item text-start">
