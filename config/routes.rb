@@ -7,4 +7,6 @@ resources :posts, :users, :likes, :comments
   post 'sign_in', to: 'sessions#create', as: 'log_in'
   delete 'logout', to: 'sessions#destroy'
   delete 'likes', to: 'likes#destroy'
+  get 'logout', to: 'sessions#destroy'
+  
 end
