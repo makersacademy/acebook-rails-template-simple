@@ -13,7 +13,7 @@
 </section>
 
 
-<div class="feed"> 
+<div class=> 
   <% @posts.each do |post| %>
     <div class="post-container">
       <div class="card">
@@ -53,7 +53,7 @@
       <section>
         <div class="mt-0 pt-0 pb-0 text-end">
           <%= form_for :comment, url: comments_path do |f| %>
-            <%= f.text_area :comment, required: true, maxlength:500, placeholder: "comment on this..", class: "w-100" %><br>
+            <%= f.text_area :comment, required: true, maxlength:500, placeholder: "Comment on this..", class: "comment-body" %><br>
             <%= f.hidden_field :post_id, required: true, value:"#{post.id}" %> 
             <%= f.hidden_field :user_id, required: true, value:"#{session[:user_id]}" %> 
             <%= f.submit "Add comment", :class => "add-comment btn text-white btn-sm mb-2"%>
