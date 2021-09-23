@@ -1,6 +1,4 @@
 class LikesController < ApplicationController
-  # before_action :set_like, only: :destroy
-
   def new
     @like = Like.new
   end
@@ -30,9 +28,5 @@ class LikesController < ApplicationController
 
   def like_params
     params.require(:like).permit(:id, :user_id, :post_id)
-  end
-
-  def set_like
-    
   end
 end
