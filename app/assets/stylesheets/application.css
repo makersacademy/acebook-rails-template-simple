@@ -173,6 +173,10 @@ nav {
   padding: 1rem;
 }
 
+.new-post-file-uploader {
+  float: left
+}
+
 .save-post {
   color: #ffffff;
   background: #53B8BB;
@@ -184,7 +188,7 @@ nav {
 }
 
 .post {
-  margin: 0 5em;
+  margin: 0 15%;
 }
 
 .save-post:hover {
