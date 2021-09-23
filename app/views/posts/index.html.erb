@@ -2,7 +2,7 @@
   <h5>Welcome back Tom!</h5>
 </div>
 
-<section class="row mb-2">
+<section class="row mb-2 new-post-container">
   <%= form_for :post, url: posts_path do |f| %>
     <%= f.text_area :message, rows: 4, placeholder: "What's on your mind...", :class => "xnew-post-text col-12" %>
     <div class="post coll-3">
@@ -11,54 +11,54 @@
     </div>
   <% end %>
 </section>
-<hr>
 <div>
   <% @posts.each do |post| %>
-    <div class="card">
-      <div class="card-header text-right">
-        <%= get_time_ago(post.created_at) %> ago
-      </div>
-      <img src="..." class="card-img-top d-none" alt="...">
-      <div class="card-body pb-0">
-        <div class="card-text text-start"><%= post.message %></div>
-        <div><%= image_tag (post.avatar), :class => "post-img" if post.avatar.attached? %></div>
-      </div>
-      <div class="card-footer text-end bg-white border-0">
-        <%= form_for @like do |form| %>
-          <%= form.hidden_field :post_id, :value => "#{post.id}" %>
-          <%= form.hidden_field :user_id, required: true, value:"#{session[:user_id]}" %> 
-          <button type="submit" class="d-inline btn text-white btn-light btn-sm">👍</button>
-          <div class="d-inline px-2"> <%= post.likes_count %></div>
-          <button type="submit" class="d-none btn text-white btn-light btn-sm">👎</button>
-        <% end %>
-      </div>
-    </div>
-
-    <ul class="list-group">
-      <% @comments = Comment.where({post_id: post.id}) %>
-      <% @comments.each do |comment_object| %>
-        <li class="list-group-item text-start">
-          <%= comment_object['comment'] %> 
-          <% commentator = User.find(comment_object.user_id) %>
-          <% if commentator.avatar.attached? %>
-            <%= image_tag commentator.avatar.variant(resize_to_limit: [75, 75])%>
+    <div class="post-container">
+      <div class="card">
+        <div class="card-header text-right">
+          <%= get_time_ago(post.created_at) %> ago
+        </div>
+        <img src="..." class="card-img-top d-none" alt="...">
+        <div class="card-body pb-0">
+          <div class="card-text text-start"><%= post.message %></div>
+          <div><%= image_tag (post.avatar), :class => "post-img" if post.avatar.attached? %></div>
+        </div>
+        <div class="card-footer text-end bg-white border-0">
+          <%= form_for @like do |form| %>
+            <%= form.hidden_field :post_id, :value => "#{post.id}" %>
+            <%= form.hidden_field :user_id, required: true, value:"#{session[:user_id]}" %> 
+            <button type="submit" class="d-inline btn text-white btn-light btn-sm">👍</button>
+            <div class="d-inline px-2"> <%= post.likes_count %></div>
+            <button type="submit" class="d-none btn text-white btn-light btn-sm">👎</button>
           <% end %>
-          <%= commentator.first_name %>
-        </li>
-      <% end %>
-    </ul>
-
-    <section>
-      <div class="mt-0 pt-0 pb-0 text-end">
-        <%= form_for :comment, url: comments_path do |f| %>
-          <%= f.text_area :comment, required: true, maxlength:500, placeholder: "comment on this..", class: "w-100" %><br>
-          <%= f.hidden_field :post_id, required: true, value:"#{post.id}" %> 
-          <%= f.hidden_field :user_id, required: true, value:"#{session[:user_id]}" %> 
-          <%= f.submit "Add comment", :class => "add-comment btn text-white btn-sm mb-2"%>
-        <% end %>
+        </div>
       </div>
-    </section>
-    <hr>
+
+      <ul class="list-group">
+        <% @comments = Comment.where({post_id: post.id}) %>
+        <% @comments.each do |comment_object| %>
+          <li class="list-group-item text-start">
+            <%= comment_object['comment'] %> 
+            <% commentator = User.find(comment_object.user_id) %>
+            <% if commentator.avatar.attached? %>
+              <%= image_tag commentator.avatar.variant(resize_to_limit: [75, 75])%>
+            <% end %>
+            <%= commentator.first_name %>
+          </li>
+        <% end %>
+      </ul>
+
+      <section>
+        <div class="mt-0 pt-0 pb-0 text-end">
+          <%= form_for :comment, url: comments_path do |f| %>
+            <%= f.text_area :comment, required: true, maxlength:500, placeholder: "comment on this..", class: "w-100" %><br>
+            <%= f.hidden_field :post_id, required: true, value:"#{post.id}" %> 
+            <%= f.hidden_field :user_id, required: true, value:"#{session[:user_id]}" %> 
+            <%= f.submit "Add comment", :class => "add-comment btn text-white btn-sm mb-2"%>
+          <% end %>
+        </div>
+      </section>
+    </div>
   <% end %>
 </div>
 

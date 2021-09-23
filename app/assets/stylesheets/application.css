@@ -74,6 +74,14 @@ nav {
   border-radius: 0.2rem;
 }
 
+.post-container {
+  padding-bottom: 4em;
+}
+
+.new-post-container {
+  padding: 4em 0;
+}
+
 .navbar-link {
   color: #003638;
   background: #53b8bb;
