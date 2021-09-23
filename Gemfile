@@ -7,7 +7,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 # This should help with image upload 
-gem "image_processing", ">= 1.2"
 gem "aws-sdk-s3", require: false
 
 
@@ -23,6 +22,9 @@ gem 'sass-rails', '~> 6.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+# Use Active Storage variant
+gem 'image_processing', '~> 1.2' 
+gem 'mini_magick'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
