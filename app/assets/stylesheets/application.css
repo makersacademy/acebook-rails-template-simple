@@ -116,7 +116,7 @@ nav {
   text-align: left;
 }
 
-.add-comment {
+.add-comment, .ace-button {
   color: #f3f2c9;
   background: #53B8BB;
   text-decoration: none;
@@ -246,4 +246,12 @@ nav {
 
 .signup_form input{
   margin-bottom: 1rem; 
+}
+
+.post-img {
+  width: 94%;
+}
+
+input .file-upload-button {
+  background: #53B8BB;
 }

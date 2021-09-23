@@ -5,7 +5,7 @@
 <section class="row mb-2">
   <%= form_for :post, url: posts_path do |f| %>
     <%= f.text_area :message, rows: 4, placeholder: "What's on your mind...", :class => "xnew-post-text col-12" %>
-    <%= f.file_field :avatar %>
+    <%= f.file_field :avatar%>
     <div class="post coll-3">
       <%= f.submit "Post", :class => "save-post btn btn-sm col-12" %>
     </div>
@@ -21,7 +21,7 @@
       <img src="..." class="card-img-top d-none" alt="...">
       <div class="card-body pb-0">
         <div class="card-text text-start"><%= post.message %></div>
-        <div><%= image_tag (post.avatar) if post.avatar.attached? %></div>
+        <div><%= image_tag (post.avatar), :class => "post-img" if post.avatar.attached? %></div>
       </div>
       <div class="card-footer text-end bg-white border-0">
         <%= form_for @like do |form| %>
