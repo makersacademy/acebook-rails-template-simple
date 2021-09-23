@@ -1,72 +1,72 @@
-<h1>Welcome to 8book</h1>
-
-<h2>feed</h2>
-
-<section style="border:solid 5px purple">
-  <h2>Create post</h2>
-
+<div class="xwelcome row mt-2 mb-0">
+<h5>Welcome back Tom!</h5>
+</div>
+<section class="row mb-2">
   <%= form_for :post, url: posts_path do |f| %>
-    <p>
-      <%= f.label :message %> <br>
-      <%= f.text_area :message, required: true%>
-      <%= f.file_field :avatar %>
-    </p>
-
-    <p>
-      <%= f.submit %>
-    </p>
-
-    <% end %>
+    <%= f.text_area :message, rows: 4, placeholder: "What's on your mind...", :class => "xnew-post-text col-12" %>
+    <%= f.file_field :avatar %>
+    <div class="post coll-3">
+    <%= f.submit "Post", :class => "save-post btn btn-sm col-12" %>
+    </div>
+  <% end %>
 </section>
 
+<div class="container">
 <% @posts.each do |post| %>
-  <section style="border:solid 1px red">
-    <h5><%= get_time_ago(post.created_at) %> ago</h5>
-    <div></div>
-    <h3><%= post.message %></h3>
-    <h3><%= image_tag (post.avatar) if post.avatar.attached? %></h3>
 
-    <%= render partial: "posts/like", locals: { post: post } %>
+  <div class="card">
+    <div class="card-header text-right">
+      <%= get_time_ago(post.created_at) %> ago
+    </div>
+    <img src="..." class="card-img-top d-none" alt="...">
+    <div class="card-body pb-0">
+      <div class="card-text text-start"><%= post.message %></div>
+      <div><%= image_tag (post.avatar) if post.avatar.attached? %></div>
+    </div>
+    <div class="card-footer text-end bg-white border-0">
+      <%= form_for @like do |form| %>
+        <%= form.hidden_field :post_id, :value => "#{post.id}" %>
+        <%= form.hidden_field :user_id, required: true, value:"#{session[:user_id]}" %> 
+            <button type="submit" class="d-inline btn text-white btn-light btn-sm">👍</button>
+            <div class="d-inline px-2"> <%= post.likes_count %></div>
+            <button type="submit" class="d-none btn text-white btn-light btn-sm">👎</button>
+      <% end %>
+    </div>
 
-  <p>Likes: <%= post.likes_count %></p>
-  
-  <%= link_to "Edit", edit_post_path(post.id), class:"editpost" %>
-
-  <div>
-    <h4>Comments</h4>
+  <ul class="list-group list-group-flush border-0">
       <% @comments = Comment.where({post_id: post.id})
       @comments.each do |comment_object| %>
-        
-        <%# comment:  %>
-        <%= comment_object['comment'] %> 
-        <%# user_id:  %>
-        <%= comment_object.user_id %><br />
-        <% commentator = User.find(comment_object.user_id) %>
-        <% if commentator.avatar.attached? %>
-        <%# user_image:  %>
-      
-    <%= image_tag commentator.avatar.variant(resize_to_limit: [75, 75])%>
-        <% end %>
-        <%# username: %>
-        <%= commentator.first_name %>
+          <li class="list-group-item text-start">
+          <%= comment_object['comment'] %> 
+          <% commentator = User.find(comment_object.user_id) %>
+          <% if commentator.avatar.attached? %>
+            <%= image_tag commentator.avatar.variant(resize_to_limit: [75, 75])%>
+            <% end %>
+            <%# username: %>
+            <%= commentator.first_name %>
+          <% end %>
+          </li>
       <% end %>
+  </ul>
 
-      <section style="border:solid 5px pink">
+      <section>
       <h2>Add comment</h2>
+       <div class="card-body mt-0 pt-0 pb-0 text-end">
       <%= form_for :comment, url: comments_path do |f| %>
         <p>
           <%= f.label :comment %> <br>
-          <%= f.text_area :comment, required: true, maxlength:500 %><br>
+          <%= f.text_area :comment, required: true, maxlength:500, placeholder: "comment on this..", class: "w-100" %><br>
           <%= f.hidden_field :post_id, required: true, value:"#{post.id}" %> 
           <%= f.hidden_field :user_id, required: true, value:"#{session[:user_id]}" %> 
         </p>
         <p>
-          <%= f.submit %>
+          <%= f.submit "Add comment", :class => "add-comment btn text-white btn-sm mb-2"%>
         </p>
       <% end %>
+        </div>
       </section>
     </div>
   </section>
 <% end %>
-
+</div>
 <%== pagy_nav(@pagy) %>
