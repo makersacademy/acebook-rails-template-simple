@@ -110,6 +110,7 @@ nav {
   border-radius: 8px;
   margin-top: 0.5rem;
   float: right;
+  width: 10em;
 }
 .add-comment:hover {
   border: 1px inset;
@@ -172,7 +173,7 @@ nav {
   border-radius: 8px;
   margin-top: 0.5rem;
   float: right;
-  width: 100%;
+  width: 10em;
 }
 .save-post:hover {
   border: 1px inset;
