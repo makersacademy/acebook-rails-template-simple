@@ -58,3 +58,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pagy'
 
 gem 'webpacker'
+
+gem "turbo-rails", "~> 0.7.15"

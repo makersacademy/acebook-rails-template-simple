@@ -21,7 +21,7 @@
         <div class="card-header text-right">
           <%= get_time_ago(post.created_at) %> ago
         </div>
-        <img src="..." class="card-img-top d-none" alt="...">
+        <img src="#" class="card-img-top d-none" alt="#">
         <div class="card-body pb-0">
           <div class="card-text text-start"><%= post.message %></div>
           <div><%= image_tag (post.avatar), :class => "post-img" if post.avatar.attached? %></div>
