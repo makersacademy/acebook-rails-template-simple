@@ -1,13 +1,14 @@
+<%= post.likes_count %> likes 
 <% if post.likes.none? { |like| like.user_id == session[:user_id] }%>
   <%= form_for @like do |form| %>
     <%= form.hidden_field :post_id, :value => "#{post.id}" %>
     <%= form.hidden_field :user_id, :value => session[:user_id] %>
-    <%= form.submit "Like" %>
+    <%= form.submit "👍", class: "d-inline btn text-white btn-light btn-sm" %>
   <% end %>
 <% else %>
   <%= form_for @like, method: :delete do |form| %>
     <%= form.hidden_field :post_id, :value => "#{post.id}" %>
     <%= form.hidden_field :user_id, :value => session[:user_id] %>
-    <%= form.submit "Unlike" %>
+    <%= form.submit "👎", class:"d-inline btn text-white btn-light btn-sm" %>
   <% end %>
 <% end %>
