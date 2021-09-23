@@ -57,29 +57,22 @@ textarea:hover {
   margin: auto;
   text-decoration: none;
   background: #055052;
-  background-color: white;
   color: #f3f2c9;
   font-size: 1.4em;
   font-weight: 450;
   font-family: Verdana, sans-serif;
-  border-top: none;
-  font-size: 1rem;
-  font-family: Verdana, sans-serif;
   padding: 0.4em;
+  border-radius: 0 0 2rem 2rem;
 }
 
 nav {
   background: #003638;
-  padding: 1rem;
-  border-radius: 0.2rem;
+  padding: 1rem 2em;
+  border-radius: 0 0 2rem 2rem;
 }
 
 .post-container {
   padding-bottom: 4em;
-}
-
-.new-post-container {
-  padding: 4em 0;
 }
 
 .navbar-link {
@@ -167,29 +160,28 @@ nav {
 
 .new-post {
   width: 80%;
-  margin: auto;
+  margin: 0 auto 5rem auto;
   text-decoration: none;
   background: #53b7bb9a;
   font-size: 1.4em;
   font-weight: 450;
   font-family: Verdana, sans-serif;
-  border: 3px;
-  border-top: 0px;
+  border: 0 3px 3px 3px;
   border-style: solid;
   border-color: #f3f2c9;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  font-size: 1.4em;
-  font-weight: 450;
-  font-family: Verdana, sans-serif;
-  padding-bottom: 0.5rem;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+}
+
+.new-post-body {
+  width: 70%;
 }
 
 .new-post > form {
   width: 100%;
   display: inline-block;
   margin: 0;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 
 .save-post {
@@ -200,6 +192,10 @@ nav {
   border-radius: 8px;
   float: right;
   width: 10em;
+}
+
+.post {
+  margin: 0 5em;
 }
 
 .save-post:hover {
