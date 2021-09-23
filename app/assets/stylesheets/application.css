@@ -190,7 +190,6 @@ nav {
   text-decoration: none;
   border: 1px inset;
   border-radius: 8px;
-  margin-top: 0.5rem;
   float: right;
   width: 10em;
 }
@@ -250,8 +249,4 @@ nav {
 
 .post-img {
   width: 94%;
-}
-
-input .file-upload-button {
-  background: #53B8BB;
 }

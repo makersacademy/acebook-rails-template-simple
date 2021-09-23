@@ -5,13 +5,13 @@
 <section class="row mb-2">
   <%= form_for :post, url: posts_path do |f| %>
     <%= f.text_area :message, rows: 4, placeholder: "What's on your mind...", :class => "xnew-post-text col-12" %>
-    <%= f.file_field :avatar%>
     <div class="post coll-3">
+      <%= f.file_field :avatar %>
       <%= f.submit "Post", :class => "save-post btn btn-sm col-12" %>
     </div>
   <% end %>
 </section>
-
+<hr>
 <div>
   <% @posts.each do |post| %>
     <div class="card">
