@@ -12,7 +12,7 @@
   <% end %>
 </section>
 
-<div class="container">
+<div>
   <% @posts.each do |post| %>
     <div class="card">
       <div class="card-header text-right">
@@ -49,10 +49,8 @@
     </ul>
 
     <section>
-      <h2>Add comment</h2>
-      <div class="card-body mt-0 pt-0 pb-0 text-end">
+      <div class="mt-0 pt-0 pb-0 text-end">
         <%= form_for :comment, url: comments_path do |f| %>
-          <%= f.label :comment %> <br>
           <%= f.text_area :comment, required: true, maxlength:500, placeholder: "comment on this..", class: "w-100" %><br>
           <%= f.hidden_field :post_id, required: true, value:"#{post.id}" %> 
           <%= f.hidden_field :user_id, required: true, value:"#{session[:user_id]}" %> 
@@ -60,6 +58,7 @@
         <% end %>
       </div>
     </section>
+    <hr>
   <% end %>
 </div>
 
