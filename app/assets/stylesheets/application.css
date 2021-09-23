@@ -63,12 +63,18 @@ textarea:hover {
   font-family: Verdana, sans-serif;
   padding: 0.4em;
   border-radius: 0 0 2rem 2rem;
+  border-width: 0 3px 3px 3px;
+  border-style: solid;
+  border-color: #f3f2c9;
 }
 
 nav {
   background: #003638;
   padding: 1rem 2em;
   border-radius: 0 0 2rem 2rem;
+  border-width: 0 3px 3px 3px;
+  border-style: solid;
+  border-color: #f3f2c9;
 }
 
 .post-container {
@@ -166,7 +172,7 @@ nav {
   font-size: 1.4em;
   font-weight: 450;
   font-family: Verdana, sans-serif;
-  border: 0 3px 3px 3px;
+  border-width: 0 3px 3px 3px;
   border-style: solid;
   border-color: #f3f2c9;
   border-bottom-left-radius: 2em;
