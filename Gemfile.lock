@@ -235,9 +235,10 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   date
-  image_processing (>= 1.2)
+  image_processing (~> 1.2)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  mini_magick
   pagy
   pg
   puma (~> 3.12.6)
