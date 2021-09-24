@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   before_action :find_post, only: [:update, :edit]
 
   def new
@@ -35,7 +34,7 @@ class PostsController < ApplicationController
   end
   
   private def post_params
-    params.require(:post).permit(:message, :avatar, :created_at)
+    params.require(:post).permit(:message, :avatar, :created_at, :user_id)
   end
 
   def find_post

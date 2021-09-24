@@ -10,6 +10,7 @@
       <span>Attach Picture</span>
       <%= f.file_field :avatar, :class => "new-post-file-uploader"%>
       </div>
+      <%= f.hidden_field :user_id, required: true, value:"#{session[:user_id]}" %> 
       <%= f.submit "Post", :class => "ace-btn post-btn" %>
     </div>
   <% end %>
@@ -21,7 +22,8 @@
     <div class="post-container">
       <div class="card">
         <div class="card-header text-right">
-          <%= get_time_ago(post.created_at) %> ago
+          <%= get_time_ago(post.created_at) %> ago, by
+          <%= User.find(post.user_id).first_name %>
         </div>
         <img src="..." class="card-img-top d-none" alt="...">
         <div class="card-body pb-0">
@@ -30,6 +32,9 @@
         </div>
         <div class="card-footer text-end bg-white border-0">
           <%= render partial: "like", locals: { post: post } %>
+          <% if post.user_id == session[:user_id] %>
+            <%= link_to "edit", edit_post_path(post) %>
+          <% end %>
         </div>
       </div>
 
