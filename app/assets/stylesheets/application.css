@@ -143,6 +143,18 @@ nav.pagy-nav {
   width: 10em;
 }
 
+.ace-button-tall {
+  color: #f3f2c9;
+  background: #53B8BB;
+  text-decoration: none;
+  border: 1px inset;
+  border-radius: 8px;
+  width: 8em;
+  height: 2.5em;
+  margin: 0 auto 0 auto;
+  display: block;
+}
+
 .add-comment:hover {
   border: 1px inset;
   color: #ffffff;
@@ -254,4 +266,8 @@ nav.pagy-nav {
 .bold-name {
   display: inline;
   font-weight: 800;
+}
+
+.actions {
+  padding: 24px;
 }
