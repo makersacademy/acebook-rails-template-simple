@@ -15,7 +15,10 @@
 
 <%= form.label :profile_picture %>
 <br>
-<%= form.file_field :avatar %>
+<div class="fileUpload ace-btn ace-btn-tall">
+  <span>Choose</span>
+  <%= form.file_field :avatar, :class => "new-post-file-uploader"%>
+</div>
 <div class="float-end">
 <%= form.check_box :terms, class: "form-control", :class => "form-check-input" %>
 <%= form.label :terms, "Please accept our T&Cs" %>
