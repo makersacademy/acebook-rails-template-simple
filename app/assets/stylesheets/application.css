@@ -277,6 +277,10 @@ nav.pagy-nav {
   margin-bottom: 1rem; 
 }
 
+.avatar-img {
+  border-radius: 50%;
+}
+
 .post-img {
   width: 94%;
 }

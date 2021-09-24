@@ -36,7 +36,7 @@
           <li class="list-group-item text-start">
             <% commentator = User.find(comment_object.user_id) %>
             <% if commentator.avatar.attached? %>
-              <%= image_tag commentator.avatar.variant(resize_to_limit: [75, 75])%>
+              <%= image_tag commentator.avatar.variant(resize_to_limit: [40, 40]), :class => "avatar-img" %>
             <% end %>
             <div class="bold-name">
               <%= commentator.first_name%>
