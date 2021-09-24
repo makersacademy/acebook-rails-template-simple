@@ -3,12 +3,14 @@
     <% @comments = Comment.where({post_id: post.id}) %>
     <% @comments.each do |comment_object| %>
       <li class="list-group-item text-start">
-        <%= comment_object['comment'] %> 
         <% commentator = User.find(comment_object.user_id) %>
         <% if commentator.avatar.attached? %>
-          <%= image_tag commentator.avatar.variant(resize_to_limit: [75, 75])%>
+          <%= image_tag commentator.avatar.variant(resize_to_limit: [40, 40]), class: "avatar-img" %>
         <% end %>
-        -- <%= commentator.first_name %>
+        <div class="bold-name">
+          <%= commentator.first_name%>
+        </div>
+        <%= comment_object['comment'] %>
       </li>
     <% end %>
   </ul>
@@ -19,7 +21,7 @@
         <%= f.text_area :comment, required: true, maxlength:500, placeholder: "Comment on this..", class: "comment-body" %><br>
         <%= f.hidden_field :post_id, required: true, value:"#{post.id}" %> 
         <%= f.hidden_field :user_id, required: true, value:"#{session[:user_id]}" %> 
-        <%= f.submit "Add comment", :class => "add-comment btn text-white btn-sm mb-2",
+        <%= f.submit "Add comment", :class => "ace-btn add-comment btn text-white btn-sm mb-2",
           data: { 'turbo-frame': "post-#{post.id}-comments" } %>
       <% end %>
     </div>
