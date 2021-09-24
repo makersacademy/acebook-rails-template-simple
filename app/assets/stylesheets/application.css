@@ -78,6 +78,14 @@ nav {
   border-color: #f3f2c9;
 }
 
+nav.pagy-nav {
+  width: 80%;
+  margin: 0 auto;
+  background: #f3f2c9;
+  border-radius: 2rem 2rem 0 0;
+  padding: 1em;
+}
+
 .post-container {
   padding-bottom: 4em;
   width: 80%;
