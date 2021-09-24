@@ -250,3 +250,8 @@ nav.pagy-nav {
 .post-img {
   width: 94%;
 }
+
+.bold-name {
+  display: inline;
+  font-weight: 800;
+}

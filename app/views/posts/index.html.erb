@@ -40,7 +40,9 @@
             <% if commentator.avatar.attached? %>
               <%= image_tag commentator.avatar.variant(resize_to_limit: [75, 75])%>
             <% end %>
-            <%= commentator.first_name %>
+            <div class="bold-name">
+              <%= commentator.first_name%>
+            </div>
           </li>
         <% end %>
       </ul>
