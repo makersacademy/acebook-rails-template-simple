@@ -6,8 +6,11 @@
   <%= form_for :post, url: posts_path do |f| %>
     <%= f.text_area :message, rows:4, placeholder: "What's on your mind...", :class => "new-post-body" %>
     <div class="post coll-3">
+      <div class="fileUpload ace-btn input-btn">
+      <span>Attach Picture</span>
       <%= f.file_field :avatar, :class => "new-post-file-uploader"%>
-      <%= f.submit "Post", :class => "save-post btn btn-sm col-12" %>
+      </div>
+      <%= f.submit "Post", :class => "ace-btn post-btn" %>
     </div>
   <% end %>
 </section>
@@ -52,7 +55,7 @@
             <%= f.text_area :comment, required: true, maxlength:500, placeholder: "Comment on this..", class: "comment-body" %><br>
             <%= f.hidden_field :post_id, required: true, value:"#{post.id}" %> 
             <%= f.hidden_field :user_id, required: true, value:"#{session[:user_id]}" %> 
-            <%= f.submit "Add comment", :class => "add-comment btn text-white btn-sm mb-2"%>
+            <%= f.submit "Add Comment", :class => "ace-btn"%>
           <% end %>
         </div>
       </section>
