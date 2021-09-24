@@ -56,4 +56,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Pagination gem
 gem 'pagy'
+
+
+gem 'webpacker'
+
+gem "turbo-rails", "~> 0.7.15"
+
 gem 'mini_magick', '~> 4.8'

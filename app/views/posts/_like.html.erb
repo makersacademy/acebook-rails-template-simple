@@ -1,14 +1,23 @@
-<%= post.likes_count %> likes 
-<% if post.likes.none? { |like| like.user_id == session[:user_id] }%>
-  <%= form_for @like do |form| %>
-    <%= form.hidden_field :post_id, :value => "#{post.id}" %>
-    <%= form.hidden_field :user_id, :value => session[:user_id] %>
-    <%= form.submit "👍", class: "d-inline btn text-white btn-light btn-sm" %>
+<%= turbo_frame_tag "post-#{post.id}-like" do %>
+  <%= post.likes_count %>
+  <% if post.likes_count == 1 %>
+    like
+  <% else %>
+    likes
   <% end %>
-<% else %>
-  <%= form_for @like, method: :delete do |form| %>
-    <%= form.hidden_field :post_id, :value => "#{post.id}" %>
-    <%= form.hidden_field :user_id, :value => session[:user_id] %>
-    <%= form.submit "👎", class:"d-inline btn text-white btn-light btn-sm" %>
+  <% if post.likes.none? { |like| like.user_id == session[:user_id] }%>
+    <%= form_with model: @like do |form| %>
+      <%= form.hidden_field :post_id, :value => "#{post.id}" %>
+      <%= form.hidden_field :user_id, :value => session[:user_id] %>
+      <%= form.submit "👍", class: "d-inline btn text-white btn-light btn-sm",
+        data: { 'turbo-frame': "post-#{post.id}-like" } %>
+    <% end %>
+  <% else %>
+    <%= form_with model: @like, method: :delete do |form| %>
+      <%= form.hidden_field :post_id, :value => "#{post.id}" %>
+      <%= form.hidden_field :user_id, :value => session[:user_id] %>
+      <%= form.submit "👎", class:"d-inline btn text-white btn-light btn-sm",
+        data: { 'turbo-frame': "post-#{post.id}-like" } %>
+    <% end %>
   <% end %>
 <% end %>
