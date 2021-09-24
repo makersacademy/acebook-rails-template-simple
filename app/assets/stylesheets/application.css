@@ -79,7 +79,7 @@ nav {
 }
 
 nav.pagy-nav {
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
   background: #f3f2c9;
   border-radius: 2rem 2rem 0 0;
@@ -88,7 +88,7 @@ nav.pagy-nav {
 
 .post-container {
   padding-bottom: 4em;
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
 }
 
@@ -181,7 +181,7 @@ nav.pagy-nav {
 }
 
 .new-post {
-  width: 80%;
+  width: 60%;
   margin: 0 auto 5rem auto;
   text-decoration: none;
   background: #53b7bb9a;  
