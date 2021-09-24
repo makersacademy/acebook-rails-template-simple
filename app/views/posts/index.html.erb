@@ -1,14 +1,16 @@
-<div class="xwelcome row mt-2 mb-0">
-<h5>Welcome back <%= session[:first_name] %></h5>
-
+<div class="welcome">
+  <h5>Welcome back <%= session[:first_name] %></h5>
 </div>
 
 <section class="new-post">
   <%= form_for :post, url: posts_path do |f| %>
     <%= f.text_area :message, rows:4, placeholder: "What's on your mind...", :class => "new-post-body" %>
     <div class="post coll-3">
+      <div class="fileUpload ace-btn input-btn">
+      <span>Attach Picture</span>
       <%= f.file_field :avatar, :class => "new-post-file-uploader"%>
-      <%= f.submit "Post", :class => "save-post btn btn-sm col-12" %>
+      </div>
+      <%= f.submit "Post", :class => "ace-btn post-btn" %>
     </div>
   <% end %>
 </section>
@@ -30,7 +32,36 @@
           <%= render partial: "like", locals: { post: post } %>
         </div>
       </div>
+
       <%= render partial: "post_comments", locals: { post: post } %>
+
+      <ul class="list-group">
+        <% @comments = Comment.where({post_id: post.id}) %>
+        <% @comments.each do |comment_object| %>
+          <li class="list-group-item text-start">
+            <% commentator = User.find(comment_object.user_id) %>
+            <% if commentator.avatar.attached? %>
+              <%= image_tag commentator.avatar.variant(resize_to_limit: [40, 40]), :class => "avatar-img" %>
+            <% end %>
+            <div class="bold-name">
+              <%= commentator.first_name%>
+            </div>
+            <%= comment_object['comment'] %> 
+          </li>
+        <% end %>
+      </ul>
+
+      <section>
+        <div class="mt-0 pt-0 pb-0 text-end">
+          <%= form_for :comment, url: comments_path do |f| %>
+            <%= f.text_area :comment, required: true, maxlength:500, placeholder: "Comment on this..", class: "comment-body" %><br>
+            <%= f.hidden_field :post_id, required: true, value:"#{post.id}" %> 
+            <%= f.hidden_field :user_id, required: true, value:"#{session[:user_id]}" %> 
+            <%= f.submit "Add Comment", :class => "ace-btn"%>
+          <% end %>
+        </div>
+      </section>
+
     </div>
   <% end %>
 </div>
