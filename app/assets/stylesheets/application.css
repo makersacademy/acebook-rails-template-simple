@@ -147,11 +147,24 @@ nav.pagy-nav {
   color: #f3f2c9;
   background: #53B8BB;
   text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
   border: 1px inset;
   border-radius: 8px;
+  padding: 0.5em;
   width: 8em;
   height: 2.5em;
   margin: 0 auto 0 auto;
+  /* display: block; */
+}
+
+.ace-button-tall:hover {
+  border: 1px inset;
+  color: #ffffff;
+  background: #055052;
+}
+
+.block {
   display: block;
 }
 

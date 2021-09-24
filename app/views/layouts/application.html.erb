@@ -10,16 +10,16 @@
   <body>
   <div class = "container">
     <nav class="text-right">
-     <%= link_to "8BOOK", posts_url, class: "btn btn-light btn-md float-start" %>
-      <%= link_to "Home", posts_url, class: "btn btn-md text-white" %>
+     <%= link_to "8BOOK", posts_url, class: "ace-button-tall float-start" %>
+      <%= link_to "Home", posts_url, class: "ace-button-tall" %>
       <% link_to "New Post", new_post_url, class: "navbar-link" %>
       
       <% if session[:user_id] %>
-      <%= link_to "Log Out", logout_path, class: "btn btn-danger btn-md text-white"%> 
+      <%= link_to "Log Out", logout_path, class: "ace-button-tall"%> 
 
       <% else %> 
-      <%= link_to "Log In", sign_in_path, class: "btn btn-success btn-md text-white"%>
-      <%= link_to "Sign up", root_path, class: "btn btn-success btn-md text-white" %>
+      <%= link_to "Log In", sign_in_path, class: "ace-button-tall"%>
+      <%= link_to "Sign up", root_path, class: "ace-button-tall" %>
       <% end %>
     </nav>
 
