@@ -46,8 +46,8 @@ Rails.application.configure do
   config.assets.quiet = true
 
   # Store files locally.
-config.active_storage.service = :local
-
+# config.active_storage.service = :local
+config.active_storage.service = :amazon
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
