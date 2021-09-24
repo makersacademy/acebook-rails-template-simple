@@ -34,7 +34,6 @@
         <% @comments = Comment.where({post_id: post.id}) %>
         <% @comments.each do |comment_object| %>
           <li class="list-group-item text-start">
-            <%= comment_object['comment'] %> 
             <% commentator = User.find(comment_object.user_id) %>
             <% if commentator.avatar.attached? %>
               <%= image_tag commentator.avatar.variant(resize_to_limit: [75, 75])%>
@@ -42,6 +41,7 @@
             <div class="bold-name">
               <%= commentator.first_name%>
             </div>
+            <%= comment_object['comment'] %> 
           </li>
         <% end %>
       </ul>
