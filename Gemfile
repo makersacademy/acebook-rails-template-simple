@@ -37,6 +37,11 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 4.0'
+  gem 'bootstrap', '~> 5.1.0'
+  gem 'jquery-rails'
+  gem 'devise'
+  # gem 'mimemagic', '~> 0.4.3'
+  # gem 'paperclip'
 end
 
 group :development do
