@@ -11,3 +11,4 @@ class CreatePosts < ActiveRecord::Migration[5.1]
 end
 
 
+rails generate migration AddPostRefToComment post:references
