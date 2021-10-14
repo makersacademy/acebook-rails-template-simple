@@ -40,6 +40,7 @@ group :development, :test do
   gem 'bootstrap', '~> 5.1.0'
   gem 'jquery-rails'
   gem 'devise'
+  # gem 'bcrypt', '~> 3.1.15'
   # gem 'mimemagic', '~> 0.4.3'
   # gem 'paperclip'
 end
