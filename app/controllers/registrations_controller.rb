@@ -7,7 +7,7 @@ class RegistrationsController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path, notice: 'successfully created account'
+      redirect_to posts_path, notice: "successfully created account"
     else
       render :new
     end  
@@ -15,7 +15,7 @@ class RegistrationsController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :email, :password)
   end
 end 
 
