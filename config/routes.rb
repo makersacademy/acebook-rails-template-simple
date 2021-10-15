@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get 'posts', to: 'posts#index'
   get 'new_post', to: 'posts#new' 
   post 'posts', to: 'posts#index'
+
+  get 'login', to: 'registrations#login'
+  post 'login', to: 'registrations#login'
  
 
   root to: 'home#index'
