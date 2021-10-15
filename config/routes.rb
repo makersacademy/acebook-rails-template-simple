@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   post 'sign_up', to: 'registrations#create'
   get 'posts', to: 'posts#index'
   get 'new_post', to: 'posts#new' 
-  post 'posts', to: 'posts#index'
+  post 'new_post', to: 'posts#create'
+ 
  
 
   root to: 'home#index'
