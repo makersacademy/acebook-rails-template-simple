@@ -19,6 +19,20 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
-  #Still need to test for valid first_name, last_name and password
+  it "is not valid without a password" do 
+    subject.password = nil 
+    expect(subject).to_not be_valid 
+  end
+
+  it "is not valid without a first name" do 
+    subject.first_name = nil 
+    expect(subject).to_not be_valid
+  end 
+
+  it "is not valid without a last name" do 
+    subject.last_name = nil 
+    expect(subject).to_not be_valid
+  end 
+
 
 end
