@@ -1,7 +1,25 @@
+<h1>Hello, welcome to your feed</h1>
+
+Feed of everyone's posts <br> <br>
+<ul>
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <li><p><%= post.message %></p></li>
 <% end %>
+</ul>
+
+User Posts <br><br>
+<ul>
+
+<% @posts.each do |post| %>
+<% if post.user_id == Current.user.id %>
+  <li><p><%= post.message %></p></li>
+<% end %>
+<% end %>
+</ul>
+
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
+<%= button_to 'Logout', logout_path, method: :delete %>
