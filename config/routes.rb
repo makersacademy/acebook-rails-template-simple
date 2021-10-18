@@ -6,8 +6,12 @@ Rails.application.routes.draw do
   get 'posts', to: 'posts#index'
   get 'new_post', to: 'posts#new' 
   post 'new_post', to: 'posts#create'
- 
- 
+
+  get 'sign_in', to: 'sessions#new'
+  post 'sign_in', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+  get 'logout', to: 'sessions#destroy'
+
 
   root to: 'home#index'
 

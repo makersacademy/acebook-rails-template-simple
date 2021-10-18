@@ -2,8 +2,9 @@
 
   <%= form.label :message %>
   <%= form.text_field :message %>
+  <%= form.text_field :user_id, value: Current.user.id, class:'d-none'%>
    
-  <%= form.submit "Submit" %>
+  <%= form.submit "Submit"%>
 <% end %>
 
 

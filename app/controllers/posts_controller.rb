@@ -7,16 +7,14 @@ class PostsController < ApplicationController
 
   def create
     #@post = Post.new(post_params)
-    #@post.user_id = current_user.id
-    @post = Post.create(post_params)
-    @post.save 
-    
 
-    # if @post.save
-    #   redirect_to posts_path, notice: "successfully created account"
-    # else
-    #   render :new
-    # end  
+    @post = Post.new(post_params)
+
+    if @post.save
+      redirect_to posts_path, notice: "successfully created account"
+    else
+      render :new
+    end  
     
     #redirect_to sign_up_path
 
@@ -30,6 +28,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message,:user_id)
   end
 end

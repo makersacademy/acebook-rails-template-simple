@@ -7,6 +7,8 @@ class RegistrationsController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:first_name] = @user.first_name
+      session[:user_id] = @user.id
       redirect_to posts_path, notice: "successfully created account"
     else
       render :new
