@@ -3,7 +3,10 @@
 Feed of everyone's posts <br> <br>
 <ul>
 <% @posts.each do |post| %>
+  <% if @user.avatar.attached? %>
+    <image src="<%=(url_for(@user.avatar))%>">
   <li><p><%= post.message %></p></li>
+  <% end %>
 <% end %>
 </ul>
 
