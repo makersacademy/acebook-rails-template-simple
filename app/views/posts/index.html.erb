@@ -1,4 +1,4 @@
-
+<h1>Hello, welcome to your feed</h1>
 
 Feed of everyone's posts <br> <br>
 <ul>
@@ -9,6 +9,7 @@ Feed of everyone's posts <br> <br>
 
 User Posts <br><br>
 <ul>
+
 <% @posts.each do |post| %>
 <% if post.user_id == Current.user.id %>
   <li><p><%= post.message %></p></li>

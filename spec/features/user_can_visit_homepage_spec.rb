@@ -4,7 +4,7 @@ feature 'Homepage' do
   scenario 'Shows user homepage leads sign up page' do
     visit('/')
     click_button "Sign up"
-    expect(page).to have_content 'Signup here!'
+    expect(page).to have_content 'Sign up'
   end
 
   scenario 'Shows user homepage leads login page' do
