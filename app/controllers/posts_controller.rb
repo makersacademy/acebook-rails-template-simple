@@ -1,8 +1,11 @@
 class PostsController < ApplicationController
   
+  # def posts
+  #   @post = Post.order(created_at: :desc)
+  # end
+
   def new
     @post = Post.new
-
   end
 
   def create
@@ -22,7 +25,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.newest_first
   end
 
   private

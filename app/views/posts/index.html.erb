@@ -3,6 +3,9 @@
 Feed of everyone's posts <br> <br>
 <ul>
 <% @posts.each do |post| %>
+<%= post.user.first_name %>
+<%= post.user.last_name %>
+<br>
 <div class="posts-index-img d-inline">
   <% if post.user.avatar.attached? %>
    <%= image_tag(post.user.avatar.variant(
@@ -12,10 +15,9 @@ Feed of everyone's posts <br> <br>
   <img class="avatar-index rounded-circle mx-auto" src="<%= "/images/default_user.png " %>" alt="Userimage">
     <% end %>
 </div>
-<li><p><%= post.message %></p></li>
+<p><%= post.message %></p>
 <% end %>
 </ul>
-
 
 <%= link_to new_post_path do %>
   New post
