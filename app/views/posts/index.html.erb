@@ -12,7 +12,14 @@ User Posts <br><br>
 
 <% @posts.each do |post| %>
 <% if post.user_id == Current.user.id %>
-  <li><p><%= post.message %></p></li>
+  <li><p><%= post.message %></p>
+  <a href="comment?<%=post.id%>"> Create a new comment</a>
+  <%# <% @comments.each do |comment| %>
+  <%# <% if post.id == comments.post_id %>
+  <%# <%= comments.content%> %>
+  <%# <% end %> %> %> %>
+  </li>
+  <%# <% end %> %>
 <% end %>
 <% end %>
 </ul>
