@@ -5,8 +5,8 @@ class RegistrationsController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    @user.avatar.attach(params[:avatar])
+    @user = User.new(user_params.except(:avatar))
+    @user.avatar.attach(user_params[:avatar])
     if @user.save
       session[:first_name] = @user.first_name
       session[:user_id] = @user.id
