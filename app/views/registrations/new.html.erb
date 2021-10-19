@@ -29,12 +29,12 @@
     <%= form.password_field :password, class:'form-control', placeholder:"password" %>
   </div>
 
+  <%= form.label "Profile photo" %>
+  <%= form.file_field :avatar %><br>
+
   <div class='mb-3'>
     <%= form.submit "Sign Up", class:'btn btn-primary' %>
   </div>
 
-  <%= form.label "Profile photo" %>
-  <%= form.file_field :avatar %><br>
-  
 <% end %>
 

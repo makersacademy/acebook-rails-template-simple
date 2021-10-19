@@ -1,12 +1,17 @@
 <h1>Hello, welcome to your feed</h1>
 
+<div class="posts-index-img d-inline">
+  <% if Current.user.avatar.attached? %>
+   <%= image_tag(Current.user.avatar) %>
+      <% else %>
+  <img class="avatar-index rounded-circle mx-auto" src="<%= "/images/default_user.png " %>" alt="Userimage">
+    <% end %>
+</div>
+
 Feed of everyone's posts <br> <br>
 <ul>
 <% @posts.each do |post| %>
-  <% if @user.avatar.attached? %>
-    <image src="<%=(url_for(@user.avatar))%>">
   <li><p><%= post.message %></p></li>
-  <% end %>
 <% end %>
 </ul>
 

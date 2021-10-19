@@ -6,6 +6,7 @@ class RegistrationsController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.avatar.attach(params[:avatar])
     if @user.save
       session[:first_name] = @user.first_name
       session[:user_id] = @user.id
@@ -18,7 +19,6 @@ class RegistrationsController < ApplicationController
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :avatar)
-    @user.avatar.attach(params[:avatar])
   end
 end 
 
