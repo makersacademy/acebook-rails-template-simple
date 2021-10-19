@@ -3,9 +3,7 @@
 Feed of everyone's posts <br> <br>
 <ul>
 <% @posts.each do |post| %>
-<%= post.user.first_name %>
-<%= post.user.last_name %>
-<br>
+
 <div class="posts-index-img d-inline">
   <% if post.user.avatar.attached? %>
    <%= image_tag(post.user.avatar.variant(
@@ -15,7 +13,21 @@ Feed of everyone's posts <br> <br>
   <img class="avatar-index rounded-circle mx-auto" src="<%= "/images/default_user.png " %>" alt="Userimage">
     <% end %>
 </div>
+
+<%= post.user.first_name %>
+<%= post.user.last_name %>
+<br>
 <p><%= post.message %></p>
+<% if post.image.attached? %>
+  <%= image_tag(post.image.variant(
+    resize_to_limit: [200, 200])
+    )%>
+<% end %>
+<br>
+------
+<br>
+<br>
+
 <% end %>
 </ul>
 
