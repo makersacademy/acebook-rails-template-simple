@@ -1,7 +1,8 @@
 <h1>Hello, welcome to your feed</h1>
 
-Feed of everyone's posts <br> <br>
+Feed of everyone's posts <br> 
 <ul>
+<div>
   <% @posts.each do |post| %>
     <div class="posts-index-img d-inline">
       <% if post.user.avatar.attached? %>
@@ -14,25 +15,24 @@ Feed of everyone's posts <br> <br>
     </div>
     <%= post.user.first_name %>
     <%= post.user.last_name %>
+    <div>
     <li><p><%= post.message %></p></li>
-  
     <% if post.image.attached? %>
       <%= image_tag(post.image.variant(
         resize_to_limit: [200, 200])
         )%>
     <% end %>
-
-  <a href="comment?<%=post.id%>"> Create a new comment</a>
+</div>
   <% post.comments.map do |comment| %>
-    <p><%= comment.content %></p><br>
+    <p><%= comment.content %></p>
   <% end %>
+  <a href="comment?<%=post.id%>"> Create a new comment</a>
   <% end %>
+  </div>
 </ul>
-
-<% end %>
-
+<div>
 <%= link_to new_post_path do %>
   New post
 <% end %>
-
 <%= button_to 'Logout', logout_path, method: :delete %>
+</div>
