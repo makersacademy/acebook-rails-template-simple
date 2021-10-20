@@ -1,6 +1,9 @@
 class Post < ApplicationRecord
-  scope :newest_first, -> { order(created_at: :desc) }
-  belongs_to :user
-  has_one_attached :image
+
+ belongs_to :user
+ has_many :comments
+
+ scope :newest_first, -> { order(created_at: :desc) }
+ has_one_attached :image
 
 end

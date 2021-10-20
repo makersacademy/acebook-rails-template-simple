@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   post 'posts', to: 'posts#index'
   post 'new_post', to: 'posts#create'
 
+  get 'comment', to: 'comment#new'
+  post 'comment', to: 'comment#create'
+
   get 'sign_in', to: 'sessions#new'
   post 'sign_in', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
@@ -17,5 +20,7 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
-  # resources :posts
+  # resources :posts do
+    # resources :comments
+  # end
 end
