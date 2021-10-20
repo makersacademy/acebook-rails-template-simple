@@ -3,26 +3,33 @@
 Feed of everyone's posts <br> <br>
 <ul>
   <% @posts.each do |post| %>
+    <div class="posts-index-img d-inline">
+      <% if post.user.avatar.attached? %>
+        <%= image_tag(post.user.avatar.variant(
+          resize_to_limit: [100, 100])
+          )%>
+      <% else %>
+        <img class="avatar-index rounded-circle mx-auto" src="<%= "/images/default_user.png " %>" alt="Userimage">
+      <% end %>
+    </div>
+    <%= post.user.first_name %>
+    <%= post.user.last_name %>
     <li><p><%= post.message %></p></li>
   
+    <% if post.image.attached? %>
+      <%= image_tag(post.image.variant(
+        resize_to_limit: [200, 200])
+        )%>
+    <% end %>
+
+  <a href="comment?<%=post.id%>"> Create a new comment</a>
   <% post.comments.map do |comment| %>
     <p><%= comment.content %></p><br>
   <% end %>
   <% end %>
 </ul>
 
-User Posts <br><br>
-<ul>
-
-<% @posts.each do |post| %>
-<% if post.user_id == Current.user.id %>
-  <li><p><%= post.message %></p>
-  <a href="comment?<%=post.id%>"> Create a new comment</a>
-  </li>
 <% end %>
-<% end %>
-</ul>
-
 
 <%= link_to new_post_path do %>
   New post

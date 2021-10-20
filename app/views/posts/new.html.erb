@@ -4,6 +4,9 @@
   <%= form.text_field :message %>
   <%= form.text_field :user_id, value: Current.user.id, class:'d-none'%>
    
+  <%= form.label "Uploaded image" %>
+  <%= form.file_field :image %><br>
+  
   <%= form.submit "Submit"%>
 <% end %>
 
