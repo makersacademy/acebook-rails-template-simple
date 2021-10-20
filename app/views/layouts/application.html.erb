@@ -9,8 +9,60 @@
   </head>
 
   <body>
+
+  <body>
+  <!--Navigation Bar-->
+  <nav class="navbar navbar-light bg-light d-flex">
+    <div class="container">
+      <div class="logo">
+        <a class="navbar-brand" href="#">
+        
+          Acebook
+        </a>
+      </div>
+      <div class="m-auto">
+        <form class="form-inline search-form">
+          <input class="form-control mr-sm-2" type="search" placeholder="search" aria-label="Search">
+        </form>
+      </div>
+      <div class="user-section">
+
+<!--Login icon-->
+        <a href="<%= sign_in_path %>">
+          <i class="fa fa-sign-in"></i>
+        </a> 
+<!--Sign out icon-->
+        <a href="<%= logout_path %>" data-method="delete">
+        <i class="fa fa-sign-out"></i></a>
+<!--Home page-->
+        <a href="<%= posts_path %>"> <i class="fa fa-home"></i></a
+      </div>
+    </div>
+  </nav>
+
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
     <%= yield %>
+
+<!--Footer-->
+    <footer class="container footer">
+      <nav class="navbar d-flex">
+        <ul>
+          <li>ABOUT US</li>
+          <li>SUPPORT</li>
+          <li>PRESS</li>
+          <li>API</li>
+          <li>JOBS</li>
+          <li>PRIVACY</li>
+          <li>TERMS</li>
+          <li>DIRECTORY</li>
+          <li>LANGUAGE</li>
+        </ul>
+        <p> © 2021 ACEBOOK </p>
+      </nav>
+    </footer>
   </body>
 </html>
+
+
