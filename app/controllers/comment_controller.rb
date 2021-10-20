@@ -7,22 +7,13 @@ class CommentController < ApplicationController
   end
 
   def create 
-
     @comment = Comment.new(comment_params)
-
-    if @comment.save
-      p @comment
-      p @comments
-      # redirect_to posts_path
-      # , notice: "comment posted"
-    else
-      render :new
-    end
-
-  end
-
-  def index 
-    @comments = Comment.all
+    @post = Post.find(params[:comment][:post_id])
+    p @post
+    @comment.save
+    @comments = @post.comments
+    p @comments[0]["content"]
+    redirect_to posts_path
   end
 
   def comment_params

@@ -2,9 +2,13 @@
 
 Feed of everyone's posts <br> <br>
 <ul>
-<% @posts.each do |post| %>
-  <li><p><%= post.message %></p></li>
-<% end %>
+  <% @posts.each do |post| %>
+    <li><p><%= post.message %></p></li>
+  
+  <% post.comments.map do |comment| %>
+    <p><%= comment.content %></p><br>
+  <% end %>
+  <% end %>
 </ul>
 
 User Posts <br><br>
@@ -14,12 +18,7 @@ User Posts <br><br>
 <% if post.user_id == Current.user.id %>
   <li><p><%= post.message %></p>
   <a href="comment?<%=post.id%>"> Create a new comment</a>
-  <%# <% @comments.each do |comment| %>
-  <%# <% if post.id == comments.post_id %>
-  <%# <%= comments.content%> %>
-  <%# <% end %> %> %> %>
   </li>
-  <%# <% end %> %>
 <% end %>
 <% end %>
 </ul>
