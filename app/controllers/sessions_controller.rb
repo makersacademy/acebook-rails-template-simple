@@ -15,6 +15,12 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    session.delete(:user_id)
+    @current_user = nil
+    redirect_to '/welcome'
+  end
+
   def page_requires_login
 
   end
