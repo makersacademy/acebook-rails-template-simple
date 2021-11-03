@@ -27,9 +27,13 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  describe "GET /" do
-    it "responds with 200" do
-      get :index
+  describe "GET /:id" do
+    it "gets a specific post when passed the post id" do
+      post :create, params: { post: { message: "Hello, world!" } }
+      # get the post id
+      post_id = Post.all.first.id
+      
+      get :show, params: { id: post_id }
       expect(response).to have_http_status(200)
     end
   end
