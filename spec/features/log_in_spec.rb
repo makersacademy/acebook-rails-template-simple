@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Log in', type: :feature do
   scenario 'A user can log in to their Acebook account' do
     sign_up
-    click_button('Sign out')
+    click_on('Sign out')
     
     visit('/welcome')
     click_button('Login')
