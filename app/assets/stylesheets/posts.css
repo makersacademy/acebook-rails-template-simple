@@ -1,11 +1,15 @@
 .new_post_link {
     text-decoration: none;
-    padding: 5px;
-    font-size: x-large;
+    padding: 10px;
+    color: blue;
 }
 
 body {
-
+    font-family: "Courier New", serif;
+    font-size: 20px;
+    line-height: 1.43;
+    color: #484848;
+    background-color: #fff;
 }
 
 .post {
@@ -13,14 +17,27 @@ body {
     border-radius: 2pt;
     box-shadow: 0 0 0 1pt blue;
     padding: 1em;
-    margin: 10px;
     font-size: 16px;
 }
 
 .post:hover {
-    background-color: #ebebeb;
+    background-color: #87fdff;
+}
+
+.new_post_link:hover {
+    background-color: #87fdff;
 }
 
 #username {
+    padding-bottom: 5px;
     margin: 0px;
+    font-weight: bold;
+    display: block;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
 }
