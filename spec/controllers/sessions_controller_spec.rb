@@ -7,10 +7,10 @@ RSpec.describe SessionsController, type: :controller do
       expect(response).to redirect_to(login_url)
     end
 
-    it "redirects to /welcome when user details areconfirmed" do
+    it "redirects to /posts when user details are confirmed" do
       User.create({username: 'user', password: 'password'})
       post :create, params: { username: 'user', password: 'password'} 
-      expect(response).to redirect_to(welcome_url)
+      expect(response).to redirect_to(posts_url)
     end
   end
 
