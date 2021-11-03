@@ -1,0 +1,26 @@
+.new_post_link {
+    text-decoration: none;
+    padding: 5px;
+    font-size: x-large;
+}
+
+body {
+
+}
+
+.post {
+    align-content: center;
+    border-radius: 2pt;
+    box-shadow: 0 0 0 1pt blue;
+    padding: 1em;
+    margin: 10px;
+    font-size: 16px;
+}
+
+.post:hover {
+    background-color: #ebebeb;
+}
+
+#username {
+    margin: 0px;
+}
