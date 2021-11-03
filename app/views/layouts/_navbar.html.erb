@@ -1,0 +1,14 @@
+<header>
+  <div class='nav_bar'>
+    <nav>
+      <ul>
+        <li><%= link_to 'Acebook', posts_path %></li>
+        <%# <li>Image of user</li> %>
+        <%if logged_in?%>
+          <li><%=current_user.username%></li>
+          <li><%= link_to "Sign out", '/logout', method: :delete %></li>
+        <%end%>
+      </ul>
+    </nav>
+  </div>
+</header>
