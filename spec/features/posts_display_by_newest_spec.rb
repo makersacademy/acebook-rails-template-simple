@@ -2,8 +2,6 @@ require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
-    # this test is failing because it requires a sign in function
-    # fix this by merging from main
     visit('/welcome')
     click_button('Sign up')
     expect(page).to have_current_path('/users/new')
