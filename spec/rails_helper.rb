@@ -1,5 +1,20 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV['RAILS_ENV'] ||= 'test'
+if ENV['RAILS_ENV'] == 'test'
+  require 'simplecov'
+  require 'simplecov-console'
+  SimpleCov.start 'rails' do
+    # Following files ignored for now, because it is not clear what they're used for
+    add_filter 'app/mailers/application_mailer.rb'
+    add_filter 'app/channels/application_cable/connection.rb'
+    add_filter 'app/channels/application_cable/channel.rb'
+    add_filter 'app/jobs/application_job.rb'
+    
+    # Next line used to show the full coverage report in console
+    SimpleCov.formatter = SimpleCov::Formatter::Console
+  end
+end
+
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
