@@ -1,9 +1,10 @@
 <%= link_to new_post_path do %>
   New post
 <% end %>
+<br>
 
 <% @posts.each do |post| %>
-  <p><%= post.message %></p><br>
+  <a href=<%="/posts/#{post.id}"%>><%= post.message %></a><br>
 <% end %>
 
 
