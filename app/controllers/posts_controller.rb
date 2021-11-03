@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     @posts = Post.order(created_at: :desc)
   end
 
-  def get
+  def show
     @post = Post.find(params["id"])
   end
 
