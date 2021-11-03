@@ -13,4 +13,13 @@ RSpec.describe SessionsController, type: :controller do
       expect(response).to redirect_to(welcome_url)
     end
   end
+
+  describe "DELETE /" do
+    it "redirects to /welcome" do
+      User.create({username: 'user', password: 'password'})
+      post :create, params: { username: 'user', password: 'password'} 
+      delete :destroy
+      expect(response).to redirect_to(welcome_url)
+    end
+  end
 end
