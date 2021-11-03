@@ -6,5 +6,12 @@ class CreateUsers < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
+
+    create_table :posts do |t|
+      t.belongs_to :user
+      t.string :message
+
+      t.timestamps
+    end
   end
 end
