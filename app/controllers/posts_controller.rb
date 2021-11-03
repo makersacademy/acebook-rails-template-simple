@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.create(message: post_params["message"])
+    @post = current_user.posts.create(post_params)
     redirect_to posts_url
   end
 
