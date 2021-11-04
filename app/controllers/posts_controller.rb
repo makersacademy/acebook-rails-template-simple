@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.create(post_params)
     redirect_to posts_url
+    flash[:message] = "Nice post, friend!"
   end
 
   def index
