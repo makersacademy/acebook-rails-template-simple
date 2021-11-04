@@ -6,17 +6,23 @@
         <div>
           <%= msg %>
         </div>
-        <br>
       <% end %>
     <% end %>
 
-    <a class="new_post_link" href="/posts/new">New Post</a>
+    <div class="new_post_field_container">
+      <form>
+        <input class="new_post_textfield" name="last" type="text" placeholder="Enter your text here!">
+        <a class="new_post_link" href="/posts/new">New Post</a>
+      </form>
+    </div>
 
     <% @posts.each do |post| %>
-      <div id="<%=post.id%>" class="post">
-        <a id="username"> <%=post.user.username%></a>
-        <a id="post_message" href=<%="/posts/#{post.id}"%>><%= post.message %></a><br>
-        <a id="post_created_date">Posted at: <%= post.created_at %></a>
+      <div id="<%= post.id %>" class="post">
+        <a id="username"> <%= post.user.username %></a>
+        <a id="post_message" href=<%= "/posts/#{post.id}" %>><%= post.message %></a><br>
+        <div class="post_created_date">
+          <a id="post_created_date">Posted at: <%= post.created_at %></a>
+        </div>
       </div>
     <% end %>
   </div>
