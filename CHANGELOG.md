@@ -1,6 +1,27 @@
 # Changelog
 
 ## 4/11/21
+* Feature/login flash message
+  * adding flash messages for sign in, up, post and sign out
+  * added flash message tests for sign in, up, out and new post
+  * Merge branch 'main' into feature/login-flash-message 
+
+Comments:
+* Flash messages and tests for:
+  * sign in
+  * sign out
+  * sign up
+  * new post
+
+
+## 4/11/21
+* Feature/changelog
+  * Feature/changelog: created changelog
+
+Comments:
+* Created changelog with our team's commits from the beginning of the project
+
+## 4/11/21
 * Fix/tests which include web helper
   * fix: tests failing because 'New post' was renamed to 'New Post', fixed now
   * Merge branch 'main' into fix/new-post-test
