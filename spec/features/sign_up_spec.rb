@@ -4,7 +4,7 @@ RSpec.feature 'Sign up', type: :feature do
   scenario 'A user can sign up to Acebook' do
     sign_up
 
-    expect(page).to have_current_path('/welcome')
-    expect(page).to have_content('You are Logged In, user')
+    expect(page).to have_current_path('/posts')
+    expect(page).to have_content('user')
   end
 end
