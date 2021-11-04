@@ -9,12 +9,7 @@
       <% end %>
     <% end %>
 
-    <div class="new_post_field_container">
-      <form>
-        <input class="new_post_textfield" name="last" type="text" placeholder="Enter your text here!">
-        <a class="new_post_link" href="/posts/new">New Post</a>
-      </form>
-    </div>
+    <a class="new_post_link" href="/posts/new">New Post</a>
 
     <% @posts.each do |post| %>
       <div id="<%= post.id %>" class="post">
