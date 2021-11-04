@@ -1,6 +1,15 @@
 <section class="container">
   <div class="posts">
     <br>
+    <% if flash.any? %>
+      <% flash.each do |type, msg| %>
+        <div>
+          <%= msg %>
+        </div>
+        <br>
+      <% end %>
+    <% end %>
+
     <a class="new_post_link" href="/posts/new">New Post</a>
 
     <% @posts.each do |post| %>
