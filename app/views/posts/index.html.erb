@@ -1,13 +1,13 @@
-<br>
-<a class="new_post_link" href="/posts/new">New Post</a>
-
 <section class="container">
   <div class="posts">
+    <br>
+    <a class="new_post_link" href="/posts/new">New Post</a>
+
     <% @posts.each do |post| %>
       <div id="<%=post.id%>" class="post">
         <a id="username"> <%=post.user.username%></a>
         <a id="post_message" href=<%="/posts/#{post.id}"%>><%= post.message %></a><br>
-        <a><%= post.created_at %></a>
+        <a id="post_created_date">Posted at: <%= post.created_at %></a>
       </div>
     <% end %>
   </div>

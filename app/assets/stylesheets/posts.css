@@ -1,11 +1,13 @@
 .new_post_link {
+    display: inline;
     text-decoration: none;
-    padding: 10px;
-    color: blue;
+    color: black;
+    margin: 2%;
+    padding: 1%;
 }
 
-body {
-    font-size: 20px;
+.new_post_link:hover {
+    color:rgb(10, 94, 150);
 }
 
 .container {
@@ -25,15 +27,11 @@ body {
     text-align: left;
     border-style: solid;
     border-radius: 10px;
-    padding: 2%;
+    padding: 1.5%;
 }
 
 .post:hover {
-    color:rgb(10, 94, 150);
-}
-
-.new_post_link:hover {
-    color:rgb(10, 94, 150);
+    background: lightblue;
 }
 
 #username {
@@ -46,6 +44,7 @@ body {
 
 #post_message {
     text-decoration: none;
+    color: black;
     display: block;
 }
 
