@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to posts_url
+      flash[:message] = "You have logged in successfully!"
     else
       redirect_to login_url
     end
@@ -16,5 +17,6 @@ class SessionsController < ApplicationController
     session.delete(:user_id)
     @current_user = nil
     redirect_to welcome_url
+    flash[:message] = "You have logged out successfully!"
   end
 end

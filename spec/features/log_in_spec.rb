@@ -12,7 +12,6 @@ RSpec.feature 'Log in', type: :feature do
     fill_in 'Password', with: 'password'
     click_button('Login')
     expect(page).to have_current_path('/posts')
-    # below line is commented as we will need to add a flash message for this
-    # expect(page).to have_content('You are Logged In, user')
+    expect(page).to have_content('You have logged in successfully!')
   end
 end
