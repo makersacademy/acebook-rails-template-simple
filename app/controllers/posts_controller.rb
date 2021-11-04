@@ -16,6 +16,10 @@ class PostsController < ApplicationController
     @post = Post.find(params["id"])
   end
 
+  def show_posts_by_user
+    @post = Post.find(params["user_id"])
+  end
+
   private
 
   def post_params
