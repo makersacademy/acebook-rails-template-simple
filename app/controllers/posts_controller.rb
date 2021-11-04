@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
-  def index
+  def index # this is the home page (/posts)
     @posts = Post.order(created_at: :desc)
   end
 
@@ -16,8 +16,9 @@ class PostsController < ApplicationController
     @post = Post.find(params["id"])
   end
 
-  def show_posts_by_user
-    @post = Post.find(params["user_id"])
+  def showSpecificUsersPost
+    @users_posts = Post.where(user_id: params[:user_id]) # SELECT * FROM posts, WHERE user_id = params[:user_id]
+    @username = profile_username
   end
 
   private

@@ -14,7 +14,7 @@ RSpec.feature "Timeline", type: :feature do
   end
   
   scenario "Can submit post and view them by clicking link" do
-    click_on('Hello, world!')
+    click_link('Hello, world!')
 
     expect(page).to have_content('Message: Hello, world!')
   end

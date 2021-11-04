@@ -31,7 +31,7 @@ RSpec.describe PostsController, type: :controller do
     it "gets a specific post when passed the post id" do
       post :create, params: { post: { message: "Hello, world!" } }
       # get the post id
-      post_id = Post.all.first.id
+      puts post_id = Post.all.first.id
 
       get :show, params: { id: post_id }
       expect(response).to have_http_status(200)
@@ -40,12 +40,25 @@ RSpec.describe PostsController, type: :controller do
 
   describe "GET /:user_id/posts" do
     it "gets a specific post when passed the post id" do
-      post :create, params: { post: { message: "Hello, world!" } }
-      post :create, params: { post: { message: "Hello, world!" } }
+      post :create, params: { post: { message: "1: Hello, world!" } }
+      post :create, params: { post: { message: "2: Yellow, world!" } }
 
-      get :show_posts_by_user, params: { user_id: user.id }
+      puts user_id = Post.all.first.user_id
+
+      get :showSpecificUsersPost, params: { user_id: user_id }
       expect(response).to have_http_status(200)
-      expect
+    end
+    end
+
+  describe "GET /:user_id/posts" do
+    it "gets a specific post when passed the post id" do
+      post :create, params: { post: { message: "1: Hello, world!" } }
+      post :create, params: { post: { message: "2: Yellow, world!" } }
+
+      puts user_id = Post.all.first.user_id
+
+      get :showSpecificUsersPost, params: { user_id: user_id }
+      expect(response).to have_http_status(200)
     end
   end
 end
