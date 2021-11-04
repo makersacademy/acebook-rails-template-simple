@@ -5,39 +5,48 @@
 }
 
 body {
-    font-family: "Courier New", serif;
     font-size: 20px;
-    line-height: 1.43;
-    color: #484848;
-    background-color: #fff;
-}
-
-.post {
-    align-content: center;
-    border-radius: 2pt;
-    box-shadow: 0 0 0 1pt blue;
-    padding: 1em;
-    font-size: 16px;
-}
-
-.post:hover {
-    background-color: #87fdff;
-}
-
-.new_post_link:hover {
-    background-color: #87fdff;
-}
-
-#username {
-    padding-bottom: 5px;
-    margin: 0px;
-    font-weight: bold;
-    display: block;
 }
 
 .container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.posts {
+    justify-content: center;
+    background-color: white;
+    flex-grow: 0.6;
+}
+
+.post {
+    margin: 2%;
+    text-align: left;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+.post:hover {
+    color:rgb(10, 94, 150);
+}
+
+.new_post_link:hover {
+    color:rgb(10, 94, 150);
+}
+
+#username {
+    text-decoration: none;
+    padding-bottom: 10px;
+    margin: 0;
+    font-weight: bold;
+    display: block;
+}
+
+#post_message {
+    text-decoration: none;
+    display: block;
+}
+
+
