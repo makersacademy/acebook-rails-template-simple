@@ -1,10 +1,14 @@
-<%= link_to new_post_path do %>
-  New post
-<% end %>
-<br>
+<section class="container">
+  <div class="posts">
+    <br>
+    <a class="new_post_link" href="/posts/new">New Post</a>
 
-<% @posts.each do |post| %>
-  <a href=<%="/posts/#{post.id}"%>><%= post.message %></a><br>
-<% end %>
-
-
+    <% @posts.each do |post| %>
+      <div id="<%=post.id%>" class="post">
+        <a id="username"> <%=post.user.username%></a>
+        <a id="post_message" href=<%="/posts/#{post.id}"%>><%= post.message %></a><br>
+        <a id="post_created_date">Posted at: <%= post.created_at %></a>
+      </div>
+    <% end %>
+  </div>
+</section>

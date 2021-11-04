@@ -1,0 +1,51 @@
+.new_post_link {
+    display: inline;
+    text-decoration: none;
+    color: black;
+    margin: 2%;
+    padding: 1%;
+}
+
+.new_post_link:hover {
+    color:rgb(10, 94, 150);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.posts {
+    justify-content: center;
+    background-color: white;
+    flex-grow: 0.6;
+}
+
+.post {
+    margin: 2%;
+    text-align: left;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 1.5%;
+}
+
+.post:hover {
+    background: lightblue;
+}
+
+#username {
+    text-decoration: none;
+    padding-bottom: 10px;
+    margin: 0;
+    font-weight: bold;
+    display: block;
+}
+
+#post_message {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+
