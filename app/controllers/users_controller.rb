@@ -10,6 +10,6 @@ class UsersController < ApplicationController
     @user = User.create(params.require(:user).permit(:username, :password))
     session[:user_id] = @user.id
     redirect_to posts_url
-    flash[:message] = "You're now signed up for Acebook!"
+    flash[:message] = "You're now signed up to Acebook!"
   end
 end
