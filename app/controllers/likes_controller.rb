@@ -1,4 +1,4 @@
 class LikesController < ApplicationController
-  def update
+  def new
   end
 end
