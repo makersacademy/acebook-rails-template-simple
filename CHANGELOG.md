@@ -1,5 +1,19 @@
 # Changelog
 
+## 5/11/21
+* Feature/likes model and database
+  * feature(likes model and database): Ran ruby on rails commands to create like model and controller
+  * minor updates to like model
+  * feature(*) implementing like function
+  * feat: like button has been added
+
+Comments:
+* Created:
+  * like model and controller
+  * like button
+* User can:
+  * like a post once
+
 ## 4/11/21
 * Feature/login flash message
   * adding flash messages for sign in, up, post and sign out
