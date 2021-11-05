@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   get 'welcome', to: 'sessions#welcome'
   get 'authorized', to: 'sessions#page_requires_login'
+  put '/post/:id/like', to: 'posts#like', as: 'like'
   
   resources :users, only: [:new, :create]
   resources :posts

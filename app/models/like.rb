@@ -1,4 +1,4 @@
 class Like < ApplicationRecord
-  belongs_to :posts, foreign_key: true
-  belongs_to :user, foreign_key: true
+  belongs_to :user_id
+  belongs_to :post_id
 end
