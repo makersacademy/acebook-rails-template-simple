@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     flash[:message] = "Nice post, friend!"
   end
 
-  def index
+  def index # this is the home page (/posts)
     @posts = Post.order(created_at: :desc)
   end
 
@@ -21,6 +21,11 @@ class PostsController < ApplicationController
     @post = Post.all.find(params[:id])
     Like.create(user_id: current_user.id, post_id: @post.id)
     redirect_to post_path(@post)
+  end
+
+  def showSpecificUsersPost
+    @users_posts = Post.where(user_id: params[:user_id]).order(created_at: :desc) # SELECT * FROM posts, WHERE user_id = params[:user_id]
+    @username = profile_username
   end
 
   private

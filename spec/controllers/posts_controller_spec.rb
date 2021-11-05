@@ -21,7 +21,7 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it "creates a post" do
-      post :create, params: { post: { message: "Hello, world!" }}
+      post :create, params: { post: { message: "Hello, world!" } }
       expect(Post.find_by(message: "Hello, world!")).to be
       expect(Post.find_by(user_id: 1)).to be
     end
@@ -49,4 +49,17 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(302)
     end
   end
+
+  describe "GET /:user_id/posts" do
+    it "gets a specific post when passed the post id" do
+      post :create, params: { post: { message: "1: Hello, world!" } }
+      post :create, params: { post: { message: "2: Yellow, world!" } }
+
+      user_id = Post.all.first.user_id
+
+      get :showSpecificUsersPost, params: { user_id: user_id }
+      expect(response).to have_http_status(200)
+    end
+  end
+
 end

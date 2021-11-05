@@ -1,6 +1,21 @@
 # Changelog
 
 ## 5/11/21
+* Feature/view all user posts
+  * added test and show_posts_by_user method
+  * Merge branch 'main' into feature/view-all-user-posts 
+  * feat: view posts by a specific user, it also displays the username at the top of the page
+  * refactor(view_specific_users_post_spec): changed 1: Hello, world! to user1: Hello, world! (2: became => user2:)
+  * Merge branch 'main' into feature/view-all-user-posts
+  * docs/tests: updated changelog and created unit tests
+
+Comments:
+* Created functionality so that an individual users' posts can be viewed
+* Ensured that individual posts are in descending order
+* Make new post box the same width as the posts on the page
+* Created feature and unit tests for both
+
+## 5/11/21
 * Feature/likes model and database
   * feature(likes model and database): Ran ruby on rails commands to create like model and controller
   * minor updates to like model
