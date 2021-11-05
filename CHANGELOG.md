@@ -1,6 +1,26 @@
 # Changelog
 
 ## 5/11/21
+* style/navbar
+  * temp commit
+  * post box
+  * temp commit
+  * refactor(navbar): username on page is now a link to users posts (take… 
+  * style: username and profile picture side by side
+  * style: new post box is in line with posts
+  * Refactored flash message to be in line with posts sections
+  * Updating from main
+  * fix: fixed failing test
+
+Comments:
+* Acebook name left aligned
+* Username and signout to be right aligned
+* Username to be a link to logged in user's own posts
+* Fixed failing feature test with unambiguous element
+* Added profile image next to usernames wherever they appear
+* Changed font across application
+
+## 5/11/21
 * Feature/view all user posts
   * added test and show_posts_by_user method
   * Merge branch 'main' into feature/view-all-user-posts 
