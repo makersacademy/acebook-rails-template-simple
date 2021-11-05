@@ -1,5 +1,14 @@
 <section class="container">
   <div class="posts">
+
+    <% if flash.any? %>
+      <% flash.each do |type, msg| %>
+        <div>
+          <%= msg %>
+        </div>
+      <% end %>
+    <% end %>
+
     <% @username.each do |name| %>
     <h1>Posts by: <%= name.username %></h1>
     <% end %>
