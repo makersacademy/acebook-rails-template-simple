@@ -14,8 +14,6 @@
   <section class="comments">
     <h2>Comments</h2>
     <%= render partial: 'comments/form' %>
-
     <%= render partial: 'posts/comment', collection: @post.comments.reverse %>
-
   </section>
 </section>
