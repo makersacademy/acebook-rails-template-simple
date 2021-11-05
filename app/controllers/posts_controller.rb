@@ -17,6 +17,12 @@ class PostsController < ApplicationController
     @post = Post.find(params["id"])
   end
 
+  def like
+    @post = Post.all.find(params[:id])
+    Like.create(user_id: current_user.id, post_id: @post.id)
+    redirect_to post_path(@post)
+  end
+
   def showSpecificUsersPost
     @users_posts = Post.where(user_id: params[:user_id]).order(created_at: :desc) # SELECT * FROM posts, WHERE user_id = params[:user_id]
     @username = profile_username
