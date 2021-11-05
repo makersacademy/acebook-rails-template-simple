@@ -13,6 +13,9 @@
 
   <section class="comments">
     <h2>Comments</h2>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    <%= render partial: 'comments/form' %>
+
+    <%= render partial: 'posts/comment', collection: @post.comments.reverse %>
+
   </section>
 </section>
