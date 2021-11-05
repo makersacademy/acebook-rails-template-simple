@@ -1,13 +1,13 @@
 .new_post_link {
-    display: inline;
+    display: block;
     text-decoration: none;
+    text-align: right;
     color: black;
+    border-style: solid;
+    border-radius: 10px;
+    background-color: white;
+    flex-grow: 0.6;
     margin: 2%;
-    padding: 1%;
-}
-
-.new_post_link:hover {
-    color:rgb(10, 94, 150);
 }
 
 .container {
@@ -18,8 +18,12 @@
 
 .posts {
     justify-content: center;
-    background-color: white;
     flex-grow: 0.6;
+    background-color: ghostwhite;
+}
+
+.flash_message { 
+    margin: 2%;
 }
 
 .post {
@@ -28,18 +32,38 @@
     border-style: solid;
     border-radius: 10px;
     padding: 1.5%;
+    background-color: white;
 }
 
 .post:hover {
     background: lightblue;
 }
 
+.post.avatar {
+    float: left;
+}
+
+.post img:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+.username_and_avatar {
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+}
+
+.post_created_date {
+    display: flex;
+    align-items: center;
+    align-content: flex-end;
+}
+
 #username {
     text-decoration: none;
-    padding-bottom: 10px;
     margin: 0;
     font-weight: bold;
-    display: block;
 }
 
 #post_message {

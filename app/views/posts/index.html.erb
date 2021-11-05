@@ -1,22 +1,28 @@
 <section class="container">
   <div class="posts">
     <br>
-    <% if flash.any? %>
-      <% flash.each do |type, msg| %>
-        <div>
-          <%= msg %>
-        </div>
-        <br>
+    <div class="flash_message">
+      <% if flash.any? %>
+        <% flash.each do |type, msg| %>
+          <div>
+            <%= msg %>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
 
     <a class="new_post_link" href="/posts/new">New Post</a>
 
     <% @posts.each do |post| %>
-      <div id="<%=post.id%>" class="post">
-        <a id="username" href=<%="/posts/#{post.user_id}/posts"%>> <%=post.user.username%></a>
-        <a id="post_message" href=<%="/posts/#{post.id}"%>><%= post.message %></a><br>
-        <a id="post_created_date">Posted at: <%= post.created_at %></a>
+      <div id="<%= post.id %>" class="post">
+        <div class="username_and_avatar">
+          <img class="avatar" height="30px" width="30px" src="https://mir-s3-cdn-cf.behance.net/user/230/d2e2ae163095399.60c76948a2fc7.png">
+          <a id="username" href=<%= "/posts/#{post.user_id}/posts" %>> <%= post.user.username %></a>
+        </div>
+        <a id="post_message" href=<%= "/posts/#{post.id}" %>><%= post.message %></a><br>
+        <div class="post_created_date">
+          <a id="post_created_date">Posted at: <%= post.created_at %></a>
+        </div>
       </div>
     <% end %>
   </div>
