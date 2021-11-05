@@ -3,13 +3,10 @@
 <section class="post">
   <p>Message: <%= @post.message %></p>
 
-  <% if logged_in? %>
-    <% if @post.liked?(current_user) %>
-      <%= button_to "Like", like_path(@post), method: "put", disabled: true %>
-    <% else %>
-      <%= button_to "Like", like_path(@post), method: "put" %>
-    <% end %>
-  <% end %>
+  <section class="likes">
+    <span>x likes</span>
+    <button>Like</button>
+  </section>
 
   <section class="comments">
     <h2>Comments</h2>
