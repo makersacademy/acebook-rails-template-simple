@@ -17,15 +17,16 @@ class PostsController < ApplicationController
     @post = Post.find(params["id"])
   end
 
+  def like
+    @post = Post.all.find(params[:id])
+    Like.create(user_id: current_user.id, post_id: @post.id)
+    redirect_to post_path(@post)
+  end
+
   private
 
   def post_params
     params.require(:post).permit(:message)
   end
 
-  def like
-    @post = Post.all.find(params[:id])
-    Like.create(user_id: current_user.id, post_id: @post.id)
-    redirect_to post_path(@post)
-  end
 end
