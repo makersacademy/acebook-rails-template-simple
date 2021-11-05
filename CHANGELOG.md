@@ -6,6 +6,8 @@
   * minor updates to like model
   * feature(*) implementing like function
   * feat: like button has been added
+  * feature(likes-model-and-database): feature test written for like button
+  * test(posts_controller_spec): unit test for like functionality
 
 Comments:
 * Created:
@@ -13,6 +15,10 @@ Comments:
   * like button
 * User can:
   * like a post once
+
+* Tests Written: 
+  * Feature test for liking a post, and the button becomes disabled
+  * Unit test for testing the like method
 
 ## 4/11/21
 * Feature/login flash message
