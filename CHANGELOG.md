@@ -13,7 +13,6 @@ Comments:
   * sign up
   * new post
 
-
 ## 4/11/21
 * Feature/changelog
   * Feature/changelog: created changelog
