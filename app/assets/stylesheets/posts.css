@@ -22,6 +22,10 @@
     background-color: ghostwhite;
 }
 
+.flash_message { 
+    margin: 2%;
+}
+
 .post {
     margin: 2%;
     text-align: left;
