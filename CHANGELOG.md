@@ -3,6 +3,7 @@
 ## 8/11/21
 * like all posts
   * likes render partial created
+  * number of likes is visible on page
 
 ## 8/11/21
 * feature/comments model and database
