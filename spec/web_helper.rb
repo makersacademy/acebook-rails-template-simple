@@ -21,9 +21,8 @@ end
 
 def add_new_post(message)
   visit "/posts"
-  click_link "New Post"
-  fill_in "Message", with: message
-  click_button "Submit"
+  fill_in "new-post-message", with: message
+  click_button "Post"
 end
 
 def add_new_comment(message)

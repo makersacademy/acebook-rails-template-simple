@@ -13,7 +13,7 @@
     <h1>Posts by: <%= name.username %></h1>
     <% end %>
 
-    <a class="new_post_link" href="/posts/new">New Post</a>
+    <%= render partial: 'posts/new' %>
 
     <% @users_posts.each do |post| %>
       <div id="<%= post.id %>" class="post">
