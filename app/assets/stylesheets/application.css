@@ -14,22 +14,12 @@
  *= require_self
  */
 
-/*.avatar {*/
-/*    background-color: #dfe1e6;*/
-/*    border-radius: 25em;*/
-/*    cursor: pointer;*/
-/*    text-decoration: none;*/
-/*    padding: 1em;*/
-/*}*/
-
 .navbar {
     overflow: hidden;
     display: flex;
     align-items: center;
-    align-content: space-around;
     flex-direction: row;
     background-color: lightblue;
-    /*position: fixed;*/
 }
 
 .navbar a:hover {
