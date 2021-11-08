@@ -61,13 +61,11 @@
 }
 
 #username {
-    text-decoration: none;
     margin: 0;
     font-weight: bold;
 }
 
 #post_message {
-    text-decoration: none;
     color: black;
     display: block;
 }
