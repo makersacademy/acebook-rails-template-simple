@@ -22,8 +22,11 @@
           <a id="username" href=<%= "/posts/#{post.user_id}/posts" %>> <%= post.user.username %></a>
         </div>
         <a id="post_message" href=<%= "/posts/#{post.id}" %>><%= post.message %></a><br>
-        <a id="post_created_date">Posted at: <%= post.created_at %></a>
+        <div class="post_created_date">
+          <a id="post_created_date">Posted at: <%= post.created_at %></a>
+        </div>
       </div>
     <% end %>
   </div>
 </section>
+
