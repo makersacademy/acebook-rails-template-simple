@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   get 'authorized', to: 'sessions#page_requires_login'
   put '/posts/:id/like', to: 'posts#like', as: 'like'
   get 'posts/:user_id/posts', to: 'posts#showSpecificUsersPost'
+  post '/posts/:id/comment', to: 'comments#create', as: 'comment'
 
   resources :users, only: [:new, :create]
-  resources :posts
-  resources :post do
+  resources :posts do
     resources :comments
   end
 end
