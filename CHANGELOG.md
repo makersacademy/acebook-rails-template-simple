@@ -6,6 +6,7 @@
   * refactor: added username + avatar image to show.html (to view a specific post), refactored test to look for a username on that page
   * refactor(posts.css): date now aligned to the right
   * refactor(stylesheets): changed red border and highlighting of the profile image placeholder to match purple font
+  * refactor(index.html.erb): profile image icon is now a link to see a specific user's posts
 
 ## 5/11/21
 * style/navbar
