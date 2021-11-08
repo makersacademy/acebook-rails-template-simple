@@ -72,4 +72,27 @@
     display: block;
 }
 
+#new-post-heading {
+    margin-top: 0%;
+    margin-bottom: 1em;
+}
 
+#new-post-message {
+    width: 100%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    border-radius: 10px;
+    padding: 2%;
+    resize: none;
+    font-size: 20px;
+}
+
+#new-post-button {
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    border-radius: 10px;
+    padding-right: 1%;
+    padding-left: 1%;
+    margin-top: 1%;
+}
