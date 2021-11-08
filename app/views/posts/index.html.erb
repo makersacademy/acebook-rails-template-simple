@@ -1,6 +1,5 @@
 <section class="container">
   <div class="posts">
-    <br>
     <div class="margin">
       <% if flash.any? %>
         <% flash.each do |type, msg| %>
@@ -10,6 +9,8 @@
         <% end %>
       <% end %>
     </div>
+
+    <h1 class="margin">News Feed</h1>
 
     <%= render partial: 'posts/new' %>
 
