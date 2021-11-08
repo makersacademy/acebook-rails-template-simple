@@ -1,4 +1,5 @@
 <% if logged_in? %>
+    <h4>likes <%= @post.likes.length%> </h4>
     <% if @post.liked?(current_user) %>
       <%= button_to "Like", like_path(@post), method: "put", disabled: true %>
     <% else %>

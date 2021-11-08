@@ -1,6 +1,10 @@
 # Changelog
 
 ## 8/11/21
+* like all posts
+  * likes render partial created
+
+## 8/11/21
 * feature/comments model and database
   * comments database, model and controller created
   * comments form renders on each post
