@@ -11,7 +11,7 @@
       <% end %>
     </div>
 
-    <a class="new_post_link" href="/posts/new">New Post</a>
+    <%= render partial: 'posts/new' %>
 
     <%= render partial: 'posts/post', collection: @posts %>
   </div>
