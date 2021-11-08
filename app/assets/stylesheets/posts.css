@@ -71,3 +71,8 @@
     color: black;
     display: block;
 }
+
+.container a {
+    text-decoration: none;
+    padding: 10px;
+}
