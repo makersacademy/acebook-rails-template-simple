@@ -16,7 +16,9 @@
     <% @posts.each do |post| %>
       <div id="<%= post.id %>" class="post">
         <div class="username_and_avatar">
-          <img class="avatar" height="30px" width="30px" src="https://mir-s3-cdn-cf.behance.net/user/230/d2e2ae163095399.60c76948a2fc7.png">
+          <a href=<%= "/posts/#{post.user_id}/posts" %>>
+            <img class="avatar" height="30px" width="30px" src="https://mir-s3-cdn-cf.behance.net/user/230/d2e2ae163095399.60c76948a2fc7.png">
+          </a>
           <a id="username" href=<%= "/posts/#{post.user_id}/posts" %>> <%= post.user.username %></a>
         </div>
         <a id="post_message" href=<%= "/posts/#{post.id}" %>><%= post.message %></a><br>
