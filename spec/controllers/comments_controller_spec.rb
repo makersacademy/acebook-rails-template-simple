@@ -10,7 +10,7 @@ RSpec.describe CommentsController, type: :controller do
 
   describe "POST /posts" do
     it "responds with 200" do
-      post :create, params: { comment: { body: "Hello, world!" } }
+      post :create, params: { comment: { body: "Hello, world!" }, post_id: 1 }
       expect(response).to redirect_to("/posts/1")
     end
   end
