@@ -15,15 +15,10 @@
  */
 
 .navbar {
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
     background-color: lightblue;
-}
-
-.navbar a:hover {
-    background-color: skyblue;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
 }
 
 .navbar img:hover {
@@ -40,17 +35,18 @@
     text-decoration: none;
 }
 
-.navbar-right {
-    margin-left: 1px;
+.navbar a {
+    text-decoration: none;
+    padding: 1em;
 }
 
-.username {
+.navbar #username {
+    text-decoration: none;
     margin-left: auto;
 }
 
-a {
-    text-decoration: none;
-    padding: 1em;
+.navbar a:hover {
+    background-color: skyblue;
 }
 
 body {
