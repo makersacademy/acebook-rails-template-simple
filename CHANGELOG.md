@@ -1,5 +1,9 @@
 # Changelog
 
+## 8/11/21
+* refactor/frontend-changes
+  * refactor(*): added margins to flash messages and title for pages
+
 ## 5/11/21
 * style/navbar
   * temp commit
