@@ -37,7 +37,7 @@
 }
 
 .navbar img:hover {
-    background-color: red;
+    background-color:#551A8B;
     cursor: pointer;
 }
 
@@ -45,7 +45,7 @@
     border-radius: 25em;
     object-fit: cover;
     border-style: solid;
-    border-color: red;
+    border-color:#551A8B;
     margin-right: 0;
     text-decoration: none;
 }

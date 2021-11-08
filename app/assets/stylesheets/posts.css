@@ -44,7 +44,7 @@
 }
 
 .post img:hover {
-    background-color: red;
+    background-color: #551A8B;
     cursor: pointer;
 }
 
@@ -71,5 +71,3 @@
     color: black;
     display: block;
 }
-
-
