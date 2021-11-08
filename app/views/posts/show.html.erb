@@ -1,15 +1,10 @@
 <%# All placeholder stuff, need to replace this with logic for likes and comments %>
 
 <section class="post">
-  <p>Message: <%= @post.message %></p>
+  <p>Message: </p>
+  <p> <%= @post.message %></p>
 
-  <% if logged_in? %>
-    <% if @post.liked?(current_user) %>
-      <%= button_to "Like", like_path(@post), method: "put", disabled: true %>
-    <% else %>
-      <%= button_to "Like", like_path(@post), method: "put" %>
-    <% end %>
-  <% end %>
+  <%= render partial: 'posts/like' %>
 
   <section class="comments">
     <h2>Comments</h2>

@@ -1,0 +1,7 @@
+<% if logged_in? %>
+    <% if @post.liked?(current_user) %>
+      <%= button_to "Like", like_path(@post), method: "put", disabled: true %>
+    <% else %>
+      <%= button_to "Like", like_path(@post), method: "put" %>
+    <% end %>
+<% end %>
