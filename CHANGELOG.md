@@ -9,6 +9,7 @@
   * refactor(index.html.erb): profile image icon is now a link to see a specific user's posts
   * refactor(showSpecificUsersPost): date aligned to the right
   * refactor(_post):render partial functionality added for posts
+  * refactor(_navbar): profile picture in the navbar is a link to the current user's posts
   
 ## 8/11/21
 * feature/comments model and database
