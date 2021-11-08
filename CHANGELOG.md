@@ -10,6 +10,8 @@
   * refactor(showSpecificUsersPost): date aligned to the right
   * refactor(_post):render partial functionality added for posts
   * refactor(_navbar): profile picture in the navbar is a link to the current user's posts
+  * refactor(_navbar): changed navbar to have #username id so its the same username as in posts
+  * refactor(posts.css): removed unnecessary text-decorations on other elements
   
 ## 8/11/21
 * feature/comments model and database
