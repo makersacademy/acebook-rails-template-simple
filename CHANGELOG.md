@@ -3,8 +3,12 @@
 ## 8/11/21
 * feature/create-post-on-main-page
   * test(web_helper): update to reflect that posts should be created on homepage
-  * feat(*): u
+  * feat(*): new post can be added from main page
+  * fix(web_helper): update to make failing tests pass
+  * refactor(*): extract new post form into a separate file, use this to render partial on homepage and specific user page
 
+Comments:
+* some styling has been completed, however this may need to be looked at further
 
 * feature/comments model and database
   * comments database, model and controller created
