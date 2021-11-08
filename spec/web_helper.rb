@@ -24,3 +24,8 @@ def add_new_post(message)
   fill_in "Message", with: message
   click_button "Submit"
 end
+
+def add_new_comment(message)
+  fill_in "comment_body", with: message
+  click_button "Submit"
+end
