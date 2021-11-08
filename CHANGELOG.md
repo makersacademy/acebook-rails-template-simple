@@ -8,6 +8,19 @@
   * refactor(stylesheets): changed red border and highlighting of the profile image placeholder to match purple font
   * refactor(index.html.erb): profile image icon is now a link to see a specific user's posts
   * refactor(showSpecificUsersPost): date aligned to the right
+  
+## 8/11/21
+* feature/comments model and database
+  * comments database, model and controller created
+  * comments form renders on each post
+  * all comments appear on post with a username and timestamp
+  * number of comments will render on each page
+
+Comments:
+* timestamp shows how long since the time the comment was posted
+* style: there has been no styling done on the comments yet
+* comment poster will be the signed in user
+* feature and unit tests written for all parts 
 
 ## 5/11/21
 * style/navbar
