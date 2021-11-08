@@ -57,7 +57,7 @@
 .post_created_date {
     display: flex;
     align-items: center;
-    align-content: flex-end;
+    justify-content: flex-end;
 }
 
 #username {
