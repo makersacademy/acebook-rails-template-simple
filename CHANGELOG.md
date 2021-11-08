@@ -1,6 +1,11 @@
 # Changelog
 
 ## 8/11/21
+* feature/create-post-on-main-page
+  * test(web_helper): update to reflect that posts should be created on homepage
+  * feat(*): u
+
+
 * feature/comments model and database
   * comments database, model and controller created
   * comments form renders on each post
