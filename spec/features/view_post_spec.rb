@@ -10,13 +10,13 @@ RSpec.feature "Timeline", type: :feature do
     post_id = Post.find_by(message: 'Hello, world!').id
     visit("/posts/#{post_id}")
 
-    expect(page).to have_content('Message: Hello, world!')
+    expect(page).to have_content('Hello, world!')
   end
   
   scenario "Can submit post and view them by clicking link" do
     click_link('Hello, world!')
 
-    expect(page).to have_content('Message: Hello, world!')
+    expect(page).to have_content('Hello, world!')
     expect(page).to have_content('user')
   end
 
