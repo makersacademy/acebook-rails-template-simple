@@ -3,6 +3,7 @@
 ## 9/11/21
 * refactor/render-partial-flash-messages
   * refactor(posts views files): moved repeating flash message code into a render partial
+  * refactor(*): switched flash messages and titles around, removed unecessary flash message for a specific users page
 
 Comments:
 * Refactored:
