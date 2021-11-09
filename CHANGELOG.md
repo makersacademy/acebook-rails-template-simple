@@ -1,11 +1,17 @@
 # Changelog
 
 ## 9/11/21
-* Configure Heroku
+* feature/incorrect details flash message
+  * feature(flash message): created incorrect log in details flash message
+  * test(flash message): created feature test for incorrect log in details
+
+## 9/11/21
+* feature/heroku-setup
   * Add GitHub action for automatically deploying to Heroku on pushing to `main` branch
   * Set homepage to the `welcome` page
+
 ## 9/11/21
-* upload an image
+* feature/upload-a-photo
   * user can choose to upload an image with a post
   * CSS styling centres and scales the image
 
