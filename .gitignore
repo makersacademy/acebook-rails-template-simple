@@ -24,3 +24,4 @@
 /.idea
 /coverage
 /storage
+/Rails.root.join("tmp
