@@ -1,6 +1,6 @@
 # Changelog
 
-## 8/11/21
+## 8/11/21 - 9/11/21
 * refactor/frontend-changes
   * refactor(*): added margins to flash messages and title for pages
   * refactor: added username + avatar image to show.html (to view a specific post), refactored test to look for a username on that page
@@ -13,6 +13,7 @@
   * refactor(_navbar): changed navbar to have #username id so its the same username as in posts
   * refactor(posts.css): removed unnecessary text-decorations on other elements
   * refactor(*): added title on home page (news feed), spaced out _post.html.erb file to view divs easier
+  * Added css margin to profile image and username on a specific post page
 
   
 ## 8/11/21
