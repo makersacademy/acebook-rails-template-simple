@@ -1,8 +1,12 @@
 <section class="navbar">
-  <h1><%= link_to 'Acebook', posts_path %></h1>
-  <% if logged_in? %>
-    <a class="username" href=<%="/posts/#{current_user.id}/posts"%>> <%=current_user.username%></a> <!--- make username + avatar/image link to profile--->
-    <img class="avatar" height="30px" width="30px" src="https://mir-s3-cdn-cf.behance.net/user/230/d2e2ae163095399.60c76948a2fc7.png">
-    <a class="navbar-right" <%= link_to "Sign out", '/logout', method: :delete %> </a>
-  <% end %>
-</section>
+  <h1 class="navbar-left"><%= link_to 'Acebook', posts_path %></h1>
+    <% if logged_in? %>
+      <a id="username" href=<%= "/posts/#{current_user.id}/posts" %>> <%= current_user.username %></a>
+
+      <a href=<%= "/posts/#{current_user.id}/posts" %>>
+        <img class="avatar" height="30px" width="30px" src="https://mir-s3-cdn-cf.behance.net/user/230/d2e2ae163095399.60c76948a2fc7.png">
+      </a>
+
+      <a id="sign-out"<%= link_to "Sign out", '/logout', method: :delete %> </a>
+    <% end %>
+    </section>

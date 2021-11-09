@@ -7,11 +7,4 @@
   <% end %>
 </div>
 
-<% if flash.any? %>
-  <% flash.each do |type, msg| %>
-    <div>
-      <%= msg %>
-    </div>
-    <br>
-  <% end %>
-<% end %>
+<%= render partial: 'posts/flashes' %>
