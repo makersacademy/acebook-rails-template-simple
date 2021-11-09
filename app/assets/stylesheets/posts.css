@@ -113,8 +113,9 @@
 
 .post-image {
     object-fit: contain;
-    height: 100%;
-    width: 500px;
+    height: auto;
+    width: 80%;
+    max-width: 35em;
     padding-top: 20px;
     padding-bottom: 20px;    
 }
