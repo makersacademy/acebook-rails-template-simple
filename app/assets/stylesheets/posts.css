@@ -1,3 +1,15 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*max-width: 60%;*/
+}
+
+.container a {
+    text-decoration: none;
+    padding: 0.5em;
+}
+
 .new_post_link {
     display: block;
     text-decoration: none;
@@ -10,20 +22,36 @@
     margin: 2%;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#new-post-heading {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+#new-post-message {
+    width: 100%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    border-radius: 10px;
+    padding: 2%;
+    resize: none;
+    font-size: 1em;
+}
+
+#new-post-button {
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    border-radius: 10px;
+    padding-right: 1%;
+    padding-left: 1%;
+    margin-top: 1%;
 }
 
 .posts {
     justify-content: center;
     flex-grow: 0.6;
     background-color: ghostwhite;
-}
-
-.flash_message { 
-    margin: 2%;
+    max-width: 70%;
 }
 
 .post {
@@ -35,8 +63,20 @@
     background-color: white;
 }
 
+.post a {
+    text-decoration: none;
+    padding: 0.5em;
+}
+
 .post:hover {
     background: lightblue;
+}
+
+.username_and_avatar {
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+    width: 25%;
 }
 
 .post.avatar {
@@ -44,32 +84,60 @@
 }
 
 .post img:hover {
-    background-color: red;
+    background-color: #551A8B;
     cursor: pointer;
 }
 
-.username_and_avatar {
-    display: flex;
-    align-items: center;
-    align-content: flex-start;
-}
-
-.post_created_date {
-    display: flex;
-    align-items: center;
-    align-content: flex-end;
-}
-
 #username {
-    text-decoration: none;
     margin: 0;
     font-weight: bold;
 }
 
 #post_message {
-    text-decoration: none;
+    word-wrap: break-word;
     color: black;
     display: block;
 }
 
+.post_created_date {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
 
+.individual-post { /* this class is for the post on the individual post page (/posts/:post_id/) */
+    margin: 2%;
+    text-align: left;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 1.5%;
+    background-color: lightblue;
+}
+
+.individual-post a {
+    text-decoration: none;
+    padding: 0.5em;
+}
+
+.element-margin {
+    margin: 2%;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.post-image {
+    object-fit: contain;
+    height: auto;
+    width: 80%;
+    max-width: 35em;
+    padding-top: 20px;
+    padding-bottom: 20px;    
+}
+
+#post-image:hover {
+    background-color: lightblue;
+    cursor:auto;
+}

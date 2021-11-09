@@ -1,17 +1,10 @@
 <section class="container">
   <div class="posts">
-    <br>
-    <div class="flash_message">
-      <% if flash.any? %>
-        <% flash.each do |type, msg| %>
-          <div>
-            <%= msg %>
-          </div>
-        <% end %>
-      <% end %>
+    <div class="element-margin">
+      <%= render partial: 'posts/flashes' %>
     </div>
 
-    <a class="new_post_link" href="/posts/new">New Post</a>
+    <h1 class="element-margin">News Feed</h1>
 
     <% @posts.each do |post| %>
       <div id="<%= post.id %>" class="post">
@@ -21,10 +14,12 @@
         </div>
         <a id="post_message" href=<%= "/posts/#{post.id}" %>><%= post.message %></a><br>
         <div class="post_created_date">
-          if 
           <a id="post_created_date">Posted at: <%=  convert_date(post.created_at) %></a>
         </div>
       </div>
     <% end %>
+    <%= render partial: 'posts/new' %>
+
+    <%= render partial: 'posts/post', collection: @posts %>
   </div>
 </section>

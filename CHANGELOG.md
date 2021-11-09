@@ -1,5 +1,62 @@
 # Changelog
 
+## 9/11/21
+* upload an image
+  * user can choose to upload an image with a post
+  * CSS styling centres and scales the image
+
+## 9/11/21
+* refactor/render-partial-flash-messages
+  * refactor(posts views files): moved repeating flash message code into a render partial
+  * refactor(*): switched flash messages and titles around, removed unecessary flash message for a specific users page
+
+Comments:
+* Refactored:
+  * /welcome
+  * /posts
+  * /posts/id
+  * /posts/user_id/posts
+
+## 9/11/21
+* style/post-boxes
+  * refactor(post.css): put elements in order of top to bottom, container>new_post_link>posts etc
+  * style: added max-width to posts so they cant expand with more text
+  * refactor: words without a space wouldn't conform to the div
+
+Comments:
+* Also made it so that a post on the individual post page (/posts/:id) doesn't change colour when you hover over it
+
+## 8/11/21 - 9/11/21
+* refactor/frontend-changes
+  * refactor(*): added margins to flash messages and title for pages
+  * refactor: added username + avatar image to show.html (to view a specific post), refactored test to look for a username on that page
+  * refactor(posts.css): date now aligned to the right
+  * refactor(stylesheets): changed red border and highlighting of the profile image placeholder to match purple font
+  * refactor(index.html.erb): profile image icon is now a link to see a specific user's posts
+  * refactor(showSpecificUsersPost): date aligned to the right
+  * refactor(_post):render partial functionality added for posts
+  * refactor(_navbar): profile picture in the navbar is a link to the current user's posts
+  * refactor(_navbar): changed navbar to have #username id so its the same username as in posts
+  * refactor(posts.css): removed unnecessary text-decorations on other elements
+  * refactor(*): added title on home page (news feed), spaced out _post.html.erb file to view divs easier
+  * Added css margin to profile image and username on a specific post page
+  * refactor(css): changed px to % or em's
+  * tests/refactor(view_post_spec): removed expectation to find 'Message: ' in a specific post
+
+Comments:
+* Entire post needs to be clickable (currently only the message can be clicked)
+
+  
+## 8/11/21
+* feature/create-post-on-main-page
+  * test(web_helper): update to reflect that posts should be created on homepage
+  * feat(*): new post can be added from main page
+  * fix(web_helper): update to make failing tests pass
+  * refactor(*): extract new post form into a separate file, use this to render partial on homepage and specific user page
+
+Comments:
+* some styling has been completed, however this may need to be looked at further
+
 ## 8/11/21
 * feature/comments model and database
   * comments database, model and controller created
@@ -7,7 +64,7 @@
   * all comments appear on post with a username and timestamp
   * number of comments will render on each page
 
-comments:
+Comments:
 * timestamp shows how long since the time the comment was posted
 * style: there has been no styling done on the comments yet
 * comment poster will be the signed in user
