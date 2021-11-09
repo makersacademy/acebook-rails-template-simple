@@ -4,6 +4,12 @@
 * refactor/render-partial-flash-messages
   * refactor(posts views files): moved repeating flash message code into a render partial
 
+Comments:
+* Refactored:
+  * /welcome
+  * /posts
+  * /posts/id
+  * /posts/user_id/posts
 
 ## 9/11/21
 * style/post-boxes
