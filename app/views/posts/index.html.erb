@@ -1,13 +1,7 @@
 <section class="container">
   <div class="posts">
     <div class="element-margin">
-      <% if flash.any? %>
-        <% flash.each do |type, msg| %>
-          <div>
-            <%= msg %>
-          </div>
-        <% end %>
-      <% end %>
+      <%= render partial: 'posts/flashes' %>
     </div>
 
     <h1 class="element-margin">News Feed</h1>
