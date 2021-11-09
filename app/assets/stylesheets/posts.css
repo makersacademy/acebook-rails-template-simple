@@ -122,3 +122,22 @@
 .element-margin {
     margin: 2%;
 }
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.post-image {
+    object-fit: contain;
+    height: auto;
+    width: 80%;
+    max-width: 35em;
+    padding-top: 20px;
+    padding-bottom: 20px;    
+}
+
+#post-image:hover {
+    background-color: lightblue;
+    cursor:auto;
+}
