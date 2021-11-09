@@ -14,30 +14,15 @@
  *= require_self
  */
 
-/*.avatar {*/
-/*    background-color: #dfe1e6;*/
-/*    border-radius: 25em;*/
-/*    cursor: pointer;*/
-/*    text-decoration: none;*/
-/*    padding: 1em;*/
-/*}*/
-
 .navbar {
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    align-content: space-around;
-    flex-direction: row;
     background-color: lightblue;
-    /*position: fixed;*/
-}
-
-.navbar a:hover {
-    background-color: skyblue;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
 }
 
 .navbar img:hover {
-    background-color: red;
+    background-color:#551A8B;
     cursor: pointer;
 }
 
@@ -45,27 +30,28 @@
     border-radius: 25em;
     object-fit: cover;
     border-style: solid;
-    border-color: red;
+    border-color:#551A8B;
     margin-right: 0;
     text-decoration: none;
 }
 
-.navbar-right {
-    margin-left: 1px;
-}
-
-.username {
-    margin-left: auto;
-}
-
-a {
+.navbar a {
     text-decoration: none;
     padding: 1em;
 }
 
+.navbar #username {
+    text-decoration: none;
+    margin-left: auto;
+}
+
+.navbar a:hover {
+    background-color: skyblue;
+}
+
 body {
-    margin-bottom: 30px;
+    margin-bottom: 1.5em;
     font-family: "Courier New", serif;
-    font-size: 20px;
+    font-size: 1em;
     background-color: ghostwhite;
 }

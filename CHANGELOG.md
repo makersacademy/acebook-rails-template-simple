@@ -1,5 +1,26 @@
 # Changelog
 
+## 8/11/21 - 9/11/21
+* refactor/frontend-changes
+  * refactor(*): added margins to flash messages and title for pages
+  * refactor: added username + avatar image to show.html (to view a specific post), refactored test to look for a username on that page
+  * refactor(posts.css): date now aligned to the right
+  * refactor(stylesheets): changed red border and highlighting of the profile image placeholder to match purple font
+  * refactor(index.html.erb): profile image icon is now a link to see a specific user's posts
+  * refactor(showSpecificUsersPost): date aligned to the right
+  * refactor(_post):render partial functionality added for posts
+  * refactor(_navbar): profile picture in the navbar is a link to the current user's posts
+  * refactor(_navbar): changed navbar to have #username id so its the same username as in posts
+  * refactor(posts.css): removed unnecessary text-decorations on other elements
+  * refactor(*): added title on home page (news feed), spaced out _post.html.erb file to view divs easier
+  * Added css margin to profile image and username on a specific post page
+  * refactor(css): changed px to % or em's
+  * tests/refactor(view_post_spec): removed expectation to find 'Message: ' in a specific post
+
+Comments:
+* Entire post needs to be clickable (currently only the message can be clicked)
+
+  
 ## 8/11/21
 * feature/create-post-on-main-page
   * test(web_helper): update to reflect that posts should be created on homepage
@@ -10,13 +31,14 @@
 Comments:
 * some styling has been completed, however this may need to be looked at further
 
+## 8/11/21
 * feature/comments model and database
   * comments database, model and controller created
   * comments form renders on each post
   * all comments appear on post with a username and timestamp
   * number of comments will render on each page
 
-comments:
+Comments:
 * timestamp shows how long since the time the comment was posted
 * style: there has been no styling done on the comments yet
 * comment poster will be the signed in user
