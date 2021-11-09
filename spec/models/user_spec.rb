@@ -1,5 +1,8 @@
 require 'rails_helper'
+require './app/models/user'
 
-RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe User do
+  it 'creates a new user' do
+    User.create(first_name: "David", last_name: "Smith", email: 'something', picture: 'www.picture.com', password: '123')
+  end
 end
