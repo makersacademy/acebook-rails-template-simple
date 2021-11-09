@@ -1,6 +1,10 @@
 # Changelog
 
 ## 9/11/21
+* Configure Heroku
+  * Add GitHub action for automatically deploying to Heroku on pushing to `main` branch
+  * Set homepage to the `welcome` page
+## 9/11/21
 * upload an image
   * user can choose to upload an image with a post
   * CSS styling centres and scales the image
