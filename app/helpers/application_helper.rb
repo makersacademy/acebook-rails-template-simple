@@ -6,9 +6,9 @@ module ApplicationHelper
   end
 
   def lessthanaday?(date)
-    new_date = Date.strptime(date.to_s, '%Y-%m-%d %H:%M:%S ')
+    new_date = Time.parse(date.to_s)
     current_time = Time.now
-    p current_time
+    current_time - new_date > -86400
   end
 
   def showtime(date)
