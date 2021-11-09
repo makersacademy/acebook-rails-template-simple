@@ -7,10 +7,8 @@ module ApplicationHelper
 
   def lessthanaday?(date)
     new_date = Date.strptime(date.to_s, '%Y-%m-%d %H:%M:%S ')
-    new_date.strftime('%H:%M:%S')
-    if new_date < 23:59:59 UTC
-      return true
-    end
+    current_time = Time.now
+    p current_time
   end
 
   def showtime(date)
