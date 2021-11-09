@@ -1,6 +1,13 @@
 # Changelog
 
 ## 9/11/21
+* feature/use-s3-for-storage
+  * feat(*): configure production environment to use AWS S3 bucket for storing images
+
+Comments:
+* Securely storing AWS credentials in Heroku storage
+
+## 9/11/21
 * feature/incorrect details flash message
   * feature(flash message): created incorrect log in details flash message
   * test(flash message): created feature test for incorrect log in details
