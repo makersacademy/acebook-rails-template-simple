@@ -105,3 +105,21 @@
     padding-left: 1%;
     margin-top: 1%;
 }
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.post-image {
+    object-fit: contain;
+    height: 100%;
+    width: 500px;
+    padding-top: 20px;
+    padding-bottom: 20px;    
+}
+
+#post-image:hover {
+    background-color: lightblue;
+    cursor:auto;
+}
