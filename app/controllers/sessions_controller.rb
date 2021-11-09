@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
       flash[:message] = "You have logged in successfully!"
     else
       redirect_to login_url
+      flash[:message] = "Incorrect details - try again"
     end
   end
 

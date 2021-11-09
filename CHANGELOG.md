@@ -10,7 +10,27 @@ Comments:
 * Made the posts clickable as well as the navbar static
 
 ## 9/11/21
-* upload an image
+* feature/use-s3-for-storage
+  * feat(*): configure production environment to use AWS S3 bucket for storing images
+
+Comments:
+* Securely storing AWS credentials in Heroku storage
+
+## 9/11/21
+* feature/incorrect details flash message
+  * feature(flash message): created incorrect log in details flash message
+  * test(flash message): created feature test for incorrect log in details
+
+Comments:
+* Added a flash message to appear on /login if user details are entered incorrectly
+
+## 9/11/21
+* feature/heroku-setup
+  * Add GitHub action for automatically deploying to Heroku on pushing to `main` branch
+  * Set homepage to the `welcome` page
+
+## 9/11/21
+* feature/upload-a-photo
   * user can choose to upload an image with a post
   * CSS styling centres and scales the image
 
