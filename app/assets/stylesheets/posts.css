@@ -105,8 +105,12 @@
     justify-content: flex-end;
 }
 
+/*noinspection CssReplaceWithShorthandSafely*/
 .individual-post { /* this class is for the post on the individual post page (/posts/:post_id/) */
-    margin: 2%;
+    margin-top: 7.5em;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
     text-align: left;
     border-style: solid;
     border-radius: 10px;
