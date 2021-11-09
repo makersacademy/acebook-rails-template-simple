@@ -9,6 +9,7 @@ class PostsController < ApplicationController
     flash[:message] = "Nice post, friend!"
   end
 
+
   def index # this is the home page (/posts)
     new
     @posts = Post.order(created_at: :desc)

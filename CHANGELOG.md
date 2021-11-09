@@ -1,6 +1,18 @@
 # Changelog
 
 ## 9/11/21
+* refactor/render-partial-flash-messages
+  * refactor(posts views files): moved repeating flash message code into a render partial
+  * refactor(*): switched flash messages and titles around, removed unecessary flash message for a specific users page
+
+Comments:
+* Refactored:
+  * /welcome
+  * /posts
+  * /posts/id
+  * /posts/user_id/posts
+
+## 9/11/21
 * style/post-boxes
   * refactor(post.css): put elements in order of top to bottom, container>new_post_link>posts etc
   * style: added max-width to posts so they cant expand with more text
