@@ -33,6 +33,8 @@
     border-color:#551A8B;
     margin-right: 0;
     text-decoration: none;
+    height: 30px;
+    width: 30px;
 }
 
 .navbar a {
@@ -43,6 +45,18 @@
 .navbar #username {
     text-decoration: none;
     margin-left: auto;
+    font-size: 23px;
+    font-weight: normal;
+}
+
+.navbar #sign-out {
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: normal;
+}
+
+.navbar-user-profile-image {
+    padding: 0;
 }
 
 .navbar a:hover {
