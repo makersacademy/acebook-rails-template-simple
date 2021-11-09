@@ -1,11 +1,14 @@
+# when running locally
 local:
   service: Disk
   root: <%= Rails.root.join("storage")%>
 
-test:
+# when running tests
+  test:
   service: Disk
   root: <%=Rails.root.join("tmp/storage")%>
 
+# when running on Heroku - using environment variables from Heroku secure storage
 amazon:
   service: S3
   access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
