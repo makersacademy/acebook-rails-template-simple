@@ -1,5 +1,13 @@
 # Changelog
 
+## 9/11/21
+* style/post-boxes
+  * refactor(post.css): put elements in order of top to bottom, container>new_post_link>posts etc
+  * style: added max-width to posts so they cant expand with more text
+
+Comments:
+* Also made it so that a post on the individual post page (/posts/:id) doesn't change colour when you hover over it
+
 ## 8/11/21 - 9/11/21
 * refactor/frontend-changes
   * refactor(*): added margins to flash messages and title for pages
