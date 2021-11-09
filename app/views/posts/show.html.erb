@@ -7,7 +7,7 @@
     <a id="username" href=<%= "/posts/#{@post.user_id}/posts" %>> <%= @post.user.username %></a>
   </div>
 
-  <p><%= @post.message %></p>
+  <p id="post_message"><%= @post.message %></p>
 
   <% if logged_in? %>
     <% if @post.liked?(current_user) %>

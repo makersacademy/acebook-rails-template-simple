@@ -94,6 +94,7 @@
 }
 
 #post_message {
+    word-wrap: break-word;
     color: black;
     display: block;
 }
