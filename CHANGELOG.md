@@ -1,6 +1,11 @@
 # Changelog
 
 ## 9/11/21
+* upload an image
+  * user can choose to upload an image with a post
+  * CSS styling centres and scales the image
+
+## 9/11/21
 * refactor/render-partial-flash-messages
   * refactor(posts views files): moved repeating flash message code into a render partial
   * refactor(*): switched flash messages and titles around, removed unecessary flash message for a specific users page
