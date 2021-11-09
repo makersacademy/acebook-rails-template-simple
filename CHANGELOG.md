@@ -5,6 +5,9 @@
   * feature(flash message): created incorrect log in details flash message
   * test(flash message): created feature test for incorrect log in details
 
+Comments:
+* Added a flash message to appear on /login if user details are entered incorrectly
+
 ## 9/11/21
 * feature/heroku-setup
   * Add GitHub action for automatically deploying to Heroku on pushing to `main` branch
