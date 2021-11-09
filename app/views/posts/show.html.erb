@@ -1,13 +1,13 @@
 <%# All placeholder stuff, need to replace this with logic for likes and comments %>
 
-<section class="post">
+<section class="individual-post">
 
   <div class="username_and_avatar">
     <img class="avatar" height="30px" width="30px" src="https://mir-s3-cdn-cf.behance.net/user/230/d2e2ae163095399.60c76948a2fc7.png">
     <a id="username" href=<%= "/posts/#{@post.user_id}/posts" %>> <%= @post.user.username %></a>
   </div>
 
-  <p><%= @post.message %></p>
+  <p id="post_message"><%= @post.message %></p>
 
   <% if logged_in? %>
     <% if @post.liked?(current_user) %>

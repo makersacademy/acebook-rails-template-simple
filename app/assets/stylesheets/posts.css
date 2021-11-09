@@ -1,3 +1,15 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*max-width: 60%;*/
+}
+
+.container a {
+    text-decoration: none;
+    padding: 0.5em;
+}
+
 .new_post_link {
     display: block;
     text-decoration: none;
@@ -10,79 +22,8 @@
     margin: 2%;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.posts {
-    justify-content: center;
-    flex-grow: 0.6;
-    background-color: ghostwhite;
-}
-
-.margin {
-    margin: 2%;
-}
-
-.post {
-    margin: 2%;
-    text-align: left;
-    border-style: solid;
-    border-radius: 10px;
-    padding: 1.5%;
-    background-color: white;
-}
-
-.post:hover {
-    background: lightblue;
-}
-
-.post.avatar {
-    float: left;
-}
-
-.post img:hover {
-    background-color: #551A8B;
-    cursor: pointer;
-}
-
-.username_and_avatar {
-    display: flex;
-    align-items: center;
-    align-content: flex-start;
-    width: 25%;
-}
-
-.post_created_date {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-#username {
-    margin: 0;
-    font-weight: bold;
-}
-
-#post_message {
-    color: black;
-    display: block;
-}
-
-.container a {
-    text-decoration: none;
-    padding: 0.5em;
-}
-
-.post a {
-    text-decoration: none;
-    padding: 0.5em;
-}
-
 #new-post-heading {
-    margin-top: 0%;
+    margin-top: 0;
     margin-bottom: 1em;
 }
 
@@ -104,4 +45,80 @@
     padding-right: 1%;
     padding-left: 1%;
     margin-top: 1%;
+}
+
+.posts {
+    justify-content: center;
+    flex-grow: 0.6;
+    background-color: ghostwhite;
+    max-width: 70%;
+}
+
+.post {
+    margin: 2%;
+    text-align: left;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 1.5%;
+    background-color: white;
+}
+
+.post a {
+    text-decoration: none;
+    padding: 0.5em;
+}
+
+.post:hover {
+    background: lightblue;
+}
+
+.username_and_avatar {
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+    width: 25%;
+}
+
+.post.avatar {
+    float: left;
+}
+
+.post img:hover {
+    background-color: #551A8B;
+    cursor: pointer;
+}
+
+#username {
+    margin: 0;
+    font-weight: bold;
+}
+
+#post_message {
+    word-wrap: break-word;
+    color: black;
+    display: block;
+}
+
+.post_created_date {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.individual-post { /* this class is for the post on the individual post page (/posts/:post_id/) */
+    margin: 2%;
+    text-align: left;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 1.5%;
+    background-color: lightblue;
+}
+
+.individual-post a {
+    text-decoration: none;
+    padding: 0.5em;
+}
+
+.element-margin {
+    margin: 2%;
 }
