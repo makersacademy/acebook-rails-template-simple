@@ -16,6 +16,9 @@
   * Added css margin to profile image and username on a specific post page
   * refactor(css): changed px to % or em's
 
+Comments:
+* Entire post needs to be clickable (currently only the message can be clicked)
+
   
 ## 8/11/21
 * feature/create-post-on-main-page
