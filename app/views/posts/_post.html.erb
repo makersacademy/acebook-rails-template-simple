@@ -7,6 +7,7 @@
   </div>
 
     <a id="post_message" href=<%= "/posts/#{post.id}" %>><%= post.message %></a><br>
+    <%= render partial: 'posts/like' %>
 
   <div class="post_created_date">
     <a id="post_created_date">Posted at: <%= post.created_at %></a>
