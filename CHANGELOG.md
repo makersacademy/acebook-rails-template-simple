@@ -4,7 +4,7 @@
 * style/post-boxes
   * refactor(post.css): put elements in order of top to bottom, container>new_post_link>posts etc
   * style: added max-width to posts so they cant expand with more text
-  * git commit -m "refactor: words without a space wouldn't conform to the div"
+  * refactor: words without a space wouldn't conform to the div
 
 Comments:
 * Also made it so that a post on the individual post page (/posts/:id) doesn't change colour when you hover over it
