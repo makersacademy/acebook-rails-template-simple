@@ -15,6 +15,7 @@
   * refactor(*): added title on home page (news feed), spaced out _post.html.erb file to view divs easier
   * Added css margin to profile image and username on a specific post page
   * refactor(css): changed px to % or em's
+  * tests/refactor(view_post_spec): removed expectation to find 'Message: ' in a specific post
 
 Comments:
 * Entire post needs to be clickable (currently only the message can be clicked)
