@@ -21,7 +21,8 @@
         </div>
         <a id="post_message" href=<%= "/posts/#{post.id}" %>><%= post.message %></a><br>
         <div class="post_created_date">
-          <a id="post_created_date">Posted at: <%= post.created_at %></a>
+          if 
+          <a id="post_created_date">Posted at: <%=  convert_date(post.created_at) %></a>
         </div>
       </div>
     <% end %>
