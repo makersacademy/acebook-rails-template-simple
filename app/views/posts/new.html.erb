@@ -2,6 +2,7 @@
   <%= form_for @post do |form| %>
     <%= form.label :message %>
     <%= form.text_field :message, :required => true %>
+    <%= form.file_field :image, accept:'image/png, image/gif, image/jpeg' %>
 
     <%= form.submit "Submit" %>
   <% end %>

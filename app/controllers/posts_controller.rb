@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    p post_params
     @post = current_user.posts.create(post_params)
     redirect_to posts_url
     flash[:message] = "Nice post, friend!"
@@ -35,6 +36,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :image)
   end
 end
