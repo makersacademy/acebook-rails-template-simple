@@ -14,6 +14,7 @@
   * refactor(posts.css): removed unnecessary text-decorations on other elements
   * refactor(*): added title on home page (news feed), spaced out _post.html.erb file to view divs easier
   * Added css margin to profile image and username on a specific post page
+  * refactor(css): changed px to % or em's
 
   
 ## 8/11/21
