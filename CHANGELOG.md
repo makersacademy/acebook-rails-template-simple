@@ -1,6 +1,15 @@
 # Changelog
 
 ## 9/11/21
+* style/navbar-changes
+  * refactor(application.css): make buttons on the navbar touch the top and bottom of the navbar
+  * feat(*): can click on an entire post to go to its individual page
+  * refactor/style(posts.css/_new.html.erb): made new_post_box div always lightblue, made posts in line with the posts container
+
+Comments:
+* Made the posts clickable as well as the navbar static
+
+## 9/11/21
 * upload an image
   * user can choose to upload an image with a post
   * CSS styling centres and scales the image
