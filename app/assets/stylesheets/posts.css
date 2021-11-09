@@ -52,6 +52,7 @@
     display: flex;
     align-items: center;
     align-content: flex-start;
+    width: 25%;
 }
 
 .post_created_date {
@@ -71,6 +72,11 @@
 }
 
 .container a {
+    text-decoration: none;
+    padding: 10px;
+}
+
+.post a {
     text-decoration: none;
     padding: 10px;
 }
