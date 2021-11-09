@@ -5,8 +5,6 @@
     <h1 class="element-margin">Posts by: <%= name.username %></h1>
     <% end %>
 
-    <%= render partial: 'posts/flashes' %>
-
     <%= render partial: 'posts/new' %>
 
     <%= render partial: 'posts/post', collection: @users_posts %>
