@@ -10,7 +10,7 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "new-post-message", with: 'This is a post'
     click_button "Post"
   
-    expect(page).to have_content('Posted: less than a minute ago')
+    expect(page).to have_content('Posted less than a minute ago')
   end
 
 end
