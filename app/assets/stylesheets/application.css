@@ -51,6 +51,7 @@
 .navbar a {
     text-decoration: none;
     padding: 1em;
+    color: #551A8B;
 }
 
 .navbar #username {
