@@ -2,9 +2,9 @@
 
 <%= form_for [ @post, @comment ] do |f| %>
   <p>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, id: 'comment-textarea' %>
   </p>
   <p>
-    <%= f.submit 'Submit' %>
+    <%= f.submit 'Submit', id: 'new-post-button' %>
   </p>
 <% end %>
