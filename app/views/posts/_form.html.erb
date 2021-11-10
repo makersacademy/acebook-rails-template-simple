@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :post_type %>
+    <%= form.text_field :post_type %>
+  </div>
+
+  <div class="field">
     <%= form.label :image %>
     <%= form.text_field :image %>
   </div>
@@ -19,11 +24,6 @@
   <div class="field">
     <%= form.label :text %>
     <%= form.text_field :text %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
   </div>
 
   <div class="actions">

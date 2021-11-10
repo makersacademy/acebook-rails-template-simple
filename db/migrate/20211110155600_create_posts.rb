@@ -4,7 +4,6 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.string :post_type
       t.string :image
       t.string :text
-      t.integer :user_id
 
       t.timestamps
     end

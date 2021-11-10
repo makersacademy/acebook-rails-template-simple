@@ -1,18 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Date created:</strong>
-  <%= @post.date_created %>
-</p>
-
-<p>
-  <strong>Date updated:</strong>
-  <%= @post.date_updated %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @post.type %>
+  <strong>Post type:</strong>
+  <%= @post.post_type %>
 </p>
 
 <p>
@@ -23,11 +13,6 @@
 <p>
   <strong>Text:</strong>
   <%= @post.text %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @post.user_id %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
