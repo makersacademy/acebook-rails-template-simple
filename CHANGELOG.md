@@ -1,6 +1,11 @@
 # Changelog
 
 ## 10/11/21
+* fix/scrollbar-resizing
+  * Fix bug where the scrollbar would cause the page to resize
+  * Scroll functionality retained whilst visible scrollbar removed
+
+## 10/11/21
 * feature/link colour
   * styling(stylesheets): link colour will always be purple (before and after being clicked)
   * refactor(application.css): DRY code
