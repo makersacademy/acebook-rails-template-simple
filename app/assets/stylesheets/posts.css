@@ -176,3 +176,7 @@ h1, h2, h3, h4 {
     background-color: lightblue;
     cursor:auto;
 }
+
+#upload-photo-label {
+    margin-bottom: 0%;
+}

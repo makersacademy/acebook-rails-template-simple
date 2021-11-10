@@ -3,7 +3,7 @@
   <%= form_for @post do |form| %>
     <%= form.text_area :message, :required => true, id: "new-post-message", rows: "1" %>
     <label for="file_field">
-      <h4>Upload a photo:</h4>
+      <h4 id='upload-photo-label'>Upload a photo:</h4>
     </label>
     <%= form.file_field :image, accept:'image/png, image/gif, image/jpeg, image/jpg' %>
     <%= form.submit "Post", id: 'new-post-button' %>
