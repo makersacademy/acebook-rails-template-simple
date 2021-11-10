@@ -4,6 +4,10 @@
 * refactor/photo button
   * refactor(_new.html.erb: adding a label for uploading a photo
   * refactor(posts.css): changed colour of h1 and h4 from black to purple
+  * refactor(posts.css): h1 - h4 colour = purple for consistency
+
+Comments:
+* Label 'Upload a photo' added to new post section
 
 ## 10/11/21
 * feature/link colour
