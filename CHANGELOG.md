@@ -1,6 +1,18 @@
 # Changelog
 
 ## 10/11/21
+* style/add-a-comment
+  * style(*): apply stying to comments page
+  * feat(*): align images on show page centrally
+
+Comments:
+* Button for posting on main page has been moved to the right hand side
+* Comment counter on main page styled
+* When showing specific post, the post and the liking/comments is separated by sections
+* New comment textarea is styled to match the new post textarea
+* Each comment is separated into separate divs for clarity
+
+## 10/11/21
 * feature/number-of-comments-on-posts
   * style(*): reduce space between label and upload photots link
   * test(view_post_spec): write feature test for adding a single comment
