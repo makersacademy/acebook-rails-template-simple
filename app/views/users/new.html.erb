@@ -16,6 +16,8 @@
           <div class="login-user-pass-tags">
             <%= f.label :password %>
             <%= f.password_field :password, :required => true, class: "login-text-boxes" %>
+            <%= f.label "Profile Image" %>
+            <%= f.file_field :avatar, accept:'image/png, image/gif, image/jpeg, image/jpg' %><br>
           </div>
 
           <%= submit_tag "Create User", class: "login-page-buttons" %>
@@ -26,3 +28,17 @@
     </div>
   </div>
 </div>
+
+<!-- left this here so that if the code for uploading a profile picture doesn't work we can still view the old code,
+this is the code from the feature/upload-profile-image branch :) -->
+
+<!--<h1>Sign Up</h1>-->
+<%#= form_for @user do |f|%>
+<!--  <%#= f.label :username%><br>-->
+<!--  <%#= f.text_field :username, :required => true %><br>-->
+<!--  <%#= f.label :password%><br>-->
+<!--  <%#= f.password_field :password, :required => true%><br>-->
+  <%#= f.label "Profile Image" %>
+<!--  <%#= f.file_field :avatar, accept:'image/png, image/gif, image/jpeg, image/jpg' %><br>-->
+  <%#= f.submit %>
+<%#end%>
