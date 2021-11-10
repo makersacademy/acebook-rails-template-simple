@@ -1,4 +1,4 @@
-<h4><%= @post.likes.length%> Likes </h4>
+<h4><%= number_of_likes(@post.likes.length)%> </h4>
 <% if @post.liked?(current_user) %>
   <%= button_to "Like", like_path(@post), method: "put", disabled: true %>
 <% else %>

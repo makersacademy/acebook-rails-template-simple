@@ -31,4 +31,15 @@ describe ApplicationHelper do
     end
   end
   
+  describe '#number_of_likes' do
+    it 'displays the correct message when 0 likes' do
+      expect(helper.number_of_likes(0)).to eq("no likes yet")
+    end
+    it 'displays the correct message when 0 likes' do
+      expect(helper.number_of_likes(1)).to eq("One like")
+    end
+    it 'displays the correct message when 0 likes' do
+      expect(helper.number_of_likes(3)).to eq("3 likes")
+    end
+  end
 end
