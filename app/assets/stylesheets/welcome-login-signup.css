@@ -1,0 +1,98 @@
+/* WELCOME AND LOGIN PAGE STYLING */
+
+.login-and-welcome-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.login-and-welcome-box {
+    justify-content: center;
+    flex-grow: 0.6;
+    background-color: ghostwhite;
+    max-width: 70%;
+    text-align: center;
+}
+
+.login-and-welcome-elements-display {
+    text-align: center;
+    max-width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 2%;
+    border-style: solid;
+    border-color: black;
+    border-radius: 20px;
+    background-color: lightblue;
+}
+
+/* WELCOME PAGE STYLING */
+
+.welcome-page-buttons {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 2.5%;
+    width: 25%;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 15px;
+    text-align: center;
+    display: inline-block;
+}
+
+.welcome-page-buttons:hover {
+    opacity: 60%;
+}
+
+/* LOGIN PAGE STYLING */
+
+.login-header {
+    background-color: dodgerblue;
+    color: whitesmoke;
+    border-color: black;
+    border-radius: 20px;
+    border-style: solid;
+}
+
+.login-username-and-password-fields {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.login-page-buttons {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 4.5%;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    width: 75%;
+    border-radius: 15px;
+    text-align: center;
+    display: inline-block;
+}
+
+.login-page-buttons:hover {
+    opacity: 60%;
+}
+
+.login-user-pass-tags {
+    font-weight: bold;
+    padding-bottom: 7.5%;
+}
+
+.login-text-boxes {
+    width: 100%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    border-radius: 10px;
+    border: none;
+    padding: 2%;
+    resize: none;
+    font-size: 1em;
+}

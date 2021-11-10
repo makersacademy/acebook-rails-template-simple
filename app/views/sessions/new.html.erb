@@ -1,11 +1,31 @@
-<h1>Login</h1>
-<%= render partial: 'posts/flashes' %>
-<%= form_tag '/login' do%>
-    <%= label_tag :username%>
-    <%= text_field_tag :username, nil, :required => true %>
-    <%= label_tag :password%>
-    <%= password_field_tag :password, nil, :required => true %>
-    <%= submit_tag "Login"%>
-<%end%>
+<div class="login-and-welcome-container">
+  <div class="login-and-welcome-box">
+    <div class="login-and-welcome-elements-display">
+      <h1 class="login-header">Login</h1>
 
-<p>Don't have an account?</p> <%=button_to "Sign up", '/users/new', method: :get%> 
+      <%= render partial: 'posts/flashes', class: "login-and-welcome-flash-messages" %>
+      <br>
+      <div class="login-username-and-password-fields">
+        <%= form_tag '/login' do %>
+
+          <div class="login-user-pass-tags">
+            <%= label_tag :username %>
+            <%= text_field_tag :username, nil, :required => true, class: "login-text-boxes" %>
+          </div>
+
+          <div class="login-user-pass-tags">
+            <%= label_tag :password %>
+            <%= password_field_tag :password, nil, :required => true, class: "login-text-boxes" %>
+          </div>
+
+          <%= submit_tag "Login", class: "login-page-buttons" %>
+
+        <% end %>
+
+<!--        <p>Dont have an account?</p><%#= button_to "Sign up", '/users/new', method: :get, class: "login-page-buttons" %>-->
+
+      </div>
+
+    </div>
+  </div>
+</div>

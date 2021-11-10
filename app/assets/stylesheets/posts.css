@@ -17,18 +17,6 @@
     top: 0;
 }
 
-.new_post_link {
-    display: block;
-    text-decoration: none;
-    text-align: right;
-    color: black;
-    border-style: solid;
-    border-radius: 10px;
-    background-color: white;
-    flex-grow: 0.6;
-    margin: 2%;
-}
-
 #new-post-heading {
     margin-top: 0;
     margin-bottom: 1em;
@@ -127,6 +115,8 @@
     align-items: center;
     justify-content: flex-end;
 }
+
+/* VIEW INDIVIDUAL POSTS */
 
 /*noinspection CssReplaceWithShorthandSafely*/
 .individual-post { /* this class is for the post on the individual post page (/posts/:post_id/) */

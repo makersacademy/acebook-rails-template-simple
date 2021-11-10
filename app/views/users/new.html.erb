@@ -1,8 +1,31 @@
-<h1>Sign Up</h1>
-<%= form_for @user do |f|%>
-  <%= f.label :username%><br>
-  <%= f.text_field :username, :required => true %><br>
-  <%= f.label :password%><br>
-  <%= f.password_field :password, :required => true%><br>
-  <%= f.submit %>
-<%end%>  
+<div class="login-and-welcome-container">
+  <div class="login-and-welcome-box">
+    <div class="login-and-welcome-elements-display">
+      <h1 class="login-header">Sign up</h1>
+
+      <%= render partial: 'posts/flashes', class: "login-and-welcome-flash-messages" %>
+      <br>
+      <div class="login-username-and-password-fields">
+        <%= form_for @user do |f|%>
+
+          <div class="login-user-pass-tags">
+            <%= f.label :username %>
+            <%= f.text_field :username, :required => true, class: "login-text-boxes" %>
+          </div>
+
+          <div class="login-user-pass-tags">
+            <%= f.label :password %>
+            <%= f.password_field :password, :required => true, class: "login-text-boxes" %>
+          </div>
+
+          <%= submit_tag "Sign up", class: "login-page-buttons" %>
+
+        <% end %>
+
+        <!--        <p>Dont have an account?</p><%#= button_to "Sign up", '/users/new', method: :get, class: "login-page-buttons" %>-->
+
+      </div>
+
+    </div>
+  </div>
+</div>
