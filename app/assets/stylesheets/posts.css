@@ -202,10 +202,6 @@ h1, h2, h3, h4 {
     cursor:auto;
 }
 
-.post-label {
-    margin-top: 0%;
-}
-
 #comment-textarea {
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -225,5 +221,9 @@ h1, h2, h3, h4 {
 }
 
 #upload-photo-label {
-    margin-bottom: 0%;
+    margin-bottom: 2%;
+}
+
+.comment-count {
+    margin: 0 0 0 1.5%;
 }
