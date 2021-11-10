@@ -1,6 +1,10 @@
 # Changelog
 
 ## 10/11/21
+* style/welcome-login-signup-pages
+  * style(welcome/signup/login pages): put forms in boxes and given large titles etc.
+
+## 10/11/21
 * fix/incorrect-storage-config
   * Configuring S3 storage (previous MR) caused the `test` database to be declared incorrectly in `storage.yml`
   * Fixed yaml formatting, all tests passing
