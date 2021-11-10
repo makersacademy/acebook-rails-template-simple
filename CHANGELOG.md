@@ -1,12 +1,16 @@
 # Changelog
 
 ## 10/11/21
-* fix/incorrect-storage-config
+* feature/link colour
+  * styling(stylesheets): link colour will always be purple (before and after being clicked)
+
+## 10/11/21
+* fix/incorrect storage config
   * Configuring S3 storage (previous MR) caused the `test` database to be declared incorrectly in `storage.yml`
   * Fixed yaml formatting, all tests passing
 
 ## 9/11/21
-* feature/use-s3-for-storage
+* feature/use s3 for storage
   * feat(*): configure production environment to use AWS S3 bucket for storing images
 
 Comments:
@@ -21,17 +25,17 @@ Comments:
 * Added a flash message to appear on /login if user details are entered incorrectly
 
 ## 9/11/21
-* feature/heroku-setup
+* feature/heroku setup
   * Add GitHub action for automatically deploying to Heroku on pushing to `main` branch
   * Set homepage to the `welcome` page
 
 ## 9/11/21
-* feature/upload-a-photo
+* feature/upload a photo
   * user can choose to upload an image with a post
   * CSS styling centres and scales the image
 
 ## 9/11/21
-* refactor/render-partial-flash-messages
+* refactor/render partial flash messages
   * refactor(posts views files): moved repeating flash message code into a render partial
   * refactor(*): switched flash messages and titles around, removed unecessary flash message for a specific users page
 
@@ -43,7 +47,7 @@ Comments:
   * /posts/user_id/posts
 
 ## 9/11/21
-* style/post-boxes
+* style/post boxes
   * refactor(post.css): put elements in order of top to bottom, container>new_post_link>posts etc
   * style: added max-width to posts so they cant expand with more text
   * refactor: words without a space wouldn't conform to the div
@@ -52,7 +56,7 @@ Comments:
 * Also made it so that a post on the individual post page (/posts/:id) doesn't change colour when you hover over it
 
 ## 8/11/21 - 9/11/21
-* refactor/frontend-changes
+* refactor/frontend changes
   * refactor(*): added margins to flash messages and title for pages
   * refactor: added username + avatar image to show.html (to view a specific post), refactored test to look for a username on that page
   * refactor(posts.css): date now aligned to the right
@@ -73,7 +77,7 @@ Comments:
 
   
 ## 8/11/21
-* feature/create-post-on-main-page
+* feature/create post on main page
   * test(web_helper): update to reflect that posts should be created on homepage
   * feat(*): new post can be added from main page
   * fix(web_helper): update to make failing tests pass
