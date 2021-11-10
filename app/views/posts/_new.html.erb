@@ -2,6 +2,9 @@
   <h4 id="new-post-heading">New post:</h4>
   <%= form_for @post do |form| %>
     <%= form.text_area :message, :required => true, id: "new-post-message", rows: "1" %>
+    <label for="file_field">
+      <h4>Upload a photo:</h4>
+    </label>
     <%= form.file_field :image, accept:'image/png, image/gif, image/jpeg, image/jpg' %>
     <%= form.submit "Post", id: 'new-post-button' %>
   <% end %>

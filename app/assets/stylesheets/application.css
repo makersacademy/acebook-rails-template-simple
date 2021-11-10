@@ -82,4 +82,11 @@ body {
     font-family: "Courier New", serif;
     font-size: 1em;
     background-color: ghostwhite;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
 }
