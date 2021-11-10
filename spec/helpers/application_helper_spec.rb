@@ -47,10 +47,10 @@ RSpec.describe ApplicationHelper do
   
   describe '#number_of_likes' do
     it 'displays the correct message when 0 likes' do
-      expect(helper.number_of_likes(0)).to eq("no likes yet")
+      expect(helper.number_of_likes(0)).to eq("No likes yet")
     end
     it 'displays the correct message when 0 likes' do
-      expect(helper.number_of_likes(1)).to eq("One like")
+      expect(helper.number_of_likes(1)).to eq("1 like")
     end
     it 'displays the correct message when 0 likes' do
       expect(helper.number_of_likes(3)).to eq("3 likes")

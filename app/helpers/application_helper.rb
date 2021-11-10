@@ -27,9 +27,9 @@ module ApplicationHelper
   
   def number_of_likes(num)
     if num == 0 
-      return "no likes yet"
+      return "No likes yet"
     elsif num == 1 
-      return "One like"
+      return "1 like"
     else
       return "#{num} likes"
     end
