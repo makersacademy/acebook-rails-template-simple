@@ -8,6 +8,7 @@
 
 Comments:
 * Label 'Upload a photo' added to new post section
+* All h1-h4 headings are purple for consistency
 
 ## 10/11/21
 * fix/scrollbar-resizing
