@@ -1,5 +1,3 @@
-<%# All placeholder stuff, need to replace this with logic for likes and comments %>
-
 <section class="individual-post">
 
   <div class="username_and_avatar">
@@ -8,6 +6,9 @@
   </div>
 
   <p id="post_message"><%= @post.message %></p>
+  <% if @post.image.attached? %>
+    <img id="post-image" class="post-image" src="<%=(url_for(@post.image))%>">
+  <% end %>
 
   <%= render partial: 'posts/like' %>
 

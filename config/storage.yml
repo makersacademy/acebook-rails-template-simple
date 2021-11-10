@@ -1,0 +1,17 @@
+# when running locally
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage")%>
+
+# when running tests
+test:
+  service: Disk
+  root: <%=Rails.root.join("tmp/storage")%>
+
+# when running on Heroku - using environment variables from Heroku secure storage
+amazon:
+  service: S3
+  access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+  secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+  region: 'eu-west-2'
+  bucket: <%= ENV['AWS_BUCKET']%>

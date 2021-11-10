@@ -1,4 +1,4 @@
-<div id="<%= post.id %>" class="post">
+<div id="<%= post.id %>" class="single-post">
   <div class="username_and_avatar">
     <a href=<%= "/posts/#{post.user_id}/posts" %>>
       <img class="avatar" height="30px" width="30px" src="https://mir-s3-cdn-cf.behance.net/user/230/d2e2ae163095399.60c76948a2fc7.png">
@@ -8,6 +8,15 @@
 
     <a id="post_message" href=<%= "/posts/#{post.id}" %>><%= post.message %></a><br>
     <%= render partial: 'posts/like' %>
+    <div class="post-link"></div>
+  
+  </a><br>
+
+  <% if post.image.attached? %>
+    <div class="image-container">
+      <img id="post-image" class="post-image" src="<%= (url_for(post.image)) %>">
+    </div>
+  <% end %>
 
   <div class="post_created_date">
     <a id="post_created_date">Posted at: <%= post.created_at %></a>

@@ -1,5 +1,6 @@
 <h1>Login</h1>
- <%= form_tag '/login' do%>
+<%= render partial: 'posts/flashes' %>
+<%= form_tag '/login' do%>
     <%= label_tag :username%>
     <%= text_field_tag :username, nil, :required => true %>
     <%= label_tag :password%>
