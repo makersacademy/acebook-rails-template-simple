@@ -26,7 +26,7 @@ def add_new_post(message)
 end
 
 def add_new_comment(message)
-  fill_in "comment_body", with: message
+  fill_in "comment-textarea", with: message
   click_button "Submit"
 end
 
