@@ -1,8 +1,17 @@
 module ApplicationHelper
+  def show_comments_with_correct_ordinal(number_of_comments)
+    if number_of_comments == 1
+      '1 comment'
+    elsif number_of_comments == 0
+      'No comments yet'
+    else
+      "#{number_of_comments} comments"
+    end
+  end
+
   def convert_date(date)
     new_date = Date.strptime(date.to_s, '%Y-%m-%d %H:%M:%S ')
     new_date.strftime('%d-%m-%Y')
-
   end
 
   def less_than_a_day?(date)

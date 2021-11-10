@@ -17,6 +17,8 @@
     </div>
   <% end %>
 
+  <h4 class="comment-count"><%= show_comments_with_correct_ordinal(post.comments.size) %></h4>
+
   <div class="post_created_date">
     <a id="post_created_date">Posted <%=  show_time(post.created_at) %></a>
   </div>

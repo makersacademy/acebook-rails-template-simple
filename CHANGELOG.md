@@ -1,6 +1,19 @@
 # Changelog
 
 ## 10/11/21
+* feature/number-of-comments-on-posts
+  * style(*): reduce space between label and upload photots link
+  * test(view_post_spec): write feature test for adding a single comment
+  * feat(application_helper): write method for displaying the correct ordinal number of comments
+  * feat(posts): show number of comments on post
+  * refactor(*): use helpers for DRY code
+
+Comments:
+* Comments are shown on each post:
+  * 'No comments yet' if 0, '1 comment' if 1 and '`<number-of-comments> comments` if > 1
+* Also applied styling to the `Upload a photo` label to reduce the gap between label and attachment link
+
+## 10/11/21
 * feature/date-format
   * Added feature that formats date posted
   * Posts made <24 hours ago have a written timestamp
