@@ -17,6 +17,8 @@
 .navbar {
     border-style: solid;
     border-top: black;
+    border-left: none;
+    border-right: none;
     background-color: lightblue;
     position: fixed;
     top: 0;
