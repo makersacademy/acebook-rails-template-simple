@@ -172,3 +172,7 @@
     background-color: lightblue;
     cursor:auto;
 }
+
+.post-like-button {
+    z-index: 10;
+}

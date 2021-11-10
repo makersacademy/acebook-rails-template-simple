@@ -6,18 +6,18 @@
     <a id="username" href=<%= "/posts/#{post.user_id}/posts" %>> <%= post.user.username %></a>
   </div>
 
-    <a id="post_message" href=<%= "/posts/#{post.id}" %>><%= post.message %></a><br>
-    <%= render partial: 'posts/like' %>
+  <a id="post_message" href=<%= "/posts/#{post.id}" %>><%= post.message %>
     <div class="post-link"></div>
-  
   </a><br>
-
+    
   <% if post.image.attached? %>
     <div class="image-container">
       <img id="post-image" class="post-image" src="<%= (url_for(post.image)) %>">
     </div>
   <% end %>
-
+    
+  <h4>likes <%= post.likes.length%> </h4>
+  
   <div class="post_created_date">
     <a id="post_created_date">Posted at: <%= post.created_at %></a>
   </div>
