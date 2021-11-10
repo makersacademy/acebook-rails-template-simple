@@ -17,6 +17,10 @@
     </div>
   <% end %>
 
+  <div class="comments">
+    <p class="comment-count"><%= show_comments_with_correct_ordinal(post.comments.size) %></p>
+  </div>
+
   <div class="post_created_date">
     <a id="post_created_date">Posted at: <%= post.created_at %></a>
   </div>
