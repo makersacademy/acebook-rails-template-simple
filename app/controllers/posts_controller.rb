@@ -27,6 +27,11 @@ class PostsController < ApplicationController
     redirect_to post_path(@post)
   end
 
+  def destroy_like
+    @like = Like.all.find(Post(params[:id]))
+    @like.destroy
+  end
+
   def showSpecificUsersPost
     new
     @users_posts = Post.where(user_id: params[:user_id]).order(created_at: :desc) # SELECT * FROM posts, WHERE user_id = params[:user_id]

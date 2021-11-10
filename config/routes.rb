@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'welcome', to: 'sessions#welcome'
   get 'authorized', to: 'sessions#page_requires_login'
   put '/posts/:id/like', to: 'posts#like', as: 'like'
+  delete '/posts/:id/like', to: 'posts#destroy_like', as: 'unlike'
   get 'posts/:user_id/posts', to: 'posts#showSpecificUsersPost'
   post '/posts/:id/comment', to: 'comments#create', as: 'comment'
 
