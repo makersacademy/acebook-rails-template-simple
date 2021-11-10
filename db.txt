@@ -34,3 +34,13 @@ end
 add 'belongs_to :user' to post model
 add 'has_many :posts' to user model
 run bin/rails db:migrate
+
+
+LIKES
+post_id Associate with post
+user_id Associate with user
+
+COMMENTS
+post_id Associate with post
+user_id Associate with user
+message = string
