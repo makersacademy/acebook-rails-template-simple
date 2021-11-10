@@ -3,6 +3,9 @@
 ## 10/11/21
 * style/welcome-login-signup-pages
   * style(welcome/signup/login pages): put forms in boxes and given large titles etc.
+  * refactor(users/new.html, sessions/new.html): removed unnecessary sign in button and message on the sign in page, fixed the functionality for the sign in button on the login page
+  * refactor(*): html class cleanups
+  * refactor(welcome-login-signup): made font size larger and bolder, made form boxes larger
 
 ## 10/11/21
 * fix/incorrect-storage-config
