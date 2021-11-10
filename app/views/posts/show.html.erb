@@ -5,25 +5,19 @@
       <img class="avatar" height="30px" width="30px" src="https://mir-s3-cdn-cf.behance.net/user/230/d2e2ae163095399.60c76948a2fc7.png">
       <a id="username" href=<%= "/posts/#{@post.user_id}/posts" %>> <%= @post.user.username %></a>
     </div>
-
-    <p id="post_message"><%= @post.message %></p>
-    <% if @post.image.attached? %>
-      <div class="image-container">
-        <img id="post-image" class="post-image" src="<%=(url_for(@post.image))%>">
-      </div>
-    <% end %>
+  
+  <p id="post_message"><%= @post.message %></p>
+  <% if @post.image.attached? %>
+  <div class="image-container">
+  <img id="post-image" class="post-image" src="<%=(url_for(@post.image))%>">
+  </div>
+  <% end %>
   </section>
-
+  
   <section class="individual-post">
     <section class="comments-and-likes">
-      <h2>Likes</h2>
-      <% if logged_in? %>
-        <% if @post.liked?(current_user) %>
-          <%= button_to "Like", like_path(@post), method: "put", disabled: true %>
-        <% else %>
-          <%= button_to "Like", like_path(@post), method: "put" %>
-        <% end %>
-      <% end %>
+      <%= render partial: 'posts/like' %>
+      
 
       <h2>Comments</h2>
       <%= render partial: 'comments/form' %>

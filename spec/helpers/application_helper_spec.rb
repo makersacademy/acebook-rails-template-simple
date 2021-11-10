@@ -44,4 +44,16 @@ RSpec.describe ApplicationHelper do
       expect(show_time('2021-11-07 13:00:00 UTC')).to eq('07-11-2021')
     end
   end
+  
+  describe '#number_of_likes' do
+    it 'displays the correct message when 0 likes' do
+      expect(helper.number_of_likes(0)).to eq("No likes yet")
+    end
+    it 'displays the correct message when 0 likes' do
+      expect(helper.number_of_likes(1)).to eq("1 like")
+    end
+    it 'displays the correct message when 0 likes' do
+      expect(helper.number_of_likes(3)).to eq("3 likes")
+    end
+  end
 end
