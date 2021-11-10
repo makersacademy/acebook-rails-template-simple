@@ -29,3 +29,10 @@ def add_new_comment(message)
   fill_in "comment_body", with: message
   click_button "Submit"
 end
+
+def navigate_to_post(post_message)
+  post_id = Post.find_by(message: post_message).id
+  visit("/posts/#{post_id}")
+
+  post_id
+end
