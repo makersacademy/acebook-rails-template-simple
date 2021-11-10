@@ -6,7 +6,7 @@
       <%= render partial: 'posts/flashes', class: "login-and-welcome-flash-messages" %>
       <br>
       <div class="login-username-and-password-fields">
-        <%= form_for @user do |f|%>
+        <%= form_for @user, :html => {:class => "login-username-password-form"} do |f| %>
 
           <div class="login-user-pass-tags">
             <%= f.label :username %>
@@ -21,9 +21,6 @@
           <%= submit_tag "Sign up", class: "login-page-buttons" %>
 
         <% end %>
-
-        <!--        <p>Dont have an account?</p><%#= button_to "Sign up", '/users/new', method: :get, class: "login-page-buttons" %>-->
-
       </div>
 
     </div>
