@@ -1,6 +1,10 @@
 # Changelog
 
 ## 10/11/21
+* refactor/photo button
+  * refactor(_new.html.erb: adding a label for uploading a photo
+
+## 10/11/21
 * feature/link colour
   * styling(stylesheets): link colour will always be purple (before and after being clicked)
   * refactor(application.css): DRY code
