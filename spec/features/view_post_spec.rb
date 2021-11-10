@@ -7,9 +7,7 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "Can submit post and navigate directly to post by post_id" do
-    post_id = Post.find_by(message: 'Hello, world!').id
-    visit("/posts/#{post_id}")
-
+    navigate_to_post('Hello, world!')
     expect(page).to have_content('Hello, world!')
   end
   
@@ -21,21 +19,35 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "Can submit post and view them by clicking link" do
-    post_id = Post.find_by(message: 'Hello, world!').id
-    click_on('Hello, world!')
+    post_id = navigate_to_post('Hello, world!')
+
     expect(page).to have_current_path("/posts/#{post_id}")
+
     click_on('Like')
     expect(page).to have_button('Like', disabled: true)
   end
 
+  scenario "Number of comments can be seen on the post, 0 comments" do
+    visit('/posts')
+    expect(page).to have_content('No comments yet')
+  end
+  
   scenario "Number of comments can be seen on the post, 1 comment" do
-    post_id = Post.find_by(message: 'Hello, world!').id
-    visit("/posts/#{post_id}")
+    navigate_to_post('Hello, world!')
 
-    fill_in :comment_body, with: 'New comment'
-    click_button('Submit')
+    add_new_comment('First comment')
     
     visit('/posts')
     expect(page).to have_content('1 comment')
+  end
+
+  scenario "Number of comments can be seen on the post, 1 comment" do
+    navigate_to_post('Hello, world!')
+    add_new_comment('First comment')
+    navigate_to_post('Hello, world!')
+    add_new_comment('Second comment')
+    
+    visit('/posts')
+    expect(page).to have_content('2 comments')
   end
 end
