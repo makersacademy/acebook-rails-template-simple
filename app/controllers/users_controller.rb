@@ -11,4 +11,7 @@ class UsersController < ApplicationController
     # strict inputs e.g. max length
     redirect_to posts_url
   end
+
+  # 1234@example.com
+  # abc
 end
