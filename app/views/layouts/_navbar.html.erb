@@ -4,9 +4,14 @@
       <a id="username" href=<%= "/posts/#{current_user.id}/posts" %>> <%= current_user.username %></a>
 
       <a class="navbar-user-profile-image" href=<%= "/posts/#{current_user.id}/posts" %> >
-        <img class="avatar" src="https://mir-s3-cdn-cf.behance.net/user/230/d2e2ae163095399.60c76948a2fc7.png">
+        <% if current_user.avatar.attached? %>
+          <img class="avatar" src="<%=(url_for(current_user.avatar))%>">
+        <% else %>
+          <img class="avatar" src="https://mir-s3-cdn-cf.behance.net/user/230/d2e2ae163095399.60c76948a2fc7.png">
+        <% end %>
       </a>
 
       <a id="sign-out"<%= link_to "Sign out", '/logout', method: :delete %> </a>
     <% end %>
     </section>
+
