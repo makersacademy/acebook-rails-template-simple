@@ -8,11 +8,77 @@
   * refactor(welcome-login-signup): made font size larger and bolder, made form boxes larger
 
 ## 10/11/21
-* fix/incorrect-storage-config
+*feature/like-all-posts
+  * likes function moved to render partial
+  * user can view likes on /posts
+  * post has custom message depending on number or likes
+  * feature tests written
+  * helper function tests written
+
+## 10/11/21
+* style/add-a-comment
+  * style(*): apply stying to comments page
+  * feat(*): align images on show page centrally
+  * feat(*): make website more mobile friendly
+
+Comments:
+* Button for posting on main page has been moved to the right hand side
+* Comment counter on main page styled
+* When showing specific post, the post and the liking/comments is separated by sections
+* New comment textarea is styled to match the new post textarea
+* Each comment is separated into separate divs for clarity
+* The navbar changes depending on size of display
+  * Username disappears on mobile, allowing navbar to fit on the screen
+* Posts get larger to fill screen on mobile device
+
+## 10/11/21
+* feature/number-of-comments-on-posts
+  * style(*): reduce space between label and upload photots link
+  * test(view_post_spec): write feature test for adding a single comment
+  * feat(application_helper): write method for displaying the correct ordinal number of comments
+  * feat(posts): show number of comments on post
+  * refactor(*): use helpers for DRY code
+
+Comments:
+* Comments are shown on each post:
+  * 'No comments yet' if 0, '1 comment' if 1 and '`<number-of-comments> comments` if > 1
+* Also applied styling to the `Upload a photo` label to reduce the gap between label and attachment link
+
+## 10/11/21
+* feature/date-format
+  * Added feature that formats date posted
+  * Posts made <24 hours ago have a written timestamp
+  * Posts made >24 hours ago have a dd/mm/yyyy format
+  
+## 10/11/21
+* refactor/photo button
+  * refactor(_new.html.erb: adding a label for uploading a photo
+  * refactor(posts.css): changed colour of h1 and h4 from black to purple
+  * refactor(posts.css): h1 - h4 colour = purple for consistency
+
+Comments:
+* Label 'Upload a photo' added to new post section
+* All h1-h4 headings are purple for consistency
+
+## 10/11/21
+* fix/scrollbar-resizing
+  * Fix bug where the scrollbar would cause the page to resize
+  * Scroll functionality retained whilst visible scrollbar removed
+
+## 10/11/21
+* feature/link colour
+  * styling(stylesheets): link colour will always be purple (before and after being clicked)
+  * refactor(application.css): DRY code
+
+Comments:
+* All links will be purple by default and will not change colour when clicked or visited.
+
+## 10/11/21
+* fix/incorrect storage config
   * Configuring S3 storage (previous MR) caused the `test` database to be declared incorrectly in `storage.yml`
   * Fixed yaml formatting, all tests passing
 
-## 9/11/21
+## 9/11/21 - 10/11/21
 * style/navbar-changes
   * refactor(application.css): make buttons on the navbar touch the top and bottom of the navbar
   * feat(*): can click on an entire post to go to its individual page
@@ -39,17 +105,17 @@ Comments:
 * Added a flash message to appear on /login if user details are entered incorrectly
 
 ## 9/11/21
-* feature/heroku-setup
+* feature/heroku setup
   * Add GitHub action for automatically deploying to Heroku on pushing to `main` branch
   * Set homepage to the `welcome` page
 
 ## 9/11/21
-* feature/upload-a-photo
+* feature/upload a photo
   * user can choose to upload an image with a post
   * CSS styling centres and scales the image
 
 ## 9/11/21
-* refactor/render-partial-flash-messages
+* refactor/render partial flash messages
   * refactor(posts views files): moved repeating flash message code into a render partial
   * refactor(*): switched flash messages and titles around, removed unecessary flash message for a specific users page
 
@@ -61,7 +127,7 @@ Comments:
   * /posts/user_id/posts
 
 ## 9/11/21
-* style/post-boxes
+* style/post boxes
   * refactor(post.css): put elements in order of top to bottom, container>new_post_link>posts etc
   * style: added max-width to posts so they cant expand with more text
   * refactor: words without a space wouldn't conform to the div
@@ -70,7 +136,7 @@ Comments:
 * Also made it so that a post on the individual post page (/posts/:id) doesn't change colour when you hover over it
 
 ## 8/11/21 - 9/11/21
-* refactor/frontend-changes
+* refactor/frontend changes
   * refactor(*): added margins to flash messages and title for pages
   * refactor: added username + avatar image to show.html (to view a specific post), refactored test to look for a username on that page
   * refactor(posts.css): date now aligned to the right
@@ -91,7 +157,7 @@ Comments:
 
   
 ## 8/11/21
-* feature/create-post-on-main-page
+* feature/create post on main page
   * test(web_helper): update to reflect that posts should be created on homepage
   * feat(*): new post can be added from main page
   * fix(web_helper): update to make failing tests pass
