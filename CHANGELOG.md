@@ -1,6 +1,14 @@
 # Changelog
 
 ## 10/11/21
+*feature/like-all-posts
+  * likes function moved to render partial
+  * user can view likes on /posts
+  * post has custom message depending on number or likes
+  * feature tests written
+  * helper function tests written
+
+## 10/11/21
 * feature/number-of-comments-on-posts
   * style(*): reduce space between label and upload photots link
   * test(view_post_spec): write feature test for adding a single comment
