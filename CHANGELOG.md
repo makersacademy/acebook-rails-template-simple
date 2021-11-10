@@ -1,12 +1,30 @@
 # Changelog
 
 ## 10/11/21
+
 *feature/like-all-posts
   * likes function moved to render partial
   * user can view likes on /posts
   * post has custom message depending on number or likes
   * feature tests written
   * helper function tests written
+
+## 10/11/21
+
+* style/add-a-comment
+  * style(*): apply stying to comments page
+  * feat(*): align images on show page centrally
+  * feat(*): make website more mobile friendly
+
+Comments:
+* Button for posting on main page has been moved to the right hand side
+* Comment counter on main page styled
+* When showing specific post, the post and the liking/comments is separated by sections
+* New comment textarea is styled to match the new post textarea
+* Each comment is separated into separate divs for clarity
+* The navbar changes depending on size of display
+  * Username disappears on mobile, allowing navbar to fit on the screen
+* Posts get larger to fill screen on mobile device
 
 ## 10/11/21
 * feature/number-of-comments-on-posts

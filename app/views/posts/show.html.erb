@@ -1,22 +1,30 @@
-<section class="individual-post">
-
-  <div class="username_and_avatar">
-    <img class="avatar" height="30px" width="30px" src="https://mir-s3-cdn-cf.behance.net/user/230/d2e2ae163095399.60c76948a2fc7.png">
-    <a id="username" href=<%= "/posts/#{@post.user_id}/posts" %>> <%= @post.user.username %></a>
-  </div>
-
+<section class="container-post">
+  <div class="show-posts">
+    <section class="individual-post">
+    <div class="username_and_avatar">
+      <img class="avatar" height="30px" width="30px" src="https://mir-s3-cdn-cf.behance.net/user/230/d2e2ae163095399.60c76948a2fc7.png">
+      <a id="username" href=<%= "/posts/#{@post.user_id}/posts" %>> <%= @post.user.username %></a>
+    </div>
+  
   <p id="post_message"><%= @post.message %></p>
   <% if @post.image.attached? %>
-    <img id="post-image" class="post-image" src="<%=(url_for(@post.image))%>">
+  <div class="image-container">
+  <img id="post-image" class="post-image" src="<%=(url_for(@post.image))%>">
+  </div>
   <% end %>
-
-  <%= render partial: 'posts/like' %>
-
-
-  <section class="comments">
-    <h2>Comments</h2>
-    <%= render partial: 'comments/form' %>
-    <h3>Comments (<%= @post.comments.size %>)</h3>
-    <%= render partial: 'posts/comment', collection: @post.comments.reverse %>
   </section>
+  
+  <section class="individual-post">
+    <section class="comments-and-likes">
+      <%= render partial: 'posts/like' %>
+      
+
+      <h2>Comments</h2>
+      <%= render partial: 'comments/form' %>
+      <h3>Comments (<%= @post.comments.size %>)</h3>
+      <%= render partial: 'posts/comment', collection: @post.comments.reverse, id: 'post' %>
+      
+    </section>
+  </section>
+  </div>
 </section>
