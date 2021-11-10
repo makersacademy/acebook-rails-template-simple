@@ -27,4 +27,15 @@ RSpec.feature "Timeline", type: :feature do
     click_on('Like')
     expect(page).to have_button('Like', disabled: true)
   end
+
+  scenario "Number of comments can be seen on the post, 1 comment" do
+    post_id = Post.find_by(message: 'Hello, world!').id
+    visit("/posts/#{post_id}")
+
+    fill_in :comment_body, with: 'New comment'
+    click_button('Submit')
+    
+    visit('/posts')
+    expect(page).to have_content('1 comment')
+  end
 end
