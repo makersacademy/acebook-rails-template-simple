@@ -9,9 +9,9 @@ class UsersController < ApplicationController
       password: params[:password]
     )
     # strict inputs e.g. max length
+    session[:user_id] = @user.id
+
     redirect_to posts_url
   end
 
-  # 1234@example.com
-  # abc
 end
