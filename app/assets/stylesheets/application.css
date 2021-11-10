@@ -59,6 +59,7 @@
 }
 
 .navbar #sign-out {
+    white-space: nowrap;
     text-decoration: none;
     font-size: 23px;
     font-weight: normal;
