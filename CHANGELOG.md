@@ -3,6 +3,7 @@
 ## 10/11/21
 * refactor/photo button
   * refactor(_new.html.erb: adding a label for uploading a photo
+  * refactor(posts.css): changed colour of h1 and h4 from black to purple
 
 ## 10/11/21
 * feature/link colour
