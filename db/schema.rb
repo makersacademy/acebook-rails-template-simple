@@ -16,9 +16,7 @@ ActiveRecord::Schema.define(version: 2021_11_09_153126) do
   enable_extension "plpgsql"
 
   create_table "posts", force: :cascade do |t|
-    t.string "date_created"
-    t.string "date_updated"
-    t.string "type"
+    t.string "post_type"
     t.string "image"
     t.string "text"
     t.integer "user_id"
@@ -26,15 +24,4 @@ ActiveRecord::Schema.define(version: 2021_11_09_153126) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.string "picture"
-    t.string "password"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  add_foreign_key "posts", "users"
 end
