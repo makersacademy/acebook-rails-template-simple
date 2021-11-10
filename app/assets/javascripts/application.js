@@ -12,3 +12,5 @@
 //
 //= require rails-ujs
 //= require_tree .
+
+// DONT USE THIS FILE !! GO TO app/javascript/packs/application.js
