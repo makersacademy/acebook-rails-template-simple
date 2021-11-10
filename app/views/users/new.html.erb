@@ -4,5 +4,7 @@
   <%= f.text_field :username, :required => true %><br>
   <%= f.label :password%><br>
   <%= f.password_field :password, :required => true%><br>
+  <%= f.label "Profile Image" %>
+  <%= f.file_field :avatar, accept:'image/png, image/gif, image/jpeg, image/jpg' %><br>
   <%= f.submit %>
 <%end%>  
