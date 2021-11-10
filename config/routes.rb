@@ -2,10 +2,10 @@ Rails.application.routes.draw do
 
   root to: "users#index"
 
-  post "session", to: "session#"
+  # post "sessions", to: "sessions#"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :posts, :users
+  resources :posts, :users, :sessions
 end
 
 # GET   /users -    users#index -   display a list of all users
