@@ -7,7 +7,9 @@
 
     <p id="post_message"><%= @post.message %></p>
     <% if @post.image.attached? %>
-      <img id="post-image" class="post-image" src="<%=(url_for(@post.image))%>">
+      <div class="image-container">
+        <img id="post-image" class="post-image" src="<%=(url_for(@post.image))%>">
+      </div>
     <% end %>
   </section>
 
