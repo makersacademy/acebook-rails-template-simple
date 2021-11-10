@@ -26,18 +26,24 @@
     background-color: lightblue;
 }
 
+.login-and-welcome-flash-messages {
+    font-weight: bold;
+    font-size: larger;
+    color: red;
+}
+
 /* WELCOME PAGE STYLING */
 
 .welcome-page-buttons {
-    background-color: blue;
+    background-color: #0E3B43;
     color: white;
     border: none;
-    padding: 2.5%;
+    padding: 2%;
     width: 25%;
     text-decoration: none;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 20px;
     text-align: center;
     display: inline-block;
 }
@@ -51,9 +57,7 @@
 .login-header {
     background-color: dodgerblue;
     color: whitesmoke;
-    border-color: black;
     border-radius: 20px;
-    border-style: solid;
 }
 
 .login-username-and-password-fields {
@@ -64,7 +68,7 @@
 }
 
 .login-page-buttons {
-    background-color: blue;
+    background-color: #0E3B43;
     color: white;
     border: none;
     text-decoration: none;
@@ -72,7 +76,7 @@
     padding: 2%;
     width: 25%;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 20px;
     text-align: center;
     display: inline-block;
 }
@@ -82,6 +86,7 @@
 }
 
 .login-user-pass-tags {
+    font-size: x-large;
     font-weight: bold;
     padding-bottom: 2.5%;
     width: 50%;
@@ -93,7 +98,7 @@
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
-    border-radius: 10px;
+    border-radius: 20px;
     border: none;
     padding: 2%;
     resize: none;
