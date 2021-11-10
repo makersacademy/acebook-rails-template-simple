@@ -1,7 +1,6 @@
 # Changelog
 
 ## 10/11/21
-
 *feature/like-all-posts
   * likes function moved to render partial
   * user can view likes on /posts
@@ -10,7 +9,6 @@
   * helper function tests written
 
 ## 10/11/21
-
 * style/add-a-comment
   * style(*): apply stying to comments page
   * feat(*): align images on show page centrally
