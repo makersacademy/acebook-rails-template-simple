@@ -177,6 +177,6 @@ h1, h2, h3, h4 {
     cursor:auto;
 }
 
-.post-like-button {
-    z-index: 10;
+#upload-photo-label {
+    margin-bottom: 0%;
 }
