@@ -51,11 +51,11 @@
     border-radius: 25em;
     object-fit: cover;
     border-style: solid;
-    border-color:#551A8B;
+    border-color:#2C064A;
     margin-right: 0;
     text-decoration: none;
-    height: 30px;
-    width: 30px;
+    height: 3em;
+    width: 3em;
 }
 
 .navbar a {
