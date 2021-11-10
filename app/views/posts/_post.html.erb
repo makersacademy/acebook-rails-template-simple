@@ -13,12 +13,14 @@
   <a id="post_message" href=<%= "/posts/#{post.id}" %>><%= post.message %>
     <div class="post-link"></div>
   </a><br>
-
+    
   <% if post.image.attached? %>
     <div class="image-container">
       <img id="post-image" class="post-image" src="<%= (url_for(post.image)) %>">
     </div>
   <% end %>
+
+  <h4 class="likes-count"><%= number_of_likes(post.likes.length)%> </h4>
 
   <h4 class="comment-count"><%= show_comments_with_correct_ordinal(post.comments.size) %></h4>
 
