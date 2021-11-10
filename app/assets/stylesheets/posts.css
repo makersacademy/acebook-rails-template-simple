@@ -79,6 +79,10 @@
     width: 25%;
 }
 
+.username_and_avatar a {
+    color: #551A8B;
+}
+
 .post.avatar {
     float: left;
 }

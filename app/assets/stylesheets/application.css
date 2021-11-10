@@ -49,6 +49,10 @@
     background-color: skyblue;
 }
 
+.navbar a:visited {
+    color: #551A8B;
+}
+
 body {
     margin-bottom: 1.5em;
     font-family: "Courier New", serif;
