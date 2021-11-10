@@ -12,7 +12,6 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     flex-direction: column;
-    
 }
 
 .container a {
@@ -62,6 +61,17 @@ h1, h2, h3, h4 {
     border-radius: 10px;
     padding-right: 1%;
     padding-left: 1%;
+    float: right;
+}
+
+#new-comment-button {
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    border-radius: 10px;
+    padding-right: 1%;
+    padding-left: 1%;
+    float: right;
+    margin-right: 2%;
 }
 
 .posts {
@@ -153,7 +163,7 @@ h1, h2, h3, h4 {
 /*noinspection CssReplaceWithShorthandSafely*/
 .individual-post { /* this class is for the post on the individual post page (/posts/:post_id/) */
     justify-content: center;
-    width: 60%;
+    width: 64%;
     background-color: ghostwhite;
     text-align: left;
     border-style: solid;
@@ -197,13 +207,19 @@ h1, h2, h3, h4 {
 }
 
 #comment-textarea {
-    width: 80%;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
+    width: 96%;
     border-radius: 10px;
     padding: 2%;
     resize: none;
     font-size: 1em;
-    margin-bottom: 0%;
+    margin-bottom: 1%;
+    display: block;
+}
+
+.textarea-container {
+    display: flex;
+    justify-content: center;
 }
