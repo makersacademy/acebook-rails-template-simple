@@ -1,5 +1,10 @@
 # Changelog
 
+## 10/11/21
+* fix/incorrect-storage-config
+  * Configuring S3 storage (previous MR) caused the `test` database to be declared incorrectly in `storage.yml`
+  * Fixed yaml formatting, all tests passing
+
 ## 9/11/21
 * feature/use-s3-for-storage
   * feat(*): configure production environment to use AWS S3 bucket for storing images
