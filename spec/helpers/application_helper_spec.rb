@@ -30,7 +30,5 @@ describe ApplicationHelper do
       expect(show_time('2021-11-07 13:00:00 UTC')).to eq('07-11-2021')
     end
   end
-
-
   
 end
