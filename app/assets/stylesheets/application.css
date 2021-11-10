@@ -61,7 +61,7 @@
 .navbar a {
     text-decoration: none;
     padding: 1em;
-    color: #551A8B;
+    color: #2C064A;
 }
 
 .navbar #username {
@@ -83,8 +83,7 @@
 }
 
 .navbar a:hover {
-    background-color:#7925D0;
-    color: #F4ECFF;
+    background-color:#F4ECFF;
 }
 
 body {

@@ -1,5 +1,5 @@
 h1, h2, h3, h4 {
-    color: #551A8B;
+    color: #2C064A;
 }
 
 .container {
@@ -34,7 +34,7 @@ h1, h2, h3, h4 {
     color: black;
     border-style: solid;
     border-radius: 10px;
-    background-color: white;
+    background-color: #F4ECFF;
     flex-grow: 0.6;
     margin: 2%;
 }
@@ -98,7 +98,7 @@ h1, h2, h3, h4 {
     border-style: solid;
     border-radius: 10px;
     padding: 1.5%;
-    background-color: white;
+    background-color: #E4CDFF;
 }
 
 .comment-container {
@@ -116,7 +116,7 @@ h1, h2, h3, h4 {
 }
 
 .single-post:hover {
-    background: #E4CDFF;
+    background: #F4ECFF;
 }
 
 .username_and_avatar {
@@ -129,7 +129,7 @@ h1, h2, h3, h4 {
 }
 
 .username_and_avatar a {
-    color: #551A8B;
+    color: #2C064A;
 }
 
 .single-post.avatar {
@@ -137,7 +137,6 @@ h1, h2, h3, h4 {
 }
 
 .single-post img:hover {
-    background-color: #551A8B;
     cursor: pointer;
 }
 
