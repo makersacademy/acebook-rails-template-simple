@@ -1,6 +1,16 @@
 # Changelog
 
 ## 10/11/21
+* refactor/photo button
+  * refactor(_new.html.erb: adding a label for uploading a photo
+  * refactor(posts.css): changed colour of h1 and h4 from black to purple
+  * refactor(posts.css): h1 - h4 colour = purple for consistency
+
+Comments:
+* Label 'Upload a photo' added to new post section
+* All h1-h4 headings are purple for consistency
+
+## 10/11/21
 * fix/scrollbar-resizing
   * Fix bug where the scrollbar would cause the page to resize
   * Scroll functionality retained whilst visible scrollbar removed
