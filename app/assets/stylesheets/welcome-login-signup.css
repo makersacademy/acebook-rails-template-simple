@@ -39,7 +39,7 @@
     color: white;
     border: none;
     padding: 2%;
-    width: 25%;
+    width: 30%;
     text-decoration: none;
     font-size: 16px;
     cursor: pointer;
@@ -74,7 +74,7 @@
     text-decoration: none;
     font-size: 16px;
     padding: 2%;
-    width: 25%;
+    width: 35%;
     cursor: pointer;
     border-radius: 20px;
     text-align: center;
@@ -88,7 +88,7 @@
 .login-user-pass-tags {
     font-size: x-large;
     font-weight: bold;
-    padding-bottom: 2.5%;
+    padding-bottom: 5%;
     width: 50%;
     height: 50%;
 }
@@ -109,6 +109,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.profile-image-tag-and-fields {
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+    align-content: center;
 }
 
 #dont-have-an-account {

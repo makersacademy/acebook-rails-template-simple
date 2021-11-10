@@ -6,7 +6,7 @@
       <%= render partial: 'posts/flashes' %>
       <br>
       <div class="login-username-and-password-fields">
-        <%= form_for @user, :html => {:class => "login-username-password-form"} do |f| %>
+        <%= form_for @user, :html => { :class => "login-username-password-form" } do |f| %>
 
           <div class="login-user-pass-tags">
             <%= f.label :username %>
@@ -16,9 +16,13 @@
           <div class="login-user-pass-tags">
             <%= f.label :password %>
             <%= f.password_field :password, :required => true, class: "login-text-boxes" %>
-            <%= f.label "Profile Image" %>
-            <%= f.file_field :avatar, accept:'image/png, image/gif, image/jpeg, image/jpg' %><br>
           </div>
+
+          <div class="profile-image-tag-and-fields">
+            <%= f.label "Profile Image" %>
+            <%= f.file_field :avatar, accept: 'image/png, image/gif, image/jpeg, image/jpg' %><br>
+          </div>
+          <br>
 
           <%= submit_tag "Create User", class: "login-page-buttons" %>
 
@@ -38,7 +42,7 @@ this is the code from the feature/upload-profile-image branch :) -->
 <!--  <%#= f.text_field :username, :required => true %><br>-->
 <!--  <%#= f.label :password%><br>-->
 <!--  <%#= f.password_field :password, :required => true%><br>-->
-  <%#= f.label "Profile Image" %>
+<%#= f.label "Profile Image" %>
 <!--  <%#= f.file_field :avatar, accept:'image/png, image/gif, image/jpeg, image/jpg' %><br>-->
-  <%#= f.submit %>
+<%#= f.submit %>
 <%#end%>
