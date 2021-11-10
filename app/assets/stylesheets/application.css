@@ -32,6 +32,17 @@
     z-index: 20;
 }
 
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 767px) {
+    .navbar #username {
+      display: none;
+    }
+
+    .navbar-user-profile-image {
+        margin-left: auto;
+    }
+  }
+
 .navbar img:hover {
     background-color:#551A8B;
     cursor: pointer;
@@ -57,14 +68,14 @@
 .navbar #username {
     text-decoration: none;
     margin-left: auto;
-    font-size: 23px;
+    font-size: 1em;
     font-weight: normal;
 }
 
 .navbar #sign-out {
     white-space: nowrap;
     text-decoration: none;
-    font-size: 23px;
+    font-size: 1em;
     font-weight: normal;
 }
 
