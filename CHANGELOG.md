@@ -6,6 +6,7 @@
   * feat(*): can click on an entire post to go to its individual page
   * refactor/style(posts.css/_new.html.erb): made new_post_box div always lightblue, made posts in line with the posts container
   * refactor(_post.html.erb/application.css/post.css): removed unnecessary break, removed comments, made sign out button have no-wrap attribute
+  * refactor(application.css): removed random black border on left side of navbar
 
 Comments:
 * Made the posts clickable as well as the navbar static
