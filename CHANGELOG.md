@@ -1,5 +1,12 @@
 # Changelog
 
+## 10/11/21 - 11/11/21
+* refactor/colour scheme
+  * testing a purple colour theme
+  * styling(*): testing purple theme
+  * styling(application.css): avatar border changed to match the text colour. Increased avatar size
+  * styling(posts.css): comment section background changed from white to light purple
+
 ## 10/11/21
 * feature/upload profile image
   * User can upload an image when signing up
