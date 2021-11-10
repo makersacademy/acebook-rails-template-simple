@@ -5,6 +5,9 @@
   * styling(stylesheets): link colour will always be purple (before and after being clicked)
   * refactor(application.css): DRY code
 
+Comments:
+* All links will be purple by default and will not change colour when clicked or visited.
+
 ## 10/11/21
 * fix/incorrect storage config
   * Configuring S3 storage (previous MR) caused the `test` database to be declared incorrectly in `storage.yml`
