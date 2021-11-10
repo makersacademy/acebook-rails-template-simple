@@ -10,8 +10,19 @@
   * Configuring S3 storage (previous MR) caused the `test` database to be declared incorrectly in `storage.yml`
   * Fixed yaml formatting, all tests passing
 
+## 9/11/21 - 10/11/21
+* style/navbar-changes
+  * refactor(application.css): make buttons on the navbar touch the top and bottom of the navbar
+  * feat(*): can click on an entire post to go to its individual page
+  * refactor/style(posts.css/_new.html.erb): made new_post_box div always lightblue, made posts in line with the posts container
+  * refactor(_post.html.erb/application.css/post.css): removed unnecessary break, removed comments, made sign out button have no-wrap attribute
+  * refactor(application.css): removed random black border on left side of navbar
+
+Comments:
+* Made the posts clickable as well as the navbar static
+
 ## 9/11/21
-* feature/use s3 for storage
+* feature/use-s3-for-storage
   * feat(*): configure production environment to use AWS S3 bucket for storing images
 
 Comments:

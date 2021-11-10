@@ -15,10 +15,21 @@
  */
 
 .navbar {
+    border-style: solid;
+    border-top: black;
+    border-left: none;
+    border-right: none;
     background-color: lightblue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
     display: flex;
     overflow: hidden;
     align-items: center;
+    z-index: 20;
 }
 
 .navbar img:hover {
@@ -33,6 +44,8 @@
     border-color:#551A8B;
     margin-right: 0;
     text-decoration: none;
+    height: 30px;
+    width: 30px;
 }
 
 .navbar a {
@@ -44,6 +57,19 @@
 .navbar #username {
     text-decoration: none;
     margin-left: auto;
+    font-size: 23px;
+    font-weight: normal;
+}
+
+.navbar #sign-out {
+    white-space: nowrap;
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: normal;
+}
+
+.navbar-user-profile-image {
+    padding: 0;
 }
 
 .navbar a:hover {
@@ -51,6 +77,7 @@
 }
 
 body {
+    margin-top: 5em;
     margin-bottom: 1.5em;
     font-family: "Courier New", serif;
     font-size: 1em;
