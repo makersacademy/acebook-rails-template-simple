@@ -1,6 +1,10 @@
 # Changelog
 
 ## 10/11/21
+* feature/upload profile image
+  * User can upload an image when signing up
+
+## 10/11/21
 * style/add-a-comment
   * style(*): apply stying to comments page
   * feat(*): align images on show page centrally
