@@ -19,7 +19,7 @@
     border-top: black;
     border-left: none;
     border-right: none;
-    background-color: lightblue;
+    background-color: #E4CDFF;
     position: fixed;
     top: 0;
     left: 0;
@@ -44,7 +44,6 @@
   }
 
 .navbar img:hover {
-    background-color:#551A8B;
     cursor: pointer;
 }
 
@@ -84,7 +83,8 @@
 }
 
 .navbar a:hover {
-    background-color: skyblue;
+    background-color:#7925D0;
+    color: #F4ECFF;
 }
 
 body {
@@ -92,7 +92,7 @@ body {
     margin-bottom: 1.5em;
     font-family: "Courier New", serif;
     font-size: 1em;
-    background-color: ghostwhite;
+    background-color: #F4ECFF;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
