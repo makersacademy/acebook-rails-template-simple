@@ -81,14 +81,6 @@ h1, h2, h3, h4 {
     max-width: 70%;
 }
 
-
-/* Responsive layout - makes a one column layout instead of a two-column layout */
-@media (max-width: 800px) {
-    .posts {
-      max-width: 100%;
-    }
-  }
-
 .new_post_box {
     margin: 2%;
     text-align: left;
@@ -169,10 +161,10 @@ h1, h2, h3, h4 {
 }
 
 /*noinspection CssReplaceWithShorthandSafely*/
-.individual-post { /* this class is for the post on the individual post page (/posts/:post_id/) */
+.show-posts { /* this class is for the post on the individual post page (/posts/:post_id/) */
     justify-content: center;
-    width: 64%;
     background-color: ghostwhite;
+    width: 64%;
     text-align: left;
     border-style: solid;
     border-radius: 10px;
@@ -235,3 +227,14 @@ h1, h2, h3, h4 {
 .comment-count {
     margin: 0 0 0 1%;
 }
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+    .posts {
+      max-width: 100%;
+    }
+
+    .show-posts {
+        width: 90%;
+    }
+  }
