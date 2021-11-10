@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    require_user_logged_in!
     @posts = Post.all
   end
 
