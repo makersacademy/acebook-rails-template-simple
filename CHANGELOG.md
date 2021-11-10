@@ -15,6 +15,7 @@ Comments:
   * refactor(users/new.html, sessions/new.html): removed unnecessary sign in button and message on the sign in page, fixed the functionality for the sign in button on the login page
   * refactor(*): html class cleanups
   * refactor(welcome-login-signup): made font size larger and bolder, made form boxes larger
+  * style(welcome-login-signup.css): made the font of profile image tag larger, did some spacing
 
 ## 10/11/21
 * feature/like-all-posts
