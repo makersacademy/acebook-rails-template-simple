@@ -16,6 +16,7 @@
     </div>
   
     <%= render partial: 'posts/new' %>
+    
     <% if session[:order] == 'recent' %>
       <%= button_to "Sort by likes", action: "order", method: 'get'%>
     <% else %>
