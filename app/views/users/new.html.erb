@@ -9,12 +9,12 @@
     <div class="login-username-and-password-fields">
       <%= form_for @user, :html => { :class => "login-username-password-form" } do |f| %>
 
-        <div class="login-user-pass-tags">
+        <div class="login-user-tags">
           <%= f.label :username %>
           <%= f.text_field :username, :required => true, class: "login-text-boxes" %>
         </div>
 
-        <div class="login-user-pass-tags">
+        <div class="login-pass-tags">
           <%= f.label :password %>
           <%= f.password_field :password, :required => true, class: "login-text-boxes" %>
         </div>
