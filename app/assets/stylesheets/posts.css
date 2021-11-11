@@ -248,13 +248,18 @@ h1, h2, h3, h4 {
 }
 
 .search-form-components {
-    display: flex;    
+    display: flex;
+    align-items: baseline;    
 }
 
 #search {
     margin-left: auto;
     border-radius: 10px;
     padding: 0 1%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    height: 2em;
+    width: 15em;
 }
 
 #search-button {
@@ -263,6 +268,7 @@ h1, h2, h3, h4 {
     margin-right: 2%;
     margin-left: 1%;
     padding: 0.5% 1%;
+    height: 2em;
 }
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
@@ -274,5 +280,9 @@ h1, h2, h3, h4 {
 
     .show-posts {
         width: 90%;
+    }
+
+    #search {
+        max-width: 10em;
     }
   }
