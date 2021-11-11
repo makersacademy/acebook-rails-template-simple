@@ -195,6 +195,7 @@ h1, h2, h3, h4 {
 
 .element-margin {
     margin: 2%;
+    margin-top: 0%;
 }
 
 .image-container {
@@ -244,6 +245,24 @@ h1, h2, h3, h4 {
 
 .comment-count {
     margin: 0 0 0 1%;
+}
+
+.search-form-components {
+    display: flex;    
+}
+
+#search {
+    margin-left: auto;
+    border-radius: 10px;
+    padding: 0 1%;
+}
+
+#search-button {
+    border-radius: 10px;
+    float: right;
+    margin-right: 2%;
+    margin-left: 1%;
+    padding: 0.5% 1%;
 }
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
