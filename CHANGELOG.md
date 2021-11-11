@@ -19,6 +19,7 @@ Comments:
   * refactor/style(*): made page fit mobile aswell, login/sign-up text fields grow to fit the container too
   * refactor(welcome-login-signup.css): responsive layout width was 130%, made it 100%
   * refactor(*): removed break from flash messages and gave them padding and boldness, moved over 'no file chosen', changed font sizes on page
+  * refactor(css): added padding in text-fields so they're not stuck to the left, gave more spacing between password and login buttons + dont have an account message
 
 ## 10/11/21
 * feature/like-all-posts
