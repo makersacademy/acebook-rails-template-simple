@@ -167,7 +167,11 @@
     }
 
     .login-user-tags {
-        width: 100%;
+       width: 80%;
+    }
+
+    .login-pass-tags {
+        width: 80%;
     }
 }
 

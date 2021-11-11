@@ -166,6 +166,7 @@ h1, h2, h3, h4 {
 #username {
     margin: 0;
     font-size: large;
+    font-weight: bold;
 }
 
 #post_message {
@@ -187,7 +188,7 @@ h1, h2, h3, h4 {
 /*noinspection CssReplaceWithShorthandSafely*/
 .show-posts { /* this class is for the post on the individual post page (/posts/:post_id/) */
     justify-content: center;
-    background-color: #F4ECFF;
+    background-color: #F4ECFF; /*Dark  mode =  */
     width: 64%;
     text-align: left;
     border-style: solid;
