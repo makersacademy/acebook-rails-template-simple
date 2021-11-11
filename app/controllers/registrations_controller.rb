@@ -5,7 +5,7 @@ class RegistrationsController < ApplicationController
   end
 
   def create
-    @user = User.create(params.require(:user).permit(:username, :password, :email, :password_confirmation, :image, :first_name, :last_name))
+    @user = User.create(params.require(:user).permit(:username, :password, :email, :password_confirmation, :image, :first_name, :last_name, :date_of_birth))
 
     session[:user_id] = @user.id
     if @user.save
