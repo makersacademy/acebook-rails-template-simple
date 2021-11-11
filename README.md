@@ -1,6 +1,14 @@
 # AceBook
 
-## Quickstart
+## About Acebook
+Acebook is an English online social media and social networking service owned by Tea and Scones Platforms.
+Founded in 2021 by Lewis Jones, Stella Martin, Michelle Watkins, Hassan Saleem and Alex Wintle, its name comes as a play on words of the social media platform previously known as 'Facebook'.
+
+As of November 2021, Acebook claimed 5 daily active users, and was ranked 1st in local internet usage. 
+Acebook can be accessed from devices with Internet connectivity, such as personal computers, tablets and smartphones.
+After registering, users can create a profile revealing information about themselves. They can post text and photos which are shared with any other users who have signed up.
+
+## Setup
 
 First, clone this repository. Then:
 
@@ -13,95 +21,11 @@ First, clone this repository. Then:
 > bin/rails server # Start the server at localhost:3000
 ```
 
-## Troubleshooting
+If you already have a database named ```pgapp_development```, you may need to run ```bin/rails db:drop```
+before running the ```bin/rails db:create``` and ```bin/rails db:migrate``` to host Acebook locally.
 
-If you don't have Node.js installed yet, you might run into this error when running rspec:
+## [Trello board](https://trello.com/b/Baoftn4e/acebook-tea-and-scones)
 
-```
-ExecJS::RuntimeUnavailable:
-  Could not find a JavaScript runtime. See https://github.com/rails/execjs for a list of available runtimes.
- ```
+## [Miro Board](https://miro.com/app/board/o9J_lmYpz3c=/)
 
-Rails requires a Javascript runtime to work. The easiest way is to install Node by running `brew install node` - and then run `bundle exec rspec` again
-
-## Trello board
-https://trello.com/b/Baoftn4e/acebook-tea-and-scones
-
-## User stories
-### MVP
-```
-As a User,
-So that I can use Acebook, 
-I want to be able to sign up.
-```
-```
-As a User, 
-So that I can access my Acebook account,
-I want to be able to sign in.
-```
-```
-As a User,
-So that I can keep my account secure,
-I want to be able to sign out.
-```
-```
-As a User,
-So that I can share my opinions,
-I want to be able to submit a text post.
-```
-```
-As a User,
-So that I can view recent posts,
-I want to see the newest posts first.
-```
-### Nice to haves
-```
-As a User,
-So that I know I am logged in, 
-I want to be able to see my username in the browser.
-```
-```
-As a User,
-So that I can share my opinions on other posts,
-I want to be able to comment on a post.
-```
-```
-As a User,
-So that I can react to a post,
-I want to be able to like a post.
-```
-```
-As a User,
-So that I can see if a post is popular,
-I want to be able to see the number of likes it has next to the post.
-```
-```
-As a User,
-So that others can identify my posts,
-I want my photo and name to appear next to all of my posts.
-```
-```
-As a User,
-So that I can quickly access other areas of the site,
-I want to be able to use a navigation bar.
-```
-```
-As a User,
-So that I can share my images,
-I want to be able to upload a photo.
-```
-```
-As a User,
-So that Acebook looks nice,
-I want there to be a user interface.
-```
-```
-As a team member,
-So that I can host my site,
-I want to run Acebook on Heroku.
-```
-```
-As a User,
-So that I can connect with my friends,
-I want to be able to send a friend request.
-```
+## [User Stories](USER-STORIES.md)
