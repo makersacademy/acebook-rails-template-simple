@@ -16,6 +16,16 @@
     </div>
   
     <%= render partial: 'posts/new' %>
+    
+    <section class="order-button-container">
+      <div class="order-button-box">
+        <% if session[:order] == 'recent' %>
+          <%= button_to "Sort by likes", {action: "order", method: 'get'}, {id: 'order-button'}%>
+        <% else %>
+          <%= button_to "Sort by recent", {action: "order", method: 'get'}, {id: 'order-button'}%>
+        <% end %>
+      </div>
+    </section>
 
     <% if @posts.empty? %>
       <h3 class="element-margin">No posts yet</h3>
