@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'posts/:user_id/posts', to: 'posts#show_specific_users_post'
   delete '/posts/:id/like', to: 'posts#destroy_like', as: 'unlike'
   post '/posts/:id/comment', to: 'comments#create', as: 'comment'
+  get '/dark', to: 'application#dark', as: 'dark'
+  get '/light', to: 'application#light', as: 'light'
 
   resources :users, only: [:new, :create]
   resources :posts do
