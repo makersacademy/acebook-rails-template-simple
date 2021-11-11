@@ -207,6 +207,10 @@ h1, h2, h3, h4 {
     margin-top: 0%;
 }
 
+.element-margin div {
+    font-weight: bold;
+}
+
 .image-container {
     display: flex;
     justify-content: center;
