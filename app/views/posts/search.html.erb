@@ -1,4 +1,7 @@
-<section class="container">
+<section class="container search">
+  
+  <%= button_to "Go back", posts_url, method: "get", id: 'go-back-button' %>
+  
   <% unless @results.empty? %>
     <div class="posts">
       <%= render partial: 'posts/post', collection: @results %>
@@ -6,6 +9,5 @@
   <% else %>
     <h3>No posts found</h3>
   <% end %>
-  <%= button_to "Go back", posts_url, method: "get" %>
+  
 </section>
-
