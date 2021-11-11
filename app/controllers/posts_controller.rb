@@ -12,7 +12,12 @@ class PostsController < ApplicationController
 
   def index # this is the home page (/posts)
     new
-    @posts = Post.order(created_at: :desc)
+    session[:order] = 'recent'
+    if session[:order] == 'recent'
+      @posts = Post.order(created_at: :desc)
+    else
+      @posts = Post.left_joins(:likes).group(:id).order('COUNT(likes.id) DESC, created_at DESC')
+    end
   end
 
   def show
