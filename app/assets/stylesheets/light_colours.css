@@ -1,0 +1,95 @@
+.navbar {
+  background-color: #E4CDFF;
+}
+
+.avatar {
+  border-color: #2C064A;
+}
+
+.navbar a {
+  color: #2C064A;
+}
+
+body {
+  background-color: #F4ECFF;
+}
+
+h1, h2, h3, h4 {
+  color: #2C064A;
+}
+
+.new_post_link {
+  color: black;
+  background-color: #F4ECFF;
+}
+
+#new-post-message {
+  border-color: black;
+  background-color: #F4ECFF;
+}
+
+.posts {
+  background-color: #F4ECFF;
+}
+
+.new_post_box {
+  background-color: #E4CDFF;
+}
+
+.single-post {
+  background-color: #E4CDFF;
+}
+
+.comment-container {
+  background-color: #F4ECFF;
+}
+
+.single-post:hover {
+  background: #F4ECFF;
+}
+
+.username_and_avatar a {
+  color: #2C064A;
+}
+
+#post_message {
+  color: black;
+}
+
+.show-posts {
+  background-color: #E4CDFF;
+}
+
+#post-image:hover {
+  background-color: #E4CDFF;
+}
+
+#comment-textarea {
+  background-color: #F4ECFF;
+}
+
+.login-and-welcome-elements-display {
+  background-color: #E4CDFF;
+}
+
+.welcome-page-buttons {
+  color: #2C064A;
+  background-color: #E4CDFF;
+}
+
+.welcome-page-buttons:hover, .login-page-buttons:hover {
+  background-color: #F4ECFF;
+}
+
+.login-headers {
+  color: #2C064A;
+}
+
+.login-page-buttons {
+  color: #2C064A;
+  background-color: #E4CDFF;
+}
+
+.login-text-boxes {
+  background-color: #F4ECFF;
+}
