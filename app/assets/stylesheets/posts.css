@@ -75,6 +75,7 @@ h1, h2, h3, h4 {
 
 #go-back-button:hover {
     opacity: 70%;
+    cursor: pointer;
 }
 
 #new-comment-button {
@@ -244,7 +245,6 @@ h1, h2, h3, h4 {
 .comment-count {
     margin: 0 0 0 1%;
 }
-
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
 @media (max-width: 800px) {
