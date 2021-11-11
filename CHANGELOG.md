@@ -1,6 +1,13 @@
 # Changelog
 
 ## 11/11/21
+* feature/message-when-no-posts
+  * User displayed a message when there are no posts on the main page and on the specific users page
+
+Comments:
+* Renamed `showSpecificUsersPosts` to snake casing
+
+## 11/11/21
 * feature/search-functionality
   * User can search through posts from the homepage
   * They are returned all posts matching the search string
