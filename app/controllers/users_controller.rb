@@ -4,5 +4,5 @@ class UsersController < ApplicationController
     @user = Current.user
   end
 
-
+  
 end

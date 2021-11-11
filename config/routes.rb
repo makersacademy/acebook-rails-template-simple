@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   post "sign_in", to: "sessions#create", as: 'log_in'
   get "logout", to: "sessions#destroy"
   get "profile", to: "users#profile"
+  get "update-profile", to: "registrations#edit"
+  patch "update-profile", to: "registrations#update"
+
   resources :posts
 end
