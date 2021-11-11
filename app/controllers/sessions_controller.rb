@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "An account with that email doesn't exist."
       redirect_to root_url
     else
-      flash[:notice] = "Incorrect email or password."
+      flash[:notice] = "That password doesn't match. Please try again."
       redirect_to root_url
     end
   end
