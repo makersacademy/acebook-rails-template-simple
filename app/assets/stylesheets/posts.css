@@ -208,6 +208,9 @@ h1, h2, h3, h4 {
     box-sizing: border-box;         /* Opera/IE 8+ */
     width: 96%;
     border-radius: 10px;
+    border-style: solid;
+    border-width: medium;
+    border-color: black;
     padding: 2%;
     resize: none;
     font-size: 1em;
