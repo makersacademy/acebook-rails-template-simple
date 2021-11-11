@@ -25,7 +25,7 @@
     left: 0;
     width: 100%;
     max-width: 100%;
-    min-height: auto;
+    min-height: 5em;
     display: flex;
     overflow: hidden;
     align-items: center;
@@ -103,4 +103,11 @@ body::-webkit-scrollbar {
 
 a.navbar-left {
     padding: 0px;
+}
+
+.navbar-logo-image{
+    min-width: 8em;
+    height: 30%;
+    width: 30%;
+    
 }
