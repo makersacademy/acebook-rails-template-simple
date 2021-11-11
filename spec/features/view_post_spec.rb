@@ -18,15 +18,6 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content('user')
   end
 
-  scenario "Can submit post and view them by clicking link" do
-    post_id = navigate_to_post('Hello, world!')
-
-    expect(page).to have_current_path("/posts/#{post_id}")
-
-    click_on('Like')
-    expect(page).to have_button('Like', disabled: true)
-  end
-
   scenario "Number of comments can be seen on the post, 0 comments" do
     visit('/posts')
     expect(page).to have_content('No comments yet')

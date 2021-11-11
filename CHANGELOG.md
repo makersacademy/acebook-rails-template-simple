@@ -6,6 +6,10 @@
 
 Comments:
 * Renamed `showSpecificUsersPosts` to snake casing
+* Unlike previously liked posts
+  * User can unlike posts they have liked and the page updates to 
+  reflect this
+  * Tests written for this functionality
 
 ## 11/11/21
 * feature/search-functionality
