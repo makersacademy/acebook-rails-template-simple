@@ -6,6 +6,7 @@
   * styling(*): testing purple theme
   * styling(application.css): avatar border changed to match the text colour. Increased avatar size
   * styling(posts.css): comment section background changed from white to light purple
+  * refactor(posts.css): increasing size of username and avatar
 
 ## 10/11/21
 * feature/upload profile image
