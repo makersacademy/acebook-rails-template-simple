@@ -2,13 +2,15 @@
   <div class="posts">
 
     <% @username.each do |name| %>
-    <h1 class="element-margin">Posts by: <%= name.username %></h1>
+      <h1 class="element-margin">Posts by: <%= name.username %></h1>
     <% end %>
 
     <%= render partial: 'posts/new' %>
 
-    <%= render partial: 'posts/post', collection: @users_posts %>
-
+    <% if @users_posts.empty? %>
+      <h3>No posts yet</h3>
+    <% else %>
+      <%= render partial: 'posts/post', collection: @users_posts %>
+    <% end %>
   </div>
 </section>
-
