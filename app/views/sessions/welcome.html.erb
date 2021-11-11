@@ -1,18 +1,19 @@
 <div class="login-and-welcome-container">
-    <div class="login-and-welcome-elements-display">
-      <h1 class="login-header">Welcome</h1>
+  <div class="login-and-welcome-elements-display">
+    <p class="login-headers">Welcome</p>
 
+    <div class="login-and-welcome-flash-messages">
       <%= render partial: 'posts/flashes' %>
-
-      <br>
-      <% if logged_in? %>
-        <h1> You are Logged In, <%= current_user.username %></h1>
-        <%= button_to "Sign out", '/logout', method: :delete %>
-      <% else %>
-        <%= button_to "Login", '/login', method: :get, class: "welcome-page-buttons" %>
-        <br>
-        <%= button_to "Sign up", '/users/new', method: :get, class: "welcome-page-buttons" %>
-
-      <% end %>
     </div>
+
+    <% if logged_in? %>
+      <h1> You are Logged In, <%= current_user.username %></h1>
+      <%= button_to "Sign out", '/logout', method: :delete %>
+    <% else %>
+      <%= button_to "Login", '/login', method: :get, class: "welcome-page-buttons" %>
+      <br>
+      <%= button_to "Sign up", '/users/new', method: :get, class: "welcome-page-buttons" %>
+
+    <% end %>
+  </div>
 </div>

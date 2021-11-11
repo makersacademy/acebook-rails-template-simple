@@ -10,9 +10,7 @@
     width: 35%;
     overflow: hidden;
     position: relative;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-bottom: 2%;
+    padding: 1%;
     text-align: center;
     border-style: solid;
     border-radius: 10px;
@@ -21,8 +19,7 @@
 
 .login-and-welcome-flash-messages {
     font-weight: bold;
-    font-size: larger;
-    color: red;
+    padding: 1.5%;
 }
 
 /* WELCOME PAGE STYLING */
@@ -31,7 +28,7 @@
     background-color: #0E3B43;
     color: white;
     border: none;
-    padding: 2%;
+    padding: 0.75%;
     width: 30%;
     text-decoration: none;
     font-size: 16px;
@@ -47,10 +44,13 @@
 
 /* LOGIN PAGE STYLING */
 
-.login-header {
+.login-headers {
+    font-weight: bold;
     background-color: dodgerblue;
     color: whitesmoke;
     border-radius: 20px;
+    font-size: 23px;
+    margin: 0;
 }
 
 .login-username-and-password-fields {
@@ -66,7 +66,7 @@
     border: none;
     text-decoration: none;
     font-size: 16px;
-    padding: 2%;
+    padding: 0.75%;
     width: 40%;
     cursor: pointer;
     border-radius: 20px;
@@ -81,7 +81,7 @@
 .login-user-pass-tags {
     font-size: large;
     font-weight: bold;
-    padding-bottom: 5%;
+    padding: 1%;
     width: 50%;
     height: 50%;
 }
@@ -92,8 +92,8 @@
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
     border-radius: 20px;
+    padding: 1%;
     border: none;
-    padding: 2%;
     resize: none;
     font-size: 1em;
 }
@@ -104,16 +104,23 @@
     align-items: center;
 }
 
-.profile-image-tag-and-fields {
+.profile-image-label {
     font-size: larger;
     font-weight: bold;
     text-align: center;
-    align-content: center;
+    padding-bottom: 2.5%;
+}
+
+.profile-image-field {
+    padding-bottom: 2.5%;
+    padding-left: 16%;
 }
 
 #dont-have-an-account {
-    font-weight: bold;
-    font-size: large;
+    font-weight: bolder;
+    font-size: medium;
+    padding: 1%;
+    margin: 0;
 }
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */

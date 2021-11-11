@@ -1,9 +1,11 @@
 <div class="login-and-welcome-container">
   <div class="login-and-welcome-elements-display">
-    <h1 class="login-header">Login</h1>
+    <p class="login-headers">Login</p>
 
-    <%= render partial: 'posts/flashes' %>
-    <br>
+    <div class="login-and-welcome-flash-messages">
+      <%= render partial: 'posts/flashes' %>
+    </div>
+
     <div class="login-username-and-password-fields">
       <%= form_tag '/login', { :class => "login-username-password-form" } do %>
 

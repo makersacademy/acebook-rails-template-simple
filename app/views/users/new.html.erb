@@ -1,32 +1,36 @@
 <div class="login-and-welcome-container">
-    <div class="login-and-welcome-elements-display">
-      <h1 class="login-header">Sign up</h1>
+  <div class="login-and-welcome-elements-display">
+    <p class="login-headers">Sign up</p>
 
+    <div class="login-and-welcome-flash-messages">
       <%= render partial: 'posts/flashes' %>
-      <br>
-      <div class="login-username-and-password-fields">
-        <%= form_for @user, :html => { :class => "login-username-password-form" } do |f| %>
-
-          <div class="login-user-pass-tags">
-            <%= f.label :username %>
-            <%= f.text_field :username, :required => true, class: "login-text-boxes" %>
-          </div>
-
-          <div class="login-user-pass-tags">
-            <%= f.label :password %>
-            <%= f.password_field :password, :required => true, class: "login-text-boxes" %>
-          </div>
-
-          <div class="profile-image-tag-and-fields">
-            <%= f.label "Profile Image" %><br><br>
-            <%= f.file_field :avatar, accept: 'image/png, image/gif, image/jpeg, image/jpg' %><br>
-          </div>
-          <br>
-
-          <%= submit_tag "Create User", class: "login-page-buttons" %>
-
-        <% end %>
-      </div>
-
     </div>
+
+    <div class="login-username-and-password-fields">
+      <%= form_for @user, :html => { :class => "login-username-password-form" } do |f| %>
+
+        <div class="login-user-pass-tags">
+          <%= f.label :username %>
+          <%= f.text_field :username, :required => true, class: "login-text-boxes" %>
+        </div>
+
+        <div class="login-user-pass-tags">
+          <%= f.label :password %>
+          <%= f.password_field :password, :required => true, class: "login-text-boxes" %>
+        </div>
+
+        <div class="profile-image-label">
+          <%= f.label "Profile Image" %>
+        </div>
+
+        <div class="profile-image-field">
+          <%= f.file_field :avatar, accept: 'image/png, image/gif, image/jpeg, image/jpg' %><br>
+        </div>
+
+        <%= submit_tag "Create User", class: "login-page-buttons" %>
+
+      <% end %>
+    </div>
+
+  </div>
 </div>
