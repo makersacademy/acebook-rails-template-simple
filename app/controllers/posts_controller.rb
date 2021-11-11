@@ -47,7 +47,7 @@ class PostsController < ApplicationController
       redirect_to posts_url
     else
       @parameter = params[:search].downcase
-      @results = Post.all.where("lower(message) LIKE :search", search: "%#{@parameter}%")
+      @results = Post.all.where("lower(message) LIKE :search", search: "%#{@parameter}%").order(created_at: :desc)
     end
   end
 
