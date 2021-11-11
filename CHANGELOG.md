@@ -16,6 +16,8 @@ Comments:
   * refactor(*): html class cleanups
   * refactor(welcome-login-signup): made font size larger and bolder, made form boxes larger
   * style(welcome-login-signup.css): made the font of profile image tag larger, did some spacing
+  * refactor/style(*): made page fit mobile aswell, login/sign-up text fields grow to fit the container too
+  * refactor(welcome-login-signup.css): responsive layout width was 130%, made it 100%
 
 ## 10/11/21
 * feature/like-all-posts
