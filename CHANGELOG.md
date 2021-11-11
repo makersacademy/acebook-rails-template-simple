@@ -29,6 +29,23 @@ Comments:
 * Routing has been added to hide all parameters from the url, aside from the search string
 * Some styling added to other buttons in order to bring it in line with other elements
 
+## 10/11/21 - 11/11/21
+* refactor/colour scheme
+  * testing a purple colour theme
+  * styling(*): testing purple theme
+  * styling(application.css): avatar border changed to match the text colour. Increased avatar size
+  * styling(posts.css): comment section background changed from white to light purple
+  * refactor(posts.css): increasing size of username and avatar
+  * styling(posts.css): added border to comment box
+  * styling(stylesheets*, application.html.erb): styling welcome and login to match light mode theme
+  * styling(welcome-login-signup.css): editing colour scheme
+  * styling(stylesheets*): WIP
+  * stying(welcome-login-signup.css): refactored styling to only apply to welcome/login/sign up pages
+  * refactor(users_controller.rb): removed contraction
+  * styling(posts.css): added padding-top to posts/post_id page
+  * refactor(welcome-login-signup.css): added padding-top
+  * styling: added comments for dark mode colours
+
 ## 10/11/21
 * feature/upload profile image
   * User can upload an image when signing up
@@ -125,7 +142,7 @@ Comments:
 * style/navbar-changes
   * refactor(application.css): make buttons on the navbar touch the top and bottom of the navbar
   * feat(*): can click on an entire post to go to its individual page
-  * refactor/style(posts.css/_new.html.erb): made new_post_box div always lightblue, made posts in line with the posts container
+  * refactor/style(posts.css/_new.html.erb): made new_post_box div always #E4CDFF, made posts in line with the posts container
   * refactor(_post.html.erb/application.css/post.css): removed unnecessary break, removed comments, made sign out button have no-wrap attribute
   * refactor(application.css): removed random black border on left side of navbar
 
