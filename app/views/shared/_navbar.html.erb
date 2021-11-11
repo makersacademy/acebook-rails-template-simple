@@ -9,7 +9,7 @@
        <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <% if Current.user %>
          <a class="nav-link nav-user-name " href="#" id="profileLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <%= image_tag Current.user.image_url, :style =>  'width: 35px;', :class => 'nav-avatar'%>
+            <%= image_tag default_avatar(Current.user.image_url), :style =>  'width: 35px;', :class => 'nav-avatar'%>
             <%= Current.user.first_name%>
           </a>
            <li class="nav-item dropdown">
