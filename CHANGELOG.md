@@ -44,6 +44,7 @@ Comments:
   * refactor(users_controller.rb): removed contraction
   * styling(posts.css): added padding-top to posts/post_id page
   * refactor(welcome-login-signup.css): added padding-top
+  * styling: added comments for dark mode colours
 
 ## 10/11/21
 * feature/upload profile image
