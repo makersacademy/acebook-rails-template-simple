@@ -17,6 +17,10 @@
   
     <%= render partial: 'posts/new' %>
 
-    <%= render partial: 'posts/post', collection: @posts %>
+    <% if @posts.empty? %>
+      <h3 class="element-margin">No posts yet</h3>
+    <% else %>
+      <%= render partial: 'posts/post', collection: @posts %>
+    <% end %>
   </div>
 </section>
