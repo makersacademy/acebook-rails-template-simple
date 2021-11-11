@@ -19,7 +19,6 @@
     border-color: black;
     border-width: medium;
     /* DARK MODE - background-color: #5F358B; */
-    background-color: #E4CDFF;
 }
 
 .login-and-welcome-flash-messages {
@@ -31,9 +30,7 @@
 
 .welcome-page-buttons {
   /* DARK MODE - background-color: #5F358B; */
-  background-color: #E4CDFF;
   /* DARK MODE - color: #F4ECFF; */
-  color: #2C064A;
   border: none;
   padding: 0.75%;
   width: 30%;
@@ -51,7 +48,6 @@
 
 .welcome-page-buttons:hover, .login-page-buttons:hover {
   /* dark mode - background-color: #8354b3;   */
-  background-color: #F4ECFF;
 }
 
 /* LOGIN PAGE STYLING */
@@ -59,7 +55,6 @@
 .login-headers {
     font-weight: bold;
     /* DARK MODE - color: #F4ECFF; */
-    color: #2C064A;
     border-radius: 10px;
     font-size: 23px;
     margin: 0;
@@ -74,9 +69,9 @@
 
 .login-page-buttons {
   /* DARK MODE - background-color: #5F358B; */
-    background-color: #E4CDFF;
+    
     /* DARK MODE - color: #F4ECFF; */
-    color: #2C064A;
+    
     border: none;
     text-decoration: none;
     font-size: 16px;
@@ -121,7 +116,6 @@
     font-size: 1em;
     font-family: "Courier New", serif;
     /* DARK MODE - background-color: #5F358B; */
-    background-color: #F4ECFF;
 }
 
 .login-text-boxes {

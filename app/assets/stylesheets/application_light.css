@@ -67,3 +67,30 @@ h1, h2, h3, h4 {
 #comment-textarea {
   background-color: #F4ECFF;
 }
+
+.login-and-welcome-elements-display {
+  background-color: #E4CDFF;
+}
+
+.welcome-page-buttons {
+  color: #2C064A;
+  background-color: #E4CDFF;
+}
+
+.welcome-page-buttons:hover, .login-page-buttons:hover {
+  background-color: #F4ECFF;
+}
+
+.login-headers {
+  color: #2C064A;
+}
+
+.login-page-buttons {
+  color: #2C064A;
+  background-color: #E4CDFF;
+}
+
+.login-text-boxes {
+  background-color: #F4ECFF;
+}
+
