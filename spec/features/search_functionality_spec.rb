@@ -34,4 +34,12 @@ RSpec.feature "Search", type: :feature do
 
     expect(page).to have_content('No posts found')
   end
+
+  scenario "User is able to go back to posts after searching" do
+    fill_in :search, with: 'world'
+    click_button "Search"
+
+    click_button "Go back"
+    expect(page).to have_current_path(posts_url)
+  end
 end
