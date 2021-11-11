@@ -8,7 +8,6 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "GET /new " do
-    
     it "responds with 200" do
       get :new
       expect(response).to have_http_status(200)
@@ -97,6 +96,31 @@ RSpec.describe PostsController, type: :controller do
     it "redirects to a url containing the search string" do
       post :search_post, params: { search: 'Hello' }
       expect(response).to redirect_to('/posts/search/Hello')
+    end
+  end
+
+  describe "order" do
+    it "redirects to main page" do
+      post :order      
+      expect(response).to redirect_to(posts_url)
+    end
+
+    it 'changes session[:order] to recent when it is likes' do
+      session[:order] = 'likes'
+      post :order
+      expect(session[:order]).to eq 'recent'
+    end
+
+    it 'change session[:order[ to likes when it is recent' do
+      session[:order] = 'recent'
+      post :order
+      expect(session[:order]).to eq 'likes'
+    end
+
+    it "returns 200 when order is set to by likes" do
+      session[:order] = 'likes'
+      get :index
+      expect(response).to have_http_status(200)
     end
   end
 end
