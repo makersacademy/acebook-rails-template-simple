@@ -3,13 +3,11 @@
     <div class="element-margin">
       <%= render partial: 'posts/flashes' %>
     </div>
-
     
     <%= form_tag('/posts/search', method: 'get') do %>
       <%= search_field_tag :search, params[:search] %>
       <%= button_tag "Search" %>
     <% end %>
-
 
     <h1 class="element-margin">News Feed</h1>
 

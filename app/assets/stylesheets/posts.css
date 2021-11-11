@@ -92,6 +92,7 @@ h1, h2, h3, h4 {
     flex-grow: 0.6;
     background-color: ghostwhite;
     max-width: 70%;
+    width: 70%;
 }
 
 .new_post_box {
@@ -249,6 +250,7 @@ h1, h2, h3, h4 {
 @media (max-width: 800px) {
     .posts {
       max-width: 100%;
+      width: 100%;
     }
 
     .show-posts {
