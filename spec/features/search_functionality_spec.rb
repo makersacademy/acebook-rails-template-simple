@@ -15,10 +15,16 @@ RSpec.feature "Search", type: :feature do
 
   scenario "Redirects to home page when no search string passed" do
     click_button "Search"
-    
+    expect(page).to have_current_path(posts_url)
   end
 
   scenario "Displays posts containing the search string" do
-    
+    add_new_post('Bonjour')
+    fill_in :search, with: 'world'
+    click_button "Search"
+
+    expect(page).to have_content('Hello world')
+    expect(page).to have_content('Goodbye world')
+    expect(page).to_not have_content('Bonjour')
   end
 end
