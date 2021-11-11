@@ -33,6 +33,23 @@ class PostsController < ApplicationController
     @username = profile_username
   end
 
+  def search
+    if params[:search].blank?
+      redirect_to posts_url
+    else
+      @parameter = params[:search].downcase
+      @results = Post.all.where("lower(message) LIKE :search", search: "%#{@parameter}%")
+    end
+  end
+
+  def search_post
+    if params[:search].blank?
+      redirect_to posts_url
+    else
+      redirect_to("/posts/search/#{params[:search]}")
+    end
+  end
+
   private
 
   def post_params

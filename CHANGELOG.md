@@ -1,5 +1,16 @@
 # Changelog
 
+## 11/11/21
+* feature/search-functionality
+  * User can search through posts from the homepage
+  * They are returned all posts matching the search string
+
+Comments:
+* If an empty search string is passed, the user is returned to the main page
+* A message is shown if the search returns no results
+* Routing has been added to hide all parameters from the url, aside from the search string
+* Some styling added to other buttons in order to bring it in line with other elements
+
 ## 10/11/21
 * feature/upload profile image
   * User can upload an image when signing up
