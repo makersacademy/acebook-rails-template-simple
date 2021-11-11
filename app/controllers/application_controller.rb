@@ -7,7 +7,11 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user_logged_in!
-    redirect_to root_url, alert: 'You must be signed in' if @current_user.nil?
+    # show some sort of error popup with a button to redirect to homepage
+    if @current_user.nil?
+      flash[:login] = 'You must be signed in'
+      redirect_to root_url
+    end
   end
 
 end
