@@ -1,6 +1,23 @@
 # Changelog
 
 ## 11/11/21
+*style/logo-light-mode
+  * new logo added
+  * colour is formatted to light mode
+  * logo is a link to /posts 
+
+  ## 11/11/21
+* style/buttons-and-bold-entry-fields
+  * Applied styling to some buttons
+  * Username entry no longer bold
+
+## 11/11/21
+* docs/readme-changes
+  * docs(USER-STORIES, README): changed README and added links to it, added more user stories to USER-STORIES.md for the extra features
+  * refactor(readme): potentially fixed user stories link
+  * docs(readme): added an about acebook section
+
+## 11/11/21
 * feature/sort-by-likes
   * User can sort posts by most recent or most liked
 

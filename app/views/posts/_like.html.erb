@@ -1,6 +1,6 @@
-<h4><%= number_of_likes(@post.likes.length)%> </h4>
+<h4 id='like-count'><%= number_of_likes(@post.likes.length)%> </h4>
 <% if @post.liked?(current_user) %>
-  <%= button_to "Unlike", unlike_path(@post), method: "delete" %>
+  <%= button_to "Unlike", unlike_path(@post), method: "delete", id: 'like-button' %>
 <% else %>
-  <%= button_to "Like", like_path(@post), method: "put" %>
+  <%= button_to "Like", like_path(@post), method: "put", id: 'like-button' %>
 <% end %>
