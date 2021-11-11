@@ -31,4 +31,11 @@ RSpec.feature "Likes", type: :feature do
     expect(page).to have_content('1 like')
   end
 
+  scenario "user can unlike a post they have liked" do
+    post_id = Post.find_by(message: 'Hello, world!').id
+    visit("/posts/#{post_id}")
+    click_button "Like"
+    click_button "Unlike"
+    expect(page).to have_content('No likes yet')
+  end
 end

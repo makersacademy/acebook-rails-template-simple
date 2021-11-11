@@ -30,7 +30,6 @@ class PostsController < ApplicationController
   def destroy_like
     @post = Post.all.find(params[:id])
     Like.where(user_id: current_user.id, post_id: @post.id).destroy_all
-    # print "THIS IS THE LIKE #{Like.where(user_id: current_user.id, post_id: @post.id).destroy_all}"
     redirect_to post_path(@post)
   end
 
