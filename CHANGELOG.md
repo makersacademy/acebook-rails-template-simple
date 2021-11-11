@@ -1,6 +1,13 @@
 # Changelog
 
 ## 11/11/21
+* feature/sort-by-likes
+  * User can sort posts by most recent or most liked
+
+Comments:
+* Changed search functionality to show most recent posts first (this is a fix)
+
+## 11/11/21
 * feature/message-when-no-posts
   * User displayed a message when there are no posts on the main page and on the specific users page
 
