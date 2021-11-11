@@ -19,6 +19,7 @@ Comments:
   * styling(posts.css): comment section background changed from white to light purple
   * refactor(posts.css): increasing size of username and avatar
   * styling(posts.css): added border to comment box
+  * styling(stylesheets*, application.html.erb): styling welcome and login to match light mode theme
 
 ## 10/11/21
 * feature/upload profile image
