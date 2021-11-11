@@ -20,4 +20,4 @@ before running the ```bin/rails db:create``` and ```bin/rails db:migrate``` to h
 
 ## [Miro Board](https://miro.com/app/board/o9J_lmYpz3c=/)
 
-## [User Stories](https://github.com/michelle-watkins/acebook-tea-and-scones/blob/main/USER-STORIES.md)
+## [User Stories](USER-STORIES.md)
