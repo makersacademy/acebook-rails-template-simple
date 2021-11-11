@@ -18,6 +18,7 @@
     border-style: solid;
     border-color: black;
     border-width: medium;
+    /* DARK MODE - background-color: #5F358B; */
     background-color: #E4CDFF;
 }
 
@@ -29,33 +30,36 @@
 /* WELCOME PAGE STYLING */
 
 .welcome-page-buttons {
-    background-color: #E4CDFF;
-    color: #2C064A;
-    border: none;
-    padding: 0.75%;
-    width: 30%;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 10px;
-    border-color: black;
-    border-width: medium;
-    border-style: solid;
-    text-align: center;
-    display: inline-block;
-    font-family: "Courier New", serif;
+  /* DARK MODE - background-color: #5F358B; */
+  background-color: #E4CDFF;
+  /* DARK MODE - color: #F4ECFF; */
+  color: #2C064A;
+  border: none;
+  padding: 0.75%;
+  width: 30%;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  border-color: black;
+  border-width: medium;
+  border-style: solid;
+  text-align: center;
+  display: inline-block;
+  font-family: "Courier New", serif;
 }
 
 .welcome-page-buttons:hover, .login-page-buttons:hover {
-    background-color: #F4ECFF;
+  /* dark mode - background-color: #8354b3;   */
+  background-color: #F4ECFF;
 }
 
 /* LOGIN PAGE STYLING */
 
 .login-headers {
     font-weight: bold;
+    /* DARK MODE - color: #F4ECFF; */
     color: #2C064A;
-    border-radius: 10px;
     border-radius: 10px;
     font-size: 23px;
     margin: 0;
@@ -69,7 +73,9 @@
 }
 
 .login-page-buttons {
+  /* DARK MODE - background-color: #5F358B; */
     background-color: #E4CDFF;
+    /* DARK MODE - color: #F4ECFF; */
     color: #2C064A;
     border: none;
     text-decoration: none;
@@ -114,6 +120,7 @@
     resize: none;
     font-size: 1em;
     font-family: "Courier New", serif;
+    /* DARK MODE - background-color: #5F358B; */
     background-color: #F4ECFF;
 }
 
@@ -136,6 +143,8 @@
     border-style: solid;
     border-color: black;
     border-width: medium;
+    /* dark mode - background-color: #8354B3; */
+    /* not sure what the default background colour is for light mode */
 }
 
 .profile-image-label {
@@ -175,5 +184,3 @@
         width: 80%;
     }
 }
-
-
