@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   get '/posts/search', to: 'posts#search_post'
   get '/posts/search/:search', to: 'posts#search', as: 'search'
   put '/posts/:id/like', to: 'posts#like', as: 'like'
+  get 'posts/:user_id/posts', to: 'posts#show_specific_users_post'
   delete '/posts/:id/like', to: 'posts#destroy_like', as: 'unlike'
-  get 'posts/:user_id/posts', to: 'posts#showSpecificUsersPost'
   post '/posts/:id/comment', to: 'comments#create', as: 'comment'
 
   resources :users, only: [:new, :create]

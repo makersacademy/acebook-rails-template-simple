@@ -39,5 +39,14 @@ RSpec.feature "Specific Users' Posts", type: :feature do
     expect(page).to have_content('user1: Hello, world!')
     expect(page).to_not have_content('user2: Yellow, world!')
   end
+end
 
+RSpec.feature "Specific Users' Posts when there are no messages", type: :feature do
+  scenario 'Message shown to indicate that no posts have been added yet' do
+    sign_up
+    user_id = User.all.last.id
+    visit("/posts/#{user_id}/posts")
+    
+    expect(page).to have_content('No posts yet')
+  end
 end

@@ -68,7 +68,7 @@ RSpec.describe PostsController, type: :controller do
       
       user_id = Post.all.first.user_id
       
-      get :showSpecificUsersPost, params: { user_id: user_id }
+      get :show_specific_users_post, params: { user_id: user_id }
       expect(response).to have_http_status(200)
     end
   end

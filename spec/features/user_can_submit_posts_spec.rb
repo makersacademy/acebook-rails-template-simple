@@ -19,4 +19,8 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("Nice post, friend!")
   end
 
+  scenario "User is informed if there are no posts yet" do
+    sign_up
+    expect(page).to have_content("No posts yet")
+  end
 end
