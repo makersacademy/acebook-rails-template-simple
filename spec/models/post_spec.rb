@@ -1,10 +1,20 @@
 require 'rails_helper'
+require './app/models/user'
 
 RSpec.describe Post, type: :model do
+  
+  user = User.create(first_name: "Joe",
+                    last_name: "Bloggs",
+                    date_of_birth: "1985-03-14",
+                    email: "jbloggs@gmail.com",
+                    password_digest: "hashed_password")
+
+
   subject {
     described_class.new(message: "Hi guys, I'm using Acebook",
-                        user_id: 5)
-  }
+                        image_data: "Image",
+                        user_id: user.id)
+          }
 
   describe "Associations" do 
     it "should have many likes" do 
@@ -28,16 +38,12 @@ RSpec.describe Post, type: :model do
       expect(subject).to be_valid
     end
 
-    it "is not valid without a first name" do 
+    it "is not valid without a message" do 
       subject.message = nil
       expect(subject).to_not be_valid
     end 
-
-    
-
   end
 
   #post must have an image and/or text
-
   
 end
