@@ -1,6 +1,11 @@
 # Changelog
 
 ## 11/11/21
+* style/buttons-and-bold-entry-fields
+  * Applied styling to some buttons
+  * Username entry no longer bold
+
+## 11/11/21
 * docs/readme-changes
   * docs(USER-STORIES, README): changed README and added links to it, added more user stories to USER-STORIES.md for the extra features
   * refactor(readme): potentially fixed user stories link
