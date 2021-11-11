@@ -63,4 +63,23 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
+  describe "POST /search" do
+    it "Gives a 200 when passing a search string" do
+      post :create, params: { post: { message: "Hello, world!" } }
+      post :create, params: { post: { message: "Yellow, world!" } }
+      post :create, params: { post: { message: "Hello there!" } }
+
+      post :search, params: { search: 'Hello' }
+      expect(response).to have_http_status(200)
+    end
+
+    it "Redirects to the main page when no search string passed" do
+      post :create, params: { post: { message: "Hello, world!" } }
+      post :search, params: { search: '' }
+
+      expect(response).to redirect_to(posts_url)
+      expect(response).to have_http_status(302)
+    end
+  end
+
 end
