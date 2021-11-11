@@ -5,6 +5,8 @@
       <%= render partial: 'posts/flashes' %>
     </div>
 
+    <%= button_to "Change order", action: "order", method: 'get'%>
+
     <div class="search-form-container">
     <%= form_tag('/posts/search', method: 'get') do %>
       <div class="search-form-components">

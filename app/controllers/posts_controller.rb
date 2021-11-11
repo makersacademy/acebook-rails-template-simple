@@ -9,14 +9,12 @@ class PostsController < ApplicationController
     flash[:message] = "Nice post, friend!"
   end
 
-
   def index # this is the home page (/posts)
     new
-    session[:order] = 'recent'
-    if session[:order] == 'recent'
-      @posts = Post.order(created_at: :desc)
-    else
+    if session[:order] == 'likes'
       @posts = Post.left_joins(:likes).group(:id).order('COUNT(likes.id) DESC, created_at DESC')
+    else
+      @posts = Post.order(created_at: :desc)
     end
   end
 
@@ -53,6 +51,15 @@ class PostsController < ApplicationController
     else
       redirect_to("/posts/search/#{params[:search]}")
     end
+  end
+
+  def order
+    if session[:order] == 'recent'
+      session[:order] = 'likes'
+    else
+      session[:order] = 'recent'
+    end
+    redirect_to posts_url
   end
 
   private
