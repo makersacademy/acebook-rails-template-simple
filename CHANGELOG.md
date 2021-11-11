@@ -10,6 +10,18 @@ Comments:
 * If no image is uploaded, a default profile picture is provided.
 
 ## 10/11/21
+* style/welcome-login-signup-pages
+  * style(welcome/signup/login pages): put forms in boxes and given large titles etc.
+  * refactor(users/new.html, sessions/new.html): removed unnecessary sign in button and message on the sign in page, fixed the functionality for the sign in button on the login page
+  * refactor(*): html class cleanups
+  * refactor(welcome-login-signup): made font size larger and bolder, made form boxes larger
+  * style(welcome-login-signup.css): made the font of profile image tag larger, did some spacing
+  * refactor/style(*): made page fit mobile aswell, login/sign-up text fields grow to fit the container too
+  * refactor(welcome-login-signup.css): responsive layout width was 130%, made it 100%
+  * refactor(*): removed break from flash messages and gave them padding and boldness, moved over 'no file chosen', changed font sizes on page
+  * refactor(css): added padding in text-fields so they're not stuck to the left, gave more spacing between password and login buttons + dont have an account message
+
+## 10/11/21
 * feature/like-all-posts
   * likes function moved to render partial
   * user can view likes on /posts
