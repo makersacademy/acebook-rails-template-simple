@@ -45,7 +45,7 @@
     font-family: "Courier New", serif;
 }
 
-.welcome-page-buttons a:hover {
+.welcome-page-buttons:hover, .login-page-buttons:hover {
     background-color: #F4ECFF;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .login-page-buttons {
-    background-color: #F4ECFF;
+    background-color: #E4CDFF;
     color: #2C064A;
     border: none;
     text-decoration: none;
@@ -130,7 +130,7 @@
     align-items: center;
 }
 
-#username, #password {
+#username, #password, #user_username, #user_password {
     border-radius: 10px;
     border-style: solid;
     border-color: black;
