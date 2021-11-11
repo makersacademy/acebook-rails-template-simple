@@ -1,7 +1,6 @@
 posts.css
 h1, h2, h3, h4 {
   /* dark mode - color: #F4ECFF; */
-  color: #2C064A;
 }
 
 /* Dark mode */
@@ -64,11 +63,9 @@ h1, h2, h3, h4 {
   text-decoration: none;
   text-align: right;
   /* dark mode - color: #F4ECFF; */
-  color: black;
   border-style: solid;
   border-radius: 10px;
   /* dark mode - background-color: white; (unsure about this - should maybe be #2C064A) */
-  background-color: #F4ECFF;
   flex-grow: 0.6;
   margin: 2%;
 }
@@ -84,11 +81,9 @@ h1, h2, h3, h4 {
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
   border-radius: 10px;
-  border-color: black;
   border-style: solid;
   border-width: medium;
   /* dark mode - background-color: #B9A6CF; */
-  background-color: #F4ECFF;
   padding: 2%;
   resize: none;
   font-size: 1em;
@@ -131,7 +126,6 @@ h1, h2, h3, h4 {
   justify-content: center;
   flex-grow: 0.6;
   /* dark mode - background-color: #12052D; */
-  background-color: #F4ECFF;
   max-width: 70%;
   width: 70%;
 }
@@ -144,7 +138,6 @@ h1, h2, h3, h4 {
     padding: 1.5%;
     padding-bottom: 0.75em;
     /* dark mode - background-color: #5F358B; */
-    background-color: #E4CDFF;
 }
 
 .single-post {
@@ -156,7 +149,6 @@ h1, h2, h3, h4 {
   border-radius: 10px;
   padding: 1.5%;
   /* dark mode - background-color: #5F358B; */
-  background-color: #E4CDFF;
 }
 
 .comment-container {
@@ -165,7 +157,6 @@ h1, h2, h3, h4 {
   border-style: solid;
   border-radius: 10px;
   /* dark mode - background-color: #B9A6CF; */
-  background-color: #F4ECFF;
 }
 
 .single-post a {
@@ -176,7 +167,6 @@ h1, h2, h3, h4 {
 
 .single-post:hover {
   /* dark mode -  background: #8354B3; */
-  background: #F4ECFF;
 }
 
 .username_and_avatar {
@@ -190,7 +180,6 @@ h1, h2, h3, h4 {
 
 .username_and_avatar a {
   /* dark mode - color: #F4ECFF; */
-  color: #2C064A;
 }
 
 .single-post.avatar {
@@ -210,7 +199,6 @@ h1, h2, h3, h4 {
 #post_message {
   word-wrap: break-word;
   /* dark mode - color: #F4ECFF; */
-  color: black;
   display: block;
   width: 100%;
   height: 100%;
@@ -228,14 +216,12 @@ h1, h2, h3, h4 {
 /*noinspection CssReplaceWithShorthandSafely*/
 .show-posts { /* this class is for the post on the individual post page (/posts/:post_id/) */
   justify-content: center;
-  background-color: #F4ECFF; /*Dark  mode =  */
   width: 64%;
   text-align: left;
   border-style: solid;
   border-radius: 10px;
   padding: 1.5%;
   /* dark mode - background-color: #5F358B; */
-  background-color: #E4CDFF;
   margin-top: 1%;
   margin-bottom: 0.5%;
 }
@@ -270,7 +256,6 @@ h1, h2, h3, h4 {
 
 #post-image:hover {
   /* dark mode - background-color: #8354B3; */
-  background-color: #E4CDFF;
   cursor:auto;
 }
 
@@ -289,7 +274,6 @@ h1, h2, h3, h4 {
   margin-bottom: 1%;
   display: block;
   /* dark mode - background-color: #B9A6CF; */
-  background-color: #F4ECFF;
 }
 
 .textarea-container {
