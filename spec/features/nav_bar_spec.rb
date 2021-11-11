@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.feature 'Navigation bar', type: :feature do
   scenario 'When not logged in, the nav bar only shows the Acebook link' do
     visit('/welcome')
-    expect(page).to have_content('Acebook')
     expect(page).to_not have_content('Sign out')
   end
 
@@ -15,7 +14,7 @@ RSpec.feature 'Navigation bar', type: :feature do
   
   scenario 'Clicking Acebook takes signed in user to /posts' do
     sign_up
-    click_on 'Acebook'
+    click_on 'logo'
     expect(page).to have_current_path(posts_url)
   end
 
