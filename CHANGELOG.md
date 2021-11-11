@@ -6,6 +6,11 @@
   * colour is formatted to light mode
   * logo is a link to /posts 
 
+  ## 11/11/21
+* style/buttons-and-bold-entry-fields
+  * Applied styling to some buttons
+  * Username entry no longer bold
+
 ## 11/11/21
 * feature/sort-by-likes
   * User can sort posts by most recent or most liked
