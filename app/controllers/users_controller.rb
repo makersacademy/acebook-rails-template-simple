@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token
   def create
+    require_user_not_logged_in!
     @user = User.new(
       first_name: params[:first_name],
       last_name: params[:last_name],
@@ -9,14 +10,15 @@ class UsersController < ApplicationController
       password: params[:password]
     )
     if @user.save
-      flash[:notice] = 'User saved successfully'
-        # strict inputs e.g. max length
       session[:user_id] = @user.id
       redirect_to posts_url
-
     else
-      flash[:alert] = 'User was not saved.'
-      render :new
+      flash[:notice] = 'An account with that email already exists.'
+      redirect_to root_url
     end
+  end
+
+  def index
+    prevent_logged_in_user!
   end
 end

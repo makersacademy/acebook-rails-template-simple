@@ -9,8 +9,12 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to posts_url
+    elsif !@user
+      flash[:notice] = "An account with that email doesn't exist."
+      redirect_to root_url
     else
-      redirect_to users_url
+      flash[:notice] = "Incorrect email or password."
+      redirect_to root_url
     end
   end
 
