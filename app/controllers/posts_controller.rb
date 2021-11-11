@@ -1,11 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
 
-  # GET /posts or /posts.json
-  def index
-    @posts = Post.all.reverse
-  end
-
   # GET /posts/1 or /posts/1.json
   def show
   end
@@ -54,6 +49,9 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
       format.json { head :no_content }
     end
+  def index
+    require_user_logged_in!
+    @posts = Post.all.reverse
   end
 
   private
