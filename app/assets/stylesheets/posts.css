@@ -60,12 +60,14 @@ h1, h2, h3, h4 {
 }
 
 #new-post-button {
-    padding-top: 0.5%;
-    padding-bottom: 0.5%;
     border-radius: 10px;
-    padding-right: 1%;
-    padding-left: 1%;
+    padding: 0.5% 1.5%;
     float: right;
+}
+
+#new-post-button:hover {
+    opacity: 60%;
+    cursor: pointer;
 }
 
 #go-back-button {
@@ -269,6 +271,11 @@ h1, h2, h3, h4 {
     margin-left: 1%;
     padding: 0.5% 1%;
     height: 2em;
+}
+
+#search-button:hover {
+    opacity: 60%;
+    cursor: pointer;
 }
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
