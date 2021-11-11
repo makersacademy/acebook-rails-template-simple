@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get "sign_in", to: "sessions#new"
   post "sign_in", to: "sessions#create", as: 'log_in'
   get "logout", to: "sessions#destroy"
+  get "profile", to: "users#profile"
   resources :posts
 end

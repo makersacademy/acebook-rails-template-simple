@@ -1,0 +1,21 @@
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="card">
+        <div class="user text-center">
+            <div class="profile"> <%= image_tag default_avatar(Current.user.image_url), :style =>  'width: 80px;', :class => "rounded-circle"%> </div>
+        </div>
+        <div class="mt-5 text-center">
+            <h4 class="mb-0"><%=@user.first_name %> <%= @user.last_name %></h4> <span class="text-muted d-block mb-2">////ADDRESS////</span> <button class="btn btn-primary btn-sm follow">Add Friend</button>
+            <div class="d-flex justify-content-between align-items-center mt-4 px-4">
+                <div class="stats">
+                    <h6 class="mb-0">Friends</h6> <span>0</span>
+                </div>
+                <div class="stats">
+                    <h6 class="mb-0">Age</h6> <span><%= format_birthday(@user.date_of_birth) %></span>
+                </div>
+                <div class="stats">
+                    <h6 class="mb-0">/////</h6> <span>0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
