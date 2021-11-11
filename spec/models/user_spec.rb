@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
     described_class.new(first_name: "Joe",
                         last_name: "Bloggs",
                         date_of_birth: 1985-03-14,
-                        email: "jbloggs@gmail.com",
+                        email: "jbloggs1@gmail.com",
                         password_digest: "hashed_password")
           }
 
