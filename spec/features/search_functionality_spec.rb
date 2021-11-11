@@ -7,6 +7,6 @@ RSpec.feature "Search", type: :feature do
 
     fill_in :search, with: 'Hello'
     
-    expect(page).to have_current_path('/')
+    expect(page).to have_current_path('/posts')
   end
 end

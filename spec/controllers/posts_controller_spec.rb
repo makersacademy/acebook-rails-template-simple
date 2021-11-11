@@ -82,4 +82,10 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
+  describe "search_post" do
+    it "redirects to a url containing the search string" do
+      post :search_post, params: { search: 'Hello' }
+      expect(response).to redirect_to('/posts/search/Hello')
+    end
+  end
 end
