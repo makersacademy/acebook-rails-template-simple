@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-self: center;
+    padding-top: 5%;
 }
 
 .login-and-welcome-elements-display {
