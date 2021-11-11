@@ -100,3 +100,8 @@ body {
 body::-webkit-scrollbar {
     display: none;
 }
+
+a.navbar-left {
+    padding: 0px;
+    width: 50%;
+}

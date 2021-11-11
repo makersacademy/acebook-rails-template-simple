@@ -1,5 +1,6 @@
 <section class="navbar">
-  <h1 class="navbar-left"><%= link_to 'Acebook', posts_path %></h1>
+  <a class="navbar-left" href="/posts"><%= image_tag "font-logo-light-mode.png", height: 80 %></a>
+  
     <% if logged_in? %>
       <a id="username" href=<%= "/posts/#{current_user.id}/posts" %>> <%= current_user.username %></a>
 
