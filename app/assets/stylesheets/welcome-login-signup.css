@@ -130,7 +130,7 @@
     align-items: center;
 }
 
-#username, #password, #user_username, #user_password {
+#username.login-text-boxes, #password, #user_username, #user_password {
     border-radius: 10px;
     border-style: solid;
     border-color: black;
