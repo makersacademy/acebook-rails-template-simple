@@ -43,7 +43,11 @@ class PostsController < ApplicationController
   end
 
   def search_post
-    redirect_to("/posts/search/#{params[:search]}")
+    if params[:search].blank?
+      redirect_to posts_url
+    else
+      redirect_to("/posts/search/#{params[:search]}")
+    end
   end
 
   private
