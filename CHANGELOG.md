@@ -27,6 +27,7 @@ Comments:
   * styling(posts.css): added border to comment box
   * styling(stylesheets*, application.html.erb): styling welcome and login to match light mode theme
   * styling(welcome-login-signup.css): editing colour scheme
+  * styling(stylesheets*): WIP
 
 ## 10/11/21
 * feature/upload profile image
