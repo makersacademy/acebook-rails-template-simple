@@ -8,7 +8,7 @@ RSpec.feature 'Log in', type: :feature do
     visit('/welcome')
     click_button('Login')
     expect(page).to have_current_path('/login')
-    fill_in 'Username', with: 'user'
+    fill_in 'username-input', with: 'user'
     fill_in 'Password', with: 'password'
     click_button('Login')
     expect(page).to have_current_path('/posts')
@@ -22,7 +22,7 @@ RSpec.feature 'Log in', type: :feature do
     visit('/welcome')
     click_button('Login')
     expect(page).to have_current_path('/login')
-    fill_in 'Username', with: 'user'
+    fill_in 'username-input', with: 'user'
     fill_in 'Password', with: '123'
     click_button('Login')
     expect(page).to have_current_path('/login')
