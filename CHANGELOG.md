@@ -1,6 +1,11 @@
 # Changelog
 
 ## 11/11/21
+* feature/message-when-no-posts
+  * User displayed a message when there are no posts on the main page and on the specific users page
+
+Comments:
+* Renamed `showSpecificUsersPosts` to snake casing
 * Unlike previously liked posts
   * User can unlike posts they have liked and the page updates to 
   reflect this
