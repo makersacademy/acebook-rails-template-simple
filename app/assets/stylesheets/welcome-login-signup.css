@@ -119,7 +119,7 @@
 /* Responsive layout - makes a one column layout instead of a two-column layout */
 @media (max-width: 800px) {
     .login-and-welcome-elements-display {
-        width: 130%;
+        width: 100%;
     }
 
     .login-username-and-password-fields {
