@@ -13,6 +13,10 @@
       <%= f.text_field :email, :class => 'form-control', :id => 'floatingEmail', :placeholder => 'user@example.com' %>
       <label for="floatingEmail">Email address</label>
     </div>
+    <div class="form-floating">
+      <%= f.date_field :date_of_birth, :class => 'form-control', :id => 'floatingDate' %>
+      <label for="floatingDate">Date of Birth</label>
+    </div>
     <div>
     <%= image_tag f.object.image_url if f.object.cached_image_data %>
     <%= f.hidden_field :image, value: f.object.cached_image_data %>
