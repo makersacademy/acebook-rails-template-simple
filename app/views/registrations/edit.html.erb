@@ -1,0 +1,27 @@
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+    <%= form_with model: @current_user, url: update_profile_path, local: true do |f| %>
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><%= image_tag default_avatar(Current.user.image_url), :style =>  'width: 150px;', :class => "rounded-circle mt-5"%> <span class="font-weight-bold"><%=@current_user.first_name %></span><span class="text-black-50"><%=@current_user.email%></span><span> </span></div>
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Profile Settings</h4>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6"><label class="labels">Name</label><%= f.text_field :first_name, :class => 'form-control', :id => 'floatingFirstName', :placeholder => 'User' %></div>
+                    <div class="col-md-6"><label class="labels">Surname</label><%= f.text_field :last_name, :class => 'form-control', :id => 'floatingLastName', :placeholder => 'User' %></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Email ID</label><%= f.text_field :email, :class => 'form-control', :id => 'floatingEmail', :placeholder => 'user@example.com' %></div>
+                    <div class="col-md-12"><label class="labels">Date of Birth</label><%= f.date_field :date_of_birth, :class => 'form-control', :id => 'floatingDate' %></div>
+                </div>
+                <div class="mt-5 text-center"><%= f.submit 'Save Profile', :class => "btn btn-primary profile-button" %></div>
+            </div>
+        </div>
+    </div>
+    <%end%>
+</div>
+</div>
+</div>
