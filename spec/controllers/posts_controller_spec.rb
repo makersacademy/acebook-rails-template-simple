@@ -57,9 +57,8 @@ RSpec.describe PostsController, type: :controller do
       
       post_id = Post.all.first.id
       
-      get :like, params: { id: post_id }
+      get :destroy_like, params: { id: post_id }
       expect(response).to redirect_to("/posts/#{post_id}")
-      expect(response).to have_http_status(302)
     end
   end
   
