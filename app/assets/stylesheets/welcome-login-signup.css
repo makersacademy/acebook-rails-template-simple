@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-self: center;
+    padding-top: 5%;
 }
 
 .login-and-welcome-elements-display {
@@ -14,7 +15,11 @@
     text-align: center;
     border-style: solid;
     border-radius: 10px;
-    background-color: lightblue;
+    border-style: solid;
+    border-color: black;
+    border-width: medium;
+    /* DARK MODE - background-color: #5F358B; */
+    background-color: #E4CDFF;
 }
 
 .login-and-welcome-flash-messages {
@@ -25,30 +30,37 @@
 /* WELCOME PAGE STYLING */
 
 .welcome-page-buttons {
-    background-color: #0E3B43;
-    color: white;
-    border: none;
-    padding: 0.75%;
-    width: 30%;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 20px;
-    text-align: center;
-    display: inline-block;
+  /* DARK MODE - background-color: #5F358B; */
+  background-color: #E4CDFF;
+  /* DARK MODE - color: #F4ECFF; */
+  color: #2C064A;
+  border: none;
+  padding: 0.75%;
+  width: 30%;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  border-color: black;
+  border-width: medium;
+  border-style: solid;
+  text-align: center;
+  display: inline-block;
+  font-family: "Courier New", serif;
 }
 
-.welcome-page-buttons:hover {
-    opacity: 60%;
+.welcome-page-buttons:hover, .login-page-buttons:hover {
+  /* dark mode - background-color: #8354b3;   */
+  background-color: #F4ECFF;
 }
 
 /* LOGIN PAGE STYLING */
 
 .login-headers {
     font-weight: bold;
-    background-color: dodgerblue;
-    color: whitesmoke;
-    border-radius: 20px;
+    /* DARK MODE - color: #F4ECFF; */
+    color: #2C064A;
+    border-radius: 10px;
     font-size: 23px;
     margin: 0;
 }
@@ -61,21 +73,23 @@
 }
 
 .login-page-buttons {
-    background-color: #0E3B43;
-    color: white;
+  /* DARK MODE - background-color: #5F358B; */
+    background-color: #E4CDFF;
+    /* DARK MODE - color: #F4ECFF; */
+    color: #2C064A;
     border: none;
     text-decoration: none;
     font-size: 16px;
     padding: 0.75%;
     width: 40%;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 10px;
+    border-width: medium;
+    border-style: solid;
+    border-color: black;
     text-align: center;
     display: inline-block;
-}
-
-.login-page-buttons:hover {
-    opacity: 60%;
+    font-family: "Courier New", serif;
 }
 
 .login-user-tags {
@@ -101,10 +115,20 @@
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
-    border-radius: 20px;
+    border-radius: 10px;
     border: none;
     resize: none;
     font-size: 1em;
+    font-family: "Courier New", serif;
+    /* DARK MODE - background-color: #5F358B; */
+    background-color: #F4ECFF;
+}
+
+.login-text-boxes username {
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    border-width: medium;
 }
 
 .login-username-password-form {
@@ -112,6 +136,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#username.login-text-boxes, #password, #user_username, #user_password {
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    border-width: medium;
+    /* dark mode - background-color: #8354B3; */
+    /* not sure what the default background colour is for light mode */
 }
 
 .profile-image-label {
@@ -144,19 +177,19 @@
     }
 
     .login-user-tags {
-        width: 100%;
+       width: 80%;
     }
 
     .login-pass-tags {
-
+        width: 80%;
     }
 }
 
-body.light {
+.light {
     color: black;
     background-color: white;
   }
-  body.dark {
+.dark {
     color: white;
     background-color: black;
   }
