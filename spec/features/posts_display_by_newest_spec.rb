@@ -7,6 +7,7 @@ RSpec.feature "Timeline", type: :feature do
     add_new_post("1: Hello, world!")
     add_new_post("2: Yellow, world!")
 
-    expect(page).to have_content("2: Yellow, world!" ,"1: Hello, world!")
+    expect(page).to have_content("2: Yellow, world!")
+    expect(page).to have_content("1: Hello, world!")
   end
 end
