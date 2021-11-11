@@ -10,31 +10,16 @@ password_digest - string
 image_data - string
 date of birth - date
 
+
+Associations
 USER
-associations
 has many - POSTS
 has many - LIKES
 has many - COMMENTS
 
 
-Posts DB needs contents: string
-
-will use 'belongs_to' :user
-
-bin/rails general model Post contents: string
-
-Adding a userId to each post 
-
-run bin/rails generate migration AddUserIdToPosts
-add this method to migration file:
-def change
-    add_reference :posts, :user, index: true
-end
-
-add 'belongs_to :user' to post model
-add 'has_many :posts' to user model
-run bin/rails db:migrate
-
+POSTS
+user_id Associate with user
 
 LIKES
 post_id Associate with post
@@ -43,4 +28,4 @@ user_id Associate with user
 COMMENTS
 post_id Associate with post
 user_id Associate with user
-message = string
+message - string

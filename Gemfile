@@ -23,6 +23,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 4.0'
   gem 'awesome_print'
+  gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development do
