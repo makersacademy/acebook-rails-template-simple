@@ -1,7 +1,16 @@
 # Changelog
 
 ## 10/11/21
-*feature/like-all-posts
+* feature/upload profile image
+  * User can upload an image when signing up
+  * Profile image can now be seen across the app
+
+Comments:
+* A user can upload a profile picture. 
+* If no image is uploaded, a default profile picture is provided.
+
+## 10/11/21
+* feature/like-all-posts
   * likes function moved to render partial
   * user can view likes on /posts
   * post has custom message depending on number or likes
