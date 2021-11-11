@@ -1,5 +1,4 @@
 <div class="login-and-welcome-container">
-  <div class="login-and-welcome-box">
     <div class="login-and-welcome-elements-display">
       <h1 class="login-header">Sign up</h1>
 
@@ -19,7 +18,7 @@
           </div>
 
           <div class="profile-image-tag-and-fields">
-            <%= f.label "Profile Image" %>
+            <%= f.label "Profile Image" %><br><br>
             <%= f.file_field :avatar, accept: 'image/png, image/gif, image/jpeg, image/jpg' %><br>
           </div>
           <br>
@@ -30,19 +29,4 @@
       </div>
 
     </div>
-  </div>
 </div>
-
-<!-- left this here so that if the code for uploading a profile picture doesn't work we can still view the old code,
-this is the code from the feature/upload-profile-image branch :) -->
-
-<!--<h1>Sign Up</h1>-->
-<%#= form_for @user do |f|%>
-<!--  <%#= f.label :username%><br>-->
-<!--  <%#= f.text_field :username, :required => true %><br>-->
-<!--  <%#= f.label :password%><br>-->
-<!--  <%#= f.password_field :password, :required => true%><br>-->
-<%#= f.label "Profile Image" %>
-<!--  <%#= f.file_field :avatar, accept:'image/png, image/gif, image/jpeg, image/jpg' %><br>-->
-<%#= f.submit %>
-<%#end%>
