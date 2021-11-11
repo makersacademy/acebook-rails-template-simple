@@ -1,6 +1,10 @@
 <section class="container">
-  <div class="posts">
-    <%= render partial: 'posts/post', collection: @results %>
-  </div>
+  <% unless @results.empty? %>
+    <div class="posts">
+      <%= render partial: 'posts/post', collection: @results %>
+    </div>
+  <% else %>
+    <h3>No posts found</h3>
+  <% end %>
 </section>
 

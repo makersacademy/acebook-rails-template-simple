@@ -27,4 +27,11 @@ RSpec.feature "Search", type: :feature do
     expect(page).to have_content('Goodbye world')
     expect(page).to_not have_content('Bonjour')
   end
+
+  scenario "Informs the user if no posts are found" do
+    fill_in :search, with: 'Bonjour'
+    click_button "Search"
+
+    expect(page).to have_content('No posts found')
+  end
 end
