@@ -50,6 +50,10 @@ h1, h2, h3, h4 {
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
     border-radius: 10px;
+    border-color: black;
+    border-style: solid;
+    border-width: medium;
+    background-color: #F4ECFF;
     padding: 2%;
     resize: none;
     font-size: 1em;
