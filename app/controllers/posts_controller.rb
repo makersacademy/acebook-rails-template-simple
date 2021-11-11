@@ -42,6 +42,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def search_post
+    redirect_to("/posts/search/#{params[:search]}")
+  end
+
   private
 
   def post_params
