@@ -34,6 +34,8 @@ Comments:
   * styling(welcome-login-signup.css): editing colour scheme
   * styling(stylesheets*): WIP
   * stying(welcome-login-signup.css): refactored styling to only apply to welcome/login/sign up pages
+  * refactor(users_controller.rb): removed contraction
+  * styling(posts.css): added padding-top to posts/post_id page
 
 ## 10/11/21
 * feature/upload profile image
