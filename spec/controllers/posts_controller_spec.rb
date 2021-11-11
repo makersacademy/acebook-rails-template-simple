@@ -8,7 +8,6 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "GET /new " do
-    
     it "responds with 200" do
       get :new
       expect(response).to have_http_status(200)
@@ -116,6 +115,12 @@ RSpec.describe PostsController, type: :controller do
       session[:order] = 'recent'
       post :order
       expect(session[:order]).to eq 'likes'
+    end
+
+    it "returns 200 when order is set to by likes" do
+      session[:order] = 'likes'
+      get :index
+      expect(response).to have_http_status(200)
     end
   end
 end
