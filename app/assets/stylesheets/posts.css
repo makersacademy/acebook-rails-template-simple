@@ -8,6 +8,10 @@ h1, h2, h3, h4 {
     align-items: center;
 }
 
+.search { 
+    flex-direction: column;
+}
+
 .container-post {
     display: flex;
     align-items: center;
@@ -60,12 +64,24 @@ h1, h2, h3, h4 {
 }
 
 #new-post-button {
-    padding-top: 0.5%;
-    padding-bottom: 0.5%;
     border-radius: 10px;
-    padding-right: 1%;
-    padding-left: 1%;
+    padding: 0.5% 1.5%;
     float: right;
+}
+
+#new-post-button:hover {
+    opacity: 60%;
+    cursor: pointer;
+}
+
+#go-back-button {
+    border-radius: 10px;
+    padding: 7%;
+}
+
+#go-back-button:hover {
+    opacity: 70%;
+    cursor: pointer;
 }
 
 #new-comment-button {
@@ -83,6 +99,7 @@ h1, h2, h3, h4 {
     flex-grow: 0.6;
     background-color: #F4ECFF;
     max-width: 70%;
+    width: 70%;
 }
 
 .new_post_box {
@@ -164,6 +181,8 @@ h1, h2, h3, h4 {
     justify-content: flex-end;
 }
 
+/* VIEW INDIVIDUAL POSTS */
+
 /*noinspection CssReplaceWithShorthandSafely*/
 .show-posts { /* this class is for the post on the individual post page (/posts/:post_id/) */
     justify-content: center;
@@ -185,6 +204,7 @@ h1, h2, h3, h4 {
 
 .element-margin {
     margin: 2%;
+    margin-top: 0%;
 }
 
 .image-container {
@@ -240,13 +260,47 @@ h1, h2, h3, h4 {
     margin: 0 0 0 1%;
 }
 
+.search-form-components {
+    display: flex;
+    align-items: baseline;    
+}
+
+#search {
+    margin-left: auto;
+    border-radius: 10px;
+    padding: 0 1%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    height: 2em;
+    width: 15em;
+}
+
+#search-button {
+    border-radius: 10px;
+    float: right;
+    margin-right: 2%;
+    margin-left: 1%;
+    padding: 0.5% 1%;
+    height: 2em;
+}
+
+#search-button:hover {
+    opacity: 60%;
+    cursor: pointer;
+}
+
 /* Responsive layout - makes a one column layout instead of a two-column layout */
 @media (max-width: 800px) {
     .posts {
       max-width: 100%;
+      width: 100%;
     }
 
     .show-posts {
         width: 90%;
+    }
+
+    #search {
+        max-width: 10em;
     }
   }

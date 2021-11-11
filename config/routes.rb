@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   get 'welcome', to: 'sessions#welcome'
   get 'authorized', to: 'sessions#page_requires_login'
+  get '/posts/search', to: 'posts#search_post'
+  get '/posts/search/:search', to: 'posts#search', as: 'search'
   put '/posts/:id/like', to: 'posts#like', as: 'like'
   get 'posts/:user_id/posts', to: 'posts#showSpecificUsersPost'
   post '/posts/:id/comment', to: 'comments#create', as: 'comment'
