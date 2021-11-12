@@ -19,8 +19,6 @@
     border-top: black;
     border-left: none;
     border-right: none;
-    /* dark mode - background-color: #5F358B; */
-    background-color: #E4CDFF;
     position: fixed;
     top: 0;
     left: 0;
@@ -52,8 +50,6 @@
     border-radius: 25em;
     object-fit: cover;
     border-style: solid;
-    /* dark mode - border-color:#F4ECFF; */
-    border-color:#2C064A;
     margin-right: 0;
     text-decoration: none;
     height: 3em;
@@ -63,8 +59,6 @@
   .navbar a {
     text-decoration: none;
     padding: 1em;
-    /* dark mode - color: #F4ECFF; */
-    color: #2C064A;
   }
   
   .navbar #username {
@@ -91,8 +85,6 @@ body {
     margin-bottom: 1.5em;
     font-family: "Courier New", serif;
     font-size: 1em;
-    /* dark mode - background-color: #12052D; */
-    background-color: #F4ECFF;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }

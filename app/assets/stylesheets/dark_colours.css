@@ -1,0 +1,135 @@
+.container div {
+  color: #F4ECFF;
+}
+
+.search-form-components {
+  color: #F4ECFF;
+}
+
+#search {
+  background-color: #B9A6CF;
+}
+
+.login-and-welcome-flash-messages {
+  color: #E4CDFF;
+}
+
+.login-user-tags {
+  color: #F4ECFF;
+}
+
+.login-pass-tags {
+  color: #F4ECFF;
+}
+
+.login-text-boxes {
+  color: #F4ECFF;
+}
+
+.navbar {
+  background-color: #5F358B;
+}
+
+.avatar {
+  border-color: #F4ECFF;
+}
+
+.navbar a {
+  color: #F4ECFF;
+}
+
+body {
+  background-color: #12052D;
+}
+
+h1, h2, h3, h4 {
+  color: #F4ECFF;
+}
+
+.comment-container h4 {
+  color: black;
+}
+
+.new_post_link {
+  color: #F4ECFF;
+  background-color: #2C064A;
+}
+
+#new-post-message {
+  border-color: black;
+  background-color: #B9A6CF;
+}
+
+.posts {
+  background-color: #12052D;
+}
+
+.new_post_box {
+  background-color: #5F358B;
+}
+
+.single-post {
+  background-color: #5F358B;
+}
+
+.comment-container {
+  background-color: #B9A6CF;
+}
+
+.single-post:hover {
+  background: #8354B3;
+}
+
+.username_and_avatar a {
+  color: #F4ECFF;
+}
+
+#post_message {
+  color: #F4ECFF;
+}
+
+.post_created_date {
+  color: #F4ECFF;
+}
+
+.show-posts {
+  background-color: #5F358B;
+}
+
+#post-image:hover {
+  background-color: #8354B3;
+}
+
+#comment-textarea {
+  background-color: #B9A6CF;
+}
+
+.login-and-welcome-elements-display {
+  background-color: #5F358B;
+}
+
+.welcome-page-buttons {
+  background-color: #5F358B;
+  color: #F4ECFF;
+}
+
+.welcome-page-buttons:hover, .login-page-buttons:hover {
+  background-color: #8354b3;  
+}
+
+.login-headers {
+  color: #F4ECFF;
+}
+
+.login-page-buttons {
+  color: #F4ECFF;
+  background-color: #5F358B;
+}
+
+.login-text-boxes {
+  background-color: #5F358B;
+}
+
+#username.login-text-boxes, #username-input, #password, #user_username, #user_password {
+  background-color: #8354B3;
+}
