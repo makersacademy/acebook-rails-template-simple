@@ -2,6 +2,12 @@
   <a href="/posts"><%= image_tag "acebook-light-mode.png", class: "navbar-logo-image", alt: "logo" %></a>
   
     <% if logged_in? %>
+      <% if cookies[:theme] == "light" %>
+        <%= link_to "go dark", root_path(theme: "dark") %>
+      <% else %>
+        <%= link_to "go light", root_path(theme: "light") %>
+      <% end %>
+      
       <a id="username" href=<%= "/posts/#{current_user.id}/posts" %>> <%= current_user.username %></a>
 
       <a class="navbar-user-profile-image" href=<%= "/posts/#{current_user.id}/posts" %> >
@@ -14,11 +20,7 @@
 
       <a id="sign-out"<%= link_to "Sign out", '/logout', method: :delete %> </a>
 
-    <% if cookies[:theme] == "light" %>
-      <%= link_to "go dark", root_path(theme: "dark") %>
-    <% else %>
-      <%= link_to "go light", root_path(theme: "light") %>
-    <% end %>
+  
     <% end %>
     </section>
 

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= session[:light_mode] = true %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <% if session[:light_mode] %>
+    
+    <% if cookies[:theme] == 'light' %>
       <%= stylesheet_link_tag 'light_colours', media: 'all' %>
     <% else %>
       <%= stylesheet_link_tag 'dark_colours', media: 'all' %>
