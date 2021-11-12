@@ -118,6 +118,6 @@ h1, h2, h3, h4 {
   background-color: #E4CDFF;
 }
 
-.login-text-boxes {
+#username.login-text-boxes, #username-input, #password, #user_username, #user_password {
   background-color: #F4ECFF;
 }
