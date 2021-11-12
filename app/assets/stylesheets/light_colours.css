@@ -1,3 +1,31 @@
+.container div {
+  color: #2C064A;
+}
+
+.search-form-components {
+  color: #2C064A;
+}
+
+#search {
+  background-color: #F4ECFF;
+}
+
+.login-and-welcome-flash-messages {
+  color: #2C064A;
+}
+
+.login-user-tags {
+  color: #2C064A;
+}
+
+.login-pass-tags {
+  color: #2C064A;
+}
+
+.login-text-boxes {
+  color: #2C064A;
+}
+
 .navbar {
   background-color: #E4CDFF;
 }
