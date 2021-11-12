@@ -1,13 +1,17 @@
 # Changelog
 
 ## 12/11/21
+* feature/dark-mode-button
+  * Added button to switch between light and dark mode
+
+## 12/11/21
 * style/remove-colours-from-stylesheets
   * Split colours out of stylesheets into light mode and dark mode colours
   * Use these stylesheets for conditional rendering of colours, based on light and dark mode
   * This is a work in progress in terms of logic to switch themes, which will be addressed in a later MR (currently the switch can be made manually by changing `<%= session[:light_mode] = true %>` to `false` in `application.html.erb`
 
 ## 11/11/21
-*style/logo-light-mode
+* style/logo-light-mode
   * new logo added
   * colour is formatted to light mode
   * logo is a link to /posts 
