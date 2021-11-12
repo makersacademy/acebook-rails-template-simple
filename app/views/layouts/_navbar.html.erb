@@ -3,11 +3,16 @@
   
     <% if logged_in? %>
       <% if cookies[:theme] == "light" %>
-        <%= link_to "go dark", root_path(theme: "dark") %>
+        <a class="navbar-user-profile-image" href=<%= root_path(theme: "dark") %> >
+        <%= p root_path(theme: "dark") %> 
+        <img class="avatar" src="https://mir-s3-cdn-cf.behance.net/user/230/d2e2ae163095399.60c76948a2fc7.png">
+        </a>
       <% else %>
-        <%= link_to "go light", root_path(theme: "light") %>
+        <a class="navbar-user-profile-image" href=<%= root_path(theme: "light") %> >
+        <img class="avatar" src="https://mir-s3-cdn-cf.behance.net/user/230/d2e2ae163095399.60c76948a2fc7.png">
+        </a>      
       <% end %>
-      
+
       <a id="username" href=<%= "/posts/#{current_user.id}/posts" %>> <%= current_user.username %></a>
 
       <a class="navbar-user-profile-image" href=<%= "/posts/#{current_user.id}/posts" %> >
@@ -19,7 +24,6 @@
       </a>
 
       <a id="sign-out"<%= link_to "Sign out", '/logout', method: :delete %> </a>
-
   
     <% end %>
     </section>

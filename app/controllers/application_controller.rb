@@ -3,19 +3,9 @@ class ApplicationController < ActionController::Base
 
   before_action :set_theme
   before_action :authorized
-  before_action :set_theme
   helper_method :authorized
   helper_method :current_user
   helper_method :logged_in?
-
-  def set_theme
-    if params[:theme].present?
-      theme = params[:theme].to_sym
-      # session[:theme] = theme
-      cookies[:theme] = theme
-      redirect_to(request.referrer || root_path)
-    end
-  end
 
   def current_user
     User.find_by(id: session[:user_id])

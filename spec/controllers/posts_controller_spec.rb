@@ -123,4 +123,12 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe "Switching to dark mode" do
+    it "changes colour scheme to dark mode" do
+      get :index, params: { theme: "dark" }
+      expect(cookies[:theme]).to eq("dark")
+    end
+
+  end
 end
