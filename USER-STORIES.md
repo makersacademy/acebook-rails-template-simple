@@ -114,3 +114,8 @@ As a User,
 So that I know which website I am on,
 I want to be able to see a logo on the website.
 ```
+```
+As a User, 
+So that I can sort through users and posts,
+I want to be able to filter posts by the most likes or most recent.
+```

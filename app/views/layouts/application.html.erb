@@ -4,7 +4,7 @@
     <title>Acebook</title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= session[:light_mode] = true %>
+    <%= session[:light_mode] = false %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     
     <% if cookies[:theme] == 'light' %>
