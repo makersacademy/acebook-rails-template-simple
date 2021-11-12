@@ -121,3 +121,7 @@ h1, h2, h3, h4 {
 #username.login-text-boxes, #username-input, #password, #user_username, #user_password {
   background-color: #F4ECFF;
 }
+
+.profile-image-label, #dont-have-an-account {
+  color: #2C064A;
+}
