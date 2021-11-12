@@ -1,5 +1,9 @@
 <section class="navbar">
-  <a href="/posts"><%= image_tag "acebook-light-mode.png", class: "navbar-logo-image", alt: "logo" %></a>
+  <% if cookies[:theme] == "light" %>
+    <a href="/posts"><%= image_tag "acebook-light-mode.png", class: "navbar-logo-image", alt: "logo" %></a>
+  <% else %>
+    <a href="/posts"><%= image_tag "acebook-dark-mode.png", class: "navbar-logo-image", alt: "logo" %></a>
+  <% end %>
   
     <% if logged_in? %>
       <% if cookies[:theme] == "light" %>

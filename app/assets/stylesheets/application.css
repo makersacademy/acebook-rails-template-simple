@@ -40,6 +40,11 @@
     .navbar-user-profile-image {
         margin-left: auto;
     }
+
+    .navbar img.avatar {
+      height: 2em;
+      width: 2em;
+    }
   }
   
   .navbar img:hover {
