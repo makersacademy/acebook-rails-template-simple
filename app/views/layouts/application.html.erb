@@ -13,16 +13,4 @@
     <%= yield %>
   </body>
 
-  <body class="<%= cookies[:theme] %>">
-
-  <% if cookies[:theme] == "light" %>
-    <%= link_to "go dark", root_path(theme: "dark") %>
-  <% else %>
-    <%= link_to "go light", root_path(theme: "light") %>
-  <% end %>
-
-  <%= yield %>
-
-</body>
-
 </html>

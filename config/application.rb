@@ -6,17 +6,6 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-before_action :set_theme
-
-def set_theme
-  if params[:theme].present?
-    theme = params[:theme].to_sym
-    # session[:theme] = theme
-    cookies[:theme] = theme
-    redirect_to(request.referrer || root_path)
-  end
-end
-
 module Acebook
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
