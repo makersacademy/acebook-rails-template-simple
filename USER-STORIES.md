@@ -81,36 +81,36 @@ I want to be able to send a friend request.
 
 ```
 As a User,
-So that i reduce eye strain from using Acebook,
+So that I reduce eye strain from using Acebook,
 I want to be able to choose between dark and light mode.
 ```
 ```
 As a User,
-So that i can find relevant/specific posts,
-I want to have a search bar.
+So that I can find relevant/specific posts,
+I want to be able to use a search bar.
 ```
 ```
 As a user,
-So that i have another to tell each other apart, 
+So that I can disinguish between users, 
 I want to have a personalized profile picture.
 ```
 ```
 As a team member,
 So that we can increase the accessibility of Acebook,
-I want to have an accessible colour palette.
+I want to use an accessible colour palette.
 ```
 ```
 As a User,
-So that i can view the site from anywhere on my phone,
-I want to be able to have correct formatting for when i'm on mobile.
+So that I can view the site from anywhere on my phone,
+I want to be able to have the correct formatting when I am using a mobile.
 ```
 ```
 As a User,
-So that i can remove my opinion from a post,
+So that I can remove my like from a post,
 I want to be able to unlike a post.
 ```
 ```
 As a User,
-So that i know which website i'm on,
+So that I know which website I am on,
 I want to be able to see a logo on the website.
 ```
