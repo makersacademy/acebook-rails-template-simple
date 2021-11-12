@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token
   def create
-    require_user_not_logged_in!
+    prevent_logged_in_user!
     @user = User.new(
       first_name: params[:first_name],
       last_name: params[:last_name],
