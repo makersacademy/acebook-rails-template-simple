@@ -4,5 +4,9 @@ class UsersController < ApplicationController
     @user = Current.user
   end
 
+  def everyone
+    @user = Current.user
+  end
+
   
 end
