@@ -6,39 +6,42 @@ RSpec.describe User, type: :model do
     described_class.new(first_name: "Joe",
                         last_name: "Bloggs",
                         date_of_birth: 1985-03-14,
-                        email: "jbloggs@gmail.com",
+                        email: "jbloggs1@gmail.com",
                         password_digest: "hashed_password")
           }
 
-  it "is valid with valid attributes" do 
-    expect(subject).to be_valid
-  end
+  describe "Validations" do 
+    it "is valid with valid attributes" do 
+      expect(subject).to be_valid
+    end
 
-  it "is not valid without a first name" do 
-    subject.first_name = nil
+    it "is not valid without a first name" do 
+      subject.first_name = nil
+      expect(subject).to_not be_valid
+    end 
+
+    it "is not valid without a last name" do 
+      subject.last_name = nil
+      expect(subject).to_not be_valid
+    end
+
+    it "is not valid without an email address" do 
+      subject.email = nil
+      expect(subject).to_not be_valid
+    end
+
+    it "is not valid without a date of birth" do 
+    subject.date_of_birth = nil
     expect(subject).to_not be_valid
-  end 
+    end
 
-  it "is not valid without a last name" do 
-    subject.last_name = nil
+    it "is not valid without a password" do 
+    subject.password_digest = nil
     expect(subject).to_not be_valid
+    end
+  
   end
-
-  it "is not valid without an email address" do 
-    subject.email = nil
-    expect(subject).to_not be_valid
-  end
-
-  it "is not valid without a date of birth" do 
-  subject.date_of_birth = nil
-  expect(subject).to_not be_valid
-  end
-
-  it "is not valid without a password" do 
-  subject.password_digest = nil
-  expect(subject).to_not be_valid
-  end
-
+  
   describe "Associations" do 
     it "should have many posts" do  
       should have_many(:posts).
