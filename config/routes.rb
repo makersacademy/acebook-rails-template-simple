@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: "users#index"
+  root to: "users#new"
 
   # post "sessions", to: "sessions#"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

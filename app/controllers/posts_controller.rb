@@ -16,13 +16,11 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    @post = Post.new(post_params)
+    @post = Post.create(post_params.merge(user_id: Current.user.id))
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: "Post was successfully created." }
-        format.json { render :show, status: :created, location: @post }
-      else
+        format.html { redirect_to posts_url }
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
@@ -53,7 +51,7 @@ class PostsController < ApplicationController
 
   def index
     require_user_logged_in!
-    @posts = Post.all.reverse
+    @posts = Post.all.order('created_at DESC')
   end
 
   private
