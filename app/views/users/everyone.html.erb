@@ -1,22 +1,23 @@
 <div class="mt-5 row align-items-start">
   <div class="col-5">
     <div class="container d-flex justify-content-center align-items-center" >
+    <% @users.each do |user| %>
         <div class="card" id="profile-card">
             <div class="user text-center">
-                <div class="profile mt-3"> <%= image_tag default_avatar(Current.user.image_url), :style =>  'width: 80px;', :class => "rounded-circle"%> </div>
+                <div class="profile mt-3"> <%= image_tag default_avatar(user.image_url), :style =>  'width: 80px;', :class => "rounded-circle"%> </div>
             </div>
             <div class="mt-3 text-center">
-                <h4 class="mb-0"><%=@user.first_name %> <%= @user.last_name %></h4> <span class="text-muted d-block mb-2"><%= format_birthday(@user.date_of_birth) %></span> <button class="btn btn-primary btn-sm follow">Add Friend</button>
+                <h4 class="mb-0"><%=user.first_name %> <%= user.last_name %></h4> <span class="text-muted d-block mb-2"><%= format_birthday(user.date_of_birth) %></span> <button class="btn btn-primary btn-sm follow">Send request</button>
                 <div class="d-flex justify-content-center align-items-center mt-4 px-4">
                     <div class="stats">
-                        <h6 class="mb-0">Friends</h6> <span>0</span>
+                        <h6 class="mb-0">Mutual friends</h6> <span>0</span>
                     </div>
                 </div>
             </div>
         </div>
+      <% end %>
     </div>
   </div>
-  <div class="col-6 bg-white">
-    <p>This page should show everyone</p>
-  </div>
 </div>
+
+

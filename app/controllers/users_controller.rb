@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def everyone
     @user = Current.user
+    @users = User.all
   end
 
   
