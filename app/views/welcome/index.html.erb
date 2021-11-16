@@ -34,6 +34,11 @@
           </div>
           <img src="<%= post.image_url %>" class="img-fluid" >
         </div>
+        <%= form_for @comment do |form| %>
+          <% form.label :message %>
+          <% form.text_field :message %>
+          <%= form.hidden_field :post_id, :value => post.id %>
+        <% end %>
       <% end %>
     </div>
     <div class="col-3">
