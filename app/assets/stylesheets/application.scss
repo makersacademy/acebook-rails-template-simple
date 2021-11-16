@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ @import 'bootstrap/scss/bootstrap';
+ @import "partials/base";
+ @import "partials/forms";
+ @import "partials/navbar";
+ @import "partials/profile";
+ @import "partials/posts";

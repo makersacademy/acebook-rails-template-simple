@@ -1,0 +1,38 @@
+ <nav class="navbar navbar-expand-sm navbar-light bg-light" id="navbar">
+   <div class="container-fluid">
+     <a class="navbar-brand" id="navbar-logo-banner" href="/">acebook</a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="nav navbar-right">
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <% if Current.user %>
+         <a class="nav-link nav-user-name " href="<%= profile_path %>" id="profileLink" role="button">
+            <%= image_tag default_avatar(Current.user.image_url), :style =>  'width: 35px;', :class => 'nav-avatar'%>
+            <%= Current.user.first_name%>
+          </a>
+           <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          </a>
+          <ul class="pull-right dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="<%= update_profile_path %>">Edit Profile</a></li>
+            <li><a class="dropdown-item" href="<%= everyone_path %>">Show Everyone</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= button_to 'Logout', logout_path, class: 'dropdown-item' %></li>
+          </ul>
+        </li>
+      </ul>  
+    </ul>
+    <li><%= link_to 'Logout', logout_path, class: 'btn nav-buttons btn-sm btn-outline-light' %></li>
+         <% else %>
+          <%= link_to 'Login', sign_in_path, class: 'btn nav-buttons btn-sm btn-outline-light' %>
+         <%= link_to 'Sign Up', sign_up_path, class: 'btn nav-buttons btn-sm btn-outline-light' %>
+         <% end %>
+       </div>
+     </div>
+   </div>
+ </nav>
+
+
