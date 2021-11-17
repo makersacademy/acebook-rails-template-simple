@@ -1,27 +1,4 @@
-<main>
-  <div class="row">
-    <div class="col-4">
-      <h5>News/Events?</h5>
-    </div>
-    <div class="col-5">
-
-      <div class="d-flex flex-column card my-2 p-1" style="max-width: 500px;">
-        <%= form_for @post do |f| %>
-          <%= f.text_area :message, :id => "post-text-area", :placeholder => "What's on your mind?", :class => "form-control"%>
-          <div class="d-flex flex-row justify-content-between">
-            <a class="btn btn-primary m-1" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-              <i class="bi bi-camera-fill"></i>
-            </a>
-            <%= f.submit "Post", :class => 'btn btn-primary btn-sm m-1'%>
-          </div>
-          <div class="collapse m-2" id="collapseExample">
-            <%= image_tag f.object.image_url if f.object.cached_image_data %>
-            <%= f.hidden_field :image, value: f.object.cached_image_data %>
-            <%= f.file_field :image , :class => 'form-control', :type => 'file' %>
-          </div>
-        <% end %>
-      </div>
-      <% @num = 1 %>
+<% @num = 1 %>
 <% @posts.each do |post| %>
   <div class="d-flex flex-column card my-2" style="max-width: 500px;">
     <%# POST HEADERS %>
@@ -52,42 +29,42 @@
       <div class="card-body d-flex flex-row p-2">
         <img src="<%= id2avatar(post.user_id) %>" width="35" height="35" class="rounded-circle">
         <div class="d-flex flex-column w-100 mx-1">
-
-        <%= form_for @comment do |f| %>
-          <%= f.hidden_field :post_id, :value => post.id %>
-          <%= f.text_field :message, class: 'form-control form-control-sm' %>
-          <%= button_tag :submit do %>
-            <i class="bi bi-chat-fill"></i>
-          <% end %>
-        <% end %>
-
+          <input type="string" class="w-100 form-control">
           <p class="m-0"><small class="text-muted">Press enter to comment</small></p>
         </div>
       </div>
-      <% post.comments.each do |comment| %>
       <div class="class-body">
         <div class="card-body d-flex flex-row py-2 px-2">
           <img src="<%= id2avatar(post.user_id) %>" width="35" height="35" class="rounded-circle">
-        <div>
-        <div>
           <p class="post-comment-display mx-2 p-2">
-            <% find_user_id = comment.user_id %>
-            <% find_user = User.find_by(id: find_user_id) %>
-            <small class="fw-bold comment-title"><%= "#{find_user[:first_name]} #{find_user[:last_name]}" %> </small>
-            <small class="comment-content"><%= comment.message %></small>
+            <small class="fw-bold comment-title">Comment User</small>
+            <small class="comment-content">This is a test comment</small>
           </p>
         </div>
+        <div class="card-body d-flex flex-row py-1 px-2">
+          <img src="<%= id2avatar(post.user_id) %>" width="35" height="35" class="rounded-circle">
+          <p class="post-comment-display mx-2 p-2">
+            <small class="fw-bold comment-title">Comment User</small>
+            <small class="comment-content">This is a test comment</small>
+          </p>
+        </div>
+        <div class="card-body d-flex flex-row py-1 px-2">
+          <img src="<%= id2avatar(post.user_id) %>" width="35" height="35" class="rounded-circle">
+          <p class="post-comment-display mx-2 p-2">
+            <small class="fw-bold comment-title">Comment User</small>
+            <small class="comment-content">This is a test comment</small>
+          </p>
         </div>
       </div>
-      <%end%>
-
     </div>
     </div>
     <% @num += 1 %>
   <% end %>
-
-
-
-
-
-
+  <script>
+    var likeButton = document.querySelector('.like-button');
+    
+    
+    likeButton.addEventListener('click', function () {
+      console.log('Like button clicked.');
+    });
+  </script>
