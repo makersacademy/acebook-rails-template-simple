@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   include ImageUploader::Attachment(:image)
-  validates_presence_of :message if :image_blank?
-  validates_presence_of :image_data if :message_blank?
+  validates_presence_of :message #if :image_blank?
+  validates_presence_of :image_data #if :message_blank?
   #validates_presence_of :user_id 
   #validates_presence_of :message, :image_data if :both_present? 
 
@@ -10,7 +10,7 @@ class Post < ApplicationRecord
   def invalid_post?
     message_blank? && image_blank?
   end
-=end 
+
   def message_blank?
     message.blank?
   end
@@ -18,7 +18,7 @@ class Post < ApplicationRecord
   def image_blank?
     image_data.blank?
   end
-
+=end 
 
   #validate message unless image and message are both blank
 

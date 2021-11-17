@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   get "everyone", to: "users#everyone"
 
   resources :posts
+  resources :comments
 end
