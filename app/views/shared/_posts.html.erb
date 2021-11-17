@@ -29,42 +29,37 @@
       <div class="card-body d-flex flex-row p-2">
         <img src="<%= id2avatar(post.user_id) %>" width="35" height="35" class="rounded-circle">
         <div class="d-flex flex-column w-100 mx-1">
-          <input type="string" class="w-100 form-control">
+
+        <%= form_for @comment do |f| %>
+          <%= f.hidden_field :post_id, :value => post.id %>
+          <%= f.text_field :message, class: 'form-control form-control-sm' %>
+          <%= button_tag :submit do %>
+            <i class="bi bi-chat-fill"></i>
+          <% end %>
+        <% end %>
+
           <p class="m-0"><small class="text-muted">Press enter to comment</small></p>
         </div>
       </div>
+      <% post.comments.each do |comment| %>
       <div class="class-body">
         <div class="card-body d-flex flex-row py-2 px-2">
           <img src="<%= id2avatar(post.user_id) %>" width="35" height="35" class="rounded-circle">
+        <div>
+        <div>
           <p class="post-comment-display mx-2 p-2">
-            <small class="fw-bold comment-title">Comment User</small>
-            <small class="comment-content">This is a test comment</small>
+            <% find_user_id = comment.user_id %>
+            <% find_user = User.find_by(id: find_user_id) %>
+            <small class="fw-bold comment-title"><%= "#{find_user[:first_name]} #{find_user[:last_name]}" %> </small>
+            <small class="comment-content"><%= comment.message %></small>
           </p>
         </div>
-        <div class="card-body d-flex flex-row py-1 px-2">
-          <img src="<%= id2avatar(post.user_id) %>" width="35" height="35" class="rounded-circle">
-          <p class="post-comment-display mx-2 p-2">
-            <small class="fw-bold comment-title">Comment User</small>
-            <small class="comment-content">This is a test comment</small>
-          </p>
-        </div>
-        <div class="card-body d-flex flex-row py-1 px-2">
-          <img src="<%= id2avatar(post.user_id) %>" width="35" height="35" class="rounded-circle">
-          <p class="post-comment-display mx-2 p-2">
-            <small class="fw-bold comment-title">Comment User</small>
-            <small class="comment-content">This is a test comment</small>
-          </p>
         </div>
       </div>
+      <%end%>
+
     </div>
     </div>
     <% @num += 1 %>
   <% end %>
-  <script>
-    var likeButton = document.querySelector('.like-button');
-    
-    
-    likeButton.addEventListener('click', function () {
-      console.log('Like button clicked.');
-    });
-  </script>
+
