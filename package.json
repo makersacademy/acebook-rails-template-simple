@@ -12,7 +12,8 @@
     "turbolinks": "^5.2.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
-    "yarn": "^1.22.17"
+    "yarn": "^1.22.17",
+    "pg": "^8.7.1"
   },
   "devDependencies": {
     "webpack-dev-server": "^3"

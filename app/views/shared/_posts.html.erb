@@ -1,3 +1,4 @@
+<% if Current.user != nil %>
 <% @num = 1 %>
 <% @posts.each do |post| %>
   <div class="d-flex flex-column card my-2" style="max-width: 500px;">
@@ -27,16 +28,18 @@
     <%# NEW COMMENT DROPDOWN %>
     <div class="collapse" id="<%= "collapseComment#{@num}"%>">
       <div class="card-body d-flex flex-row p-2">
-        <img src="<%= id2avatar(Current.user.id) %>" width="35" height="35" class="rounded-circle">
-        <div class="d-flex flex-column w-100 mx-1">
-          <%= form_for @comment do |f| %>
-            <%= f.hidden_field :post_id, :value => post.id %>
-            <%= f.text_field :message, class: 'form-control form-control-sm' %>
-            <%= button_tag :submit do %>
-              <i class="bi bi-chat-fill"></i>
-            <% end %>
-          <% end %>
-          <p class="m-0"><small class="text-muted">Press enter to comment</small></p>
+        <div class="card-body d-flex flex-row p-2">
+          <img src="<%= id2avatar(post.user_id) %>" width="35" height="35" class="rounded-circle">
+          <div class="d-flex flex-column w-100 mx-1">
+            <input type="hidden" id="getPostId" value="<%= post.id %>">
+            <input type="string" class="w-100 form-control" id="commentContent">
+            <div>
+              <button class="post-action-buttons" id="submitComment">
+                <i class="bi bi-chat-right-fill"></i>
+              </button>
+            </div>
+            <p class="m-0"><small class="text-muted">Press enter to comment</small></p>
+          </div>
         </div>
       </div>
       <% post.comments.each do |comment| %>
@@ -59,3 +62,29 @@
     </div>
     <% @num += 1 %>
   <% end %>
+
+  <% end %>
+
+
+<script type="text/javascript">
+
+let submitComment = document.getElementById("submitComment")
+let commentContent = document.getElementById("commentContent")
+let getPostId = document.getElementById("getPostId")
+let postId = getPostId.value
+
+let saveComment = () => {
+  let data = {"comment": {"post_id": postId, "message": commentContent.value}}
+  fetch("http://localhost:3000/comments", {
+    method: "POST",
+    headers: {
+      "Content-Type" : "application/json",
+    }, 
+    body: JSON.stringify(data)
+  })
+ }
+
+
+submitComment.addEventListener("click", saveComment)
+
+</script>
