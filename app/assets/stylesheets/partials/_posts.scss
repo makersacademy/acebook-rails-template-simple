@@ -63,9 +63,21 @@ hr{
   color: #335FFF;
 }
 
+.post-action-buttons-liked{
+  border: none;
+  background: none;
+  color: #020342;
+}
+
 .post-action-buttons:hover{
   color: white;
 background-color: #335FFF;
+border-radius: 50%;
+}
+
+.post-action-buttons-liked:hover{
+  color: white;
+background-color: #020342;
 border-radius: 50%;
 }
 

@@ -7,6 +7,10 @@ class LikesController < ApplicationController
   def delete_like
     Like.destroy_by(post_params)
   end
+
+  def liked
+    Like.where(post_params)
+  end 
   
   private 
 

@@ -17,9 +17,6 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def update 
-    Current.user.likes.destroy_by(post_id: post_params[:post_id])
-  end 
 
 
   private

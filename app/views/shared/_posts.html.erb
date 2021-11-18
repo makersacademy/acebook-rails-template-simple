@@ -22,10 +22,18 @@
 
     <%# LIKE AND COMMENT BUTTONS %>
     <div class="class-body post-buttons py-1">
-      <button class="like-button post-action-buttons" id="likeButton" name="<%=post.id%>" >
-        <input type="hidden" id="getUserID" value=" <%= Current.user.id %>">
-        <i class="bi bi-hand-thumbs-up-fill"></i>
-      </button>
+      <% liked = Current.user.likes.find_by(post_id: post.id) %>
+      <% if liked == nil %>
+        <button class="like-button post-action-buttons" id="likeButton" data-post_id="<%=post.id%>" >
+          <input type="hidden" id="getUserID" value=" <%= Current.user.id %>">
+          <i class="bi bi-hand-thumbs-up-fill" id="likeButtonStyling"></i>
+        </button>
+      <% else %>
+        <button class="like-button post-action-buttons-liked" id="likeButton" data-post_id="<%=post.id%>" >
+          <input type="hidden" id="getUserID" value=" <%= Current.user.id %>">
+          <i class="bi bi-hand-thumbs-up-fill" id="likeButtonStyling"></i>
+        </button>
+      <% end %>
       <div id="<%=post.id%>">
         <% like_count = 0 %>
         <% (@likes.where(post_id: post.id)).each do |obj| %>
@@ -47,7 +55,7 @@
               <input type="hidden" id="getFirstName" value="<%= Current.user.first_name %>">
               <input type="hidden" id="getLastName" value="<%= Current.user.last_name %>">
               <input type="hidden" id="getPostId" value="<%= post.id %>">
-              <input type="string" class="w-100 form-control" id="commentContent" name="<%= post.id %>">
+              <input type="string" class="w-100 form-control" id="commentContent" name="<%= post.id %>" >
 
             <p class="m-0"><small class="text-muted">Press enter to comment</small></p>
           </div>
@@ -55,7 +63,7 @@
         </div>
 
       <%# SHOW COMMENTS ON THIS POST %>
-        <div id="<%=post.id%>">
+        <div class=<%="postDiv#{post.id}"%>>
         <% post.comments.reverse.each do |comment| %>
           <div class="card-body d-flex flex-row py-1 px-1" >
               <img src="<%= id2avatar(comment.user_id) %>" width="35" height="35" class="rounded-circle" id="avatar" >
@@ -83,32 +91,33 @@
 
   //Dynamic likes
 
-// need likeState to be determined by a fetch request of whether the current
-// user has liked the post or not. need to have a like state for each like button
 
 document.querySelectorAll("#likeButton").forEach(element => {
-  let likeState = false 
-  // fetch request to find out of button has been liked by current user
+ 
   element.addEventListener("click", ()=>{
-    if (likeState == false ){
-      let likeData = {"like" : {"post_id": element.name }}
+    if (element.className == "like-button post-action-buttons"){
+      console.log("i've been clicked an unliked button")
+
+      let likeData = {"like" : {"post_id": element.getAttribute("data-post_id") }}
       fetch("http://localhost:3000/likes", {
       method: "POST",
       headers: {
       "Content-Type" : "application/json",
     }, 
     body: JSON.stringify(likeData)
-  }).then(() => {
-    likeState = true 
-    let count = document.getElementById(element.name)
+    })
+    .then(() => {
+    element.className = "like-button post-action-buttons-liked";
+    let idNeeded = element.getAttribute("data-post_id")
+    let count = document.getElementById(idNeeded)
     newCount = parseInt(count.innerText)
     count.innerText = `${newCount += 1}`
   })
-}
-
-  else if (likeState == true) {
+}   
+    else if (element.className == "like-button post-action-buttons-liked") {
+      console.log("ive clicked a liked button")
     let getUserID = document.getElementById("getUserID")
-    let deleteData = {"like" : {"post_id": element.name, "user_id" : getUserID.value }}
+    let deleteData = {"like" : {"post_id": element.getAttribute("data-post_id"), "user_id" : getUserID.value }}
     fetch(`http://localhost:3000/delete_like/`, {
       method: "DELETE",
       headers: {
@@ -116,21 +125,16 @@ document.querySelectorAll("#likeButton").forEach(element => {
     }, 
     body: JSON.stringify(deleteData)
   }).then(() => {
-    likeState = false
-    let count = document.getElementById(element.name)
+    element.className = "like-button post-action-buttons"  
+    let count = document.getElementById(element.getAttribute("data-post_id"))
     newCount = parseInt(count.innerText)
     count.innerText = `${newCount -= 1}`
   })
-
 }
 })
 })
 
-</script>
-
-<script>
-
-  //Dynamic comments
+//Dynamic comments
 
 let getFirstName = document.getElementById("getFirstName")
 let getLastName = document.getElementById("getLastName")
@@ -138,6 +142,7 @@ let userName = `${getFirstName.value} ${getLastName.value}`
 
 
  document.querySelectorAll("#commentContent").forEach(element => {
+   
    element.addEventListener("keypress", (e) => {
      if(e.key == "Enter"){
       let data = {"comment": {"post_id": element.name, "message": element.value}}
@@ -152,8 +157,8 @@ let userName = `${getFirstName.value} ${getLastName.value}`
     let div2 = document.createElement("Div")
     let img = document.getElementById("avatar")
     let cloneImg = img.cloneNode(true)
-    div2.appendChild(cloneImg)
     let div3 = document.createElement("Div")
+    let timeAgo = document.createElement()
     let p = document.createElement("p")
     p.className = "post-comment-display mx-2 p-2"
     let nameDisplay = document.createElement("small")
@@ -170,8 +175,9 @@ let userName = `${getFirstName.value} ${getLastName.value}`
     div2.appendChild(emptyDiv)
     let card = document.createElement("div")
     card.className = "card-body d-flex flex-row py-1 px-1"
+    card.appendChild(cloneImg)
     card.appendChild(div2)
-    let blah = document.getElementById(`${element.name}`)
+    let blah = document.querySelector(`.postDiv${element.name}`)
     blah.prepend(card)
     })
   }

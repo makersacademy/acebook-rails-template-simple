@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   resources :likes
 
   delete '/delete_like', :to => 'likes#delete_like'
+  post '/liked', :to => 'likes#liked'
+
 
   
   
