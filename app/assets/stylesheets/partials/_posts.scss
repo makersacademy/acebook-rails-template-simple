@@ -6,8 +6,43 @@
   max-height: 30vh !important;
 }
 
+#entire_card{
+  border: 2px solid #e7e7e7 !important;
+}
+
 #post-text-area{
   min-height: 10vh;
+}
+
+#header1{
+  background-color: #e7e7e7 !important;
+}
+
+#comment_form{
+  background-color: #e7e7e7 !important;
+}
+
+#response_buttons{
+  content: ""; /* This is necessary for the pseudo element to work. */ 
+  margin: 0 auto; /* This will center the border. */
+  width: 90%; /* Change this to whatever width you want. */
+  padding-top: 0px; /* This creates some space between the element and the border. */
+  border-top: 1px solid #d2d2d2 ; /* This creates the border. Replace black with whatever color you want. */
+  border-bottom: 1px solid #d2d2d2;
+  text-align: left;
+}
+
+hr{
+  border-top: 1px solid white;
+}
+
+.post-comment-display{
+  background-color: #d9d9d9 !important;
+  border: 7px solid #d9d9d9 !important;
+}
+
+.card-body{
+  background-color: white;
 }
 
 .card-text{
