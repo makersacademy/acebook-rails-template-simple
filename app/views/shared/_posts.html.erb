@@ -1,3 +1,4 @@
+<% if Current.user != nil %>
 <% @num = 1 %>
 <% @posts.each do |post| %>
   <div class="d-flex flex-column card my-2" style="max-width: 500px;">
@@ -26,23 +27,27 @@
     </div>
     <%# NEW COMMENT DROPDOWN %>
     <div class="collapse" id="<%= "collapseComment#{@num}"%>">
-      <div class="card-body d-flex flex-row p-2">
-        <img src="<%= id2avatar(Current.user.id) %>" width="35" height="35" class="rounded-circle">
-        <div class="d-flex flex-column w-100 mx-1">
-          <%= form_for @comment do |f| %>
-            <%= f.hidden_field :post_id, :value => post.id %>
-            <%= f.text_field :message, class: 'form-control form-control-sm' %>
-            <%= button_tag :submit do %>
-              <i class="bi bi-chat-fill"></i>
-            <% end %>
-          <% end %>
-          <p class="m-0"><small class="text-muted">Press enter to comment</small></p>
+      <div class="card-body d-flex flex-row p-2" id="makeANewComment">
+        <div class="card-body d-flex flex-row p-2">
+          <img src="<%= id2avatar(post.user_id) %>" width="35" height="35" class="rounded-circle" >
+          <div class="d-flex flex-column w-100 mx-1">
+            <input type="hidden" id="getFirstName" value="<%= Current.user.first_name %>">
+            <input type="hidden" id="getLastName" value="<%= Current.user.last_name %>">
+            <input type="hidden" id="getPostId" value="<%= post.id %>">
+            <input type="string" class="w-100 form-control" id="commentContent">
+            <div>
+              <button class="post-action-buttons" id="submitComment">
+                <i class="bi bi-chat-right-fill"></i>
+              </button>
+            </div>
+            <p class="m-0"><small class="text-muted">Press enter to comment</small></p>
+          </div>
         </div>
       </div>
-      <% post.comments.each do |comment| %>
-        <div class="class-body">
+      <% post.comments.reverse.each do |comment| %>
+        <div class="class-body" id="commentCard">
           <div class="card-body d-flex flex-row py-2 px-2">
-            <img src="<%= id2avatar(comment.user_id) %>" width="35" height="35" class="rounded-circle">
+            <img src="<%= id2avatar(comment.user_id) %>" width="35" height="35" class="rounded-circle" id="avatar" >
             <div>
               <div>
                 <p class="post-comment-display mx-2 p-2">
@@ -54,8 +59,72 @@
               </div>
             </div>
           </div>
-        <%end%>
-      </div>
+        </div>
+      <%end%>
     </div>
     <% @num += 1 %>
   <% end %>
+
+  <% end %>
+
+
+<script type="text/javascript">
+
+let submitComment = document.getElementById("submitComment")
+let commentContent = document.getElementById("commentContent")
+let getPostId = document.getElementById("getPostId")
+let postId = getPostId.value
+let getFirstName = document.getElementById("getFirstName")
+let getLastName = document.getElementById("getLastName")
+let userName = `${getFirstName.value} ${getLastName.value}`
+let outerDiv = document.getElementById("collapseComment1")
+
+
+
+let saveComment = () => {
+  let data = {"comment": {"post_id": postId, "message": commentContent.value}}
+  fetch("http://localhost:3000/comments", {
+    method: "POST",
+    headers: {
+      "Content-Type" : "application/json",
+    }, 
+    body: JSON.stringify(data)
+  })
+  .then(() => {
+
+    let div1 = document.createElement("Div")
+    div1.className = "card-body d-flex flex-row py-2 px-2"
+    let div2 = document.createElement("Div")
+    div2.className = "card-body d-flex flex-row py-2 px-2"
+    let img = document.getElementById("avatar")
+    let cloneImg = img.cloneNode(true)
+    div2.appendChild(cloneImg)
+    let div3 = document.createElement("Div")
+    let p = document.createElement("p")
+    p.className = "post-comment-display mx-2 p-2"
+    let nameDisplay = document.createElement("small")
+    nameDisplay.className = "fw-bold comment-title"
+    nameDisplay.innerText = userName
+    let contentDisplay = document.createElement("small")
+    contentDisplay.className = "comment-content"
+    contentDisplay.innerText = commentContent.value
+    p.appendChild(nameDisplay)
+    p.appendChild(contentDisplay)
+    div3.appendChild(p)
+    let emptyDiv = document.createElement('div')
+    emptyDiv.appendChild(div3)
+    div2.appendChild(emptyDiv)
+    div1.appendChild(div2)
+    let card = document.createElement("div")
+    card.className = "class-body"
+    card.appendChild(div1)
+    let blah = document.getElementById("makeANewComment")
+    blah.after(card)
+  })
+ }
+
+
+
+submitComment.addEventListener("click", saveComment)
+
+</script>
