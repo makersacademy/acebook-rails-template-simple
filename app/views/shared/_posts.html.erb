@@ -40,6 +40,7 @@
               <input type="hidden" id="getLastName" value="<%= Current.user.last_name %>">
               <input type="hidden" id="getPostId" value="<%= post.id %>">
               <input type="string" class="w-100 form-control" id="commentContent">
+              
               <div>
                 <button class="post-action-buttons" id="submitComment">
                   <i class="bi bi-chat-right-fill"></i>
@@ -137,6 +138,13 @@ input.addEventListener("keyup", function(event) {
         saveComment;
     }
 });
- 
+
+
+function hideSubmitButton() {
+  var x = document.getElementById("submitComment");
+    x.style.display = "none";
+  }
+
+hideSubmitButton();
 
 </script>
