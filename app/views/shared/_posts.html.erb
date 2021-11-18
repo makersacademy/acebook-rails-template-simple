@@ -39,12 +39,12 @@
               <input type="hidden" id="getFirstName" value="<%= Current.user.first_name %>">
               <input type="hidden" id="getLastName" value="<%= Current.user.last_name %>">
               <input type="hidden" id="getPostId" value="<%= post.id %>">
-              <input type="string" class="w-100 form-control" id="commentContent" placeholder="Write a comment...">
-               <%# <div>
+              <input type="string" class="w-100 form-control" id="commentContent">
+              <div>
                 <button class="post-action-buttons" id="submitComment">
                   <i class="bi bi-chat-right-fill"></i>
                 </button>
-              </div> %>
+              </div> 
 
             <p class="m-0"><small class="text-muted">Press enter to comment</small></p>
           </div>
@@ -63,9 +63,7 @@
                     <small class="fw-bold comment-title"><%= "#{find_user[:first_name]} #{find_user[:last_name]}" %> </small>
                     <small class="comment-content"><%= comment.message %></small>
                     </p>
-                  <font size="1">
-                  <%= time_ago_in_words(post.created_at) %> ago</font>
-                  
+                  <font size="1"><%= time_ago_in_words(post.created_at) %> ago</font>
                 </div>
               </div>
           </div>
@@ -88,7 +86,7 @@ let userName = `${getFirstName.value} ${getLastName.value}`
  
 
 let saveComment = () => {
-  let data = {"comment": {"post_id": postId, "message": commentContent.value + }}
+  let data = {"comment": {"post_id": postId, "message": commentContent.value}}
   fetch("http://localhost:3000/comments", {
     method: "POST",
     headers: {
@@ -136,6 +134,7 @@ input.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         document.getElementById("submitComment").click();
+        saveComment;
     }
 });
  
