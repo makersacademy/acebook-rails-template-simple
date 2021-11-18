@@ -17,9 +17,14 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def update 
+    Current.user.likes.destroy_by(post_id: post_params[:post_id])
+  end 
+
+
   private
 
   def post_params
-    params.require(:post).permit(:message, :image)
+    params.require(:post).permit(:message, :image, :post_id)
   end
 end
