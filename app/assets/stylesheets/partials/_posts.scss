@@ -1,0 +1,81 @@
+.post-card-muted {
+  font-size: 12px;
+}
+
+.post-card-container {
+  max-height: 30vh !important;
+}
+
+#post-text-area{
+  min-height: 10vh;
+}
+
+.card-text{
+  font-size: 0.8em;
+}
+
+.post-buttons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.5em;
+}
+
+.post-action-buttons{
+  border: none;
+  background: none;
+  color: #335FFF;
+}
+
+.post-action-buttons:hover{
+  color: white;
+background-color: #335FFF;
+border-radius: 50%;
+}
+
+.rounded-circle{
+  box-shadow: none !important;
+}
+
+input[type="string"]:focus{
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background-color: #f0f0f0;
+}
+
+input[type="string"]{
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background-color: #f0f0f0;
+}
+
+.post-comment-display{
+   background-color: #f0f0f0;
+   border-radius: 10px;
+  display: inline-block;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+.comment-content, .comment-title{
+  display: block !important;
+}
+
+.all-comments-toggle{
+  background-color: #f0f0f0;
+  border: none;
+  font-size: 0.6em;
+}
+
+.all-comments-toggle:hover{
+  text-decoration: underline;
+}
+
+.bi-chat-fill{
+  border: none;
+  background: none;
+  color: #335FFF;
+}

@@ -1,0 +1,43 @@
+body {background-color: #92a8d1;}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  }
+
+  #welcome-logo{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 55px;
+    color: #3360ff;
+    margin-left: 5px;
+  }
+
+  .btn {
+    border: 2px solid black;
+    background-color: white;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+/* For some reason, only BOOTSTRAP btn primary works and the other colors don't.  
+So this is a manual creation of the green success color
+!important seems to override everything */
+.btn-success{
+  background-color: #00b06e !important;;
+  border: 1px solid #00b06e !important;
+  color: white !important;
+}
+
+.btn-success:hover{
+  background-color: #01a467 !important;;
+  border: 1px solid #01a467!important;
+  color: white !important;
+}
+
+ 

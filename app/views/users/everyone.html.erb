@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="p-2 ">
+    <h4>People you may know:</h4>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row g-3">
+
+    <% @users.each do |user| %>
+    <% if user != @user %>  <!-- removes current user from friend suggestions -->
+      <div class="col-3" > <!-- 4 cards in each row. the 'length' of a card is 3, 
+      and the total BOOTSTRAP row length is 12.  Going over 12 it starts on the next row  -->
+      <div class="p-3 border"> <!-- border for grid -->
+      <div class="mt-3 text-center">
+         <%= image_tag default_avatar(user.image_url), :style =>  'width: 90px;', :class => "rounded-circle"%> 
+            <h5><%=user.first_name %> <%= user.last_name %></h5> 
+            <button class="btn btn-primary btn-sm follow">Send request</button>
+            <div class="d-flex justify-content-center align-items-center mt-4 px-4">
+            <div class="stats">
+              <h6 class="mb-0">Mutual friends</h6> <span>0</span>
+            </div>
+            </div>
+      </div>
+      </div>
+      </div>
+    <% end %>
+    <% end %>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="p-2 ">
+    <h4> </h4>
+  </div>
+</div>
+
+<!-- card color is white -->
+<style> 
+    .p-3 {
+        background-color: #ffffff;
+        height: 350px;
+    }
+</style>

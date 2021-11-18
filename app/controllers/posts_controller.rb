@@ -4,8 +4,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
-    redirect_to posts_url
+    @post = Current.user.posts.new(post_params)
+    if @post.save
+      flash[:notice] = 'Post was successfully created.'
+      redirect_to root_path
+    else
+      flash[:notice] = 'There was a problem.'
+    end
   end
 
   def index
@@ -15,6 +20,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :image)
   end
 end

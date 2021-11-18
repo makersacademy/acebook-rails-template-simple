@@ -1,0 +1,31 @@
+User activerecords model 
+
+bin/rails generate model User first_name:string{30}, last_name:string{30}, date_of_birth:date, email:string{50}:uniq, password_digest:string, image_data:string
+
+columns
+first name - string
+last name - string
+email - string (unique)
+password_digest - string
+image_data - string
+date of birth - date
+
+
+Associations
+USER
+has many - POSTS
+has many - LIKES
+has many - COMMENTS
+
+
+POSTS
+user_id Associate with user
+
+LIKES
+post_id Associate with post
+user_id Associate with user
+
+COMMENTS
+post_id Associate with post
+user_id Associate with user
+message - string

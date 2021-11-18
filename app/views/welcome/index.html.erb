@@ -1,0 +1,18 @@
+<main>
+  <div class="row">
+    <div class="col-4">
+      <h5> </h5>
+    </div>
+    <div class="col-5">
+    <% if Current.user.nil? %>
+      <%= render 'shared/welcome_page' %>
+    <% else %>
+      <%= render 'shared/post_form' %>
+      <%= render 'shared/posts' %>
+    <% end %>
+    </div>
+    <div class="col-3">
+      <h5> </h5>
+    </div>
+  </div>
+</main>
