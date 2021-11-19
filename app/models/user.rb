@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-include ImageUploader::Attachment(:image)
+mount_uploader :photo, PhotoUploader
 has_secure_password
   has_many :posts
   has_many :comments
