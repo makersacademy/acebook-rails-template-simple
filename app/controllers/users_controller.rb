@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @user = Current.user
     @posts = Current.user.posts.order("created_at DESC")
     @comment = Comment.new
-@likes = Like
+    @likes = Like
   end
 
   def everyone
