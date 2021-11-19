@@ -10,9 +10,7 @@
       <%= f.submit "Post", :class => 'btn btn-primary btn-sm m-1'%>
     </div>
     <div class="collapse m-2" id="collapseExample">
-      <%= image_tag f.object.image_url if f.object.cached_image_data %>
-      <%= f.hidden_field :image, value: f.object.cached_image_data %>
-      <%= f.file_field :image , :class => 'form-control', :type => 'file' %>
+      <%= f.file_field :photo , :class => 'form-control', :type => 'file' %>
     </div>
   <% end %>
 </div>

@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_11_18_211808) do
 
   # These are extensions that must be enabled in order to support this database
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 2021_11_18_211808) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.string "image_data"
+    t.string "photo"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -63,6 +65,7 @@ ActiveRecord::Schema.define(version: 2021_11_18_211808) do
     t.string "image_data"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "photo"
   end
 
   add_foreign_key "friendships", "users", column: "sent_by_id"
