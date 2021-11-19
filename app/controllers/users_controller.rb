@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
 
-  def show; end
+  def profile
+    @user = Current.user
+  end
 
-  def index
+  def everyone
     @user = Current.user
     @users = User.all
   end
