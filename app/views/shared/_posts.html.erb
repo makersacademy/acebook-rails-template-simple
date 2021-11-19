@@ -18,7 +18,9 @@
     </div>
 
     <%# POST IMAGE %>
-    <img src="<%= image_tag(post.photo.url) if post.photo? %>" class="img-fluid" >
+    <% if post.photo %>
+    <img src="<%= post.photo %>" class="img-fluid" >
+    <% end %>
 
     <%# LIKE AND COMMENT BUTTONS %>
     <div class="class-body post-buttons py-1">
