@@ -1,8 +1,12 @@
 <main>
   <div class="row">
     <div class="col-4">
-      <h5> </h5>
+      <% if Current.user.nil? %>
+      <% else %>
+       <%= render 'users/profile_panel' %>
+      <% end %>
     </div>
+
     <div class="col-5">
     <% if Current.user.nil? %>
       <%= render 'shared/welcome_page' %>
@@ -11,6 +15,7 @@
       <%= render 'shared/posts' %>
     <% end %>
     </div>
+
     <div class="col-3">
       <h5> </h5>
     </div>
