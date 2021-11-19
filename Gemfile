@@ -17,6 +17,7 @@ gem 'webpacker'
 gem 'bcrypt'
 gem 'carrierwave', '~> 2.0'
 gem 'figaro'
+gem 'fog-aws'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
