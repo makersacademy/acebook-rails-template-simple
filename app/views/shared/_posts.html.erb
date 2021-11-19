@@ -101,7 +101,7 @@ document.querySelectorAll("#likeButton").forEach(element => {
       console.log("i've been clicked an unliked button")
 
       let likeData = {"like" : {"post_id": element.getAttribute("data-post_id") }}
-      fetch("http://localhost:3000/likes", {
+      fetch("https://hidden-everglades-40298.herokuapp.com/likes", {
       method: "POST",
       headers: {
       "Content-Type" : "application/json",
@@ -120,7 +120,7 @@ document.querySelectorAll("#likeButton").forEach(element => {
       console.log("ive clicked a liked button")
     let getUserID = document.getElementById("getUserID")
     let deleteData = {"like" : {"post_id": element.getAttribute("data-post_id"), "user_id" : getUserID.value }}
-    fetch(`http://localhost:3000/delete_like/`, {
+    fetch(`https://hidden-everglades-40298.herokuapp.com/delete_like/`, {
       method: "DELETE",
       headers: {
       "Content-Type" : "application/json",
@@ -148,7 +148,7 @@ let userName = `${getFirstName.value} ${getLastName.value}`
    element.addEventListener("keypress", (e) => {
      if(e.key == "Enter"){
       let data = {"comment": {"post_id": element.name, "message": element.value}}
-      fetch("http://localhost:3000/comments", {
+      fetch("https://hidden-everglades-40298.herokuapp.com/comments", {
       method: "POST",
       headers: {
         "Content-Type" : "application/json",
