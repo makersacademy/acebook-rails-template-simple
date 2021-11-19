@@ -25,7 +25,7 @@
 
 ## Preview
 
-<img src="app/assets/images/branding/preview.gif" width="800px">
+<img src="app/assets/images/branding/dt_preview.gif" width="800px">
 
 &nbsp;
 
