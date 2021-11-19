@@ -1,13 +1,15 @@
 <main>
-  <div class="row">
-    <div class="col-3">
+
+  <div class="row justify-content-center"> <%# centers the 3 columns %>
+  
+    <div class="col-3"> <%# column 1: profile panel %>
       <% if Current.user.nil? %>
       <% else %>
        <%= render 'users/profile_panel' %>
       <% end %>
     </div>
 
-    <div class="col-5">
+    <div class="col-4"> <%# column 2: posts panel %>
     <% if Current.user.nil? %>
       <%= render 'shared/welcome_page' %>
     <% else %>
@@ -16,7 +18,7 @@
     <% end %>
     </div>
 
-    <div class="col-3">
+    <div class="col-3"> <%# column 3: friend suggestions panel %>
       <% if Current.user.nil? %>
       <% else %>
        <%= render 'users/friend_panel' %>
