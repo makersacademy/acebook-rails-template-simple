@@ -23,6 +23,6 @@ module ApplicationHelper
 
   def id2avatar(user_id)
     user = User.find(user_id)
-    user.image_url
+    user.photo
   end
 end

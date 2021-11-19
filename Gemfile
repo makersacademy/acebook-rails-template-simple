@@ -16,6 +16,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'webpacker'
 gem 'bcrypt'
 gem 'carrierwave', '~> 2.0'
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
