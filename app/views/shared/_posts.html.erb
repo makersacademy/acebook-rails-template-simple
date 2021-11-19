@@ -38,7 +38,7 @@
       <% end %>
       <div id="<%=post.id%>">
         <% like_count = 0 %>
-        <% @likes.where(post_id: post.id)).each do |obj| %>
+        <% (@likes.where(post_id: post.id)).each do |obj| %>
         <% like_count += 1 %>
         <% end %> 
         <%=like_count%> 
