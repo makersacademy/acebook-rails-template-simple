@@ -9,7 +9,7 @@
        <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <% if Current.user %>
          <a class="nav-link nav-user-name " href="<%= profile_path %>" id="profileLink" role="button">
-            <%= Current.user.photo if Current.user.photo? %>
+            <%= image_tag(Current.user.photo.url) if Current.user.photo? %>
             <%= Current.user.first_name%>
           </a>
            <li class="nav-item dropdown">
