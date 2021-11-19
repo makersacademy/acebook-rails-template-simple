@@ -52,6 +52,9 @@ Go to the project directory and install dependencies:
 ``` bash
 % bundle install
  ```
+ ``` bash
+% yarn install
+ ```
 #### Set up [PostgreSQL](https://www.postgresql.org/download/) if not already installed.
 
 Create databases
