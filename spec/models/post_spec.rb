@@ -4,13 +4,13 @@ require './app/models/user'
 
 RSpec.describe Post, type: :model do
   
-  # user = User.create(first_name: "Joe",
-  #                   last_name: "Bloggs",
-  #                   date_of_birth: "1985-03-14",
-  #                   email: "jbloggs@gmail.com",
-  #                   password_digest: "hashed_password")
+  user = User.create(first_name: "Joe",
+                    last_name: "Bloggs",
+                    date_of_birth: "1985-03-14",
+                    email: "jbloggs@gmail.com",
+                    password_digest: "hashed_password")
 
-  #use a find_by 
+
   joe = User.find_by first_name: 'Joe'
   
   subject {
