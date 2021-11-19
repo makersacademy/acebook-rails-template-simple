@@ -1,6 +1,6 @@
 <% if Current.user != nil %>
 
-<div class="d-flex flex-column card my-2 p-1" style="max-width: 500px;">
+<div class="d-flex flex-column card my-2 p-1">
   <%= form_for @post do |f| %>
     <%= f.text_area :message, :id => "post-text-area", :placeholder => "What's on your mind?", :class => "form-control"%>
     <div class="d-flex flex-row justify-content-between">

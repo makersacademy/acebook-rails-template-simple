@@ -1,13 +1,13 @@
 <main>
   <div class="row">
-    <div class="col-4">
+    <div class="col-3">
       <% if Current.user.nil? %>
       <% else %>
        <%= render 'users/profile_panel' %>
       <% end %>
     </div>
 
-    <div class="col-5">
+    <div class="col-4">
     <% if Current.user.nil? %>
       <%= render 'shared/welcome_page' %>
     <% else %>
@@ -17,7 +17,12 @@
     </div>
 
     <div class="col-3">
-      <h5> </h5>
+      <% if Current.user.nil? %>
+      <% else %>
+       <%= render 'users/friend_panel' %>
+      <% end %>
     </div>
+
+
   </div>
 </main>

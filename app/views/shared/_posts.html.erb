@@ -1,7 +1,7 @@
 <% if Current.user != nil %>
   <% @num = 1 %>
   <% @posts.each do |post| %>
-    <div class="d-flex flex-column card my-2" style="max-width: 500px;">
+    <div class="d-flex flex-column card my-2">
       <%# POST HEADERS %>
       <div class="d-flex flex-row  px-3 pt-3" id=header1>
         <img src="<%= id2avatar(post.user_id) %>" width="50" height="50" class="rounded-circle">
