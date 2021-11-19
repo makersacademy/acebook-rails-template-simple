@@ -17,9 +17,11 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+
+
   private
 
   def post_params
-    params.require(:post).permit(:message, :image)
+    params.require(:post).permit(:message, :image, :post_id)
   end
 end
