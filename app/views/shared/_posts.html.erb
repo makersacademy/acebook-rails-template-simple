@@ -179,6 +179,9 @@ let userName = `${getFirstName.value} ${getLastName.value}`
     let blah = document.querySelector(`.postDiv${element.name}`)
     blah.prepend(card)
     })
+    .then(() =>{
+      element.value = ""
+    })
   }
  })
 })
