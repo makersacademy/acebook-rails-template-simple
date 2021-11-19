@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_19_090137) do
+
+ActiveRecord::Schema.define(version: 2021_11_18_211808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 2021_11_19_090137) do
     t.bigint "user_id"
     t.bigint "post_id"
     t.index ["post_id"], name: "index_likes_on_post_id"
+    t.index ["user_id", "post_id"], name: "index_likes_on_user_id_and_post_id", unique: true
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
