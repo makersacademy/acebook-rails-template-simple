@@ -9,12 +9,10 @@ Rails.application.routes.draw do
   get "logout", to: "sessions#destroy"
   post "logout", to: "sessions#destroy" 
 
-  get "profile", to: "users#profile"
   get "update-profile", to: "registrations#edit"
   patch "update-profile", to: "registrations#update"
 
-  get "everyone", to: "users#everyone"
-
+  resources :users
   resources :posts
   resources :comments
   resources :likes
