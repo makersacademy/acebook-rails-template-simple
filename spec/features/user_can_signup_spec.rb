@@ -12,7 +12,8 @@ RSpec.feature "Sign up", type: :feature do
 #   end
 
 scenario "can visit sign up page" do
-   visit "/sign_up"
+   visit "/"
+   click_link "this is the link to go to the sign up page"
    expect(page).to have_content("this is the sign up page")
 end
 end 
