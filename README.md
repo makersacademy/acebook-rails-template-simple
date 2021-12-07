@@ -3,6 +3,10 @@
 ## Links
 - Link to our [Trello Board](https://trello.com/b/L3P4vDYK/acebook-team-name)
 
+## MVP Mockup 
+![image](https://user-images.githubusercontent.com/75613073/145019013-674c2d06-2cb6-4165-9039-8a9b5a9912d5.png)
+
+
 ## Quickstart
 
 First, clone this repository. Then:
