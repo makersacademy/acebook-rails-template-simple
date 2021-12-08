@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  def new
-    @post = Post.new
-  end
+  #def new
+   # @post = Post.new
+  #end
 
   def create
     @post = Post.create(post_params)
@@ -10,6 +10,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @post = Post.new
   end
 
   private
