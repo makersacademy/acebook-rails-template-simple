@@ -4,10 +4,10 @@ RSpec.feature "Sign up", type: :feature do
   scenario "There is a sign up form on page" do
     visit "/"
     click_link "this is the link to go to the sign up page"
-    fill_in "Email", with: "user@email.com"
-    fill_in "Password", with: "password"
-    fill_in "Confirm Password", with: "password"
-    click_button "Create account"
+    fill_in "user[email]", with: "user@email.com"
+    fill_in "user[password]", with: "password"
+    fill_in "user[password_confirmation]", with: "password"
+    click_button "Create User"
     expect(page).to have_content("Login")
   end
 
