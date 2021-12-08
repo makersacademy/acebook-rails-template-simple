@@ -11,11 +11,13 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @post = Post.new
+    @posts = Post.order(created_at: :desc)
   end
 
   private
 
   def post_params
     params.require(:post).permit(:message, :created_at)
+    
   end
 end

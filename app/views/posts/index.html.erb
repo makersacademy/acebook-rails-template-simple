@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag "posts" %>
 
 <div id="posts">
-<% @posts.each do |post| %>
+<% @posts.reverse.each do |post| %>
   <p><%= post.message %> posted at <%= post.created_at %></p>
 <% end %>
 </div>
