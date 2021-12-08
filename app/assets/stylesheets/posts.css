@@ -1,0 +1,16 @@
+#input-form{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top:40%;
+}
+
+#posts {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 30%;
+  top:70%;
+  overflow: scroll;
+  height: 40%;
+}
+

@@ -1,7 +1,16 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<%= stylesheet_link_tag "posts" %>
 
-<%= link_to new_post_path do %>
-  New post
+<div id="posts">
+<% @posts.reverse.each do |post| %>
+  <p><%= post.message %> posted at <%= post.created_at %></p>
 <% end %>
+</div>
+
+<div id="input-form">
+<%= form_for @post do |form| %>
+  <%= form.label :message %>
+  <%= form.text_field :message %>
+
+  <%= form.submit "Submit" %>
+<% end %>
+</div>
