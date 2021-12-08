@@ -1,6 +1,12 @@
-<h1>this is the sign up page </h1>
-
+<h1>Sign Up</h1>
 <%= form_with model: @user,local: true, url: '/sign_up' do |form| %>
+  <% if @user.errors.any?%>
+    <div class="alert alert-danger">
+      <%@user.errors.full_messages.each do |msg| %>
+        <div><%= msg %></div>
+      <% end%>
+    </div>
+  <% end%>
   <div class="mb-3">
     <%=form.label :email%>
     <%=form.text_field :email, class: "form-control"%>
@@ -17,4 +23,3 @@
     <%=form.submit class: "btn btn-primary"%>
   </div>
 <%end%>
-
