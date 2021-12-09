@@ -1,31 +1,30 @@
 class PostImagesController < ApplicationController
   before_action :set_post_image, only: %i[show edit update destroy]
 
-  # GET /post_images or /post_images.json
+  # GET /posts or /posts.json
   def index
     @post_images = PostImage.all
   end
 
-  # GET /post_images/1 or /post_images/1.json
+  # GET /posts/1 or /posts/1.json
   def show; end
 
-  # GET /post_images/new
+  # GET /posts/new
   def new
     @post_image = PostImage.new
   end
 
-  # GET /post_images/1/edit
+  # GET /posts/1/edit
   def edit; end
 
-  # POST /post_images or /post_images.json
+  # POST /posts or /posts.json
   def create
     @post_image = PostImage.new(post_image_params)
 
     respond_to do |format|
       if @post_image.save
         format.html do
-          redirect_to @post_image,
-                      notice: 'Post image was successfully created.'
+          redirect_to @post_image, notice: 'Post was successfully created.'
         end
         format.json { render :show, status: :created, location: @post_image }
       else
@@ -37,13 +36,12 @@ class PostImagesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /post_images/1 or /post_images/1.json
+  # PATCH/PUT /posts/1 or /posts/1.json
   def update
     respond_to do |format|
       if @post_image.update(post_image_params)
         format.html do
-          redirect_to @post_image,
-                      notice: 'Post image was successfully updated.'
+          redirect_to @post_image, notice: 'Post was successfully updated.'
         end
         format.json { render :show, status: :ok, location: @post_image }
       else
@@ -55,13 +53,12 @@ class PostImagesController < ApplicationController
     end
   end
 
-  # DELETE /post_images/1 or /post_images/1.json
+  # DELETE /posts/1 or /posts/1.json
   def destroy
     @post_image.destroy
     respond_to do |format|
       format.html do
-        redirect_to post_images_url,
-                    notice: 'Post image was successfully destroyed.'
+        redirect_to post_images_url, notice: 'Post was successfully destroyed.'
       end
       format.json { head :no_content }
     end
