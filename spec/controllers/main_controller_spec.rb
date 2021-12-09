@@ -25,19 +25,20 @@ RSpec.describe MainController, type: :controller do
 
       expect(session[:user_id]).to be user.id
     end 
+  end 
 
-end 
+  describe "DELETE /logout" do
+    it "logs user out" do
+      User.create({email: "test@test.com", password: "test", password_confirmation: "test"})
+
+      user = User.find_by(email: "test@test.com")
+
+      post :create, params: { email: "test@test.com", password:"test"} 
+
+      delete :destroy
+
+      expect(session[:user_id]).to be nil
+    end 
+  end 
+
 end
-
-# post :create, params: { post: { message: "Hello, world!" } }
-#       expect(Post.find_by(message: "Hello, world!")).to be
-
-# def create 
-#   user = User.find_by(email: params[:email])
-#   if user.present? && user.authenticate(params[:password])
-#       session[:user_id] = user.id
-#       redirect_to posts_path, notice: "Logged in Succesfully"
-#   else
-#       redirect_to root_path, alert: "Login failed"
-#   end     
-# end 
