@@ -15,7 +15,7 @@ RSpec.describe RegistrationsController, type: :controller do
     end
 
 
-    it "creates a post" do
+    it "creates a user" do
         post :create, params: { user: { email: "test@email.com", password:"password", password_confirmation: "password"} }
       expect(User.find_by(email: "test@email.com")).to be
     end
