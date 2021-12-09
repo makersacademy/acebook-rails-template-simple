@@ -10,12 +10,10 @@ RSpec.describe MainController, type: :controller do
   end
   describe "POST /log_in" do
     it "logs user in" do
-    User.create(email: "test@email.com", password: "password")
-    #post :create, params: { user: { email: "test@email.com", password:"password", password_confirmation: "password"} }
     
-    p "session userid: #{session[:user_id]}"
-    p "userid: #{user.id}"
-    expect(session[:user_id]).to be(user.id)
+    post :create, params: { email: "test@test.com", password:"test"} 
+    p "#{session[:user_id]}"
+    expect(session[:user_id]).to be_nil
     
 
   end 
