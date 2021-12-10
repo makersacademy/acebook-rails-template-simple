@@ -5,7 +5,7 @@
 <% @posts.reverse.each do |post| %>
   <p><%= post.message %></p> posted at <p><%= post.created_at %></p>
   <div id="like-section">
-  <%= button_to 'Like', post_likes_path(post), method: :post %>
+
   <% pre_like = post.likes.find { |like| like.user_id == Current.user.id} %>
   <% if pre_like %>
     <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
