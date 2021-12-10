@@ -1,11 +1,5 @@
 <%= stylesheet_link_tag "posts" %>
 
-<% if @user %>
-  Logged in as: <%= @user.email%>
-
-  <%= button_to "Logout", logout_path, method: :delete %>
-<%end%>
-
 <div id="posts">
 <% @posts.reverse.each do |post| %>
   <p><%= post.message %> posted at <%= post.created_at %></p>

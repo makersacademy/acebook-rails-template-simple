@@ -13,6 +13,14 @@
           
         </li>
       </ul>
+      
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <%if Current.user%>
+      <%=Current.user.email%>
+       <%= button_to "Logout", logout_path, method: :delete %>
+      <%end%>
+      </ul>
     </div>
   </div>
 </nav>
+

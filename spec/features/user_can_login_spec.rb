@@ -12,7 +12,7 @@ RSpec.feature "Login", type: :feature do
     fill_in "password", with: "password"
     click_button "Login"
     expect(page).to have_content("Logged in Succesfully")
-    expect(page).to have_content("Logged in as: user@email.com")
+    expect(page).to have_content("user@email.com")
     expect(page).to have_button("Logout")
 end
 
