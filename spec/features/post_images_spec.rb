@@ -44,4 +44,31 @@ RSpec.feature 'Post Image', type: :feature do
     click_link 'New Post Image'
     expect(page).to have_content('New Post Image')
   end
+
+  scenario 'can create a comment' do
+    visit '/post_images'
+    click_link 'New Post Image'
+    fill_in 'post_image[title]', with: 'Hello Cat'
+    fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
+    click_button 'Create Post image'
+    fill_in 'comment[commenter]', with: 'Test comment'
+    fill_in 'comment[body]', with: 'this is the first comment'
+    click_button 'Create Comment'
+    expect(page).to have_content('Commenter: Test comment')
+    expect(page).to have_content('Comment: this is the first comment')
+  end
+
+  scenario 'can delete a comment' do
+    visit '/post_images'
+    click_link 'New Post Image'
+    fill_in 'post_image[title]', with: 'Hello Cat'
+    fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
+    click_button 'Create Post image'
+    fill_in 'comment[commenter]', with: 'Test comment'
+    fill_in 'comment[body]', with: 'this is the first comment'
+    click_button 'Create Comment'
+    click_link 'Destroy Comment'
+    expect(page).not_to have_content('Commenter: Test comment')
+    expect(page).not_to have_content('Comment: this is the first comment')
+  end
 end
