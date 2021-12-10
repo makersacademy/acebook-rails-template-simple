@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  
   root to: 'main#index'
 
   get 'sign_up', to:'registrations#new' 
@@ -10,6 +11,6 @@ Rails.application.routes.draw do
   delete 'logout', to:'main#destroy'
   
   resources :posts
-
+  resources :post_images
 end
 
