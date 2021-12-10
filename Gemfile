@@ -39,6 +39,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0'
   gem 'simplecov'
   gem 'simplecov-console'
+  gem 'activestorage'
+  gem 'active_storage_validations'
 end
 
 group :development do
