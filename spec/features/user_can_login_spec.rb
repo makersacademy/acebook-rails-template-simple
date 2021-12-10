@@ -29,4 +29,9 @@ scenario "User can't login with incorrect details" do
     expect(page).to have_content("Login failed")
 end
 
+scenario "User can't access dashboard without login" do
+  visit "/posts"
+  expect(page).to have_content("Must login to access content")
+end
+
 end

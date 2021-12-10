@@ -9,9 +9,13 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
-    @post = Post.new
-    @posts = Post.order(created_at: :asc)
+    if Current.user == nil
+      redirect_to root_url, alert: "Must login to access content"
+    else
+      @posts = Post.all
+      @post = Post.new
+      @posts = Post.order(created_at: :asc)
+    end
   end
 
   private

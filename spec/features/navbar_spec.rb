@@ -9,7 +9,6 @@ RSpec.feature "Navbar", type: :feature do
   end
   scenario "Navbar displays logout when user is logged in" do
     visit "/"
-    @nav = find(".navbar")
     click_link "Haven't got an account? Sign up!"
     fill_in "user[email]", with: "user@email.com"
     fill_in "user[password]", with: "password"
@@ -18,6 +17,8 @@ RSpec.feature "Navbar", type: :feature do
     fill_in "email", with: "user@email.com"
     fill_in "password", with: "password"
     click_button "Login"
+    @nav = find(".navbar")
+    expect(page).to have_content("Logged in Succesfully")
     expect(@nav).to have_button("Logout")
   end
 end 

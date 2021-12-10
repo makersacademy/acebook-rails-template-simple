@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2021_12_10_144102) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+
   create_table "likes", force: :cascade do |t|
     t.bigint "post_id", null: false
     t.bigint "user_id", null: false
