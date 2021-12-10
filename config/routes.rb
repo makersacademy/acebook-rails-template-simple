@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   delete 'logout', to:'main#destroy'
   
   resources :posts
-  resources :post_images
+  resources :post_images do
+    resources :comments
+  end
 end
 
