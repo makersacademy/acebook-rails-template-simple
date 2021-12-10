@@ -3,6 +3,8 @@
 <div id="posts">
 <% @posts.reverse.each do |post| %>
   <p><%= post.message %> posted at <%= post.created_at %></p>
+  <%= button_to 'Like', post_likes_path(post), method: :post %>
+  <p><%= post.likes.count %></p> <%= (post.likes.count) == 1 ? 'Like' : 'Likes' %></p>
 <% end %>
 </div>
 

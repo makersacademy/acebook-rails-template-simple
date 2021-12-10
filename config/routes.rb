@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   post 'log_in', to:'main#create'
   delete 'logout', to:'main#destroy'
   
-  resources :posts
+  resources :posts do  
+    resources :likes  
+  end  
+  
   resources :post_images
 end
 
