@@ -1,16 +1,14 @@
 <%= stylesheet_link_tag "posts" %>
 
 <div id="posts">
-<% @posts.reverse.each do |post| %>
-  <p><%= post.message %> posted at <%= post.created_at %></p>
 
+<% @posts.reverse.each do |post| %>
+  <p><%= post.message %></p> posted at <p><%= post.created_at %></p>
   <div id="like-section">
   <%= button_to 'Like', post_likes_path(post), method: :post %>
   <p id="like-count"><%= post.likes.count%><%= (post.likes.count) == 1 ? 'Like' : 'Likes' %></p>
   </div>
   
-  
-
 
 <% end %>
 </div>
