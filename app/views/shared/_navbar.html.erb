@@ -5,20 +5,15 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          
-        </li>
-        <li class="nav-item">
-          
-        </li>
-      </ul>
-      
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-      <%if Current.user%>
-      <%=Current.user.email%>
-       <%= button_to "Logout", logout_path, method: :delete %>
-      <%end%>
+        <li class="nav-item">
+        <%if Current.user%>
+        <%=Current.user.email%>
+         <%= button_to "Logout", logout_path, method: :delete %>
+        <%end%>
+        </li>
+        <li class="nav-item">
+        </li>
       </ul>
     </div>
   </div>
