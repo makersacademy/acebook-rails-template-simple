@@ -3,12 +3,28 @@
   <head>
     <title>Acebook</title>
     <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css' %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+ 
+  <div class = "container">
+
+    <nav> 
+      <% if session[:user_id] != nil %>
+        <%= session[:user_name] %>
+        <%= link_to "logout", logout_path, method: :delete, class: "navbar-link"%>
+        <%= link_to "New Post", new_post_url, class: "navbar-link" %>
+        <%= link_to "Posts", posts_url, class: "navbar-link" %>
+      <% else %>
+        <%= link_to 'Sign In!', sign_in_path, class: "navbar-link" %>
+      <% end %>  
+    </nav>
+  
     <%= yield %>
+  </div>
   </body>
 </html>

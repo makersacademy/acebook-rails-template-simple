@@ -1,0 +1,26 @@
+
+<%= form_with model: @user, local: true do |form| %>
+  
+<%= form.label :first_name %>
+<%= form.text_field :first_name, class: "form-control", placeholder: "First Name", required: true %>
+<br>
+<%= form.label :last_name %>
+<%= form.text_field :last_name, class: "form-control", placeholder: "Last Name", required: true %>
+<br>
+<%= form.label :email %>
+<%= form.text_field :email, class: "form-control", placeholder: "Your Email", required: true %>
+<br>
+<%= form.label :password %>
+<%= form.password_field :password, class: "form-control", placeholder: "Password", required: true, minlength:6, maxlength:40 %>
+<br>
+<%= form.check_box :terms, class: "form-control", :class => "form-check-input", required: true  %>
+<%= form.label :terms, "Please accept our T&Cs" %>
+<br>
+<br>
+
+
+<div class="actions">
+<%= form.submit "Sign Up!" %>
+</div>
+
+<% end %>
