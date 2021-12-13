@@ -1,6 +1,7 @@
 class RegistrationsController < ApplicationController
+  skip_before_action :require_login 
   
-    def new
+  def new
       @user = User.new
     end
 
@@ -17,7 +18,7 @@ class RegistrationsController < ApplicationController
     private
   
     def post_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
+      params.require(:user).permit(:email, :password, :password_confirmation, :image)
     end
   
 

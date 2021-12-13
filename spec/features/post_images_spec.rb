@@ -1,12 +1,17 @@
 require 'rails_helper'
+require_relative './web_helper.rb'
 
 RSpec.feature 'Post Image', type: :feature do
   scenario 'There is a New Post Image button' do
+    sign_up 
+    log_in
     visit '/post_images'
     expect(page).to have_content('New Post Image')
   end
 
   scenario 'can create a new image' do
+    sign_up
+    log_in
     visit '/post_images'
     click_link 'New Post Image'
     expect(page).to have_content('New Post Image')
@@ -20,6 +25,8 @@ RSpec.feature 'Post Image', type: :feature do
   end
 
   scenario 'if title is less than 5 characters. Validation will fail' do
+    sign_up
+    log_in
     visit '/post_images'
     click_link 'New Post Image'
     fill_in 'post_image[title]', with: 'H'
@@ -29,6 +36,8 @@ RSpec.feature 'Post Image', type: :feature do
   end
 
   scenario 'if content is less than 5 characters. Validation will fail' do
+    sign_up
+    log_in
     visit '/post_images'
     click_link 'New Post Image'
     fill_in 'post_image[title]', with: 'Hello Cat'
@@ -40,6 +49,8 @@ RSpec.feature 'Post Image', type: :feature do
   end
 
   scenario 'There is a New Post Image link' do
+    sign_up
+    log_in
     visit '/post_images'
     click_link 'New Post Image'
     expect(page).to have_content('New Post Image')
