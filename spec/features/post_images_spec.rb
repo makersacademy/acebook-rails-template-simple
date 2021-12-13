@@ -121,4 +121,19 @@ RSpec.feature 'Post Image', type: :feature do
     click_button 'Create Comment'
     expect(page).to have_content("Timestamp: #{time}")
   end
+
+  scenario 'checks the order of images/posts are reverse chronological' do
+    visit '/post_images'
+    click_link 'New Post Image'
+    fill_in 'post_image[title]', with: 'Hello Cat'
+    fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
+    click_button 'Create Post image'
+    click_link 'Back'
+    click_link 'New Post Image'
+    fill_in 'post_image[title]', with: 'This is the Second Post'
+    fill_in 'post_image[content]', with: 'This is a photo of an evil cat again'
+    click_button 'Create Post image'
+    click_link 'Back'
+    expect(page.find('div.container:last')).to have_content 'Hello Cat'
+  end
 end

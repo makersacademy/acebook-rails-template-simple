@@ -3,6 +3,7 @@
 <h1>Post Images</h1>
 
     <% @post_images.each do |post_image| %>
+      <div>
         <p>
         <strong>Title:</strong>
         <%= post_image.title %>
@@ -30,6 +31,7 @@
         <p><%= link_to 'Show', post_image %></p>
         <p><%= link_to 'Edit', edit_post_image_path(post_image) %></p>
         <p><%= link_to 'Destroy', post_image, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        </div>
     <% end %>
 
 <br>
