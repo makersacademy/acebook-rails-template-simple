@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_secure_password
   has_one_attached :image
 
+  has_many :likes, dependent: :destroy
 
   validates :email, presence: true, format: {with: /\A[^@\s]+@[^@\s]+\z/, message: "must be a valid email address"}
   validates :password, presence: true
