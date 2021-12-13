@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2021_12_10_144102) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,6 +43,14 @@ ActiveRecord::Schema.define(version: 2021_12_10_144102) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.string "commenter"
+    t.text "body"
+    t.bigint "post_image_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_image_id"], name: "index_comments_on_post_image_id"
+  end
 
   create_table "likes", force: :cascade do |t|
     t.bigint "post_id", null: false
@@ -52,15 +59,6 @@ ActiveRecord::Schema.define(version: 2021_12_10_144102) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_likes_on_post_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
-  end
-        
-  create_table "comments", force: :cascade do |t|
-    t.string "commenter"
-    t.text "body"
-    t.bigint "post_image_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["post_image_id"], name: "index_comments_on_post_image_id"
   end
 
   create_table "post_images", force: :cascade do |t|
@@ -74,13 +72,6 @@ ActiveRecord::Schema.define(version: 2021_12_10_144102) do
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "cached_votes_total", default: 0
-    t.integer "cached_votes_score", default: 0
-    t.integer "cached_votes_up", default: 0
-    t.integer "cached_votes_down", default: 0
-    t.integer "cached_weighted_score", default: 0
-    t.integer "cached_weighted_total", default: 0
-    t.float "cached_weighted_average", default: 0.0
   end
 
   create_table "users", force: :cascade do |t|
@@ -90,27 +81,9 @@ ActiveRecord::Schema.define(version: 2021_12_10_144102) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "votes", force: :cascade do |t|
-    t.string "votable_type"
-    t.bigint "votable_id"
-    t.string "voter_type"
-    t.bigint "voter_id"
-    t.boolean "vote_flag"
-    t.string "vote_scope"
-    t.integer "vote_weight"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
-    t.index ["votable_type", "votable_id"], name: "index_votes_on_votable_type_and_votable_id"
-    t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
-    t.index ["voter_type", "voter_id"], name: "index_votes_on_voter_type_and_voter_id"
-  end
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-
+  add_foreign_key "comments", "post_images"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
-  add_foreign_key "comments", "post_images"
-
 end
