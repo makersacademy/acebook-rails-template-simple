@@ -11,10 +11,17 @@
         <strong>Caption:</strong>
         <%= post_image.content %>
         </p>
-         <p>
+        <p>
         <strong>Timestamp:</strong>
         <%= post_image.created_at.strftime("%A %d %B %Y, %I:%M%p").freeze %>
         </p>
+
+        <% if post_image.comments %>
+        <p>
+        <strong>Number of comments:</strong>
+        <%= post_image.comments.count %>
+        </p>
+        <% end %>
         
         <% if post_image.image.attached? %>
         <strong>Image:</strong>
