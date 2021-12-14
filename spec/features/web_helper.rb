@@ -4,6 +4,7 @@ def sign_up
     fill_in "user[email]", with: "user@email.com"
     fill_in "user[password]", with: "password"
     fill_in "user[password_confirmation]", with: "password"
+    attach_file("user[image]", Rails.root + "spec/features/test_assets/mark-zuck-img.jpg")
     click_button "Create User"
 end 
 
