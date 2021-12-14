@@ -1,20 +1,18 @@
-Rails.application.routes.draw do
- 
+Rails
+  .application
+  .routes
+  .draw do
+    root to: 'main#index'
 
-  root to: 'main#index'
+    post 'log_in', to: 'main#create'
+    delete 'logout', to: 'main#destroy'
 
-  get 'sign_up', to:'registrations#new' 
-  post 'sign_up', to:'registrations#create' 
+    # resources :posts do
+    #   resources :likes
+    # end
 
-  
-  post 'log_in', to:'main#create'
-  delete 'logout', to:'main#destroy'
-  
-  resources :posts do  
-    resources :likes  
-  end  
-  resources :post_images do
-    resources :comments
+    resources :post_images do
+      resources :comments
+      resources :likes
+    end
   end
-end
-
