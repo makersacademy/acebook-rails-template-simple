@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+<%=image_tag(Current.user.image, height: '100', width: '100')  %>
+</p>
+
+<p>
+<%= Current.user.email  %>
+</p>
+
+<p>
   <strong>Title:</strong>
   <%= @post_image.title %>
 </p>

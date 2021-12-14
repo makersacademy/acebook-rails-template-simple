@@ -153,4 +153,15 @@ RSpec.feature 'Post Image', type: :feature do
     first(:button, 'Unlike').click
     expect(page).to have_content('0Likes')
   end
+
+  scenario 'new posts show user details(profile image and email)' do
+    sign_up
+    log_in
+    click_link 'New Post Image'
+    fill_in 'post_image[title]', with: 'Hello Cat'
+    fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
+    click_button 'Create Post image'
+    click_link 'Back'
+    expect(page).to have_content('user@email.com')
+  end
 end
