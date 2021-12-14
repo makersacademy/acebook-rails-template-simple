@@ -3,7 +3,11 @@ class PostImagesController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @post_images = PostImage.all.order(created_at: :desc)
+    if Current.user == nil
+      redirect_to root_url, alert: 'Must login to access content'
+    else
+      @post_images = PostImage.all.order(created_at: :desc)
+    end
   end
 
   # GET /posts/1 or /posts/1.json

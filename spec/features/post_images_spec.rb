@@ -3,16 +3,14 @@ require_relative './web_helper.rb'
 
 RSpec.feature 'Post Image', type: :feature do
   scenario 'There is a New Post Image button' do
-    sign_up 
+    sign_up
     log_in
-    visit '/post_images'
     expect(page).to have_content('New Post Image')
   end
 
   scenario 'can create a new image' do
     sign_up
     log_in
-    visit '/post_images'
     click_link 'New Post Image'
     expect(page).to have_content('New Post Image')
     fill_in 'post_image[title]', with: 'Hello Cat'
@@ -24,34 +22,9 @@ RSpec.feature 'Post Image', type: :feature do
     expect(page).to have_content('Post was successfully created.')
   end
 
-  scenario 'if title is less than 5 characters. Validation will fail' do
-    sign_up
-    log_in
-    visit '/post_images'
-    click_link 'New Post Image'
-    fill_in 'post_image[title]', with: 'H'
-    fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
-    click_button 'Create Post image'
-    expect(page).to have_content('Title is too short (minimum is 5 characters)')
-  end
-
-  scenario 'if content is less than 5 characters. Validation will fail' do
-    sign_up
-    log_in
-    visit '/post_images'
-    click_link 'New Post Image'
-    fill_in 'post_image[title]', with: 'Hello Cat'
-    fill_in 'post_image[content]', with: 'This'
-    click_button 'Create Post image'
-    expect(page).to have_content(
-      'Content is too short (minimum is 5 characters)',
-    )
-  end
-
   scenario 'There is a New Post Image link' do
     sign_up
     log_in
-    visit '/post_images'
     click_link 'New Post Image'
     expect(page).to have_content('New Post Image')
   end
@@ -59,7 +32,6 @@ RSpec.feature 'Post Image', type: :feature do
   scenario 'can create a comment' do
     sign_up
     log_in
-    visit '/post_images'
     click_link 'New Post Image'
     fill_in 'post_image[title]', with: 'Hello Cat'
     fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
@@ -74,7 +46,6 @@ RSpec.feature 'Post Image', type: :feature do
   scenario 'can delete a comment' do
     sign_up
     log_in
-    visit '/post_images'
     click_link 'New Post Image'
     fill_in 'post_image[title]', with: 'Hello Cat'
     fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
@@ -88,7 +59,8 @@ RSpec.feature 'Post Image', type: :feature do
   end
 
   scenario 'shows the number of comments on a photo' do
-    visit '/post_images'
+    sign_up
+    log_in
     click_link 'New Post Image'
     fill_in 'post_image[title]', with: 'Hello Cat'
     fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
@@ -104,7 +76,8 @@ RSpec.feature 'Post Image', type: :feature do
   end
 
   scenario 'defaults to zero comments' do
-    visit '/post_images'
+    sign_up
+    log_in
     click_link 'New Post Image'
     fill_in 'post_image[title]', with: 'Hello Cat'
     fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
@@ -115,7 +88,8 @@ RSpec.feature 'Post Image', type: :feature do
 
   scenario 'you can see when an Image was created' do
     time = Time.now.strftime('%A %d %B %Y, %I:%M%p')
-    visit '/post_images'
+    sign_up
+    log_in
     click_link 'New Post Image'
     fill_in 'post_image[title]', with: 'Hello Cat'
     fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
@@ -126,7 +100,8 @@ RSpec.feature 'Post Image', type: :feature do
 
   scenario 'you can see when a comment was made' do
     time = Time.now.strftime('%A %d %B %Y, %I:%M%p')
-    visit '/post_images'
+    sign_up
+    log_in
     click_link 'New Post Image'
     fill_in 'post_image[title]', with: 'Hello Cat'
     fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
@@ -138,7 +113,8 @@ RSpec.feature 'Post Image', type: :feature do
   end
 
   scenario 'checks the order of images/posts are reverse chronological' do
-    visit '/post_images'
+    sign_up
+    log_in
     click_link 'New Post Image'
     fill_in 'post_image[title]', with: 'Hello Cat'
     fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
@@ -150,5 +126,31 @@ RSpec.feature 'Post Image', type: :feature do
     click_button 'Create Post image'
     click_link 'Back'
     expect(page.find('div.container:last')).to have_content 'Hello Cat'
+  end
+
+  scenario 'User can like post' do
+    sign_up
+    log_in
+    click_link 'New Post Image'
+    fill_in 'post_image[title]', with: 'Hello Cat'
+    fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
+    click_button 'Create Post image'
+    click_link 'Back'
+    first(:button, 'Like').click
+    expect(page).to have_content('1Like')
+  end
+
+  scenario 'User can unlike post' do
+    sign_up
+    log_in
+    click_link 'New Post Image'
+    fill_in 'post_image[title]', with: 'Hello Cat'
+    fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
+    click_button 'Create Post image'
+    click_link 'Back'
+    first(:button, 'Like').click
+    expect(page).to have_content('1Like')
+    first(:button, 'Unlike').click
+    expect(page).to have_content('0Likes')
   end
 end

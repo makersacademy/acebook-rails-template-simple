@@ -23,6 +23,16 @@
         <%= post_image.comments.count %>
         </p>
         <% end %>
+
+        <div id="like-section">
+          <% pre_like = post_image.likes.find { |like| like.user_id == Current.user.id} %>
+          <% if pre_like %>
+            <%= button_to 'Unlike', post_image_like_path(post_image, pre_like), method: :delete %>
+          <% else %>
+            <%= button_to 'Like', post_image_likes_path(post_image), method: :post_image %>
+          <% end %>
+            <p id="like-count"><%= post_image.likes.count%><%= (post_image.likes.count) == 1 ? 'Like' : 'Likes' %></p>
+        </div>
         
         <% if post_image.image.attached? %>
         <strong>Image:</strong>
