@@ -21,47 +21,28 @@ class PostImagesController < ApplicationController
   def create
     @post_image = PostImage.new(post_image_params)
 
-    respond_to do |format|
-      if @post_image.save
-        format.html do
-          redirect_to @post_image, notice: 'Post was successfully created.'
-        end
-        format.json { render :show, status: :created, location: @post_image }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json do
-          render json: @post_image.errors, status: :unprocessable_entity
-        end
-      end
+    if @post_image.save
+      redirect_to @post_image, notice: 'Post was successfully created.'
+    else
+      redirect_to new_post_image_url,
+                  alert: 'Post cannot be created check fields.'
     end
   end
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
-    respond_to do |format|
-      if @post_image.update(post_image_params)
-        format.html do
-          redirect_to @post_image, notice: 'Post was successfully updated.'
-        end
-        format.json { render :show, status: :ok, location: @post_image }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json do
-          render json: @post_image.errors, status: :unprocessable_entity
-        end
-      end
+    if @post_image.update(post_image_params)
+      redirect_to @post_image, notice: 'Post was successfully updated.'
+    else
+      redirect_to edit_post_image_url,
+                  alert: 'Post was not successfully updated.'
     end
   end
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
     @post_image.destroy
-    respond_to do |format|
-      format.html do
-        redirect_to post_images_url, notice: 'Post was successfully destroyed.'
-      end
-      format.json { head :no_content }
-    end
+    redirect_to post_images_url, alert: 'Post was successfully destroyed.'
   end
 
   private
