@@ -1,12 +1,17 @@
 require 'rails_helper'
+require_relative './web_helper.rb'
 
 RSpec.feature 'Post Image', type: :feature do
   scenario 'There is a New Post Image button' do
+    sign_up 
+    log_in
     visit '/post_images'
     expect(page).to have_content('New Post Image')
   end
 
   scenario 'can create a new image' do
+    sign_up
+    log_in
     visit '/post_images'
     click_link 'New Post Image'
     expect(page).to have_content('New Post Image')
@@ -19,33 +24,41 @@ RSpec.feature 'Post Image', type: :feature do
     expect(page).to have_content('Post was successfully created.')
   end
 
-  # scenario 'if title is less than 5 characters. Validation will fail' do
-  #   visit '/post_images'
-  #   click_link 'New Post Image'
-  #   fill_in 'post_image[title]', with: 'H'
-  #   fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
-  #   click_button 'Create Post image'
-  #   expect(page).to have_content('Title is too short (minimum is 5 characters)')
-  # end
+  scenario 'if title is less than 5 characters. Validation will fail' do
+    sign_up
+    log_in
+    visit '/post_images'
+    click_link 'New Post Image'
+    fill_in 'post_image[title]', with: 'H'
+    fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
+    click_button 'Create Post image'
+    expect(page).to have_content('Title is too short (minimum is 5 characters)')
+  end
 
-  # scenario 'if content is less than 5 characters. Validation will fail' do
-  #   visit '/post_images'
-  #   click_link 'New Post Image'
-  #   fill_in 'post_image[title]', with: 'Hello Cat'
-  #   fill_in 'post_image[content]', with: 'This'
-  #   click_button 'Create Post image'
-  #   expect(page).to have_content(
-  #     'Content is too short (minimum is 5 characters)',
-  #   )
-  # end
+  scenario 'if content is less than 5 characters. Validation will fail' do
+    sign_up
+    log_in
+    visit '/post_images'
+    click_link 'New Post Image'
+    fill_in 'post_image[title]', with: 'Hello Cat'
+    fill_in 'post_image[content]', with: 'This'
+    click_button 'Create Post image'
+    expect(page).to have_content(
+      'Content is too short (minimum is 5 characters)',
+    )
+  end
 
   scenario 'There is a New Post Image link' do
+    sign_up
+    log_in
     visit '/post_images'
     click_link 'New Post Image'
     expect(page).to have_content('New Post Image')
   end
 
   scenario 'can create a comment' do
+    sign_up
+    log_in
     visit '/post_images'
     click_link 'New Post Image'
     fill_in 'post_image[title]', with: 'Hello Cat'
@@ -59,6 +72,8 @@ RSpec.feature 'Post Image', type: :feature do
   end
 
   scenario 'can delete a comment' do
+    sign_up
+    log_in
     visit '/post_images'
     click_link 'New Post Image'
     fill_in 'post_image[title]', with: 'Hello Cat'
