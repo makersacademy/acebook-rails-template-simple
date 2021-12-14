@@ -19,6 +19,10 @@
     <%=form.label :password_confirmation%>
     <%=form.password_field :password_confirmation, class: "form-control" %>
   </div>
+  <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+  <%= form.label :image, class: "form-label" %>
+  <%= form.file_field :image, class: "form-field" %>
+</div>
   <div class="mb-3">
     <%=form.submit class: "btn btn-primary"%>
   </div>

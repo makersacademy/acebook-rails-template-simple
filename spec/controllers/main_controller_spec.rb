@@ -11,7 +11,7 @@ RSpec.describe MainController, type: :controller do
   describe "POST /log_in" do
 
     it "does not log user in if not-signed-up user" do
-      post :create, params: { email: "test@test.com", password:"test"} 
+      post :create, params: { email: "test@abcvd.com", password:"test"} 
 
       expect(session[:user_id]).to be_nil
     end 
