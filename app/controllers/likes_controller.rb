@@ -8,7 +8,7 @@ class LikesController < ApplicationController
     else
       @post_image.likes.create(user_id: Current.user.id)
     end
-    redirect_to posts_path(@post_image)
+    redirect_to post_images_path(@post_image)
   end
 
   def destroy
@@ -18,7 +18,7 @@ class LikesController < ApplicationController
       find_like
       @like.destroy
     end
-    redirect_to posts_path(@post_image)
+    redirect_to post_images_path(@post_image)
   end
 
   def find_like
@@ -33,7 +33,7 @@ class LikesController < ApplicationController
   end
 
   def find_post
-    # @post_image = Post.find(params[:post_id])
-    @post_image = PostImage.find(params[:id])
+    @post_image = PostImage.find(params[:post_image_id])
+    # @post_image = PostImage.find(params[:id])
   end
 end
