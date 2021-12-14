@@ -3,7 +3,7 @@ class PostImagesController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @post_images = PostImage.all
+    @post_images = PostImage.all.order(created_at: :desc)
   end
 
   # GET /posts/1 or /posts/1.json

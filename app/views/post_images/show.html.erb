@@ -26,6 +26,11 @@
     <%= comment.commenter %>
   </p>
 
+    <p>
+    <strong>Timestamp:</strong>
+    <%= comment.created_at.strftime("%A %d %B %Y, %I:%M%p").freeze %>
+  </p>
+
   <p>
     <strong>Comment:</strong>
     <%= comment.body %>
