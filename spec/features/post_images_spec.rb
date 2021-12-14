@@ -57,6 +57,8 @@ RSpec.feature 'Post Image', type: :feature do
   end
 
   scenario 'can create a comment' do
+    sign_up
+    log_in
     visit '/post_images'
     click_link 'New Post Image'
     fill_in 'post_image[title]', with: 'Hello Cat'
@@ -70,6 +72,8 @@ RSpec.feature 'Post Image', type: :feature do
   end
 
   scenario 'can delete a comment' do
+    sign_up
+    log_in
     visit '/post_images'
     click_link 'New Post Image'
     fill_in 'post_image[title]', with: 'Hello Cat'
