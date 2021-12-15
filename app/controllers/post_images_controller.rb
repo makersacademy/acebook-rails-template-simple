@@ -25,6 +25,7 @@ class PostImagesController < ApplicationController
   def create
     @post_image = PostImage.new(post_image_params)
 
+    # user = session[:user_id]
     if @post_image.save
       redirect_to @post_image, notice: 'Post was successfully created.'
     else
@@ -58,6 +59,7 @@ class PostImagesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def post_image_params
-    params.require(:post_image).permit(:title, :content, :image)
+    p user_id = Current.user.id
+    params.require(:post_image).permit(:title, :content, :image, user_id)
   end
 end
