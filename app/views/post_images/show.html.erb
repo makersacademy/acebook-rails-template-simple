@@ -33,6 +33,9 @@
     <strong>Commenter:</strong>
     <%= comment.user.email %>
   </p>
+  <p>
+      <%=image_tag(comment.user.image, height: '50', width: '50')%>
+  </p>
 
     <p>
     <strong>Timestamp:</strong>
@@ -53,10 +56,6 @@
 
 <h2>Add a comment:</h2>
 <%= form_with model: [ @post_image, @post_image.comments.build ] do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
   <p>
     <%= form.label :body %><br>
     <%= form.text_area :body %>
