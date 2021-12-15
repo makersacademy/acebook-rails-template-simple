@@ -1,16 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<%
-=begin%>
  <p>
-<%=image_tag(Current.user.image, height: '100', width: '100')  %>
+
 </p>
 
 <p>
-<%= Current.user.email  %>
+<%= @user.id %>
 </p> 
-<%
-=end%>
 
 <p>
   <strong>Title:</strong>

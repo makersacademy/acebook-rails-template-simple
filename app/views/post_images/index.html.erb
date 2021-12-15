@@ -2,19 +2,9 @@
 
 <h1>Post Images</h1>
 
+
     <% @post_images.each do |post_image| %>
       <div>
-      <p>
-<%
-=begin%>
- <%=image_tag(Current.user.image, height: '100', width: '100')  %>
-</p>
-
-<p>
-<%= @user.email  %>
-</p> 
-<%
-=end%>
         <p>
         <strong>Title:</strong>
         <%= post_image.title %>

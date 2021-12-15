@@ -23,9 +23,12 @@ class PostImagesController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    @post_image = PostImage.new(post_image_params)
+    # @post_image = PostImage.new(post_image_params)
+    @post_image =
+      PostImage.create(post_image_params.merge(user_id: session[:user_id]))
 
-    # user = session[:user_id]
+    @user = User.find(@post_image.user_id)
+
     if @post_image.save
       redirect_to @post_image, notice: 'Post was successfully created.'
     else
@@ -59,6 +62,6 @@ class PostImagesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def post_image_params
-    params.require(:post_image).permit(:title, :content, :image, :id)
+    params.require(:post_image).permit(:title, :content, :image)
   end
 end
