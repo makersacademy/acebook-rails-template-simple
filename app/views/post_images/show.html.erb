@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
- <p>
-
+<p>
+  <%=image_tag(@post_image.user.image, height: '100', width: '100')%>
 </p>
 
 <p>
-<%= @user.id %>
+  <%= @post_image.user.email %>
 </p> 
 
 <p>
