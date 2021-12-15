@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  skip_before_action :require_logout
+
   def create
     @post_image = PostImage.find(params[:post_image_id])
     @comment = @post_image.comments.create(comment_params)

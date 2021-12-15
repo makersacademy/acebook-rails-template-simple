@@ -1,4 +1,5 @@
 class PostImagesController < ApplicationController
+  skip_before_action :require_logout
   before_action :set_post_image, only: %i[show edit update destroy]
 
   # GET /posts or /posts.json
