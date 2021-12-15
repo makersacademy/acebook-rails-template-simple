@@ -3,6 +3,7 @@ class PostImagesController < ApplicationController
 
   # GET /posts or /posts.json
   def index
+    
     if Current.user == nil
       redirect_to root_url, alert: 'Must login to access content'
     else

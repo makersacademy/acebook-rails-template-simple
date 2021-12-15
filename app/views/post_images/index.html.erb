@@ -1,30 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Post Images</h1>
+<h1 class="h1 text-center mb-5 mt-5">Post Images</h1>
+<%= link_to 'New Post Image', new_post_image_path %>
 
-    <% @post_images.each do |post_image| %>
-      <div>
-        <p>
-        <strong>Title:</strong>
-        <%= post_image.title %>
-        </p>
-        <p>
-        <strong>Caption:</strong>
-        <%= post_image.content %>
-        </p>
-        <p>
-        <strong>Timestamp:</strong>
-        <%= post_image.created_at.strftime("%A %d %B %Y, %I:%M%p").freeze %>
-        </p>
+    <% @post_images.each do |post_image| %> 
 
-        <% if post_image.comments %>
+ <div class="card container mb-5 p-5">
+
+   <% if post_image.image.attached? %>
+          <%= image_tag post_image.image, :class => "card-img-top" %>
+   <% end %>
+  <div class="row">
+  <div class="card-body col-6">
+    <h5 class="card-title"><%= post_image.title %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= post_image.created_at.strftime("%A %d %B %Y, %I:%M%p").freeze %></h6>
+    <p class="card-text"><%= post_image.content %></p>
+    
+    <%= link_to 'Show', post_image, :class => "card-link" %>
+    <%= link_to 'Edit', edit_post_image_path(post_image), :class => "card-link" %>
+    <%= link_to 'Destroy', post_image, method: :delete, data: { confirm: 'Are you sure?' }, :class => "card-link" %>
+
+      <% if post_image.comments %>
         <p>
-        <strong>Number of comments:</strong>
         <%= post_image.comments.count %>
         </p>
         <% end %>
-
-        <div id="like-section">
+  </div>
+  <div class="card-body col-6">
+    <div id="like-section">
           <% pre_like = post_image.likes.find { |like| like.user_id == Current.user.id} %>
           <% if pre_like %>
             <%= button_to 'Unlike', post_image_like_path(post_image, pre_like), method: :delete %>
@@ -33,17 +36,10 @@
           <% end %>
             <p id="like-count"><%= post_image.likes.count%><%= (post_image.likes.count) == 1 ? 'Like' : 'Likes' %></p>
         </div>
-        
-        <% if post_image.image.attached? %>
-        <strong>Image:</strong>
-          <p><%= image_tag post_image.image %></p>
-        <% end %>
-        <p><%= link_to 'Show', post_image %></p>
-        <p><%= link_to 'Edit', edit_post_image_path(post_image) %></p>
-        <p><%= link_to 'Destroy', post_image, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-        </div>
-    <% end %>
+  </div>
+  </div>
+  </div>
 
-<br>
+  <% end %>
 
-<%= link_to 'New Post Image', new_post_image_path %>
+
