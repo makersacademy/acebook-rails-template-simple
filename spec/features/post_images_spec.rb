@@ -39,8 +39,8 @@ RSpec.feature 'Post Image', type: :feature do
     fill_in 'comment[commenter]', with: 'Test comment'
     fill_in 'comment[body]', with: 'this is the first comment'
     click_button 'Create Comment'
-    expect(page).to have_content('Commenter: Test comment')
-    expect(page).to have_content('Comment: this is the first comment')
+    expect(page).to have_content('Test comment')
+    expect(page).to have_content('this is the first comment')
   end
 
   scenario 'can delete a comment' do
@@ -54,8 +54,8 @@ RSpec.feature 'Post Image', type: :feature do
     fill_in 'comment[body]', with: 'this is the first comment'
     click_button 'Create Comment'
     click_link 'Destroy Comment'
-    expect(page).not_to have_content('Commenter: Test comment')
-    expect(page).not_to have_content('Comment: this is the first comment')
+    expect(page).not_to have_content('Test comment')
+    expect(page).not_to have_content('this is the first comment')
   end
 
   scenario 'shows the number of comments on a photo' do
@@ -72,7 +72,7 @@ RSpec.feature 'Post Image', type: :feature do
     fill_in 'comment[body]', with: 'this is the first comment'
     click_button 'Create Comment'
     click_link 'Back'
-    expect(page).to have_content('Number of comments: 2')
+    expect(page).to have_content('2')
   end
 
   scenario 'defaults to zero comments' do
@@ -83,7 +83,7 @@ RSpec.feature 'Post Image', type: :feature do
     fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
     click_button 'Create Post image'
     click_link 'Back'
-    expect(page).to have_content('Number of comments: 0')
+    expect(page).to have_content('0')
   end
 
   scenario 'you can see when an Image was created' do
@@ -95,7 +95,7 @@ RSpec.feature 'Post Image', type: :feature do
     fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
     click_button 'Create Post image'
     click_link 'Back'
-    expect(page).to have_content("Timestamp: #{time}")
+    expect(page).to have_content("#{time}")
   end
 
   scenario 'you can see when a comment was made' do
@@ -109,7 +109,7 @@ RSpec.feature 'Post Image', type: :feature do
     fill_in 'comment[commenter]', with: 'Test comment'
     fill_in 'comment[body]', with: 'this is the first comment'
     click_button 'Create Comment'
-    expect(page).to have_content("Timestamp: #{time}")
+    expect(page).to have_content("#{time}")
   end
 
   scenario 'checks the order of images/posts are reverse chronological' do
@@ -125,7 +125,7 @@ RSpec.feature 'Post Image', type: :feature do
     fill_in 'post_image[content]', with: 'This is a photo of an evil cat again'
     click_button 'Create Post image'
     click_link 'Back'
-    expect(page.find('div.container:last')).to have_content 'Hello Cat'
+    expect(page.all('div.container').last).to have_content 'Hello Cat'
   end
 
   scenario 'User can like post' do

@@ -1,59 +1,41 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @post_image.title %>
-</p>
-
-<p>
-  <strong>Caption:</strong>
-  <%= @post_image.content %>
-</p>
-
-<p>
+<div class="card container mb-5 p-5">
   <% if @post_image.image.attached? %>
     <%= image_tag @post_image.image %>
   <% end %>
-</p>
-
-<%= link_to 'Edit', edit_post_image_path(@post_image) %> |
-<%= link_to 'Back', post_images_path %>
-
-<h2>Comments</h2>
+  <div class="row">
+    <div class="card-body">
+      <h5 class="card-title"><%= @post_image.title %></h5>
+      <p class="card-text"><%= @post_image.content %></p>
+      <%= link_to 'Edit', edit_post_image_path(@post_image), :class => "card-link" %>  |
+      <%= link_to 'Back', post_images_path, :class => "card-link" %>
+    </div>
+  </div>
+</div>
+</div>
+<%# divider %>
+<h2 class="h2 text-center">Comments</h2>
 <% @post_image.comments.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-  </p>
-
-    <p>
-    <strong>Timestamp:</strong>
-    <%= comment.created_at.strftime("%A %d %B %Y, %I:%M%p").freeze %>
-  </p>
-
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-
-  <p>
-  <%= link_to 'Destroy Comment', [comment.post_image, comment],
+  <div class="card container mb-5 p-5">
+    <div class="card-body">
+      <h5 class="card-title"><%= comment.commenter %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= comment.created_at.strftime("%A %d %B %Y, %I:%M%p").freeze %> </h6>
+      <p class="card-text"><%= comment.body %></p>
+      <%= link_to 'Destroy Comment', [comment.post_image, comment],
               method: :delete,
               data: { confirm: "Are you sure?" } %>
-</p>
+    </div>
+  </div>
+</div>
 <% end %>
-
-<h2>Add a comment:</h2>
-<%= form_with model: [ @post_image, @post_image.comments.build ] do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<%# divider %>
+<h2 class="h2 text-center">Add a comment</h2>
+<div class="container">
+  <%= form_with model: [ @post_image, @post_image.comments.build ] do |form| %>
+    <%= form.label :commenter, :class => "form-label" %>
+    <%= form.text_field :commenter, :class => "form-control" %>
+    <%= form.label :body, :class => "form-label" %>
+    <%= form.text_area :body, :class => "form-control" %>
+    <%= form.submit  %>
+  <% end %>
+</div>
