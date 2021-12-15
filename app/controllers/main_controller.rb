@@ -1,5 +1,6 @@
 class MainController < ApplicationController
   skip_before_action :require_login
+  skip_before_action :require_logout, :only => [:destroy]
 
   def index
     @users = User.all

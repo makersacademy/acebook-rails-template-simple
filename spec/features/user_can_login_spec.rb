@@ -22,4 +22,18 @@ RSpec.feature 'Login', type: :feature do
     visit '/post_images'
     expect(page).to have_content('Must login to access content')
   end
+
+  scenario "User can't access login page whilst logged in" do
+    sign_up
+    log_in
+    visit '/'
+    expect(page).to have_content('Cannot access this page whilst logged in')
+  end
+
+  scenario "User can't access sign up page whilst logged in" do
+    sign_up
+    log_in
+    visit '/sign_up'
+    expect(page).to have_content('Cannot access this page whilst logged in')
+  end
 end

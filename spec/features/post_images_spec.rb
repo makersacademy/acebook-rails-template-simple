@@ -36,10 +36,8 @@ RSpec.feature 'Post Image', type: :feature do
     fill_in 'post_image[title]', with: 'Hello Cat'
     fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
     click_button 'Create Post image'
-    fill_in 'comment[commenter]', with: 'Test comment'
     fill_in 'comment[body]', with: 'this is the first comment'
     click_button 'Create Comment'
-    expect(page).to have_content('Test comment')
     expect(page).to have_content('this is the first comment')
   end
 
@@ -50,11 +48,9 @@ RSpec.feature 'Post Image', type: :feature do
     fill_in 'post_image[title]', with: 'Hello Cat'
     fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
     click_button 'Create Post image'
-    fill_in 'comment[commenter]', with: 'Test comment'
     fill_in 'comment[body]', with: 'this is the first comment'
     click_button 'Create Comment'
     click_link 'Destroy Comment'
-    expect(page).not_to have_content('Test comment')
     expect(page).not_to have_content('this is the first comment')
   end
 
@@ -65,10 +61,8 @@ RSpec.feature 'Post Image', type: :feature do
     fill_in 'post_image[title]', with: 'Hello Cat'
     fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
     click_button 'Create Post image'
-    fill_in 'comment[commenter]', with: 'Test comment'
     fill_in 'comment[body]', with: 'this is the first comment'
     click_button 'Create Comment'
-    fill_in 'comment[commenter]', with: 'Test comment'
     fill_in 'comment[body]', with: 'this is the first comment'
     click_button 'Create Comment'
     click_link 'Back'
@@ -106,10 +100,10 @@ RSpec.feature 'Post Image', type: :feature do
     fill_in 'post_image[title]', with: 'Hello Cat'
     fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
     click_button 'Create Post image'
-    fill_in 'comment[commenter]', with: 'Test comment'
     fill_in 'comment[body]', with: 'this is the first comment'
     click_button 'Create Comment'
     expect(page).to have_content("#{time}")
+    expect(page).to have_content("user@email.com")
   end
 
   scenario 'checks the order of images/posts are reverse chronological' do
@@ -153,4 +147,36 @@ RSpec.feature 'Post Image', type: :feature do
     first(:button, 'Unlike').click
     expect(page).to have_content('0Likes')
   end
+
+  scenario 'new posts show user details(profile image and email)' do
+    sign_up
+    log_in
+    click_link 'New Post Image'
+    fill_in 'post_image[title]', with: 'Hello Cat'
+    fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
+    click_button 'Create Post image'
+    click_link 'Back'
+    expect(page).to have_content('user@email.com')
+  end
+
+  scenario 'you can see an alert on a successful post creation' do  
+    sign_up
+    log_in
+    click_link 'New Post Image'
+    fill_in 'post_image[title]', with: 'Hello Cat'
+    fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
+    click_button 'Create Post image'
+    expect(page).to have_content('Post was successfully created.')
+  end
+
+  scenario 'user must be logged in to access content' do  
+    log_in
+    expect(page).to have_content('Login failed')
+  end 
+
+  scenario 'user must be logged in to access content' do  
+    visit '/post_images'
+    expect(page).to have_content('Must login to access content')
+  end  
+
 end

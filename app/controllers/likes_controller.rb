@@ -1,4 +1,5 @@
 class LikesController < ApplicationController
+  skip_before_action :require_logout
   before_action :find_post
   before_action :find_like, only: [:destroy]
 
@@ -34,6 +35,5 @@ class LikesController < ApplicationController
 
   def find_post
     @post_image = PostImage.find(params[:post_image_id])
-    # @post_image = PostImage.find(params[:id])
   end
 end
