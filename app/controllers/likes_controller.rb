@@ -1,4 +1,5 @@
 class LikesController < ApplicationController
+  skip_before_action :require_logout
   before_action :find_post
   before_action :find_like, only: [:destroy]
 
