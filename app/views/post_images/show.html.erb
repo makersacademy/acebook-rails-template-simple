@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <%=image_tag(@post_image.user.image, height: '100', width: '100')%>
+</p>
+
+<p>
+  <%= @post_image.user.email %>
+</p> 
+
+<p>
   <strong>Title:</strong>
   <%= @post_image.title %>
 </p>
@@ -23,7 +31,10 @@
 <% @post_image.comments.each do |comment| %>
   <p>
     <strong>Commenter:</strong>
-    <%= comment.commenter %>
+    <%= comment.user.email %>
+  </p>
+  <p>
+      <%=image_tag(comment.user.image, height: '50', width: '50')%>
   </p>
 
     <p>
@@ -45,10 +56,6 @@
 
 <h2>Add a comment:</h2>
 <%= form_with model: [ @post_image, @post_image.comments.build ] do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
   <p>
     <%= form.label :body %><br>
     <%= form.text_area :body %>

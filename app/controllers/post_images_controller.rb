@@ -24,7 +24,8 @@ class PostImagesController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    @post_image = PostImage.new(post_image_params)
+    # @post_image = PostImage.new(post_image_params)
+    @post_image = PostImage.create(post_image_params.merge(user_id: session[:user_id]))
 
     if @post_image.save
       redirect_to @post_image, notice: 'Post was successfully created.'
