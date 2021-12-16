@@ -12,9 +12,9 @@
           </li>
           <li class="nav-item">
             <%if Current.user.image.attached? == false%>
-              <%=image_tag "profile pic.png", :class => "profile"%>
+              <%=image_tag "profile pic.png", :class => "profile-pic"%>
             <%else%>
-              <%=image_tag(Current.user.image, :class => "profile")%>
+              <%=image_tag(Current.user.image, :class => "profile-pic")%>
             <%end%>
           </li>
           <li class="nav-item">

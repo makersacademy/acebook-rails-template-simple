@@ -14,5 +14,7 @@ body{
   margin-left:3px;
   margin-right:0;
   border-radius: 50%;
+  height: 50px;
+  width: 50px;
 
 }
