@@ -4,7 +4,7 @@
 <h1 class="h1 text-center mb-5 mt-5">Post Images</h1>
 <%= link_to 'New Post Image', new_post_image_path, :style => "margin-bottom:3px"%>
 <% @post_images.each do |post_image| %>
-  <div class="card rounded mb-5 pt-2">
+  <div class="card rounded mb-5 pt-2 facebook" >
   <div class="row">
   <div class="col">
     <%if post_image.user.image.attached?%>

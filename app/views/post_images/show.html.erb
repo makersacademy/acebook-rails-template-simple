@@ -1,10 +1,11 @@
 <link rel="stylesheet" type="text/css" href="post_images.css">
 
 <p id="notice"><%= notice %></p>
-<div class="card container mb-5 p-5">
+<div class="card mb-5 p-5">
 <p>
   <%if @post_image.user.image.attached?%>
   <%=image_tag(@post_image.user.image, height: '100', width: '100')%>
+ 
   <%else%>
   <%=image_tag "profile pic.png", :class => "profile"%>
   <%end%>
@@ -29,7 +30,8 @@
 <%# divider %>
 <h2 class="h2 text-center">Comments</h2>
 <% @post_image.comments.each do |comment| %>
-  <div class="card container mb-5 p-5">
+  <div class="card  mb-5 p-5">
+
     <div class="card-body">
     <%if comment.user.image.attached?%>
     <%=image_tag(comment.user.image, height: '50', width: '50')%>
@@ -55,7 +57,7 @@
 <% end %>
 <%# divider %>
 <h2 class="h2 text-center">Add a comment</h2>
-<div class="container">
+<div class="">
   <%= form_with model: [ @post_image, @post_image.comments.build ] do |form| %>
     <%= form.label :commenter, :class => "form-label" %>
     <%= form.text_field :commenter, :class => "form-control" %>
