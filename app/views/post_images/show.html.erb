@@ -55,8 +55,6 @@
 <h2 class="h2 text-center">Add a comment</h2>
 <div class="container">
   <%= form_with model: [ @post_image, @post_image.comments.build ] do |form| %>
-    <%= form.label :commenter, :class => "form-label" %>
-    <%= form.text_field :commenter, :class => "form-control" %>
     <%= form.label :body, :class => "form-label" %>
     <%= form.text_area :body, :class => "form-control" %><br>
     <%= form.submit  %>
