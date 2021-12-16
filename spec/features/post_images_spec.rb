@@ -115,7 +115,6 @@ RSpec.feature 'Post Image', type: :feature do
     fill_in 'comment[body]', with: 'this is the first comment'
     click_button 'Create Comment'
     expect(page).to have_content("#{time}")
-    expect(page).to have_content('user@email.com')
   end
 
   scenario 'checks the order of images/posts are reverse chronological' do
