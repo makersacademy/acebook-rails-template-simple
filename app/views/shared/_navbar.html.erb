@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Acebook</a>
+    <a class="navbar-brand" href="/post_images">Acebook</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,15 +12,15 @@
           </li>
           <li class="nav-item">
             <%if Current.user.image.attached? == false%>
-            <%=image_tag "profile pic.png", :class => "profile"%>
+              <%=image_tag "profile pic.png", :class => "profile"%>
             <%else%>
-            <%=image_tag(Current.user.image, :class => "profile")%>
+              <%=image_tag(Current.user.image, :class => "profile")%>
             <%end%>
           </li>
           <li class="nav-item">
             <%= button_to "Logout", logout_path, method: :delete %>
           </li>
-          <%end%>
+        <%end%>
       </ul>
     </div>
   </div>
