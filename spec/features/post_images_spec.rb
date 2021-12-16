@@ -12,10 +12,8 @@ RSpec.feature 'Post Image', type: :feature do
     sign_up
     log_in
     click_link 'Create New Post'
-    expect(page).to have_content('Create New Post')
     fill_in 'post_image[title]', with: 'Hello Cat'
     fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
-
     # we do not know how to check for an image file
     # fill_in 'post_image[image]', with: 'thisisadummystingforimg'
     click_button 'Submit'
@@ -25,7 +23,6 @@ RSpec.feature 'Post Image', type: :feature do
   scenario 'There is a Create New Post link' do
     sign_up
     log_in
-    click_link 'Create New Post'
     expect(page).to have_content('Create New Post')
   end
 
@@ -134,7 +131,7 @@ RSpec.feature 'Post Image', type: :feature do
     fill_in 'post_image[content]', with: 'This is a photo of an evil cat again'
     click_button 'Submit'
     click_link 'Back'
-    expect(page.all('div.container').last).to have_content 'Hello Cat'
+    expect(page.all('h5.card-title').first).to have_content 'This is the Second Post'
   end
 
   scenario 'User can like post' do
