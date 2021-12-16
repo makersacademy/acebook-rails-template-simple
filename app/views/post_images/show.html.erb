@@ -46,12 +46,13 @@
     <strong>Comment:</strong>
     <%= comment.body %>
   </p>
-
+<% if comment.user == Current.user %>
   <p>
   <%= link_to 'Destroy Comment', [comment.post_image, comment],
               method: :delete,
               data: { confirm: "Are you sure?" } %>
 </p>
+<% end %>
 <% end %>
 
 <h2>Add a comment:</h2>
