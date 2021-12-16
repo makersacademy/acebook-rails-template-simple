@@ -41,7 +41,7 @@
 
       <% if comment.user == Current.user %>
   
-      <%= link_to 'Destroy Comment', [comment.post_image, comment],
+      <%= link_to 'Delete Comment', [comment.post_image, comment],
               method: :delete,
               data: { confirm: "Are you sure?" } %>
 

@@ -4,7 +4,6 @@ class PostImagesController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    
     if Current.user == nil
       redirect_to root_url, alert: 'Must login to access content'
     else
@@ -26,7 +25,8 @@ class PostImagesController < ApplicationController
   # POST /posts or /posts.json
   def create
     # @post_image = PostImage.new(post_image_params)
-    @post_image = PostImage.create(post_image_params.merge(user_id: session[:user_id]))
+    @post_image =
+      PostImage.create(post_image_params.merge(user_id: session[:user_id]))
 
     if @post_image.save
       redirect_to @post_image, notice: 'Post was successfully created.'
@@ -49,7 +49,7 @@ class PostImagesController < ApplicationController
   # DELETE /posts/1 or /posts/1.json
   def destroy
     @post_image.destroy
-    redirect_to post_images_url, alert: 'Post was successfully destroyed.'
+    redirect_to post_images_url, alert: 'Post was successfully deleted.'
   end
 
   private
