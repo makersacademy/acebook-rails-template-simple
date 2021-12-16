@@ -1,19 +1,16 @@
 <link rel="stylesheet" type="text/css" href="post_images.css">
-
 <p id="notice"><%= notice %></p>
 <div class="card mb-5 p-5">
-<p>
-  <%if @post_image.user.image.attached?%>
-  <%=image_tag(@post_image.user.image, height: '100', width: '100')%>
- 
-  <%else%>
-  <%=image_tag "profile pic.png", :class => "profile"%>
-  <%end%>
-</p>
-
-<p>
-  <%= @post_image.user.email %>
-</p> 
+  <p>
+    <%if @post_image.user.image.attached?%>
+      <%=image_tag(@post_image.user.image, height: '100', width: '100')%>
+    <%else%>
+      <%=image_tag "profile pic.png", :class => "profile"%>
+    <%end%>
+  </p>
+  <p>
+    <%= @post_image.user.email %>
+  </p>
   <% if @post_image.image.attached? %>
     <%= image_tag @post_image.image %>
   <% end %>
@@ -31,26 +28,20 @@
 <h2 class="h2 text-center">Comments</h2>
 <% @post_image.comments.each do |comment| %>
   <div class="card  mb-5 p-5">
-
     <div class="card-body">
-    <%if comment.user.image.attached?%>
-    <%=image_tag(comment.user.image, height: '50', width: '50')%>
-    <%else%>
-    <%=image_tag "profile pic.png", :class => "profile"%>
-    <%end%>
+      <%if comment.user.image.attached?%>
+        <%=image_tag(comment.user.image, height: '50', width: '50')%>
+      <%else%>
+        <%=image_tag "profile pic.png", :class => "profile"%>
+      <%end%>
       <h5 class="card-title"><%= comment.user.email %></h5>
       <h6 class="card-subtitle mb-2 text-muted"><%= comment.created_at.strftime("%A %d %B %Y, %I:%M%p").freeze %> </h6>
-      <p class="card-text"><%= comment.body %></p>
-      
-
+      <p class="card-text fs-6"><%= comment.body %></p>
       <% if comment.user == Current.user %>
-  
-      <%= link_to 'Destroy Comment', [comment.post_image, comment],
+        <%= link_to 'Destroy Comment', [comment.post_image, comment],
               method: :delete,
               data: { confirm: "Are you sure?" } %>
-
-<% end %>
-
+      <% end %>
     </div>
   </div>
 </div>
