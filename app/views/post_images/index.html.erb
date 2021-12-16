@@ -1,62 +1,58 @@
 <link rel="stylesheet" type="text/css" href="post_images.css">
-
 <p id="notice"><%= notice %></p>
 <h1 class="h1 text-center mb-5 mt-5">Post Images</h1>
 <%= link_to 'New Post Image', new_post_image_path, :style => "margin-bottom:3px"%>
 <% @post_images.each do |post_image| %>
   <div class="card rounded mb-5 pt-2 facebook" >
-  <div class="row">
-  <div class="col">
-    <%if post_image.user.image.attached?%>
-    <%=image_tag(post_image.user.image, height: '100', width: '100', :class => "profile-pic")%> 
-    <%else%>
-    <%=image_tag "profile pic.png", height: '50', width: '50', :class => "profile-pic"%>
-    <%end%>
-  </div>
-  <div class="col-10">
-    <p class="font-weight-bold fs-6"><%= post_image.user.email %></p>
-    <p class="text-muted"><%= post_image.created_at.strftime("%A %d %B %Y, %I:%M%p").freeze %></p>
+    <div class="row">
+      <div class="col">
+        <%if post_image.user.image.attached?%>
+          <%=image_tag(post_image.user.image, height: '100', width: '100', :class => "profile-pic")%>
+        <%else%>
+          <%=image_tag "profile pic.png", height: '50', width: '50', :class => "profile-pic"%>
+        <%end%>
+      </div>
+      <div class="col-10">
+        <p class="font-weight-bold fs-6"><%= post_image.user.email %></p>
+        <p class="text-muted"><%= post_image.created_at.strftime("%A %d %B %Y, %I:%M%p").freeze %></p>
+      </div>
     </div>
-  </div>
-
     <% if post_image.image.attached? %>
       <%= image_tag post_image.image, :class => "card-img-top"%>
     <% end %>
-    
-      <div class="card-body">
+    <div class="card-body">
+      <div>
         <h5 class="card-title"><%= post_image.title %></h5>
-        
         <p class="card-text"><%= post_image.content %></p>
         <%= link_to 'Show', post_image, :class => "card-link" %><% if post_image.user == Current.user %>
-        <%= link_to 'Edit', edit_post_image_path(post_image), :class => "card-link" %>
-        <%= link_to 'Destroy', post_image, method: :delete, data: { confirm: 'Are you sure?' }, :class => "card-link" %>
+          <%= link_to 'Edit', edit_post_image_path(post_image), :class => "card-link" %>
+          <%= link_to 'Destroy', post_image, method: :delete, data: { confirm: 'Are you sure?' }, :class => "card-link" %>
         <% end %>
-    </div>
-
-      <div class="row">
+      </div>
+      <%# divider %>
+      <div class="row mt-3">
         <div class="col-6">
-         <div id="like-section">
-          <% pre_like = post_image.likes.find { |like| like.user_id == Current.user.id} %>
-          <% if pre_like %>
-            <%= button_to 'Unlike', post_image_like_path(post_image, pre_like), method: :delete %>
-          <% else %>
-            <%= button_to 'Like', post_image_likes_path(post_image), method: :post_image %>
+          <div  id="like-section">
+            <% pre_like = post_image.likes.find { |like| like.user_id == Current.user.id} %>
+            <% if pre_like %>
+              <%= button_to 'Unlike', post_image_like_path(post_image, pre_like), method: :delete %>
+            <% else %>
+              <%= button_to 'Like', post_image_likes_path(post_image), method: :post_image %>
+            <% end %>
+            <p id="like-count"> <%= post_image.likes.count%> <i class="bi bi-hand-thumbs-up"></i>
+              <% (post_image.likes.count) == 1 ? 'Like' : 'Likes' %>
+            </p>
+          </div>
+        </div>
+        <div class= "col-6">
+          <% if post_image.comments %>
+            <p>
+              <%= post_image.comments.count %>
+              <i class="bi bi-chat-text"></i>
+            </p>
           <% end %>
-          <p id="like-count"><%= post_image.likes.count%><%= (post_image.likes.count) == 1 ? 'Like' : 'Likes' %></p>
+        </div>
       </div>
-      
-      
-      </div>
-       <div class= "col-6">
-      <% if post_image.comments %>
-        <p class="far fa-comments">
-        <%= post_image.comments.count %>
-        </p>
-      <% end %>
-      </div>
-     </div>
-     </div>
+    </div>
   </div>
 <% end %>
-
-
