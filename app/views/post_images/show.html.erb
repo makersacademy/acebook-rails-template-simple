@@ -41,7 +41,7 @@
 
       <% if comment.user == Current.user %>
   
-      <%= link_to 'Destroy Comment', [comment.post_image, comment],
+      <%= link_to 'Delete Comment', [comment.post_image, comment],
               method: :delete,
               data: { confirm: "Are you sure?" } %>
 
@@ -55,8 +55,6 @@
 <h2 class="h2 text-center">Add a comment</h2>
 <div class="container">
   <%= form_with model: [ @post_image, @post_image.comments.build ] do |form| %>
-    <%= form.label :commenter, :class => "form-label" %>
-    <%= form.text_field :commenter, :class => "form-control" %>
     <%= form.label :body, :class => "form-label" %>
     <%= form.text_area :body, :class => "form-control" %><br>
     <%= form.submit  %>
