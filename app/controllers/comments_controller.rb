@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
     @comment = @post_image.comments.find(params[:id])
     @comment.destroy
     redirect_to post_image_path(@post_image),
-                alert: 'Comment was successfully destroyed.'
+                alert: 'Comment was successfully deleted.'
   end
 
   private

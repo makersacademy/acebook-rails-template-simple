@@ -38,7 +38,8 @@
       <h6 class="card-subtitle mb-2 text-muted"><%= comment.created_at.strftime("%A %d %B %Y, %I:%M%p").freeze %> </h6>
       <p class="card-text fs-6"><%= comment.body %></p>
       <% if comment.user == Current.user %>
-        <%= link_to 'Destroy Comment', [comment.post_image, comment],
+  
+      <%= link_to 'Delete Comment', [comment.post_image, comment],
               method: :delete,
               data: { confirm: "Are you sure?" } %>
       <% end %>
@@ -50,8 +51,6 @@
 <h2 class="h2 text-center">Add a comment</h2>
 <div class="">
   <%= form_with model: [ @post_image, @post_image.comments.build ] do |form| %>
-    <%= form.label :commenter, :class => "form-label" %>
-    <%= form.text_field :commenter, :class => "form-control" %>
     <%= form.label :body, :class => "form-label" %>
     <%= form.text_area :body, :class => "form-control" %><br>
     <%= form.submit  %>
