@@ -159,7 +159,7 @@ RSpec.feature 'Post Image', type: :feature do
     expect(page).to have_content('user@email.com')
   end
 
-  scenario 'you can see an alert on a successful post creation' do  
+  scenario 'you can see an alert on a successful post creation' do
     sign_up
     log_in
     click_link 'New Post Image'
@@ -169,14 +169,65 @@ RSpec.feature 'Post Image', type: :feature do
     expect(page).to have_content('Post was successfully created.')
   end
 
-  scenario 'user must be logged in to access content' do  
+  scenario 'user must be logged in to access content' do
     log_in
     expect(page).to have_content('Login failed')
-  end 
+  end
 
-  scenario 'user must be logged in to access content' do  
+  scenario 'user must be logged in to access content' do
     visit '/post_images'
     expect(page).to have_content('Must login to access content')
-  end  
+  end
 
+  scenario 'post can be deleted by the user who created it' do
+    sign_up
+    log_in
+    click_link 'New Post Image'
+    fill_in 'post_image[title]', with: 'Hello Cat'
+    fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
+    click_button 'Create Post image'
+    click_link 'Back'
+    expect(page).to have_link('Destroy')
+  end
+
+  scenario 'post cannot be deleted if the user has not created it' do
+    sign_up
+    log_in
+    click_link 'New Post Image'
+    fill_in 'post_image[title]', with: 'Hello Cat'
+    fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
+    click_button 'Create Post image'
+    click_button 'Logout'
+    sign_up_alternate_user
+    log_in_alternate_user
+    expect(page).to have_no_link('Destroy')
+  end
+
+  scenario 'comment can be deleted by the user who created it' do
+    sign_up
+    log_in
+    click_link 'New Post Image'
+    fill_in 'post_image[title]', with: 'Hello Cat'
+    fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
+    click_button 'Create Post image'
+    fill_in 'comment[body]', with: 'this is the first comment'
+    click_button 'Create Comment'
+    expect(page).to have_link('Destroy Comment')
+  end
+
+  scenario 'comment cannot be deleted if the user has not created it' do
+    sign_up
+    log_in
+    click_link 'New Post Image'
+    fill_in 'post_image[title]', with: 'Hello Cat'
+    fill_in 'post_image[content]', with: 'This is a photo of an evil cat'
+    click_button 'Create Post image'
+    fill_in 'comment[body]', with: 'this is the first comment'
+    click_button 'Create Comment'
+    click_button 'Logout'
+    sign_up_alternate_user
+    log_in_alternate_user
+    first(:link, 'Show').click
+    expect(page).to have_no_link('Destroy Comment')
+  end
 end
