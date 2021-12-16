@@ -4,8 +4,12 @@
 <% @post_images.each do |post_image| %>
   <div class="card container mb-5 p-5">
    <p>
-          <%=image_tag(post_image.user.image, height: '100', width: '100')%>
-        </p>
+    <%if post_image.user.image.attached?%>
+    <%=image_tag(post_image.user.image, height: '100', width: '100')%>
+    <%else%>
+    <%=image_tag "profile pic.png", :class => "profile"%>
+    <%end%>
+  </p>
 
         <p>
           <%= post_image.user.email %>
@@ -21,10 +25,12 @@
         <%= link_to 'Show', post_image, :class => "card-link" %>
         <%= link_to 'Edit', edit_post_image_path(post_image), :class => "card-link" %>
         <%= link_to 'Destroy', post_image, method: :delete, data: { confirm: 'Are you sure?' }, :class => "card-link" %>
+        <div>
         <% if post_image.comments %>
           <p>
             <%= post_image.comments.count %>
           </p>
+          </div>
         <% end %>
       </div>
       <div class="card-body col-6">

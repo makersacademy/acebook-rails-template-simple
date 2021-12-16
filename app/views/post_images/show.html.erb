@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 <div class="card container mb-5 p-5">
 <p>
+  <%if @post_image.user.image.attached?%>
   <%=image_tag(@post_image.user.image, height: '100', width: '100')%>
+  <%else%>
+  <%=image_tag "profile pic.png", :class => "profile"%>
+  <%end%>
 </p>
 
 <p>
@@ -25,7 +29,11 @@
 <% @post_image.comments.each do |comment| %>
   <div class="card container mb-5 p-5">
     <div class="card-body">
+    <%if comment.user.image.attached?%>
     <%=image_tag(comment.user.image, height: '50', width: '50')%>
+    <%else%>
+    <%=image_tag "profile pic.png", :class => "profile"%>
+    <%end%>
       <h5 class="card-title"><%= comment.user.email %></h5>
       <h6 class="card-subtitle mb-2 text-muted"><%= comment.created_at.strftime("%A %d %B %Y, %I:%M%p").freeze %> </h6>
       <p class="card-text"><%= comment.body %></p>
