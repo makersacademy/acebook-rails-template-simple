@@ -13,13 +13,17 @@
 
 
   <div class="container">
+     <div class ="row rounded-3 ">
+  
     <%= form.label :title, :class => "form-label"  %>
     <%= form.text_field :title, :class => "form-control mb-3"  %>
     <%= form.label :content, :class => "form-label"  %>
     <%= form.text_area :content , :class => "form-control mb-3" %>
     <%= form.label :image, :class => "form-label"  %>
     <%= form.file_field :image, :class => "form-control mb-3" %>
-    <%= form.submit "Submit"%>
+    <%= form.submit "Submit", :class => "btn btn-primary"%>
+  </div>
+  
   </div>
 <% end %>
 

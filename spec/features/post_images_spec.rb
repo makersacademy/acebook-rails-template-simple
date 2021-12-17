@@ -238,7 +238,7 @@ RSpec.feature 'Post Image', type: :feature do
     click_button 'Logout'
     sign_up_alternate_user
     log_in_alternate_user
-    first(:link, 'Show').click
+    first(:link, 'Comment').click
     expect(page).to have_no_link('Delete Comment')
   end
 end
