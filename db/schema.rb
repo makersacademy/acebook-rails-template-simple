@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2022_01_17_162423) do
 
   create_table "posts", force: :cascade do |t|
-    t.string "content", limit: 500
+    t.string "content"
     t.integer "users_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 2022_01_17_162423) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "email", limit: 50
-    t.string "password", limit: 20
+    t.string "email"
+    t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
