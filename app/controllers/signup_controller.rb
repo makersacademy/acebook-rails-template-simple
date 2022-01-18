@@ -8,10 +8,6 @@ class SignupController < ApplicationController
     redirect_to '/signup/confirmed'
   end
 
-  def show
-    redirect_to '/signup/confirmed'
-  end
-
   private
 
   def signup_params
