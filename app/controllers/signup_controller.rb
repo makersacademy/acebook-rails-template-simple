@@ -1,12 +1,12 @@
 class SignupController < ApplicationController
-  # def new
-  #   @post = Post.new
-  # end
+  def new
+    @user = User.new
+  end
 
-  # def create
-  #   @post = Post.create(post_params)
-  #   redirect_to posts_url
-  # end
+  def create
+    @user = User.create(name: signup_params["name"], email: signup_params["email"], password: signup_params["password"])
+    p "user was created"
+  end
 
   # def index
   #   @posts = Post.all
@@ -15,6 +15,6 @@ class SignupController < ApplicationController
   private
 
   def signup_params
-    params.require(:signup).permit(:message)
+    params
   end
 end

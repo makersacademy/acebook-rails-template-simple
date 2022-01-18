@@ -2,20 +2,18 @@
 
 <body> Please enter details to sign up:
 
-
-<%# <%= form_with url: "/posts" do |form| %>
-<%= form_with @signup do |form| %>
+<%= form_with model: @signup do |form| %>
   <br>
-  <%= form.label :query, "Name:" %>
-  <%= form.text_field :query %>
+  <%= form.label :name, "Name:" %>
+  <%= form.text_field :name %>
   <br>
   <br>
-  <%= form.label :query, "Email:" %>
-  <%= form.text_field :query %>
+  <%= form.label :email, "Email:" %>
+  <%= form.text_field :email %>
   <br>
   <br>
-  <%= form.label :query, "Password:" %>
-  <%= form.text_field :query %>
+  <%= form.label :password, "Password:" %>
+  <%= form.text_field :password %>
   <br>
   <br>
   <%= form.submit "Sign Up" %>
