@@ -5,6 +5,11 @@ class SignupController < ApplicationController
 
   def create
     @user = User.create(name: signup_params[0], email: signup_params[1], password: signup_params[2])
+    redirect_to '/signup/confirmed'
+  end
+
+  def show
+    redirect_to '/signup/confirmed'
   end
 
   private
