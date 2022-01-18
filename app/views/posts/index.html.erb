@@ -1,7 +1,12 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <%= link_to "Edit post", edit_post_path(post) %>
 <% end %>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
+
+
+
