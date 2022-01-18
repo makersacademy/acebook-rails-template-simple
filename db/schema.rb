@@ -10,23 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_17_162423) do
+ActiveRecord::Schema.define(version: 2022_01_18_161225) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string "content", null: false
+    t.integer "users_id", null: false
+    t.integer "posts_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["posts_id"], name: "index_comments_on_posts_id"
+    t.index ["users_id"], name: "index_comments_on_users_id"
+  end
 
   create_table "posts", force: :cascade do |t|
-    t.string "content", limit: 500
-    t.integer "users_id"
+    t.string "content", null: false
+    t.integer "comments_id"
+    t.integer "users_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["comments_id"], name: "index_posts_on_comments_id"
     t.index ["users_id"], name: "index_posts_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email", limit: 50
-    t.string "password", limit: 20
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "password", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "comments", "posts", column: "posts_id"
+  add_foreign_key "comments", "users", column: "users_id"
+  add_foreign_key "posts", "comments", column: "comments_id"
   add_foreign_key "posts", "users", column: "users_id"
 end

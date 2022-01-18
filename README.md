@@ -1,5 +1,12 @@
 # AceBook
 
+# Default users
+User.new(name: "Chris Clement", email:"c@gmail
+.com", password: "1234")
+
+ User.new(name: "Mayo Theodore", email:"mayo@g
+mail.com", password: "1234")
+
 ## Quickstart
 
 First, clone this repository. Then:
