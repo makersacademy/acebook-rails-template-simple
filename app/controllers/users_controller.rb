@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
     if @user.save
       p "hello"
-      redirect_to '/posts'  # TODO <- redirect is shown in server log but the page does not change in browser
+      redirect_to posts_path # TODO <- redirect is shown in server log but the page does not change in browser
       p "I am run"
     else
       p "this else is being run"
