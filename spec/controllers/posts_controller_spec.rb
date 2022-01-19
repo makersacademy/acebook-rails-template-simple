@@ -29,8 +29,9 @@ RSpec.describe PostsController, type: :controller do
 
   describe "PATCH /" do
     it "edits an existing post" do
-      post :create, params: { post: {message: "Hello, world!"} }
-      patch post_url(Post.last), params: { post: {message: "Updated message"}}, xhr: true
+      post :create, params: { post: { message: "Hello, world!" } }
+      @post = Post.find_by(message: "Hello, world!")
+      patch post_url(@post), params: { post: {message: "Updated message"}}
       expect(Post.find_by(message: "Updated message")).to be
     end
   end
