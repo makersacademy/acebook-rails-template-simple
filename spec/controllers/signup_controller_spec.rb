@@ -7,10 +7,16 @@ RSpec.describe SignupController, type: :controller do
       expect(response).to redirect_to('/signup/show')
     end
 
-    it "creates a User" do
+    it "creates a User when all required parameters are filled" do
       post :create, params: { name: "Chris", email: "chris@gmail.com", password: '123' }
+      p "This is the test where all params are filled"
+      p User.find_by(email: "chris@gmail.com")
       expect(User.find_by(email: "chris@gmail.com").name).to eq "Chris"
       expect(User.find_by(email: "chris@gmail.com").email).to eq "chris@gmail.com"
+    end
+
+    it "does NOT create a User if any required parameters are NOT filled" do
+      expect{post :create, params: { email: "chris@gmail.com", password: '123' }}.to raise_error
     end
   end
 

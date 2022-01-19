@@ -8,28 +8,9 @@ class SignupController < ApplicationController
     redirect_to '/signup/show'
   end
 
-  # def show
-  #   # redirect_to '/signup/confirmed'
-  # end
-
   private
 
   def signup_params
     params.require([:name, :email, :password])
   end
 end
-
-# OPTION 1
-# NO REQUIRE, ALL POSSIBLE PARAMS
-# params { authenticity_key = "alkfs", token = "blah", name = "chris"
-#            password = '123'}
-
-# User.create(name: params["name"])
-
-# OPTION 2
-# USING REQUIRE, ONLY SOME PARAMS
-
-# signup_params ["chris", "myemail.com", "123"]
-
-# User.create(name: signup_params[0])
-
