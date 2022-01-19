@@ -3,3 +3,24 @@
 <%= link_to "Delete post", post_path(@post),
                   method: :delete,
                   data: { confirm: "Are you sure?" } %>
+
+
+<h2>Comments</h2>
+<% @post.comments.each do |comment| %>
+
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.message %>
+  </p>
+<% end %>
+
+
+<%= form_with model: [ @post, @post.comments.build ] do |form| %>
+  <p>
+    <%= form.label :message %><br>
+    <%= form.text_area :message %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
