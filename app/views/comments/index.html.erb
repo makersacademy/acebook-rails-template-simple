@@ -2,10 +2,10 @@
   <h1>Went to see Spiderman</h1> 
    <div class="top" id="content_section">
            <ul>
+
     <% @comments.each do |comment| %>
       <li>
-      <%= p User.find(comment.users_id).name %>
-      <%= User.find(comment.users_id).name %>:
+      <%= comment.users_id %>
         <%= comment.content %>
         <%= comment.created_at.to_s(:time) %>
       </li>
@@ -14,15 +14,19 @@
         </div>  
     </div>
 
-    <div class="wrapper">
-        <div class="bottom">
-            <%= form_with scope: :content, url: '/comments', local: true do |form| %>
-            <div class="form-group">
-                <%= form.text_field :Comments %>
-                <%= form.submit :Comments%>
-            </div>
-            <% end %>
-        </div>
+<body>
+
+<%= form_with(model: @signup, local: true) do |form| %>
+  <br>
+  <%= form.label :content, "Comment:" %>
+  <%= form.text_field :content %>
+  <br>
+  <%= form.submit "Submit Comment" %>
+<% end %>
+
+
+</body>
+
        
   
 </center>
