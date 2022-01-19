@@ -3,7 +3,14 @@ class CommentsController < ApplicationController
     @new_comment = Comment.new
     @comments = Comment.all
     @test_posts = Post.all
-    # @users = User.find(1)
+    @users = User.all
+   p @post1 = Post.find(1).id
+    @post2 = Post.find(2).id
+  end
+
+  def post_check
+    if @comments.posts_id == @post
+    end
   end
 
 def create

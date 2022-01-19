@@ -1,35 +1,34 @@
-<center>
+<body>
+  <div id="posts" style="font-weight: bold; font-size:15px;">
+  <% @test_posts.each do |post| %>
+  </br>
+  User: <%= User.find(post.users_id).name %>
+  </br>
+  Status: <%= post.content %> 
+  </br>
+  Time: <%= post.created_at.to_s(:time) %>
 
-  <body>
 
-    <div id="posts" style="font-weight: bold; font-size:30px;">
-      <ul>
-        <% @test_posts.each do |post| %>
-        <%= post.content %>
-        <%= post.created_at.to_s(:time) %>
+  <div id="comment_form">
+    <%= form_with(model: @signup, local: true) do |form| %>
+    <%= form.text_field :content %>
+    <%= form.submit "Comment" %>
+    <% end %>
+  </div>
 
-        <div id="comment_form">
-        <%= form_with(model: @signup, local: true) do |form| %>
-          <%= form.text_field :content %>
-        <%= form.submit "Comment" %>
-      <% end %>
-    </div>
+  </br>
 
-    <div id="comments" style="font-weight: bold; font-size:15px;">
-        <% @comments.each do |comment| %>
-        <ul>
-          <%= comment.users_id %>
-          <%= comment.posts_id %>
-          <%= comment.content %>
-          <%= comment.created_at.to_s(:time) %>
-        </ul>  
-      <% end %>
-    </div>
+  <% @comments.each do |comment| %>
+    <% if comment.posts_id == post.id%>
+      <%= User.find(comment.users_id).name %>: <%= comment.content %> (<%= comment.created_at.to_s(:time) %>)
+      </br>
+      <% elsif comment.posts_id == post.id %>
+      <%= comment.content %>
+      <%= comment.created_at.to_s(:time) %>
+      <%= User.find(comment.users_id).name %>
+    <% end %>
+  <% end %>
+<% end %>
 
-      </ul>
-      <% end %>
-    </div>
-
-  </body>
-</center>
+</body>
 
