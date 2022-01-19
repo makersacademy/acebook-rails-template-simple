@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2022_01_19_122144) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -39,5 +38,4 @@ ActiveRecord::Schema.define(version: 2022_01_19_122144) do
   end
 
   add_foreign_key "comments", "posts"
-
 end
