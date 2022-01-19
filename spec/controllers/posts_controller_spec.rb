@@ -26,4 +26,14 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe "PATCH /" do
+    it "edits an existing post" do
+      post :create, params: { post: {message: "Hello, world!"} }
+      patch post_url(Post.last), params: { post: {message: "Updated message"}}, xhr: true
+      expect(Post.find_by(message: "Updated message")).to be
+    end
+  end
+
+ 
 end
