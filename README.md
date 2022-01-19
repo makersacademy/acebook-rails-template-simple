@@ -17,6 +17,8 @@ comment1 = Comment.new(users_id: 2, posts_id: 1, content: "Batman was better")
 comment1.save
 comment2 = Comment.new(users_id: 1, posts_id: 1, content: "True, I agree")
 comment2.save
+comment3 = Comment.new(users_id: 2, posts_id: 1, content: "Thoughts on superman?")
+comment3.save
 
 
 ## Quickstart

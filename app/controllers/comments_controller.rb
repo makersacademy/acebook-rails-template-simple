@@ -1,19 +1,18 @@
 class CommentsController < ApplicationController
   def index
-   @comments = Comment.all
-  p @users = User.find(1)
-  p @chris = @users.name
+  @comments = Comment.all
+  @users = User.find(1)
+  p "HELLLLLOOOOOO"
+  p @users
   end
+
+def create
+  @new_comment = Comment.new(comment_params)
+  @comment.save
 end
 
-def show
-end
-
-def new
-  @new_comment = @comments.build(params[:comment])
-end
-
-def edit
-end
-
-end
+private
+        def comment_params
+          params.require(:content).permit(:content)
+        end
+    end

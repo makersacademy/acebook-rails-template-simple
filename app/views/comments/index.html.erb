@@ -1,32 +1,29 @@
 <center>
   <h1>Went to see Spiderman</h1> 
-  <ul>
+   <div class="top" id="content_section">
+           <ul>
     <% @comments.each do |comment| %>
       <li>
+      <%= p User.find(comment.users_id).name %>
       <%= User.find(comment.users_id).name %>:
         <%= comment.content %>
         <%= comment.created_at.to_s(:time) %>
       </li>
     <% end %>
   </ul>
+        </div>  
+    </div>
 
-
-<section id="app">
-    <div class="container">
-      <div class="row">
-        <div class="col-6">
-          <div class="comment">
-        <p v-for="items in item" v-text="items"></p>
-          </div><!--End Comment-->
-          </div><!--End col -->
-          </div><!-- End row -->
-      <div class="row">
-        <div class="col-6">
-      <textarea type="text" class="input" placeholder="Write a comment" v-model="newItem" @keyup.enter="addItem()"></textarea>
-      </br>
-          <button v-on:click="addItem()" class='primaryContained float-right' type="submit">Add Comment</button>
-        </div><!-- End col -->
-      </div><!--End Row -->
-    </div><!--End Container -->
-  </section><!-- end App -->
+    <div class="wrapper">
+        <div class="bottom">
+            <%= form_with scope: :content, url: '/comments', local: true do |form| %>
+            <div class="form-group">
+                <%= form.text_field :Comments %>
+                <%= form.submit :Comments%>
+            </div>
+            <% end %>
+        </div>
+       
+  
 </center>
+
