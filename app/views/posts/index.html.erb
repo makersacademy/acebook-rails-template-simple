@@ -1,11 +1,12 @@
 <%= render "form", post: @post%> <!--brings new form to index-->
 
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-  
-   <button><%= link_to "Edit", edit_post_path(post) %></button>
-   <button><%= link_to "Delete", post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></button>
-<% end %>
+  <% @posts.reverse.each do |post| %>
+    <p><%= post.message %></p>
+    <p>Created at: <%= post.created_at.strftime("%H:%M") %></p>
+    
+    <button><%= link_to "Edit", edit_post_path(post) %></button>
+    <button><%= link_to "Delete", post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+  <% end %>
 
 <!--<%= link_to new_post_path do %>
   New post
