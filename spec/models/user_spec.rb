@@ -14,9 +14,6 @@ RSpec.describe User, type: :model do
     expect(subject).to be_valid
   end
 
-  it "is not valid without a name"
-  it "is not valid without a email"
-
   it "is not valid without a name" do
     user_2 = User.new(name: nil, email:"email")
     expect(user_2).to_not be_valid
