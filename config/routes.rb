@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :posts
 
   get "/", to: "user#index"
+  get "/signup", to: "signup#index"
 end
