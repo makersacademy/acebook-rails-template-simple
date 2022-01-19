@@ -1,3 +1,3 @@
 class Post < ApplicationRecord
-    validates :message, presence: true, length: {in: 10..200}
+    validates :message, presence: true, length: {maximum: 200}
 end

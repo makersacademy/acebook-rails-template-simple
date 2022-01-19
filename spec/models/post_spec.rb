@@ -15,15 +15,11 @@ RSpec.describe Post, type: :model do
     expect(post).to_not be_valid
   end
 
-  it "message is greater than 10 char" do
+  it "message is less than 200 char" do
     post = Post.new(message: "a" * 11)
     expect(post).to be_valid
   end
 
-  it "message is less than 10 char" do
-    post = Post.new(message: "a" * 9)
-    expect(post).to_not be_valid
-  end
 
   it "message is greater than 200 char" do
     post = Post.new(message: "a" * 201)
