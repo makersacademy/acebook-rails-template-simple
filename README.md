@@ -9,8 +9,7 @@ user2 = User.new(name: "Mayo Theodore", email:"mayo@g
 mail.com", password: "1234")
 user2.save
 
-post1 = Post.new(users_id: 1, content: "Just watched s
-piderman")
+post1 = Post.new(users_id: 1, content: "Just watched spiderman")
 post1.save
 
 comment1 = Comment.new(users_id: 2, posts_id: 1, content: "Batman was better")

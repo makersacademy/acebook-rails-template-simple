@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   def index
     @new_comment = Comment.new
     @comments = Comment.all
+    @test_posts = Post.all
     # @users = User.find(1)
   end
 
