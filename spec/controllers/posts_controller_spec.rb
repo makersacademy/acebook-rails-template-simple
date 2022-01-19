@@ -28,13 +28,12 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "PATCH /" do
-    it "edits an existing post" do
+    # patch  "/posts/:id(.:format)", to: "posts#update"
+    it "routes /post/:id/edit to patch" do
       post :create, params: { post: { message: "Hello, world!" } }
       @post = Post.find_by(message: "Hello, world!")
-      patch post_url(@post), params: { post: {message: "Updated message"}}
-      expect(Post.find_by(message: "Updated message")).to be
+      # The recognized options <{"controller"=>"posts", "action"=>"update", "id"=>"73"}>
+      expect(patch: "/posts/#{@post.id}").to route_to("posts#update", "id"=>"#{@post.id}")
     end
   end
-
- 
 end
