@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
+    # TODO: .create vs .new  preference?
     redirect_to posts_url
   end
 
@@ -26,9 +27,16 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to @post
     else
-      # render edit:, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
 
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    redirect_to posts_path, status: :see_other
   end
 
   private
