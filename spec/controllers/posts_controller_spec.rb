@@ -29,7 +29,7 @@ RSpec.describe PostsController, type: :controller do
 
   describe "PATCH /" do
     # patch  "/posts/:id(.:format)", to: "posts#update"
-    it "routes /post/:id/edit to patch" do
+    it "method patch,route /post/:id/edit to update action" do
       post :create, params: { post: { message: "Hello, world!" } }
       @post = Post.find_by(message: "Hello, world!")
       # The recognized options <{"controller"=>"posts", "action"=>"update", "id"=>"73"}>
