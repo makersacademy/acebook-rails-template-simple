@@ -1,6 +1,14 @@
 <h1> Welcome to Acebook </h1>
 
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
 <body> Please enter details to log in:
+
+
 
 <%= form_with(model: @login, local: true) do |form| %>
   <br>
