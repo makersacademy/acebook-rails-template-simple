@@ -4,7 +4,7 @@ RSpec.describe SignupController, type: :controller do
   describe "POST /" do
     it "responds with 200" do
       post :create, params: { name: "Chris", email: "chris@gmail.com", password: '123' } 
-      expect(response).to redirect_to('/signup/confirmed')
+      expect(response).to redirect_to('/signup/show')
     end
 
     it "creates a User" do

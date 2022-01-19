@@ -2,7 +2,7 @@
 
 <body> Please enter details to sign up:
 
-<%= form_with model: @signup do |form| %>
+<%= form_with(model: @signup, local: true) do |form| %>
   <br>
   <%= form.label :name, "Name:" %>
   <%= form.text_field :name %>
