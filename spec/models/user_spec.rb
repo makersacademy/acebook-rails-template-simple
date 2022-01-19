@@ -8,6 +8,8 @@ RSpec.describe User, type: :model do
              email: "Michael@gmail.com",
             created_at: DateTime.now,
             updated_at: DateTime.now,
+            password: "1234567",
+            password_confirmation: "1234567",
             id: 1)
     }
   it "is valid with valid attributes" do
@@ -22,6 +24,11 @@ RSpec.describe User, type: :model do
   it "is not valid without a email" do
     user_1 = User.new(name:"person", email: nil)
     expect(user_1).to_not be_valid
+  end
+
+  it "is not valid without a password" do
+    subject.password = nil
+    expect(subject).to_not be_valid
   end
 
 end
