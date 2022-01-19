@@ -212,6 +212,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activestorage (~> 6.1)
   byebug
   capybara (~> 2.13)
   devise (~> 4.8, >= 4.8.1)
@@ -232,4 +233,3 @@ RUBY VERSION
 
 BUNDLED WITH
    2.2.32
-
