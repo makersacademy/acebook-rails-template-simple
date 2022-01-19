@@ -9,8 +9,6 @@ RSpec.describe SignupController, type: :controller do
 
     it "creates a User when all required parameters are filled" do
       post :create, params: { name: "Chris", email: "chris@gmail.com", password: '123' }
-      p "This is the test where all params are filled"
-      p User.find_by(email: "chris@gmail.com")
       expect(User.find_by(email: "chris@gmail.com").name).to eq "Chris"
       expect(User.find_by(email: "chris@gmail.com").email).to eq "chris@gmail.com"
     end
