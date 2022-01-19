@@ -28,12 +28,18 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "PATCH /" do
-    # patch  "/posts/:id(.:format)", to: "posts#update"
     it "method patch,route /post/:id/edit to update action" do
       post :create, params: { post: { message: "Hello, world!" } }
       @post = Post.find_by(message: "Hello, world!")
-      # The recognized options <{"controller"=>"posts", "action"=>"update", "id"=>"73"}>
       expect(patch: "/posts/#{@post.id}").to route_to("posts#update", "id"=>"#{@post.id}")
+    end
+  end
+
+  describe "DELETE /" do
+    it "method delete,route /post/:id to destroy action" do
+      post :create, params: { post: { message: "We're on rails!" } }
+      @post = Post.find_by(message: "We're on rails!")
+      expect(delete: "/posts/#{@post.id}").to route_to("posts#destroy", "id"=>"#{@post.id}")
     end
   end
 end
