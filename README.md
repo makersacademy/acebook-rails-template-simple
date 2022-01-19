@@ -1,11 +1,20 @@
 # AceBook
 
-# Default users
-User.new(name: "Chris Clement", email:"c@gmail
+# Default users (remember to use .save after each entry)
+user1 = User.new(name: "Chris Clement", email:"c@gmail
 .com", password: "1234")
 
- User.new(name: "Mayo Theodore", email:"mayo@g
+user2 = User.new(name: "Mayo Theodore", email:"mayo@g
 mail.com", password: "1234")
+
+# Default posts
+post1 = Post.new(users_id: 1, content: "Just watched s
+piderman")
+
+# Default comments
+comment1 = Comment.new(users_id: 2, posts_id: 1, content: "Batman was better")
+comment2 = Comment.new(users_id: 1, posts_id: 1, content: "True, I agree")
+
 
 ## Quickstart
 
