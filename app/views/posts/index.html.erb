@@ -1,10 +1,12 @@
+<%= render "form", post: @post%> <!--brings new form to index-->
+
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
-  <ul>
-  <li><%= link_to "Edit", edit_post_path(post) %></li>
-</ul>
+  
+   <button><%= link_to "Edit", edit_post_path(post) %></button>
+   <button><%= link_to "Delete", post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></button>
 <% end %>
 
-<%= link_to new_post_path do %>
+<!--<%= link_to new_post_path do %>
   New post
-<% end %>
+<% end %> -->

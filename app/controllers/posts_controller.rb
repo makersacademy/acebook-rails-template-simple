@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  def new
-    @post = Post.new
-  end
+  # def new
+  #   @post = Post.new
+  # end
 
   def create
     @post = Post.create(post_params)
@@ -10,6 +10,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @post = Post.new # this was the code in the new route
   end
 
   def edit
@@ -24,6 +25,13 @@ class PostsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+  
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    redirect_to root_path, status: :see_other
   end
   
   private
