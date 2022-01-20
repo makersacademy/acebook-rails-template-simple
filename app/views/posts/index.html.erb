@@ -3,15 +3,26 @@
 
 <% @all_posts.reverse.each do |post| %>
   <p><%= post.content %></p> 
+
+<%= form_for([post.comments.build]) do |f| %>
+<%= f.text_area :content %>
+<%= f.submit %>
+<% end %>
+<br>
+  Comments: <%= post.comments.count %>
+
   <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p> 
   <% pre_like = post.likes.find { |like| like.user_id == session[:current_user_id]} %>
+
   <% if pre_like %>
     <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
   <% else %>
     <%= button_to 'Like', post_likes_path(post), method: :post %>
   <% end %>
+
   Posted by
   <%= User.find_by(id: post.users_id).name %> </p>
 <% end %>
 
 <p><%= link_to "Create new post", {:action => 'new' } %></p>
+
