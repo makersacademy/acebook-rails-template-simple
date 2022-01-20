@@ -4,9 +4,9 @@ rvm:
 cache:
 - bundler
 before_script:
-- bundle exec rake db:create
-- bundle exec rake db:migrate
-- bundle exec rake assets:precompile
+- rake db:create
+- rake db:migrate
+- rake assets:precompile
 script: bundle exec rspec
 deploy:
   provider: heroku
