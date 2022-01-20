@@ -1,36 +1,26 @@
 require 'rails_helper'
+require './spec/helpers/helpers.rb'
+
+RSpec.configure do |c|
+  c.include Helpers
+end
 
 RSpec.feature "Timeline", type: :feature do
 
   context "logged in" do
     scenario "Can see log out button" do
-      visit "/"
-      click_link "Sign Up"
-      find(:xpath, "/html/body/form/div[1]/input").set("test@test.com")
-      find(:xpath, "/html/body/form/div[2]/input").set("test123")
-      find(:xpath, "/html/body/form/div[3]/input").set("test123")
-      find(:xpath, "/html/body/form/div[4]/input").click
+      sign_up
       expect(page).to have_content("Log out")
     end
 
     scenario "Can see settings" do
-      visit "/"
-      click_link "Sign Up"
-      find(:xpath, "/html/body/form/div[1]/input").set("test@test.com")
-      find(:xpath, "/html/body/form/div[2]/input").set("test123")
-      find(:xpath, "/html/body/form/div[3]/input").set("test123")
-      find(:xpath, "/html/body/form/div[4]/input").click
+      sign_up
       click_link "Settings"
       expect(page).to have_current_path("/users/edit")
     end
 
     scenario "Acebook home button takes you to posts" do
-      visit "/"
-      click_link "Sign Up"
-      find(:xpath, "/html/body/form/div[1]/input").set("test@test.com")
-      find(:xpath, "/html/body/form/div[2]/input").set("test123")
-      find(:xpath, "/html/body/form/div[3]/input").set("test123")
-      find(:xpath, "/html/body/form/div[4]/input").click
+      sign_up
       click_link "Acebook"
       expect(page).to have_current_path("/posts")
     end
