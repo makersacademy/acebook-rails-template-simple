@@ -1,0 +1,30 @@
+<h1> Welcome to Acebook </h1>
+<br>
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
+<br>
+
+<body> Please enter details to log in:
+
+
+
+<%= form_with(model: @login, local: true) do |form| %>
+  <br>
+  <br>
+  <%= form.label :email, "Email:" %>
+  <%= form.text_field :email %>
+  <br>
+  <br>
+  <%= form.label :password, "Password:" %>
+  <%= form.text_field :password %>
+  <br>
+  <br>
+  <%= form.submit "Log in" %>
+<% end %>
+
+
+</body>
