@@ -2,7 +2,9 @@
 <h2> This is who is logged in User id: <%= session[:current_user_id] %></h2>
 
 <% @all_posts.reverse.each do |post| %>
-  <p><%= post.content %></p>
+  <p><%= post.content %> 
+  Posted by
+  <%= User.find_by(id: post.users_id).name %> </p>
 <% end %>
 
 <p><%= link_to "Create new post", {:action => 'new' } %></p>
