@@ -1,8 +1,13 @@
 class CommentsController < ApplicationController
+
+  before_action :must_be_logged_in
+
   def create
     @post = Post.find(params[:post_id])
+
     @comment = @post.comments.create(comment_params.merge(user_id: current_user.id))
     redirect_to post_path(@post)
+
   end
 
 
@@ -10,7 +15,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:comment_id])
     @comment.destroy
-    redirect_to post_path(@post)
+    redirect_to posts_path(@post)
   end
     
   private

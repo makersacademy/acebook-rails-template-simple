@@ -26,4 +26,20 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe "PATCH /" do
+    it "method patch,route /post/:id/edit to update action" do
+      post :create, params: { post: { message: "Hello, world!" } }
+      @post = Post.find_by(message: "Hello, world!")
+      expect(patch: "/posts/#{@post.id}").to route_to("posts#update", "id"=>"#{@post.id}")
+    end
+  end
+
+  describe "DELETE /" do
+    it "method delete,route /post/:id to destroy action" do
+      post :create, params: { post: { message: "We're on rails!" } }
+      @post = Post.find_by(message: "We're on rails!")
+      expect(delete: "/posts/#{@post.id}").to route_to("posts#destroy", "id"=>"#{@post.id}")
+    end
+  end
 end
