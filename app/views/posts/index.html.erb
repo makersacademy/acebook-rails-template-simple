@@ -15,10 +15,10 @@
 <%= form_with model: [ post, post.comments.build ] do |form| %>
   <p>
     <%= form.label :content %><br>
-    <%= form.text_area :content, :rows=>1, :cols=>20 %>
+    <%= form.text_area :content, id:"content", :rows=>1, :cols=>20 %>
   </p>
   <p>
-    <%= form.submit %>
+    <%= form.submit id:"create_comment"%>
   </p>
 <% end %>
   <% end %>
