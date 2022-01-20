@@ -1,20 +1,29 @@
 class PostsController < ApplicationController
-  def new
-    @post = Post.new
+
+  def index
+    @picture_posts = Post.all.with_attached_images
   end
 
   def create
-    @post = Post.create(post_params)
-    redirect_to posts_url
+    picture_post = Post.create! params.require(:content).permit(:image)
+    picture_post.images.attach(params[:content][:images])
+    redirect_to '/comments'
   end
 
-  def index
-    @posts = Post.all
-  end
 
-  private
-
-  def post_params
-    params.require(:post).permit(:message)
-  end
+ def show
+  @picture_post = Post.find(params[:id])
+ end
 end
+
+
+# def create
+#   post_params = params.require(:content).permit(:image)
+#   @picture_post = Post.create(post_params)
+#   if @picture_post.valid?
+#     redirect_to '/comments'
+#   else
+#     flash[:errors] = @picture_post.errors.full_messages
+#     redirect_to '/comments'
+#   end
+#  end

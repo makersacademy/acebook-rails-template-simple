@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
     @users = User.all
     @post1 = Post.find(1).id
     @post2 = Post.find(2).id
+    @picture_posts = Post.all.with_attached_image
   end
 
   def post_check
@@ -20,22 +21,17 @@ class CommentsController < ApplicationController
 
 def create
   @new_comment = Comment.create(content: comment_params[0])
+  picture_post = Post.create! params.require(:content).permit(:image)
+  picture_post.images.attach(params[:content][:images])
   redirect_to '/comments'
 end
 
-def post_picture
-  @post_pic = Post.create!(post_params)
-  @post.picture.attach(io: File.open('app/assets/images/spiderman.jpg'), filename: 'spiderman.jpg', content_type: 'image/jpg')
-    redirect_to '/comments'
-end
+def show
+  @picture_post = Post.find(params[:id])
+ end
 
 private
         def comment_params
-          params.require([:content])
-        end
-
-        def post_params
-          params.require(:post).permit(:picture)
+          params.require([:content]).permit(:image)
         end
     end
-
