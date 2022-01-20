@@ -12,8 +12,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    p params
+    p user_params
     @user = User.new(user_params)
+    p @user
 
     if @user.save
       p "hello"
