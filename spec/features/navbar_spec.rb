@@ -1,9 +1,4 @@
 require 'rails_helper'
-require './spec/helpers/helpers.rb'
-
-RSpec.configure do |c|
-  c.include Helpers
-end
 
 RSpec.feature "Timeline", type: :feature do
 
