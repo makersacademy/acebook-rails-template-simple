@@ -206,7 +206,6 @@ DEPENDENCIES
   pg
   puma (~> 3.12.6)
   rails (~> 6.1)
-  rails-controller-testing (~> 0.0.3)
   rspec-rails (~> 4.0)
   sass-rails (~> 6.0)
   selenium-webdriver
