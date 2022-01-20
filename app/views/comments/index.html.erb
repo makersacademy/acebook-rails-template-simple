@@ -8,15 +8,6 @@
   </br>
   Time: <%= post.created_at.to_s(:time) %>
 
-  <div id="upload_pic">
-    <br>
-    <%= form_with model: @picture_post, local: true do |form| %>
-      <%= form.label "What's on your mind?" %><br>
-      <%= form.text_area :content %><br>
-      <%= form.file_field :images, multiple: true %><br>
-      <%= form.submit %>
-    <% end %>
-  </div>
 
   <div id="comment_form">
     <%= form_with(model: @signup, local: true) do |form| %>
