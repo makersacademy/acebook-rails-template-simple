@@ -4,23 +4,22 @@
 
 
 <%if current_user == nil %>
-
-<li>
+<button id='sign-up-button'>
 <%= link_to 'Sign Up',
 new_user_registration_path%>
-</li>
+</button>
 
-<li>
+<button>
 <%= link_to 'Log In',
 new_user_session_path%>
-</li>
+</button>
 
 <% elsif current_user %>
-  <li>
+  <button>
   <%= link_to 'Log out',
   destroy_user_session_path,
   method: :delete%>
-  </li>
+  </button>
 
   <div>
   <% if current_user.avatar.attached? %>
