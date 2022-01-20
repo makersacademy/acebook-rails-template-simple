@@ -11,8 +11,6 @@ class HomepageController < ApplicationController
             end
         else
             session[:current_user_id] = @user.id
-            p "Who is stored in the session"
-            p session[:current_user_id]
             redirect_to '/posts'
         end
     end
