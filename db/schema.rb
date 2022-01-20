@@ -12,10 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2022_01_20_011833) do
 
-
   create_table "comments", force: :cascade do |t|
     t.text "content"
-
     t.integer "users_id"
     t.integer "posts_id"
     t.datetime "created_at", precision: 6, null: false
@@ -41,8 +39,6 @@ ActiveRecord::Schema.define(version: 2022_01_20_011833) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "posts", column: "posts_id"
   add_foreign_key "comments", "users", column: "users_id"
   add_foreign_key "posts", "users", column: "users_id"
