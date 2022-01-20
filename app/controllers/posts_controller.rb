@@ -18,8 +18,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post_new = Post.new(post_params)
-
+    @post_new = Post.new(content: post_params["content"], users_id: 1)
     respond_to do |format|
       if @post_new.save
        format.html { render action: "index", notice: "Post created!"}
