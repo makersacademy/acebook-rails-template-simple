@@ -2,14 +2,14 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
-    redirect_to post_path(@post)
+    redirect_to posts_path(@post)
   end
 
   def destroy
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:comment_id])
     @comment.destroy
-    redirect_to post_path(@post)
+    redirect_to posts_path(@post)
   end
     
   private

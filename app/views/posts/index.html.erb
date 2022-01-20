@@ -8,6 +8,7 @@
   <p><%= link_to post.message, post_path(post) %></p>
 
   <% post.comments.each do |comment| %>
+    <% @user.name %>
     <p><%= comment.message %></p>
   <% end %>
 
