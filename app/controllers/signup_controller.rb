@@ -11,7 +11,8 @@ class SignupController < ApplicationController
       @user.save
     else
       redirect_to '/signup'
-      flash.alert = "Missing details, try again"
+      flash.alert = ["Issue with Name #{@user.errors[:name]}"]
+      flash.alert << "Issue with Email #{@user.errors[:email]}"
     end
   end
 
