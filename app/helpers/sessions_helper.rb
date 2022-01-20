@@ -12,8 +12,9 @@ module SessionsHelper
     !current_user.nil?
   end
 
-  def redirect_home_if_not_logged_in
+  def must_be_logged_in
     if !logged_in?
+      flash[:danger] = 'Must be logged in to do that'
       redirect_to root_path
     end
   end

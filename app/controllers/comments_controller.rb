@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+
+  before_action :must_be_logged_in
+
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)

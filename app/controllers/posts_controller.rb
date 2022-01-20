@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :redirect_home_if_not_logged_in
+  before_action :must_be_logged_in
 
   def new
     @post = Post.new
