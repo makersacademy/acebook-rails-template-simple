@@ -35,7 +35,7 @@ RSpec.describe User, type: :model do
 
     it "Img replaced when another is attached " do
       @user.avatar.attach(io: File.open("lib/assets/ShaggyRogers_test_picture.png"), 
-      filename: "ShaggyRogers_test_picture.png", content_type: "image/png"
+      filename: "ShaggyRogers_test_picture.png", content_type: "image/png")
 
       expect(@user.avatar.attached?).to be true
       expect(@user.avatar.filename).to eq("ShaggyRogers_test_picture.png")
