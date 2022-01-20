@@ -8,6 +8,12 @@
   </br>
   Time: <%= post.created_at.to_s(:time) %>
 
+<div id="upload_pic">
+  <%= form_with(model: @signup, local: true) do |form| %>
+  <%= form.label "Upload photo" %>
+  <%= form.file_field :picture %>
+  <% end %>
+  </div>
 
   <div id="comment_form">
     <%= form_with(model: @signup, local: true) do |form| %>
@@ -15,7 +21,7 @@
     <%= form.submit "Comment" %>
     <% end %>
   </div>
-
+  <hr>
   </br>
 
   <% @comments.each do |comment| %>
@@ -27,8 +33,17 @@
       <%= comment.created_at.to_s(:time) %>
       <%= User.find(comment.users_id).name %>
     <% end %>
+    
   <% end %>
+      <hr>  
+      </br>
 <% end %>
 
 </body>
+
+<% if @post.picture.attached? %>
+  <image src="<%=(url_for(@post.picture))%>">
+<% end%>
+
+
 
