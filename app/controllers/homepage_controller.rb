@@ -1,7 +1,7 @@
 class HomepageController < ApplicationController
 
     def create
-        @user = User.find_by(email: signup_params[0], password: signup_params[1])
+        @user = User.find_by(email: signup_params["email"], password: signup_params["password"])
         if @user == nil
             redirect_to "/homepage"
             if User.find_by(email: signup_params[0]) == nil
@@ -20,7 +20,7 @@ class HomepageController < ApplicationController
     private
 
     def signup_params
-      params.require([:email, :password])
+      params.permit([:email, :password])
     end
 
 end
