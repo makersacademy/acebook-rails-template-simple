@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html>
+
+<html >
   <head>
     <title>Acebook</title>
     <%= csrf_meta_tags %>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" integrity="sha512-IgmDkwzs96t4SrChW29No3NXBIBv8baW490zk5aXvhCD8vuZM3yUSkbyTBcXohkySecyzIrUwiF/qV0cuPcL3Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../public/style.css" />
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <style>
+     body {height: 100vh !important;}
+     .hero-foot {padding: 2rem 12rem 5rem 12rem !important;}
+    </style>
+   
   </head>
 
-  <body>
+  <body class="has-background-light">
     <%= yield %>
   </body>
 </html>

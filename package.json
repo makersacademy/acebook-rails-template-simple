@@ -1,5 +1,4 @@
 {
   "name": "acebook",
-  "private": true,
-  "dependencies": {}
+  "private": true
 }
