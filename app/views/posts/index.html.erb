@@ -1,4 +1,8 @@
 <h1>AceBook Posts</h1>
+<h2> Profile pic below </h2>
+<% if @user.profile_pic.attached? %>
+<image src="<%= (url_for(@user.profile_pic)) %>">
+<% end %>
 <h2> This is who is logged in: <%= User.find_by(id: session[:current_user_id]).name %></h2>
 
 <% @all_posts.reverse.each do |post| %>

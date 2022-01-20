@@ -3,12 +3,20 @@ class SignupController < ApplicationController
     @user = User.new
   end
 
+  def profile_pic
+    @user.profile_pic
+  end
+
   def create
     @user = User.new(name: signup_params["name"], email: signup_params["email"], password: signup_params["password"])
     if @user.valid?
+      
+      @user.save
+      #@user.profile_pic.attach(io: File.open('app/assets/images/seed_images/spiderman.jpg'), filename: 'spiderman.jpg', content_type: 'image/jpeg')
+      @user.profile_pic.attach(params[:profile_pic])
       redirect_to '/homepage'
       flash.alert = "Thanks for signing up"
-      @user.save
+      
     else
       redirect_to '/signup'
       if @user.errors[:name].length != 0
@@ -26,6 +34,6 @@ class SignupController < ApplicationController
   private
 
   def signup_params
-    params.permit([:name, :email, :password])
+    params.permit([:name, :email, :password, :profile_pic])
   end
 end
