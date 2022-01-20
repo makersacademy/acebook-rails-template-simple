@@ -14,9 +14,13 @@ module SessionsHelper
 
   def must_be_logged_in
     if !logged_in?
-      flash[:danger] = 'Must be logged in to do that'
+      flash[:danger] = "Must be logged in to do that"
       redirect_to root_path
     end
   end
 
+  def log_out
+    session.delete(:user_id)
+    @current_user = nil
+  end
 end
