@@ -1,7 +1,7 @@
 <h1>AceBook Posts</h1>
 
 
-<% @posts.each do |post| %>
+<% @all_posts.reverse.each do |post| %>
   <p><%= post.content %></p>
 <% end %>
 

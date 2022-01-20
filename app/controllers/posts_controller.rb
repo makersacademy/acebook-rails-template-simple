@@ -1,13 +1,20 @@
 class PostsController < ApplicationController
-  def index
-    @posts = Post.all
+  
+  def initialize
+    @all_posts = Post.all
   end
+
+  # def index
+  #   # @display_posts =Post.all
+  #   @all_posts = Post.all
+  # end
 
   def show
     @posts = Post.find(params[:id])
-    respond_to do |format|
-      format.html { render action: 'index'}
-    end
+    redirect_to '/posts'
+    # respond_to do |format|
+    #   format.html { render action: 'index'}
+    # end
   end
 
   def create
@@ -15,12 +22,10 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post_new.save
-        p 'post was saved'
-       @posts.push(@post_new)
        format.html { render action: "index", notice: "Post created!"}
       else 
-        p "not happening"
-        format.html {render action: 'new' }
+        p "post did not save"
+        format.html {render action: 'post_error' }
       end
     end
   end
