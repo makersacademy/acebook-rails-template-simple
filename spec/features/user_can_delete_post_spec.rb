@@ -12,14 +12,13 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "user[password]", with: "123456"
     fill_in "user[password_confirmation]", with: "123456"
     click_button "Create User"
-    expect(page).to_have content("New post")
 
     # Create post ------------------------
+    id = (User.find_by(email: "zoe@gmail.com")).id
     visit "/posts"
     click_link "New post"
-    print page.html
     fill_in "post[message]", with: "Hello, world!"
-    fill_in "post[user_id]", with: "1"
+    fill_in "post[user_id]", with: id
     click_button "Submit"
     visit '/posts'
     expect(page).to have_link("Hello, world!")
