@@ -13,7 +13,7 @@
                   method: :delete,
                   data: { confirm: "Are you sure?" } %>
 
-<%= form_with model: [ post, post.comments.build ] do |form| %>
+<%= form_with model: [ post, post.comments.build ], local: true do |form| %>
   <p>
     <%= form.label :message %><br>
     <%= form.text_area :message %>
