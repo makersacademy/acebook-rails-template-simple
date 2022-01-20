@@ -8,14 +8,15 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  describe "POST /" do
-    it "responds with 200" do
-      post :create, params: { post: { message: "Hello, world!" } }
+  describe "POST /posts" do
+    it "responds with 302" do
+      post :create, params: { post: { message: "Hello, world!", user_id: 11} }
+      expect(response).to have_http_status(302)
       expect(response).to redirect_to(posts_url)
     end
 
     it "creates a post" do
-      post :create, params: { post: { message: "Hello, world!" } }
+      post :create, params: { post: { message: "Hello, world!", user_id: 11 } }
       expect(Post.find_by(message: "Hello, world!")).to be
     end
   end

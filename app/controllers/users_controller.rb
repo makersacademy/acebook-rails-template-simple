@@ -20,7 +20,6 @@ class UsersController < ApplicationController
       redirect_to posts_path # TODO <- redirect is shown in server log but the page does not change in browser
       p "I am run"
     else
-      p "this else is being run"
       render :new
     end
   end
