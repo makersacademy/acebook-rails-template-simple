@@ -11,8 +11,15 @@ class SignupController < ApplicationController
       @user.save
     else
       redirect_to '/signup'
-      flash.alert = ["Issue with Name #{@user.errors[:name]}"]
-      flash.alert << "Issue with Email #{@user.errors[:email]}"
+      if @user.errors[:name].length != 0
+        flash[:name] = "Name error: #{@user.errors[:name]}"
+      end
+      if @user.errors[:email].length != 0
+        flash[:email] = "Email error: #{@user.errors[:email]}"
+      end
+      if @user.errors[:password].length != 0
+        flash[:password] = "Password error: #{@user.errors[:password]}"
+      end
     end
   end
 
