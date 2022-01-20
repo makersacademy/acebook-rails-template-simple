@@ -1,0 +1,4 @@
+example_user:
+  name: Chris
+  email: chris@example.com
+  password: password
