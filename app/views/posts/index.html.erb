@@ -6,8 +6,19 @@
     
     <button><%= link_to "Edit", edit_post_path(post) %></button>
     <button><%= link_to "Delete", post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></button>
-  <% end %>
 
-<!--<%= link_to new_post_path do %>
-  New post
-<% end %> -->
+<%= render post.comments%>
+
+
+    <h4>Add a comment:</h4>
+
+<%= form_with model: [ post, post.comments.build ] do |form| %>
+  <p>
+    <%= form.label :content %><br>
+    <%= form.text_area :content, :rows=>1, :cols=>20 %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+  <% end %>
