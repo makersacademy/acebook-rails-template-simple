@@ -7,6 +7,6 @@ RSpec.feature "Sign Up Page", type: :feature do
     fill_in "email", with: "chris@gmail.com"
     fill_in "password", with: "123"
     click_button "Sign Up"
-    expect(page).to have_content("SIGN UP COMPLETE")
+    expect(page).to have_content("Thanks for signing up")
   end
 end
