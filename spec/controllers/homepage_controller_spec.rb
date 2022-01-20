@@ -6,7 +6,8 @@ RSpec.describe HomepageController, type: :controller do
       # users is not recognised. We are trying to reference the spec/features/users.yml file to input
       # a user into a test database. Work in Progress.
       # p users(:example_user).email
-      post :create, params: { email: "dagswebb@gmail.com", password: 'hello' } 
+      # Issue is user needs to have an account in the test database for the below to pass. 
+      post :create, params: { email: 'chris@gmail.com', password: '123' } 
       expect(response).to redirect_to('/posts')
     end
 

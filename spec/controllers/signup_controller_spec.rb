@@ -14,7 +14,8 @@ RSpec.describe SignupController, type: :controller do
     end
 
     it "does NOT create a User if any required parameters are NOT filled" do
-      expect{post :create, params: { email: "chris@gmail.com", password: '123' }}.to raise_error
+      post :create, params: { email: "chris@gmail.com", password: '123' }
+      expect(User.find_by(email: "chris@gmail.com")).to be_nil
     end
   end
 

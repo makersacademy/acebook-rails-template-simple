@@ -4,15 +4,20 @@ class SignupController < ApplicationController
   end
 
   def create
-    @user = User.create(name: signup_params[0], email: signup_params[1], password: signup_params[2])
-    redirect_to '/homepage'
-    flash.alert = "Thanks for signing up"
-    # p flash.alert
+    @user = User.new(name: signup_params["name"], email: signup_params["email"], password: signup_params["password"])
+    if @user.valid?
+      redirect_to '/homepage'
+      flash.alert = "Thanks for signing up"
+      @user.save
+    else
+      redirect_to '/signup'
+      flash.alert = "Missing details, try again"
+    end
   end
 
   private
 
   def signup_params
-    params.require([:name, :email, :password])
+    params.permit([:name, :email, :password])
   end
 end
