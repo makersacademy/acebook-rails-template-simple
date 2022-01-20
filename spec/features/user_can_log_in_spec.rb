@@ -8,7 +8,6 @@ RSpec.feature "Log in", type: :feature do
     fill_in "session[password]", with: "password123"
     click_button "Log in"
     expect(page).to have_current_path("/posts")
-    expect(page).to have_content("Welcome to the Sample App!")
-    # This should be the same as the navbar name display
+    expect(page).to have_content("Logged in as Inigo")
   end
 end
