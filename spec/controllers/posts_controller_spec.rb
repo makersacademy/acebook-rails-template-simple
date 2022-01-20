@@ -24,6 +24,13 @@ RSpec.describe PostsController, type: :controller do
     it "responds with 200" do
       get :index
       expect(response).to have_http_status(200)
-    end
+    end   
+
+    # it "assigns all posts to @posts" do
+    #   get :index
+    #   expect(assigns(:posts)).to eq(Post.all)
+    # end
   end
+
+
 end
