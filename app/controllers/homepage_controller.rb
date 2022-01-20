@@ -6,6 +6,9 @@ class HomepageController < ApplicationController
             redirect_to "/homepage"
             flash.alert = "User not found, please try again"
         else
+            session[:current_user_id] = @user.id
+            p "Who is stored in the session"
+            p session[:current_user_id]
             redirect_to '/posts'
         end
     end

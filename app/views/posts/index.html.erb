@@ -1,5 +1,5 @@
 <h1>AceBook Posts</h1>
-
+<h2> This is who is logged in User id: <%= session[:current_user_id] %></h2>
 
 <% @all_posts.reverse.each do |post| %>
   <p><%= post.content %></p>

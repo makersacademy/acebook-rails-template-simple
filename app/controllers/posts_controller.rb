@@ -18,13 +18,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post_new = Post.new(content: post_params["content"], users_id: 1)
+    @post_new = Post.new(content: post_params["content"], users_id: session[:current_user_id])
     respond_to do |format|
       if @post_new.save
        format.html { render action: "index", notice: "Post created!"}
       else 
         p "post did not save"
-        format.html {render action: 'post_error' }
+        format.html { render action: 'post_error' }
       end
     end
   end
