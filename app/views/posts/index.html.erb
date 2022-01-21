@@ -23,6 +23,7 @@
           </div>
             
           <div class = "card-body border-top">
+            <strong>Comments:</strong>
             <%= render post.comments%>
                 
             <%= bootstrap_form_with model: [ post, post.comments.build ] do |form| %>
