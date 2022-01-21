@@ -9,11 +9,18 @@ def sign_up
 end
 
 def create_post
-  id = (User.find_by(email: "zoe@gmail.com")).id
   visit "/posts"
   click_link "New post"
   fill_in "post[message]", with: "Hello, world!"
-  fill_in "post[user_id]", with: id
   click_button "Submit"
-  visit '/posts'
+end
+
+def user_sign_up
+    visit("/users/new")
+    fill_in "user[name]", with: "Inigo"
+    fill_in "user[email]", with: "fake@fake.com"
+    fill_in "user[password]", with: "password123"
+    fill_in "user[password_confirmation]", with: "password123"
+    click_button "Create User"
+
 end
