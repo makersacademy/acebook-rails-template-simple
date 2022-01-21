@@ -20,8 +20,10 @@ class PostsController < ApplicationController
   def create
     @post_new = Post.new(content: post_params["content"], users_id: session[:current_user_id])
     respond_to do |format|
-      if @post_new.save
-        @post_new.post_photo.attach(params[:post_photo])
+      if @post_new.valid?
+        @post_new.save
+        @post_new.post_photo.attach(post_params["post_photo"])
+        p post_params["post_photo"]
         p "DID IT ATTACH?"
         p @post_new.post_photo.attached?
        format.html { render action: "index", notice: "Post created!"}
