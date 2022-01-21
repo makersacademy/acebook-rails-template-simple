@@ -8,7 +8,6 @@ on:
 jobs:
   # label of job
   test_pull_request:
-    # Docker container running on Linux
     runs-on: ubuntu-latest
       # service containers to run with 'pull_request_test'
       services:
@@ -38,20 +37,20 @@ jobs:
 
     # steps to carry out
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Install Ruby and gems
-      uses: ruby/setup-ruby@v1
-      with:
-        bundler-cache: true
-    - name: Set up database schema
-      run: bin/rails db:schema:load
-    - name: Run tests
-      run: |
-      sudo apt-get -yqq install libpq-dev
-      gem install bundler
-      bundle install --jobs 4 --retry 3
-      bundle exec rails db:prepare
-      bundle exec rspec
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Set up database schema
+        run: bin/rails db:schema:load
+      - name: Run tests
+        run: |
+        sudo apt-get -yqq install libpq-dev
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+        bundle exec rails db:prepare
+        bundle exec rspec
 
 
