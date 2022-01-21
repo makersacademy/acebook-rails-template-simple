@@ -29,8 +29,6 @@ ActiveRecord::Schema.define(version: 2022_01_19_201723) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "comments", "posts"
-  
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -43,4 +41,5 @@ ActiveRecord::Schema.define(version: 2022_01_19_201723) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "posts"
 end

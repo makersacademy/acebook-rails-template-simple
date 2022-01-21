@@ -31,7 +31,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
 
-    redirect_to root_path, status: :see_other
+    redirect_to posts_path, status: :see_other #this will need to change to post_path. how to delete a post that has comments?
   end
   
   private
