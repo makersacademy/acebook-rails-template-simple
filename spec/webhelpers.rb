@@ -28,9 +28,6 @@ def log_out
   click_link "Log out"
 end
 
-<<<<<<< HEAD
-end
-=======
 def second_user_sign_up
   visit("/users/new")
   fill_in "user[name]", with: "Kim"
@@ -39,4 +36,3 @@ def second_user_sign_up
   fill_in "user[password_confirmation]", with: "password123"
   click_button "Create User"
 end
->>>>>>> 6585971d224dab719f24654df55fa80576b478f2

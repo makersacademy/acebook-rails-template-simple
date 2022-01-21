@@ -1,13 +1,8 @@
 require 'rails_helper'
-require_relative '../webhelpers.rb'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can delete a post" do
-<<<<<<< HEAD
-    sign_up
-=======
     user_sign_up
->>>>>>> 6585971d224dab719f24654df55fa80576b478f2
     create_post
   
     visit "/posts"
