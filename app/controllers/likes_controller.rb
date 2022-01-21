@@ -4,17 +4,11 @@ class LikesController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    if already_liked?
-      flash[:notice] = "You can't like more than once"
-    else
-      @post.likes.create(user_id: current_user.id)
-    end
+    already_liked? ? flash[:notice] = "You can't like more than once" : @post.likes.create(user_id: current_user.id)
     redirect_to posts_path(@post)
   end
 
 
-  # @post.likes.create(user_id: current_user.id)
-  #   redirect_to posts_path(@post)
 
   private 
 
