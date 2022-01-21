@@ -7,7 +7,7 @@ on:
 
 jobs:
   # label of job
-  pull_request_test:
+  test_pull_request:
     # Docker container running on Linux
     runs-on: ubuntu-latest
       # service containers to run with 'pull_request_test'
