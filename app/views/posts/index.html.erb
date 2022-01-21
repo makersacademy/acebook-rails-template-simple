@@ -1,7 +1,38 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
-
 <%= link_to new_post_path do %>
   New post
+<% end %>
+
+<% @posts.each do |post| %>
+  <% @user = User.find(post.user_id) %>
+  <p><%= @user.name %></p>
+  <p><%= link_to post.message, post_path(post) %></p>
+
+  <% post.comments.each do |comment| %>
+    <% @commenter = User.find(comment.user_id) %>
+    <%= @commenter.name %>
+    <p><%= comment.message %></p>
+    <% if current_user == @commenter %>
+      <%= link_to "Delete comment", post_path(post) + "/comments/#{comment.id}",
+      method: :delete,
+      data: { confirm: "Are you sure?" }
+      %>
+    <% end %>
+  <% end %>
+
+  <% if current_user == @user %>
+    <%= link_to "Edit post", edit_post_path(post) %>
+    <%= link_to "Delete post", post_path(post),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+  <% end %>
+
+  <%= form_with model: [ post, post.comments.build ], local: true do |form| %>
+    <p>
+      <%= form.label :message %><br>
+      <%= form.text_area :message %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
 <% end %>
