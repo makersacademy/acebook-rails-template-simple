@@ -10,6 +10,7 @@ RSpec.feature "Comments", type: :feature do
     click_button "Create Comment"
     click_link "Edit comment"
     fill_in "comment[message]", with: "Updated"
+    click_button "Submit"
     expect(page).to have_content("Updated")
     expect(page).not_to have_content "Kim Hiya"
   end
@@ -24,6 +25,7 @@ RSpec.feature "Comments", type: :feature do
     click_button "Create Comment"
     click_link "Edit comment"
     fill_in "comment[message]", with: "Updated"
+    click_button "Submit"
     expect(page).to have_content("Updated")
     expect(page).not_to have_content "Kim Hiya"
   end
