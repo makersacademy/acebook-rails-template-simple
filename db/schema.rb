@@ -50,6 +50,15 @@ ActiveRecord::Schema.define(version: 2022_01_20_175018) do
     t.index ["users_id"], name: "index_comments_on_users_id"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.integer "post_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_likes_on_post_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "photos", force: :cascade do |t|
     t.text "caption"
     t.datetime "created_at", precision: 6, null: false
@@ -76,5 +85,7 @@ ActiveRecord::Schema.define(version: 2022_01_20_175018) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "posts", column: "posts_id"
   add_foreign_key "comments", "users", column: "users_id"
+  add_foreign_key "likes", "posts"
+  add_foreign_key "likes", "users"
   add_foreign_key "posts", "users", column: "users_id"
 end
