@@ -53,3 +53,5 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem "activestorage", "~> 6.1"
 
 gem "factory_bot", "~> 6.2"
+
+gem "launchy", "~> 2.5"
