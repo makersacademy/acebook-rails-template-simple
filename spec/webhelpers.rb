@@ -16,5 +16,4 @@ def create_post
   fill_in "post[user_id]", with: id
   click_button "Submit"
   visit '/posts'
-  expect(page).to have_link("Hello, world!")
 end
