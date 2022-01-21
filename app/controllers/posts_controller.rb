@@ -18,14 +18,17 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post_new = Post.new(post_params)
-
+    @post_new = Post.new(content: post_params["content"], users_id: session[:current_user_id])
     respond_to do |format|
-      if @post_new.save
+      if @post_new.valid?
+        @post_new.save
+        @post_new.post_photo.attach(post_params["post_photo"])
+        p post_params["post_photo"]
+        p "DID IT ATTACH?"
+        p @post_new.post_photo.attached?
        format.html { render action: "index", notice: "Post created!"}
       else 
-        p "post did not save"
-        format.html {render action: 'post_error' }
+        format.html { render action: 'post_error' }
       end
     end
   end
@@ -33,6 +36,8 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content)
+    p "These are the post_params"
+    p params
+    params.require(:post).permit(:content, :post_photo)
   end
 end

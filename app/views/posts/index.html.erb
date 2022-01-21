@@ -1,8 +1,21 @@
 <h1>AceBook Posts</h1>
+<h2><image src="<%=(url_for(User.find_by(id: session[:current_user_id]).profile_pic))%>"
+style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_id]).name %>, see your feed below</h2>
 
 
 <% @all_posts.reverse.each do |post| %>
-  <p><%= post.content %></p>
+  <p>
+  <% p ((post.post_photo)) %>
+  <image src="<%=(url_for(User.find_by(id: post.users_id).profile_pic))%>"
+  style="width:40px;height:40px;"> 
+  <%= post.content %> 
+  Posted by
+  <%= User.find_by(id: post.users_id).name %>
+  <% if post.post_photo.attached? %>
+  <image src="<%=(url_for(post.post_photo))%>"
+  style="width:50px;height:50px;">
+  <% end %>
+  </p>
 <% end %>
 
 <p><%= link_to "Create new post", {:action => 'new' } %></p>
