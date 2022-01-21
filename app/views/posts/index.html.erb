@@ -5,12 +5,14 @@ style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_i
 
 <% @all_posts.reverse.each do |post| %>
   <p>
+  <% p ((post.post_photo)) %>
   <image src="<%=(url_for(User.find_by(id: post.users_id).profile_pic))%>"
   style="width:40px;height:40px;"> 
   <%= post.content %> 
   Posted by
-  <%= User.find_by(id: post.users_id).name %> 
-  
+  <%= User.find_by(id: post.users_id).name %>
+  <image src="<%=(url_for(Post.find_by(id: post.id).post_photo.first))%>"
+  style="width:40px;height:40px;">
   </p>
 <% end %>
 
