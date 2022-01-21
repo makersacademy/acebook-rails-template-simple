@@ -2,14 +2,15 @@ require 'rails_helper'
 
 RSpec.feature "Sign up", type: :feature do
   scenario "Can edits posts and view them" do
-    visit("/")
+    visit("/users")
     click_link "Create new account"
-    fill_in "Name", with: "Inigo"
-    fill_in "Email", with: "fake@fake.com"
-    fill_in "Password", with: "password123"
-    click_button "Submit"
+    fill_in "user[name]", with: "Zoe"
+    fill_in "user[email]", with: "zoe@gmail.com"
+    fill_in "user[password]", with: "123456"
+    fill_in "user[password_confirmation]", with: "123456"
+    click_button "Create User"
     expect(page).to have_current_path("/posts")
-    expect(page).to have_content("Inigo")
+    expect(page).to have_content("New post")
     # This should be the same as the navbar name display
   end
 end
