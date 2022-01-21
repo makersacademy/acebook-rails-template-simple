@@ -45,10 +45,11 @@ jobs:
       - name: Set up database schema
         run: bin/rails db:schema:load
       - name: Run tests
-        run: sudo apt-get -yqq install libpq-dev
-        run: gem install bundler
-        run: bundle install --jobs 4 --retry 3
-        run: bundle exec rails db:prepare
-        run: bundle exec rspec
+        run: |
+          apt-get -yqq install libpq-dev
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+          bundle exec rails db:prepare
+          bundle exec rspec
 
 
