@@ -12,6 +12,10 @@
   <p>
     <strong><%= "#{@commenter.name}:" %></strong>
     <%= comment.message %>
+    <%= link_to "Delete comment", post_path(@post) + "/comments/#{comment.id}",
+    method: :delete,
+    data: { confirm: "Are you sure?" }
+    %>
   </p>
 <% end %>
 

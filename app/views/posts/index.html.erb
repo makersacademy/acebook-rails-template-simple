@@ -11,6 +11,10 @@
     <% @commenter = User.find(comment.user_id) %>
     <%= @commenter.name %>
     <p><%= comment.message %></p>
+    <%= link_to "Delete comment", post_path(post) + "/comments/#{comment.id}",
+    method: :delete,
+    data: { confirm: "Are you sure?" }
+    %>
   <% end %>
 
   <%= link_to "Edit post", edit_post_path(post) %>
