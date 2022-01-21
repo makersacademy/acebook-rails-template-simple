@@ -19,6 +19,12 @@ module SessionsHelper
     end
   end
 
+  def cannot_go_home
+    if logged_in?
+      redirect_to posts_path
+    end
+  end
+
   def log_out
     session.delete(:user_id)
     @current_user = nil

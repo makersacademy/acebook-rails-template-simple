@@ -9,8 +9,8 @@ class SessionsController < ApplicationController
       log_in user
       redirect_to posts_path
     else
-      flash.now[:danger] = 'Invalid email/password combination' # GET http://localhost:3000/public/style.css net::ERR_ABORTED 404 (Not Found)
-      render 'new'
+      flash.now[:danger] = 'Invalid email/password combination!' # GET http://localhost:3000/public/style.css net::ERR_ABORTED 404 (Not Found)
+      render 'home/index'
     end
   end
 
