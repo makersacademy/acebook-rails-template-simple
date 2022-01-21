@@ -2,7 +2,7 @@
 
   <% @posts.reverse.each do |post| %>
     <p><%= post.message %></p>
-    <%= post.image %>
+    <%= image_tag(post.image) %>
     <p>Created at: <%= post.created_at.strftime("%H:%M") %></p>
     
     <button><%= link_to "Edit", edit_post_path(post) %></button>
