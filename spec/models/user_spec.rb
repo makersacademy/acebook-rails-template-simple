@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   # pending "add some examples to (or delete) #{__FILE__}"
   subject { described_class.new(
+    username: 'test_username',
     email: "test@test.com",
     password: "123456",
   )}
