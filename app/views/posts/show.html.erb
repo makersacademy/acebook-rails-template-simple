@@ -7,9 +7,10 @@
 
 <h2>Comments</h2>
 <% @post.comments.each do |comment| %>
+  <% @commenter = User.find(comment.user_id) %>
 
   <p>
-    <strong>Comment:</strong>
+    <strong><%= "#{@commenter.name}:" %></strong>
     <%= comment.message %>
   </p>
 <% end %>

@@ -4,10 +4,8 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-
     @comment = @post.comments.create(comment_params.merge(user_id: current_user.id))
-    redirect_to posts_path
-
+    redirect_back(fallback_location: posts_path)
   end
 
 
