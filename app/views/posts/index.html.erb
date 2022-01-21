@@ -16,6 +16,8 @@
   <p>
     <%= form.label :content %><br>
     <%= form.text_area :content, id:"content", :rows=>1, :cols=>20 %>
+   <%= form.number_field :user_id,
+    value: current_user.id, type: :hidden %>
   </p>
   <p>
     <%= form.submit id:"create_comment"%>

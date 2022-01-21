@@ -56,3 +56,4 @@ gem "activestorage", "~> 6.1"
 
 gem "factory_bot", "~> 6.2"
 
+gem "bootstrap_form", "~> 5.0"
