@@ -6,6 +6,7 @@
     
     <button><%= link_to "Edit", edit_post_path(post) %></button>
     <button><%= link_to "Delete", post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+    <%= button_to 'Like', post_likes_path(@post), method: :post%>
 
 <%= render post.comments%>
 
