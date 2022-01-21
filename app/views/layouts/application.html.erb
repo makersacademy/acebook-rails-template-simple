@@ -20,15 +20,23 @@
   <body class="has-background-light">
     <div class="container">
       <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
+
+        <div class="is-<%= key %> notification is-light has-text-bold alert alert-<%= key %>"><%= value %></div>
       <% end %>
     </div>
-    <% if logged_in? %>
-        Logged in as <%= @current_user.name %>
-        <%= link_to "Log out", logout_path, method: :delete %>
-    <% else %>
-      <%= link_to "Log in", login_path %>
-    <% end %>
+
+
+
+
+
+      <% if logged_in?%>
+          Logged in as <%= @current_user.name %>
+          <%= link_to "Log out", logout_path, method: :delete %>
+      <% else %>
+        <%root_path%>
+      <% end %>
+    
+
     <%= yield %>
   </body>
 </html>
