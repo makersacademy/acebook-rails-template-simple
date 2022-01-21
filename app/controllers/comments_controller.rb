@@ -1,15 +1,13 @@
 class CommentsController < ApplicationController
-  before_action :find_post
-  
-  def create
-    @post.comments.create(user_id: session[:current_user_id], content: "hello")
-    redirect_to post_path(@post)
+
+def create
+    @comments = Comment.new(user_id: session[:current_user_id], post_id: comment_params["post_id"], content: comment_params["content"])
+    @comments.save
+    redirect_to '/posts'
   end
 
-  private
-
-  def find_post
-    @post = Post.find_by(id: 1)
+  def comment_params
+    params.permit([:user_id, :post_id, :content])
   end
-
 end
+

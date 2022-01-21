@@ -2,13 +2,15 @@
 <h2> This is who is logged in: <%= User.find_by(id: session[:current_user_id]).name %></h2>
 
 <% @all_posts.reverse.each do |post| %>
-  <p><%= post.content %></p> 
+  <%= post.content %> <br><br>
+  Post ID: (<%= post.id %>)<br><br>
+  <% post.comments.reverse.each do |comment| %> <br><br>
+     <%= User.find_by(id: comment.user_id).name %>:
+     <%= comment.content %>
+     <%= comment.created_at.to_s(:time) %>
+  <% end %>
 
-<%= form_for([post.comments.build]) do |f| %>
-<%= f.text_area :content %>
-<%= f.submit %>
-<% end %>
-<br>
+  <%= button_to "Add a comment", comments_path, method: :get %>
   Comments: <%= post.comments.count %>
 
   <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p> 

@@ -1,0 +1,17 @@
+<body> Please enter a comment:
+
+<%= form_with(model: @comments, local: true) do |f| %>
+  <br>
+  <br>
+  <%= f.label :post_id, "post_id:" %>
+  <%= f.text_field :post_id %>
+  <br>
+  <br>
+  <%= f.label :content, "content:" %>
+  <%= f.text_field :content %>
+  <br>
+  <br>
+  <%= f.submit "Add comment" %>
+<% end %>
+
+</body>
