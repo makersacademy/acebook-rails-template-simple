@@ -31,6 +31,7 @@ RSpec.feature "Timeline", type: :feature do
   scenario "Doesn't let you post without either message or picture" do
     visit "/posts"
     find(:xpath, '//*[@id="submit-button"]/input').click
-    expect(page).to have_content("Post requires message or image")
-  end
+    expect(page).to have_content("Post requires message or image") 
+  end 
+  # NEED TO ADD ERROR MESSAGE ON FRONT END
 end
