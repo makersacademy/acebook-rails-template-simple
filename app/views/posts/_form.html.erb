@@ -1,6 +1,7 @@
-
-<%=  bootstrap_form_for(@post) do |form| %>
-  <%= form.text_field :message %>
-  <%= form.number_field :user_id, skip_label: true, id: :post_user_id, value: current_user.id, type: :hidden %>
-  <%= form.submit :id => "submit" %>
-<% end %>
+<div class = "container">
+  <%=  bootstrap_form_for(@post) do |form| %>
+    <%= form.text_field :message, skip_label: true %>
+    <%= form.number_field :user_id, skip_label: true, id: :post_user_id, value: current_user.id, type: :hidden %>
+    <%= form.submit :id => "submit" %>
+  <% end %>
+</div>

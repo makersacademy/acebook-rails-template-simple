@@ -1,26 +1,39 @@
-<%= render "form", post: @post%> <!--brings new form to index-->
+<div class="container">
+  <div class = "card bg-light mb-3" style="width: 32rem;" >
+    <div class = "card-body">
+     <%= render "form", post: @post%> <!--brings new form to index-->
+   </div>
+  </div>
+     <% @posts.reverse.each do |post| %>
 
-  <% @posts.reverse.each do |post| %>
-    <p><%= post.message %></p>
-    <p>Created at: <%= post.created_at.strftime("%H:%M") %></p>
-     <p>Created by: user <%= post.user_id %></p>
-    <button><%= link_to "Edit", edit_post_path(post) %></button>
-    <button><%= link_to "Delete", post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+        <article class = "card bg-light mb-3" style="width: 32rem;">
+            <div class="card-body">
+              <p> Created at: <%= post.created_at.strftime("%H:%M") %>, by user <%= post.user_id %> </p>
+            </div>
 
-<%= render post.comments%>
+          <div class = "card-body border-top">
+            <div class = "card-text">
+              <%= post.message %>
+            </div>
+          
+            <div class="card-link">
+              <%= link_to "Edit", edit_post_path(post) %> 
+              <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %> 
+            </div>
+          </div>
+            
+          <div class = "card-body border-top">
+            <%= render post.comments%>
+                
+            <%= bootstrap_form_with model: [ post, post.comments.build ] do |form| %>
+                    <%= form.text_area :content, skip_label: true, id:"content", :rows=>1, :cols=>20 %>
+                    <%= form.number_field :user_id, skip_label: true,
+                    value: current_user.id, type: :hidden %>
+                    <%= form.submit id:"create_comment"%>
+            <% end %>
+          </div>
+         
+        </article>
+    <% end %>
 
-
-    <h4>Add a comment:</h4>
-
-<%= form_with model: [ post, post.comments.build ] do |form| %>
-  <p>
-    <%= form.label :content %><br>
-    <%= form.text_area :content, id:"content", :rows=>1, :cols=>20 %>
-   <%= form.number_field :user_id,
-    value: current_user.id, type: :hidden %>
-  </p>
-  <p>
-    <%= form.submit id:"create_comment"%>
-  </p>
-<% end %>
-  <% end %>
+</div>
