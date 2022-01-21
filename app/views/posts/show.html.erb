@@ -11,14 +11,16 @@
 <% @post.comments.each do |comment| %>
   <% @commenter = User.find(comment.user_id) %>
 
-  <p>
-    <strong><%= "#{@commenter.name}:" %></strong>
-    <%= comment.message %>
-    <%= link_to "Delete comment", post_path(@post) + "/comments/#{comment.id}",
-    method: :delete,
-    data: { confirm: "Are you sure?" }
-    %>
-  </p>
+    <p>
+      <strong><%= "#{@commenter.name}:" %></strong>
+      <%= comment.message %>
+      <% if current_user == @commenter %>
+        <%= link_to "Delete comment", post_path(@post) + "/comments/#{comment.id}",
+        method: :delete,
+        data: { confirm: "Are you sure?" }
+        %>
+      <% end %> 
+    </p>
 <% end %>
 
 

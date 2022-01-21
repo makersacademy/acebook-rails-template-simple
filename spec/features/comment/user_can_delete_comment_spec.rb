@@ -24,4 +24,25 @@ RSpec.feature "Comments", type: :feature do
     expect(page).not_to have_content "Kim: Hiya"
   end
 
+  scenario "Users can only delete their own comment (from timeline)" do
+    user_sign_up
+    create_post
+    fill_in "comment[message]", with: "Hiya"
+    click_button "Create Comment"
+    log_out
+    second_user_sign_up
+    expect(page).not_to have_content("Delete comment")
+  end
+
+  scenario "Users can only delete their own comment (from individual post page)" do
+    user_sign_up
+    create_post
+    fill_in "comment[message]", with: "Hiya"
+    click_button "Create Comment"
+    log_out
+    second_user_sign_up
+    click_link "Hello, world!"
+    expect(page).not_to have_content("Delete comment")
+  end
+
 end
