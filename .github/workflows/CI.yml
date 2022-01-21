@@ -8,7 +8,6 @@ on:
 jobs:
   # label of job
   test_pull_request:
-    # Docker container running on Linux
     runs-on: ubuntu-latest
       # service containers to run with 'pull_request_test'
       services:
