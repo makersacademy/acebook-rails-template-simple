@@ -6,7 +6,6 @@ on:
 
 
 jobs:
-  # label of job
   test_pull_request:
     runs-on: ubuntu-latest
       # service containers to run with 'pull_request_test'
