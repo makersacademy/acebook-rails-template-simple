@@ -1,4 +1,4 @@
-require 'rails_helper'
+# require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can edit posts and view changes" do
