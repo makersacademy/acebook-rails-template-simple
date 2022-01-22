@@ -11,15 +11,17 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
 
     if @post.save
-      redirect_to posts_url
+      redirect_to posts_url :anchor => "post-end"
     else
-      render :new
+      redirect_to posts_url
     end
     
   end
 
   def index
+    @posted = Post.find(params[:id])
     @posts = Post.all
+    @post = Post.new
   end
 
   def show
