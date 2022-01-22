@@ -1,27 +1,28 @@
-# require 'rails_helper'
+require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can edit posts and view changes" do
 
+    navbar_acebook_link = "/html/body/nav/a"
+    message_content = '//*[@id="post_message"]'
     create_post_btn = '//*[@id="submit"]'
     edit_btn = '/html/body/button[1]/a'
-    visit "/"
-    click_link "Sign Up"
-    find(:xpath, "/html/body/form/div[1]/input").set("test@test.com")
-    find(:xpath, "/html/body/form/div[2]/input").set("test123")
-    find(:xpath, "/html/body/form/div[3]/input").set("test123")
-    find(:xpath, "/html/body/form/div[4]/input").click
+    delete_btn = "/html/body/button[3]/a"
     
-    click_link "Acebook"
+
+    sign_up
+
+    find(:xpath, navbar_acebook_link).click
     expect(page).to have_current_path("/posts")
 
-    find(:xpath, "/html/body/form[1]/input[3]").set("a post")
+    find(:xpath, message_content).set("a post")
     find(:xpath, create_post_btn).click
     expect(page).to have_content("a post")
-
+  
     find(:xpath, edit_btn).click
-    find(:xpath, '//*[@id="post_message"]').set("an edited post")
-   find(:xpath, create_post_btn).click
-    expect(page).to have_content("an edited post")
+    find(:xpath, message_content).set("Edited this post")
+    find(:xpath, create_post_btn).click
+    expect(page).to have_current_path("/posts")
+    expect(page).to have_content("Edited this post")
   end
 end

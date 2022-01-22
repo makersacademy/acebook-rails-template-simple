@@ -19,6 +19,12 @@
           null
         ]
       },
+      "/Users/titus/W8/acebook-rails-template-simple/app/helpers/likes_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/titus/W8/acebook-rails-template-simple/app/controllers/posts_controller.rb": {
         "lines": [
           1,
@@ -27,22 +33,22 @@
           null,
           null,
           1,
-          2,
-          2,
+          7,
+          7,
           null,
           null,
           1,
-          2,
-          2,
-          null,
-          null,
-          1,
-          0,
+          14,
+          14,
           null,
           null,
           1,
           0,
           null,
+          null,
+          1,
+          0,
+          null,
           0,
           0,
           null,
@@ -51,16 +57,16 @@
           null,
           null,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
-          0,
+          1,
           null,
           null,
           1,
           null,
           1,
-          2,
+          7,
           null,
           null
         ]
@@ -73,11 +79,11 @@
           1,
           null,
           1,
-          26,
-          11,
+          34,
+          15,
           null,
           null,
-          26,
+          34,
           0,
           null,
           null,
@@ -135,19 +141,32 @@
       },
       "/Users/titus/W8/acebook-rails-template-simple/spec/features/user_can_comment_on_post_spec.rb": {
         "lines": [
+          1,
           null,
+          1,
+          1,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
+          1,
           null,
+          1,
+          1,
           null,
+          1,
+          1,
+          1,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null
@@ -155,16 +174,29 @@
       },
       "/Users/titus/W8/acebook-rails-template-simple/spec/features/user_can_delete_posts_spec.rb": {
         "lines": [
+          1,
           null,
+          1,
+          1,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
+          1,
           null,
+          1,
+          1,
           null,
+          1,
+          1,
+          1,
           null,
-          null,
-          null,
-          null,
-          null,
+          1,
+          1,
+          1,
           null,
           null,
           null
@@ -172,17 +204,32 @@
       },
       "/Users/titus/W8/acebook-rails-template-simple/spec/features/user_can_edit_posts_spec.rb": {
         "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
+          1,
           null,
+          1,
+          1,
           null,
+          1,
+          1,
+          1,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -285,13 +332,22 @@
       },
       "/Users/titus/W8/acebook-rails-template-simple/spec/features/user_can_submit_posts_spec.rb": {
         "lines": [
+          1,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
+          1,
           null,
+          1,
+          1,
           null,
-          null,
-          null,
-          null,
+          1,
+          1,
+          1,
           null,
           null,
           null
@@ -313,6 +369,25 @@
           null,
           null,
           null,
+          null
+        ]
+      },
+      "/Users/titus/W8/acebook-rails-template-simple/spec/helpers/likes_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
           null
         ]
       },
@@ -350,6 +425,24 @@
         ]
       },
       "/Users/titus/W8/acebook-rails-template-simple/app/models/post.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/titus/W8/acebook-rails-template-simple/spec/models/like_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/titus/W8/acebook-rails-template-simple/app/models/like.rb": {
         "lines": [
           1,
           1,
@@ -466,6 +559,17 @@
           null
         ]
       },
+      "/Users/titus/W8/acebook-rails-template-simple/spec/requests/likes_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/titus/W8/acebook-rails-template-simple/spec/views/home/index.html.erb_spec.rb": {
         "lines": [
           null,
@@ -482,8 +586,56 @@
           null,
           null
         ]
+      },
+      "/Users/titus/W8/acebook-rails-template-simple/app/controllers/comments_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          0,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/titus/W8/acebook-rails-template-simple/app/controllers/likes_controller.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1642780567
+    "timestamp": 1642868183
   }
 }
