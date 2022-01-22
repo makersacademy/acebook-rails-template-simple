@@ -48,7 +48,7 @@
     <% @posts.each do |post| %>
 
       <% @user = User.find(post.user_id) %>
-      <div class="card mb-5">
+      <div id="post-<%=post.id%>" class="card mb-5">
 
         <div class="card-image">
           <figure class="image">
@@ -116,8 +116,8 @@
                     </div>
 
                     <footer class="card-footer">
-                      <a href="#" class="card-footer-item"><i class="fas fa-edit"></i></a>
                       <% if current_user == @commenter %>
+                        <a href="#" class="card-footer-item"><i class="fas fa-edit"></i></a>
                         <%= link_to '<i class="fas fa-trash-alt" aria-hidden="true"></i>'.html_safe, post_path(post) + "/comments/#{comment.id}",
                         class: "card-footer-item",
                         method: :delete,
@@ -160,7 +160,7 @@
         <div class="modal-background"></div>
         <div class="modal-content">
           <!-- Any other Bulma elements you want -->
-            <%= form_for @posted(@post.id) do |form| %>
+            <%= form_for post do |form| %>
               <div class="field">
                 <div class="control">
                   <%= form.text_field :message, class: 'input is-success is-rounded', value: post.message %>

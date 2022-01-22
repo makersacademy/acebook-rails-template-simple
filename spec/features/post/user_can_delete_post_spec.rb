@@ -6,7 +6,7 @@ RSpec.feature "Timeline", type: :feature do
     create_post
   
     visit "/posts"
-    click_link "Delete post"
+    click_link "Delete"
     expect(page).not_to have_content("Hello, world!")
   end
 
@@ -15,7 +15,7 @@ RSpec.feature "Timeline", type: :feature do
     create_post
     log_out
     second_user_sign_up
-    expect(page).not_to have_content("Delete post")
+    expect(page).not_to have_content("Delete")
   end
 
   scenario "Users can only delete a post they made themselves (from individual post page)" do

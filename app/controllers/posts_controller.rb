@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
 
     if @post.save
-      redirect_to posts_url :anchor => "post-end"
+      redirect_to posts_url :anchor => "post-#{@post.id}"
     else
       redirect_to posts_url
     end
@@ -19,7 +19,6 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posted = Post.find(params[:id])
     @posts = Post.all
     @post = Post.new
   end
@@ -36,7 +35,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update(post_params)
-      redirect_to @post
+      redirect_to posts_path :anchor => "post-#{@post.id}"
+      p @post.id
     else
       render :edit, status: :unprocessable_entity
     end

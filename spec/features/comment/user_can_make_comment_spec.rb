@@ -7,8 +7,9 @@ RSpec.feature "Comments", type: :feature do
     log_out
     second_user_sign_up
     fill_in "comment[message]", with: "Hiya"
-    click_button "Create Comment"
-    expect(page).to have_content "Kim Hiya"
+    click_button "Reply"
+    expect(page).to have_content "Kim"
+    expect(page).to have_content "Hiya"
   end
 
   scenario "Users can make a comment on an individual post page and their name will appear next to it" do
