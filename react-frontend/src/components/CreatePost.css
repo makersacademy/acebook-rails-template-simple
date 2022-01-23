@@ -1,0 +1,17 @@
+.post-form {
+  width:85%;
+  height: auto;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+textarea {
+  display: block;
+  margin: 10px 0;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}

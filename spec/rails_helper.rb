@@ -5,6 +5,13 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+require 'database_cleaner/active_record'
+
+DatabaseCleaner.strategy = :truncation
+
+# then, whenever you need to clean the DB
+DatabaseCleaner.clean
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

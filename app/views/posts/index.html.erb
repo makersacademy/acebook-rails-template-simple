@@ -1,7 +1,23 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<% if logged_in? %>
+<br>
+  Logged in as: <%= Current.user.email %>
+<br>
+  <%if Current.user.avatar.attached? %>
+    <%=image_tag Current.user.avatar, id: 'avatar', class: 'avatar' %>
+  <%end%>
+<br>
 
-<%= link_to new_post_path do %>
-  New post
+<div>
+  <% @posts.each do |post| %>
+    <div>
+      <%= post.user.email %><br>
+      <%= link_to post.message, post %><br>
+      <% if post.image.attached? %>
+        <image class="image" src="<%=(url_for(post.image))%>">
+      <% end %>
+      <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+    </div><br>
+  <% end %>
+</div>
+
 <% end %>

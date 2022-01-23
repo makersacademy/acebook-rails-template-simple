@@ -1,0 +1,42 @@
+<% if logged_in? %>
+  <br>
+  <h2><%= @post.message %></h2>
+
+  <%if @post.user.avatar.attached? %>
+    <%= image_tag @post.user.avatar, id: 'avatar', class: 'avatar' %>
+  <%end%>
+
+  <br>
+  <%= @post.user.email %><br>
+  <% if @post.image.attached? %>
+    <image class="image" src="<%=(url_for(@post.image))%>">
+  <% end %>
+  <% pre_like = @post.likes.find { |like| like.user_id == set_current_user.id} %>
+  <% if pre_like %>
+    <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+  <% else %>
+    <%= button_to 'Like', post_likes_path(@post), method: :post %>
+  <% end %>
+  <%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%>
+  <br>
+  <br>
+
+  <h3>Comments</h3>
+    <% @post.comments.each do |comment| %>
+      <p>
+        <strong>Comment from: <%= comment.user.email %></strong><br>
+        <%= comment.body %>
+      </p>
+    <% end %>
+  <br>
+
+  <h3>Add a comment:</h3>
+    <%= form_with model: [ @post, @post.comments.build ], local: true do |form| %>
+      <p>
+        <%= form.text_area :body %>
+      </p>
+      <p>
+        <%= form.submit %>
+      </p>
+    <% end %>
+<% end %>

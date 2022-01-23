@@ -4,17 +4,22 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @user = User.find_by(id: session[:user_id])
+    @post = @user.posts.create(post_params)
     redirect_to posts_url
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :image)
   end
 end
