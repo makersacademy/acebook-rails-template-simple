@@ -28,8 +28,6 @@
                 
             <%= bootstrap_form_with model: [ post, post.comments.build ] do |form| %>
                     <%= form.text_area :content, skip_label: true, id:"content", :rows=>1, :cols=>20 %>
-                    <%# <%= form.number_field :user_id, skip_label: true,
-                    value: current_user.id, type: :hidden %> 
                     <%= form.submit id:"create_comment"%>
             <% end %>
           </div>
