@@ -1,11 +1,29 @@
 <center>
-<%# Page Headings, welcome message and link to create new posts%>
+<%# Page Headings, welcome message %>
 <h1>AceBook Posts</h1>
 <h4> What's on your mind, <%= User.find_by(id: session[:current_user_id]).name %>?</h4>
+<br>
+
+<%# Search fields %>
+
+<%= form_tag "/posts", method: "GET" do %>
+  <%= text_field_tag :search_by_content, nil, placeholder: 'Find a post' %>
+  <%= submit_tag "Search" %>
+<% end %>
+<br>
+<%= form_tag "/posts", method: "GET" do %>
+  <%= text_field_tag :search_by_user, nil, placeholder: 'Find a friend' %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<%# Link to create a new post, or visit your profile %>
+
 <p><%= link_to "Create new post", {:action => 'new' } %></p>
 <p><%= link_to "Go to your profile", profile_path %></p>
 <h2><image src="<%=(url_for(User.find_by(id: session[:current_user_id]).profile_pic))%>"
 style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_id]).name %>, see your feed below</h2>
+
+
 
 <%# Confirmation message that user has created/not created a new post%>
 
@@ -18,7 +36,6 @@ style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_i
 <%# Feed %>
 
 <%# Displays all posts %>
-
 <% @all_posts.reverse.each do |post| %>
   <image src="<%=(url_for(User.find_by(id: post.users_id).profile_pic))%>"
   style="width:40px;height:40px;"> 
@@ -29,6 +46,7 @@ style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_i
   <image src="<%=(url_for(post.post_photo))%>"
   style="width:200px;height:200px;"><br><br>
   <% end %>
+
 
 <%# Like/Comment buttons %>
   <%= link_to "Add a comment", comments_path(post_id: post.id) %><br><br>

@@ -1,7 +1,20 @@
 class PostsController < ApplicationController
   
-  def initialize
-    @all_posts = Post.all
+  # def initialize
+  #   @all_posts = Post.all
+  # end
+
+    def index
+      @all_posts = Post.all
+      if params[:search_by_content] && params[:search_by_content] != ""
+        @all_posts = @all_posts.where("content LIKE ?", params[:search_by_content])
+      end
+
+      if params[:search_by_user] && params[:search_by_user] != ""
+        # @user = User.all
+        # @user.where("name LIKE ?", params[:search_by_user])
+        @all_posts = @all_posts.where("users_id LIKE ?", params[:search_by_user])
+      end
   end
 
   # def new 
@@ -26,15 +39,12 @@ class PostsController < ApplicationController
       end
   end
 
-  def personal
-    
-  end
 
   private
 
   def post_params
     p "These are the post_params"
     p params
-    params.require(:post).permit(:content, :post_photo)
+    params.require(:post).permit(:content, :post_photo, :search)
   end
 end

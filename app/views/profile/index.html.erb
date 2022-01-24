@@ -1,3 +1,4 @@
+<center>
 <h1> profile page </h1>
 
 <image src="<%=(url_for(User.find_by(id: session[:current_user_id]).profile_pic))%>"
@@ -43,3 +44,4 @@ style="width:250px;height:250px;">
 <% end %>
 
 
+</center>

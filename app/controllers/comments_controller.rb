@@ -7,7 +7,7 @@ def create
   end
 
   def show 
-    @all_posts = Post.all
+    @posts_all = Post.all
   end
 
   def comment_params
