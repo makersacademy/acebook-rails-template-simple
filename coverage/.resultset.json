@@ -255,7 +255,6 @@
       },
       "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/spec/helpers/likes_helper_spec.rb": {
         "lines": [
-          1,
           null,
           null,
           null,
@@ -267,8 +266,9 @@
           null,
           null,
           null,
-          1,
-          1,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -319,18 +319,10 @@
       },
       "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/spec/models/like_spec.rb": {
         "lines": [
-          1,
           null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/app/models/like.rb": {
-        "lines": [
-          1,
-          1,
-          1,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -467,11 +459,11 @@
       },
       "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/spec/requests/likes_spec.rb": {
         "lines": [
-          1,
           null,
-          1,
-          1,
-          1,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -559,6 +551,14 @@
           null
         ]
       },
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/app/models/like.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/app/controllers/comments_controller.rb": {
         "lines": [
           1,
@@ -594,6 +594,6 @@
         ]
       }
     },
-    "timestamp": 1643036881
+    "timestamp": 1643036966
   }
 }
