@@ -14,7 +14,7 @@
             </div>
 
             <div class="card-body">
-              <p><small> Created at: <%= post.created_at.strftime("%H:%M:%S %B %Y") %>, by user <%= post.user_id %></small></p>
+            <p><%= "Posted by #{post.user.username} on #{post.created_at.strftime("%H:%M:%S %B %Y")}" %></p>
             </div>
           
             <div class="card-link">

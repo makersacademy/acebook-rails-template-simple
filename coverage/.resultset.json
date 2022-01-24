@@ -317,6 +317,21 @@
           null
         ]
       },
+      "/Users/titus/W8/acebook-rails-template-simple/spec/models/friendship_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/titus/W8/acebook-rails-template-simple/app/models/friendship.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/titus/W8/acebook-rails-template-simple/spec/models/like_spec.rb": {
         "lines": [
           1,
@@ -589,6 +604,6 @@
         ]
       }
     },
-    "timestamp": 1643040108
+    "timestamp": 1643041507
   }
 }
