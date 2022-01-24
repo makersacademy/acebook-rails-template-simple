@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
+RSpec.feature "Managing posts", type: :feature do
   scenario "Can edit posts and view changes" do
 
     navbar_acebook_link = "/html/body/nav/a"
     message_content = '//*[@id="post_message"]'
     create_post_btn = '//*[@id="submit"]'
-    edit_btn = 'body > div.container > article > div:nth-child(2) > div.card-link > a:nth-child(3)'
+    edit_btn = 'body > div.container > article > div:nth-child(1) > div.card-link > a:nth-child(2)'
 
     sign_up
 

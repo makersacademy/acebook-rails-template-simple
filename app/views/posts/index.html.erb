@@ -2,18 +2,19 @@
   <div class = "card bg-light mb-3" style="width: 32rem;" >
     <div class = "card-body">
      <%= render "form", post: @post%> <!--brings new form to index-->
-   </div>
+    </div>
   </div>
      <% @posts.reverse.each do |post| %>
 
         <article class = "card bg-light mb-3" style="width: 32rem;">
-            <div class="card-body">
-              <p> Created at: <%= post.created_at.strftime("%H:%M") %>, by user <%= post.user_id %> </p>
-            </div>
 
           <div class = "card-body border-top">
             <div class = "card-text">
-              <%= post.message %>
+              <strong><%= post.message %></strong>
+            </div>
+
+            <div class="card-body">
+            <p><%= "Posted by #{post.user.username} on #{post.created_at.strftime("%H:%M:%S %B %Y")}" %></p>
             </div>
           
             <div class="card-link">
@@ -27,16 +28,14 @@
               <%= link_to "Edit", edit_post_path(post) %> 
               <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %> 
              <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-
             </div>
           </div>
             
           <div class = "card-body border-top">
             <strong>Comments:</strong>
-            <%= render post.comments%>
-                
-            <%= bootstrap_form_with model: [ post, post.comments.build ] do |form| %>
-                    <%= form.text_area :content, skip_label: true, id:"content", :rows=>1, :cols=>20 %>
+            <%= render post.comments%>           
+            <%= bootstrap_form_with model: [ post, post.comments.build ], local: true do |form| %>
+                    <%= form.text_area :content, placeholder: "Write your comment here!", skip_label: true, id:"content", :rows=>1, :cols=>20 %>
                     <%= form.submit id:"create_comment"%>
             <% end %>
           </div>
