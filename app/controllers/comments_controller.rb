@@ -8,6 +8,26 @@ class CommentsController < ApplicationController
     redirect_back(fallback_location: posts_path)
   end
 
+  def edit
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+  end
+
+  def show
+
+  end
+
+  def update
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+
+    if @comment.update(comment_params)
+      redirect_to posts_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
 
   def destroy
     @post = Post.find(params[:post_id])
