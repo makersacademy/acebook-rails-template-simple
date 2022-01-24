@@ -4,8 +4,15 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(comment_params.merge(user_id: current_user.id))
-    redirect_back(fallback_location: posts_path)
+    @comment = @post.comments.new(comment_params.merge(user_id: current_user.id))
+
+    if @comment.save
+      flash[:success] = "Comment posted"
+      redirect_back(fallback_location: posts_path)
+    else
+      flash[:danger] = "Unable to post comment"
+      redirect_back(fallback_location: posts_path)
+    end
   end
 
   def edit
