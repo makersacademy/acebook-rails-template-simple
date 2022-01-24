@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :photos
 
+  delete 'logout', to: 'homepage#destroy'
 end
 
 

@@ -12,7 +12,7 @@
         </li> %>
         <li class="nav-item">
           <%# <a class="nav-link" href="localhost:3000/homepage">Log Out</a> %>
-          <%= link_to "Sign Out", homepage_index_path, class: "nav-link" %>
+          <%= button_to "Sign Out", logout_path, method: :delete, class: "nav-link" %>
         </li>
        
         

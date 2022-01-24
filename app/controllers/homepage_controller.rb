@@ -12,6 +12,12 @@ class HomepageController < ApplicationController
             redirect_to '/posts'
         end
     end
+
+    def destroy
+        session[:current_user_id] = nil
+            p session[:current_user_id]
+            redirect_to '/homepage'
+    end
     
     private
 
