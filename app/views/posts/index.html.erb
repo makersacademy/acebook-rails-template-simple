@@ -30,7 +30,7 @@ style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_i
   <% end %>
 
 <%# Like/Comment buttons %>
-  <%= button_to "Add a comment", comments_path, method: :get %>
+  <%= link_to "Add a comment", comments_path(post_id: post.id) %><br>
   <% pre_like = post.likes.find { |like| like.user_id == session[:current_user_id]} %>
 
   <% if pre_like %>
@@ -42,9 +42,6 @@ style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_i
 <%# Like/Comment counters %>
   <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p> 
  
-
-<%# PostID %>
-  Post ID: (<%= post.id %>)<br><br>
 
   <%# Comments section%>
   <h4>Comments Section (<%= post.comments.count %>)</h4>
