@@ -99,6 +99,9 @@
     padding-bottom: 15px;
   }
   
+  .flash {
+    color: red;
+  }
   
   .flex-justifyContent--center {
     -ms-flex-pack: center;

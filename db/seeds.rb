@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# User.create.profile_pic.attach(io: File.open('app/assets/images/seed_images/spiderman.jpg'), filename: 'spiderman.jpg')
