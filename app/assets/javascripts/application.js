@@ -16,5 +16,7 @@
 
   // Show form warning if empty post is submitted
 
+  let addCommentToView;
+
 
 

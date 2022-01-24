@@ -1,0 +1,42 @@
+My notes for trying to recreate this comment box with Javascript #help #deletelater
+
+0. <div class="card box has-background-white-ter pb-1">
+
+                  1. <div class="card-content pb-1">
+
+                    2. <div class="media">
+
+                      3. <div class="media-left">
+                        4. <figure class="image is-32x32">
+                          5. <img class="is-rounded" src="https://i.pravatar.cc/" alt="<%= @user.name %>">
+                        </figure>
+                      </div>
+
+                      6. <div class="media-content">
+                        <% @commenter = User.find(comment.user_id) %>
+                        7. <p class="title is-6"><%= @commenter.name %></p>
+                      </div>
+                    </div>
+
+                    8. <div class="content comment-message">
+                      9. <p class="has-text-dark"><%= comment.message %></p>
+                      10. <time class="has-text-grey"><%=time_ago_in_words(post.updated_at)%> ago</time>
+                    </div>
+
+                    11. <footer class="card-footer">
+                      <% if current_user == @commenter %>
+                        <% if editable?(comment) %>
+                          <%= link_to '<i class="fas fa-edit"></i>'.html_safe, post_path(post) + "/comments/#{comment.id}/edit",
+                          class: "card-footer-item editbutton" %>
+                        <% end %>
+                        <%= link_to '<i class="fas fa-trash-alt" aria-hidden="true"></i>'.html_safe, post_path(post) + "/comments/#{comment.id}",
+                        class: "card-footer-item deleter",
+                        method: :delete,
+                        data: { confirm: "Are you sure?" }
+                        %>
+                      <% end %>
+                    </footer>
+
+                  </div>
+
+                </div>

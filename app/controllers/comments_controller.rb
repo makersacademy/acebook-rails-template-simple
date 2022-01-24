@@ -4,15 +4,15 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.new(comment_params.merge(user_id: current_user.id))
+    @comment = @post.comments.create(comment_params.merge(user_id: current_user.id))
+    @commenter = User.find(current_user.id)
+    flash.now[:success] = "Comment posted"
+    # TODO: How to add a flash message when comment is dynamically added with js?
 
-    if @comment.save
-      flash[:success] = "Comment posted"
-      redirect_back(fallback_location: posts_path)
-    else
-      flash[:danger] = "Unable to post comment"
-      redirect_back(fallback_location: posts_path)
+    respond_to do |format|
+      format.js
     end
+
   end
 
   def edit
