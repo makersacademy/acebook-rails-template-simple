@@ -29,9 +29,12 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.profile_picture.attach(params[:profile_picture])
+    @user.profile_picture.attach(io: pp_params[:profile_picture].tempfile, filename: pp_params[:profile_picture].original_filename, content_type: pp_params[:profile_picture].content_type)
     
     if @user.profile_picture.attached?
+      p pp_params
+      p "Hello"
+      p @user.profile_picture
       redirect_to root_path
     else
       render :edit
@@ -40,7 +43,10 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :profile_picture)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
   
+  def pp_params
+    params.require(:user).permit(:profile_picture)
+  end
 end

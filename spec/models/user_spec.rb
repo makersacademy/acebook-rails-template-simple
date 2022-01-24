@@ -31,4 +31,11 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
+  it "is valid with valid attributes" do
+    user = User.new(name: "Kim", email: "kim@gmail.com", password: "password", password_confirmation: "password")
+    user.save
+    user.profile_picture.attach(io: File.open("/Users/inigomeshoulam/Desktop/bob.jpeg"), filename: "bob.jpg", content_type: "image/jpeg")
+    expect(user.profile_picture.attached?).to be true
+  end
+
 end
