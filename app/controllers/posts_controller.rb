@@ -1,13 +1,10 @@
 class PostsController < ApplicationController
   
-  def initialize
+
+  def index
+    # @display_posts =Post.all
     @all_posts = Post.all
   end
-
-  # def index
-  #   # @display_posts =Post.all
-  #   @all_posts = Post.all
-  # end
 
   def show
     @posts = Post.find(params[:id])

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
   resources :comments
-
+  
   resources :posts do
-    resources :likes
+     resources :likes
   end
 
   resources :signup
