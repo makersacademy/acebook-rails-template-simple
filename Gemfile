@@ -45,12 +45,16 @@ group :development do
   gem 'database_cleaner-active_record'
 
 end
+gem 'simplecov', require: false, group: :test
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise', '~> 4.8', '>= 4.8.1'
 
+group :test do
+  gem 'database_cleaner-active_record'
+end
 
 gem "activestorage", "~> 6.1"
 

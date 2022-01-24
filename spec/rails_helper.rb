@@ -3,7 +3,11 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
+require 'simplecov'
+SimpleCov.start
+
 require 'spec_helper'
+require 'database_cleaner/active_record'
 require 'rspec/rails'
 require 'database_cleaner/active_record'
 
@@ -29,6 +33,10 @@ require 'database_cleaner/active_record'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  config.after(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 

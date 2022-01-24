@@ -2,18 +2,18 @@ require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
-    
-    post_submit_btn = '//*[@id="submit"]'
-
+    navbar_acebook_link = "/html/body/nav/a"
+    message_content = '//*[@id="post_message"]'
+    create_post_btn = '//*[@id="submit"]'
+       
     sign_up
-    click_link "Acebook"
-    expect(current_path).to eq("/posts")
-    find(:xpath, "/html/body/form[1]/input[3]").set('This is a post')
-    find(:xpath, post_submit_btn).click
-    expect(page).to have_content("This is a post")
+
+    find(:xpath, navbar_acebook_link).click
+    expect(page).to have_current_path("/posts")
+
+    find(:xpath, message_content).set("a post")
+    find(:xpath, create_post_btn).click
+    expect(page).to have_content("a post")
+  
   end
 end
-
-#     find(:xpath, "/html/body/form[1]/input[3]").set('this is a post')
-
-

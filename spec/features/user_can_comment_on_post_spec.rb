@@ -1,27 +1,29 @@
-# require 'rails_helper'
+require 'rails_helper'
 
+RSpec.feature "Timeline", type: :feature do
+  scenario "Can comment on posts and view changes" do
+    
+    navbar_acebook_link = "/html/body/nav/a"
+    message_content = '//*[@id="post_message"]'
+    create_post_btn = '//*[@id="submit"]'
+    edit_btn = '/html/body/button[1]/a'
+    delete_btn = "/html/body/button[3]/a"
+    comment_content = '/html/body/form[2]/p[1]/textarea'
+    create_comment_btn = '/html/body/form[2]/p[2]/input'
+  
+    sign_up
 
-# RSpec.feature "Timeline", type: :feature do
-#   scenario "Can comment on posts and view changes" do
-#     # post_message_box = '//*[@id="post_message"]'
-#     # comment_box = '//*[@id="content"]'
-#     post_submit_btn = '//*[@id="submit"]'
-#     comment_create_btn = '//*[@id="comment_create"]'
-#     sign_up
-#     click_link "Acebook"
-#     expect(current_path).to eq("/posts")
+    find(:xpath, navbar_acebook_link).click
+    expect(page).to have_current_path("/posts")
 
-#     find(:xpath, "/html/body/form[1]/input[3]").set('this is a post')
-#     #click_button "Submit"
-#     find(:xpath, post_submit_btn).click
-#     expect(page).to have_content("this is a post")
-#     expect(current_path).to eq("/posts")
-#     find(:xpath, "/html/body/form[2]/p[1]/textarea").set('comment on my first post')
-#     #fill_in "content", with: "comment on my first post"
-#     find(:xpath, "/html/body/form[2]/p[2]/input").click
+    find(:xpath, message_content).set("a post")
+    find(:xpath, create_post_btn).click
+    expect(page).to have_content("a post")
+  
+    find(:xpath, comment_content).set("Fantastic")
+    find(:xpath, create_comment_btn).click
+    expect(page).to have_current_path("/posts")
+    expect(page).to have_content("Fantastic")
 
-#     expect(page).to have_content("Hello, world!")
-#     expect(page).to have_content("comment on my first post")
-#   end
-# end
-
+  end
+end
