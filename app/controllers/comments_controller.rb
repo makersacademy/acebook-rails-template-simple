@@ -29,6 +29,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.find(params[:id])
 
     if @comment.update(comment_params)
+      flash[:success] = "Comment edited"
       redirect_to posts_path
     else
       render :edit, status: :unprocessable_entity
