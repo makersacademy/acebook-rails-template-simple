@@ -4,10 +4,8 @@ RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
     user_sign_up
     create_post
-    click_link "New post"
-    fill_in "post[message]", with: "Hello, I'm on rails!"
-    click_button "Submit"
-    visit "/posts"
+    find('#post-form').fill_in "post[message]", with: "Hello, I'm on rails!"
+    click_button "Post"
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content("Hello, I'm on rails!")
   
