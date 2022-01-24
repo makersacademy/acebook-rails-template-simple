@@ -4,6 +4,17 @@ style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_i
 
 
 <% @all_posts.reverse.each do |post| %>
+  <%= post.content %> <br><br>
+  Post ID: (<%= post.id %>)<br><br>
+  <% post.comments.reverse.each do |comment| %> <br><br>
+     <%= User.find_by(id: comment.user_id).name %>:
+     <%= comment.content %>
+     <%= comment.created_at.to_s(:time) %>
+  <% end %>
+
+  <%= button_to "Add a comment", comments_path, method: :get %>
+  Comments: <%= post.comments.count %>
+
   <p>
   <% p ((post.post_photo)) %>
   <image src="<%=(url_for(User.find_by(id: post.users_id).profile_pic))%>"
@@ -11,11 +22,13 @@ style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_i
   <p><%= post.content %></p> 
   <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p> 
   <% pre_like = post.likes.find { |like| like.user_id == session[:current_user_id]} %>
+
   <% if pre_like %>
     <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
   <% else %>
     <%= button_to 'Like', post_likes_path(post), method: :post %>
   <% end %>
+
   Posted by
   <%= User.find_by(id: post.users_id).name %>
   <% if post.post_photo.attached? %>
@@ -26,3 +39,4 @@ style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_i
 <% end %>
 
 <p><%= link_to "Create new post", {:action => 'new' } %></p>
+
