@@ -13,7 +13,7 @@ class LikesController < ApplicationController
   def destroy
     @like = current_user.likes.find(params[:id])
     @like.destroy
-    redirect_to posts_path
+    redirect_to root_path
   end
 
   private
