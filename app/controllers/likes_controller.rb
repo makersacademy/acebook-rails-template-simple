@@ -1,5 +1,7 @@
 class LikesController < ApplicationController
 
+  before_action :find_like, only: [:destroy]
+
   
 
   def create
