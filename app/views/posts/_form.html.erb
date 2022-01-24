@@ -1,12 +1,8 @@
 <div class = "container">
   <%=  bootstrap_form_for(@post) do |form| %>
-<<<<<<< HEAD
     <%= form.text_field :message, skip_label: true, placeholder: "Write something here!"%>
     <%= form.label :image %>
     <%= form.file_field :image %>
-=======
-
->>>>>>> main
     <%= form.submit :id => "submit" %>
   <% end %>
 </div>
