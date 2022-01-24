@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # end
 
   def create
-    @post = Post.create(post_params)
+    @post = current_user.posts.create(post_params)
     redirect_to posts_url
 
     if @post.image.attached? == false && @post.message == ""
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
 
-    redirect_to posts_url, status: :see_other
+    redirect_to posts_url, status: :see_other #this will need to change to post_path. how to delete a post that has comments?
     flash[:notice] = "You have successfully deleted a post."
   end
   
@@ -48,4 +48,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message, :image)
   end
+
 end

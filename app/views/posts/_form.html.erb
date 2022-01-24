@@ -1,13 +1,8 @@
-
-<%= form_for @post do |form| %>
-
-  <%= form.label :message %>
-  <%= form.text_field :message %>
-  
-  <%= form.label :image %>
-  <%= form.file_field :image %>
-  
-  <div id="submit-button" class="actions">
-    <%= form.submit "Submit" %>
-  </div>
-<% end %>
+<div class = "container">
+  <%=  bootstrap_form_for(@post) do |form| %>
+    <%= form.text_field :message, skip_label: true %>
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+    <%= form.submit :id => "submit" %>
+  <% end %>
+</div>

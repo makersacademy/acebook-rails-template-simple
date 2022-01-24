@@ -2,28 +2,39 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   it { is_expected.to be }
-
+ 
   it "not valid if post has neither a message or a image" do
-    post = Post.new()
+    user = User.new(username: 'posts_test_user',
+      email: "posttest@test.com",
+      password: "123456",)
+    post = Post.new(user: user, message: nil)
 
     expect(post).to_not be_valid
   end
 
   it "has a valid message" do
-    post = Post.new(message: "This is my first post")
+    user = User.new(username: 'posts_test_user',
+      email: "posttest@test.com",
+      password: "123456",)
+    post = Post.new(user: user, message: "hello")
 
     expect(post).to be_valid
   end
 
   it "message is less than 200 char" do
-    post = Post.new(message: "a" * 11)
-
+    user = User.new(username: 'posts_test_user',
+      email: "posttest@test.com",
+      password: "123456",)
+    post = Post.new(user: user, message: "a" * 199)
     expect(post).to be_valid
   end
 
 
   it "message is greater than 200 char" do
-    post = Post.new(message: "a" * 201)
+    user = User.new(username: 'posts_test_user',
+      email: "posttest@test.com",
+      password: "123456",)
+    post = Post.new(user: user, message: "a" * 201)
     expect(post).to_not be_valid
   end
 
