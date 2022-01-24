@@ -8,11 +8,11 @@ RSpec.feature "Comments", type: :feature do
     second_user_sign_up
     fill_in "comment[message]", with: "Hiya"
     click_button "Create Comment"
-    click_link "Edit comment"
+    find('a.editbutton').click
     fill_in "comment[message]", with: "Updated"
     click_button "Submit"
     expect(page).to have_content("Updated")
-    expect(page).not_to have_content "Kim Hiya"
+    expect(page).not_to have_content "Hiya"
   end
 
   scenario "Users can make a comment and edit it from the individual post page" do
