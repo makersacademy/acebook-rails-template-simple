@@ -17,7 +17,13 @@
             </div>
           
             <div class="card-link">
-              <%= link_to 'Like', post_likes_path(post), method: :post %>
+              
+              <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+                <% if pre_like %>
+                  <%= link_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
+                <% else %>
+                  <%= link_to 'Like', post_likes_path(post), method: :post %>
+                <% end %>
               <%= link_to "Edit", edit_post_path(post) %> 
               <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %> 
              <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
