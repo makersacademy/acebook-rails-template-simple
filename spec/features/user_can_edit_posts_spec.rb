@@ -6,9 +6,7 @@ RSpec.feature "Timeline", type: :feature do
     navbar_acebook_link = "/html/body/nav/a"
     message_content = '//*[@id="post_message"]'
     create_post_btn = '//*[@id="submit"]'
-    edit_btn = '/html/body/button[1]/a'
-    delete_btn = "/html/body/button[3]/a"
-    
+    edit_btn = 'body > div.container > article > div:nth-child(2) > div.card-link > a:nth-child(3)'
 
     sign_up
 
@@ -19,7 +17,7 @@ RSpec.feature "Timeline", type: :feature do
     find(:xpath, create_post_btn).click
     expect(page).to have_content("a post")
   
-    find(:xpath, edit_btn).click
+    find(:css, edit_btn).click
     find(:xpath, message_content).set("Edited this post")
     find(:xpath, create_post_btn).click
     expect(page).to have_current_path("/posts")

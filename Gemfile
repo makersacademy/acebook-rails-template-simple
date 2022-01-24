@@ -42,6 +42,8 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'database_cleaner-active_record'
+
 end
 gem 'simplecov', require: false, group: :test
 
@@ -57,3 +59,5 @@ end
 gem "activestorage", "~> 6.1"
 
 gem "factory_bot", "~> 6.2"
+
+gem "bootstrap_form", "~> 5.0"

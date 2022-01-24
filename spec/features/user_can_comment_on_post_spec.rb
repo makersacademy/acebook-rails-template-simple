@@ -6,11 +6,9 @@ RSpec.feature "Timeline", type: :feature do
     navbar_acebook_link = "/html/body/nav/a"
     message_content = '//*[@id="post_message"]'
     create_post_btn = '//*[@id="submit"]'
-    edit_btn = '/html/body/button[1]/a'
-    delete_btn = "/html/body/button[3]/a"
-    comment_content = '/html/body/form[2]/p[1]/textarea'
-    create_comment_btn = '/html/body/form[2]/p[2]/input'
-  
+    comment_content = '//*[@id="content"]'
+    create_comment_btn = '//*[@id="create_comment"]'
+
     sign_up
 
     find(:xpath, navbar_acebook_link).click
