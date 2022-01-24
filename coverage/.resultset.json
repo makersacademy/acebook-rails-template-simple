@@ -25,7 +25,7 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/spec/features/user_can_comment_on_post_spec.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/spec/features/user_can_comment_on_post_spec.rb": {
         "lines": [
           1,
           null,
@@ -255,7 +255,6 @@
       },
       "/Users/titus/W8/acebook-rails-template-simple/spec/helpers/likes_helper_spec.rb": {
         "lines": [
-          1,
           null,
           null,
           null,
@@ -267,8 +266,9 @@
           null,
           null,
           null,
-          1,
-          1,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -319,7 +319,6 @@
       },
       "/Users/titus/W8/acebook-rails-template-simple/spec/models/friendship_spec.rb": {
         "lines": [
-          1,
           null,
           1,
           1,
@@ -394,7 +393,7 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/app/models/post.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/app/models/post.rb": {
         "lines": [
           1,
           1,
@@ -404,7 +403,7 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/spec/models/user_spec.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/spec/models/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -482,11 +481,11 @@
       },
       "/Users/titus/W8/acebook-rails-template-simple/spec/requests/likes_spec.rb": {
         "lines": [
-          1,
           null,
-          1,
-          1,
-          1,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -508,7 +507,7 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/app/controllers/application_controller.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
@@ -527,7 +526,7 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/app/controllers/posts_controller.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/app/controllers/posts_controller.rb": {
         "lines": [
           1,
           null,
@@ -574,7 +573,15 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/app/controllers/comments_controller.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/app/models/like.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/app/controllers/comments_controller.rb": {
         "lines": [
           1,
           1,
