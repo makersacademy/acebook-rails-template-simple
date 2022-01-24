@@ -8,7 +8,7 @@
 
         <article class = "card bg-light mb-3" style="width: 32rem;">
             <div class="card-body">
-              <p> Created at: <%= post.created_at.strftime("%H:%M") %>, by user <%= post.user_id %> </p>
+            <p><%= "Created at: #{post.created_at.strftime("%H:%M")}, by user #{post.user.username}"%> </p>
             </div>
 
           <div class = "card-body border-top">
