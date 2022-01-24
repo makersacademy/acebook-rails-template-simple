@@ -6,6 +6,13 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(post_params)
     redirect_to posts_url
+
+    if @post.image.attached? == false && @post.message == ""
+      flash[:alert] = "Post needs a message or an image."
+    else
+      flash[:notice] = "You have successfully created a post."
+    end
+
   end
 
   def index
@@ -22,6 +29,7 @@ class PostsController < ApplicationController
 
     if @post.update(post_params)
       redirect_to posts_url
+      flash[:notice] = "You have successfully edited a post."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -32,6 +40,7 @@ class PostsController < ApplicationController
     @post.destroy
 
     redirect_to root_path, status: :see_other
+    flash[:notice] = "You have successfully deleted a post."
   end
   
   private

@@ -31,8 +31,6 @@ RSpec.feature "Posting", type: :feature do
   scenario "Doesn't let you post without either message or picture" do
     visit "/posts"
     find(:xpath, '//*[@id="submit-button"]/input').click
-    save_and_open_page
-    expect(page).to_not have_button("Edit") 
-    expect(page).to_not have_button("Delete") 
+    expect(page).to_not have_button("Post needs a message or an image") 
   end 
 end
