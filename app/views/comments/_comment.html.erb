@@ -2,7 +2,8 @@
   <div>
     User <%= comment.user_id %>:
     <%= comment.content %>
-     <%= link_to "Delete", [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %> 
+    <p><small>Posted at <%= comment.created_at.strftime("%H:%M:%S %B %Y")%></p></small>
+    <%= link_to "Delete", [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %> 
 
   </div>
   </p>
