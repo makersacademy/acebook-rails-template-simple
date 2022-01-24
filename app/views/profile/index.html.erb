@@ -1,25 +1,11 @@
-<center>
-<%# Page Headings, welcome message and link to create new posts%>
-<h1>AceBook Posts</h1>
-<h4> What's on your mind, <%= User.find_by(id: session[:current_user_id]).name %>?</h4>
-<p><%= link_to "Create new post", {:action => 'new' } %></p>
-<p><%= link_to "Go to your profile", profile_path %></p>
-<h2><image src="<%=(url_for(User.find_by(id: session[:current_user_id]).profile_pic))%>"
-style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_id]).name %>, see your feed below</h2>
+<h1> profile page </h1>
 
-<%# Confirmation message that user has created/not created a new post%>
+<image src="<%=(url_for(User.find_by(id: session[:current_user_id]).profile_pic))%>"
+style="width:250px;height:250px;"> 
 
-<% flash.each do |type, msg| %>
-  <div style="color: darkred">
-    <%= msg %>
-  </div>
-<% end %>
+<h4> Hi <%= User.find_by(id: session[:current_user_id]).name %></h4>
 
-<%# Feed %>
-
-<%# Displays all posts %>
-
-<% @all_posts.reverse.each do |post| %>
+<% Post.where("users_id LIKE ?", session[:current_user_id]).reverse.each do |post| %>
   <image src="<%=(url_for(User.find_by(id: post.users_id).profile_pic))%>"
   style="width:40px;height:40px;"> 
   <%= User.find_by(id: post.users_id).name %><br><br>
@@ -56,5 +42,4 @@ style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_i
            <hr>
 <% end %>
 
-</center>
 

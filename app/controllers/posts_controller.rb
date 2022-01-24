@@ -4,9 +4,9 @@ class PostsController < ApplicationController
     @all_posts = Post.all
   end
 
-  def new 
-    @comment = Comment.new(post_id: params[:post_id])
-  end
+  # def new 
+  #   @comment = Comment.new(post_id: params[:post_id])
+  # end
 
   def show
     @posts = Post.find(params[:id])
@@ -24,6 +24,10 @@ class PostsController < ApplicationController
         flash.alert = "Error: Post not created"
         redirect_to '/'
       end
+  end
+
+  def personal
+    
   end
 
   private
