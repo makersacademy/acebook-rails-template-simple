@@ -12,3 +12,9 @@
 //
 //= require rails-ujs
 //= require_tree .
+
+
+  // Show form warning if empty post is submitted
+
+
+
