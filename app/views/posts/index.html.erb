@@ -9,13 +9,22 @@
         <article class = "card bg-light mb-3" style="width: 32rem;">
 
           <div class = "card-body border-top">
+            <div class="card-title">
+            <h5><%= "#{post.user.username}"%></h5>
+            
+            <%# Refactor below to place logic elsewhere; probs controller? Ask Leo tomorrow %>
+            <% if ((Time.parse((Time.now).to_s) - post.created_at) / 3600) > 24%> 
+            <p><small><%= "#{post.created_at.strftime("%H:%M:%S %B %Y")}" %></p></small>
+            <% else %>
+            <p><small><%= "#{((Time.parse((Time.now).to_s) - post.created_at) / 3600*60).round()} minutes ago" %></p></small>
+            <% end %>
+            </div>
+            
             <div class = "card-text">
-              <strong><%= post.message %></strong>
+              <h1><strong><%= post.message %></strong></h1>
             </div>
 
-            <div class="card-body">
-            <p><%= "Posted by #{post.user.username} on #{post.created_at.strftime("%H:%M:%S %B %Y")}" %></p>
-            </div>
+            
           
             <div class="card-link">
               
@@ -35,7 +44,7 @@
             <strong>Comments:</strong>
             <%= render post.comments%>           
             <%= bootstrap_form_with model: [ post, post.comments.build ], local: true do |form| %>
-                    <%= form.text_area :content, placeholder: "Write your comment here!", skip_label: true, id:"content", :rows=>1, :cols=>20 %>
+                    <%= form.text_field :content, placeholder: "Write a comment...", skip_label: true, id:"content", :rows=>1, :cols=>20 %>
                     <%= form.submit id:"create_comment"%>
             <% end %>
           </div>
