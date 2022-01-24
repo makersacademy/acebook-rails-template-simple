@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def show
     @posts = Post.find(params[:id])
-    redirect_to '/posts'
+    redirect_to '/'
     # respond_to do |format|
     #   format.html { render action: 'index'}
     # end
@@ -19,18 +19,16 @@ class PostsController < ApplicationController
 
   def create
     @post_new = Post.new(content: post_params["content"], users_id: session[:current_user_id])
-    respond_to do |format|
+    # respond_to do |format|
       if @post_new.valid?
         @post_new.save
         @post_new.post_photo.attach(post_params["post_photo"])
-        p post_params["post_photo"]
-        p "DID IT ATTACH?"
-        p @post_new.post_photo.attached?
-       format.html { render action: "index", notice: "Post created!"}
+        flash.alert = "Post created"
+        redirect_to '/'
       else 
-        format.html { render action: 'post_error' }
+        flash.alert = "Error: Post not created"
+        redirect_to '/'
       end
-    end
   end
 
   private

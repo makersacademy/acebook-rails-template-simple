@@ -2,6 +2,11 @@
 <h2><image src="<%=(url_for(User.find_by(id: session[:current_user_id]).profile_pic))%>"
 style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_id]).name %>, see your feed below</h2>
 
+<% flash.each do |type, msg| %>
+  <div style="color: darkred">
+    <%= msg %>
+  </div>
+<% end %>
 
 <% @all_posts.reverse.each do |post| %>
   <%= post.content %> <br><br>
@@ -19,7 +24,6 @@ style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_i
   <% p ((post.post_photo)) %>
   <image src="<%=(url_for(User.find_by(id: post.users_id).profile_pic))%>"
   style="width:40px;height:40px;"> 
-  <p><%= post.content %></p> 
   <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p> 
   <% pre_like = post.likes.find { |like| like.user_id == session[:current_user_id]} %>
 
