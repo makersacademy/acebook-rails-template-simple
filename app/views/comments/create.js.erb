@@ -2,69 +2,38 @@ addCommentToView = () => {
   let post = document.getElementById("post-<%=@post.id%>");
   let comment_box = post.querySelector(".comment-box");
 
-  let zerothElement = document.createElement("div");
-  zerothElement.className = "card box has-background-white-ter pb-1";
+  let commentContainer = document.createElement("div");
+  commentContainer.className = "card box has-background-white-ter pb-1";
 
-  let firstElement = document.createElement("div");
-  firstElement.className = "card-content pb-1";
-  zerothElement.appendChild(firstElement);
+  let cardContent = document.createElement("div");
+  cardContent.className = "card-content pb-1";
 
-  let secondElement = document.createElement("div");
-  secondElement.className = "media";
-  firstElement.appendChild(secondElement)
+  let media = document.createElement("div");
+  media.className = "media"
+  media.innerHTML = '<div class="media-left"><figure class="image is-32x32"><img class="is-rounded" src="https://i.pravatar.cc/" alt="<%= @commenter.name %>"></figure></div><div class="media-content"><p class="title is-6"><%= @commenter.name %></p></div>'
 
-  let thirdElement = document.createElement("div");
-  thirdElement.className = "media-left";
+  let commentMessage = document.createElement("div");
+  commentMessage.className = "content comment-message";
+  commentMessage.innerHTML = '<p class="has-text-dark"><%= @comment.message %></p><time class="has-text-grey"><%=time_ago_in_words(@comment.updated_at)%> ago</time>'
 
-  let fourthElement = document.createElement("figure");
-  fourthElement.className = "image is-32x32";
-  thirdElement.appendChild(fourthElement);
+  let footer = document.createElement("footer")
+  footer.className = "card-footer";
+  footer.innerHTML = "<% if current_user == @commenter %>"
+  footer.innerHTML += "<% if editable?(@comment) %>"
+  footer.innerHTML += "<a class='card-footer-item editbutton' href='/posts/<%=@post.id%>/comments/<%=@comment.id%>/edit'><i class='fas fa-edit'></i></a>"
+  footer.innerHTML += "<% end %>"
+  footer.innerHTML += "<a class='card-footer-item deleter' data-confirm='Are you sure?' rel='nofollow' data-method='delete' href='/posts/<%=@post.id%>/comments/<%=@comment.id%>'><i class='fas fa-trash-alt' aria-hidden='true'></i></a>"
+  footer.innerHTML += "<% end %>"
 
-  let fifthElement = document.createElement("img");
-  fifthElement.className = "is-rounded";
-  fifthElement.setAttribute("src", "https://i.pravatar.cc/")
-  fourthElement.appendChild(fifthElement);
+  commentContainer.appendChild(cardContent);
+  commentContainer.appendChild(media);
+  commentContainer.appendChild(commentMessage);
+  commentContainer.appendChild(footer);
 
-  secondElement.appendChild(thirdElement);
+  comment_box.appendChild(commentContainer);
 
-  let sixthElement = document.createElement("div");
-  sixthElement.className = "media-content";
-
-  let seventhElement = document.createElement("p");
-  seventhElement.className = "title is-6";
-  seventhElement.innerHTML = "<%= @commenter.name %>";
-  sixthElement.appendChild(seventhElement);
-
-  secondElement.appendChild(sixthElement);
-
-  let eighthElement = document.createElement("div");
-  eighthElement.className = "content comment-message";
-
-  let ninthElement = document.createElement("p");
-  ninthElement.className = "has-text-dark";
-  ninthElement.innerHTML = "<%= @comment.message %>";
-  eighthElement.appendChild(ninthElement);
-
-  let tenthElement = document.createElement("time");
-  tenthElement.className = "has-text-grey";
-  tenthElement.innerHTML = "<%=time_ago_in_words(@comment.updated_at)%> ago";
-  eighthElement.appendChild(tenthElement)
-
-  firstElement.appendChild(eighthElement);
-
-  let eleventhElement = document.createElement("footer");
-  eleventhElement.className = "card-footer";
-  eleventhElement.innerHTML = "<% if current_user == @commenter %>"
-  eleventhElement.innerHTML += "<% if editable?(@comment) %>"
-  eleventhElement.innerHTML += "<a class='card-footer-item editbutton' href='/posts/<%=@post.id%>/comments/<%=@comment.id%>/edit'><i class='fas fa-edit'></i></a>"
-  eleventhElement.innerHTML += "<% end %>"
-  eleventhElement.innerHTML += "<a class='card-footer-item deleter' data-confirm='Are you sure?' rel='nofollow' data-method='delete' href='/posts/<%=@post.id%>/comments/<%=@comment.id%>'><i class='fas fa-trash-alt' aria-hidden='true'></i></a>"
-  eleventhElement.innerHTML += "<% end %>"
-
-  firstElement.appendChild(eleventhElement);
-
-  comment_box.appendChild(zerothElement);
 }
+
 
 addCommentToView();
 
