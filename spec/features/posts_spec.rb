@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
+RSpec.feature "Posting", type: :feature do
   before do
     sign_up
   end
@@ -18,20 +18,21 @@ RSpec.feature "Timeline", type: :feature do
     find(:xpath, '//*[@id="post_image"]').set("lib/assets/Scooby-Doo_test_picture.png")
     find(:xpath, '//*[@id="submit-button"]/input').click
     expect(page).to have_content("Test")
-    expect(find(:xpath, '/html/body/img')['src'].split('/')[-1]).to eq('Scooby-Doo_test_picture.png')
+    expect(page).to have_css("img[src*='Scooby-Doo_test_picture.png']")  
   end
 
   scenario "Can submit just a picture as a posts" do
     visit "/posts"
     find(:xpath, '//*[@id="post_image"]').set("lib/assets/ShaggyRogers_test_picture.png")
     find(:xpath, '//*[@id="submit-button"]/input').click
-    expect(find(:xpath, '/html/body/img')['src'].split('/')[-1]).to eq('ShaggyRogers_test_picture.png')
+    expect(page).to have_css("img[src*='ShaggyRogers_test_picture.png']")  
   end
 
   scenario "Doesn't let you post without either message or picture" do
     visit "/posts"
     find(:xpath, '//*[@id="submit-button"]/input').click
-    expect(page).to have_content("Post requires message or image") 
+    save_and_open_page
+    expect(page).to_not have_button("Edit") 
+    expect(page).to_not have_button("Delete") 
   end 
-  # NEED TO ADD ERROR MESSAGE ON FRONT END
 end

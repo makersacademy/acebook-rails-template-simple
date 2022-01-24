@@ -4,6 +4,6 @@ class Post < ApplicationRecord
     validate :image_or_message
 
     def image_or_message
-        errors.add("Post needs a message or an image") unless image.attached? || message.present? && message.length < 200
+        self.errors.add(:base, "Post needs a message or an image") unless image.attached? || message.present? && message.length < 200
     end
 end
