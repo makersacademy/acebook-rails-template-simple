@@ -1,6 +1,12 @@
+<center>
+<%# Page Headings, welcome message and link to create new posts%>
 <h1>AceBook Posts</h1>
+<h4> What's on your mind, <%= User.find_by(id: session[:current_user_id]).name %>?</h4>
+<p><%= link_to "Create new post", {:action => 'new' } %></p>
 <h2><image src="<%=(url_for(User.find_by(id: session[:current_user_id]).profile_pic))%>"
 style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_id]).name %>, see your feed below</h2>
+
+<%# Confirmation message that user has created/not created a new post%>
 
 <% flash.each do |type, msg| %>
   <div style="color: darkred">
@@ -8,23 +14,23 @@ style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_i
   </div>
 <% end %>
 
+<%# Feed %>
+
+<%# Displays all posts %>
+
 <% @all_posts.reverse.each do |post| %>
-  <%= post.content %> <br><br>
-  Post ID: (<%= post.id %>)<br><br>
-  <% post.comments.reverse.each do |comment| %> <br><br>
-     <%= User.find_by(id: comment.user_id).name %>:
-     <%= comment.content %>
-     <%= comment.created_at.to_s(:time) %>
-  <% end %>
-
-  <%= button_to "Add a comment", comments_path, method: :get %>
-  Comments: <%= post.comments.count %>
-
-  <p>
-  <% p ((post.post_photo)) %>
   <image src="<%=(url_for(User.find_by(id: post.users_id).profile_pic))%>"
   style="width:40px;height:40px;"> 
-  <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p> 
+  <%= User.find_by(id: post.users_id).name %><br><br>
+     <%= post.created_at.to_s(:time) %><br><br>
+  <%= post.content %> <br><br>
+  <% if post.post_photo.attached? %>
+  <image src="<%=(url_for(post.post_photo))%>"
+  style="width:200px;height:200px;"><br><br>
+  <% end %>
+
+<%# Like/Comment buttons %>
+  <%= button_to "Add a comment", comments_path, method: :get %>
   <% pre_like = post.likes.find { |like| like.user_id == session[:current_user_id]} %>
 
   <% if pre_like %>
@@ -33,14 +39,24 @@ style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_i
     <%= button_to 'Like', post_likes_path(post), method: :post %>
   <% end %>
 
-  Posted by
-  <%= User.find_by(id: post.users_id).name %>
-  <% if post.post_photo.attached? %>
-  <image src="<%=(url_for(post.post_photo))%>"
-  style="width:50px;height:50px;">
+<%# Like/Comment counters %>
+  <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p> 
+ 
+
+<%# PostID %>
+  Post ID: (<%= post.id %>)<br><br>
+
+  <%# Comments section%>
+  <h4>Comments Section (<%= post.comments.count %>)</h4>
+  <% post.comments.reverse.each do |comment| %><br> 
+    <image src="<%=(url_for(User.find_by(id: comment.user_id).profile_pic))%>"
+  style="width:40px;height:40px;"> 
+     <%= User.find_by(id: comment.user_id).name %>:
+     <%= comment.content %>
+     <%= comment.created_at.to_s(:time) %>
   <% end %>
-  </p>
+           <hr>
 <% end %>
 
-<p><%= link_to "Create new post", {:action => 'new' } %></p>
+</center>
 
