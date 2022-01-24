@@ -23,4 +23,4 @@
 .byebug_history
 .env
 
-app/views/comments/note.txt
+/app/views/comments/note.txt
