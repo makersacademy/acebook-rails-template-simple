@@ -8,6 +8,12 @@ class LikesController < ApplicationController
     redirect_to posts_path(@post)
   end
 
+  def destroy
+    !already_liked? ? flash[:notice] = 'You cannot Unlike' : @like.destroy
+    redirect_to posts_path(@post)
+
+  end
+
 
 
   private 
@@ -15,6 +21,10 @@ class LikesController < ApplicationController
   def already_liked?
     Like.where(user_id: current_user.id, post_id:
     params[:post_id]).exists?
+  end
+
+  def find_like
+    @like = @post.likes.find(params[:id])
   end
 
 
