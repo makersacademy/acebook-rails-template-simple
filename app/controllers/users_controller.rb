@@ -29,9 +29,10 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    @user.profile_picture.attach(params[:profile_picture])
     
-    if @user.update(user_params)
-      redirect_to @user
+    if @user.profile_picture.attached?
+      redirect_to root_path
     else
       render :edit
     end
