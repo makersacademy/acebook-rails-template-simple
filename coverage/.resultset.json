@@ -1,25 +1,25 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/titus/W8/acebook-rails-template-simple/app/helpers/application_helper.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/app/helpers/comments_helper.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/app/helpers/comments_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/app/helpers/home_helper.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/app/helpers/home_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/app/helpers/likes_helper.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/app/helpers/likes_helper.rb": {
         "lines": [
           1,
           null
@@ -50,13 +50,13 @@
           1,
           1,
           1,
-          1,
+          0,
           null,
           null,
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/spec/features/user_can_delete_posts_spec.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/spec/features/user_can_delete_posts_spec.rb": {
         "lines": [
           1,
           null,
@@ -85,7 +85,7 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/spec/features/user_can_edit_posts_spec.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/spec/features/user_can_edit_posts_spec.rb": {
         "lines": [
           1,
           null,
@@ -115,7 +115,7 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/spec/features/user_can_sign_up_spec.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/spec/features/user_can_sign_up_spec.rb": {
         "lines": [
           1,
           null,
@@ -211,7 +211,7 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/spec/features/user_can_submit_posts_spec.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/spec/features/user_can_submit_posts_spec.rb": {
         "lines": [
           1,
           null,
@@ -234,7 +234,7 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/spec/helpers/comments_helper_spec.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/spec/helpers/comments_helper_spec.rb": {
         "lines": [
           1,
           null,
@@ -253,7 +253,7 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/spec/helpers/likes_helper_spec.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/spec/helpers/likes_helper_spec.rb": {
         "lines": [
           1,
           null,
@@ -272,7 +272,7 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/spec/models/comment_spec.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/spec/models/comment_spec.rb": {
         "lines": [
           1,
           null,
@@ -308,7 +308,7 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/app/models/comment.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/app/models/comment.rb": {
         "lines": [
           1,
           1,
@@ -317,7 +317,7 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/spec/models/like_spec.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/spec/models/like_spec.rb": {
         "lines": [
           1,
           null,
@@ -326,7 +326,7 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/app/models/like.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/app/models/like.rb": {
         "lines": [
           1,
           1,
@@ -334,7 +334,7 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/spec/models/post_spec.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/spec/models/post_spec.rb": {
         "lines": [
           1,
           null,
@@ -439,7 +439,7 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/spec/requests/comments_spec.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/spec/requests/comments_spec.rb": {
         "lines": [
           1,
           null,
@@ -450,7 +450,7 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/spec/requests/home_spec.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/spec/requests/home_spec.rb": {
         "lines": [
           1,
           null,
@@ -465,7 +465,7 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/spec/requests/likes_spec.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/spec/requests/likes_spec.rb": {
         "lines": [
           1,
           null,
@@ -476,7 +476,7 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/spec/views/home/index.html.erb_spec.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/spec/views/home/index.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -485,7 +485,7 @@
           null
         ]
       },
-      "/Users/titus/W8/acebook-rails-template-simple/app/controllers/home_controller.rb": {
+      "/Users/Shahzaib/Documents/Makers/acebook/acebook-rails-template-simple/app/controllers/home_controller.rb": {
         "lines": [
           1,
           1,
