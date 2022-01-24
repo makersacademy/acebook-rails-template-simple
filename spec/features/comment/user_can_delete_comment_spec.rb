@@ -4,12 +4,21 @@ RSpec.feature "Comments", type: :feature do
   scenario "Users can make a comment and delete it" do
     user_sign_up
     create_post
+    fill_in "comment[message]", with: "Hiya"
+    click_button "Reply"
+    find('a.deleter').click
+    expect(page).not_to have_content "Hiya"
+  end
+
+  scenario "Users get a helpful message when comment is deleted" do
+    user_sign_up
+    create_post
     log_out
     second_user_sign_up
     fill_in "comment[message]", with: "Hiya"
     click_button "Reply"
-    find('.fa-trash-alt').click
-    expect(page).not_to have_content "Kim Hiya"
+    find('a.deleter').click
+    expect(page).to have_content "Comment deleted"
   end
 
   scenario "Users can make a comment and delete it from the individual post page" do

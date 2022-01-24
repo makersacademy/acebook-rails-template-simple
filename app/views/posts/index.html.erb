@@ -117,9 +117,12 @@
 
                     <footer class="card-footer">
                       <% if current_user == @commenter %>
-                        <a href="#" class="card-footer-item"><i class="fas fa-edit"></i></a>
+                        <% if editable?(comment) %>
+                          <%= link_to '<i class="fas fa-edit"></i>'.html_safe, post_path(post) + "/comments/#{comment.id}/edit",
+                          class: "card-footer-item editbutton" %>
+                        <% end %>
                         <%= link_to '<i class="fas fa-trash-alt" aria-hidden="true"></i>'.html_safe, post_path(post) + "/comments/#{comment.id}",
-                        class: "card-footer-item",
+                        class: "card-footer-item deleter",
                         method: :delete,
                         data: { confirm: "Are you sure?" }
                         %>

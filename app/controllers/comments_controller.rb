@@ -4,8 +4,15 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(comment_params.merge(user_id: current_user.id))
-    redirect_back(fallback_location: posts_path)
+    @comment = @post.comments.new(comment_params.merge(user_id: current_user.id))
+
+    if @comment.save
+      flash[:success] = "Comment posted"
+      redirect_back(fallback_location: posts_path)
+    else
+      flash[:danger] = "Unable to post comment"
+      redirect_back(fallback_location: posts_path)
+    end
   end
 
   def edit
@@ -22,6 +29,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.find(params[:id])
 
     if @comment.update(comment_params)
+      flash[:success] = "Comment edited"
       redirect_to posts_path
     else
       render :edit, status: :unprocessable_entity
@@ -32,8 +40,13 @@ class CommentsController < ApplicationController
   def destroy
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
-    @comment.destroy
-    redirect_to posts_path(@post)
+    if @comment.destroy
+      flash[:success] = "Comment deleted"
+      redirect_back(fallback_location: posts_path)
+    else
+      flash[:danger] = "Could not delete comment"
+      redirect_back(fallback_location: posts_path)
+    end
   end
     
   private

@@ -10,4 +10,14 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("Delete post")
     expect(page).to have_button("Create Comment")
   end
+
+  scenario "Posts should be displayed in order" do
+    user_sign_up
+    create_post
+    visit "/posts"
+    form = all("form").first
+    form.fill_in "post[message]", with: "Bye, world!"
+    click_button "Post"
+    expect(all(".post-message").first).to have_content ("Bye, world!")
+  end
 end

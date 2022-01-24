@@ -12,6 +12,16 @@ RSpec.feature "Comments", type: :feature do
     expect(page).to have_content "Hiya"
   end
 
+  scenario "Users should see a success message when making comment" do
+    user_sign_up
+    create_post
+    log_out
+    second_user_sign_up
+    fill_in "comment[message]", with: "Hiya"
+    click_button "Reply"
+    expect(page).to have_content "Comment posted"
+  end
+
   scenario "Users can make a comment on an individual post page and their name will appear next to it" do
     user_sign_up
     create_post

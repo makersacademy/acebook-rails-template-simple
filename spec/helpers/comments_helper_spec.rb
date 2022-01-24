@@ -11,5 +11,10 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe CommentsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it "should be able to tell if a comment is editable" do
+    over_ten_minutes_ago = (Time.now - 601).to_s
+    comment = Comment.new(created_at: over_ten_minutes_ago)
+    expect(helper.editable?(comment)).to be false
+  end
 end
