@@ -4,22 +4,17 @@ class PostsController < ApplicationController
     @all_posts = Post.all
   end
 
-  # def index
-  #   # @display_posts =Post.all
-  #   @all_posts = Post.all
-  # end
+  def new 
+    @comment = Comment.new(post_id: params[:post_id])
+  end
 
   def show
     @posts = Post.find(params[:id])
     redirect_to '/'
-    # respond_to do |format|
-    #   format.html { render action: 'index'}
-    # end
   end
 
   def create
     @post_new = Post.new(content: post_params["content"], users_id: session[:current_user_id])
-    # respond_to do |format|
       if @post_new.valid?
         @post_new.save
         @post_new.post_photo.attach(post_params["post_photo"])

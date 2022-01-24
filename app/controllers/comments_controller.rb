@@ -6,6 +6,10 @@ def create
     redirect_to '/posts'
   end
 
+  def show 
+    @all_posts = Post.all
+  end
+
   def comment_params
     params.permit([:user_id, :post_id, :content])
   end
