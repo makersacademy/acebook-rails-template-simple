@@ -6,7 +6,7 @@ RSpec.feature "Timeline", type: :feature do
     navbar_acebook_link = "/html/body/nav/a"
     message_content = '//*[@id="post_message"]'
     create_post_btn = '//*[@id="submit"]'
-    delete_posts_btn = 'body > div.container > article > div:nth-child(2) > div.card-link > a:nth-child(3)'
+    delete_posts_btn = 'body > div.container > article > div:nth-child(1) > div.card-link > a:nth-child(3)'
       
     sign_up
 
