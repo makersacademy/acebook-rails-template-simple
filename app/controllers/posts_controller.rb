@@ -7,7 +7,7 @@ class PostsController < ApplicationController
       end
 
       if params[:search_by_user] && params[:search_by_user] != ""
-        user_search_id = User.find_by(name: params[:search_by_user])
+        user_search_id = User.find_by(name: params[:search_by_user].capitalize)
         @all_posts = @all_posts.where("users_id LIKE ?", user_search_id)
       end
   end
