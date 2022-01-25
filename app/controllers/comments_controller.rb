@@ -9,9 +9,7 @@ class CommentsController < ApplicationController
     flash.now[:success] = "Comment posted"
     # TODO: How to add a flash message when comment is dynamically added with js?
 
-    respond_to do |format|
-      format.js
-    end
+    do_not_run_js_in_test
 
   end
 
