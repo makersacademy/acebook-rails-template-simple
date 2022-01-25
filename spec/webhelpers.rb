@@ -1,5 +1,5 @@
 def sign_up
-  visit "/"
+  visit "/users"
   click_link "Create new account"
   fill_in "user[name]", with: "Zoe"
   fill_in "user[email]", with: "zoe@gmail.com"
@@ -10,6 +10,7 @@ end
 
 def create_post
   visit "/posts"
+  # click_link "New post"
   fill_in "post[message]", with: "Hello, world!"
   click_button "Post"
 end
@@ -35,3 +36,10 @@ def second_user_sign_up
   fill_in "user[password_confirmation]", with: "password123"
   click_button "Create User"
 end
+
+# def user_login # log in with same user than user_sign_up
+#   visit("/")
+#   fill_in "session[email]", with: "fake@fake.com"
+#   fill_in "session[password]", with: "password123"
+#   click_button "Log in"
+# end
