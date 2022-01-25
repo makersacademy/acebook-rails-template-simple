@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
   
+  # def initialize
+  #   @all_posts = Post.all
+  # end
+
     def index
       @all_posts = Post.all
       if params[:search_by_content] && params[:search_by_content] != ""
@@ -7,8 +11,8 @@ class PostsController < ApplicationController
       end
 
       if params[:search_by_user] && params[:search_by_user] != ""
-        # @user = User.all
-        # @user.where("name LIKE ?", params[:search_by_user])
+        @user = User.all
+        @user.where("name LIKE ?", params[:search_by_user])
         @all_posts = @all_posts.where("users_id LIKE ?", params[:search_by_user])
       end
   end
@@ -17,11 +21,6 @@ class PostsController < ApplicationController
   #   @comment = Comment.new(post_id: params[:post_id])
   # end
 
-  def index
-    # @display_posts =Post.all
-    @all_posts = Post.all
-  end
-  
   def show
     @posts = Post.find(params[:id])
     redirect_to '/'

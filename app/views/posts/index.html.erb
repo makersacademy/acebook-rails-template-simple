@@ -36,7 +36,7 @@ style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_i
 <%# Feed %>
 
 <%# Displays all posts %>
-<% Post.all.reverse.each do |post| %>
+<% @all_posts.reverse.each do |post| %>
   <image src="<%=(url_for(User.find_by(id: post.users_id).profile_pic))%>"
   style="width:40px;height:40px;"> 
   <%= User.find_by(id: post.users_id).name %><br><br>
@@ -51,12 +51,11 @@ style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_i
 <%# Like/Comment buttons %>
   <%= link_to "Add a comment", comments_path(post_id: post.id) %><br><br>
   <p>
-  <% p ((post.post_photo)) %>
+  
   <image src="<%=(url_for(User.find_by(id: post.users_id).profile_pic))%>"
   style="width:40px;height:40px;"> 
 
-  <p><%= post.content %></p> 
-  <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p> 
+
   <% pre_like = post.likes.find { |like| like.user_id == session[:current_user_id]} %>
 
   <% if pre_like %>
