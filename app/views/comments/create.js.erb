@@ -4,6 +4,7 @@ addCommentToView = () => {
 
   let commentContainer = document.createElement("div");
   commentContainer.className = "card box has-background-white-ter pb-1";
+  commentContainer.setAttribute("id", "comment-<%=@comment.id%>")
 
   let cardContent = document.createElement("div");
   cardContent.className = "card-content pb-1";
@@ -22,7 +23,7 @@ addCommentToView = () => {
   footer.innerHTML += "<% if editable?(@comment) %>"
   footer.innerHTML += "<a class='card-footer-item editbutton' href='/posts/<%=@post.id%>/comments/<%=@comment.id%>/edit'><i class='fas fa-edit'></i></a>"
   footer.innerHTML += "<% end %>"
-  footer.innerHTML += "<a class='card-footer-item deleter' data-confirm='Are you sure?' rel='nofollow' data-method='delete' href='/posts/<%=@post.id%>/comments/<%=@comment.id%>'><i class='fas fa-trash-alt' aria-hidden='true'></i></a>"
+  footer.innerHTML += "<a class='card-footer-item deleter' rel='nofollow' data-method='delete' data-remote='true' href='/posts/<%=@post.id%>/comments/<%=@comment.id%>'><i class='fas fa-trash-alt' aria-hidden='true'></i></a>"
   footer.innerHTML += "<% end %>"
 
   commentContainer.appendChild(cardContent);
@@ -36,5 +37,9 @@ addCommentToView = () => {
 
 
 addCommentToView();
+
+console.log("creating comment")
+
+
 
 

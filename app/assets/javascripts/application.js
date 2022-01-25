@@ -18,5 +18,9 @@
 
   let addCommentToView;
 
+  let deleteComment;
+
+  console.log("application.js")
+
 
 
