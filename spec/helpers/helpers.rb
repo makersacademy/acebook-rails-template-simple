@@ -6,7 +6,6 @@ module Helpers
     sign_up_password = '//*[@id="user_password"]'
     sign_up_password_confirmation = '//*[@id="user_password_confirmation"]'
     sign_up_button_confirmation = '/html/body/form/div[5]/input'
-    log_out_button = '/html/body/button/a'
 
     visit "/"
     find(:xpath, sign_up_button).click
@@ -17,8 +16,30 @@ module Helpers
     find(:xpath, sign_up_button_confirmation).click
   end
 
-  def sign_up_and_post
-    sign_up
+  def login(email:, password:)
+    login_button = '/html/body/button[2]/a'
+    login_email = '//*[@id="user_email"]'
+    login_password = '//*[@id="user_password"]'
+    login_button_confirmation = '//*[@id="new_user"]/div[4]/input'
+
+    visit "/"
+    find(:xpath, login_button).click
+    find(:xpath, login_email).set(email)
+    find(:xpath, login_password).set(password)
+    find(:xpath, login_button_confirmation).click
+  end
+  
+  def sign_up_and_post(username:, email:, password:, post_content: )
+    navbar_acebook_link = "/html/body/nav/a"
+    message_content = '//*[@id="post_message"]'
+    create_post_btn = '//*[@id="submit"]'
+    comment_content = '//*[@id="content"]'
+    create_comment_btn = '//*[@id="create_comment"]'
+
+    sign_up(username: username, email: email, password: password)
+    find(:xpath, navbar_acebook_link).click
+    find(:xpath, message_content).set(post_content)
+    find(:xpath, create_post_btn).click
   end 
   
 end

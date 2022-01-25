@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Posts-related features: ", type: :feature do
+RSpec.feature "Comment-related features: ", type: :feature do
   scenario "Can comment on posts and view changes" do
     
     navbar_acebook_link = "/html/body/nav/a"
@@ -24,4 +24,9 @@ RSpec.feature "Posts-related features: ", type: :feature do
     expect(page).to have_content("Fantastic")
 
   end
+
+  pending "Can delete own comments on any post" 
+
+  pending "Can delete other's comments on own post"
+
 end
