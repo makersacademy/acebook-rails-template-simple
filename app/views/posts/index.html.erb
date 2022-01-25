@@ -55,7 +55,8 @@
           <div class="media">
             <div class="media-left">
               <figure class="image is-64x64">
-                <img class="is-rounded" src="https://i.pravatar.cc/" alt="<%= @user.name %>">
+                <!-- <img class="is-rounded" src="https://i.pravatar.cc/" alt="<%= @user.name %>"> -->
+                <%= image_tag(@user.profile_picture, class: "is-rounded") %>
               </figure>
             </div>
             <div class="media-content">
@@ -92,7 +93,8 @@
 
                       <div class="media-left">
                         <figure class="image is-32x32">
-                          <img class="is-rounded" src="https://i.pravatar.cc/" alt="<%= @user.name %>">
+                          <!-- <img class="is-rounded" src="https://i.pravatar.cc/" alt="<%= @user.name %>"> -->
+                          <%= image_tag(comment.user.profile_picture, class: "is-rounded") %>
                         </figure>
                       </div>
 

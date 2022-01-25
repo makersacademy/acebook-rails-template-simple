@@ -10,7 +10,7 @@ addCommentToView = () => {
 
   let media = document.createElement("div");
   media.className = "media"
-  media.innerHTML = '<div class="media-left"><figure class="image is-32x32"><img class="is-rounded" src="https://i.pravatar.cc/" alt="<%= @commenter.name %>"></figure></div><div class="media-content"><p class="title is-6"><%= @commenter.name %></p></div>'
+  media.innerHTML = '<div class="media-left"><figure class="image is-32x32"> <%= image_tag(@commenter.profile_picture, class: "is-rounded") %></figure></div><div class="media-content"><p class="title is-6"><%= @commenter.name %></p></div>'
 
   let commentMessage = document.createElement("div");
   commentMessage.className = "content comment-message";
