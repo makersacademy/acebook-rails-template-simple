@@ -60,4 +60,5 @@ gem "activestorage", "~> 6.1"
 
 gem "factory_bot", "~> 6.2"
 
+gem "launchy", "~> 2.5"
 gem "bootstrap_form", "~> 5.0"

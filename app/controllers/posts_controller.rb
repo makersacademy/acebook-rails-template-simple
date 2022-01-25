@@ -6,6 +6,13 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.create(post_params)
     redirect_to posts_url
+
+    if @post.image.attached? == false && @post.message == ""
+      flash[:alert] = "Post needs a message or an image."
+    else
+      flash[:notice] = "You have successfully created a post."
+    end
+
   end
 
   def index
@@ -22,6 +29,7 @@ class PostsController < ApplicationController
 
     if @post.update(post_params)
       redirect_to posts_url
+      flash[:notice] = "You have successfully edited a post."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -31,13 +39,14 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
 
-    redirect_to posts_path, status: :see_other #this will need to change to post_path. how to delete a post that has comments?
+    redirect_to posts_url, status: :see_other #this will need to change to post_path. how to delete a post that has comments?
+    flash[:notice] = "You have successfully deleted a post."
   end
   
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :image)
   end
 
 end
