@@ -20,8 +20,6 @@
 
   let deleteComment;
 
-  let makeFlashMessageSuccess;
-
   console.log("application.js")
 
 

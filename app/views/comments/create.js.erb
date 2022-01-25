@@ -38,22 +38,8 @@ addCommentToView = () => {
 
 addCommentToView();
 
-makeFlashMessageSuccess = () => {
-  let existingFlash = document.getElementById("flashmessage")
-  if (existingFlash) {
-    existingFlash.remove();
-  }
-  let flashMessage = document.createElement("div")
-  flashMessage.className = "is-success notification is-light has-text-bold alert alert-success"
-  flashMessage.setAttribute("id", "flashmessage")
-  flashMessage.innerText = "Comment posted";
-
-  let body = document.querySelector("body");
-  body.prepend(flashMessage);
-}
-
 console.log("creating comment")
 
-makeFlashMessageSuccess();
+
 
 
