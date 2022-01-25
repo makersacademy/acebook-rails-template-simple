@@ -1,25 +1,16 @@
 class PostsController < ApplicationController
   
-  # def initialize
-  #   @all_posts = Post.all
-  # end
-
     def index
       @all_posts = Post.all
       if params[:search_by_content] && params[:search_by_content] != ""
-        @all_posts = @all_posts.where("content LIKE ?", params[:search_by_content])
+        @all_posts = @all_posts.where("content LIKE ?", "%" + params[:search_by_content] + "%")
       end
 
       if params[:search_by_user] && params[:search_by_user] != ""
-        @user = User.all
-        @user.where("name LIKE ?", params[:search_by_user])
-        @all_posts = @all_posts.where("users_id LIKE ?", params[:search_by_user])
+        user_search_id = User.find_by(name: params[:search_by_user])
+        @all_posts = @all_posts.where("users_id LIKE ?", user_search_id)
       end
   end
-
-  # def new 
-  #   @comment = Comment.new(post_id: params[:post_id])
-  # end
 
   def show
     @posts = Post.find(params[:id])
