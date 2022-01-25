@@ -1,21 +1,21 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
+RSpec.feature "Navbar features: ", type: :feature do
 
   context "logged in" do
     scenario "Can see log out button" do
-      sign_up
+      sign_up(username: "test_username", email: "test@test.com", password: "test123")
       expect(page).to have_content("Log out")
     end
 
     scenario "Can see settings" do
-      sign_up
+      sign_up(username: "test_username", email: "test@test.com", password: "test123")
       click_link "Settings"
       expect(page).to have_current_path("/users/edit")
     end
 
     scenario "Acebook home button takes you to posts" do
-      sign_up
+      sign_up(username: "test_username", email: "test@test.com", password: "test123")
       click_link "Acebook"
       expect(page).to have_current_path("/posts")
     end

@@ -8,7 +8,7 @@ RSpec.feature "Timeline", type: :feature do
     create_post_btn = '//*[@id="submit"]'
     delete_posts_btn = 'body > div.container > article > div:nth-child(1) > div.card-link > a:nth-child(3)'
       
-    sign_up
+    sign_up(username: "test_username", email: "test@test.com", password: "test123")
 
     find(:xpath, navbar_acebook_link).click
     expect(page).to have_current_path("/posts")
