@@ -86,14 +86,23 @@
               <a class="card-footer-item" href="#post-footer-<%=post.id%>">Comment</a>
             </footer>
           <% end %>
-          
-          <%# Like button for a Post %>
+
+          <div>
+          <%# like count %>
+            <% num_likes = post.likes.count %>
+              <% if num_likes <= 1 %>
+              <%= num_likes %> Like
+            <% else %>
+                <%= num_likes%> Likes
+            <% end %>
+            <%# Like/unlike button%>
             <%like = current_user.likes.find_by(post: post)%>
             <% if like.nil? %>
               <%= button_to 'Like', post_likes_path(post), method: :post %>
             <% else %>
               <%= button_to 'Unlike', post_like_path(post, like), method: :delete %>
             <% end %>
+          </div>
 
             <% post.comments.each do |comment| %>
 

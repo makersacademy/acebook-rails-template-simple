@@ -4,16 +4,16 @@ RSpec.feature "Likes", type: :feature do
 
   describe "Likes are deleted when the post is deleted" do
     scenario "a post has many likes" do
-      user_sign_up  # Inigo
+      user_sign_up  # 1st user : Inigo
       create_post   # "Hello, world!"
       click_button "Like"
       log_out
 
-      second_user_sign_up
+      second_user_sign_up # second user: Kim
       click_button "Like"
       log_out
 
-      visit("/")
+      visit("/") # log in page  => make a webhelpers method!!! or /login page?
       fill_in "session[email]", with: "fake@fake.com"
       fill_in "session[password]", with: "password123"
       expect(page).to have_button "Log in"
