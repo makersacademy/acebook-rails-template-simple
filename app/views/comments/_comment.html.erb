@@ -3,7 +3,9 @@
     <%= comment.user.username %>:
     <%= comment.content %>
     <p><small>Posted at <%= comment.created_at.strftime("%H:%M:%S %B %Y")%></p></small>
+    <% if current_user == comment.user %>
     <%= link_to "Delete", [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %> 
+    <% end %>
 
   </div>
   </p>
