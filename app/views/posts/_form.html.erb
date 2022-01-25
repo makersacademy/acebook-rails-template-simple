@@ -2,6 +2,6 @@
   <%=  bootstrap_form_for(@post) do |form| %>
 
     <%= form.text_field :message, skip_label: true, placeholder: "What's on your mind, #{current_user.username}?"%>
-    <%= form.submit :id => "submit" %>
+    <%= form.submit "Post", :id => "submit" %>
   <% end %>
 </div>

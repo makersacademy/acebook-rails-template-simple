@@ -2,7 +2,7 @@
   <div>
     <%= comment.user.username %>:
     <%= comment.content %>
-    <p><small>Posted at <%= comment.created_at.strftime("%H:%M:%S %B %Y")%></p></small>
+    <p><small> <%= "#{distance_of_time_in_words(Time.now, comment.created_at, include_seconds: true)} ago"%> </small></p>
     <%= link_to "Delete", [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %> 
 
   </div>
