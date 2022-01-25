@@ -3,8 +3,7 @@
 <%= form_with(model: @comments, local: true) do |f| %>
   <br>
   <br>
-  <%= f.label :post_id, "post_id:" %>
-  <%= f.text_field :post_id %>
+  <%= f.hidden_field :post_id, value: "#{params[:post_id]}" %>
   <br>
   <br>
   <%= f.label :content, "content:" %>
@@ -14,4 +13,4 @@
   <%= f.submit "Add comment" %>
 <% end %>
 
-</body>
+</body> 

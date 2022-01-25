@@ -1,40 +1,51 @@
 class PostsController < ApplicationController
   
+    def index
+      @all_posts = Post.all
+      if params[:search_by_content] && params[:search_by_content] != ""
+        @all_posts = @all_posts.where("content LIKE ?", params[:search_by_content])
+      end
+
+      if params[:search_by_user] && params[:search_by_user] != ""
+        # @user = User.all
+        # @user.where("name LIKE ?", params[:search_by_user])
+        @all_posts = @all_posts.where("users_id LIKE ?", params[:search_by_user])
+      end
+  end
+
+  # def new 
+  #   @comment = Comment.new(post_id: params[:post_id])
+  # end
 
   def index
     # @display_posts =Post.all
     @all_posts = Post.all
   end
-
+  
   def show
     @posts = Post.find(params[:id])
-    redirect_to '/posts'
-    # respond_to do |format|
-    #   format.html { render action: 'index'}
-    # end
+    redirect_to '/'
   end
 
   def create
     @post_new = Post.new(content: post_params["content"], users_id: session[:current_user_id])
-    respond_to do |format|
       if @post_new.valid?
         @post_new.save
         @post_new.post_photo.attach(post_params["post_photo"])
-        p post_params["post_photo"]
-        p "DID IT ATTACH?"
-        p @post_new.post_photo.attached?
-       format.html { render action: "index", notice: "Post created!"}
+        flash.alert = "Post created"
+        redirect_to '/'
       else 
-        format.html { render action: 'post_error' }
+        flash.alert = "Error: Post not created"
+        redirect_to '/'
       end
-    end
   end
+
 
   private
 
   def post_params
     p "These are the post_params"
     p params
-    params.require(:post).permit(:content, :post_photo)
+    params.require(:post).permit(:content, :post_photo, :search)
   end
 end
