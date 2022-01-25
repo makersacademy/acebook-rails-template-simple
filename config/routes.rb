@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   delete 'posts', to: 'posts#destroy'
 
+  delete 'comments', to: 'comments#destroy'
+
   resources :signup
 
   resources :homepage

@@ -10,6 +10,18 @@ def create
     @posts_all = Post.all
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    if session[:current_user_id] == @comment.user_id
+      @comment.destroy
+    else
+      flash.alert = "You can only delete your own comments"
+    end
+    redirect_to '/posts'
+  end
+
+  private
+
   def comment_params
     params.permit([:user_id, :post_id, :content])
   end

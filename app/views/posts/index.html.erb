@@ -84,6 +84,7 @@ style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_i
      <%= User.find_by(id: comment.user_id).name %>:
      <%= comment.content %>
      <%= comment.created_at.to_s(:time) %>
+     <%= link_to "Delete", comments_path(id: comment.id), method: :delete %>
   <% end %>
            <hr>
 <% end %>
