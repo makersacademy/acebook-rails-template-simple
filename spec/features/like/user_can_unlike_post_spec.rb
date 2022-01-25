@@ -1,24 +1,20 @@
-require 'rails_helper'
 
 RSpec.feature "Likes", type: :feature do
-
-  describe "Like a post from the news feed" do
-    scenario "Users can like his/her post" do
+  describe "Like a specific post" do
+    scenario "Users can unlike his/her post from the news feed" do
       user_sign_up
       create_post
       click_button "Like"
-      click_button "Unlike"
-      expect(page).to have_button "Like"
+      expect(page).to have_button "Unlike"
     end
 
-    scenario "Users can like a post from another user" do
+    scenario "Users can unlike a post from another user from the news feed" do
       user_sign_up
       create_post
       log_out
       second_user_sign_up
       click_button "Like"
-      click_button "Unlike"
-      expect(page).to have_button "Like"
+      expect(page).to have_button "Unlike"
     end
   end
 
@@ -28,8 +24,7 @@ RSpec.feature "Likes", type: :feature do
   #     create_post
   #     click_link "Hello, world!"
   #     click_button "Like"
-  #     click_button "Unlike"
-  #     expect(page).to have_button "Like"
+  #     expect(page).to have_button "Unlike"
   #   end
 
   #   scenario "Users can like a post from another user" do
@@ -39,9 +34,7 @@ RSpec.feature "Likes", type: :feature do
   #     second_user_sign_up
   #     click_link "Hello, world!"
   #     click_button "Like"
-  #     click_button "Unlike"
-  #     expect(page).to have_button "Like"
+  #     expect(page).to have_button "Unlike"
   #   end
   # end
-
 end
