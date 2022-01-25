@@ -51,7 +51,9 @@ class PostsController < ApplicationController
   end
 
   def restrict_access
-    redirect_to homepage_index_path if session[:current_user_id] == nil
-    flash.alert = "Please sign in"
+    if session[:current_user_id] == nil
+      redirect_to homepage_index_path
+      flash.alert = "Please sign in"
+    end
   end
 end 

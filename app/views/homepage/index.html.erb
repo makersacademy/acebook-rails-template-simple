@@ -20,7 +20,11 @@
   <%= form.password_field :password %>
   <br>
   <br>
-  <p>Don't have an account? Sign up <%= link_to "here", href='/signup'%>.</p>
+  <%
+=begin%>
+ <p>Don't have an account? Sign up <%= link_to "here", href='/signup'%>.</p> 
+<%
+=end%>
   <%= form.submit "Log in", class: "btn btn-primary" %>
   
 <% end %>
