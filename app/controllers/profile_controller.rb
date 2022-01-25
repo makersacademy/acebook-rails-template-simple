@@ -20,8 +20,11 @@ class ProfileController < ApplicationController
     @all_my_posts.each do |post|
       @all_my_posts_likes_count += post.likes.count
     end
-    @all_my_posts_likes_count
-
+  
+    @all_my_posts_count = 0
+    @all_my_posts.each do |post|
+      @all_my_posts_count += 1
+    end
   end
   # def create
   #   @post_new = Post.new(content: post_params["content"], users_id: session[:current_user_id])
