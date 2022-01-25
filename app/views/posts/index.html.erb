@@ -13,14 +13,14 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
     
-      <div class="navbar-end mr-6">
+      <div class="navbar-end">
         <div class="navbar-item">
           
           <a><p class="has-text-white is-size-4 mr-4"><%= @current_user.name %></p></a>
-
-          <a class="image is-42x42 mr-6">
+          
+          <a class="link is-32x32 mr-8">
             <a href="/users/<%= @current_user.id %>/edit">
-              <%= image_tag(@current_user.profile_picture, class: "is-rounded") %>
+              <figure class="is-rounded"><%= image_tag(@current_user.profile_picture) %> </figure>
             </a>
           </a>
 
