@@ -1,7 +1,17 @@
 <center>
+
 <%# Page Headings, welcome message %>
+
 <h1>AceBook Posts</h1>
 <h4> What's on your mind, <%= User.find_by(id: session[:current_user_id]).name %>?</h4>
+<br>
+
+<% flash.each do |type, msg| %>
+  <div style="color: darkred">
+    <%= msg %>
+  </div>
+
+<br>
 <br>
 
 <%# Search fields %>
@@ -27,10 +37,7 @@ style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_i
 
 <%# Confirmation message that user has created/not created a new post%>
 
-<% flash.each do |type, msg| %>
-  <div style="color: darkred">
-    <%= msg %>
-  </div>
+
 <% end %>
 
 <%# Feed %>
