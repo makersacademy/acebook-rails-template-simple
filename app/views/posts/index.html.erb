@@ -66,7 +66,6 @@
             </div>
             <div class="media-content">
               <p class="title is-4"><%= @user.name %></p>
-              <p class="subtitle is-6 has-text-link">@jerums549</p>
             </div>
           </div>
 
@@ -106,13 +105,12 @@
                       <div class="media-content">
                         <% @commenter = User.find(comment.user_id) %>
                         <p class="title is-6"><%= @commenter.name %></p>
-                        <p class="subtitle is-7"><%= '@' + @commenter.name.gsub(/\s+/, "").downcase + (rand(1000)+1).to_s %></p>
                       </div>
                     </div>
 
                     <div class="content comment-message">
                       <p class="has-text-dark"><%= comment.message %></p>
-                      <time class="has-text-grey"><%=time_ago_in_words(post.updated_at)%> ago</time>
+                      <time class="has-text-grey"><%=time_ago_in_words(comment.updated_at)%> ago</time>
                     </div>
 
                     <footer class="card-footer">
@@ -138,7 +136,7 @@
           </div>      
 
           <footer id="post-footer-<%=post.id%>" class="is-fixed-bottom mt-5">
-            <%= form_with model: [ post, post.comments.build ], local: true, class: "reply-form" do |form| %>
+            <%= form_with model: [ post, post.comments.build ], remote: true, class: "reply-form" do |form| %>
               <div class="field has-addons mb-4">
                 <div class="control is-expanded"> 
                   <%= form.text_field :message, placeholder: "Comment", class: "input is-info is-rounded has-icons-right control" %>

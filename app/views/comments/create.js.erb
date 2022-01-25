@@ -1,0 +1,40 @@
+addCommentToView = () => {
+  let post = document.getElementById("post-<%=@post.id%>");
+  let comment_box = post.querySelector(".comment-box");
+
+  let commentContainer = document.createElement("div");
+  commentContainer.className = "card box has-background-white-ter pb-1";
+
+  let cardContent = document.createElement("div");
+  cardContent.className = "card-content pb-1";
+
+  let media = document.createElement("div");
+  media.className = "media"
+  media.innerHTML = '<div class="media-left"><figure class="image is-32x32"><img class="is-rounded" src="https://i.pravatar.cc/" alt="<%= @commenter.name %>"></figure></div><div class="media-content"><p class="title is-6"><%= @commenter.name %></p></div>'
+
+  let commentMessage = document.createElement("div");
+  commentMessage.className = "content comment-message";
+  commentMessage.innerHTML = '<p class="has-text-dark"><%= @comment.message %></p><time class="has-text-grey"><%=time_ago_in_words(@comment.updated_at)%> ago</time>'
+
+  let footer = document.createElement("footer")
+  footer.className = "card-footer";
+  footer.innerHTML = "<% if current_user == @commenter %>"
+  footer.innerHTML += "<% if editable?(@comment) %>"
+  footer.innerHTML += "<a class='card-footer-item editbutton' href='/posts/<%=@post.id%>/comments/<%=@comment.id%>/edit'><i class='fas fa-edit'></i></a>"
+  footer.innerHTML += "<% end %>"
+  footer.innerHTML += "<a class='card-footer-item deleter' data-confirm='Are you sure?' rel='nofollow' data-method='delete' href='/posts/<%=@post.id%>/comments/<%=@comment.id%>'><i class='fas fa-trash-alt' aria-hidden='true'></i></a>"
+  footer.innerHTML += "<% end %>"
+
+  commentContainer.appendChild(cardContent);
+  commentContainer.appendChild(media);
+  commentContainer.appendChild(commentMessage);
+  commentContainer.appendChild(footer);
+
+  comment_box.appendChild(commentContainer);
+
+}
+
+
+addCommentToView();
+
+
