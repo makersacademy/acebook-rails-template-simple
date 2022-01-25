@@ -36,7 +36,7 @@
             <%= render post.comments%>           
             <%= bootstrap_form_with model: [ post, post.comments.build ], local: true do |form| %>
                     <%= form.text_field :content, placeholder: "Write a comment...", skip_label: true, id:"content", :rows=>1, :cols=>20 %>
-                    <%#=form.submit id:"create_comment"%>
+                    <%=form.submit "Comment", id:"create_comment"%>
             <% end %>
           </div>
          
