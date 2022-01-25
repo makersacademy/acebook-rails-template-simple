@@ -29,7 +29,6 @@ RSpec.feature "Comments", type: :feature do
     click_link "Hello, world!"
     fill_in "comment[message]", with: "Hiya"
     click_button "Create Comment"
-    click_link "Hello, world!"
     click_link "Delete comment"
     expect(page).not_to have_content "Kim: Hiya"
   end

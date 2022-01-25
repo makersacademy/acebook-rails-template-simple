@@ -30,6 +30,6 @@ RSpec.feature "Comments", type: :feature do
     click_link "Hello, world!"
     fill_in "comment[message]", with: "Hiya"
     click_button "Create Comment"
-    expect(page).to have_content "Kim Hiya"
+    expect(page).to have_content "Kim: Hiya"
   end
 end

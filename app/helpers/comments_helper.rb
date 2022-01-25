@@ -7,7 +7,7 @@ module CommentsHelper
   def do_not_run_js_in_test
     if ENV['RAILS_ENV'] == 'test'
       flash[:success] = "Comment posted"
-      redirect_to posts_path
+      redirect_back(fallback_location: posts_path)
     else
       respond_to do |format|
         format.js
