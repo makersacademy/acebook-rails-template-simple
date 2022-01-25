@@ -3,5 +3,7 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  
+  def search
+   @users = User.where("username LIKE ?", "%" + params[:q] + "%")
+  end
 end
