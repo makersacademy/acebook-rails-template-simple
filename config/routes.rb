@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :comments
   
   resources :posts do
-     resources :likes
+    resources :likes
+    resources :comments
   end
 
   resources :signup

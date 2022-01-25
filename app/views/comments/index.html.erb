@@ -1,55 +1,17 @@
-<body>
-  <div id="posts" style="font-weight: bold; font-size:15px;">
-  <% @test_posts.each do |post| %>
-  </br>
-  User: <%= User.find(post.users_id).name %>
-  </br>
-  Status: <%= post.content %> 
-  </br>
-  Time: <%= post.created_at.to_s(:time) %>
+<body> Please enter a comment:
 
-
-  <div id="comment_form">
-    <%= form_with(model: @signup, local: true) do |form| %>
-    <%= form.text_field :content %>
-    <%= form.submit "Comment" %>
-    <% end %>
-  </div>
-  <hr>
-  </br>
-
-  <% @comments.each do |comment| %>
-    <% if comment.posts_id == post.id%>
-      <%= User.find(comment.users_id).name %>: <%= comment.content %> (<%= comment.created_at.to_s(:time) %>)
-      </br>
-      <% elsif comment.posts_id == post.id %>
-      <%= comment.content %>
-      <%= comment.created_at.to_s(:time) %>
-      <%= User.find(comment.users_id).name %>
-    <% end %>
-    
-  <% end %>
-      <hr>  
-      </br>
+<%= form_with(model: @comments, local: true) do |f| %>
+  <br>
+  <br>
+  <%= f.label :post_id, "post_id:" %>
+  <%= f.text_field :post_id %>
+  <br>
+  <br>
+  <%= f.label :content, "content:" %>
+  <%= f.text_field :content %>
+  <br>
+  <br>
+  <%= f.submit "Add comment" %>
 <% end %>
 
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

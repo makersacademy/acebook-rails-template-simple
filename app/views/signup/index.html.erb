@@ -2,7 +2,7 @@
 
 <br>
 <% flash.each do |type, msg| %>
-  <div>
+  <div style="color: red">
     <%= msg %>
   </div>
 <% end %>
@@ -21,6 +21,10 @@
   <br>
   <%= form.label :password, "Password:" %>
   <%= form.password_field :password %>
+  <br>
+  <br>
+  <%= form.label :profile_pic, "Profile Pic" %>
+  <%= form.file_field :profile_pic, accept: 'image/png, image/jpeg'  %>
   <br>
   <br>
   <%= form.submit "Sign Up" %>
