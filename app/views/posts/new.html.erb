@@ -1,4 +1,10 @@
-<h2>Create your post below, upload a photo if you like</h2>
+<div class="d-flex align-itmes-center justify-content-center">
+<h2>What's on your mind?</h2>
+</div>
+<div class="d-flex align-itmes-center justify-content-center">
+ <small class="text-muted">Create a post</small>
+</div>
+<div class="d-flex align-itmes-center justify-content-center">
 
 <%= form_for Post.new do |f| %>
   <div class="form-group">
@@ -12,6 +18,7 @@
   <div class="form-group">
     <%# <%= f.text_field :users_id, value: current_user.id, class:'d-none' %>
   </div>
+  <div class="d-flex align-itmes-center justify-content-center">
   <br>
   <div class="text-center">
     <%= f.submit 'Create Post', class: 'btn btn-primary' %>
