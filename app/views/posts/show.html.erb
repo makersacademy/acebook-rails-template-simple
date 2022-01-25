@@ -2,12 +2,7 @@
 
 <div>
   <%# like count %>
-  <% num_likes = @post.likes.count %>
-  <% if num_likes <= 1 %>
-   <%= num_likes %> Like
-  <% else %>
-    <%= num_likes%> Likes
-  <% end %>
+  <%= likes_count(@post) %>
   <%# Like/Unlike button %>
   <%like = current_user.likes.find_by(post: @post)%>
   <% if like.nil? %>
