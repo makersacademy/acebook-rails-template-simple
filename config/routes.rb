@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :comments
-
+  
   resources :posts do
     resources :likes
     resources :comments
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :photos
 
+  delete 'logout', to: 'homepage#destroy'
 end
 
 
