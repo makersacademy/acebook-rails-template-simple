@@ -19,7 +19,9 @@
           <a><p class="has-text-white is-size-4 mr-4"><%= @current_user.name %></p></a>
 
           <a class="image is-42x42 mr-6">
-            <%= image_tag(@current_user.profile_picture, class: "is-rounded") %>
+            <a href="/users/<%= @current_user.id %>/edit">
+              <%= image_tag(@current_user.profile_picture, class: "is-rounded") %>
+            </a>
           </a>
 
           <%= link_to "Log out", logout_path, method: :delete, class: 'button has-text-info has-text-bold is-white' %>
@@ -55,7 +57,6 @@
           <div class="media">
             <div class="media-left">
               <figure class="image is-64x64">
-                <!-- <img class="is-rounded" src="https://i.pravatar.cc/" alt="<%= @user.name %>"> -->
                 <%= image_tag(@user.profile_picture, class: "is-rounded") %>
               </figure>
             </div>
@@ -93,7 +94,6 @@
 
                       <div class="media-left">
                         <figure class="image is-32x32">
-                          <!-- <img class="is-rounded" src="https://i.pravatar.cc/" alt="<%= @user.name %>"> -->
                           <%= image_tag(comment.user.profile_picture, class: "is-rounded") %>
                         </figure>
                       </div>
