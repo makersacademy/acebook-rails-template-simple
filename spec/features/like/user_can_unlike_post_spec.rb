@@ -1,3 +1,4 @@
+require 'rails_helper'
 
 RSpec.feature "Likes", type: :feature do
   describe "Like a specific post" do
