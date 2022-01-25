@@ -23,6 +23,9 @@ class SignupController < ApplicationController
       if @user.errors[:password].length != 0
         flash[:password] = "Password error: #{@user.errors[:password]}"
       end
+      if @user.errors[:profile_pic].length != 0
+        flash[:profile_pic] = "Please add a profile picture"
+      end
     end
   end
 
