@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get '/profile', to: 'profile#index'
 
+  delete 'posts', to: 'posts#destroy'
+
   resources :signup
 
   resources :homepage
