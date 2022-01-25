@@ -5,7 +5,7 @@
     </div>
   </div>
      <% @posts.reverse.each do |post| %>
-
+        <% owner = post.user %>
         <article class = "card bg-light mb-3" style="width: 32rem;">
 
           <div class = "card-body border-top">
@@ -25,15 +25,18 @@
                 <% else %>
                   <%= link_to 'Like', post_likes_path(post), method: :post %>
                 <% end %>
+
+              <% if current_user == owner%>
               <%= link_to "Edit", edit_post_path(post) %> 
               <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %> 
+              <% end %>
              <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
             </div>
           </div>
             
           <div class = "card-body border-top">
             <strong>Comments:</strong>
-            <%= render post.comments%>           
+            <%= render post.comments, owner: owner%>           
             <%= bootstrap_form_with model: [ post, post.comments.build ], local: true do |form| %>
                     <%= form.text_field :content, placeholder: "Write a comment...", skip_label: true, id:"content", :rows=>1, :cols=>20 %>
                     <%=form.submit "Comment", id:"create_comment"%>
