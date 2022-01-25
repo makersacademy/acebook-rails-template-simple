@@ -85,7 +85,7 @@
                         
             <% post.comments.each do |comment| %>
 
-                <div class="card box has-background-white-ter pb-1">
+                <div class="card box has-background-white-ter pb-1" id="comment-<%=comment.id%>">
 
                   <div class="card-content pb-1">
 
@@ -117,8 +117,8 @@
                         <% end %>
                         <%= link_to '<i class="fas fa-trash-alt" aria-hidden="true"></i>'.html_safe, post_path(post) + "/comments/#{comment.id}",
                         class: "card-footer-item deleter",
-                        method: :delete,
-                        data: { confirm: "Are you sure?" }
+                        remote: true,
+                        method: :delete
                         %>
                       <% end %>
                     </footer>
