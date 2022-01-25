@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.profile_picture ||= "/assets/images/default_profile_pic.jpg"
+    # @user.profile_picture ||= "/assets/images/default_profile_pic.jpg"
     if @user.save
       log_in @user
       redirect_to posts_path
@@ -29,12 +29,14 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.profile_picture.attach(io: pp_params[:profile_picture].tempfile, filename: pp_params[:profile_picture].original_filename, content_type: pp_params[:profile_picture].content_type)
+
+    if @user.profile_picture.attached?
+      @user.profile_picture.purge
+    end
+
+    @user.profile_picture.attach(user_params[:profile_picture])
     
     if @user.profile_picture.attached?
-      p pp_params
-      p "Hello"
-      p @user.profile_picture
       redirect_to root_path
     else
       render :edit
@@ -43,7 +45,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :profile_picture)
   end
   
   def pp_params
