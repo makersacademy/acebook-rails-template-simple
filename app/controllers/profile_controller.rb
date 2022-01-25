@@ -14,6 +14,15 @@ class ProfileController < ApplicationController
     redirect_to '/'
   end
 
+  def index
+    @all_my_posts = Post.all.where("users_id LIKE ?", session[:current_user_id])
+    @all_my_posts_likes_count = 0
+    @all_my_posts.each do |post|
+      @all_my_posts_likes_count += post.likes.count
+    end
+    @all_my_posts_likes_count
+
+  end
   # def create
   #   @post_new = Post.new(content: post_params["content"], users_id: session[:current_user_id])
   #     if @post_new.valid?

@@ -1,11 +1,16 @@
 <center>
-<h1> profile page </h1>
+<h1> Hi <%= User.find_by(id: session[:current_user_id]).name %></h1>
 
 <image src="<%=(url_for(User.find_by(id: session[:current_user_id]).profile_pic))%>"
 style="width:250px;height:250px;"> 
-
-<h4> Hi <%= User.find_by(id: session[:current_user_id]).name %></h4>
-
+<br>
+<hr>
+<h2> Account Summary </h2>
+<br>
+Total Likes <%= @all_my_posts_likes_count%>
+<hr>
+<h2> Your Posts </h2>
+<br>
 <% Post.where("users_id LIKE ?", session[:current_user_id]).reverse.each do |post| %>
   <image src="<%=(url_for(User.find_by(id: post.users_id).profile_pic))%>"
   style="width:40px;height:40px;"> 
