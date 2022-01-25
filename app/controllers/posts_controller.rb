@@ -1,16 +1,17 @@
 class PostsController < ApplicationController
-  
-    def index
-      @all_posts = Post.all
-      if params[:search_by_content] && params[:search_by_content] != ""
-        @all_posts = @all_posts.where("content LIKE ?", params[:search_by_content])
-      end
+  before_action :restrict_access
 
-      if params[:search_by_user] && params[:search_by_user] != ""
+  def index
+    @all_posts = Post.all
+    if params[:search_by_content] && params[:search_by_content] != "" 
+      @all_posts = @all_posts.where("content LIKE ?", params[:search_by_content])
+    end
+
+    if params[:search_by_user] && params[:search_by_user] != ""
         # @user = User.all
         # @user.where("name LIKE ?", params[:search_by_user])
-        @all_posts = @all_posts.where("users_id LIKE ?", params[:search_by_user])
-      end
+      @all_posts = @all_posts.where("users_id LIKE ?", params[:search_by_user])
+    end
   end
 
   # def new 
@@ -48,4 +49,9 @@ class PostsController < ApplicationController
     p params
     params.require(:post).permit(:content, :post_photo, :search)
   end
-end
+
+  def restrict_access
+    redirect_to homepage_index_path if session[:current_user_id] == nil
+    flash.alert = "Please sign in"
+  end
+end 
