@@ -72,29 +72,28 @@
           </div>
 
       
-          <% if current_user == @user %>
             <footer class="card-footer">
-
+              <%# Like/unlike button%>
+            <%like = current_user.likes.find_by(post: post)%>
+            <% if like.nil? %>
+              <%= link_to '<i class="far fa-thumbs-up fa-lg"></i>'.html_safe, post_likes_path(post), method: :post, class: "card-footer-item" %> <%#Like%>
+            <% else %>
+              <%= link_to '<i class="fas fa-thumbs-up fa-lg"></i>'.html_safe, post_like_path(post, like), method: :delete, class: "card-footer-item" %> <%#Unlike%>
+            <% end %>
+            <% if current_user == @user %>
               <a href="#" class="card-footer-item edit-post-button" id="edit-post-<%=post.id%>">Edit</a>
 
               <%= link_to "Delete", post_path(post), class: "card-footer-item delete-post-button",
                               method: :delete,
                               data: { confirm: "Are you sure?" } %>
-            </footer>
           <% end %>
+            </footer>
 
           <div class='likes'>
           <%# like count and display last likers %>
             <%= likes_count(post)%>
             <%# display likers%>
             <%= liked_by_users(post) %>
-          <%# Like/unlike button%>
-            <%like = current_user.likes.find_by(post: post)%>
-            <% if like.nil? %>
-              <%= button_to 'Like', post_likes_path(post), method: :post %>
-            <% else %>
-              <%= button_to 'Unlike', post_like_path(post, like), method: :delete %>
-            <% end %>
           </div>
 
           <div class="comment-box p-2">
