@@ -31,6 +31,14 @@
 
   let clonePostAndAddToView;
 
+  let likePost;
+
+  let unlikePost;
+
+  let deletePost;
+
+  let updatePost;
+
   console.log("application.js")
 
 

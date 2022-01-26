@@ -9,11 +9,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    @user = current_user
+
     if @post.save
-      respond_to do |format|
-        format.js
-      end
+      do_not_run_js_in_test
     end   
     
   end
@@ -33,13 +31,16 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+    @post.update(post_params)
 
-    if @post.update(post_params)
-      redirect_to posts_path :anchor => "post-#{@post.id}"
-      p @post.id
-    else
-      render :edit, status: :unprocessable_entity
-    end
+    do_not_run_js_in_test
+
+    # if @post.update(post_params)
+    #   redirect_to posts_path :anchor => "post-#{@post.id}"
+    #   p @post.id
+    # else
+    #   render :edit, status: :unprocessable_entity
+    # end
 
   end
 
@@ -47,7 +48,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
 
-    redirect_to posts_path, status: :see_other
+    do_not_run_js_in_test
+
   end
 
   private
