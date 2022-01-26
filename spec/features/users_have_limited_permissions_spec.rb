@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "User's permissions: ", type: :feature do
+  
   scenario "Cannot edit nor delete another user's posts" do
     log_out_button = '//*[@id="navbarNavDropdown"]/ul/li[3]/form/input[2]'
 
@@ -54,6 +55,11 @@ RSpec.feature "User's permissions: ", type: :feature do
 
     
   end
+
+  scenario "Can only see users if logged in" do 
+  visit "/users"
+   expect(page).to have_content "You need to sign in or sign up before continuing"
+  end 
 
 
 end
