@@ -23,11 +23,10 @@ class PostsController < ApplicationController
         @post_new.save
         @post_new.post_photo.attach(post_params["post_photo"])
         flash.alert = "Post created"
-        redirect_to '/'
       else 
         flash.alert = "Error: Post not created"
-        redirect_to '/'
       end
+      redirect_to '/'
   end
 
   def edit
@@ -38,14 +37,12 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if session[:current_user_id] != @post.users_id
       flash.alert = "Error: You can only Edit your own Posts"
-      redirect_to '/'
     elsif @post.update(content: post_params["content"], users_id: session[:current_user_id])
       flash.alert = "Post Updated"
-      redirect_to '/'
     else
       flash.alert = "Error: Post not updated"
-      redirect_to '/'
     end
+    redirect_to '/'
   end
 
   def destroy
