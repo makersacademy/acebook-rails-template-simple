@@ -6,7 +6,8 @@ RSpec.feature "Timeline", type: :feature do
     message_content = '//*[@id="post_message"]'
     create_post_btn = '//*[@id="submit"]'
        
-    sign_up
+    sign_up(username: "test_username", email: "test@test.com", password: "test123")
+
 
     find(:xpath, navbar_acebook_link).click
     expect(page).to have_current_path("/posts")

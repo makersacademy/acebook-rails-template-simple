@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
+RSpec.feature "Comment-related features: ", type: :feature do
   scenario "Can comment on posts and view changes" do
     
     navbar_acebook_link = "/html/body/nav/a"
@@ -9,7 +9,7 @@ RSpec.feature "Timeline", type: :feature do
     comment_content = '//*[@id="content"]'
     create_comment_btn = '//*[@id="create_comment"]'
 
-    sign_up
+    sign_up(username: "test_username", email: "test@test.com", password: "test123")
 
     find(:xpath, navbar_acebook_link).click
     expect(page).to have_current_path("/posts")
@@ -24,4 +24,9 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("Fantastic")
 
   end
+
+  pending "Can delete own comments on any post" 
+
+  pending "Can delete other's comments on own post"
+
 end
