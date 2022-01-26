@@ -9,12 +9,12 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-
+    @user = current_user
     if @post.save
-      redirect_to posts_url :anchor => "post-#{@post.id}"
-    else
-      redirect_to posts_url
-    end
+      respond_to do |format|
+        format.js
+      end
+    end   
     
   end
 

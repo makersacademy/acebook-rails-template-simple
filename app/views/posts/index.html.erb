@@ -32,7 +32,7 @@
 </nav>
 <div class='container' id="posts">
 
-    <%= form_with model: @post, local: true, id: 'post-form' do |form| %>
+    <%= form_with model: @post, remote: true, id: 'post-form' do |form| %>
       <div class="field has-addons mb-4">
         <div class="control is-expanded"> 
           <%= form.text_field :message, placeholder: "What's on Your Mind?", class: "input is-info is-rounded has-icons-right control", id: 'form-input' %>
@@ -46,6 +46,7 @@
       </div> 
     <% end %> 
 
+    <div id="posts-top"></div>
     <% @posts.each do |post| %>
 
       <% @user = User.find(post.user_id) %>
@@ -75,14 +76,15 @@
             <footer class="card-footer">
 
               <a href="#" class="card-footer-item edit-post-button" id="edit-post-<%=post.id%>">Edit</a>
-              <%= link_to "Delete", post_path(post), class: "card-footer-item",
+
+              <%= link_to "Delete", post_path(post), class: "card-footer-item delete-post-button",
                               method: :delete,
                               data: { confirm: "Are you sure?" } %>
-              <a class="card-footer-item" href="#post-footer-<%=post.id%>">Comment</a>
+              <a class="card-footer-item comment-post-button" href="#post-footer-<%=post.id%>">Comment</a>
             </footer>
           <% end %>
 
-          <div>
+          <div class='likes'>
           <%# like count and display last likers %>
             <%= likes_count(post)%>
             <%# display likers%>
@@ -146,6 +148,7 @@
           </div>      
 
           <footer id="post-footer-<%=post.id%>" class="is-fixed-bottom mt-5">
+          
             <%= form_with model: [ post, post.comments.build ], remote: true, class: "reply-form" do |form| %>
               <div class="field has-addons mb-4">
                 <div class="control is-expanded"> 
@@ -165,30 +168,6 @@
         </div>
 
       </div>
-
-      <%#Comment Template for JS do not delete %>
-        <div class="card box has-background-white-ter pb-1 is-hidden" id="comment-template">
-          <div class="card-content pb-1">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-32x32">
-                </figure>
-              </div>
-
-              <div class="media-content">
-                <p class="title is-6"></p>
-              </div>
-            </div>
-
-            <div class="content comment-message">
-              <p class="has-text-dark"></p>
-              <time class="has-text-grey"></time>
-            </div>
-
-            <footer class="card-footer">
-            </footer>
-          </div>
-        </div>
 
 
 
@@ -216,6 +195,69 @@
   
     <% end %>
     <div id="post-end"></div>
+
+
+    <%#Comment Template for JS do not delete %>
+    <div class="card box has-background-white-ter pb-1 is-hidden" id="comment-template">
+      <div class="card-content pb-1">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-32x32">
+            </figure>
+          </div>
+
+          <div class="media-content">
+            <p class="title is-6"></p>
+          </div>
+        </div>
+
+        <div class="content comment-message">
+          <p class="has-text-dark"></p>
+          <time class="has-text-grey"></time>
+        </div>
+
+        <footer class="card-footer">
+        </footer>
+      </div>
+    </div>
+
+<%#Post Template for JS do not Delete%>
+
+        <div id="post-template" class="card mb-5 is-hidden">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-64x64">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4"></p>
+            </div>
+          </div>
+          <div class="content post-message">
+            <p></p>
+            <time class="has-text-grey"></time>
+          </div>
+
+            <footer class="card-footer">
+              <a href="#" class="card-footer-item edit-post-button">Edit</a>
+              <%= link_to "Delete", "", class: "card-footer-item delete-post-button",
+                              method: :delete,
+                              data: { confirm: "Are you sure?" } %>
+              <a class="card-footer-item comment-post-button" href="">Comment</a>
+            </footer>
+
+          <div class='likes'>
+          </div>
+
+          <div class="comment-box p-2">
+          </div>      
+
+          <footer id="post-footer" class="is-fixed-bottom mt-5">
+          </footer>
+        </div>
+      </div>
+
 
 </div>
 
