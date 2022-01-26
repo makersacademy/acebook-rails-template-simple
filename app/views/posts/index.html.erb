@@ -50,7 +50,16 @@
 
       <% @user = User.find(post.user_id) %>
       <div id="post-<%=post.id%>" class="card mb-5">
-
+      <%
+=begin%>
+ Comment/ testing friend button
+<%
+=end%>
+           <%= form_for(current_user.friendships.build) do |f| %>
+             <!--<div><%= hidden_field_tag :user_id, @user.id %></div> -->
+             <div><%= hidden_field_tag :friend_id, post.user_id %></div>
+              <%= f.submit "Follow", class: "btn btn-primary" %>
+            <% end %>
 
         <div class="card-content">
 
