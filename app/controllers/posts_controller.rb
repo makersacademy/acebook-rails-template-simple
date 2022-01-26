@@ -45,7 +45,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
 
-    redirect_to posts_path, status: :see_other
+    do_not_run_js_in_test
+
   end
 
   private

@@ -9,6 +9,9 @@ unlikePost = () => {
   likeButton.setAttribute("href", "<%=post_likes_path(@post)%>");
   likeButton.setAttribute("data-method", "post");
 
+  let likeInfo = post.querySelector(".likes");
+  likeInfo.innerHTML = "<%= likes_count(@post)%> <%= liked_by_users(@post) %>"
+
 }
 
 unlikePost();

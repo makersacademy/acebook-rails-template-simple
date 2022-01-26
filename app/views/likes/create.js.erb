@@ -7,6 +7,9 @@ likePost = () => {
   let likeButton = post.querySelector(".like-button");
   likeButton.setAttribute("href", "<%=post_like_path(@post, @like)%>");
   likeButton.setAttribute("data-method", "delete");
+
+  let likeInfo = post.querySelector(".likes");
+  likeInfo.innerHTML = "<%= likes_count(@post)%> <%= liked_by_users(@post) %>"
 }
 
 likePost();

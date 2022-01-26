@@ -35,6 +35,8 @@
 
   let unlikePost;
 
+  let deletePost;
+
   console.log("application.js")
 
 

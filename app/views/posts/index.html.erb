@@ -83,7 +83,7 @@
             <% if current_user == @user %>
               <a href="#" class="card-footer-item edit-post-button" id="edit-post-<%=post.id%>">Edit</a>
 
-              <%= link_to "Delete", post_path(post), class: "card-footer-item delete-post-button",
+              <%= link_to "Delete", post_path(post), remote: true, class: "card-footer-item delete-post-button",
                               method: :delete,
                               data: { confirm: "Are you sure?" } %>
           <% end %>
@@ -240,7 +240,7 @@
             <footer class="card-footer">
               <%= link_to '<i class="far fa-thumbs-up fa-lg"></i>'.html_safe, "", remote:true, method: :post, class: "card-footer-item like-button" %>
               <a href="#" class="card-footer-item edit-post-button">Edit</a>
-              <%= link_to "Delete", "", class: "card-footer-item delete-post-button",
+              <%= link_to "Delete", "", remote: true, class: "card-footer-item delete-post-button",
                               method: :delete,
                               data: { confirm: "Are you sure?" } %>
             </footer>
