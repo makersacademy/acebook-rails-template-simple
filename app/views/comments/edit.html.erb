@@ -1,0 +1,16 @@
+<body> Update your comment:
+
+<%= form_for @comment do |f| %>
+  <br>
+  <br>
+  <%= f.hidden_field :post_id, value: "#{params[:post_id]}" %>
+  <br>
+  <br>
+  <%= f.label :content, "content:" %>
+  <%= f.text_field :content %>
+  <br>
+  <br>
+  <%= f.submit "Update comment" %>
+<% end %>
+
+</body> 
