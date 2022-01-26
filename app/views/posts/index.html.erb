@@ -174,7 +174,7 @@
         <div class="modal-background"></div>
         <div class="modal-content">
           <!-- Any other Bulma elements you want -->
-            <%= form_for post do |form| %>
+            <%= form_for post, :remote => true do |form| %>
               <div class="field">
                 <div class="control">
                   <%= form.text_field :message, class: 'input is-success is-rounded', value: post.message %>

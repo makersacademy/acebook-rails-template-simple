@@ -37,6 +37,8 @@
 
   let deletePost;
 
+  let updatePost;
+
   console.log("application.js")
 
 

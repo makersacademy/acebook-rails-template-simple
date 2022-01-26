@@ -1,0 +1,16 @@
+updatePost = () => {
+  let post = document.getElementById("post-<%=@post.id%>");
+  console.log(post)
+  let content = post.querySelector(".post-message");
+  let message = content.querySelector("p");
+  message.innerHTML = '<%= link_to @post.message, post_path(@post), class: "has-text-dark" %>'
+  let time = content.querySelector("time");
+  time.innerHTML = '<%=time_ago_in_words(@post.updated_at)%> ago';
+
+  const modals = document.querySelectorAll('.modal')
+      for (const modal of modals) {
+        modal.classList.remove("is-active")
+      }
+}
+
+updatePost();

@@ -31,13 +31,16 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+    @post.update(post_params)
 
-    if @post.update(post_params)
-      redirect_to posts_path :anchor => "post-#{@post.id}"
-      p @post.id
-    else
-      render :edit, status: :unprocessable_entity
-    end
+    do_not_run_js_in_test
+
+    # if @post.update(post_params)
+    #   redirect_to posts_path :anchor => "post-#{@post.id}"
+    #   p @post.id
+    # else
+    #   render :edit, status: :unprocessable_entity
+    # end
 
   end
 
