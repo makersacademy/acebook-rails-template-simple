@@ -1,7 +1,7 @@
 module Helpers
   def sign_up(username:, email:, password:, confirm_password: password)
     sign_up_button = "/html/body/button[1]/a"
-    sign_up_username = '//*[@id="user_username"]'
+    sign_up_username = '//*[@id="user_username"]' 
     sign_up_email = '//*[@id="user_email"]'
     sign_up_password = '//*[@id="user_password"]'
     sign_up_password_confirmation = '//*[@id="user_password_confirmation"]'

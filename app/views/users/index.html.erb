@@ -1,0 +1,15 @@
+<h1>List of Users</h1>
+
+<form action="/search">
+  <input type="search" name="q" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+  <button type="submit" class="btn btn-outline-primary">search</button>
+</form>
+
+<div>
+<% @users.each do |user| %>
+<ul class="list-group">
+  <li class="list-group-item"><%= user.username %></li>
+ <li class="list-group-item"><%= user.email %></li>
+  </ul>
+<% end %>
+</div>
