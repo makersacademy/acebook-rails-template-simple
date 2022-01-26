@@ -22,6 +22,8 @@ clonePostAndAddToView = () => {
   time.innerHTML = '<%=time_ago_in_words(@post.updated_at)%> ago';
 
   let footer = postTemplate.querySelector(".card-footer");
+  let likeButton = footer.querySelector(".like-button");
+  likeButton.setAttribute("href", "<%= post_likes_path(@post) %>")
   let editButton = footer.querySelector(".edit-post-button");
   editButton.id = "edit-post-<%=@post.id%>";
   let deleteButton = footer.querySelector(".delete-post-button");

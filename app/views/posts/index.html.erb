@@ -238,6 +238,7 @@
           </div>
 
             <footer class="card-footer">
+              <%= link_to '<i class="far fa-thumbs-up fa-lg"></i>'.html_safe, "", remote:true, method: :post, class: "card-footer-item like-button" %>
               <a href="#" class="card-footer-item edit-post-button">Edit</a>
               <%= link_to "Delete", "", class: "card-footer-item delete-post-button",
                               method: :delete,
