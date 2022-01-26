@@ -29,6 +29,8 @@
 
   let cloneCommentandAddtoView;
 
+  let clonePostAndAddToView;
+
   console.log("application.js")
 
 
