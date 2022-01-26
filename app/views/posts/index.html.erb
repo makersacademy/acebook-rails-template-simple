@@ -54,6 +54,10 @@ style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_i
   <image src="<%=(url_for(post.post_photo))%>"
   style="width:200px;height:200px;"><br><br>
   <% end %>
+  <%= p "This is post" %>
+  <%= p post %>
+  <%= link_to "Edit Post", controller: "posts", action: "edit", id: post.id  %>
+  <br>
   <%= link_to "Delete Post", posts_path(id: post.id), method: :delete %>
 
   <br>

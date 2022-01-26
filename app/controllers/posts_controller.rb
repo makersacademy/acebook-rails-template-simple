@@ -30,6 +30,24 @@ class PostsController < ApplicationController
       end
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if session[:current_user_id] != @post.users_id
+      flash.alert = "Error: You can only Edit your own Posts"
+      redirect_to '/'
+    elsif @post.update(content: post_params["content"], users_id: session[:current_user_id])
+      flash.alert = "Post Updated"
+      redirect_to '/'
+    else
+      flash.alert = "Error: Post not updated"
+      redirect_to '/'
+    end
+  end
+
   def destroy
     @post = Post.find(params[:id])
     if session[:current_user_id] == @post.users_id
