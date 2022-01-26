@@ -135,7 +135,7 @@
             <%= form_with model: [ post, post.comments.build ], remote: true, class: "reply-form" do |form| %>
               <div class="field has-addons mb-4">
                 <div class="control is-expanded"> 
-                  <%= form.text_field :message, placeholder: "Comment", class: "input is-info is-rounded has-icons-right control createcommentbox" %>
+                  <%= form.text_field :message, placeholder: "Comment", class: "input is-info is-rounded has-icons-right control" %>
                   <p class="help is-danger reply-warning"></p>
                 </div>
                 <div class="control">
