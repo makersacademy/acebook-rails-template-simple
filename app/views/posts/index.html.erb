@@ -36,9 +36,73 @@
     <%= render 'new' %>
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
 
+
     <!-- See _post.html partial for viewing posts -->
     <%= render @posts %>
     <div id="post-end"></div>
+
+
+    <%#Comment Template for JS do not delete %>
+    <div class="card box has-background-white-ter pb-1 is-hidden" id="comment-template">
+      <div class="card-content pb-1">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-32x32">
+            </figure>
+          </div>
+
+          <div class="media-content">
+            <p class="title is-6"></p>
+          </div>
+        </div>
+
+        <div class="content comment-message">
+          <p class="has-text-dark"></p>
+          <time class="has-text-grey"></time>
+        </div>
+
+        <footer class="card-footer">
+        </footer>
+      </div>
+    </div>
+
+<%#Post Template for JS do not Delete%>
+
+        <div id="post-template" class="card mb-5 is-hidden">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-64x64">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4"></p>
+            </div>
+          </div>
+          <div class="content post-message">
+            <p></p>
+            <time class="has-text-grey"></time>
+          </div>
+
+            <footer class="card-footer">
+              <%= link_to '<i class="far fa-thumbs-up fa-lg"></i>'.html_safe, "", remote:true, method: :post, class: "card-footer-item like-button" %>
+              <a href="#" class="card-footer-item edit-post-button">Edit</a>
+              <%= link_to "Delete", "", remote: true, class: "card-footer-item delete-post-button",
+                              method: :delete,
+                              data: { confirm: "Are you sure?" } %>
+            </footer>
+
+          <div class='likes'>
+          </div>
+
+          <div class="comment-box p-2">
+          </div>      
+
+          <footer id="post-footer" class="is-fixed-bottom mt-5">
+          </footer>
+        </div>
+      </div>
+
 
 </div>
 

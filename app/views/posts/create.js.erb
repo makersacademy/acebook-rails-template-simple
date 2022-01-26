@@ -1,0 +1,46 @@
+clonePostAndAddToView = () => {
+
+  let postsTop = document.getElementById("posts-top");
+
+  let postTemplate = document.getElementById('post-template').cloneNode(true);
+  postTemplate.id = "post-<%=@post.id%>";
+  postTemplate.classList.remove("is-hidden");
+  
+  let comments = postTemplate.querySelector(".comment-box");
+  comments.innerHTML = "";
+
+  let profilePicture = postTemplate.querySelector("figure");
+  profilePicture.innerHTML = '<%= image_tag(current_user.profile_picture, class: "is-rounded") %>';
+
+  let name = postTemplate.querySelector(".title");
+  name.innerHTML = "<%= current_user.name %>";
+
+  let content = postTemplate.querySelector(".post-message");
+  let message = content.querySelector("p");
+  message.innerHTML = '<%= link_to @post.message, post_path(@post), class: "has-text-dark" %>'
+  let time = content.querySelector("time");
+  time.innerHTML = '<%=time_ago_in_words(@post.updated_at)%> ago';
+
+  let footer = postTemplate.querySelector(".card-footer");
+  let likeButton = footer.querySelector(".like-button");
+  likeButton.setAttribute("href", "<%= post_likes_path(@post) %>")
+  let editButton = footer.querySelector(".edit-post-button");
+  editButton.id = "edit-post-<%=@post.id%>";
+  let deleteButton = footer.querySelector(".delete-post-button");
+  deleteButton.setAttribute("href", "<%= post_path(@post)%>");
+
+  let likes = postTemplate.querySelector(".likes");
+  likes.innerHTML = "<%= likes_count(@post)%>";
+  likes.innerHTML += "<%= liked_by_users(@post) %>";
+
+  console.log(postTemplate)
+
+  let replyForm = postTemplate.querySelector("#post-footer")
+  replyForm.id += "-<%=@post.id%>"
+  replyForm.innerHTML += '<%= form_with model: [ @post, @post.comments.build ], remote: true, class: "reply-form" do |form| %><div class="field has-addons mb-4"><div class="control is-expanded"><%= form.text_field :message, placeholder: "Comment", class: "input is-info is-rounded has-icons-right control" %><p class="help is-danger reply-warning"></p></div><div class="control"><button class="button is-info is-rounded has-text-weight-bold">Reply</button></div></div><%end%>'
+
+  postsTop.prepend(postTemplate);
+
+}
+
+clonePostAndAddToView();
