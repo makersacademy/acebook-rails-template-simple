@@ -41,6 +41,17 @@ module Helpers
     find(:xpath, message_content).set(post_content)
     find(:xpath, create_post_btn).click
   end 
+
+  def sign_up_x_times(times)
+    log_out_button = '/html/body/button/a' 
+    
+    for i in 1..times
+      username_template = "username#{i}"
+      email_template = "username#{i}@test.com"
+      sign_up(username: username_template, email: email_template, password: '123456')
+      find(:xpath, log_out_button).click
+    end
+  end
   
 end
 
