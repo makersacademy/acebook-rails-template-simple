@@ -38,6 +38,7 @@ class PostsController < ApplicationController
     if session[:current_user_id] != @post.users_id
       flash.alert = "Error: You can only Edit your own Posts"
     elsif @post.update(content: post_params["content"], users_id: session[:current_user_id])
+      @post.post_photo.attach(post_params["post_photo"])
       flash.alert = "Post Updated"
     else
       flash.alert = "Error: Post not updated"

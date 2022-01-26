@@ -36,7 +36,7 @@ def create
     end
     redirect_to '/'
   end
-
+  
   private
 
   def comment_params
