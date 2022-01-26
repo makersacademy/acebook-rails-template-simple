@@ -17,7 +17,7 @@ RSpec.feature "Likes", type: :feature do
       log_out
       second_user_sign_up
       click_button "Like"
-      expect(page).to have_content "You and 1 other"
+      expect(page).to have_content "You and Inigo"
     end
 
     scenario "3 likes on the same post" do
@@ -52,7 +52,7 @@ RSpec.feature "Likes", type: :feature do
       second_user_sign_up
       click_button "Like"
       third_user_sign_up
-      expect(page).to have_content "Inigo and 1 other"
+      expect(page).to have_content "Kim and 1 other"
     end
 
     scenario "3 likes on the same post" do

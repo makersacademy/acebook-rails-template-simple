@@ -90,7 +90,8 @@
           <div>
           <%# like count and display last likers %>
             <%= likes_count(post)%>
-            <%= liked_by_users(post)%>
+            <%# display likers%>
+            <%= liked_by_users(post) %>
           <%# Like/unlike button%>
             <%like = current_user.likes.find_by(post: post)%>
             <% if like.nil? %>
