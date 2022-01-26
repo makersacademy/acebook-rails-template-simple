@@ -1,0 +1,17 @@
+<!-- Writing new posts ------------------------------------------------------------------------------------------------------------------------------------------- -->
+<div id="whats-on-your-mind">
+  <%= form_with model: @post, local: true, id: 'post-form' do |form| %>
+    <div class="field has-addons mb-4">
+      <div class="control is-expanded"> 
+        <%= form.text_field :message, placeholder: "What's on Your Mind?", class: "input is-info is-rounded has-icons-right control", id: 'form-input' %>
+        <p id="form-warning" class="help is-danger"></p>
+      </div>
+      <div class="control">
+        <button class="button is-info is-rounded has-text-weight-bold">
+          Post
+        </button>
+      </div>
+    </div> 
+  <% end %> 
+</div>
+
