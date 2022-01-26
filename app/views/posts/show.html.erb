@@ -1,4 +1,19 @@
 <%= @post.message %>
+
+<div>
+ <%# like count and display last likers %>
+   <%= likes_count(@post)%>
+<%# display likers%>
+  <%= liked_by_users(@post) %>
+<%# Like/unlike button%>
+    <%like = current_user.likes.find_by(post: @post)%>
+  <% if like.nil? %>
+    <%= button_to 'Like', post_likes_path(@post), method: :post %>
+  <% else %>
+    <%= button_to 'Unlike', post_like_path(@post, like), method: :delete %>
+   <% end %>
+</div>
+
 <% if current_user.id == @post.user_id %>
   <%= link_to "Edit post", edit_post_path(@post) %>
   <%= link_to "Delete post", post_path(@post),
