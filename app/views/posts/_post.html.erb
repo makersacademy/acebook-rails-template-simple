@@ -27,21 +27,21 @@
       <%# Like/unlike button%>
     <%like = current_user.likes.find_by(post: post)%>
     <% if like.nil? %>
-      <%= link_to '<i class="far fa-thumbs-up fa-lg"></i>'.html_safe, post_likes_path(post), method: :post, class: "card-footer-item" %> <%#Like%>
+      <%= link_to '<i class="far fa-thumbs-up fa-lg"></i>'.html_safe, post_likes_path(post), remote: true, method: :post, class: "card-footer-item like-button" %> <%#Like%>
     <% else %>
-      <%= link_to '<i class="fas fa-thumbs-up fa-lg"></i>'.html_safe, post_like_path(post, like), method: :delete, class: "card-footer-item" %> <%#Unlike%>
+      <%= link_to '<i class="fas fa-thumbs-up fa-lg"></i>'.html_safe, post_like_path(post, like), remote: true, method: :delete, class: "card-footer-item like-button" %> <%#Unlike%>
     <% end %>
     
     <% if current_user == @user %>
       <a href="#" class="card-footer-item edit-post-button" id="edit-post-<%=post.id%>">Edit</a>
-      <%= link_to "Delete", post_path(post), class: "card-footer-item",
-                      method: :delete,
-                      data: { confirm: "Are you sure?" } %>
+      <%= link_to "Delete", post_path(post), remote: true, class: "card-footer-item",
+                      method: :delete
+                      %>
     <% end %>
     </footer>
 
     <!-- Like count ----------------------------------------------- -->
-    <div>
+    <div class="likes">
     <%# like count and display last likers %>
       <%= likes_count(post)%>
       <%# display likers%>
@@ -152,7 +152,7 @@
   <div class="modal-background"></div>
   <div class="modal-content">
     <!-- Any other Bulma elements you want -->
-      <%= form_for post do |form| %>
+      <%= form_for post, :remote => true do |form| %>
         <div class="field">
           <div class="control">
             <%= form.text_field :message, class: 'input is-success is-rounded', value: post.message %>

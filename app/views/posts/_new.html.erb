@@ -1,6 +1,6 @@
 <!-- Writing new posts ------------------------------------------------------------------------------------------------------------------------------------------- -->
 <div id="whats-on-your-mind">
-  <%= form_with model: @post, local: true, id: 'post-form' do |form| %>
+  <%= form_with model: @post, remote: true, id: 'post-form' do |form| %>
     <div class="field has-addons mb-4">
       <div class="control is-expanded"> 
         <%= form.text_field :message, placeholder: "What's on Your Mind?", class: "input is-info is-rounded has-icons-right control", id: 'form-input' %>

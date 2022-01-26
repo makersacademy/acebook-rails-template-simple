@@ -8,6 +8,7 @@ deleteComment = () => {
   thingToDelete.innerHTML = "";
   thingToDelete.innerText = "Comment deleted";
   thingToDelete.setAttribute("id", "flashmessage")
+  setTimeout(deleteFlashMessages, 2000);
 }
 
 deleteComment();

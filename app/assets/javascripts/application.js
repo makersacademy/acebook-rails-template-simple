@@ -39,6 +39,8 @@
 
   let updatePost;
 
+  let renderNewPost;
+
   console.log("application.js")
 
 

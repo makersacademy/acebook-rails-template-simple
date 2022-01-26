@@ -1,6 +1,12 @@
 deletePost = () => {
+  deleteFlashMessages();
   let post = document.getElementById("post-<%=@post.id%>");
-  post.remove();
+  post.className = "is-success notification is-light has-text-bold alert alert-success"
+  post.innerHTML = "";
+  post.innerText = "Post deleted";
+  post.setAttribute("id", "flashmessage")
+  setTimeout(deleteFlashMessages, 2000);
+
 }
 
 deletePost();
