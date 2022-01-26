@@ -1,0 +1,33 @@
+<h1 style="color: rgb(84, 105, 212)"> Acebook </h1>
+<h3> helps you connect <br> and share with the people in your life.</h3>
+<% flash.each do |type, msg| %>
+  <div style="color: darkred">
+    <%= msg %>
+  </div>
+<% end %>
+
+<br>
+
+<body> Please enter details to log in:
+
+<%= form_with(model: @login, local: true) do |form| %>
+  <br>
+  <%= form.label :email, "Email:" %>
+  <%= form.text_field :email %>
+  <br>
+  <br>
+  <%= form.label :password, "Password:" %>
+  <%= form.password_field :password %>
+  <br>
+  <br>
+  <%
+=begin%>
+ <p>Don't have an account? Sign up <%= link_to "here", href='/signup'%>.</p> 
+<%
+=end%>
+  <%= form.submit "Log in", class: "btn btn-primary" %>
+  
+<% end %>
+
+
+</body>

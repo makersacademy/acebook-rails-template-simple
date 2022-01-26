@@ -1,5 +1,28 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :posts
+  resources :comments
+
+  get 'posts', to: "posts#index"
+  
+  resources :posts do
+    resources :likes
+    resources :comments
+    member do
+      get 'personal'
+    end
+  end
+
+  get '/profile', to: 'profile#index'
+
+  resources :signup
+
+  resources :homepage
+  
+  root to: 'posts#index' 
+
+  resources :photos
+
+  delete 'logout', to: 'homepage#destroy'
 end
+
+

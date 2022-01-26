@@ -1,0 +1,34 @@
+<h1 style="color: rgb(84, 105, 212)"> Acebook </h1>
+
+<br>
+<% flash.each do |type, msg| %>
+  <div style="color: red">
+    <%= msg %>
+  </div>
+<% end %>
+
+<body> Please enter your details to sign up:
+
+<%= form_with(model: @signup, local: true) do |form| %>
+  <br>
+  <%= form.label :name, "Name:" %>
+  <%= form.text_field :name %>
+  <br>
+  <br>
+  <%= form.label :email, "Email:" %>
+  <%= form.text_field :email %>
+  <br>
+  <br>
+  <%= form.label :password, "Password:" %>
+  <%= form.password_field :password %>
+  <br>
+  <br>
+  <%= form.label :profile_pic, "Why not choose a profile picture?"%>
+  <%= form.file_field :profile_pic, accept: 'image/png, image/jpeg'  %>
+  <br>
+  <br>
+  <%= form.submit "Sign Up", class: "btn btn-primary" %>
+<% end %>
+
+
+</body>
