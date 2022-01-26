@@ -20,6 +20,8 @@
 
   let deleteComment;
 
+  let cloneCommentandAddtoView;
+
   console.log("application.js")
 
 
