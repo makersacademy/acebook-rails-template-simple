@@ -1,6 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
   <% if user_signed_in? %>
@@ -9,30 +6,30 @@
     <a class="navbar-brand" href="/">Acebook</a>
   <% end %>
 
+  <div class="navbar-header">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
 
-<div class="navbar-header">
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-</div>
-
-  <div class="navbar-collapse collapse" id="navbarColor01" style="">
-    <ul class="navbar-nav nav">
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="nav navbar-nav">
       <% if user_signed_in? %>
-      <li class="nav-item active">
-          <%= "Signed in as #{current_user.username}" %>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/users">List Of Users</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/users/edit">Settings</a>
-        </li>
-        <li class="nav-item">
-          <%= button_to "Log out", destroy_user_session_path, method: :delete  %>
-        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/users">List Of Users</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href=#> <%= "Signed in as #{current_user.username}" %></a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link" href="/users/edit">Settings</a>
+      </li>
+      <li class="nav-item">
+        <%= button_to "Log out", destroy_user_session_path, method: :delete  %>
+      </li>
       <% end %>
     </ul>
   </div>
+
 </nav>
 
