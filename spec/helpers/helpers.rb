@@ -53,5 +53,13 @@ module Helpers
     end
   end
   
+  def post_x_times(times)
+    message_content = '//*[@id="post_message"]'
+    create_post_btn = '//*[@id="submit"]'
+    for i in 1..times
+    find(:xpath, message_content).set("post#{i}")
+    find(:xpath, create_post_btn).click
+    end 
+  end
 end
 
