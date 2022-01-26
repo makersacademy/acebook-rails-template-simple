@@ -18,7 +18,7 @@
           
           <a><p class="has-text-white is-size-4 mr-4"><%= @current_user.name %></p></a>
           
-          <a class="link is-32x32 mr-8">
+          <a class="image is-42x42 mr-6">
             <a href="/users/<%= @current_user.id %>/edit">
               <figure class="is-rounded"><%= image_tag(@current_user.profile_picture) %> </figure>
             </a>
@@ -135,7 +135,7 @@
             <%= form_with model: [ post, post.comments.build ], remote: true, class: "reply-form" do |form| %>
               <div class="field has-addons mb-4">
                 <div class="control is-expanded"> 
-                  <%= form.text_field :message, placeholder: "Comment", class: "input is-info is-rounded has-icons-right control" %>
+                  <%= form.text_field :message, placeholder: "Comment", class: "input is-info is-rounded has-icons-right control createcommentbox" %>
                   <p class="help is-danger reply-warning"></p>
                 </div>
                 <div class="control">
@@ -152,7 +152,33 @@
 
       </div>
 
-      <%# Edit Post Modal %>
+      <%#Comment Template for JS do not delete %>
+        <div class="card box has-background-white-ter pb-1 is-hidden" id="comment-template">
+          <div class="card-content pb-1">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-32x32">
+                </figure>
+              </div>
+
+              <div class="media-content">
+                <p class="title is-6"></p>
+              </div>
+            </div>
+
+            <div class="content comment-message">
+              <p class="has-text-dark"></p>
+              <time class="has-text-grey"></time>
+            </div>
+
+            <footer class="card-footer">
+            </footer>
+          </div>
+        </div>
+
+
+
+    <%# Edit Post Modal %>
       <div class="modal" id="edit-post-<%=post.id%>-modal">
         <div class="modal-background"></div>
         <div class="modal-content">
@@ -178,6 +204,7 @@
     <div id="post-end"></div>
 
 </div>
+
 
 <script>
   // Show form warning if empty post is submitted
@@ -247,3 +274,5 @@
   }
 
 </script>
+
+

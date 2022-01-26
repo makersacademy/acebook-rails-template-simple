@@ -1,24 +1,27 @@
-addCommentToView = () => {
+cloneCommentandAddtoView = () => {
+
+  deleteFlashMessages(); 
+
   let post = document.getElementById("post-<%=@post.id%>");
   let comment_box = post.querySelector(".comment-box");
 
-  let commentContainer = document.createElement("div");
-  commentContainer.className = "card box has-background-white-ter pb-1";
-  commentContainer.setAttribute("id", "comment-<%=@comment.id%>")
+  let commentContainer = document.querySelectorAll('[id^=comment]')[0].cloneNode(true);
+  commentContainer.setAttribute("id", "comment-<%=@comment.id%>");
+  commentContainer.classList.remove("is-hidden");
 
-  let cardContent = document.createElement("div");
-  cardContent.className = "card-content pb-1";
+  let profilePic = commentContainer.querySelector("figure");
+  profilePic.innerHTML = '<%= image_tag(@commenter.profile_picture, class: "is-rounded") %>';
 
-  let media = document.createElement("div");
-  media.className = "media"
-  media.innerHTML = '<div class="media-left"><figure class="image is-32x32"> <%= image_tag(@commenter.profile_picture, class: "is-rounded") %></figure></div><div class="media-content"><p class="title is-6"><%= @commenter.name %></p></div>'
+  let name = commentContainer.querySelector(".title");
+  name.innerHTML = '<%= @commenter.name %>'
 
-  let commentMessage = document.createElement("div");
-  commentMessage.className = "content comment-message";
-  commentMessage.innerHTML = '<p class="has-text-dark"><%= @comment.message %></p><time class="has-text-grey"><%=time_ago_in_words(@comment.updated_at)%> ago</time>'
+  let commentContent = commentContainer.querySelector(".comment-message");
+  let message = commentContent.querySelector("p")
+  message.innerHTML = "<%= @comment.message %>"
+  let time = commentContent.querySelector("time")
+  time.innerHTML = "<%=time_ago_in_words(@comment.updated_at)%> ago"
 
-  let footer = document.createElement("footer")
-  footer.className = "card-footer";
+  let footer = commentContainer.querySelector("footer")
   footer.innerHTML = "<% if current_user == @commenter %>"
   footer.innerHTML += "<% if editable?(@comment) %>"
   footer.innerHTML += "<a class='card-footer-item editbutton' href='/posts/<%=@post.id%>/comments/<%=@comment.id%>/edit'><i class='fas fa-edit'></i></a>"
@@ -26,20 +29,10 @@ addCommentToView = () => {
   footer.innerHTML += "<a class='card-footer-item deleter' rel='nofollow' data-method='delete' data-remote='true' href='/posts/<%=@post.id%>/comments/<%=@comment.id%>'><i class='fas fa-trash-alt' aria-hidden='true'></i></a>"
   footer.innerHTML += "<% end %>"
 
-  commentContainer.appendChild(cardContent);
-  commentContainer.appendChild(media);
-  commentContainer.appendChild(commentMessage);
-  commentContainer.appendChild(footer);
-
   comment_box.appendChild(commentContainer);
-
 }
 
-
-addCommentToView();
-
-console.log("creating comment")
-
+cloneCommentandAddtoView();
 
 
 
