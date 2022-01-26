@@ -16,6 +16,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    @user = current_user
     @posts = Post.all
     @post = Post.new # this was the code in the new route
   end
