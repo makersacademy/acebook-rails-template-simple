@@ -16,6 +16,13 @@
 
   // Show form warning if empty post is submitted
 
+  let deleteFlashMessages = () => {
+    let existingFlash = document.getElementById("flashmessage")
+    if (existingFlash) {
+      existingFlash.remove();
+    }
+  }
+
   let addCommentToView;
 
   let deleteComment;
