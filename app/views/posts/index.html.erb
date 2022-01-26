@@ -1,5 +1,6 @@
 <center>
 <%# Page Headings, welcome message %>
+
 <h1>AceBook Posts</h1>
 <h4> What's on your mind, <%= User.find_by(id: session[:current_user_id]).name %>?</h4>
 <br>
@@ -19,7 +20,11 @@
 <%# Link to create a new post, or visit your profile %>
 
 <p><%= link_to "Create new post", {:action => 'new' } %></p>
-<p><%= link_to "Go to your profile", profile_path %></p>
+<%
+=begin%>
+ <p><%= link_to "Go to your profile", profile_path %></p> 
+<%
+=end%>
 <h2><image src="<%=(url_for(User.find_by(id: session[:current_user_id]).profile_pic))%>"
 style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_id]).name %>, see your feed below</h2>
 

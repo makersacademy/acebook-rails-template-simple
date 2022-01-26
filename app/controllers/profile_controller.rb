@@ -1,6 +1,6 @@
 class ProfileController < ApplicationController
   
-  def initialize
+  def index
     @all_posts = Post.all
   end
 

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   resources :comments
+
+  get 'posts', to: "posts#index"
   
   resources :posts do
     resources :likes

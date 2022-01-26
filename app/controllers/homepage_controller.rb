@@ -26,5 +26,4 @@ class HomepageController < ApplicationController
     def signup_params
       params.permit([:email, :password])
     end
-
 end
