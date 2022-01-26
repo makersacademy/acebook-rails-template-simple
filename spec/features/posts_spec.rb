@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Posting", type: :feature do
   post_content = '//*[@id="post_message"]'
-  upload_image_button = '//*[@id="post_image"]'
+  upload_image_button = '//*[@id="images"]'
   submit_post_button = '//*[@id="submit"]'
 
 
