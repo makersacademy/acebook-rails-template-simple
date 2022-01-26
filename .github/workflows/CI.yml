@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+      # service containers to run with 'pull_request_test'
+    services:
+      # label used to access the service container
+      postgres:
+        # Docker hub image
+        image: postgres:11
+        # maps tcp port 5432 on service container to the host
+        ports: ['5432:5432']
+        # service environment variables
+        env:
+          POSTGRES_DB: rails_test
+          POSTGRES_USER: rails
+          POSTGRES_PASSWORD: postgres_password
+        
+        # set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      
+    # environment variables for testing
+    env:
+      RAILS_ENV: test
+      DATABASE_URL: "postgres://rails:postgres_password@localhost:5432/rails_test"
+
+    # steps to carry out
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Set up database schema
+        run: bin/rails db:schema:load
+      - name: Run tests
+        run: |
+          sudo apt-get -yqq install libpq-dev
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+          bundle exec rails db:prepare
+          bundle exec rspec
+
+

@@ -1,0 +1,36 @@
+<%= @post.message %>
+<% if current_user.id == @post.user_id %>
+  <%= link_to "Edit post", edit_post_path(@post) %>
+  <%= link_to "Delete post", post_path(@post),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+<% end %>
+
+
+<h2>Comments</h2>
+<% @post.comments.each do |comment| %>
+  <% @commenter = User.find(comment.user_id) %>
+
+    <p>
+      <strong><%= "#{@commenter.name}:" %></strong>
+      <%= comment.message %>
+      <% if current_user == @commenter %>
+        <%= link_to "Edit comment", post_path(@post) + "/comments/#{comment.id}/edit" %>
+        <%= link_to "Delete comment", post_path(@post) + "/comments/#{comment.id}",
+        method: :delete,
+        data: { confirm: "Are you sure?" }
+        %>
+      <% end %> 
+    </p>
+<% end %>
+
+
+<%= form_with model: [ @post, @post.comments.build ], local: true  do |form| %>
+  <p>
+    <%= form.label :message %><br>
+    <%= form.text_area :message %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,62 @@
+
+<div class="hero is-fullheight"> 
+  
+  <div class="hero-body">
+
+    <div class='is-vcentered is-centered p-6 mx-auto has-text-centered columns' id="sign-up">
+
+      <div class="p-4 box column is-full">
+
+        <div class="is-size-1 has-text-link has-text-weight-bold">
+          <h1>Sign Up</h1>
+        </div>
+        <div class="is-size-4 has-text-weight-semibold">
+          <p>It's quick and easy.</p>
+        </div>
+
+        <%= form_with(model: @user, local: true) do |form| %>
+
+          <div class="field mt-1 p-3">
+            <div class="control">
+              <%= form.text_field :name, class: 'input', placeholder: 'Full name'%>
+            </div>
+          </div>
+
+          <div class="field p-3">
+            <div class="control">
+              <%= form.text_field :email, class: 'input', placeholder: 'Email'%>
+            </div>
+          </div>
+
+          <div class="field p-3">
+            <div class="control">
+              <%= form.password_field :password, class: 'input', placeholder: 'Password'%>
+            </div>
+          </div>
+
+          <div class="field p-3">
+            <div class="control">
+              <%= form.password_field :password_confirmation, class: 'input', placeholder: 'Confirm password' %>
+            </div>
+          </div>
+
+          <div class="field mb-3">
+            <div class="control has-text-centered">
+              <%= form.submit class: 'button is-success has-text-weight-bold' %>
+            </div>
+          </div>
+
+        <% end %>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="hero-foot has-background-white p-6">
+
+  </div>
+
+</div>
+        

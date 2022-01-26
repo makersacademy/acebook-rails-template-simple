@@ -1,0 +1,115 @@
+<div class="hero is-fullheight"> 
+  
+  <div class="hero-body">
+    <div class='container.is-max-desktop columns is-vcentered is-centered p-6 mx-auto'>
+
+      <div class="column is-5-desktop has-text-centered-mobile" id="home-welcome">
+        <div class="is-size-1 has-text-link has-text-weight-bold">
+          <h1>AceBook</h1>
+        </div>
+        <div class="is-size-4 has-text-weight-semibold">
+          <p>Acebook helps you connect and share with the people in your life.</p>
+        </div>
+      </div>
+
+      <div class="column is-4-desktop p-4 box" id="home-login">
+
+        <%= form_for(:session, url: login_path) do |f| %>
+        <div class="field mt-1">
+          <div class="control">
+            <%= f.email_field :email, class: 'input', placeholder: 'Email address'%>
+          </div>
+          
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <%= f.password_field :password, class: 'input is-success', placeholder: 'Password'%>
+          </div>
+         
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <%= f.submit "Log In", class: 'button is-link is-fullwidth has-text-weight-bold'%>
+
+          </div>
+        </div>
+
+        <p class="help is-link has-text-weight-bold is-size-6 has-text-centered">Forgotten password?</p>
+
+        <hr />
+
+      <% end %>
+
+        <div class="field mb-2">
+          <div class="control has-text-centered">
+            <a href="/users/new"><button class="button is-success p-5 has-text-weight-bold">Create New Account</button></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="hero-foot has-background-white p-6">
+      <ul class="uiList localeSelectorList _2pid _509- _4ki _6-h _6-j _6-i" data-nocookies="1" style='list-style-type: none; margin: 0px; padding: 8px 0px 0px; align-items: center; display: flex; flex-wrap: wrap; color: rgb(115, 115, 115); font-family: system-ui, -apple-system, "system-ui", ".SFNSText-Regular", sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;'>
+        <li style="border-width: 0px; display: inline-block; vertical-align: top; padding-left: 0px; padding-right: 0px;">English (UK)</li>
+        <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 10px; padding-right: 0px;"><a class="_sv4" dir="ltr" href="https://pl-pl.facebook.com/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Polish">Polski</a></li>
+        <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 10px; padding-right: 0px;"><a class="_sv4" dir="ltr" href="https://es-la.facebook.com/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Spanish">Espa&ntilde;ol</a></li>
+        <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 10px; padding-right: 0px;"><a class="_sv4" dir="ltr" href="https://fr-fr.facebook.com/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="French (France)">Fran&ccedil;ais (France)</a></li>
+        <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 10px; padding-right: 0px;"><a class="_sv4" dir="ltr" href="https://it-it.facebook.com/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Italian">Italiano</a></li>
+        <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 10px; padding-right: 0px;"><a class="_sv4" dir="ltr" href="https://lt-lt.facebook.com/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Lithuanian">Lietuvių</a></li>
+        <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 10px; padding-right: 0px;"><a class="_sv4" dir="ltr" href="https://ro-ro.facebook.com/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Romanian">Rom&acirc;nă</a></li>
+        <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 10px; padding-right: 0px;"><a class="_sv4" dir="ltr" href="https://zh-cn.facebook.com/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Simplified Chinese (China)">中文(简体)</a></li>
+        <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 10px; padding-right: 0px;"><a class="_sv4" dir="ltr" href="https://pt-br.facebook.com/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Portuguese (Brazil)">Portugu&ecirc;s (Brasil)</a></li>
+        <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 10px; padding-right: 0px;"><a class="_sv4" dir="ltr" href="https://de-de.facebook.com/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="German">Deutsch</a></li>
+        <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 10px; padding-right: 0px;"><a class="_sv4" dir="rtl" href="https://ar-ar.facebook.com/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Arabic">العربية</a></li>
+        <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 10px; padding-right: 0px;"><a class="_42ft _4jy0 _517i _517h _51sy" href="https://www.facebook.com/#" rel="dialog" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; border: 1px solid rgb(204, 208, 213); border-radius: 2px; box-sizing: content-box; font-size: 12px; -webkit-font-smoothing: antialiased; font-weight: bold; justify-content: center; padding: 0px 8px; position: relative; text-align: center; text-shadow: none; vertical-align: middle; transition: background-color 200ms cubic-bezier(0.08, 0.52, 0.52, 1) 0s, box-shadow 200ms cubic-bezier(0.08, 0.52, 0.52, 1) 0s, transform 200ms cubic-bezier(0.08, 0.52, 0.52, 1) 0s; background-color: rgb(245, 246, 247); height: 18px; line-height: 18px; display: inline-block; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Show more languages"></a></li>
+    </ul>
+    <div style='border-bottom: 1px solid rgb(221, 223, 226); font-size: 1px; height: 8px; margin-bottom: 8px; font-family: system-ui, -apple-system, "system-ui", ".SFNSText-Regular", sans-serif; color: rgb(115, 115, 115); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;'><br></div>
+    <div aria-label="Facebook site links" style='font-family: system-ui, -apple-system, "system-ui", ".SFNSText-Regular", sans-serif; color: rgb(115, 115, 115); font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;'>
+        <ul class="uiList pageFooterLinkList _509- _4ki _703 _6-i" style="list-style-type: none; margin: 0px 0px 0px -20px; padding: 0px; line-height: 1.6;">
+            <li style="border-width: 0px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://www.facebook.com/reg/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Sign up for Facebook">Sign Up</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://www.facebook.com/login/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Log in to Facebook">Log In</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://messenger.com/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Take a look at Messenger.">Messenger</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://www.facebook.com/lite/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Facebook Lite for Android.">Facebook Lite</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://www.facebook.com/watch/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Browse our Watch videos.">Watch</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://www.facebook.com/places/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Take a look at popular places on Facebook.">Places</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://www.facebook.com/games/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Check out Facebook games.">Games</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://www.facebook.com/marketplace/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Buy and sell on Facebook Marketplace.">Marketplace</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://pay.facebook.com/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" target="_blank" title="Learn more about Facebook Pay">Facebook Pay</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://www.oculus.com/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" target="_blank" title="Learn more about Oculus">Oculus</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://portal.facebook.com/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" target="_blank" title="Learn more about Facebook Portal">Portal</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a data-lynx-mode="asynclazy" href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2F&h=AT1yMYQbPtUX1S-qbS67UIHc1NiTT9o44fwWgJyqAueNGL9TmKytHo1eQet6I0lXxBdj0mfWm--SFimKFUwPmfTAvq7AwopIRS_xuHwopLi0szNvn9Y7CrZMw3Co8snTv5KqyMbUDM3DCGosvSIdlmVstSA" rel="noopener nofollow" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" target="_blank" title="Take a look at Instagram">Instagram</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://www.bulletin.com/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Take a look at Bulletin newsletter">Bulletin</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://www.facebook.com/local/lists/245019872666104/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Browse our Local Lists directory.">Local</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://www.facebook.com/fundraisers/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Donate to worthy causes.">Fundraisers</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://www.facebook.com/biz/directory/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Browse our Facebook Services directory.">Services</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://www.facebook.com/votinginformationcenter/?entry_point=c2l0ZQ%3D%3D" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="See the Voting Information Centre">Voting Information Centre</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://www.facebook.com/groups/explore/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Explore our groups.">Groups</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a accesskey="8" href="https://about.facebook.com/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Read our blog, discover the resource centre and find job opportunities.">About</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://www.facebook.com/ad_campaign/landing.php?placement=pflo&campaign_id=402047449186&nav_source=unknown&extra_1=auto" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Advertise on Facebook">Create ad</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://www.facebook.com/pages/create/?ref_type=site_footer" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Create a Page">Create Page</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://developers.facebook.com/?ref=pf" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Develop on our platform.">Developers</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a href="https://www.facebook.com/careers/?ref=pf" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Make your next career move to our brilliant company.">Careers</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a data-nocookies="1" href="https://www.facebook.com/privacy/explanation/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Learn about your privacy and Facebook.">Privacy</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a data-nocookies="1" href="https://www.facebook.com/policies/cookies/" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Learn about cookies and Facebook.">Cookies</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a class="_41ug" data-nocookies="1" href="https://www.facebook.com/help/568137493302217" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; display: inline-block; padding-right: 14px; position: relative; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Learn about AdChoices.">AdChoices</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a accesskey="9" data-nocookies="1" href="https://www.facebook.com/policies?ref=pf" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Review our terms and policies.">Terms</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a accesskey="0" href="https://www.facebook.com/help/?ref=pf" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; margin-right: 0px;" title="Visit our Help Centre.">Help</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a accesskey="6" class="accessible_elem" href="https://www.facebook.com/settings" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; clip: rect(1px, 1px, 1px, 1px); height: 1px; overflow: hidden; position: absolute; width: 1px; font-family: inherit; margin-right: 0px;" title="View and edit your Facebook settings.">Settings</a></li>
+            <li style="border-width: 0px 0px 0px 1px; display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 0px;"><a accesskey="7" class="accessible_elem" href="https://www.facebook.com/allactivity?privacy_source=activity_log_top_menu" style="color: rgb(138, 141, 145); cursor: pointer; text-decoration: none; white-space: nowrap; clip: rect(1px, 1px, 1px, 1px); height: 1px; overflow: hidden; position: absolute; width: 1px; font-family: inherit; margin-right: 0px;" title="View your activity log">Activity log</a></li>
+        </ul>
+    </div>
+    <div class="mvl copyright" style='margin-top: 20px; margin-bottom: 20px; font-size: 11px; font-family: system-ui, -apple-system, "system-ui", ".SFNSText-Regular", sans-serif; color: rgb(115, 115, 115); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;'>
+      <div style="font-family: inherit;">
+        <span style="font-family: inherit;">Meta &copy; 2022</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+  
