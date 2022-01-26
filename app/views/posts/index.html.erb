@@ -1,7 +1,41 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<div class="container">
+  <div class = "card bg-light mb-3" style="width: 32rem;" >
+    <div class = "card-body">
+     <%= render "form", post: @post%> <!--brings new form to index-->
+   </div>
+  </div>
+     <% @posts.reverse.each do |post| %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+        <article class = "card bg-light mb-3" style="width: 32rem;">
+            <div class="card-body">
+              <p> Created at: <%= post.created_at.strftime("%H:%M") %>, by user <%= post.user_id %> </p>
+            </div>
+
+          <div class = "card-body border-top">
+            <div class = "card-text">
+              <%= post.message %>
+            </div>
+          
+            <div class="card-link">
+              <%= link_to 'Like', post_likes_path(post), method: :post %>
+              <%= link_to "Edit", edit_post_path(post) %> 
+              <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %> 
+             <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+
+            </div>
+          </div>
+            
+          <div class = "card-body border-top">
+            <strong>Comments:</strong>
+            <%= render post.comments%>
+                
+            <%= bootstrap_form_with model: [ post, post.comments.build ] do |form| %>
+                    <%= form.text_area :content, skip_label: true, id:"content", :rows=>1, :cols=>20 %>
+                    <%= form.submit id:"create_comment"%>
+            <% end %>
+          </div>
+         
+        </article>
+    <% end %>
+
+</div>

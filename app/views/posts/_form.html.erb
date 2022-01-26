@@ -1,0 +1,6 @@
+<div class = "container">
+  <%=  bootstrap_form_for(@post) do |form| %>
+    <%= form.text_field :message, skip_label: true %>
+    <%= form.submit :id => "submit" %>
+  <% end %>
+</div>
