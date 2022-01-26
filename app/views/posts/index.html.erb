@@ -76,9 +76,9 @@
               <%# Like/unlike button%>
             <%like = current_user.likes.find_by(post: post)%>
             <% if like.nil? %>
-              <%= link_to '<i class="far fa-thumbs-up fa-lg"></i>'.html_safe, post_likes_path(post), method: :post, class: "card-footer-item" %> <%#Like%>
+              <%= link_to '<i class="far fa-thumbs-up fa-lg"></i>'.html_safe, post_likes_path(post), remote:true, method: :post, class: "card-footer-item like-button" %> <%#Like%>
             <% else %>
-              <%= link_to '<i class="fas fa-thumbs-up fa-lg"></i>'.html_safe, post_like_path(post, like), method: :delete, class: "card-footer-item" %> <%#Unlike%>
+              <%= link_to '<i class="fas fa-thumbs-up fa-lg"></i>'.html_safe, post_like_path(post, like), method: :delete, class: "card-footer-item like-button" %> <%#Unlike%>
             <% end %>
             <% if current_user == @user %>
               <a href="#" class="card-footer-item edit-post-button" id="edit-post-<%=post.id%>">Edit</a>

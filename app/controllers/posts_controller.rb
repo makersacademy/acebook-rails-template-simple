@@ -9,11 +9,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    @user = current_user
+
     if @post.save
-      respond_to do |format|
-        format.js
-      end
+      do_not_run_js_in_test
     end   
     
   end

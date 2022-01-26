@@ -6,15 +6,16 @@ class LikesController < ApplicationController
 
 
   def create
-    current_user.likes.create(post_id: @post.id)
-    # @post.likes.create(user_id: current_user.id)
-    redirect_to posts_path
+    @like = current_user.likes.create(post_id: @post.id)
+    do_not_run_js_in_test
+  
   end
 
   def destroy
     @like = current_user.likes.find(params[:id])
     @like.destroy
-    redirect_to posts_path
+    
+    do_not_run_js_in_test
   end
 
   private
