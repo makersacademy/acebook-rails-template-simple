@@ -62,3 +62,4 @@ gem "factory_bot", "~> 6.2"
 
 gem "launchy", "~> 2.5"
 gem "bootstrap_form", "~> 5.0"
+gem 'pagy', '~> 5.9'
