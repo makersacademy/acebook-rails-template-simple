@@ -5,5 +5,4 @@ class ApplicationController < ActionController::Base
     @posts = Post.all
   end
 
-
 end

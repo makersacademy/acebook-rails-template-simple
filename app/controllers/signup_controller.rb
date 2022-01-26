@@ -6,9 +6,12 @@ class SignupController < ApplicationController
   def create
     @user = User.new(name: signup_params["name"], email: signup_params["email"], password: signup_params["password"])
     if @user.valid?
-      
       @user.save
-      @user.profile_pic.attach(params[:profile_pic])
+      if params[:profile_pic] == nil
+        @user.profile_pic.attach(io: File.open("app/assets/images/default_profile_pic.jpeg"), filename: "app/assets/images/default_profile_pic.jpeg")
+      else
+        @user.profile_pic.attach(params[:profile_pic]) 
+      end
       redirect_to '/homepage'
       flash.alert = "Thanks for signing up"
       
@@ -22,6 +25,9 @@ class SignupController < ApplicationController
       end
       if @user.errors[:password].length != 0
         flash[:password] = "Password error: #{@user.errors[:password]}"
+      end
+      if @user.errors[:profile_pic].length != 0
+        flash[:profile_pic] = "Please add a profile picture"
       end
     end
   end

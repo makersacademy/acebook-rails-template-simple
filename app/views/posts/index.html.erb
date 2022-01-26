@@ -1,20 +1,30 @@
 <center>
+
 <%# Page Headings, welcome message %>
 
 <h1>AceBook Posts</h1>
 <h4> What's on your mind, <%= User.find_by(id: session[:current_user_id]).name %>?</h4>
 <br>
 
+<% flash.each do |type, msg| %>
+  <div style="color: darkred">
+    <%= msg %>
+  </div>
+<% end %>
+
+<br>
+<br>
+
 <%# Search fields %>
 
-<%= form_tag "/posts", method: "GET" do %>
+<%= form_tag "/posts", :id => 'search_by_content', method: "GET" do %>
   <%= text_field_tag :search_by_content, nil, placeholder: 'Find a post' %>
-  <%= submit_tag "Search" %>
+  <%= submit_tag "Search", :id => "search_by_content_submit" %>
 <% end %>
 <br>
 <%= form_tag "/posts", method: "GET" do %>
   <%= text_field_tag :search_by_user, nil, placeholder: 'Find a friend' %>
-  <%= submit_tag "Search" %>
+  <%= submit_tag "Search", :id => "search_by_user_submit" %>
 <% end %>
 
 <%# Link to create a new post, or visit your profile %>
@@ -32,16 +42,13 @@ style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_i
 
 <%# Confirmation message that user has created/not created a new post%>
 
-<% flash.each do |type, msg| %>
-  <div style="color: darkred">
-    <%= msg %>
-  </div>
-<% end %>
+
+
 
 <%# Feed %>
 
 <%# Displays all posts %>
-<% Post.all.reverse.each do |post| %>
+<% @all_posts.reverse.each do |post| %>
   <image src="<%=(url_for(User.find_by(id: post.users_id).profile_pic))%>"
   style="width:40px;height:40px;"> 
   <%= User.find_by(id: post.users_id).name %><br><br>
@@ -51,17 +58,19 @@ style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_i
   <image src="<%=(url_for(post.post_photo))%>"
   style="width:200px;height:200px;"><br><br>
   <% end %>
+  <%= link_to "Edit Post", controller: "posts", action: "edit", id: post.id  %>
+  <br>
+  <%= link_to "Delete Post", posts_path(id: post.id), method: :delete %>
 
-
+  <br>
 <%# Like/Comment buttons %>
   <%= link_to "Add a comment", comments_path(post_id: post.id) %><br><br>
   <p>
-  <% p ((post.post_photo)) %>
+  
   <image src="<%=(url_for(User.find_by(id: post.users_id).profile_pic))%>"
   style="width:40px;height:40px;"> 
 
-  <p><%= post.content %></p> 
-  <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p> 
+
   <% pre_like = post.likes.find { |like| like.user_id == session[:current_user_id]} %>
 
   <% if pre_like %>
@@ -82,6 +91,8 @@ style="width:80px;height:80px;"> Hi <%= User.find_by(id: session[:current_user_i
      <%= User.find_by(id: comment.user_id).name %>:
      <%= comment.content %>
      <%= comment.created_at.to_s(:time) %>
+     <%= link_to "Edit", controller: "comments", action: "edit", id: comment.id, post_id: post.id %>
+     <%= link_to "Delete", comments_path(id: comment.id), method: :delete %>
   <% end %>
            <hr>
 <% end %>

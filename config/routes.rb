@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 
   get '/profile', to: 'profile#index'
 
+  delete 'posts', to: 'posts#destroy'
+
+  delete 'comments', to: 'comments#destroy'
+
   resources :signup
 
   resources :homepage
@@ -23,6 +27,7 @@ Rails.application.routes.draw do
   resources :photos
 
   delete 'logout', to: 'homepage#destroy'
+
 end
 
 
