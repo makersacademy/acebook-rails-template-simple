@@ -30,22 +30,25 @@
       </div>
     </div>
 </nav>
+
 <div class='container' id="posts">
-
-    <%= form_with model: @post, local: true, id: 'post-form' do |form| %>
-      <div class="field has-addons mb-4">
-        <div class="control is-expanded"> 
-          <%= form.text_field :message, placeholder: "What's on Your Mind?", class: "input is-info is-rounded has-icons-right control", id: 'form-input' %>
-          <p id="form-warning" class="help is-danger"></p>
-        </div>
-        <div class="control">
-          <button class="button is-info is-rounded has-text-weight-bold">
-            Post
-          </button>
-        </div>
-      </div> 
-    <% end %> 
-
+<!-- Writing new posts ------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div id="whats-on-your-mind">
+      <%= form_with model: @post, local: true, id: 'post-form' do |form| %>
+        <div class="field has-addons mb-4">
+          <div class="control is-expanded"> 
+            <%= form.text_field :message, placeholder: "What's on Your Mind?", class: "input is-info is-rounded has-icons-right control", id: 'form-input' %>
+            <p id="form-warning" class="help is-danger"></p>
+          </div>
+          <div class="control">
+            <button class="button is-info is-rounded has-text-weight-bold">
+              Post
+            </button>
+          </div>
+        </div> 
+      <% end %> 
+    </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
     <% @posts.each do |post| %>
 
       <% @user = User.find(post.user_id) %>
@@ -79,12 +82,13 @@
             <% else %>
               <%= link_to '<i class="fas fa-thumbs-up fa-lg"></i>'.html_safe, post_like_path(post, like), method: :delete, class: "card-footer-item" %> <%#Unlike%>
             <% end %>
+            
             <% if current_user == @user %>
               <a href="#" class="card-footer-item edit-post-button" id="edit-post-<%=post.id%>">Edit</a>
               <%= link_to "Delete", post_path(post), class: "card-footer-item",
                               method: :delete,
                               data: { confirm: "Are you sure?" } %>
-          <% end %>
+            <% end %>
             </footer>
 
           <div>
@@ -190,7 +194,7 @@
 
 
 
-    <%# Edit Post Modal %>
+      <%# Edit Post Modal %>
       <div class="modal" id="edit-post-<%=post.id%>-modal">
         <div class="modal-background"></div>
         <div class="modal-content">
