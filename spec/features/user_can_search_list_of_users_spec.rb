@@ -30,21 +30,23 @@ RSpec.feature 'list of users page', type: :feature do
     expect(page).to have_content("test@test.com")
   end
 
-  # scenario 'display all users' do
-  #   sign_up(username: "kenny", email: "kenny@test.com", password: "test123", confirm_password: "test123")
-  #   find(:xpath, log_out_btn).click
+  scenario 'display all users' do
+    sign_up(username: "kenny", email: "kenny@test.com", password: "test123", confirm_password: "test123")
+    find(:xpath, log_out_button).click
   
-  #   p "-------"
-  #   sign_up(username: "mary", email: "mary@test.com", password: "test123", confirm_password: "test123")
-  #   find(:xpath, log_out_btn).click
-  #   login(email: "kenny@test.com", password: "test123")
+    p "-------"
+    p current_path
+    expect(page).to have_content('Sign Up')
+    sign_up(username: "mary", email: "mary@test.com", password: "test123", confirm_password: "test123")
+    find(:xpath, log_out_btn).click
+    login(email: "kenny@test.com", password: "test123")
 
-  #   find(:xpath, list_of_users).click
-  #   expect(page).to have_current_path("/users")
+    find(:xpath, list_of_users).click
+    expect(page).to have_current_path("/users")
 
 
-  #   expect(page).to have_content("mary@test.com")
-  #   expect(page).to have_content("kenny@test.com")
-  # end
+    expect(page).to have_content("mary@test.com")
+    expect(page).to have_content("kenny@test.com")
+  end
 
 end
