@@ -80,7 +80,6 @@
               <%= link_to "Delete", post_path(post), class: "card-footer-item delete-post-button",
                               method: :delete,
                               data: { confirm: "Are you sure?" } %>
-              <a class="card-footer-item comment-post-button" href="#post-footer-<%=post.id%>">Comment</a>
             </footer>
           <% end %>
 
@@ -244,7 +243,6 @@
               <%= link_to "Delete", "", class: "card-footer-item delete-post-button",
                               method: :delete,
                               data: { confirm: "Are you sure?" } %>
-              <a class="card-footer-item comment-post-button" href="">Comment</a>
             </footer>
 
           <div class='likes'>

@@ -26,8 +26,6 @@ clonePostAndAddToView = () => {
   editButton.id = "edit-post-<%=@post.id%>";
   let deleteButton = footer.querySelector(".delete-post-button");
   deleteButton.setAttribute("href", "<%= post_path(@post)%>");
-  commentButton = footer.querySelector(".comment-post-button");
-  commentButton.setAttribute("href", "#post-footer-<%=@post.id%>");
 
   let likes = postTemplate.querySelector(".likes");
   likes.innerHTML = "<%= likes_count(@post)%>";
