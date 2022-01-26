@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'Sign up page: ', type: :feature do
-  log_out_button = '//*[@id="navbarNavDropdown"]/ul/li[4]/form/input[2]'
+  log_out_button = '//*[@id="navbar"]/ul/li[3]/a/form/input[2]'
   
   before :each do
     visit '/'
