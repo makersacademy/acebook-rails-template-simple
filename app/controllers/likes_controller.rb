@@ -13,6 +13,7 @@ class LikesController < ApplicationController
 
   def destroy
     @like = current_user.likes.find(params[:id])
+    @post = Post.find(@like.post_id)
     @like.destroy
     
     do_not_run_js_in_test

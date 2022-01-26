@@ -1,5 +1,14 @@
-console.log("destroy.js")
-
 unlikePost = () => {
 
+  let post = document.getElementById("post-<%=@post.id%>");
+  let icon = post.querySelector(".fa-thumbs-up");
+  icon.classList.remove("fas");
+  icon.classList.add("far");
+
+  let likeButton = post.querySelector(".like-button");
+  likeButton.setAttribute("href", "<%=post_likes_path(@post)%>");
+  likeButton.setAttribute("data-method", "post");
+
 }
+
+unlikePost();
