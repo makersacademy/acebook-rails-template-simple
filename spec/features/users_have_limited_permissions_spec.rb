@@ -30,23 +30,23 @@ RSpec.feature "User's permissions: ", type: :feature do
     expect(page).not_to have_content "Delete"    
   end
 
-  scenario "Can delete another user's comments on own post" do
-    sign_up_and_post(username: "user1", email: "user1@mail.com", password: "test123", post_content: "Lorem Ipsum")
-    find(:xpath, log_out_button).click
+  # scenario "Can delete another user's comments on own post" do
+  #   sign_up_and_post(username: "user1", email: "user1@mail.com", password: "test123", post_content: "Lorem Ipsum")
+  #   find(:xpath, log_out_button).click
 
-    sign_up(username: "user2", email: "user2@mail.com", password: "test123")
-    find(:xpath, navbar_acebook_link).click
-    find(:xpath, comment_content).set("Dolor sit amet")
-    find(:xpath, create_comment_btn).click
-    find(:xpath, log_out_button).click
+  #   sign_up(username: "user2", email: "user2@mail.com", password: "test123")
+  #   find(:xpath, navbar_acebook_link).click
+  #   find(:xpath, comment_content).set("Dolor sit amet")
+  #   find(:xpath, create_comment_btn).click
+  #   find(:xpath, log_out_button).click
 
-    login(email: "user1@mail.com", password: "test123")
-    find(:xpath, navbar_acebook_link).click
+  #   login(email: "user1@mail.com", password: "test123")
+  #   find(:xpath, navbar_acebook_link).click
 
-    expect(page).to have_content "Dolor sit amet"
-    find(:css, delete_comment_btn).click
-    expect(page).not_to have_content "Dolor sit amet"
-  end
+  #   expect(page).to have_content "Dolor sit amet"
+  #   find(:css, delete_comment_btn).click
+  #   expect(page).not_to have_content "Dolor sit amet"
+  # end
 
   scenario "Can only see users if logged in" do 
   visit "/users"
