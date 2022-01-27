@@ -51,12 +51,11 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <%= link_to "#{@current_user.name}", user_path(@current_user), class: "has-text-white is-size-4 mr-4" %>
-          <!-- <a><p class="has-text-white is-size-4 mr-4"><%= @current_user.name %></p></a> -->
           
-          <a class="image is-42x42 mr-6">
-            <a href="/users/<%= @current_user.id %>/edit">
-              <figure class="is-rounded"><%= image_tag(@current_user.profile_picture) %> </figure>
-            </a>
+          <a href="/users/<%= @current_user.id %>" class="image mr-4">
+            <figure>
+              <%= image_tag(@current_user.profile_picture, class: "is-42x42 is-rounded") %>
+            </figure>
           </a>
 
           <%= link_to "Log out", logout_path, method: :delete, class: 'button has-text-info has-text-bold is-white' %>
