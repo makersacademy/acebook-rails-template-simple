@@ -5,9 +5,11 @@
       <%= render "form", post: @post%> <!--brings new form to index-->
       </div>
     </div>
-      <% @posts.reverse.each do |post| %>
-          <% owner = post.user %>
-          <article class = "card bg-light mb-3" style="width: 32rem;">
+
+  </div>
+     <% @posts.each do |post| %>
+        <% owner = post.user %>
+        <article class = "card bg-light mb-3" style="width: 32rem;">
 
             <div class = "card-body border-top">
               <div class="card-title">
