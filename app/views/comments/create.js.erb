@@ -1,38 +1,16 @@
-cloneCommentandAddtoView = () => {
-
-  deleteFlashMessages(); 
-
+renderComment = () => {
+  deleteFlashMessages();
   let post = document.getElementById("post-<%=@post.id%>");
-  let comment_box = post.querySelector(".comment-box");
-
-  let commentContainer = document.querySelectorAll('[id^=comment]')[0].cloneNode(true);
-  commentContainer.setAttribute("id", "comment-<%=@comment.id%>");
-  commentContainer.classList.remove("is-hidden");
-
-  let profilePic = commentContainer.querySelector("figure");
-  profilePic.innerHTML = '<%= image_tag(@commenter.profile_picture, class: "is-rounded") %>';
-
-  let name = commentContainer.querySelector(".title");
-  name.innerHTML = '<%= @commenter.name %>'
-
-  let commentContent = commentContainer.querySelector(".comment-message");
-  let message = commentContent.querySelector("p")
-  message.innerHTML = "<%= @comment.message %>"
-  let time = commentContent.querySelector("time")
-  time.innerHTML = "<%=time_ago_in_words(@comment.updated_at)%> ago"
-
-  let footer = commentContainer.querySelector("footer")
-  footer.innerHTML = "<% if current_user == @commenter %>"
-  footer.innerHTML += "<% if editable?(@comment) %>"
-  footer.innerHTML += "<a class='card-footer-item editbutton' href='/posts/<%=@post.id%>/comments/<%=@comment.id%>/edit'><i class='fas fa-edit'></i></a>"
-  footer.innerHTML += "<% end %>"
-  footer.innerHTML += "<a class='card-footer-item deleter' rel='nofollow' data-method='delete' data-remote='true' href='/posts/<%=@post.id%>/comments/<%=@comment.id%>'><i class='fas fa-trash-alt' aria-hidden='true'></i></a>"
-  footer.innerHTML += "<% end %>"
-
-  comment_box.appendChild(commentContainer);
+  let commentBox = post.querySelector(".comment-box");
+  let newComment = document.createElement("div")
+  newComment.append("<%= escape_javascript render(:partial => @comment )%>");
+  newComment.innerHTML = newComment.innerText;
+  commentBox.appendChild(newComment);
+  clearInput();
 }
 
-cloneCommentandAddtoView();
+renderComment();
+
 
 
 

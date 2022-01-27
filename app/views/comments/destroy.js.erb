@@ -1,8 +1,5 @@
 deleteComment = () => {
-  let existingFlash = document.getElementById("flashmessage")
-  if (existingFlash) {
-    existingFlash.remove();
-  }
+  deleteFlashMessages();
   let thingToDelete = document.getElementById("comment-<%=@comment.id%>");
   thingToDelete.className = "is-success notification is-light has-text-bold alert alert-success"
   thingToDelete.innerHTML = "";
