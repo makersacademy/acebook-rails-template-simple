@@ -69,6 +69,7 @@
       <ul>
         <% for friendship in @user.friendships %>
         <li>
+          <%= image_tag friendship.friend.avatar.variant(resize_to_limit: [30, 30]) %>
           <%= friendship.friend.username %>
           (<%= link_to "remove", friendship, :method => :delete %>)
         </li>

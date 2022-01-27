@@ -2,6 +2,7 @@
 
   <% if user_signed_in? %>
     <strong><a class="navbar-brand" href="/posts">Acebook</a></strong>
+        <%= image_tag current_user.avatar.variant(resize_to_limit: [50, 50]) %>
         <a class="nav-link" href=#> <%= "Signed in as #{current_user.username}" %></a>
   <% else %>
     <a class="navbar-brand" href="/">Acebook</a>
