@@ -9,5 +9,7 @@ class Friendship < ApplicationRecord
     
     [user_friendship, friend_friendship]
   end
+  
+
 
 end
