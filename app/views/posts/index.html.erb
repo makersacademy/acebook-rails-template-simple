@@ -56,17 +56,38 @@
       <% end %>
   </div>
 
-  <div id="friends-list" class="p-2">
-    <h3>Friends</h3>
+
+  <div class="container text-center">
+    <div id='friends-requests' class="p-2">
+      <h3>Requests</h3>
       <ul>
-        <% for friendship in @user.friendships %>
-        <li>
-          <%= friendship.friend.username %>
-          (<%= link_to "remove", friendship, :method => :delete %>)
-        </li>
+        <% for friendship in @friendships %>
+          <% if friendship.accepted == false %>
+            <li>
+              <%= User.find(friendship.user_id).username %>
+
+              <%= link_to "Add Friend", friendships_path(:friend_id => friendship.user_id, :accepted => true), :method => :post %>
+              
+              <%# (<%= link_to "remove", friendship, :method => :delete %>
+            </li>
+          <% end %>
         <% end %>  
-      </ul>
-  </div>
+        </ul>
+    </div>
+
+    <div id="friends-list" class="p-2">
+      <h3>Contacts</h3>
+        <ul>
+          <% for friendship in @user.friendships %>
+            <% if friendship.accepted == true %>
+              <li>
+                <%= friendship.friend.username %>
+                (<%= link_to "remove", friendship, :method => :delete %>)
+              </li>
+            <% end %>
+          <% end %>  
+        </ul>
+    </div>
+</div>
 </div>
 <%= raw pagy_bootstrap_nav(@pagy) %>
-
