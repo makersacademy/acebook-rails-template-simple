@@ -46,13 +46,7 @@
         Current profile picture
       </div>
 
-      <% if !current_user.avatar.attached? %>
-        <%= image_tag("Scooby-Doo_test_picture.png", size: "150x150") %>
-      <% else %>
-        <%= image_tag(current_user.avatar.variant(resize_to_limit: [150, 150])) %>
-      <% end %>
-
-
+      <%= image_tag(current_user.avatar.variant(resize_to_limit: [150, 150])) %>
   </div>
 
   <div class="field">

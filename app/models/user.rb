@@ -11,4 +11,20 @@ class User < ApplicationRecord
   has_many :friendships
   has_many :friends, through: :friendships
 
+  after_commit :add_default_avatar, on: %i[create update]
+
+  private
+
+  def add_default_avatar
+    unless avatar.attached?
+      avatar.attach(
+        io: File.open(
+          Rails.root.join(
+            'app', 'assets', 'images', 'default_avatar.png'
+          )
+        ), filename: 'default_avatar.png', content_type: 'image/png'
+      )
+    end
+  end
+
 end
