@@ -31,8 +31,10 @@ module FriendshipsHelper
 
   def my_friends(user_id)
     user = User.find(user_id)
-    @user.friendships.select{ |f| f.request == true }
-    
+    user.friendships.select{ |f| f.request == true }
+  end
 
+  def my_friends_post(user_id)
+    my_friends(user_id).map{ |friend| User.find(friend.friend_id) }.map{ |friend| friend.posts }.flatten.sort_by {|post| post.created_at}.reverse
   end
 end
