@@ -27,14 +27,14 @@ RSpec.feature "Navbar features: ", type: :feature do
       expect(page).to_not have_content("Log out")
     end
 
-    scenario "Acebook home button takes you to main sign up/login page" do
-      visit "/"
-      click_link "Sign Up"
-      click_link "Acebook"
-      click_link "Log In"
-      click_link "Acebook"
-      expect(page).to have_current_path("/")
-    end
+    # scenario "Acebook home button takes you to main sign up/login page" do
+    #   visit "/"
+    #   click_link "Sign Up"
+    #   click_link "Acebook"
+    #   click_link "Log In"
+    #   click_link "Acebook"
+    #   expect(page).to have_current_path("/")
+    # end
     
     scenario "Can't see settings" do
       visit "/"
