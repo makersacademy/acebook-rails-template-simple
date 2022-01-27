@@ -13,10 +13,18 @@
 
             <div class = "card-body border-top">
               <div class="card-title">
-                <h5><%= "#{post.user.username}"%></h5>
+                <h5>
+                  <% if post.user.avatar.attached? %>
+                  <%= image_tag(post.user.avatar.variant(resize_to_limit: [50, 50]), class: 'rounded-circle') %>
+                  <% else %>
+                  <%= image_tag("Scooby-Doo_test_picture.png", size: "50x50", class: 'rounded-circle') %>
+                  <% end %>
+                <%= "#{post.user.username}"%></h5>
                 <p><small> <%= "#{distance_of_time_in_words(Time.now, post.created_at, include_seconds: true)} ago"%> </small></p>
               </div>
-              
+            
+                  
+                           
               <div class = "card-text">
                 <h1><strong><%= post.message %></strong></h1>
               </div>
@@ -24,7 +32,7 @@
               <div class="card-body">
                 <div>
                   <% if post.image.attached? %>
-                    <%= image_tag(post.image) %>
+                    <%= image_tag(post.image, class: "img-fluid") %>
                   <% end %>
                 </div>
               </div>          
@@ -49,7 +57,7 @@
               <strong>Comments:</strong>
               <%= render post.comments, owner: owner%>           
               <%= bootstrap_form_with model: [ post, post.comments.build ], local: true do |form| %>
-                      <%= form.text_field :content, placeholder: "Write a comment...", skip_label: true, id:"content", :rows=>1, :cols=>20 %>
+                      <%=form.text_field :content, placeholder: "Write a comment...", skip_label: true, id:"content", :rows=>1, :cols=>20 %>
                       <%=form.submit "Comment", id:"create_comment"%>
               <% end %>
             </div>
@@ -67,6 +75,12 @@
           <% if friendship.accepted == false %>
             <% if current_user.id == friendship.friend_id %>
             <li>
+             <% friend = User.find(friendship.user_id) %>
+                  <% if !friend.avatar.attached? %>
+                    <%= image_tag("Scooby-Doo_test_picture.png", size: "30x30") %>
+                  <% else %>
+                    <%= image_tag(friend.avatar.variant(resize_to_limit: [30, 30])) %>
+                  <% end %>              
               <%= User.find(friendship.user_id).username %>
                 <%= link_to "Accept", friendship, :method => :patch %>
                 (<%= link_to "Reject", friendship, :method => :delete %>)
@@ -84,10 +98,25 @@
             <% if friendship.accepted == true %>
               <li>
                 <% if current_user.id == friendship.user_id %>
+                <% friend = User.find(friendship.friend_id) %>
+                  <% if !friend.avatar.attached? %>
+                    <%= image_tag("Scooby-Doo_test_picture.png", size: "30x30") %>
+                  <% else %>
+                    <%= image_tag(friend.avatar.variant(resize_to_limit: [30, 30])) %>
+                  <% end %>
+
                   <%= User.find(friendship.friend_id).username %>
                   (<%= link_to "Remove", friendship, :method => :delete %>)
 
-                <% elsif current_user.id == friendship.friend_id %>
+                <%# If current user is the one being added %>
+                <% elsif current_user.id == friendship.friend_id %> 
+                  <% friend = User.find(friendship.user_id) %>
+                 <% if !friend.avatar.attached? %>
+                    <%= image_tag("Scooby-Doo_test_picture.png", size: "30x30") %>
+                  <% else %>
+                    <%= image_tag(friend.avatar.variant(resize_to_limit: [30, 30])) %>
+                  <% end %>
+
                   <%= User.find(friendship.user_id).username %>
                   (<%= link_to "Remove", friendship, :method => :delete %>)
                 <% end %>
