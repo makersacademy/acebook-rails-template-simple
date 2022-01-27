@@ -28,4 +28,11 @@ module FriendshipsHelper
   def can_add_as_friend(user_id, friend_id)
     !(already_friends?(user_id, friend_id) || is_self?(friend_id) || pending_request(user_id, friend_id))
   end
+
+  def my_friends(user_id)
+    user = User.find(user_id)
+    @user.friendships.select{ |f| f.request == true }
+    
+
+  end
 end

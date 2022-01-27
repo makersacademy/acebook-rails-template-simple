@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show 
-    @users = User.all
+    @user = User.find(params[:id])
   end
 
   def new
@@ -14,7 +14,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    # @user.profile_picture ||= "/assets/images/default_profile_pic.jpg"
     @user.profile_picture.attach(io: File.open("#{Rails.root}/app/assets/images/default_image.jpg"), filename: "default_image.jpg")
     if @user.save
       log_in @user
