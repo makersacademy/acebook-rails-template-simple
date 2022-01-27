@@ -50,8 +50,8 @@
     
       <div class="navbar-end">
         <div class="navbar-item">
-          
-          <a><p class="has-text-white is-size-4 mr-4"><%= @current_user.name %></p></a>
+          <%= link_to "#{@current_user.name}", user_path(@current_user), class: "has-text-white is-size-4 mr-4" %>
+          <!-- <a><p class="has-text-white is-size-4 mr-4"><%= @current_user.name %></p></a> -->
           
           <a class="image is-42x42 mr-6">
             <a href="/users/<%= @current_user.id %>/edit">
