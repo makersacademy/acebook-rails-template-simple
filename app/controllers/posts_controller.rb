@@ -16,8 +16,10 @@ class PostsController < ApplicationController
   end
 
   def index
-    @pagy, @posts = pagy(Post.order(created_at: :desc), items:10)
-    @post = Post.new 
+    @friendships = Friendship.all
+    @user = current_user
+    @pagy, @posts = pagy(Post.all, items: 10)
+    @post = Post.new # this was the code in the new route
   end
 
   def edit
