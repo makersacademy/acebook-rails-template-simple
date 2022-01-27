@@ -1,7 +1,19 @@
-<% if @user == current_user %>
-  <%= render partial: 'posts/new' %>
-<% end %>
+  <div class="container has-text-centered" >
+      <figure class="image is-128x128 is-inline-block">
+        <%= image_tag(@user.profile_picture, class: "is-rounded") %>
+      </figure>
+      <div class="media-content">
+        <p class="title is-4"><%= @user.name %></p>
+      </div>
+  </div>
 
-<div id="posts-top"></div>
+<div class="container" id="posts" >
+  <% if @user == current_user %>
+    <%= render partial: 'posts/new' %>
+  <% end %>
 
-<%= render @user.posts.newset_first %>
+  <div id="posts-top" class="pb-1" ></div>
+
+  <%= render @user.posts.newest_first %>
+    <div id="post-end"></div>
+</div>
