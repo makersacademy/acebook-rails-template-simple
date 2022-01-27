@@ -10,7 +10,8 @@
 <% @users.each do |user| %>
     <% if !current_user.friends.include?(user) && user != current_user  %>
         <ul class="list-group">
-          <li class="list-group-item"><%= user.username %></li>
+          <li class="list-group-item"> <%= image_tag user.avatar.variant(resize_to_limit: [30, 30]) %>
+          <%= user.username %></li>
           <li class="list-group-item">
             <%= link_to "Add Friend", friendships_path(:friend_id => user.id), :method => :post %>
           </li>

@@ -13,9 +13,9 @@
               <div class="card-title">
                 <h5>
                   <% if post.user.avatar.attached? %>
-                  <%= image_tag post.user.avatar.variant(resize_to_limit: [50, 50]) %>
+                  <%= image_tag(post.user.avatar.variant(resize_to_limit: [50, 50]), class: 'rounded-circle') %>
                   <% else %>
-                  <%= image_tag("Scooby-Doo_test_picture.png", size: "50x50") %>
+                  <%= image_tag("Scooby-Doo_test_picture.png", size: "50x50", class: 'rounded-circle') %>
                   <% end %>
                 <%= "#{post.user.username}"%></h5>
                 <p><small> <%= "#{distance_of_time_in_words(Time.now, post.created_at, include_seconds: true)} ago"%> </small></p>
