@@ -13,9 +13,21 @@
  *= require_tree .
  *= require_self
  */
-/* 
- #friends-list{
-   margin-left: 25%;
 
- } */
-   
+#posts-column {
+  margin-left: 25%;
+
+}
+
+a.nav-link {
+  margin-left: -1em;
+}
+
+#friends-column {
+  padding-top: 1em;
+}
+
+ul {
+  margin-left: -2em;
+  list-style-type: none;
+}
