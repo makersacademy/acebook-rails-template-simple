@@ -6,11 +6,14 @@ RSpec.feature "Likes", type: :feature do
     scenario "a post has many likes" do
       user_sign_up
       create_post
-      click_button "Like"
+      link = page.find(".like-button")
+      link.click
+      #click_button "Like"
       log_out
 
       second_user_sign_up
-      click_button "Like"
+      find(:css, 'card-footer-item like-button').click
+      #click_button "Like"
       log_out
 
       visit("/")
