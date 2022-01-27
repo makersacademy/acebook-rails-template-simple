@@ -53,11 +53,11 @@
     </div>
 
     <!-- Comments display ----------------------------------------------- -->
-    <div class="comment-box p-2">
+    <% style_toggle = post.comments.length > 0 ? '' : 'none' %>
+    <div style=<%="display:#{style_toggle}"%> class="comment-box p-2">
+      <%= render post.comments %>
 
-    <%= render post.comments %>
-
-    </div>      
+    </div> 
 
     <!-- Post a Comment ----------------------------------------------- -->
     <footer id="post-footer-<%=post.id%>" class="is-fixed-bottom mt-5">

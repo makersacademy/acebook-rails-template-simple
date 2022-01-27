@@ -2,6 +2,9 @@ renderComment = () => {
   deleteFlashMessages();
   let post = document.getElementById("post-<%=@post.id%>");
   let commentBox = post.querySelector(".comment-box");
+  if (commentBox.style.display === 'none') {
+    commentBox.style.display = '';
+  }
   let newComment = document.createElement("div")
   newComment.append("<%= escape_javascript render(:partial => @comment )%>");
   newComment.innerHTML = newComment.innerText;
