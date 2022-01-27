@@ -41,17 +41,24 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
       <div>
         <br> 
         Current profile picture
       </div>
-      <%= image_tag current_user.avatar.variant(resize_to_limit: [150, 150]) %>
+
+      <% if !current_user.avatar.attached? %>
+        <%= image_tag("Scooby-Doo_test_picture.png", size: "150x150") %>
+      <% else %>
+        <%= image_tag(current_user.avatar.variant(resize_to_limit: [150, 150])) %>
+      <% end %>
+
+
   </div>
 
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
+    <%= f.submit "Update" %>
   </div>
 
 <% end %>
