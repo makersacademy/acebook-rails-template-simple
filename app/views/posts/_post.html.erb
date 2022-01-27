@@ -3,7 +3,7 @@
 
 <style>
 .circular--landscape { display: inline-block; position: relative; width: 64px; height: 64px; overflow: hidden; border-radius: 50%; } 
-.circular--image { width: auto; height: 100%; }
+.circular--landscape img {width: auto; height: 100%;}
 </style>
 
 
@@ -11,12 +11,11 @@
     <!-- Displaying who made the post ------------------------------------------------ -->
     <div class="media">
       <div class="media-left">
-
-        <figure class="circular--landscape">
-           <a href="/users/<%= @user.id %>">
-          <%= image_tag(@user.profile_picture.representation(resize_to_limit: [64, 64]), class: "circular--image") %>
-           </a>
-        </figure>
+        <a href="/users/<%= @user.id %>">
+          <figure class="circular--landscape">
+            <%= image_tag(@user.profile_picture) %>
+          </figure>
+        </a>
       </div>
       <div class="media-content my-2 py-2">
          <a href="/users/<%= @user.id %>">
