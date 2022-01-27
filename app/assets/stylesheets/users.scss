@@ -7,6 +7,22 @@ h1 {
   color: #353536;
 
   }
+
+  h2 {
+
+    text-align: center;
+    color: #353536;
+  
+    }
+
+#search_field {
+  
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+
+  }
+
 #search {
   text-align: center;
   }
@@ -20,14 +36,34 @@ h1 {
 #friends {
 
   text-align: center;
+  color: #353536;
+  width: 50%;
+  margin: auto;
+  padding: 10px;
   
   }
 
-  #search-field {
-    width: 200px;
-    margin: auto;
-    
- }
+#friend_result {
+
+  text-align: center;
+  color: #353536;
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+  
+  }
+
+  a:link {
+    color: #353536;
+  }
+
+  a:visited {
+    color: #353536;
+  }
+
+  a:hover {
+    color: #C8C8C9;
+  } 
 
   .button-40 {
     background-color: RGBA(0,0,0,0.75);
