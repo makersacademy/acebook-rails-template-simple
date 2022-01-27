@@ -87,18 +87,18 @@
           <% for friendship in @friendships %>
             <% if friendship.accepted == true %>
               <li>
+                  <%# If current user is the adder i.e. user_id is adder; friend_id is one being added %>
                   <% if current_user.id == friendship.user_id %>
                     <%= image_tag(User.find(friendship.friend_id).avatar.variant(resize_to_limit: [30, 30])) %>
                     <%= User.find(friendship.friend_id).username %>
                     (<%= link_to "Remove", friendship, :method => :delete %>)
-                    <%# If current user is the one being added %>
-                  <% elsif current_user.id == friendship.friend_id %> 
-                    <% friend = User.find(friendship.user_id) %>
-                    <%= image_tag(User.find(friendship.user_id).avatar.variant(resize_to_limit: [30, 30])) %>
-                  <% end %>
 
-                  <%= User.find(friendship.user_id).username %>
-                  (<%= link_to "Remove", friendship, :method => :delete %>)
+                  <%# If current user is the one being added %>
+                  <% elsif current_user.id == friendship.friend_id %> 
+                    <%= image_tag(User.find(friendship.user_id).avatar.variant(resize_to_limit: [30, 30])) %>
+                    <%= User.find(friendship.user_id).username %>
+                    (<%= link_to "Remove", friendship, :method => :delete %>)
+                  <% end %>
               <% end %>
               </li>
             <% end %>
