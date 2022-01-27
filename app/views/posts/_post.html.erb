@@ -11,13 +11,19 @@
     <!-- Displaying who made the post ------------------------------------------------ -->
     <div class="media">
       <div class="media-left">
+
         <figure class="circular--landscape">
+           <a href="/users/<%= @user.id %>">
           <%= image_tag(@user.profile_picture.representation(resize_to_limit: [64, 64]), class: "circular--image") %>
+           </a>
         </figure>
       </div>
       <div class="media-content my-2 py-2">
+         <a href="/users/<%= @user.id %>">
         <p class="title is-4"><%= @user.name %></p>
+         </a>
       </div>
+      
      <% if can_add_as_friend(current_user.id, post.user_id) %>
         <%= form_for(current_user.friendships.build) do |f| %>
         <div><%= hidden_field_tag :friend_id, post.user_id %></div>
