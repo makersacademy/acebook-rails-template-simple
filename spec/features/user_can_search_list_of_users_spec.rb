@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'list of users page', type: :feature do
-  list_of_users = '//*[@id="navbarNavDropdown"]/ul/li[2]/a'
+  list_of_users = '//*[@id="navbar"]/ul/li[1]/a'
   list_of_users_input_field = '/html/body/form/input'
   list_of_users_search_btn ='/html/body/form/button'
   log_out_button = '/html/body/button/a' 
