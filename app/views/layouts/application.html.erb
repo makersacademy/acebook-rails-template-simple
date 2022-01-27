@@ -28,6 +28,7 @@
      #sign-up {width: 30rem !important; max-height: 100% !important;}
      .hero-foot {padding: 2rem 12rem 5rem 12rem !important;}
      .box {box-shadow: 3px 5px 7px 3px #ccc;}
+
     </style>
 
    
@@ -51,15 +52,15 @@
       <div class="navbar-end">
         <div class="navbar-item">
           
-          <a><p class="has-text-white is-size-4 mr-4"><%= @current_user.name %></p></a>
+          <a><p class="has-text-white is-size-4 mr-4"><%= current_user.name %></p></a>
           
-          <a class="image is-42x42 mr-6">
-            <a href="/users/<%= @current_user.id %>/edit">
-              <figure class="is-rounded"><%= image_tag(@current_user.profile_picture) %> </figure>
+        
+            <a href="/users/<%= current_user.id %>/edit">
+              <figure><%= image_tag(current_user.profile_picture.representation(resize_to_limit: [64, 64])) %> </figure>
             </a>
-          </a>
+       
 
-          <%= link_to "Log out", logout_path, method: :delete, class: 'button has-text-info has-text-bold is-white' %>
+          <%= link_to "Log out", logout_path, method: :delete, class: 'button has-text-info has-text-bold is-white px-2 mx-2' %>
        
         </div>
       </div>
