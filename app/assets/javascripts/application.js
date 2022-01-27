@@ -16,20 +16,25 @@
 
   // Show form warning if empty post is submitted
 
+  console.log("hello")
+
   let deleteFlashMessages = () => {
-    let existingFlash = document.getElementById("flashmessage")
+    let existingFlash = document.getElementById("flashmessage");
     if (existingFlash) {
       existingFlash.remove();
     }
   }
 
-  let addCommentToView;
+  let clearInput = () => {
+    let textInput = document.querySelectorAll('input[type=text]');
+    for (const text of textInput) {
+      text.value = "";
+    }
+  }
 
   let deleteComment;
 
-  let cloneCommentandAddtoView;
-
-  let clonePostAndAddToView;
+  let renderPost;
 
   let likePost;
 
@@ -39,7 +44,7 @@
 
   let updatePost;
 
-  console.log("application.js")
+  let renderComment;
 
 
 
