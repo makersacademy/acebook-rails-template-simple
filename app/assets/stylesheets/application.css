@@ -14,19 +14,16 @@
  *= require_self
  */
 
-/* Global buttons  */
+/* Global styling  */
 .btn-secondary {
    background:black;
 }
 
- /* Sign up and log in form styling */
-
- body {
+body {
   background: whitesmoke;
  }
- #friends-list{
-   margin-left: 25%;
- }
+
+ /* Sign up and log in form styling */
 
  .entry_form{
    padding:2em;
@@ -43,4 +40,8 @@
     font-size:12px;
   }
  
-   
+/* home page styling */
+
+#friends-list{
+  margin-left: 25%;
+}
