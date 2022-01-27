@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   
   root to: 'posts#index' 
 
-  resources :photos
+  
 
   delete 'logout', to: 'homepage#destroy'
 end

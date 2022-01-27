@@ -59,11 +59,11 @@ ActiveRecord::Schema.define(version: 2022_01_20_175018) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "photos", force: :cascade do |t|
-    t.text "caption"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+  # create_table "photos", force: :cascade do |t|
+  #   t.text "caption"
+  #   t.datetime "created_at", precision: 6, null: false
+  #   t.datetime "updated_at", precision: 6, null: false
+  # end
 
   create_table "posts", force: :cascade do |t|
     t.text "content", null: false
