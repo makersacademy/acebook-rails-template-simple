@@ -2,10 +2,12 @@
 
 <form action="/search">
   <input type="search" name="q" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-  <button type="submit" class="btn btn-outline-primary">search</button>
+  <div id="search">
+    <button type="submit" class="btn btn-outline-primary">search</button>
+  </div>
 </form>
 
-<div>
+<div id="friends">
 
 <% @users.each do |user| %>
     <% if !current_user.friends.include?(user) && user != current_user  %>
@@ -19,4 +21,6 @@
 <% end %>
 </div>
 
+<div id="page_num">
 <%= raw pagy_bootstrap_nav(@pagy) %>
+</div>
