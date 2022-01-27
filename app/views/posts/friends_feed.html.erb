@@ -1,0 +1,84 @@
+<div class='container' id="posts">
+
+
+<!-- Writing new Posts ------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <%= render 'new' %>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+
+<div id="posts-top" class="pb-1"></div>
+
+    <!-- See _post.html partial for viewing posts -->
+    <%= render @posts %>
+    <div id="post-end"></div>
+
+
+<script>
+  // Show form warning if empty post is submitted
+  const form = document.getElementById('post-form')
+  form.addEventListener('submit', e => {
+    if(!e.target[2].value) {
+       e.preventDefault();
+      document.getElementById('form-warning').innerText = 'Post cannot be empty'
+    }
+  })
+  
+  // Show form warning if empty comment is submitted
+  const replyForms = document.querySelectorAll('.reply-form')
+  for (const form of replyForms) {
+    form.addEventListener('submit', e => {
+       if (!e.target[2].value) {
+         e.preventDefault();
+         e.target.querySelector('p').innerText = "Reply cannot be empty."
+       }
+    })
+  }
+  
+  // Remove form warning(s) with click on body
+  document.body.onclick = () => {
+   
+    const replyWarnings = document.querySelectorAll('.reply-warning')
+     for (const reply of replyWarnings) {
+       reply.innerText = ''
+     }
+
+     document.getElementById('form-warning').innerText = ''
+  }
+
+  // convert # and @ into link-like text in posts
+  const postMessages = document.querySelectorAll('.post-message')
+  for (const post of postMessages) {
+    post.innerHTML = post.innerHTML.replace(/[#@]([^ ]+)/g, hashtag => `<span class='has-text-link'>${hashtag}</span>`)
+  }
+
+   // convert # and @ into link-like text in comments
+  const commentMessages = document.querySelectorAll('.comment-message')
+  for (const comment of commentMessages) {
+    comment.innerHTML = comment.innerHTML.replace(/[#@]([^ ]+)/g, hashtag => `<span class='has-text-link'>${hashtag}</span>`)
+  }
+
+  // Open Edit Post Modal
+  const editPostButtons = document.querySelectorAll('.edit-post-button')
+  for (const ePButton of editPostButtons) {
+    ePButton.addEventListener('click', (e) => {
+      document.getElementById(`${e.target.id}-modal`).classList.add('is-active')
+    
+    })
+  }
+
+  // Close Edit Post Modal
+  const modalElements = document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button')
+  
+  for (const modalElement of modalElements) {
+    modalElement.addEventListener('click', () => {
+      console.log('modal clicked up')
+      
+      const modals = document.querySelectorAll('.modal')
+      for (const modal of modals) {
+        modal.classList.remove("is-active")
+      }
+    })
+  }
+
+</script>
+
+

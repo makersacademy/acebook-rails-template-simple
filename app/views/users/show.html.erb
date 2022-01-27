@@ -12,6 +12,17 @@
     <p class="title is-4"><%= @user.name %></p>
   </div>
 </div>
+
+<% if @user == current_user %>
+  <h2>My Friend Requests </h2>
+<% end %>
+
+<h2> <%= @user.name%>'s Friends</h2>
+
+<% my_friends(@user.id).each do |friend| %>
+  <%@friend = User.find(friend.friend_id)%>
+  <p> <%= link_to @friend.name, user_path(@friend) %> </p>
+<% end %>
   
 
 <div class="container" id="posts" >
