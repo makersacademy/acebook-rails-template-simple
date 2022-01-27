@@ -16,6 +16,8 @@ class PostsController < ApplicationController
   end
 
   def index
+    @friendships = Friendship.all
+    @user = current_user
     @pagy, @posts = pagy(Post.order(created_at: :desc), items:10)
     @post = Post.new 
   end
