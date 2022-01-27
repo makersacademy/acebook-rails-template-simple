@@ -32,9 +32,8 @@
 
    
   </head>
-
+  <% unless current_page?(new_user_path) %>
   <nav class="navbar has-background-info mb-5" role="navigation" aria-label="main navigation">
-
     <div class="navbar-brand p-3">
       
       <a href="#"><i class="fab fa-artstation fa-3x has-text-white ml-6"></i></a> 
@@ -47,10 +46,9 @@
     </div>
 
     <div id="navbarBasicExample" class="navbar-menu">
-    
+      <% @current_user = current_user %>
       <div class="navbar-end">
         <div class="navbar-item">
-          
           <a><p class="has-text-white is-size-4 mr-4"><%= @current_user.name %></p></a>
           
           <a class="image is-42x42 mr-6">
@@ -65,7 +63,7 @@
       </div>
     </div>
 </nav>
-
+<% end %>
   <body class="has-background-light">
 
     <div>
