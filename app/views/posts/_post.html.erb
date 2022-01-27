@@ -1,0 +1,127 @@
+<% @user = User.find(post.user_id) %>
+<div id="post-<%=post.id%>" class="card mb-5">
+
+
+  <div class="card-content">
+    <!-- Displaying who made the post ------------------------------------------------ -->
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-64x64">
+          <%= image_tag(@user.profile_picture, class: "is-rounded") %>
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4"><%= @user.name %></p>
+      </div>
+    </div>
+
+    <!-- Body of post (and link to the single post page) ----------------------------------------------- -->
+    <div class="content post-message">
+      <p><%= link_to post.message, post_path(post), class: "has-text-dark" %></p>
+      <time class="has-text-grey"><%=time_ago_in_words(post.updated_at)%> ago</time>
+    </div>
+
+
+    <!-- Like button (and also edit and delete) ----------------------------------------------- -->
+    <footer class="card-footer">
+      <%# Like/unlike button%>
+    <%like = current_user.likes.find_by(post: post)%>
+    <% if like.nil? %>
+      <%= link_to '<i class="far fa-thumbs-up fa-lg"></i>'.html_safe, post_likes_path(post), remote: true, method: :post, class: "card-footer-item like-button" %> <%#Like%>
+    <% else %>
+      <%= link_to '<i class="fas fa-thumbs-up fa-lg"></i>'.html_safe, post_like_path(post, like), remote: true, method: :delete, class: "card-footer-item like-button" %> <%#Unlike%>
+    <% end %>
+    
+    <% if current_user == @user %>
+      <a href="#" class="card-footer-item edit-post-button" id="edit-post-<%=post.id%>">Edit</a>
+      <%= link_to "Delete", post_path(post), remote: true, class: "card-footer-item",
+                      method: :delete
+                      %>
+    <% end %>
+    </footer>
+
+    <!-- Like count ----------------------------------------------- -->
+    <div class="likes">
+    <%# like count and display last likers %>
+      <%= likes_count(post)%>
+      <%# display likers%>
+      <%= liked_by_users(post) %>
+    </div>
+
+    <!-- Comments display ----------------------------------------------- -->
+    <div class="comment-box p-2">
+
+    <%= render post.comments %>
+
+    </div>      
+
+    <!-- Post a Comment ----------------------------------------------- -->
+    <footer id="post-footer-<%=post.id%>" class="is-fixed-bottom mt-5">
+      <%= form_with model: [ post, post.comments.build ], remote: true, class: "reply-form" do |form| %>
+        <div class="field has-addons mb-4">
+          <div class="control is-expanded"> 
+            <%= form.text_field :message, placeholder: "Comment", class: "input is-info is-rounded has-icons-right control" %>
+            <p class="help is-danger reply-warning"></p>
+          </div>
+          <div class="control">
+            <button class="button is-info is-rounded has-text-weight-bold">
+              Reply
+            </button>
+          </div>
+        </div> 
+        
+      <% end %>
+    </footer>
+
+  </div>
+
+</div>
+
+<%#Comment Template for JS do not delete %>
+  <div class="card box has-background-white-ter pb-1 is-hidden" id="comment-template">
+    <div class="card-content pb-1">
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-32x32">
+          </figure>
+        </div>
+
+        <div class="media-content">
+          <p class="title is-6"></p>
+        </div>
+      </div>
+
+      <div class="content comment-message">
+        <p class="has-text-dark"></p>
+        <time class="has-text-grey"></time>
+      </div>
+
+      <footer class="card-footer">
+      </footer>
+    </div>
+  </div>
+
+
+
+<!-- Post and edit a Comment ----------------------------------------------- -->
+<%# Edit Post Modal %>
+<div class="modal" id="edit-post-<%=post.id%>-modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <!-- Any other Bulma elements you want -->
+      <%= form_for post, :remote => true do |form| %>
+        <div class="field">
+          <div class="control">
+            <%= form.text_field :message, class: 'input is-success is-rounded', value: post.message %>
+          </div>
+        </div>
+
+        <div class="field has-text-centered">
+          <div class="control">
+            <%= form.submit "Edit Post", class: "button is-success is-rounded" %>
+          </div>
+        </div>                
+      <% end %>
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>

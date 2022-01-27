@@ -1,0 +1,10 @@
+renderNewPost = () => {
+  let postsTop = document.getElementById("posts-top");
+  let newPost = document.createElement("div")
+  newPost.append("<%= escape_javascript render(:partial => @post )%>");
+  newPost.innerHTML = newPost.innerText;
+  postsTop.prepend(newPost);
+  clearInput();
+}
+
+renderNewPost();
