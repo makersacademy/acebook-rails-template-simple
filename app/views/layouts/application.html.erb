@@ -32,9 +32,9 @@
 
    
   </head>
-
+  <% unless current_page?(new_user_path) %>
   <nav class="navbar has-background-info mb-5" role="navigation" aria-label="main navigation">
-    <% @current_user = current_user %>
+
     <div class="navbar-brand p-3">
       
       <a href="/"><i class="fab fa-artstation fa-3x has-text-white ml-6"></i></a> 
@@ -47,15 +47,17 @@
     </div>
 
     <div id="navbarBasicExample" class="navbar-menu">
-    
+      <% @current_user = current_user %>
       <div class="navbar-end">
         <div class="navbar-item">
+
           <%= link_to "#{@current_user.name}", user_path(@current_user), class: "has-text-white is-size-4 mr-4" %>
           
           <a href="/users/<%= @current_user.id %>" class="image mr-4">
             <figure>
               <%= image_tag(@current_user.profile_picture, class: "is-42x42 is-rounded") %>
             </figure>
+            
           </a>
 
           <%= link_to "Log out", logout_path, method: :delete, class: 'button has-text-info has-text-bold is-white' %>
@@ -63,7 +65,9 @@
         </div>
       </div>
     </div>
-  </nav>
+
+</nav>
+<% end %>
 
   <body class="has-background-light">
 
