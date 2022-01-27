@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root "home#index"
 
-
+  get 'friends_posts' =>  'posts#friends_feed'
   
 #   root "users#index"
 

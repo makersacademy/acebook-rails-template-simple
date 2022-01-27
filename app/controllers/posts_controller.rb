@@ -16,6 +16,11 @@ class PostsController < ApplicationController
     
   end
 
+  def friends_feed
+    @posts = my_friends_post(current_user.id)
+    @post = Post.new
+  end
+
   def index
     @posts = Post.newest_first
     @post = Post.new
