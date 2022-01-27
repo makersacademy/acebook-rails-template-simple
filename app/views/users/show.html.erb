@@ -1,5 +1,26 @@
-<% @users.each do |user| %>
- <%= user.name %>
-<% end %>
+<div class="container has-text-centered" >
+  <div>
+    <figure class="image is-128x128 is-inline-block">
+      <%= image_tag(@user.profile_picture, class: "is-rounded") %>
+    </figure>
+    <% if @user == current_user %>
+      <!-- <i class="fas fa-plus"></i> -->
+      <%= link_to '', edit_user_path, class: "fas fa-plus" %>
+    <% end %>
+  </div>
+  <div class="media-content">
+    <p class="title is-4"><%= @user.name %></p>
+  </div>
+</div>
+  
 
-# This page is just for debugging, needs editing
+<div class="container" id="posts" >
+  <% if @user == current_user %>
+    <%= render partial: 'posts/new' %>
+  <% end %>
+
+  <div id="posts-top" class="pb-1" ></div>
+
+  <%= render @user.posts.newest_first %>
+    <div id="post-end"></div>
+</div>
