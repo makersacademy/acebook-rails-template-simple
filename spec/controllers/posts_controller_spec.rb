@@ -9,14 +9,15 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "POST /" do
-    it "responds with 200" do
-      post :create, params: { post: { message: "Hello, world!" } }
-      expect(response).to redirect_to(posts_url)
+    it "redirects to posts" do
+      post :create, params: { post: { content: "Hello, world!", users_id: 1 } }
+      expect(response).to redirect_to('/')
     end
 
     it "creates a post" do
-      post :create, params: { post: { message: "Hello, world!" } }
-      expect(Post.find_by(message: "Hello, world!")).to be
+      user = User.create(name: 'chris', email: 'chris@gmail.com', password: '123456')
+      Post.create(content: "Hello, world!", users_id: 1)
+      expect(Post.find_by(content: "Hello, world!")).to_not be nil
     end
   end
 

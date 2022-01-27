@@ -1,0 +1,47 @@
+<center>
+<h1> profile page </h1>
+
+<image src="<%=(url_for(User.find_by(id: session[:current_user_id]).profile_pic))%>"
+style="width:250px;height:250px;"> 
+
+<h4> Hi <%= User.find_by(id: session[:current_user_id]).name %></h4>
+
+<% Post.where("users_id LIKE ?", session[:current_user_id]).reverse.each do |post| %>
+  <image src="<%=(url_for(User.find_by(id: post.users_id).profile_pic))%>"
+  style="width:40px;height:40px;"> 
+  <%= User.find_by(id: post.users_id).name %><br><br>
+     <%= post.created_at.to_s(:time) %><br><br>
+  <%= post.content %> <br><br>
+  <% if post.post_photo.attached? %>
+  <image src="<%=(url_for(post.post_photo))%>"
+  style="width:200px;height:200px;"><br><br>
+  <% end %>
+
+<%# Like/Comment buttons %>
+  <%= link_to "Add a comment", comments_path(post_id: post.id) %><br><br>
+  <% pre_like = post.likes.find { |like| like.user_id == session[:current_user_id]} %>
+
+  <% if pre_like %>
+    <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
+  <% else %>
+    <%= button_to 'Like', post_likes_path(post), method: :post %>
+  <% end %>
+
+<%# Like/Comment counters %>
+  <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p> 
+ 
+
+  <%# Comments section%>
+  <h4>Comments Section (<%= post.comments.count %>)</h4>
+  <% post.comments.reverse.each do |comment| %><br> 
+    <image src="<%=(url_for(User.find_by(id: comment.user_id).profile_pic))%>"
+  style="width:40px;height:40px;"> 
+     <%= User.find_by(id: comment.user_id).name %>:
+     <%= comment.content %>
+     <%= comment.created_at.to_s(:time) %>
+  <% end %>
+           <hr>
+<% end %>
+
+
+</center>
