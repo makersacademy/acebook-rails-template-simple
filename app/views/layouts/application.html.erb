@@ -54,11 +54,9 @@
 
           <%= link_to "#{@current_user.name}", user_path(@current_user), class: "has-text-white is-size-4 mr-4" %>
           
-          <a><p class="has-text-white is-size-4 mr-4"><%= current_user.name %></p></a>
-          
         
-            <a href="/users/<%= current_user.id %>" class="image mr-4">
-              <figure><%= image_tag(current_user.profile_picture.representation(resize_to_limit: [64, 64])) %> </figure>
+            <a href="/users/<%= @current_user.id %>" class="image mr-4">
+              <figure><%= image_tag(@current_user.profile_picture.representation(resize_to_limit: [64, 64])) %> </figure>
             </a>
        
 
