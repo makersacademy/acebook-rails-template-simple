@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+/* Global styling  */
+.btn-secondary {
+   background:black;
+}
+
+body {
+  background: whitesmoke;
+ }
+
+a.nav-link {
+   color:#ffffff8c;
+ }
+
+ a.nav-link:hover {
+   color:white;
+ }
+
+ /* Sign up and log in form styling */
+
+ .entry_form{
+   padding:2em;
+   max-width:400px;
+   background:white;
+   border-radius: 8px;
+  }
+
+  .form-check {
+    padding-bottom:1em;
+  }
+
+  .entry_form a {
+    font-size:12px;
+  }
+ 
+/* home page styling */
+
+#friends-list{
+  margin-left: 25%;
+}
