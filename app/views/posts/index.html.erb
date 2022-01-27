@@ -63,13 +63,13 @@
       <ul>
         <% for friendship in @friendships %>
           <% if friendship.accepted == false %>
+            <% if current_user.id == friendship.friend_id %>
             <li>
               <%= User.find(friendship.user_id).username %>
-
-              <%= link_to "Add Friend", friendships_path(:friend_id => friendship.user_id, :accepted => true), :method => :post %>
-              
-              <%# (<%= link_to "remove", friendship, :method => :delete %>
+                <%= link_to "Accept", friendship, :method => :patch %>
+                (<%= link_to "Reject", friendship, :method => :delete %>)
             </li>
+            <% end %>
           <% end %>
         <% end %>  
         </ul>
@@ -78,11 +78,18 @@
     <div id="friends-list" class="p-2">
       <h3>Contacts</h3>
         <ul>
-          <% for friendship in @user.friendships %>
+          <% for friendship in @friendships %>
             <% if friendship.accepted == true %>
               <li>
-                <%= friendship.friend.username %>
-                (<%= link_to "remove", friendship, :method => :delete %>)
+                <% if current_user.id == friendship.user_id %>
+                  <%= User.find(friendship.friend_id).username %>
+                  (<%= link_to "Remove", friendship, :method => :delete %>)
+
+                <% elsif current_user.id == friendship.friend_id %>
+                  <%= User.find(friendship.user_id).username %>
+                  (<%= link_to "Remove", friendship, :method => :delete %>)
+                <% end %>
+
               </li>
             <% end %>
           <% end %>  
