@@ -1,5 +1,7 @@
-<% @users.each do |user| %>
- <%= user.name %>
+<% if @user == current_user %>
+  <%= render partial: 'posts/new' %>
 <% end %>
 
-# This page is just for debugging, needs editing
+<div id="posts-top"></div>
+
+<%= render @user.posts.newset_first %>

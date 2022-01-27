@@ -1,5 +1,6 @@
 <!-- Writing new posts ------------------------------------------------------------------------------------------------------------------------------------------- -->
 <div id="whats-on-your-mind">
+  <% @post = Post.new %>
   <%= form_with model: @post, remote: true, id: 'post-form' do |form| %>
     <div class="field has-addons mb-4">
       <div class="control is-expanded"> 
@@ -7,9 +8,10 @@
         <p id="form-warning" class="help is-danger"></p>
       </div>
       <div class="control">
-        <button class="button is-info is-rounded has-text-weight-bold">
+        <%= form.submit "Post", :class => "button is-info is-rounded has-text-weight-bold"%>
+        <%# <button class="button is-info is-rounded has-text-weight-bold">
           Post
-        </button>
+        </button> %>
       </div>
     </div> 
   <% end %> 
