@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "Comment-related features: ", type: :feature do
   scenario "Can comment on posts and view changes" do
     
-    navbar_acebook_link = "/html/body/nav/a"
+    navbar_acebook_link = "/html/body/nav[1]/strong/a"
     message_content = '//*[@id="post_message"]'
     create_post_btn = '//*[@id="submit"]'
     comment_content = '//*[@id="content"]'

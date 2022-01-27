@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
+RSpec.feature "Submit posts", type: :feature do
   scenario "Can submit posts and view them" do
-    navbar_acebook_link = "/html/body/nav/a"
+    navbar_acebook_link = "/html/body/nav[1]/strong/a"
     message_content = '//*[@id="post_message"]'
     create_post_btn = '//*[@id="submit"]'
        

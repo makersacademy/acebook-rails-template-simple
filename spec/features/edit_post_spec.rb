@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "Managing posts", type: :feature do
   scenario "Can edit posts and view changes" do
 
-    navbar_acebook_link = "/html/body/nav/a"
+    navbar_acebook_link = "/html/body/nav[1]/strong/a"
     message_content = '//*[@id="post_message"]'
     create_post_btn = '//*[@id="submit"]'
     edit_btn = 'body > div.container > article > div:nth-child(1) > div.card-link > a:nth-child(2)'

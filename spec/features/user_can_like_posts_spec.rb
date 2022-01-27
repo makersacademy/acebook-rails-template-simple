@@ -1,45 +1,49 @@
 
 require 'rails_helper'
 
-
-RSpec.feature 'Sign up page: ', type: :feature do
+RSpec.feature 'Likes feature: ', type: :feature do
+  navbar_acebook_link = "/html/body/nav[1]/strong/a"
   create_post_input = '//*[@id="post_message"]'
   create_post_button = '//*[@id="submit"]'
-  like_button = '/html/body/button[1]/a'
-  unlike_button = '/html/body/div/article[1]/div[2]/div[2]/a[1]'
-
+  
   before :each do
     visit '/'
   end
 
   scenario 'users can like post' do 
     sign_up(username: "test_username", email: "test@test.com", password: "test123")
-    visit '/posts'
+    find(:xpath, navbar_acebook_link).click
     find(:xpath, create_post_input).set('this should work')
     find(:xpath, create_post_button).click
-    find(:xpath, like_button).click
+    expect(page).to have_content('this should work')
+
+    click_link "Like"
     expect(page).to have_content('1 Like')
   end
 
   scenario 'users can only like the post once' do
     sign_up(username: "test_username", email: "test@test.com", password: "test123")
-    visit '/posts'
+    find(:xpath, navbar_acebook_link).click
     find(:xpath, create_post_input).set('this should work')
     find(:xpath, create_post_button).click
-    find(:xpath, like_button).click
-    find(:xpath, like_button).click
-    expect(page).to have_content("You can't like more than once")
+    
+    click_link "Like"
+    expect(page).to have_link("Unlike")
+    expect(page).not_to have_link("Like")
+
   end
 
   scenario 'users can unlike the post' do
     sign_up(username: "test_username", email: "test@test.com", password: "test123")
-    visit '/posts'
+    find(:xpath, navbar_acebook_link).click
     find(:xpath, create_post_input).set('this should work')
     find(:xpath, create_post_button).click
-    find(:xpath, like_button).click
-    find(:xpath, like_button).click
-    find(:xpath, unlike_button).click
-    expect(page).to have_content("Like")
+  
+    click_link "Like"
+    click_link "Unlike"
+    expect(page).to have_link("Like")
+    expect(page).not_to have_link("Unlike")
+
   end
 
-end # end of test
+end
