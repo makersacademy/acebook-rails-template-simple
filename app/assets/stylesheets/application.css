@@ -23,6 +23,14 @@ body {
   background: whitesmoke;
  }
 
+a.nav-link {
+   color:#ffffff8c;
+ }
+
+ a.nav-link:hover {
+   color:white;
+ }
+
  /* Sign up and log in form styling */
 
  .entry_form{
