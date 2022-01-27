@@ -1,6 +1,6 @@
 <div class="container ">
   <div class="row justify-content-center">
-    <div id="posts-column" class="col-sm-6 col-lg-6">
+    <div id="posts-column" class="col-sm-8 col-lg-7">
       <div class = "card bg-light mb-3" style="width: 32rem;" >
         <div class = "card-body">
         <%= render "form", post: @post%> <!--brings new form to index-->
@@ -61,7 +61,7 @@
           </div>
 
 
-    <div id="friends-column" class="col-sm-7 col-md-7 col-lg-2">
+    <div id="friends-column" class="col-sm-4 col-md-7 col-lg-2">
       <div id='friends-requests' class="card p-2">
         <h3>Requests</h3>
         <ul>
@@ -103,8 +103,12 @@
               <% end %>
           </ul>
       </div>
+    <div>
+    </div>  
   </div>
+    <div id="posts-navigation">
+      <%= raw pagy_bootstrap_nav(@pagy) %>
+    </div>
   </div>
-  <%= raw pagy_bootstrap_nav(@pagy) %>
 </div>
 </div>
