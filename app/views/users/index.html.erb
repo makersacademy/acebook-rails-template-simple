@@ -3,21 +3,22 @@
 <form action="/search">
   <input type="search" name="q" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
   <button type="submit" class="btn btn-outline-primary">search</button>
+  <br>
 </form>
 
-<div>
 
 <% @users.each do |user| %>
+  <ul class="list-group container">
     <% if !current_user.friends.include?(user) && user != current_user  %>
-        <ul class="list-group">
-          <li class="list-group-item"> <%= image_tag user.avatar.variant(resize_to_limit: [30, 30]) %>
-          <%= user.username %></li>
           <li class="list-group-item">
+            <%= image_tag user.avatar.variant(resize_to_limit: [30, 30]) %>
+            <%= user.username %>
             <%= link_to "Add Friend", friendships_path(:friend_id => user.id), :method => :post %>
           </li>
-        </ul>
-  <% end %>
+    <% end %>
+  </ul>
 <% end %>
-</div>
 
+<br>  
 <%= raw pagy_bootstrap_nav(@pagy) %>
+<br/>
