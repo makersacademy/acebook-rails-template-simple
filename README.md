@@ -39,7 +39,7 @@ Jess Gordon
 
 From Makers Cohort November 2021
 
-<img src="./public/makers-academy.png" width="40" height="40">
+<img src="./public/makers-academy.png" height="60">
 
 ## About
 
