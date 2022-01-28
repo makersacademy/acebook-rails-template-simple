@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.feature 'list of posts page', type: :feature do
-  navbar_acebook_link = "/html/body/nav/a"
-  list_of_posts_next_page = '/html/body/nav[2]/ul/li[4]/a'
-  list_of_posts_previous_page = '/html/body/nav[2]/ul/li[1]/a'
-  list_of_posts_page_2 = '/html/body/nav[2]/ul/li[3]/a'
-  list_of_posts_page_1 = '/html/body/nav[2]/ul/li[2]/a'
+  navbar_acebook_link = "/html/body/nav/strong/a" 
+  list_of_posts_next_page = '/html/body/div/div/div[3]/button/nav/ul/li[4]/a' 
+  list_of_posts_previous_page = '/html/body/div/div/div[3]/button/nav/ul/li[1]/a'
+  list_of_posts_page_2 = '/html/body/div/div/div[3]/button/nav/ul/li[3]/a'
+  list_of_posts_page_1 = '/html/body/div/div/div[3]/button/nav/ul/li[2]/a'
 
   scenario 'Can navigate through list of posts using next page button' do
     sign_up(username: "username1", email: "username1@test.com", password: "123456")
