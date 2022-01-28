@@ -19,11 +19,22 @@ class PostsController < ApplicationController
   def friends_feed
     @posts = my_friends_post(current_user.id)
     @post = Post.new
+
+    respond_to do |format|
+      format.js
+    end
+    
   end
 
   def index
     @posts = Post.newest_first
     @post = Post.new
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
   end
 
   def show
