@@ -61,6 +61,7 @@
       </a>
     </div>
 
+    <% if logged_in?%>
     <div id="navbarBasicExample" class="navbar-menu">
       <% @current_user = current_user %>
       <div class="navbar-end">
@@ -75,7 +76,7 @@
               </figure>
             </a>
        
-
+    <% end %>
           <%= link_to "Log out", logout_path, method: :delete, class: 'button has-text-info has-text-bold is-white px-2 mx-2' %>
        
         </div>
