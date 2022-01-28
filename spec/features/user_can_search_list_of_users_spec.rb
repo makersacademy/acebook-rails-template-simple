@@ -39,19 +39,19 @@ RSpec.feature 'list of users page', type: :feature do
   end
 
   scenario 'Can navigate through list of users using prev page' do
-    sign_up_x_times(6)
+    sign_up_x_times(8)
     login(email: "username1@test.com", password: "123456")
 
     find(:xpath, list_of_users).click
     expect(page).to have_content("username5")
-    expect(page).not_to have_content("username6")
+    expect(page).not_to have_content("username2")
 
     find(:xpath, list_of_users_next_page).click
-    expect(page).to have_content("username6")
+    expect(page).to have_content("username2")
 
     find(:xpath, list_of_users_prev_page).click
     expect(page).to have_content("username5")
-    expect(page).not_to have_content("username6")
+    expect(page).not_to have_content("username2")
    
   end
 
