@@ -5,7 +5,7 @@ RSpec.feature "Navbar features: ", type: :feature do
   context "logged in" do
     scenario "Can see log out button" do
       sign_up(username: "test_username", email: "test@test.com", password: "test123")
-      expect(page).to have_content("Log out")
+      expect(page).to have_button("Log out")
     end
 
     scenario "Can see settings" do
