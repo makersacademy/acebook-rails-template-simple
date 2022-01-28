@@ -17,11 +17,13 @@
   </div>
 </div>
 
-<% if @user == current_user %>
-  <h2>My Friend Requests </h2>
+<h2>
+<% if @user.name == current_user.name %>
+  Your Friends
+  <% else %>
+  <%= @user.name%>'s Friends</h2>
 <% end %>
-
-<h2> <%= @user.name%>'s Friends</h2>
+</h2>
 
 <% my_friends(@user.id).each do |friend| %>
   <%@friend = User.find(friend.friend_id)%>
