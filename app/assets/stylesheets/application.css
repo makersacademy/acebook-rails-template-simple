@@ -16,6 +16,15 @@
 
 
 /* Global styling  */
+
+#signed-in-user-text{
+  font-style: italic;
+  color: whitesmoke;
+}
+
+#logout-button {
+  margin-top: -3px;
+}
 .btn-secondary {
    background:black;
 }
@@ -53,6 +62,7 @@ a.nav-link {
 
 #posts-column {
   margin-left: 25%;
+  width: 50%;
 }
 
 a.nav-link {

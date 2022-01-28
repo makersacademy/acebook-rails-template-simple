@@ -71,7 +71,7 @@
               <li>
                 <%= image_tag(User.find(friendship.user_id).avatar.variant(resize_to_limit: [30, 30])) %>
                 <%= User.find(friendship.user_id).username %>
-                <div class="d-inline">
+                <div class="btn-group mt-1 pl-4">
                   <%= button_to "Accept", friendship, :method => :patch, class:"btn btn-sm btn-success" %>
                   <%= button_to "Reject", friendship, :method => :delete, class: "btn btn-sm btn-danger" %>
                 </div>
