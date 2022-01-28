@@ -17,18 +17,26 @@
   </div>
 </div>
 
-<h2>
-<% if @user.name == current_user.name %>
-  Your Friends
-  <% else %>
-  <%= @user.name%>'s Friends</h2>
-<% end %>
-</h2>
-
-<% my_friends(@user.id).each do |friend| %>
-  <%@friend = User.find(friend.friend_id)%>
-  <p> <%= link_to @friend.name, user_path(@friend) %> </p>
-<% end %>
+<div class="columns is-centered py-2 my-2" id="friends">
+  <div class="column is-half">
+   <div class="card py-2 px-2">
+    <h2 class="my-1">
+      <strong>Friends with</strong>
+    </h2>
+    <div class="columns px-2 py-2">
+      <% my_friends(@user.id)[0..5].shuffle.each do |friend| %>
+        <%@friend = User.find(friend.friend_id)%>
+        <div class="column is-align-content-center">
+        <figure class="circular--landscape-post">
+          <%= image_tag(@friend.profile_picture) %>
+        </figure>
+          <p> <%= link_to @friend.name, user_path(@friend) %> </p>
+        </div>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>
   
 
 <div class="container" id="posts" >
