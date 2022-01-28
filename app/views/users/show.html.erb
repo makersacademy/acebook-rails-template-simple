@@ -1,12 +1,16 @@
 <div class="container has-text-centered" >
   <div>
-    <figure class="circular--landscape-profile">
+    <% if @user == current_user %>
+      <% plus_icon = link_to '', edit_user_path, class: "fas fa-plus" %>
+      <% css_class = 'circular--landscape-profile-editable' %>
+    <% else %>
+      <% plus_icon = '' %>
+      <% css_class = 'circular--landscape-profile' %>
+    <% end %>
+    <figure class=<%= css_class %> >
       <%= image_tag(@user.profile_picture) %>
     </figure>
-    <% if @user == current_user %>
-      <!-- <i class="fas fa-plus"></i> -->
-      <%= link_to '', edit_user_path, class: "fas fa-plus" %>
-    <% end %>
+    <%= plus_icon %>
   </div>
   <div class="media-content">
     <p class="title is-4"><%= @user.name %></p>
