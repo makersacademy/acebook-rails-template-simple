@@ -7,16 +7,19 @@ Sarah Dousse\
 Zoë Idehen\
 Evie Palaiochorinou\
 Michael Kassim\
-James Cort\
+James Cort
 
 ## Technologies Used
 
 - Ruby on Rails
+- Rspec & Capybara (for testing)
 - HTML
 - CSS
 - Bulma (for CSS)
 - JavaScript
 - Heroku (deployment)
+- AWS for Active Storage
+- Github actions for CI/CD
 
 ## Quickstart
 
@@ -43,7 +46,7 @@ ExecJS::RuntimeUnavailable:
 Rails requires a Javascript runtime to work. The easiest way is to install Node by running `brew install node` - and then run `bundle exec rspec` again
 
 ## Acebook on Heroku
-Deployed on Heroku with CI/CD.
+Deployed on Heroku with CI/CD.\
 https://immense-sea-58140.herokuapp.com/
 
 ## MVC diagram of the MVP
