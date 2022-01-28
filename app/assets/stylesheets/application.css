@@ -14,7 +14,17 @@
  *= require_self
  */
 
+
 /* Global styling  */
+
+#signed-in-user-text{
+  font-style: italic;
+  color: whitesmoke;
+}
+
+#logout-button {
+  margin-top: -3px;
+}
 .btn-secondary {
    background:black;
 }
@@ -50,6 +60,21 @@ a.nav-link {
  
 /* home page styling */
 
-#friends-list{
+#posts-column {
   margin-left: 25%;
+  width: 50%;
 }
+
+a.nav-link {
+  margin-left: -1em;
+}
+
+#friends-column {
+  padding-top: 1em;
+}
+
+ul {
+  margin-left: -2em;
+  list-style-type: none;
+}
+
