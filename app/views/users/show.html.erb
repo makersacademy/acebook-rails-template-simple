@@ -24,7 +24,7 @@
       <strong>Friends with</strong>
     </h2>
     <div class="columns px-2 py-2">
-      <% my_friends(@user.id)[0..5].each do |friend| %>
+      <% my_friends(@user.id)[0..5].shuffle.each do |friend| %>
         <%@friend = User.find(friend.friend_id)%>
         <div class="column is-align-content-center">
         <figure class="circular--landscape-post">
