@@ -1,7 +1,7 @@
 <div class="container has-text-centered" >
   <div>
-    <figure class="image is-128x128 is-inline-block">
-      <%= image_tag(@user.profile_picture, class: "is-rounded") %>
+    <figure class="circular--landscape-profile">
+      <%= image_tag(@user.profile_picture) %>
     </figure>
     <% if @user == current_user %>
       <!-- <i class="fas fa-plus"></i> -->
