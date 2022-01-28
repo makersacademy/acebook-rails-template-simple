@@ -35,11 +35,11 @@ Giorgi Gutsaev\
 Chris Thomas\
 Sherwin Panganiban\
 Francesco Collotto\
-Jess Gordon\
+Jess Gordon
 
 From Makers Cohort November 2021
 
-<img src="./public/RubyJunkiesLogo.png" width="30" height="30">
+<img src="./public/makers-academy.png" width="40" height="40">
 
 ## About
 
@@ -60,9 +60,11 @@ View your posts, comments and photos on your profile\
 Edit your Profile\
 See if someone is your friend on their profile\
 Give a post or comment a Gem\
-Profile shows your total Gem Count\
+Profile shows your total Gem Count
 
 This project is running on Heroku at http://gem-junkies.herokuapp.com - please feel free to head over and give it a try!
+
+<img src="./public/RubyJunkiesLogo.png" width="40" height="40">
 
 ## Installation
 
