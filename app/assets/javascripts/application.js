@@ -49,3 +49,5 @@
 
   let showAllPosts;
 
+  let addFunctionality;
+

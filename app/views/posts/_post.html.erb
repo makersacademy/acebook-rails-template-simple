@@ -17,14 +17,23 @@
         <p class="title is-4"><%= @user.name %></p>
          </a>
       </div>
+      <!-- Add as friend ------------------------------------------------ -->
       
      <% if can_add_as_friend(current_user.id, post.user_id) %>
         <%= form_for(current_user.friendships.build) do |f| %>
         <div><%= hidden_field_tag :friend_id, post.user_id %></div>
-          <%= f.submit "Add as friend", class: "button is-small is-rounded" %>
+        <a>
+        <span class=" class="icon is-medium">
+          <button type="submit" style="background: none; border: none;">
+            <%= link_to '<i class="fas fa-user-plus fa-lg"></i>'.html_safe, "" %> 
+          </button>
+        </span>
+        </a>
         <% end %>
-        <% elsif pending_request(current_user.id, post.user_id) %>
-          "Request pending..."
+        <% else %>
+        <span class="icon is-medium has-text-info">
+          <i class="fas fa-user-check fa-lg"></i>
+        </span>
       <% end %>
     </div>
     
