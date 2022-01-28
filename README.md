@@ -1,6 +1,6 @@
 # GemJunkies (Facebook Clone) 
 
-<img src="./public/RubyJunkiesLogo.png" width="30" height="30"> <img src="./public/ruby-on-rails-logo.png" height="30">
+<img src="./public/ruby-on-rails-logo.png" height="30">
 
 ## Quickstart
 
@@ -38,6 +38,8 @@ Francesco Collotto
 Jess Gordon
 
 From Makers Cohort November 2021
+
+<img src="./public/RubyJunkiesLogo.png" width="30" height="30">
 
 ## About
 
