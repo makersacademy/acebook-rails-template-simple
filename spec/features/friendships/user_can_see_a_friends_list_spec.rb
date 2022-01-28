@@ -10,7 +10,7 @@ RSpec.feature "Timeline", type: :feature do
     user_sign_up
     click_button "Add as friend"
 
-    click_link "profile-link"
+    find(".profile-link").click
     expect(page).to have_content("Your Friends")
   end
 end
