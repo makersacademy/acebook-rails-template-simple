@@ -11,12 +11,11 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require_tree .
 
 
   // Show form warning if empty post is submitted
 
-  console.log("hello")
+  console.log("application")
 
   let deleteFlashMessages = () => {
     let existingFlash = document.getElementById("flashmessage");
@@ -46,5 +45,7 @@
 
   let renderComment;
 
+  let showFriendsPosts;
 
+  let showAllPosts;
 

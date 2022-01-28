@@ -1,0 +1,11 @@
+showFriendsPosts = () => {
+  let posts = document.getElementById("all-posts");
+  console.log(posts)
+  posts.innerHTML = "";
+  let newFeed = document.createElement("div")
+  newFeed.append("<%= escape_javascript render(:partial => @posts )%>");
+  newFeed.innerHTML = newFeed.innerText;
+  posts.append(newFeed);
+}
+
+showFriendsPosts();
