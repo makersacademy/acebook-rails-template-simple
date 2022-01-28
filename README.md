@@ -1,6 +1,6 @@
 # AceBook
 
-Acebook is a Facebook-clone application made with Ruby on Rails by Makers team 'On the Rails' of Nov '21 cohort.
+Acebook is a Facebook-clone application made with Ruby on Rails by Makers team 'On the Rails' of Nov '21 cohort.\
 Kim Morgan\
 Inigo Meshoulam\
 Sarah Dousse\
