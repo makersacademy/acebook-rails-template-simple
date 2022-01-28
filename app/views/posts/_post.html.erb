@@ -1,19 +1,15 @@
 <% @user = User.find(post.user_id) %>
 <div id="post-<%=post.id%>" class="card mb-5">
 
-<style>
-.circular--landscape-post { display: inline-block; position: relative; width: 64px; height: 64px; overflow: hidden; border-radius: 50%; } 
-.circular--landscape-post img {width: auto; height: 100%; margin-left: -50%%}
-</style>
 
   <div class="card-content">
     <!-- Displaying who made the post ------------------------------------------------ -->
     <div class="media">
       <div class="media-left">
         <a href="/users/<%= @user.id %>">
-          <figure class="circular--landscape-post">
+          <div class="circular--landscape-post">
             <%= image_tag(@user.profile_picture) %>
-          </figure>
+          </div>
         </a>
       </div>
       <div class="media-content my-2 py-2">

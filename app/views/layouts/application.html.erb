@@ -29,8 +29,14 @@
      .hero-foot {padding: 2rem 12rem 5rem 12rem !important;}
      .box {box-shadow: 3px 5px 7px 3px #ccc;}
 
-    .circular--landscape-nav { display: inline-block; position: relative; width: 32px; height: 32px; overflow: hidden; border-radius: 50%; } 
-    .circular--landscape-nav img {width: auto; height: 100%;}
+      .circular--landscape-nav {position: relative; width: 32px; height: 32px; overflow: hidden; border-radius: 50%; } 
+      .circular--landscape-nav img {width: auto; height: 100%; max-height: 100%}
+
+      .circular--landscape-post { display: inline-block; position: relative; width: 64px; height: 64px; overflow: hidden; border-radius: 50%; } 
+      .circular--landscape-post img {width: auto; height: 100%}
+
+      .circular--landscape-comment { display: inline-block; position: relative; width: 32px; height: 32px; overflow: hidden; border-radius: 50%; } 
+      .circular--landscape-comment img {width: auto; height: 100%}
     </style>
 
    
@@ -54,7 +60,7 @@
       <div class="navbar-end">
         <div class="navbar-item">
 
-          <%= link_to "#{@current_user.name}", user_path(@current_user), class: "has-text-white is-size-4 mr-4" %>
+          <%= link_to "#{@current_user.name}", user_path(@current_user), class: "has-text-white is-size-4 mr-2" %>
           
         
             <a href="/users/<%= @current_user.id %>">
