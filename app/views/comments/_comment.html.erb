@@ -1,9 +1,7 @@
 <% @post = Post.find(comment.post_id) %>
+<% @commenter = User.find(comment.user_id) %>
 
-<style>
-.circular--landscape { display: inline-block; position: relative; width: 64px; height: 64px; overflow: hidden; border-radius: 50%; } 
-.circular--image { width: 100%; height: 100%; }
-</style>
+
 
 <div class="card box has-background-white-ter pb-1" id="comment-<%=comment.id%>">
 
@@ -12,14 +10,17 @@
     <div class="media">
 
       <div class="media-left">
-        <figure class="image is-32x32">
-          <%= image_tag(comment.user.profile_picture, class: "is-rounded") %>
-        </figure>
+        <a href=<%="#{user_path(@commenter)}"%>>
+          <figure class="circular--landscape-comment">
+            <%= image_tag(comment.user.profile_picture) %>
+          </figure>
+        </a>
       </div>
 
       <div class="media-content">
-        <% @commenter = User.find(comment.user_id) %>
-        <p class="title is-6"><%= @commenter.name %></p>
+        <a href=<%="#{user_path(@commenter)}"%>>
+          <p class="title is-6"><%= @commenter.name %></p>
+        </a>
       </div>
     </div>
 

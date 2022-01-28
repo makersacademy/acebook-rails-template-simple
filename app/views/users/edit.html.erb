@@ -1,19 +1,23 @@
 
-<h2> Edit Profile Picture: </h2>
 
-<% if @user.profile_picture.representable? %>
-  <%= image_tag @user.profile_picture.representation(resize_to_limit: [640, 640]) %>
-<% end %>
+<div class="container has-text-centered" >
+  <h2> Edit Profile Picture: </h2>
+  <% if @user.profile_picture.representable? %>
+    <figure class="circular--landscape-profile">
+      <%= image_tag(@user.profile_picture) %>
+    </figure>
+  <% end %>
 
-<%= form_with(model: @user, local: true) do |form| %>
+  <%= form_with(model: @user, local: true) do |form| %>
 
-  <div class="field p-3">
-    <div class="control">
-      <%= form.label "Profile Photo" %>
-      <%= form.file_field :profile_picture %> 
+    <div class="field p-3">
+      <div class="control">
+        <%= form.label "Profile Photo" %>
+        <%= form.file_field :profile_picture %> 
+      </div>
     </div>
-  </div>
 
-  <%= form.submit "Upload" %>
-  
-<% end %>
+    <%= form.submit "Upload", class: "button is-info is-rounded has-text-weight-bold" %>
+    
+  <% end %>
+</div>
