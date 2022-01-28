@@ -23,3 +23,20 @@ ExecJS::RuntimeUnavailable:
  ```
 
 Rails requires a Javascript runtime to work. The easiest way is to install Node by running `brew install node` - and then run `bundle exec rspec` again
+
+## Project
+
+The aim of this project was to work as a team to build a clone of Facebook. We used Ruby on Rails as a framework and deployed with Heroku. 
+
+## Trello Link
+
+Tasks can be seen via our trello board. 
+https://trello.com/b/40IbAHuD/acebooktbc
+
+## Database modelling
+
+![Tables](https://github.com/msc49/acebook-rails-template-simple/blob/main/public/readme_database_diagram.png)
+
+ * Users have many posts, comments, friendships and likes.
+ * Posts have many comments and likes.
+ 

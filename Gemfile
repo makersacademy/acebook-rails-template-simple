@@ -26,7 +26,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -37,6 +36,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 4.0'
+  gem 'database_cleaner-active_record'
 end
 
 group :development do
@@ -45,5 +45,18 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
 end
 
+gem 'simplecov', require: false, group: :test
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'devise', '~> 4.8', '>= 4.8.1'
+
+gem "activestorage", "~> 6.1"
+
+gem "factory_bot", "~> 6.2"
+
+gem "launchy", "~> 2.5"
+gem "bootstrap_form", "~> 5.0"
+gem 'pagy', '~> 5.9'
+gem 'image_processing', '~> 1.2'
