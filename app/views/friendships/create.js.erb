@@ -1,0 +1,13 @@
+addFriendIcon = () => {
+  let addFriendButtons = document.querySelectorAll("#add-friend-<%=@friend_id%>");
+  for (addFriendButton of addFriendButtons) {
+    addFriendButton.setAttribute("type", "");
+    let iconContainer = addFriendButton.querySelector("span")
+    iconContainer.classList.add("has-text-success");
+    let icon = iconContainer.querySelector("i");
+    icon.classList.remove("fa-user-plus");
+    icon.classList.add("fa-user-check");
+  }
+}
+
+addFriendIcon();
