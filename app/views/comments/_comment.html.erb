@@ -1,4 +1,5 @@
 <% @post = Post.find(comment.post_id) %>
+<% @commenter = User.find(comment.user_id) %>
 
 
 
@@ -9,14 +10,17 @@
     <div class="media">
 
       <div class="media-left">
-        <figure class="circular--landscape-comment">
-          <%= image_tag(comment.user.profile_picture) %>
-        </figure>
+        <a href=<%="#{user_path(@commenter)}"%>>
+          <figure class="circular--landscape-comment">
+            <%= image_tag(comment.user.profile_picture) %>
+          </figure>
+        </a>
       </div>
 
       <div class="media-content">
-        <% @commenter = User.find(comment.user_id) %>
-        <p class="title is-6"><%= @commenter.name %></p>
+        <a href=<%="#{user_path(@commenter)}"%>>
+          <p class="title is-6"><%= @commenter.name %></p>
+        </a>
       </div>
     </div>
 
