@@ -1,5 +1,23 @@
 # AceBook
 
+Acebook is a Facebook-clone application made with Ruby on Rails by Makers team 'On the Rails' of Nov '21 cohort.
+Kim Morgan\
+Inigo Meshoulam\
+Sarah Dousse\
+Zoë Idehen\
+Evie Palaiochorinou\
+Michael Kassim\
+James Cort\
+
+## Technologies Used
+
+- Ruby on Rails
+- HTML
+- CSS
+- Bulma (for CSS)
+- JavaScript
+- Heroku (deployment)
+
 ## Quickstart
 
 First, clone this repository. Then:
@@ -25,6 +43,7 @@ ExecJS::RuntimeUnavailable:
 Rails requires a Javascript runtime to work. The easiest way is to install Node by running `brew install node` - and then run `bundle exec rspec` again
 
 ## Acebook on Heroku
+Deployed on Heroku with CI/CD.
 https://immense-sea-58140.herokuapp.com/
 
 ## MVC diagram of the MVP
@@ -42,6 +61,8 @@ https://immense-sea-58140.herokuapp.com/
 - User can unlike their or another's post
 - User can delete their own posts
 - User can view their or someone else's profile page
+- User can upload their own profile picture
+- User's name and profile picture is displayed next to their post, on the navigation bar, and also on their profile page
 - User can log out
 
 ## Trello Board
