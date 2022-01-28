@@ -16,7 +16,7 @@ module Helpers
   end
 
   def login(email:, password:)
-    login_button = '/html/body/button[2]/a'
+    login_button = '/html/body/div/form/div[4]/input'
     login_email = '//*[@id="user_email"]'
     login_password = '//*[@id="user_password"]'
     login_button_confirmation = '//*[@id="new_user"]/div[4]/input'
@@ -42,7 +42,7 @@ module Helpers
   end 
 
   def sign_up_x_times(times)
-    log_out_button = '/html/body/button/a' 
+    log_out_button = '/html/body/nav/div[3]/ul/li[3]/a/form/input[2]' 
     
     for i in 1..times
       username_template = "username#{i}"
