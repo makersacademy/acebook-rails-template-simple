@@ -1,4 +1,6 @@
-# GemJunkies (Facebook Clone)  <img src="./public/RubyJunkiesLogo.png" width="30" height="30">
+# GemJunkies (Facebook Clone) 
+
+<img src="./public/RubyJunkiesLogo.png" width="30" height="30"> <img src="./public/ruby-on-rails-logo.png" height="30">
 
 ## Quickstart
 
@@ -169,7 +171,9 @@ I would like the site to look nice!
 ![database diagram](./public/acebook-database.png)
 ![MVC diagram](./public/MVC.png)
 ![model controller diagram](./public/model-controller.png)
-![learning reflections diagram](./public/learning-reflections.png)
+![learning reflections diagram](./public/learning-reflections1.png)
+![learning reflections diagram](./public/learning-reflections2.png)
+![learning reflections diagram](./public/learning-reflections3.png)
 
 ### FIGMA:
 ![UX plan diagram](./public/UX-plan.png)
