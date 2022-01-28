@@ -39,7 +39,7 @@ Jess Gordon
 
 From Makers Cohort November 2021
 
-<img src="./public/makers-academy.png" height="60">
+<img src="./public/makers-academy.png" height="50">
 
 ## About
 
@@ -64,7 +64,7 @@ Profile shows your total Gem Count
 
 This project is running on Heroku at http://gem-junkies.herokuapp.com - please feel free to head over and give it a try!
 
-<img src="./public/RubyJunkiesLogo.png" width="40" height="40">
+<img src="./public/RubyJunkiesLogo.png" width="50" height="50">
 
 ## Installation
 
