@@ -1,5 +1,5 @@
 # AceBook
-
+Second enginerring project in the Makers course, made by Team Betterverse
 # Default users (remember to use .save after each entry)
 
 user1 = User.new(name: "Tomas Garcia", email:"tom@gmail
